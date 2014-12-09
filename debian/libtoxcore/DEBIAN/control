@@ -1,0 +1,9 @@
+Package: libtoxcore
+Source: toxcore
+Version: 20141208-1
+Architecture: amd64
+Maintainer: cmotc cmotc@openmailbox.org
+Installed-Size: 59
+Section: misc
+Priority: optional
+Description: LibToxCore package for Debian.
