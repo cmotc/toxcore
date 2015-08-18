@@ -172,6 +172,17 @@ int set_socket_nosigpipe(sock_t sock)
 #endif
 }
 
+/* Enable SO_REUSEADDR on socket.
+ *
+ * return 1 on success
+ * return 0 on failure
+ */
+int set_socket_reuseaddr(sock_t sock)
+{
+    int set = 1;
+    return (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (void *)&set, sizeof(set)) == 0);
+}
+
 /* Set socket to dual (IPv4 + IPv6 socket)
  *
  * return 1 on success
@@ -264,15 +275,15 @@ uint64_t current_time_monotonic(void)
 #define loglogdata(__message__, __buffer__, __buflen__, __ip_port__, __res__) \
     (__ip_port__) .ip; \
     if (__res__ < 0) /* Windows doesn't necessarily know %zu */ \
-        LOGGER_INFO("[%2u] %s %3hu%c %s:%hu (%u: %s) | %04x%04x", \
+        LOGGER_TRACE("[%2u] %s %3hu%c %s:%hu (%u: %s) | %04x%04x", \
                  __buffer__[0], __message__, (__buflen__ < 999 ? (uint16_t)__buflen__ : 999), 'E', \
                  ip_ntoa(&((__ip_port__).ip)), ntohs((__ip_port__).port), errno, strerror(errno), data_0(__buflen__, __buffer__), data_1(__buflen__, __buffer__)); \
     else if ((__res__ > 0) && ((size_t)__res__ <= __buflen__)) \
-        LOGGER_INFO("[%2u] %s %3zu%c %s:%hu (%u: %s) | %04x%04x", \
+        LOGGER_TRACE("[%2u] %s %3zu%c %s:%hu (%u: %s) | %04x%04x", \
                  __buffer__[0], __message__, (__res__ < 999 ? (size_t)__res__ : 999), ((size_t)__res__ < __buflen__ ? '<' : '='), \
                  ip_ntoa(&((__ip_port__).ip)), ntohs((__ip_port__).port), 0, "OK", data_0(__buflen__, __buffer__), data_1(__buflen__, __buffer__)); \
     else /* empty or overwrite */ \
-        LOGGER_INFO("[%2u] %s %zu%c%zu %s:%hu (%u: %s) | %04x%04x", \
+        LOGGER_TRACE("[%2u] %s %zu%c%zu %s:%hu (%u: %s) | %04x%04x", \
                  __buffer__[0], __message__, (size_t)__res__, (!__res__ ? '!' : '>'), __buflen__, \
                  ip_ntoa(&((__ip_port__).ip)), ntohs((__ip_port__).port), 0, "OK", data_0(__buflen__, __buffer__), data_1(__buflen__, __buffer__));
 
@@ -467,15 +478,45 @@ static void at_shutdown(void)
 */
 
 /* Initialize networking.
+ * Added for reverse compatibility with old new_networking calls.
+ */
+Networking_Core *new_networking(IP ip, uint16_t port)
+{
+    return new_networking_ex(ip, port, port + (TOX_PORTRANGE_TO - TOX_PORTRANGE_FROM), 0);
+}
+
+/* Initialize networking.
  * Bind to ip and port.
  * ip must be in network order EX: 127.0.0.1 = (7F000001).
  * port is in host byte order (this means don't worry about it).
  *
  *  return Networking_Core object if no problems
  *  return NULL if there are problems.
+ *
+ * If error is non NULL it is set to 0 if no issues, 1 if socket related error, 2 if other.
  */
-Networking_Core *new_networking(IP ip, uint16_t port)
+Networking_Core *new_networking_ex(IP ip, uint16_t port_from, uint16_t port_to, unsigned int *error)
 {
+    /* If both from and to are 0, use default port range
+     * If one is 0 and the other is non-0, use the non-0 value as only port
+     * If from > to, swap
+     */
+    if (port_from == 0 && port_to == 0) {
+        port_from = TOX_PORTRANGE_FROM;
+        port_to = TOX_PORTRANGE_TO;
+    } else if (port_from == 0 && port_to != 0) {
+        port_from = port_to;
+    } else if (port_from != 0 && port_to == 0) {
+        port_to = port_from;
+    } else if (port_from > port_to) {
+        uint16_t temp = port_from;
+        port_from = port_to;
+        port_to = temp;
+    }
+
+    if (error)
+        *error = 2;
+
     /* maybe check for invalid IPs like 224+.x.y.z? if there is any IP set ever */
     if (ip.family != AF_INET && ip.family != AF_INET6) {
 #ifdef DEBUG
@@ -505,6 +546,10 @@ Networking_Core *new_networking(IP ip, uint16_t port)
         fprintf(stderr, "Failed to get a socket?! %u, %s\n", errno, strerror(errno));
 #endif
         free(temp);
+
+        if (error)
+            *error = 1;
+
         return NULL;
     }
 
@@ -521,12 +566,20 @@ Networking_Core *new_networking(IP ip, uint16_t port)
     /* iOS UDP sockets are weird and apparently can SIGPIPE */
     if (!set_socket_nosigpipe(temp->sock)) {
         kill_networking(temp);
+
+        if (error)
+            *error = 1;
+
         return NULL;
     }
 
     /* Set socket nonblocking. */
     if (!set_socket_nonblock(temp->sock)) {
         kill_networking(temp);
+
+        if (error)
+            *error = 1;
+
         return NULL;
     }
 
@@ -600,11 +653,11 @@ Networking_Core *new_networking(IP ip, uint16_t port)
      *   some clients might not test return of tox_new(), blindly assuming that
      *   it worked ok (which it did previously without a successful bind)
      */
-    uint16_t port_to_try = port;
+    uint16_t port_to_try = port_from;
     *portptr = htons(port_to_try);
     int tries;
 
-    for (tries = TOX_PORTRANGE_FROM; tries <= TOX_PORTRANGE_TO; tries++) {
+    for (tries = port_from; tries <= port_to; tries++) {
         int res = bind(temp->sock, (struct sockaddr *)&addr, addrsize);
 
         if (!res) {
@@ -618,22 +671,28 @@ Networking_Core *new_networking(IP ip, uint16_t port)
             if (tries > 0)
                 errno = 0;
 
+            if (error)
+                *error = 0;
+
             return temp;
         }
 
         port_to_try++;
 
-        if (port_to_try > TOX_PORTRANGE_TO)
-            port_to_try = TOX_PORTRANGE_FROM;
+        if (port_to_try > port_to)
+            port_to_try = port_from;
 
         *portptr = htons(port_to_try);
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "Failed to bind socket: %u, %s (IP/Port: %s:%u\n", errno,
-            strerror(errno), ip_ntoa(&ip), port);
-#endif
+    LOGGER_ERROR("Failed to bind socket: %u, %s IP: %s port_from: %u port_to: %u", errno, strerror(errno),
+                 ip_ntoa(&ip), port_from, port_to);
+
     kill_networking(temp);
+
+    if (error)
+        *error = 1;
+
     return NULL;
 }
 
@@ -754,36 +813,14 @@ void ipport_copy(IP_Port *target, const IP_Port *source)
         return;
 
     memcpy(target, source, sizeof(IP_Port));
-};
-
-/* packing and unpacking functions */
-void ip_pack(uint8_t *data, const IP *source)
-{
-    data[0] = source->family;
-    memcpy(data + 1, &source->ip6, SIZE_IP6);
-}
-
-void ip_unpack(IP *target, const uint8_t *data)
-{
-    target->family = data[0];
-    memcpy(&target->ip6, data + 1, SIZE_IP6);
-}
-
-void ipport_pack(uint8_t *data, const IP_Port *source)
-{
-    ip_pack(data, &source->ip);
-    memcpy(data + SIZE_IP, &source->port, SIZE_PORT);
-}
-
-void ipport_unpack(IP_Port *target, const uint8_t *data)
-{
-    ip_unpack(&target->ip, data);
-    memcpy(&target->port, data + SIZE_IP, SIZE_PORT);
 }
 
 /* ip_ntoa
  *   converts ip into a string
  *   uses a static buffer, so mustn't used multiple times in the same output
+ *
+ *   IPv6 addresses are enclosed into square brackets, i.e. "[IPv6]"
+ *   writes error message into the buffer on error
  */
 /* there would be INET6_ADDRSTRLEN, but it might be too short for the error message */
 static char addresstext[96];
@@ -813,6 +850,38 @@ const char *ip_ntoa(const IP *ip)
     /* brute force protection against lacking termination */
     addresstext[sizeof(addresstext) - 1] = 0;
     return addresstext;
+}
+
+/*
+ * ip_parse_addr
+ *  parses IP structure into an address string
+ *
+ * input
+ *  ip: ip of AF_INET or AF_INET6 families
+ *  length: length of the address buffer
+ *          Must be at least INET_ADDRSTRLEN for AF_INET
+ *          and INET6_ADDRSTRLEN for AF_INET6
+ *
+ * output
+ *  address: dotted notation (IPv4: quad, IPv6: 16) or colon notation (IPv6)
+ *
+ * returns 1 on success, 0 on failure
+ */
+int ip_parse_addr(const IP *ip, char *address, size_t length)
+{
+    if (!address || !ip) {
+        return 0;
+    }
+
+    if (ip->family == AF_INET) {
+        struct in_addr *addr = (struct in_addr *)&ip->ip4;
+        return inet_ntop(ip->family, addr, address, length) != NULL;
+    } else if (ip->family == AF_INET6) {
+        struct in6_addr *addr = (struct in6_addr *)&ip->ip6;
+        return inet_ntop(ip->family, addr, address, length) != NULL;
+    }
+
+    return 0;
 }
 
 /*

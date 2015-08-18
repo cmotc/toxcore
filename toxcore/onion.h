@@ -53,6 +53,8 @@ typedef struct {
 #define ONION_MAX_DATA_SIZE (ONION_MAX_PACKET_SIZE - (ONION_SEND_1 + 1))
 #define ONION_RESPONSE_MAX_DATA_SIZE (ONION_MAX_PACKET_SIZE - (1 + ONION_RETURN_3))
 
+#define ONION_PATH_LENGTH 3
+
 typedef struct {
     uint8_t shared_key1[crypto_box_BEFORENMBYTES];
     uint8_t shared_key2[crypto_box_BEFORENMBYTES];
@@ -63,15 +65,20 @@ typedef struct {
     uint8_t public_key3[crypto_box_PUBLICKEYBYTES];
 
     IP_Port     ip_port1;
+    uint8_t     node_public_key1[crypto_box_PUBLICKEYBYTES];
+
     IP_Port     ip_port2;
+    uint8_t     node_public_key2[crypto_box_PUBLICKEYBYTES];
+
     IP_Port     ip_port3;
+    uint8_t     node_public_key3[crypto_box_PUBLICKEYBYTES];
 
     uint32_t path_num;
 } Onion_Path;
 
 /* Create a new onion path.
  *
- * Create a new onion path out of nodes (nodes is a list of 3 nodes)
+ * Create a new onion path out of nodes (nodes is a list of ONION_PATH_LENGTH nodes)
  *
  * new_path must be an empty memory location of atleast Onion_Path size.
  *
@@ -79,6 +86,13 @@ typedef struct {
  * return 0 on success.
  */
 int create_onion_path(const DHT *dht, Onion_Path *new_path, const Node_format *nodes);
+
+/* Dump nodes in onion path to nodes of length num_nodes;
+ *
+ * return -1 on failure.
+ * return 0 on success.
+ */
+int onion_path_to_nodes(Node_format *nodes, unsigned int num_nodes, const Onion_Path *path);
 
 /* Create a onion packet.
  *

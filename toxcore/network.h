@@ -97,7 +97,6 @@ typedef int sock_t;
 #define NET_PACKET_PING_REQUEST    0   /* Ping request packet ID. */
 #define NET_PACKET_PING_RESPONSE   1   /* Ping response packet ID. */
 #define NET_PACKET_GET_NODES       2   /* Get nodes request packet ID. */
-#define NET_PACKET_SEND_NODES      3   /* Send nodes response packet ID for IPv4 addresses. */
 #define NET_PACKET_SEND_NODES_IPV6 4   /* Send nodes response packet ID for other addresses. */
 #define NET_PACKET_COOKIE_REQUEST  24  /* Cookie request packet */
 #define NET_PACKET_COOKIE_RESPONSE 25  /* Cookie response packet */
@@ -180,8 +179,28 @@ IP_Port;
 /* ip_ntoa
  *   converts ip into a string
  *   uses a static buffer, so mustn't used multiple times in the same output
+ *
+ *   IPv6 addresses are enclosed into square brackets, i.e. "[IPv6]"
+ *   writes error message into the buffer on error
  */
 const char *ip_ntoa(const IP *ip);
+
+/*
+ * ip_parse_addr
+ *  parses IP structure into an address string
+ *
+ * input
+ *  ip: ip of AF_INET or AF_INET6 families
+ *  length: length of the address buffer
+ *          Must be at least INET_ADDRSTRLEN for AF_INET
+ *          and INET6_ADDRSTRLEN for AF_INET6
+ *
+ * output
+ *  address: dotted notation (IPv4: quad, IPv6: 16) or colon notation (IPv6)
+ *
+ * returns 1 on success, 0 on failure
+ */
+int ip_parse_addr(const IP *ip, char *address, size_t length);
 
 /*
  * addr_parse_ip
@@ -226,16 +245,6 @@ int ipport_isset(const IP_Port *ipport);
 void ip_copy(IP *target, const IP *source);
 /* copies an ip_port structure */
 void ipport_copy(IP_Port *target, const IP_Port *source);
-
-
-/* packs IP into data, writes SIZE_IP bytes to data */
-void ip_pack(uint8_t *data, const IP *source);
-/* unpacks IP from data, reads SIZE_IP bytes from data */
-void ip_unpack(IP *target, const uint8_t *data);
-/* packs IP_Port into data, writes SIZE_IPPORT bytes to data */
-void ipport_pack(uint8_t *data, const IP_Port *source);
-/* unpacks IP_Port from data, reads SIZE_IPPORT bytes to data */
-void ipport_unpack(IP_Port *target, const uint8_t *data);
 
 /*
  * addr_resolve():
@@ -325,6 +334,13 @@ int set_socket_nonblock(sock_t sock);
  */
 int set_socket_nosigpipe(sock_t sock);
 
+/* Enable SO_REUSEADDR on socket.
+ *
+ * return 1 on success
+ * return 0 on failure
+ */
+int set_socket_reuseaddr(sock_t sock);
+
 /* Set socket to dual (IPv4 + IPv6 socket)
  *
  * return 1 on success
@@ -353,8 +369,11 @@ void networking_poll(Networking_Core *net);
  *
  * return Networking_Core object if no problems
  * return NULL if there are problems.
+ *
+ * If error is non NULL it is set to 0 if no issues, 1 if socket related error, 2 if other.
  */
 Networking_Core *new_networking(IP ip, uint16_t port);
+Networking_Core *new_networking_ex(IP ip, uint16_t port_from, uint16_t port_to, unsigned int *error);
 
 /* Function to cleanup networking stuff (doesn't do much right now). */
 void kill_networking(Networking_Core *net);

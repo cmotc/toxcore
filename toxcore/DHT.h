@@ -1,6 +1,6 @@
 /* DHT.h
  *
- * An implementation of the DHT as seen in http://wiki.tox.im/index.php/DHT
+ * An implementation of the DHT as seen in docs/updates/DHT.md
  *
  *  Copyright (C) 2013 Tox project All Rights Reserved.
  *
@@ -65,7 +65,9 @@
 
 /* Functions to transfer ips safely across wire. */
 void to_net_family(IP *ip);
-void to_host_family(IP *ip);
+
+/* return 0 on success, -1 on failure. */
+int to_host_family(IP *ip);
 
 typedef struct {
     IP_Port     ip_port;
@@ -146,7 +148,7 @@ typedef struct {
 } DHT_Friend;
 
 typedef struct {
-    uint8_t     client_id[CLIENT_ID_SIZE];
+    uint8_t     public_key[crypto_box_PUBLICKEYBYTES];
     IP_Port     ip_port;
 }
 Node_format;
@@ -209,13 +211,9 @@ typedef struct {
     DHT_Friend    *friends_list;
     uint16_t       num_friends;
 
-    // Used after loading of file (tox_load), but no longer needed after connect (tox_connect)
-    // Unsure if friends_list and num_friends could just be used instead?
-    int has_loaded_friends_clients; // Whether or not we have loaded on the first do_DHT
-    DHT_Friend    *loaded_friends_list;
-    uint32_t       loaded_num_friends;
-    Client_data   *loaded_clients_list;
-    uint32_t       loaded_num_clients;
+    Node_format   *loaded_nodes_list;
+    uint32_t       loaded_num_nodes;
+    unsigned int   loaded_nodes_index;
 
     Shared_Keys shared_keys_recv;
     Shared_Keys shared_keys_sent;
@@ -324,14 +322,6 @@ int get_close_nodes(const DHT *dht, const uint8_t *client_id, Node_format *nodes
  */
 uint16_t closelist_nodes(DHT *dht, Node_format *nodes, uint16_t max_num);
 
-/* Put up to max_num random nodes in nodes.
- *
- * return the number of nodes.
- *
- * NOTE:this is used to pick nodes for paths.
- */
-uint16_t random_nodes_path(const DHT *dht, Node_format *nodes, uint16_t max_num);
-
 /* Run this function at least a couple times per second (It's the main loop). */
 void do_DHT(DHT *dht);
 
@@ -380,16 +370,6 @@ int route_tofriend(const DHT *dht, const uint8_t *friend_id, const uint8_t *pack
 /* Function to handle crypto packets.
  */
 void cryptopacket_registerhandler(DHT *dht, uint8_t byte, cryptopacket_handler_callback cb, void *object);
-
-/* NAT PUNCHING FUNCTIONS */
-
-/* Puts all the different ips returned by the nodes for a friend_id into array ip_portlist.
- * ip_portlist must be at least MAX_FRIEND_CLIENTS big.
- *
- *  returns number of ips returned.
- *  returns -1 if no such friend.
- */
-int friend_ips(const DHT *dht, IP_Port *ip_portlist, const uint8_t *friend_id);
 
 /* SAVE/LOAD functions */
 

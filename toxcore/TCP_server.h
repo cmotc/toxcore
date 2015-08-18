@@ -85,7 +85,7 @@ typedef struct TCP_Priority_List TCP_Priority_List;
 struct TCP_Priority_List {
     TCP_Priority_List *next;
     uint16_t size, sent;
-    uint8_t data[0];
+    uint8_t data[];
 };
 
 typedef struct TCP_Secure_Connection {
@@ -143,8 +143,8 @@ typedef struct {
 
 /* Create new TCP server instance.
  */
-TCP_Server *new_TCP_server(uint8_t ipv6_enabled, uint16_t num_sockets, const uint16_t *ports, const uint8_t *public_key,
-                           const uint8_t *secret_key, Onion *onion);
+TCP_Server *new_TCP_server(uint8_t ipv6_enabled, uint16_t num_sockets, const uint16_t *ports, const uint8_t *secret_key,
+                           Onion *onion);
 
 /* Run the TCP_server
  */
@@ -153,6 +153,11 @@ void do_TCP_server(TCP_Server *TCP_server);
 /* Kill the TCP server
  */
 void kill_TCP_server(TCP_Server *TCP_server);
+
+/* return the amount of data in the tcp recv buffer.
+ * return 0 on failure.
+ */
+unsigned int TCP_socket_data_recv_buffer(sock_t sock);
 
 /* Read the next two bytes in TCP stream then convert them to
  * length (host byte order).

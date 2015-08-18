@@ -510,20 +510,18 @@ static uint8_t candidates_create_new(const Assoc *assoc, hash_t hash, const uint
 
 static void client_id_self_update(Assoc *assoc)
 {
-    if (assoc->self_hash || !assoc->self_client_id)
+    if (assoc->self_hash)
         return;
 
-    if (!assoc->self_hash) {
-        size_t i, sum = 0;
+    size_t i, sum = 0;
 
-        for (i = 0; i < crypto_box_PUBLICKEYBYTES; i++)
-            sum |= assoc->self_client_id[i];
+    for (i = 0; i < crypto_box_PUBLICKEYBYTES; i++)
+        sum |= assoc->self_client_id[i];
 
-        if (!sum)
-            return;
+    if (!sum)
+        return;
 
-        assoc->self_hash = id_hash(assoc, assoc->self_client_id);
-    }
+    assoc->self_hash = id_hash(assoc, assoc->self_client_id);
 
     LOGGER_DEBUG("id is now set, purging cache of self-references");
 
@@ -532,7 +530,7 @@ static void client_id_self_update(Assoc *assoc)
      */
     bucket_t b_id = candidates_id_bucket(assoc, assoc->self_client_id);
     candidates_bucket *cnd_bckt = &assoc->candidates[b_id];
-    size_t i, pos = assoc->self_hash % assoc->candidates_bucket_size;
+    size_t pos = assoc->self_hash % assoc->candidates_bucket_size;
 
     for (i = 0; i < HASH_COLLIDE_COUNT; pos = hash_collide(assoc, pos), i++) {
         Client_entry *entry = &cnd_bckt->list[pos];
@@ -996,11 +994,11 @@ static char *idpart2str(uint8_t *id, size_t len)
 void Assoc_status(const Assoc *assoc)
 {
     if (!assoc) {
-        LOGGER_INFO("Assoc status: no assoc");
+        LOGGER_TRACE("Assoc status: no assoc");
         return;
     }
 
-    LOGGER_INFO("[b:p] hash => [id...] used, seen, heard");
+    LOGGER_TRACE("[b:p] hash => [id...] used, seen, heard");
 
     size_t bid, cid, total = 0;
 
@@ -1013,20 +1011,20 @@ void Assoc_status(const Assoc *assoc)
             if (entry->hash) {
                 total++;
 
-                LOGGER_INFO("[%3i:%3i] %08x => [%s...] %i, %i(%c), %i(%c)\n",
-                            (int)bid, (int)cid, entry->hash, idpart2str(entry->client.client_id, 8),
-                            entry->used_at ? (int)(unix_time() - entry->used_at) : 0,
-                            entry->seen_at ? (int)(unix_time() - entry->seen_at) : 0,
-                            entry->seen_at ? (entry->seen_family == AF_INET ? '4' : (entry->seen_family == AF_INET6 ? '6' : '?')) : '?',
-                            entry->heard_at ? (int)(unix_time() - entry->heard_at) : 0,
-                            entry->heard_at ? (entry->heard_family == AF_INET ? '4' : (entry->heard_family == AF_INET6 ? '6' : '?')) : '?');
+                LOGGER_TRACE("[%3i:%3i] %08x => [%s...] %i, %i(%c), %i(%c)\n",
+                             (int)bid, (int)cid, entry->hash, idpart2str(entry->client.client_id, 8),
+                             entry->used_at ? (int)(unix_time() - entry->used_at) : 0,
+                             entry->seen_at ? (int)(unix_time() - entry->seen_at) : 0,
+                             entry->seen_at ? (entry->seen_family == AF_INET ? '4' : (entry->seen_family == AF_INET6 ? '6' : '?')) : '?',
+                             entry->heard_at ? (int)(unix_time() - entry->heard_at) : 0,
+                             entry->heard_at ? (entry->heard_family == AF_INET ? '4' : (entry->heard_family == AF_INET6 ? '6' : '?')) : '?');
             }
         }
     }
 
     if (total) {
-        LOGGER_INFO("Total: %i entries, table usage %i%%.\n", (int)total,
-                    (int)(total * 100 / (assoc->candidates_bucket_count * assoc->candidates_bucket_size)));
+        LOGGER_TRACE("Total: %i entries, table usage %i%%.\n", (int)total,
+                     (int)(total * 100 / (assoc->candidates_bucket_count * assoc->candidates_bucket_size)));
     }
 }
 
