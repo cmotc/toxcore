@@ -155,22 +155,23 @@ $(document).ready(function(){initNavTree('util_8h_source.html','');});
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define host_tolendian16(x) lendian_to_host16(x)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> host_to_lendian32(uint8_t *dest,  uint32_t num);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* state load/save */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">typedef</span> int (*load_state_callback_func)(<span class="keywordtype">void</span> *outer, <span class="keyword">const</span> uint8_t *data, uint32_t len, uint16_t type);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">int</span> load_state(load_state_callback_func load_state_callback, <span class="keywordtype">void</span> *outer,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;               <span class="keyword">const</span> uint8_t *data, uint32_t length, uint16_t cookie_inner);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span> create_recursive_mutex(pthread_mutex_t *mutex);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __UTIL_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> lendian_to_host32(uint32_t *dest, <span class="keyword">const</span> uint8_t *lendian);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* state load/save */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">typedef</span> int (*load_state_callback_func)(<span class="keywordtype">void</span> *outer, <span class="keyword">const</span> uint8_t *data, uint32_t len, uint16_t type);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">int</span> load_state(load_state_callback_func load_state_callback, <span class="keywordtype">void</span> *outer,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               <span class="keyword">const</span> uint8_t *data, uint32_t length, uint16_t cookie_inner);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">int</span> create_recursive_mutex(pthread_mutex_t *mutex);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __UTIL_H__ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html">toxcore</a></li><li class="navelem"><b>util.h</b></li>
-    <li class="footer">Generated on Mon Sep 14 2015 08:57:07 for libtoxcore by
+    <li class="footer">Generated on Mon Sep 14 2015 09:00:34 for libtoxcore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

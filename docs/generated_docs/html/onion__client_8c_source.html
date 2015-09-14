@@ -1560,75 +1560,78 @@ $(document).ready(function(){initNavTree('onion__client_8c_source.html','');});
 <div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;        }</div>
 <div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;    }</div>
 <div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;    onion_c-&gt;UDP_connected = DHT_non_lan_connected(onion_c-&gt;dht);</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;    _Bool UDP_connected = DHT_non_lan_connected(onion_c-&gt;dht);</div>
 <div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;</div>
 <div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">if</span> (is_timeout(onion_c-&gt;first_run, ONION_CONNECTION_SECONDS)) {</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        set_tcp_onion_status(onion_c-&gt;c-&gt;tcp_c, !onion_c-&gt;UDP_connected);</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        set_tcp_onion_status(onion_c-&gt;c-&gt;tcp_c, !UDP_connected);</div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    }</div>
 <div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;</div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keywordflow">if</span> (onion_connection_status(onion_c)) {</div>
-<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; onion_c-&gt;num_friends; ++i) {</div>
-<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;            do_friend(onion_c, i);</div>
-<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;        }</div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;    }</div>
-<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;</div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    <span class="keywordflow">if</span> (onion_c-&gt;last_run == 0) {</div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        onion_c-&gt;first_run = unix_time();</div>
-<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;    }</div>
-<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;</div>
-<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;    onion_c-&gt;last_run = unix_time();</div>
-<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;}</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    onion_c-&gt;UDP_connected = UDP_connected</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;                             || get_random_tcp_onion_conn_number(onion_c-&gt;c-&gt;tcp_c) == -1; <span class="comment">/* Check if connected to any TCP relays. */</span></div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    <span class="keywordflow">if</span> (onion_connection_status(onion_c)) {</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; onion_c-&gt;num_friends; ++i) {</div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;            do_friend(onion_c, i);</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        }</div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;    }</div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;    <span class="keywordflow">if</span> (onion_c-&gt;last_run == 0) {</div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;        onion_c-&gt;first_run = unix_time();</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    }</div>
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;</div>
-<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;<a class="code" href="struct_onion___client.html">Onion_Client</a> *new_onion_client(<a class="code" href="struct_net___crypto.html">Net_Crypto</a> *c)</div>
-<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;{</div>
-<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keywordflow">if</span> (c == NULL)</div>
-<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;</div>
-<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    <a class="code" href="struct_onion___client.html">Onion_Client</a> *onion_c = calloc(1, <span class="keyword">sizeof</span>(<a class="code" href="struct_onion___client.html">Onion_Client</a>));</div>
-<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;</div>
-<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    <span class="keywordflow">if</span> (onion_c == NULL)</div>
-<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;    onion_c-&gt;last_run = unix_time();</div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;}</div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;<a class="code" href="struct_onion___client.html">Onion_Client</a> *new_onion_client(<a class="code" href="struct_net___crypto.html">Net_Crypto</a> *c)</div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;{</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    <span class="keywordflow">if</span> (c == NULL)</div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;</div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;    <a class="code" href="struct_onion___client.html">Onion_Client</a> *onion_c = calloc(1, <span class="keyword">sizeof</span>(<a class="code" href="struct_onion___client.html">Onion_Client</a>));</div>
 <div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;</div>
-<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;    <span class="keywordflow">if</span> (ping_array_init(&amp;onion_c-&gt;announce_ping_array, ANNOUNCE_ARRAY_SIZE, ANNOUNCE_TIMEOUT) != 0) {</div>
-<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;        free(onion_c);</div>
-<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;    }</div>
-<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;</div>
-<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;    onion_c-&gt;dht = c-&gt;dht;</div>
-<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;    onion_c-&gt;net = c-&gt;dht-&gt;net;</div>
-<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;    onion_c-&gt;c = c;</div>
-<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;    new_symmetric_key(onion_c-&gt;secret_symmetric_key);</div>
-<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;    crypto_box_keypair(onion_c-&gt;temp_public_key, onion_c-&gt;temp_secret_key);</div>
-<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ANNOUNCE_RESPONSE, &amp;handle_announce_response, onion_c);</div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ONION_DATA_RESPONSE, &amp;handle_data_response, onion_c);</div>
-<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;    oniondata_registerhandler(onion_c, ONION_DATA_DHTPK, &amp;handle_dhtpk_announce, onion_c);</div>
-<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;    cryptopacket_registerhandler(onion_c-&gt;dht, CRYPTO_PACKET_DHTPK, &amp;handle_dht_dhtpk, onion_c);</div>
-<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;    set_onion_packet_tcp_connection_callback(onion_c-&gt;c-&gt;tcp_c, &amp;handle_tcp_onion, onion_c);</div>
-<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;</div>
-<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    <span class="keywordflow">return</span> onion_c;</div>
-<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;}</div>
+<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;    <span class="keywordflow">if</span> (onion_c == NULL)</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;</div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;    <span class="keywordflow">if</span> (ping_array_init(&amp;onion_c-&gt;announce_ping_array, ANNOUNCE_ARRAY_SIZE, ANNOUNCE_TIMEOUT) != 0) {</div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;        free(onion_c);</div>
+<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;    }</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;    onion_c-&gt;dht = c-&gt;dht;</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;    onion_c-&gt;net = c-&gt;dht-&gt;net;</div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;    onion_c-&gt;c = c;</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;    new_symmetric_key(onion_c-&gt;secret_symmetric_key);</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;    crypto_box_keypair(onion_c-&gt;temp_public_key, onion_c-&gt;temp_secret_key);</div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ANNOUNCE_RESPONSE, &amp;handle_announce_response, onion_c);</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ONION_DATA_RESPONSE, &amp;handle_data_response, onion_c);</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;    oniondata_registerhandler(onion_c, ONION_DATA_DHTPK, &amp;handle_dhtpk_announce, onion_c);</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    cryptopacket_registerhandler(onion_c-&gt;dht, CRYPTO_PACKET_DHTPK, &amp;handle_dht_dhtpk, onion_c);</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;    set_onion_packet_tcp_connection_callback(onion_c-&gt;c-&gt;tcp_c, &amp;handle_tcp_onion, onion_c);</div>
 <div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;</div>
-<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;<span class="keywordtype">void</span> kill_onion_client(<a class="code" href="struct_onion___client.html">Onion_Client</a> *onion_c)</div>
-<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;{</div>
-<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    <span class="keywordflow">if</span> (onion_c == NULL)</div>
-<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;</div>
-<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;    ping_array_free_all(&amp;onion_c-&gt;announce_ping_array);</div>
-<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;    realloc_onion_friends(onion_c, 0);</div>
-<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ANNOUNCE_RESPONSE, NULL, NULL);</div>
-<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ONION_DATA_RESPONSE, NULL, NULL);</div>
-<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;    oniondata_registerhandler(onion_c, ONION_DATA_DHTPK, NULL, NULL);</div>
-<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;    cryptopacket_registerhandler(onion_c-&gt;dht, CRYPTO_PACKET_DHTPK, NULL, NULL);</div>
-<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;    set_onion_packet_tcp_connection_callback(onion_c-&gt;c-&gt;tcp_c, NULL, NULL);</div>
-<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;    memset(onion_c, 0, <span class="keyword">sizeof</span>(<a class="code" href="struct_onion___client.html">Onion_Client</a>));</div>
-<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;    free(onion_c);</div>
-<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;}</div>
-<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;    <span class="keywordflow">return</span> onion_c;</div>
+<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;}</div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;</div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;<span class="keywordtype">void</span> kill_onion_client(<a class="code" href="struct_onion___client.html">Onion_Client</a> *onion_c)</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;{</div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;    <span class="keywordflow">if</span> (onion_c == NULL)</div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;</div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;    ping_array_free_all(&amp;onion_c-&gt;announce_ping_array);</div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;    realloc_onion_friends(onion_c, 0);</div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ANNOUNCE_RESPONSE, NULL, NULL);</div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;    networking_registerhandler(onion_c-&gt;net, NET_PACKET_ONION_DATA_RESPONSE, NULL, NULL);</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;    oniondata_registerhandler(onion_c, ONION_DATA_DHTPK, NULL, NULL);</div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;    cryptopacket_registerhandler(onion_c-&gt;dht, CRYPTO_PACKET_DHTPK, NULL, NULL);</div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;    set_onion_packet_tcp_connection_callback(onion_c-&gt;c-&gt;tcp_c, NULL, NULL);</div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;    memset(onion_c, 0, <span class="keyword">sizeof</span>(<a class="code" href="struct_onion___client.html">Onion_Client</a>));</div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;    free(onion_c);</div>
+<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;}</div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;</div>
 <div class="ttc" id="struct_onion___client___paths_html"><div class="ttname"><a href="struct_onion___client___paths.html">Onion_Client_Paths</a></div><div class="ttdef"><b>Definition:</b> <a href="onion__client_8h_source.html#l00076">onion_client.h:76</a></div></div>
 <div class="ttc" id="struct_onion___friend_html"><div class="ttname"><a href="struct_onion___friend.html">Onion_Friend</a></div><div class="ttdef"><b>Definition:</b> <a href="onion__client_8h_source.html#l00090">onion_client.h:90</a></div></div>
 <div class="ttc" id="struct_i_p___port_html"><div class="ttname"><a href="struct_i_p___port.html">IP_Port</a></div><div class="ttdef"><b>Definition:</b> <a href="network_8h_source.html#l00162">network.h:162</a></div></div>
 <div class="ttc" id="struct_onion___path_html"><div class="ttname"><a href="struct_onion___path.html">Onion_Path</a></div><div class="ttdef"><b>Definition:</b> <a href="onion_8h_source.html#l00058">onion.h:58</a></div></div>
-<div class="ttc" id="struct_node__format_html"><div class="ttname"><a href="struct_node__format.html">Node_format</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00150">DHT.h:150</a></div></div>
+<div class="ttc" id="struct_node__format_html"><div class="ttname"><a href="struct_node__format.html">Node_format</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00147">DHT.h:147</a></div></div>
 <div class="ttc" id="struct_last___pinged_html"><div class="ttname"><a href="struct_last___pinged.html">Last_Pinged</a></div><div class="ttdef"><b>Definition:</b> <a href="onion__client_8h_source.html#l00085">onion_client.h:85</a></div></div>
 <div class="ttc" id="struct_onion___client_html"><div class="ttname"><a href="struct_onion___client.html">Onion_Client</a></div><div class="ttdef"><b>Definition:</b> <a href="onion__client_8h_source.html#l00126">onion_client.h:126</a></div></div>
 <div class="ttc" id="struct_net___crypto_html"><div class="ttname"><a href="struct_net___crypto.html">Net_Crypto</a></div><div class="ttdef"><b>Definition:</b> <a href="net__crypto_8h_source.html#l00177">net_crypto.h:177</a></div></div>
@@ -1639,7 +1642,7 @@ $(document).ready(function(){initNavTree('onion__client_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html">toxcore</a></li><li class="navelem"><b>onion_client.c</b></li>
-    <li class="footer">Generated on Mon Sep 14 2015 08:57:07 for libtoxcore by
+    <li class="footer">Generated on Mon Sep 14 2015 09:00:34 for libtoxcore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

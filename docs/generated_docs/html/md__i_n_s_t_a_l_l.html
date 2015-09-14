@@ -153,15 +153,18 @@ $(document).ready(function(){initNavTree('md__i_n_s_t_a_l_l.html','');});
 <p>```bash sudo apt-get install build-essential libtool autotools-dev automake checkinstall check git yasm ```</p>
 <p>On Ubuntu <code>&gt;= 15.04</code> / Debian <code>&gt;= 8</code>: ```bash sudo apt-get install build-essential libtool autotools-dev automake checkinstall check git yasm libsodium13 libsodium-dev ```</p>
 <p>On Fedora:</p>
-<p>```bash yum groupinstall "Development Tools" yum install libtool autoconf automake check check-devel ```</p>
+<p>```bash dnf groupinstall "Development Tools" dnf install libtool autoconf automake check check-devel `<code> Using</code>dnf install "Development Tools"&lt;tt&gt;is also valid and slightly shorter / cleaner way.&lt;/tt&gt;@"Rpm Development Tools"`` would carry the remaining dependencies listed here.</p>
 <p>On SunOS:</p>
 <p>```pfexcec pkg install autoconf automake gcc-47 ``` On FreeBSD 10+:</p>
 <p>```tcsh pkg install net-im/tox ``` Note, if you install from ports select NaCl for performance, and sodium if you want it to be portable.</p>
-<p><b>For A/V support, also install the dependences listed in the <a href="#libtoxav">libtoxav</a> section.</b></p>
+<p><b>For A/V support, also install the dependences listed in the <a href="#libtoxav">libtoxav</a> section.</b> Note that you have to install those dependencies <b>before</b> compiling <code>toxcore</code>.</p>
 <p>You should get and install <a href="https://github.com/jedisct1/libsodium">libsodium</a>. If you have installed <code>libsodium</code> from repo, ommit this step, and jump directly to <a href="#compile-toxcore">compiling toxcore</a>: ```bash git clone git://github.com/jedisct1/libsodium.git cd libsodium git checkout tags/1.0.3 ./autogen.sh ./configure &amp;&amp; make check sudo checkinstall &ndash;install &ndash;pkgname libsodium &ndash;pkgversion 1.0.0 &ndash;nodoc sudo ldconfig cd .. ```</p>
 <p>Or if checkinstall is not easily available for your distribution (e.g., Fedora), this will install the libs to /usr/local/lib and the headers to /usr/local/include:</p>
 <p>```bash git clone git://github.com/jedisct1/libsodium.git cd libsodium git checkout tags/1.0.3 ./autogen.sh ./configure make check sudo make install cd .. ```</p>
-<p>If your default prefix is /usr/local and you happen to get an error that says "error while loading shared libraries: libtoxcore.so.0: cannot open shared object file: No such file or directory", then you can try running <code>sudo ldconfig</code>. If that doesn't fix it, run: ``` echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf sudo ldconfig ```</p>
+<p>If your default prefix is <code>/usr/local</code> and you happen to get an error that says <code>"error while loading shared libraries: libtoxcore.so.0: cannot open shared object file: No such file or directory"</code>, then you can try running <code>sudo ldconfig</code>. If that doesn't fix it, run:</p>
+<p>```bash echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf sudo ldconfig ```</p>
+<p>You may run into a situation where there is no <code>/etc/ld.so.conf.d</code> directory. You could either create it manually, or append path to local library to <code>ld.so.conf</code>:</p>
+<p>```bash echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf sudo ldconfig ```</p>
 <h5>Compile toxcore</h5>
 <p>Then clone this repo, generate makefile, and install <code>toxcore</code> system-wide: ```bash git clone git://github.com/irungentoo/toxcore.git cd toxcore autoreconf -i ./configure make sudo make install ```</p>
 <p><a class="anchor" id="osx"></a> </p><h3>OS X:</h3>
@@ -234,7 +237,7 @@ $(document).ready(function(){initNavTree('md__i_n_s_t_a_l_l.html','');});
 <p>And let's make a folder where we will be building everything at ```bash cd ~ mkdir prefix cd prefix PREFIX_DIR= cd .. mkdir build cd build ```</p>
 <p><a class="anchor" id="windows-cross-compile-compiling"></a> </p><h5>Compiling</h5>
 <p>Now we will build libraries needed for audio/video: VPX and Opus.</p>
-<p>VPX: ```bash git clone <a href="http://git.chromium.org/webm/libvpx.git">http://git.chromium.org/webm/libvpx.git</a> cd libvpx git checkout tags/v1.3.0 CROSS="$WINDOWS_TOOLCHAIN"- ./configure &ndash;target="$LIB_VPX_TARGET" &ndash;prefix="$PREFIX_DIR" &ndash;disable-examples &ndash;disable-unit-tests &ndash;disable-shared &ndash;enable-static make make install cd .. ```</p>
+<p>VPX: ```bash git clone <a href="https://chromium.googlesource.com/webm/libvpx">https://chromium.googlesource.com/webm/libvpx</a> cd libvpx git checkout tags/v1.3.0 CROSS="$WINDOWS_TOOLCHAIN"- ./configure &ndash;target="$LIB_VPX_TARGET" &ndash;prefix="$PREFIX_DIR" &ndash;disable-examples &ndash;disable-unit-tests &ndash;disable-shared &ndash;enable-static make make install cd .. ```</p>
 <p>Opus: ```bash wget <a href="http://downloads.xiph.org/releases/opus/opus-1.1.tar.gz">http://downloads.xiph.org/releases/opus/opus-1.1.tar.gz</a> tar -xf opus-1.1.tar.gz cd opus-1.1 ./configure &ndash;host="$WINDOWS_TOOLCHAIN" &ndash;prefix="$PREFIX_DIR" &ndash;disable-extra-programs &ndash;disable-doc &ndash;disable-shared &ndash;enable-static make make install cd .. ```</p>
 <p>Now we will build sodium crypto library: ```bash git clone <a href="https://github.com/jedisct1/libsodium/">https://github.com/jedisct1/libsodium/</a> cd libsodium git checkout tags/1.0.0 ./autogen.sh ./configure &ndash;host="$WINDOWS_TOOLCHAIN" &ndash;prefix="$PREFIX_DIR" &ndash;disable-shared &ndash;enable-static make make install cd .. ```</p>
 <p>And finally we will build Tox: ```bash git clone <a href="https://github.com/irungentoo/toxcore">https://github.com/irungentoo/toxcore</a> cd toxcore ./autogen.sh ./configure &ndash;host="$WINDOWS_TOOLCHAIN" &ndash;prefix="$PREFIX_DIR" &ndash;disable-ntox &ndash;disable-tests &ndash;disable-testing &ndash;with-dependency-search="$PREFIX_DIR" &ndash;disable-shared &ndash;enable-static make make install cd .. ```</p>
@@ -253,7 +256,7 @@ $(document).ready(function(){initNavTree('md__i_n_s_t_a_l_l.html','');});
 <p>Assuming that you now have the sources in the toxcore directory:</p>
 <p>```cmd cd toxcore autoreconf -i ./configure make make install ```</p>
 <p><a class="anchor" id="Clients"></a> </p><h4>Clients:</h4>
-<p>While <a href="https://github.com/tox/toxic">Toxic</a> is no longer in core, a list of Tox clients are located in our <a href="http://wiki.tox.im/client">wiki</a></p>
+<p>While <a href="https://github.com/tox/toxic">Toxic</a> is no longer in core, a list of Tox clients are located in our <a href="https://wiki.tox.chat/doku.php?id=clients">wiki</a></p>
 <p><a class="anchor" id="additional"></a> </p><h2>Additional</h2>
 <p><a class="anchor" id="aconf"></a> </p><h3>Advanced configure options:</h3>
 <ul>
@@ -293,7 +296,7 @@ $(document).ready(function(){initNavTree('md__i_n_s_t_a_l_l.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Sep 14 2015 08:57:07 for libtoxcore by
+    <li class="footer">Generated on Mon Sep 14 2015 09:00:34 for libtoxcore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

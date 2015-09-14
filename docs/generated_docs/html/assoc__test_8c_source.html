@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;START_TEST(test_basics)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/* TODO: real test */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint8_t <span class="keywordtype">id</span>[CLIENT_ID_SIZE];</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint8_t <span class="keywordtype">id</span>[crypto_box_PUBLICKEYBYTES];</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="struct_assoc.html">Assoc</a> *assoc = new_Assoc_default(<span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ck_assert_msg(assoc != NULL, <span class="stringliteral">&quot;failed to create default assoc&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -171,19 +171,19 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* TODO: real test */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint8_t <span class="keywordtype">id</span>[CLIENT_ID_SIZE];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint8_t <span class="keywordtype">id</span>[crypto_box_PUBLICKEYBYTES];</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//uint32_t a = current_time();</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint32_t a = 2710106197;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    srand(a);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; CLIENT_ID_SIZE; ++i) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; crypto_box_PUBLICKEYBYTES; ++i) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">id</span>[i] = rand();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="struct_assoc.html">Assoc</a> *assoc = new_Assoc(6, 15, <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ck_assert_msg(assoc != NULL, <span class="stringliteral">&quot;failed to create default assoc&quot;</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span>entry {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        uint8_t <span class="keywordtype">id</span>[CLIENT_ID_SIZE];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        uint8_t <span class="keywordtype">id</span>[crypto_box_PUBLICKEYBYTES];</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="struct_i_p_p_ts.html">IPPTs</a> ippts_send;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="struct_i_p___port.html">IP_Port</a> ipp_recv;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (j = 0; j &lt; 128; ++j) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; CLIENT_ID_SIZE; ++i) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; crypto_box_PUBLICKEYBYTES; ++i) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            entries[j].id[i] = rand();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        entries[j].ipp_recv = ipp;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (j % 16 == 0) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            memcpy(entries[j].<span class="keywordtype">id</span>, <span class="keywordtype">id</span>, CLIENT_ID_SIZE - 30);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            memcpy(entries[j].<span class="keywordtype">id</span>, <span class="keywordtype">id</span>, crypto_box_PUBLICKEYBYTES - 30);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            memcpy(&amp;closest[j / 16], &amp;entries[j], <span class="keyword">sizeof</span>(<span class="keyword">struct</span> entry));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 8; ++i) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">for</span> (j = 0; j &lt; 8; ++j) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">if</span> (id_equal(entri[j]-&gt;client_id, closest[i].<span class="keywordtype">id</span>))</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">if</span> (id_equal(entri[j]-&gt;public_key, closest[i].<span class="keywordtype">id</span>))</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                ++good;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
@@ -269,8 +269,8 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> number_failed;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 <div class="ttc" id="struct_assoc_html"><div class="ttname"><a href="struct_assoc.html">Assoc</a></div><div class="ttdef"><b>Definition:</b> <a href="assoc_8c_source.html#l00088">assoc.c:88</a></div></div>
-<div class="ttc" id="struct_i_p_p_ts_html"><div class="ttname"><a href="struct_i_p_p_ts.html">IPPTs</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00072">DHT.h:72</a></div></div>
-<div class="ttc" id="struct_client__data_html"><div class="ttname"><a href="struct_client__data.html">Client_data</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00106">DHT.h:106</a></div></div>
+<div class="ttc" id="struct_i_p_p_ts_html"><div class="ttname"><a href="struct_i_p_p_ts.html">IPPTs</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00069">DHT.h:69</a></div></div>
+<div class="ttc" id="struct_client__data_html"><div class="ttname"><a href="struct_client__data.html">Client_data</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_h_t_8h_source.html#l00103">DHT.h:103</a></div></div>
 <div class="ttc" id="struct_i_p___port_html"><div class="ttname"><a href="struct_i_p___port.html">IP_Port</a></div><div class="ttdef"><b>Definition:</b> <a href="network_8h_source.html#l00162">network.h:162</a></div></div>
 <div class="ttc" id="struct_assoc__close__entries_html"><div class="ttname"><a href="struct_assoc__close__entries.html">Assoc_close_entries</a></div><div class="ttdef"><b>Definition:</b> <a href="assoc_8h_source.html#l00049">assoc.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -279,7 +279,7 @@ $(document).ready(function(){initNavTree('assoc__test_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_cd4e3f2ba7b96192ef94ff128b3942f7.html">auto_tests</a></li><li class="navelem"><b>assoc_test.c</b></li>
-    <li class="footer">Generated on Mon Sep 14 2015 08:57:05 for libtoxcore by
+    <li class="footer">Generated on Mon Sep 14 2015 09:00:32 for libtoxcore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

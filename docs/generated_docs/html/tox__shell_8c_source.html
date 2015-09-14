@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('tox__shell_8c_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__)</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;util.h&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#elif defined(__FreeBSD__)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#elif defined(__FreeBSD__) || defined(__DragonFly__)</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;libutil.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;pty.h&gt;</span></div>
@@ -273,7 +273,7 @@ $(document).ready(function(){initNavTree('tox__shell_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_64f94c193e4d03baf6e89b1053934749.html">testing</a></li><li class="navelem"><b>tox_shell.c</b></li>
-    <li class="footer">Generated on Mon Sep 14 2015 08:57:05 for libtoxcore by
+    <li class="footer">Generated on Mon Sep 14 2015 09:00:32 for libtoxcore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
