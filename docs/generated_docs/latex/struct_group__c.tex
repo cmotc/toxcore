@@ -1,0 +1,100 @@
+\hypertarget{struct_group__c}{\section{Group\+\_\+c Struct Reference}
+\label{struct_group__c}\index{Group\+\_\+c@{Group\+\_\+c}}
+}
+
+
+Collaboration diagram for Group\+\_\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{struct_group__c__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_group__c_ade818037fd6c985038ff29656089758d}{uint8\+\_\+t {\bfseries status}}\label{struct_group__c_ade818037fd6c985038ff29656089758d}
+
+\item 
+\hypertarget{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{\hyperlink{struct_group___peer}{Group\+\_\+\+Peer} $\ast$ {\bfseries group}}\label{struct_group__c_a1f68599dc07252599a98f6d044a184e9}
+
+\item 
+\hypertarget{struct_group__c_a6c81294c96de8914431dbf825934b528}{uint32\+\_\+t {\bfseries numpeers}}\label{struct_group__c_a6c81294c96de8914431dbf825934b528}
+
+\item 
+\hypertarget{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t {\bfseries type}\\
+\>uint8\_t {\bfseries closest}\\
+\>uint32\_t {\bfseries number}\\
+\>uint16\_t {\bfseries group\_number}\\
+\} {\bfseries close} \mbox{[}MAX\_GROUP\_CONNECTIONS\mbox{]}}\label{struct_group__c_a6c24608383f70ad37f70307f492e3abc}
+\\
+
+\end{tabbing}\item 
+\hypertarget{struct_group__c_ab42b4c90d81ac99b968c3edd1e21d706}{uint8\+\_\+t {\bfseries real\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}\label{struct_group__c_ab42b4c90d81ac99b968c3edd1e21d706}
+
+\item 
+\hypertarget{struct_group__c_a8987e8417b5a1a5bc11ba79885c12590}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t {\bfseries entry}\\
+\>uint8\_t {\bfseries real\_pk} \mbox{[}crypto\_box\_PUBLICKEYBYTES\mbox{]}\\
+\>uint8\_t {\bfseries temp\_pk} \mbox{[}crypto\_box\_PUBLICKEYBYTES\mbox{]}\\
+\} {\bfseries closest\_peers} \mbox{[}DESIRED\_CLOSE\_CONNECTIONS\mbox{]}}\label{struct_group__c_a8987e8417b5a1a5bc11ba79885c12590}
+\\
+
+\end{tabbing}\item 
+\hypertarget{struct_group__c_aab3e81d63c7e7e9e693aa0f5fb574fa4}{uint8\+\_\+t {\bfseries changed}}\label{struct_group__c_aab3e81d63c7e7e9e693aa0f5fb574fa4}
+
+\item 
+\hypertarget{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{uint8\+\_\+t {\bfseries identifier} \mbox{[}G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}}\label{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}
+
+\item 
+\hypertarget{struct_group__c_a9ace0499016685340a1f3009a7aa01e0}{uint8\+\_\+t {\bfseries title} \mbox{[}M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}}\label{struct_group__c_a9ace0499016685340a1f3009a7aa01e0}
+
+\item 
+\hypertarget{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{uint8\+\_\+t {\bfseries title\+\_\+len}}\label{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}
+
+\item 
+\hypertarget{struct_group__c_a1ecee33a5d6309a114891c3fb740b66c}{uint32\+\_\+t {\bfseries message\+\_\+number}}\label{struct_group__c_a1ecee33a5d6309a114891c3fb740b66c}
+
+\item 
+\hypertarget{struct_group__c_acc475ae1ff50d43f08a2cc920a5d2ae5}{uint16\+\_\+t {\bfseries lossy\+\_\+message\+\_\+number}}\label{struct_group__c_acc475ae1ff50d43f08a2cc920a5d2ae5}
+
+\item 
+\hypertarget{struct_group__c_a264348ec1f724e05464ca97b7c432817}{uint16\+\_\+t {\bfseries peer\+\_\+number}}\label{struct_group__c_a264348ec1f724e05464ca97b7c432817}
+
+\item 
+\hypertarget{struct_group__c_a0137c615a93acf73b05a3d710231dd3d}{uint64\+\_\+t {\bfseries last\+\_\+sent\+\_\+ping}}\label{struct_group__c_a0137c615a93acf73b05a3d710231dd3d}
+
+\item 
+\hypertarget{struct_group__c_a50fa99a57ee7c9280fc90b7c33d760d0}{int {\bfseries number\+\_\+joined}}\label{struct_group__c_a50fa99a57ee7c9280fc90b7c33d760d0}
+
+\item 
+\hypertarget{struct_group__c_a077376d12464f945e2414d5499c79b3f}{void $\ast$ {\bfseries object}}\label{struct_group__c_a077376d12464f945e2414d5499c79b3f}
+
+\item 
+\hypertarget{struct_group__c_a218cd2e97bdb682b90f72faa6eb08576}{void($\ast$ {\bfseries peer\+\_\+on\+\_\+join} )(void $\ast$, int, int)}\label{struct_group__c_a218cd2e97bdb682b90f72faa6eb08576}
+
+\item 
+\hypertarget{struct_group__c_a7a79b984292a5ea1f68aca7b73067370}{void($\ast$ {\bfseries peer\+\_\+on\+\_\+leave} )(void $\ast$, int, int, void $\ast$)}\label{struct_group__c_a7a79b984292a5ea1f68aca7b73067370}
+
+\item 
+\hypertarget{struct_group__c_a43df326d671eb30dd294d5d71d3cd09c}{void($\ast$ {\bfseries group\+\_\+on\+\_\+delete} )(void $\ast$, int)}\label{struct_group__c_a43df326d671eb30dd294d5d71d3cd09c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 71 of file group.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/group.\+h\end{DoxyCompactItemize}

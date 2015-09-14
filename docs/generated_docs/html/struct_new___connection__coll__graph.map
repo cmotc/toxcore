@@ -1,0 +1,6 @@
+<map id="New_Connection" name="New_Connection">
+<area shape="rect" id="node2" href="$struct_i_p___port.html" title="IP_Port" alt="" coords="33,273,100,300"/>
+<area shape="rect" id="node3" href="$struct_i_p.html" title="IP" alt="" coords="47,184,86,211"/>
+<area shape="rect" id="node4" href="$union_i_p4.html" title="IP4" alt="" coords="16,95,59,121"/>
+<area shape="rect" id="node6" href="$union_i_p6.html" title="IP6" alt="" coords="88,95,131,121"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Friend_Conn" name="Friend_Conn">
+<area shape="rect" id="node2" href="$struct_i_p___port.html" title="IP_Port" alt="" coords="69,273,136,300"/>
+<area shape="rect" id="node7" href="$struct_node__format.html" title="Node_format" alt="" coords="161,363,258,389"/>
+<area shape="rect" id="node3" href="$struct_i_p.html" title="IP" alt="" coords="83,184,122,211"/>
+<area shape="rect" id="node4" href="$union_i_p4.html" title="IP4" alt="" coords="43,95,85,121"/>
+<area shape="rect" id="node6" href="$union_i_p6.html" title="IP6" alt="" coords="109,95,152,121"/>
+</map>

@@ -1,0 +1,146 @@
+\hypertarget{struct___c_s_session}{\section{\+\_\+\+C\+S\+Session Struct Reference}
+\label{struct___c_s_session}\index{\+\_\+\+C\+S\+Session@{\+\_\+\+C\+S\+Session}}
+}
+
+
+{\ttfamily \#include $<$codec.\+h$>$}
+
+
+
+Collaboration diagram for \+\_\+\+C\+S\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{struct___c_s_session__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct___c_s_session_a386fcae0e3f3ef0fcd8b2c401a7a25e5}{{\bfseries P\+A\+I\+R} (C\+S\+Audio\+Callback, void $\ast$) acb}\label{struct___c_s_session_a386fcae0e3f3ef0fcd8b2c401a7a25e5}
+
+\item 
+\hypertarget{struct___c_s_session_a68cfb40772f235c4c4649ca156cea307}{{\bfseries P\+A\+I\+R} (C\+S\+Video\+Callback, void $\ast$) vcb}\label{struct___c_s_session_a68cfb40772f235c4c4649ca156cea307}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct___c_s_session_a269c7451109b710b39367a8ef63afce9}{int {\bfseries support\+\_\+video}}\label{struct___c_s_session_a269c7451109b710b39367a8ef63afce9}
+
+\item 
+\hypertarget{struct___c_s_session_a0ec480a7314c0f185ae18f411d73b1bd}{vpx\+\_\+codec\+\_\+ctx\+\_\+t {\bfseries v\+\_\+encoder}}\label{struct___c_s_session_a0ec480a7314c0f185ae18f411d73b1bd}
+
+\item 
+\hypertarget{struct___c_s_session_abeaee952422869c026bab7d7f3f0f145}{uint32\+\_\+t {\bfseries frame\+\_\+counter}}\label{struct___c_s_session_abeaee952422869c026bab7d7f3f0f145}
+
+\item 
+\hypertarget{struct___c_s_session_aa155f92243013193ef3fd9fd1b919bd0}{vpx\+\_\+codec\+\_\+ctx\+\_\+t {\bfseries v\+\_\+decoder}}\label{struct___c_s_session_aa155f92243013193ef3fd9fd1b919bd0}
+
+\item 
+\hypertarget{struct___c_s_session_aa224a991c08c1d696a040a415d6a4a92}{int {\bfseries max\+\_\+width}}\label{struct___c_s_session_aa224a991c08c1d696a040a415d6a4a92}
+
+\item 
+\hypertarget{struct___c_s_session_a3826471ddaa71d2730a6930625867bc1}{int {\bfseries max\+\_\+height}}\label{struct___c_s_session_a3826471ddaa71d2730a6930625867bc1}
+
+\item 
+\hypertarget{struct___c_s_session_acafa0ba061c3e09d3f17852abf830968}{unsigned int {\bfseries video\+\_\+bitrate}}\label{struct___c_s_session_acafa0ba061c3e09d3f17852abf830968}
+
+\item 
+\hypertarget{struct___c_s_session_aa4046ccf60d85f4f486ae0b24e3347f5}{uint8\+\_\+t $\ast$ {\bfseries frame\+\_\+buf}}\label{struct___c_s_session_aa4046ccf60d85f4f486ae0b24e3347f5}
+
+\item 
+\hypertarget{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{uint32\+\_\+t {\bfseries frame\+\_\+size}}\label{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}
+
+\item 
+\hypertarget{struct___c_s_session_affc5ab5608c4d2dea8513fdc2b2cd6e6}{uint8\+\_\+t {\bfseries frameid\+\_\+in}}\label{struct___c_s_session_affc5ab5608c4d2dea8513fdc2b2cd6e6}
+
+\item 
+\hypertarget{struct___c_s_session_acea7b9bf7e58ed8e24980edeaacecc25}{uint8\+\_\+t {\bfseries frameid\+\_\+out}}\label{struct___c_s_session_acea7b9bf7e58ed8e24980edeaacecc25}
+
+\item 
+\hypertarget{struct___c_s_session_ab3eadf01045769905278f1908af23558}{uint32\+\_\+t {\bfseries last\+\_\+timestamp}}\label{struct___c_s_session_ab3eadf01045769905278f1908af23558}
+
+\item 
+\hypertarget{struct___c_s_session_af3563a0a96eb120a68e82d3135b6c49b}{uint32\+\_\+t {\bfseries video\+\_\+frame\+\_\+piece\+\_\+size}}\label{struct___c_s_session_af3563a0a96eb120a68e82d3135b6c49b}
+
+\item 
+\hypertarget{struct___c_s_session_a4de5a61c775468baabb35e2fcfaaa3a2}{uint32\+\_\+t {\bfseries max\+\_\+video\+\_\+frame\+\_\+size}}\label{struct___c_s_session_a4de5a61c775468baabb35e2fcfaaa3a2}
+
+\item 
+\hypertarget{struct___c_s_session_a100e5e445d6e9ff7775a1020dc780e56}{uint8\+\_\+t $\ast$ {\bfseries split\+\_\+video\+\_\+frame}}\label{struct___c_s_session_a100e5e445d6e9ff7775a1020dc780e56}
+
+\item 
+\hypertarget{struct___c_s_session_ae94ea43be63edb42efe44edae585064e}{const uint8\+\_\+t $\ast$ {\bfseries processing\+\_\+video\+\_\+frame}}\label{struct___c_s_session_ae94ea43be63edb42efe44edae585064e}
+
+\item 
+\hypertarget{struct___c_s_session_a7048faa402d6aecd2626ed85f352f5f2}{uint16\+\_\+t {\bfseries processing\+\_\+video\+\_\+frame\+\_\+size}}\label{struct___c_s_session_a7048faa402d6aecd2626ed85f352f5f2}
+
+\item 
+\hypertarget{struct___c_s_session_a8c1fa3d73f3426ba5cac83857c390ebc}{Opus\+Encoder $\ast$ {\bfseries audio\+\_\+encoder}}\label{struct___c_s_session_a8c1fa3d73f3426ba5cac83857c390ebc}
+
+\item 
+\hypertarget{struct___c_s_session_a8951572b99eec737269f5de96f9c5320}{int {\bfseries audio\+\_\+encoder\+\_\+bitrate}}\label{struct___c_s_session_a8951572b99eec737269f5de96f9c5320}
+
+\item 
+\hypertarget{struct___c_s_session_ae40829dc4300d79d3b175c8770b769a4}{int {\bfseries audio\+\_\+encoder\+\_\+sample\+\_\+rate}}\label{struct___c_s_session_ae40829dc4300d79d3b175c8770b769a4}
+
+\item 
+\hypertarget{struct___c_s_session_a25f8c6ef812a7edaaadb81b41f8d818d}{int {\bfseries audio\+\_\+encoder\+\_\+frame\+\_\+duration}}\label{struct___c_s_session_a25f8c6ef812a7edaaadb81b41f8d818d}
+
+\item 
+\hypertarget{struct___c_s_session_a8ee56e2e7543722415f21dcc3ace1899}{int {\bfseries audio\+\_\+encoder\+\_\+channels}}\label{struct___c_s_session_a8ee56e2e7543722415f21dcc3ace1899}
+
+\item 
+\hypertarget{struct___c_s_session_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{Opus\+Decoder $\ast$ {\bfseries audio\+\_\+decoder}}\label{struct___c_s_session_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}
+
+\item 
+\hypertarget{struct___c_s_session_a56e0bd5af866e6ba91078960083ac801}{int {\bfseries audio\+\_\+decoder\+\_\+bitrate}}\label{struct___c_s_session_a56e0bd5af866e6ba91078960083ac801}
+
+\item 
+\hypertarget{struct___c_s_session_a22979ca479f4d3e2660b604805a41833}{int {\bfseries audio\+\_\+decoder\+\_\+sample\+\_\+rate}}\label{struct___c_s_session_a22979ca479f4d3e2660b604805a41833}
+
+\item 
+\hypertarget{struct___c_s_session_a245af4e824b82e6e91850ac26ace1230}{int {\bfseries audio\+\_\+decoder\+\_\+frame\+\_\+duration}}\label{struct___c_s_session_a245af4e824b82e6e91850ac26ace1230}
+
+\item 
+\hypertarget{struct___c_s_session_a81fe9534366c7ea81e8ff6ac729d2ae9}{int {\bfseries audio\+\_\+decoder\+\_\+channels}}\label{struct___c_s_session_a81fe9534366c7ea81e8ff6ac729d2ae9}
+
+\item 
+\hypertarget{struct___c_s_session_a7567f0c621b65df3ff9e6f46164ac1c0}{struct \hyperlink{struct___jitter_buffer}{\+\_\+\+Jitter\+Buffer} $\ast$ {\bfseries j\+\_\+buf}}\label{struct___c_s_session_a7567f0c621b65df3ff9e6f46164ac1c0}
+
+\item 
+\hypertarget{struct___c_s_session_a7d48e69ed8663d4dbe8266ff4158a321}{uint32\+\_\+t {\bfseries E\+V\+A\+D\+\_\+tolerance}}\label{struct___c_s_session_a7d48e69ed8663d4dbe8266ff4158a321}
+
+\item 
+\hypertarget{struct___c_s_session_aa799246d78fac3297846637588131763}{uint32\+\_\+t {\bfseries E\+V\+A\+D\+\_\+tolerance\+\_\+cr}}\label{struct___c_s_session_aa799246d78fac3297846637588131763}
+
+\item 
+\hypertarget{struct___c_s_session_ac9e675ead9b3559ea462414a0016f6a6}{uint64\+\_\+t {\bfseries capabilities}}\label{struct___c_s_session_ac9e675ead9b3559ea462414a0016f6a6}
+
+\item 
+\hypertarget{struct___c_s_session_abb525d3cf1486064b35b5821a0646c86}{void $\ast$ {\bfseries vbuf\+\_\+raw}}\label{struct___c_s_session_abb525d3cf1486064b35b5821a0646c86}
+
+\item 
+\hypertarget{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}{pthread\+\_\+mutex\+\_\+t {\bfseries queue\+\_\+mutex} \mbox{[}1\mbox{]}}\label{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}
+
+\item 
+\hypertarget{struct___c_s_session_a18e94ace0074984593ae281f6bbda315}{void $\ast$ {\bfseries agent}}\label{struct___c_s_session_a18e94ace0074984593ae281f6bbda315}
+
+\item 
+\hypertarget{struct___c_s_session_ad6b287fd08a0cc466cd41bd2e76d5808}{int32\+\_\+t {\bfseries call\+\_\+idx}}\label{struct___c_s_session_ad6b287fd08a0cc466cd41bd2e76d5808}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Codec session -\/ controling codec 
+
+Definition at line 72 of file codec.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxav/codec.\+h\end{DoxyCompactItemize}

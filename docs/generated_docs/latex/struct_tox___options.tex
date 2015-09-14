@@ -1,0 +1,144 @@
+\hypertarget{struct_tox___options}{\section{Tox\+\_\+\+Options Struct Reference}
+\label{struct_tox___options}\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+}
+
+
+{\ttfamily \#include $<$tox.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_tox___options_a320e68fce8ebf1b6f0bb10494d800441}{ipv6\+\_\+enabled}
+\item 
+bool \hyperlink{struct_tox___options_a35c23f2b9cd2468e2a256ca93a21d5d5}{udp\+\_\+enabled}
+\item 
+T\+O\+X\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E \hyperlink{struct_tox___options_a32a512eb6e2c820735f1c51cd1075ce4}{proxy\+\_\+type}
+\item 
+const char $\ast$ \hyperlink{struct_tox___options_af7c34966a1703e0a031ce2674420c7cf}{proxy\+\_\+host}
+\item 
+uint16\+\_\+t \hyperlink{struct_tox___options_a0693366412d32f9b8ceba1bf4f320132}{proxy\+\_\+port}
+\item 
+uint16\+\_\+t \hyperlink{struct_tox___options_aa2de2e9258608a29877ef5d5610ea8f7}{start\+\_\+port}
+\item 
+uint16\+\_\+t \hyperlink{struct_tox___options_a72adaef23252363613b9ace5351ce521}{end\+\_\+port}
+\item 
+uint16\+\_\+t \hyperlink{struct_tox___options_a7c66715252e093e0b8b751a0c888623e}{tcp\+\_\+port}
+\item 
+T\+O\+X\+\_\+\+S\+A\+V\+E\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E \hyperlink{struct_tox___options_a825cfabf7be0224b12d09c8b1f5cbed6}{savedata\+\_\+type}
+\item 
+const uint8\+\_\+t $\ast$ \hyperlink{struct_tox___options_af298081c5f07deace07b2ced2c0a9c3d}{savedata\+\_\+data}
+\item 
+size\+\_\+t \hyperlink{struct_tox___options_a56c7956bddcb0d100c54e426b6e5f3ed}{savedata\+\_\+length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This struct contains all the startup options for Tox. You can either allocate this object yourself, and pass it to tox\+\_\+options\+\_\+default, or call tox\+\_\+options\+\_\+new to get a new default options object. 
+
+Definition at line 391 of file tox.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_tox___options_a72adaef23252363613b9ace5351ce521}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!end\+\_\+port@{end\+\_\+port}}
+\index{end\+\_\+port@{end\+\_\+port}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{end\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t end\+\_\+port}}\label{struct_tox___options_a72adaef23252363613b9ace5351ce521}
+The end port of the inclusive port range to attempt to use. 
+
+Definition at line 459 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a320e68fce8ebf1b6f0bb10494d800441}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!ipv6\+\_\+enabled@{ipv6\+\_\+enabled}}
+\index{ipv6\+\_\+enabled@{ipv6\+\_\+enabled}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{ipv6\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool ipv6\+\_\+enabled}}\label{struct_tox___options_a320e68fce8ebf1b6f0bb10494d800441}
+The type of socket to create.
+
+If this is set to false, an I\+Pv4 socket is created, which subsequently only allows I\+Pv4 communication. If it is set to true, an I\+Pv6 socket is created, allowing both I\+Pv4 and I\+Pv6 communication. 
+
+Definition at line 401 of file tox.\+h.
+
+\hypertarget{struct_tox___options_af7c34966a1703e0a031ce2674420c7cf}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!proxy\+\_\+host@{proxy\+\_\+host}}
+\index{proxy\+\_\+host@{proxy\+\_\+host}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{proxy\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ proxy\+\_\+host}}\label{struct_tox___options_af7c34966a1703e0a031ce2674420c7cf}
+The \hyperlink{struct_i_p}{I\+P} address or D\+N\+S name of the proxy to be used.
+
+If used, this must be non-\/\+N\+U\+L\+L and be a valid D\+N\+S name. The name must not exceed 255 characters, and be in a N\+U\+L-\/terminated C string format (255 chars + 1 N\+U\+L byte).
+
+This member is ignored (it can be N\+U\+L\+L) if proxy\+\_\+type is T\+O\+X\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E. 
+
+Definition at line 429 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a0693366412d32f9b8ceba1bf4f320132}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!proxy\+\_\+port@{proxy\+\_\+port}}
+\index{proxy\+\_\+port@{proxy\+\_\+port}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{proxy\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t proxy\+\_\+port}}\label{struct_tox___options_a0693366412d32f9b8ceba1bf4f320132}
+The port to use to connect to the proxy server.
+
+Ports must be in the range (1, 65535). The value is ignored if proxy\+\_\+type is T\+O\+X\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E. 
+
+Definition at line 438 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a32a512eb6e2c820735f1c51cd1075ce4}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!proxy\+\_\+type@{proxy\+\_\+type}}
+\index{proxy\+\_\+type@{proxy\+\_\+type}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{proxy\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}T\+O\+X\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E proxy\+\_\+type}}\label{struct_tox___options_a32a512eb6e2c820735f1c51cd1075ce4}
+Pass communications through a proxy. 
+
+Definition at line 417 of file tox.\+h.
+
+\hypertarget{struct_tox___options_af298081c5f07deace07b2ced2c0a9c3d}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!savedata\+\_\+data@{savedata\+\_\+data}}
+\index{savedata\+\_\+data@{savedata\+\_\+data}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{savedata\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t$\ast$ savedata\+\_\+data}}\label{struct_tox___options_af298081c5f07deace07b2ced2c0a9c3d}
+The savedata. 
+
+Definition at line 485 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a56c7956bddcb0d100c54e426b6e5f3ed}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!savedata\+\_\+length@{savedata\+\_\+length}}
+\index{savedata\+\_\+length@{savedata\+\_\+length}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{savedata\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t savedata\+\_\+length}}\label{struct_tox___options_a56c7956bddcb0d100c54e426b6e5f3ed}
+The length of the savedata. 
+
+Definition at line 491 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a825cfabf7be0224b12d09c8b1f5cbed6}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!savedata\+\_\+type@{savedata\+\_\+type}}
+\index{savedata\+\_\+type@{savedata\+\_\+type}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{savedata\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}T\+O\+X\+\_\+\+S\+A\+V\+E\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E savedata\+\_\+type}}\label{struct_tox___options_a825cfabf7be0224b12d09c8b1f5cbed6}
+The type of savedata to load from. 
+
+Definition at line 479 of file tox.\+h.
+
+\hypertarget{struct_tox___options_aa2de2e9258608a29877ef5d5610ea8f7}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!start\+\_\+port@{start\+\_\+port}}
+\index{start\+\_\+port@{start\+\_\+port}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{start\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t start\+\_\+port}}\label{struct_tox___options_aa2de2e9258608a29877ef5d5610ea8f7}
+The start port of the inclusive port range to attempt to use.
+
+If both start\+\_\+port and end\+\_\+port are 0, the default port range will be used\+: \mbox{[}33445, 33545\mbox{]}.
+
+If either start\+\_\+port or end\+\_\+port is 0 while the other is non-\/zero, the non-\/zero port will be the only port in the range.
+
+Having start\+\_\+port $>$ end\+\_\+port will yield the same behavior as if start\+\_\+port and end\+\_\+port were swapped. 
+
+Definition at line 453 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a7c66715252e093e0b8b751a0c888623e}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!tcp\+\_\+port@{tcp\+\_\+port}}
+\index{tcp\+\_\+port@{tcp\+\_\+port}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{tcp\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t tcp\+\_\+port}}\label{struct_tox___options_a7c66715252e093e0b8b751a0c888623e}
+The port to use for the T\+C\+P server (relay). If 0, the T\+C\+P server is disabled.
+
+Enabling it is not required for Tox to function properly.
+
+When enabled, your Tox instance can act as a T\+C\+P relay for other Tox instance. This leads to increased traffic, thus when writing a client it is recommended to enable T\+C\+P server only if the user has an option to disable it. 
+
+Definition at line 473 of file tox.\+h.
+
+\hypertarget{struct_tox___options_a35c23f2b9cd2468e2a256ca93a21d5d5}{\index{Tox\+\_\+\+Options@{Tox\+\_\+\+Options}!udp\+\_\+enabled@{udp\+\_\+enabled}}
+\index{udp\+\_\+enabled@{udp\+\_\+enabled}!Tox\+\_\+\+Options@{Tox\+\_\+\+Options}}
+\subsubsection[{udp\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool udp\+\_\+enabled}}\label{struct_tox___options_a35c23f2b9cd2468e2a256ca93a21d5d5}
+Enable the use of U\+D\+P communication when available.
+
+Setting this to false will force Tox to use T\+C\+P only. Communications will need to be relayed through a T\+C\+P relay node, potentially slowing them down. Disabling U\+D\+P support is necessary when using anonymous proxies or Tor. 
+
+Definition at line 411 of file tox.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/tox.\+h\end{DoxyCompactItemize}

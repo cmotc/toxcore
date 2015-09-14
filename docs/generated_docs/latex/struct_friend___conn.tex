@@ -1,0 +1,95 @@
+\hypertarget{struct_friend___conn}{\section{Friend\+\_\+\+Conn Struct Reference}
+\label{struct_friend___conn}\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+}
+
+
+Collaboration diagram for Friend\+\_\+\+Conn\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{struct_friend___conn__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_friend___conn_ade818037fd6c985038ff29656089758d}{uint8\+\_\+t {\bfseries status}}\label{struct_friend___conn_ade818037fd6c985038ff29656089758d}
+
+\item 
+\hypertarget{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{uint8\+\_\+t {\bfseries real\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}\label{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}
+
+\item 
+\hypertarget{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{uint8\+\_\+t {\bfseries dht\+\_\+temp\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}\label{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}
+
+\item 
+\hypertarget{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{uint16\+\_\+t {\bfseries dht\+\_\+lock}}\label{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}
+
+\item 
+\hypertarget{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} {\bfseries dht\+\_\+ip\+\_\+port}}\label{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}
+
+\item 
+\hypertarget{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{uint64\+\_\+t {\bfseries dht\+\_\+pk\+\_\+lastrecv}}\label{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}
+
+\item 
+\hypertarget{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{uint64\+\_\+t {\bfseries dht\+\_\+ip\+\_\+port\+\_\+lastrecv}}\label{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}
+
+\item 
+\hypertarget{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{int {\bfseries onion\+\_\+friendnum}}\label{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}
+
+\item 
+\hypertarget{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{int {\bfseries crypt\+\_\+connection\+\_\+id}}\label{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}
+
+\item 
+\hypertarget{struct_friend___conn_a5130c3c4a93050475770184608d61918}{uint64\+\_\+t {\bfseries ping\+\_\+lastrecv}}\label{struct_friend___conn_a5130c3c4a93050475770184608d61918}
+
+\item 
+\hypertarget{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}{uint64\+\_\+t {\bfseries ping\+\_\+lastsent}}\label{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}
+
+\item 
+\hypertarget{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{uint64\+\_\+t {\bfseries share\+\_\+relays\+\_\+lastsent}}\label{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}
+
+\item 
+\hypertarget{struct_friend___conn_a213983130190a8281ab689630f0aee97}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int($\ast$ {\bfseries status\_callback} )(void $\ast$object, int id, \\
+\>\>uint8\_t status)\\
+\>void $\ast$ {\bfseries status\_callback\_object}\\
+\>int {\bfseries status\_callback\_id}\\
+\>int($\ast$ {\bfseries data\_callback} )(void $\ast$object, int id, \\
+\>\>uint8\_t $\ast$data, uint16\_t length)\\
+\>void $\ast$ {\bfseries data\_callback\_object}\\
+\>int {\bfseries data\_callback\_id}\\
+\>int($\ast$ {\bfseries lossy\_data\_callback} )(void $\ast$object, int id, const \\
+\>\>uint8\_t $\ast$data, uint16\_t length)\\
+\>void $\ast$ {\bfseries lossy\_data\_callback\_object}\\
+\>int {\bfseries lossy\_data\_callback\_id}\\
+\} {\bfseries callbacks} \mbox{[}MAX\_FRIEND\_CONNECTION\_CALLBACKS\mbox{]}}\label{struct_friend___conn_a213983130190a8281ab689630f0aee97}
+\\
+
+\end{tabbing}\item 
+\hypertarget{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{uint16\+\_\+t {\bfseries lock\+\_\+count}}\label{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}
+
+\item 
+\hypertarget{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{\hyperlink{struct_node__format}{Node\+\_\+format} {\bfseries tcp\+\_\+relays} \mbox{[}F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\mbox{]}}\label{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}
+
+\item 
+\hypertarget{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{uint16\+\_\+t {\bfseries tcp\+\_\+relay\+\_\+counter}}\label{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}
+
+\item 
+\hypertarget{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{\+\_\+\+Bool {\bfseries hosting\+\_\+tcp\+\_\+relay}}\label{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 66 of file friend\+\_\+connection.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/friend\+\_\+connection.\+h\end{DoxyCompactItemize}

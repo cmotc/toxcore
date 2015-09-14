@@ -1,0 +1,63 @@
+Welcome to the Toxcore todo list, this is very likely out of date, but either way it's a good jumping off point if you're looking to see where core is going, or where it could use a little love.
+
+There are 3 sections; In Progress, T\+O\+D\+O, and Done. These tasks are somewhat sorted by priority, but that shouldn't be taken to mean that this is the order tasks will (or should) be completed in.
+
+\subsection*{In Progress}
+
+
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Audio/\+Video
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} encoding/streaming/decoding
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} Call initiation
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} Encryption
+\item \mbox{[} \mbox{]} \mbox{[}N\+E\+E\+D\+S T\+E\+S\+T\+I\+N\+G\mbox{]} Video packet splitting.
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Auditing.
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Prevent audio skew (seems to be easily solvable client side.)
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Group chats, audio done.
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} Networking\+:
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}N\+E\+E\+D\+S T\+E\+S\+T\+I\+N\+G\mbox{]} U\+Pn\+P port forwarding. (\href{https://github.com/irungentoo/toxcore/pull/969}{\tt \#969})
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} N\+A\+T-\/\+P\+M\+P port forwarding.
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} \hyperlink{struct_d_h_t}{D\+H\+T}\+:
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}A\+L\+M\+O\+S\+T D\+O\+N\+E\mbox{]} Metadata collection prevention. (docs/\+Prevent\+\_\+\+Tracking.\+txt)
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} \hyperlink{struct_hardening}{Hardening} against attacks.
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Optimizing the code.
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} \hyperlink{struct_friend}{Friend} only group chats
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} Networking base.
+\item \mbox{[}X\mbox{]} \mbox{[}M\+O\+S\+T\+L\+Y D\+O\+N\+E\mbox{]} Syncing chat state between clients (nicknames, list of who is in chat, etc...)
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Group private messages. (and adding friends from group chats using those private messages.)
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Group file transfers.
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Friends list syncing
+\item \mbox{[} \mbox{]} \mbox{[}I\+N P\+R\+O\+G\+R\+E\+S\+S\mbox{]} Make toxcore thread safe.
+\item \mbox{[} \mbox{]} \mbox{[}M\+O\+S\+T\+L\+Y D\+O\+N\+E\mbox{]} A way for people to connect to people on Tox if they are behind a bad \hyperlink{struct_n_a_t}{N\+A\+T} that blocks U\+D\+P (or is just unpunchable) (\href{TCP_Network.txt}{\tt docs/\+T\+C\+P\+\_\+\+Network.\+txt}) (Current way doesn't scale very well.)
+\end{DoxyItemize}
+
+\subsection*{T\+O\+D\+O}
+
+
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Make the core save/datafile portable across client versions/different processor architectures.
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Friend\+\_\+requests.\+c\+:
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} What happens when a friend request is received needs to be changed.
+\item \mbox{[} \mbox{]} \mbox{[}D\+O\+N\+E?\mbox{]} Add multiple nospam functionality. (\href{https://github.com/irungentoo/toxcore/pull/1317}{\tt \#1317})
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Offline messaging
+\item \mbox{[} \mbox{]} \mbox{[}T\+O\+D\+O\mbox{]} Security audit from professionals
+\end{DoxyItemize}
+
+\subsection*{Done}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} File transfers
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} I\+P\+V6 support
+\item \mbox{[}X\mbox{]} \mbox{[}D\+O\+N\+E\mbox{]} Encrypted Saves. (see\+: toxencryptsave) 
+\end{DoxyItemize}

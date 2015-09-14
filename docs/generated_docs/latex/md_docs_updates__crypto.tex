@@ -1,0 +1,35 @@
+Encryption library used\+: \href{http://nacl.cr.yp.to/}{\tt http\+://nacl.\+cr.\+yp.\+to/}
+
+When running the program for the first time the crypto\+\_\+box\+\_\+keypair() function is used to generate the users public-\/private key pair. (32 bytes each)
+
+The generated public key is set as the client\+\_\+id of the peer.
+
+\subsection*{Adding a friend }
+
+Alice adds bob to her friends list by adding his 32 byte public key (client\+\_\+id) to her friends list. 2 cases\+: case 1\+: Alice adds Bobs public key and bob waits for Alice to attempt to connect to him. case 2\+: Bob and Alice add their respective public keys to their friends list at the same time.
+
+case 1\+: Alice sends a onion data (see\+: Prevent\+\_\+tracking.\+txt) packet to bob with the encrypted part containing the friends request like so\+: ``` \mbox{[}char with a value of 32\mbox{]}\mbox{[}nospam number (4 bytes)\mbox{]}\mbox{[}Message\mbox{]} ```
+
+Ex message\+: hello bob it's me alice -\/\+\_\+-\/ add me pl0x.
+
+For more info on the nospam see\+: Spam\+\_\+\+Prevention.\+txt
+
+Bob receives the request and decrypts the message using the function crypto\+\_\+box\+\_\+open()
+
+If the message decrypts successfully\+: If Alice is already in Bobs friends list\+: case 2 If Alice is not in Bob's friends list and the nospam is good\+: Bob is prompt to add Alice and is shown the message from her. If Bobs accepts Alice's friends request he adds her public key to his friends list.
+
+case 2\+: Bob and Alice both have the others public key in their friends list, they are ready for the next step\+: Connecting to an already added friend
+
+In the next step only crypto\+\_\+box() is used for encryption and only crypto\+\_\+box\+\_\+open() for decryption (just like in the last step.)
+
+\subsection*{Connecting to an already added friend }
+
+see\+: Tox\+\_\+middle\+\_\+level\+\_\+network\+\_\+protocol.\+txt
+
+\subsection*{Crypto request packets }
+
+``` \mbox{[}char with a value of 32\mbox{]}\mbox{[}Bob's (The reciever's) Public key (client\+\_\+id) (32 bytes))\mbox{]}\mbox{[}Alice's (The sender's) Public key (client\+\_\+id) (32 bytes)\mbox{]}\mbox{[}Random nonce (24 bytes)\mbox{]}\mbox{[}Encrypted message\mbox{]} ```
+
+The encrypted message is encrypted with crypto\+\_\+box() (using Bobs public key, Alice's private key and the nonce (randomly generated 24 bytes)) and is a message from Alice in which she tells Bob who she is.
+
+Each node can route the request to the receiver if they are connected to him. This is to bypass bad N\+A\+Ts. 

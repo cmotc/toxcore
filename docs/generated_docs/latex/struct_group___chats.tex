@@ -1,0 +1,79 @@
+\hypertarget{struct_group___chats}{\section{Group\+\_\+\+Chats Struct Reference}
+\label{struct_group___chats}\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+}
+
+
+Collaboration diagram for Group\+\_\+\+Chats\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_group___chats__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{\hyperlink{struct_messenger}{Messenger} $\ast$ {\bfseries m}}\label{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}
+
+\item 
+\hypertarget{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}{\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$ {\bfseries fr\+\_\+c}}\label{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}
+
+\item 
+\hypertarget{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{\hyperlink{struct_group__c}{Group\+\_\+c} $\ast$ {\bfseries chats}}\label{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}
+
+\item 
+\hypertarget{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{uint32\+\_\+t {\bfseries num\+\_\+chats}}\label{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}
+
+\item 
+\hypertarget{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}{void($\ast$ {\bfseries invite\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$m, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}\label{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}
+
+\item 
+\hypertarget{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}{void $\ast$ {\bfseries invite\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}
+
+\item 
+\hypertarget{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}{void($\ast$ {\bfseries message\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$m, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}\label{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}
+
+\item 
+\hypertarget{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}{void $\ast$ {\bfseries message\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}
+
+\item 
+\hypertarget{struct_group___chats_a61996fdab7da709944de726b88872d61}{void($\ast$ {\bfseries action\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$m, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}\label{struct_group___chats_a61996fdab7da709944de726b88872d61}
+
+\item 
+\hypertarget{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}{void $\ast$ {\bfseries action\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}
+
+\item 
+\hypertarget{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}{void($\ast$ {\bfseries peer\+\_\+namelistchange} )(\hyperlink{struct_messenger}{Messenger} $\ast$m, int, int, uint8\+\_\+t, void $\ast$)}\label{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}
+
+\item 
+\hypertarget{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}{void $\ast$ {\bfseries group\+\_\+namelistchange\+\_\+userdata}}\label{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}
+
+\item 
+\hypertarget{struct_group___chats_a3a2940882c161941fd7f3274064bd594}{void($\ast$ {\bfseries title\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$m, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$)}\label{struct_group___chats_a3a2940882c161941fd7f3274064bd594}
+
+\item 
+\hypertarget{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}{void $\ast$ {\bfseries title\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}
+
+\item 
+\hypertarget{struct_group___chats_a3630aa7993bdd216d40637826a92649f}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int($\ast$ {\bfseries function} )(void $\ast$, int, int, void \\
+\>\>$\ast$, const uint8\_t $\ast$, uint16\_t)\\
+\} {\bfseries lossy\_packethandlers} \mbox{[}256\mbox{]}}\label{struct_group___chats_a3630aa7993bdd216d40637826a92649f}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 112 of file group.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/group.\+h\end{DoxyCompactItemize}

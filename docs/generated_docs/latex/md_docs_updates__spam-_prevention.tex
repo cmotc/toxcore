@@ -1,0 +1,7 @@
+Situation 1\+: Someone randomly goes around the \hyperlink{struct_d_h_t}{D\+H\+T} sending friend requests to everyone.
+
+Prevented by\+: Every friend address\+: \mbox{[}client\+\_\+id (32 bytes)\mbox{]}\mbox{[}nospam number (4 bytes)\mbox{]}\mbox{[}checksum (2 bytes)\mbox{]} contains a number (nospam).
+
+The nospam in every friend request to that friend must be that number.
+
+If not it is rejected. 
