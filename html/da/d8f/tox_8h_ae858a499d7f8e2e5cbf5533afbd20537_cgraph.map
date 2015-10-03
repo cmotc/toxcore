@@ -1,0 +1,26 @@
+<map id="tox_add_tcp_relay" name="tox_add_tcp_relay">
+<area shape="rect" id="node2" href="$d8/dc6/net__crypto_8c.html#a632021583d7dd2484614071a7080f311" title="add_tcp_relay" alt="" coords="181,360,284,387"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#a5ee1dbaa28ff59e0f452eda3c97418e3" title="add_tcp_relay_global" alt="" coords="332,360,476,387"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#af221264f649b29407becf0e4ca352cbd" title="add_tcp_relay_instance" alt="" coords="524,300,683,327"/>
+<area shape="rect" id="node23" href="$d5/d26/_t_c_p__connection_8c.html#a6146372f26967550f1260e7f72589fa4" title="find_tcp_connection\l_relay" alt="" coords="534,411,673,453"/>
+<area shape="rect" id="node5" href="$d5/d26/_t_c_p__connection_8c.html#a2cd69ef2e2153135f588193ef36acf3e" title="create_tcp_connection" alt="" coords="731,249,884,276"/>
+<area shape="rect" id="node6" href="$da/da1/_t_c_p__client_8c.html#aedb0d5c54ac7754bb342517247ac632d" title="new_TCP_connection" alt="" coords="732,300,883,327"/>
+<area shape="rect" id="node7" href="$da/da1/_t_c_p__client_8c.html#a60b303142f843cad13249065ddeefb17" title="connect_sock_to" alt="" coords="955,5,1076,32"/>
+<area shape="rect" id="node8" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="945,56,1085,83"/>
+<area shape="rect" id="node9" href="$da/da1/_t_c_p__client_8c.html#aec632a758fda6b73153ec16180750366" title="generate_handshake" alt="" coords="944,107,1087,133"/>
+<area shape="rect" id="node13" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="979,157,1052,184"/>
+<area shape="rect" id="node14" href="$d6/d6e/network_8c.html#ad953dedd6d25d03cf441960dd1e1fed1" title="networking_at_startup" alt="" coords="940,208,1091,235"/>
+<area shape="rect" id="node16" href="$da/da1/_t_c_p__client_8c.html#a3000ce77c7c25ee8a08da815cbd0c7cb" title="proxy_http_generate\l_connection_request" alt="" coords="944,259,1087,301"/>
+<area shape="rect" id="node18" href="$da/da1/_t_c_p__client_8c.html#a76c75a8969ec140e5799744179ba8048" title="proxy_socks5_generate\l_handshake" alt="" coords="935,325,1095,366"/>
+<area shape="rect" id="node19" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="943,391,1088,417"/>
+<area shape="rect" id="node20" href="$d6/d6e/network_8c.html#a379153c027c17d7c71797cb0e3ea41a3" title="set_socket_nosigpipe" alt="" coords="941,441,1089,468"/>
+<area shape="rect" id="node21" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="973,492,1057,519"/>
+<area shape="rect" id="node22" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="976,543,1055,569"/>
+<area shape="rect" id="node10" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="1147,56,1312,83"/>
+<area shape="rect" id="node11" href="$dc/d85/crypto__core_8c.html#a8b1033efb47c625779d11be7d8eb9e24" title="new_nonce" alt="" coords="1185,107,1273,133"/>
+<area shape="rect" id="node12" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="1360,132,1467,159"/>
+<area shape="rect" id="node15" href="$d6/d6e/network_8c.html#a9f5cd2a713e4a17d4c6d36650336cab0" title="current_time_actual" alt="" coords="1161,208,1297,235"/>
+<area shape="rect" id="node17" href="$d6/d6e/network_8c.html#ae25cce1bbb77b6a8b441bb940a75783f" title="ip_parse_addr" alt="" coords="1178,267,1281,293"/>
+<area shape="rect" id="node24" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="740,540,875,567"/>
+<area shape="rect" id="node25" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="932,594,1099,635"/>
+</map>

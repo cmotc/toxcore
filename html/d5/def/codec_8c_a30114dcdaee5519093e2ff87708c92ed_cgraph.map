@@ -1,0 +1,5 @@
+<map id="buffer_free" name="buffer_free">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a6b10a945e7d4808b0192ee3b949babd3" title="buffer_clear" alt="" coords="137,31,228,57"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#a6e1ec2c6aa4625da81486a73661df742" title="buffer_empty" alt="" coords="276,5,375,32"/>
+<area shape="rect" id="node4" href="$d5/def/codec_8c.html#aa27710dac4f829dad6d007cf01bdf55f" title="buffer_read" alt="" coords="282,56,369,83"/>
+</map>

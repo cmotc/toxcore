@@ -1,0 +1,28 @@
+var struct_group__c =
+[
+    [ "changed", "struct_group__c.html#aab3e81d63c7e7e9e693aa0f5fb574fa4", null ],
+    [ "close", "struct_group__c.html#a6c24608383f70ad37f70307f492e3abc", null ],
+    [ "closest", "struct_group__c.html#a8ff1adca518d82728e7d450f6d14e8db", null ],
+    [ "closest_peers", "struct_group__c.html#a8987e8417b5a1a5bc11ba79885c12590", null ],
+    [ "entry", "struct_group__c.html#adbdb38b7f14c384804844026547a276e", null ],
+    [ "group", "struct_group__c.html#a1f68599dc07252599a98f6d044a184e9", null ],
+    [ "group_number", "struct_group__c.html#a60c6a6ce4c702d61048d0f38f3974ef8", null ],
+    [ "group_on_delete", "struct_group__c.html#a43df326d671eb30dd294d5d71d3cd09c", null ],
+    [ "identifier", "struct_group__c.html#a590984b7f44686ea4892ffa2651b0cda", null ],
+    [ "last_sent_ping", "struct_group__c.html#a0137c615a93acf73b05a3d710231dd3d", null ],
+    [ "lossy_message_number", "struct_group__c.html#acc475ae1ff50d43f08a2cc920a5d2ae5", null ],
+    [ "message_number", "struct_group__c.html#a1ecee33a5d6309a114891c3fb740b66c", null ],
+    [ "number", "struct_group__c.html#ad50c630d233a71112a7df136970caefc", null ],
+    [ "number_joined", "struct_group__c.html#a50fa99a57ee7c9280fc90b7c33d760d0", null ],
+    [ "numpeers", "struct_group__c.html#a6c81294c96de8914431dbf825934b528", null ],
+    [ "object", "struct_group__c.html#a077376d12464f945e2414d5499c79b3f", null ],
+    [ "peer_number", "struct_group__c.html#a264348ec1f724e05464ca97b7c432817", null ],
+    [ "peer_on_join", "struct_group__c.html#a218cd2e97bdb682b90f72faa6eb08576", null ],
+    [ "peer_on_leave", "struct_group__c.html#a7a79b984292a5ea1f68aca7b73067370", null ],
+    [ "real_pk", "struct_group__c.html#ab42b4c90d81ac99b968c3edd1e21d706", null ],
+    [ "status", "struct_group__c.html#ade818037fd6c985038ff29656089758d", null ],
+    [ "temp_pk", "struct_group__c.html#a46affbcc202b25e96fd1f5238e9e97e0", null ],
+    [ "title", "struct_group__c.html#a9ace0499016685340a1f3009a7aa01e0", null ],
+    [ "title_len", "struct_group__c.html#ac32d4f2bb9021dfa0b7ce5f9537412d7", null ],
+    [ "type", "struct_group__c.html#a1d127017fb298b889f4ba24752d08b8e", null ]
+];

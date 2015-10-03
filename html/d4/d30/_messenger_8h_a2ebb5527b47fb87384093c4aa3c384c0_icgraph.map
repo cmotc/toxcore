@@ -1,0 +1,10 @@
+<map id="send_custom_lossy_packet" name="send_custom_lossy_packet">
+<area shape="rect" id="node2" href="$df/dc1/rtp_8h.html#a061d9b8e8abbcfb87d365bf65297e3f3" title="rtp_send_msg" alt="" coords="261,56,365,83"/>
+<area shape="rect" id="node8" href="$da/d8f/tox_8h.html#a83a51aeda057c82ed1e844962a84fe46" title="tox_friend_send_lossy\l_packet" alt="" coords="237,107,389,149"/>
+<area shape="rect" id="node3" href="$d8/d0e/toxav_8c.html#aa03b009616ed838e27caded4f69483d1" title="toxav_send_rtp_payload" alt="" coords="437,56,600,83"/>
+<area shape="rect" id="node4" href="$d9/d82/toxav_8h.html#a0b848edf3ccbf9088d79ad77e308ac29" title="toxav_send_audio" alt="" coords="648,31,775,57"/>
+<area shape="rect" id="node7" href="$d8/d0e/toxav_8c.html#a4aa0876a176b4e5e7abea2f72059a502" title="toxav_send_video" alt="" coords="648,81,775,108"/>
+<area shape="rect" id="node5" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="825,5,927,32"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="823,56,929,83"/>
+<area shape="rect" id="node9" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="465,115,572,141"/>
+</map>

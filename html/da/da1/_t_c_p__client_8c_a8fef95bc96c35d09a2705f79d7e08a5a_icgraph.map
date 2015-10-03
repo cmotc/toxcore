@@ -1,0 +1,17 @@
+<map id="do_confirmed_TCP" name="do_confirmed_TCP">
+<area shape="rect" id="node2" href="$d0/df3/_t_c_p__client_8h.html#a3333858c51935f9f546cf923b07ed845" title="do_TCP_connection" alt="" coords="188,31,328,57"/>
+<area shape="rect" id="node3" href="$d2/d8d/_t_c_p__test_8c.html#a54051584eff6e81044025b36d88c9a2b" title="START_TEST" alt="" coords="376,5,483,32"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#a6377f0f3d60ba706c5b014a9439696b7" title="do_tcp_conns" alt="" coords="378,56,481,83"/>
+<area shape="rect" id="node5" href="$da/d39/_t_c_p__connection_8h.html#a30c1a9c57a8d07cc2327c0505d6619a4" title="do_tcp_connections" alt="" coords="531,56,669,83"/>
+<area shape="rect" id="node6" href="$d2/d8d/_t_c_p__test_8c.html#a1b7f98a901f4b8685223ec1dac1c1ce3" title="START_TEST" alt="" coords="717,31,824,57"/>
+<area shape="rect" id="node7" href="$d8/dc6/net__crypto_8c.html#adf499e22f45244e3660f9da6de77d2a3" title="do_tcp" alt="" coords="740,81,801,108"/>
+<area shape="rect" id="node8" href="$de/d42/net__crypto_8h.html#a6fa028eb320bf09ecd619c5053580436" title="do_net_crypto" alt="" coords="872,81,976,108"/>
+<area shape="rect" id="node9" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="1024,81,1131,108"/>
+<area shape="rect" id="node10" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1195,56,1245,83"/>
+<area shape="rect" id="node11" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1179,107,1261,133"/>
+<area shape="rect" id="node12" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1309,31,1416,57"/>
+<area shape="rect" id="node13" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1337,81,1389,108"/>
+<area shape="rect" id="node14" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1337,132,1388,159"/>
+<area shape="rect" id="node15" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1326,183,1399,209"/>
+<area shape="rect" id="node16" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1464,183,1515,209"/>
+</map>

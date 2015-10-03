@@ -1,0 +1,6 @@
+<map id="Onion_Announce_Entry" name="Onion_Announce_Entry">
+<area shape="rect" id="node2" href="$struct_i_p___port.html" title="IP_Port" alt="" coords="51,273,118,300"/>
+<area shape="rect" id="node3" href="$struct_i_p.html" title="IP" alt="" coords="65,184,104,211"/>
+<area shape="rect" id="node4" href="$union_i_p4.html" title="IP4" alt="" coords="34,95,77,121"/>
+<area shape="rect" id="node6" href="$union_i_p6.html" title="IP6" alt="" coords="106,95,149,121"/>
+</map>

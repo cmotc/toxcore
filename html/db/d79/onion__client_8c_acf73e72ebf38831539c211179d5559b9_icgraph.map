@@ -1,0 +1,28 @@
+<map id="new_sendback" name="new_sendback">
+<area shape="rect" id="node2" href="$db/d79/onion__client_8c.html#a4253f1739f978c9aac584c97b7a55f48" title="client_send_announce\l_request" alt="" coords="163,194,313,235"/>
+<area shape="rect" id="node3" href="$db/d79/onion__client_8c.html#a934df896ad375a9dbd82f563fb27144f" title="client_ping_nodes" alt="" coords="361,151,488,177"/>
+<area shape="rect" id="node18" href="$db/d79/onion__client_8c.html#ae37f00e2304222b24cef2cce370e58d3" title="do_announce" alt="" coords="375,201,474,228"/>
+<area shape="rect" id="node27" href="$db/d79/onion__client_8c.html#a02301d507ab3c11bfee8112560f36f87" title="do_friend" alt="" coords="590,252,665,279"/>
+<area shape="rect" id="node4" href="$db/d79/onion__client_8c.html#acef82e3853e62dce8cd45450ff028f97" title="handle_announce_response" alt="" coords="536,151,719,177"/>
+<area shape="rect" id="node5" href="$db/d79/onion__client_8c.html#a3519dd95525df398b46b0e4a928f54f0" title="handle_tcp_onion" alt="" coords="767,151,889,177"/>
+<area shape="rect" id="node6" href="$d9/d26/onion__client_8h.html#a9a6ae3a9c70a5221a65bd1c9be751a2e" title="new_onion_client" alt="" coords="937,139,1060,165"/>
+<area shape="rect" id="node7" href="$d7/dd9/onion__test_8c.html#a5945771cafdfe39074adf8ddd47ae81b" title="new_onions" alt="" coords="1121,157,1212,184"/>
+<area shape="rect" id="node9" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="1108,107,1225,133"/>
+<area shape="rect" id="node8" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="1273,183,1380,209"/>
+<area shape="rect" id="node10" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1301,56,1352,83"/>
+<area shape="rect" id="node11" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1291,107,1362,133"/>
+<area shape="rect" id="node12" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1428,56,1535,83"/>
+<area shape="rect" id="node13" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1449,5,1513,32"/>
+<area shape="rect" id="node15" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1442,157,1521,184"/>
+<area shape="rect" id="node17" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1456,107,1507,133"/>
+<area shape="rect" id="node14" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1583,56,1633,83"/>
+<area shape="rect" id="node16" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1583,208,1633,235"/>
+<area shape="rect" id="node19" href="$d9/d26/onion__client_8h.html#aa1771a7c1ebf446973e8d2bbb7ea8c2d" title="do_onion_client" alt="" coords="943,227,1055,253"/>
+<area shape="rect" id="node20" href="$d7/dd9/onion__test_8c.html#ab45bd517e9eb750ba65272a4a8ebc250" title="do_onions" alt="" coords="1126,208,1207,235"/>
+<area shape="rect" id="node21" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="1113,259,1220,285"/>
+<area shape="rect" id="node22" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1301,309,1352,336"/>
+<area shape="rect" id="node23" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1285,259,1368,285"/>
+<area shape="rect" id="node24" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1428,360,1535,387"/>
+<area shape="rect" id="node25" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1455,309,1507,336"/>
+<area shape="rect" id="node26" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1445,259,1518,285"/>
+</map>

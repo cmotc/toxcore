@@ -1,0 +1,10 @@
+<map id="do_receipts" name="do_receipts">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#a36587bd583123730d702e5a4cb894e5f" title="friend_not_valid" alt="" coords="370,5,483,32"/>
+<area shape="rect" id="node3" href="$d8/d8d/_messenger_8c.html#a27839390fa4224c2474ad304ee6a199c" title="friend_received_packet" alt="" coords="143,56,299,83"/>
+<area shape="rect" id="node4" href="$d8/dc6/net__crypto_8c.html#a8ced352d973b7f835224854ef97f4407" title="cryptpacket_received" alt="" coords="353,56,500,83"/>
+<area shape="rect" id="node7" href="$d2/db1/friend__connection_8c.html#a8586e3dfb2047821c4214adf8d06a877" title="friend_connection_crypt\l_connection_id" alt="" coords="347,107,507,149"/>
+<area shape="rect" id="node5" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="555,56,708,83"/>
+<area shape="rect" id="node6" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="766,49,905,90"/>
+<area shape="rect" id="node8" href="$d2/db1/friend__connection_8c.html#a0c0c32645b094058a6e6d6bcab4ed718" title="get_conn" alt="" coords="594,115,669,141"/>
+<area shape="rect" id="node9" href="$d2/db1/friend__connection_8c.html#abecf42b27a016431837ee0b8a4ac5a5e" title="friendconn_id_not_valid" alt="" coords="756,115,915,141"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="cs_kill" name="cs_kill">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a30114dcdaee5519093e2ff87708c92ed" title="buffer_free" alt="" coords="112,56,196,83"/>
+<area shape="rect" id="node6" href="$d5/def/codec_8c.html#ac44be2f075777b2461178608c0efb36c" title="jbuf_free" alt="" coords="118,107,190,133"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#a6b10a945e7d4808b0192ee3b949babd3" title="buffer_clear" alt="" coords="244,56,335,83"/>
+<area shape="rect" id="node4" href="$d5/def/codec_8c.html#a6e1ec2c6aa4625da81486a73661df742" title="buffer_empty" alt="" coords="383,5,481,32"/>
+<area shape="rect" id="node5" href="$d5/def/codec_8c.html#aa27710dac4f829dad6d007cf01bdf55f" title="buffer_read" alt="" coords="389,56,475,83"/>
+<area shape="rect" id="node7" href="$d5/def/codec_8c.html#a2ab3636512ac576d996c504f9226108d" title="jbuf_clear" alt="" coords="250,107,329,133"/>
+<area shape="rect" id="node8" href="$d6/d46/rtp_8c.html#a19cbf4e4c2831f2e162e7580bb7d5c7b" title="rtp_free_msg" alt="" coords="383,107,481,133"/>
+</map>

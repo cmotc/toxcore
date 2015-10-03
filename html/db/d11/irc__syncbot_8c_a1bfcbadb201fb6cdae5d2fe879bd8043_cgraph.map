@@ -1,0 +1,8 @@
+<map id="copy_groupmessage" name="copy_groupmessage">
+<area shape="rect" id="node2" href="$d4/d71/tox__old_8h.html#ac7824c28f01fcdd068fe26c6e8b06413" title="tox_group_peername" alt="" coords="202,5,345,32"/>
+<area shape="rect" id="node6" href="$d4/d71/tox__old_8h.html#a5b1f49a6eab7d8d082c9aa5e493590c7" title="tox_group_peernumber\l_is_ours" alt="" coords="196,57,351,98"/>
+<area shape="rect" id="node3" href="$df/de9/toxcore_2group_8c.html#aca385bea140e668374002b11db01d78d" title="group_peername" alt="" coords="429,8,547,35"/>
+<area shape="rect" id="node4" href="$df/de9/toxcore_2group_8c.html#a11d3240a6755f36864ed2b072e826483" title="get_group_c" alt="" coords="625,35,719,61"/>
+<area shape="rect" id="node5" href="$df/de9/toxcore_2group_8c.html#a4ffc6ae8485f94d9177baf65f777c72e" title="groupnumber_not_valid" alt="" coords="767,35,923,61"/>
+<area shape="rect" id="node7" href="$df/de9/toxcore_2group_8c.html#a86daba4a594e2677b03851483ed3416c" title="group_peernumber_is_ours" alt="" coords="399,60,577,87"/>
+</map>

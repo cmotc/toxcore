@@ -1,0 +1,10 @@
+<map id="group_ping_send" name="group_ping_send">
+<area shape="rect" id="node2" href="$df/de9/toxcore_2group_8c.html#a1103873d88cad80582662eb863fa6c03" title="ping_groupchat" alt="" coords="173,81,284,108"/>
+<area shape="rect" id="node3" href="$dd/de4/toxcore_2group_8h.html#a9529a2149c68cbff38d43419d9ebeecc" title="do_groupchats" alt="" coords="332,81,439,108"/>
+<area shape="rect" id="node4" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="487,81,569,108"/>
+<area shape="rect" id="node5" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="617,5,724,32"/>
+<area shape="rect" id="node6" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="645,56,697,83"/>
+<area shape="rect" id="node7" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="645,107,696,133"/>
+<area shape="rect" id="node8" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="634,157,707,184"/>
+<area shape="rect" id="node9" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="772,157,823,184"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="send_message" name="send_message">
+<area shape="rect" id="node2" href="$d2/d9b/msi_8c.html#ada9b9ef63c3c73e22b672d7cfb5bd6a3" title="handle_recv_starting" alt="" coords="164,247,307,273"/>
+<area shape="rect" id="node7" href="$d9/d06/msi_8h.html#a3cf8337cde29970de207c3c77c953261" title="msi_answer" alt="" coords="189,436,281,463"/>
+<area shape="rect" id="node10" href="$d9/d06/msi_8h.html#aefbf5f591676d4b56853b21fdf215e69" title="msi_cancel" alt="" coords="191,309,279,336"/>
+<area shape="rect" id="node13" href="$d9/d06/msi_8h.html#a8023a8417a3e79e382a9ff3d99cdd24a" title="msi_hangup" alt="" coords="536,411,628,437"/>
+<area shape="rect" id="node15" href="$d9/d06/msi_8h.html#a9f714a4729f22ca5810ff0ee89313fab" title="msi_invite" alt="" coords="541,512,623,539"/>
+<area shape="rect" id="node17" href="$d9/d06/msi_8h.html#a9d846fba046c8539b9e183cc01a25fe9" title="msi_reject" alt="" coords="541,563,623,589"/>
+<area shape="rect" id="node22" href="$d9/d06/msi_8h.html#ad82b81e88f4a912b7ec492baf6ab7ea8" title="msi_change_csettings" alt="" coords="881,613,1033,640"/>
+<area shape="rect" id="node24" href="$d2/d9b/msi_8c.html#a61759c89740aba4cdeea164816115d32" title="send_error" alt="" coords="194,171,277,197"/>
+<area shape="rect" id="node26" href="$d2/d9b/msi_8c.html#aeac54d94bd4b3bfceab3a080cbf5e100" title="send_reponse" alt="" coords="359,56,461,83"/>
+<area shape="rect" id="node3" href="$d2/d9b/msi_8c.html#aa944624a15314d9d2eff6373f9506725" title="msi_handle_packet" alt="" coords="699,132,833,159"/>
+<area shape="rect" id="node4" href="$d9/d06/msi_8h.html#af33f2706f6d0f8e547716e2f6c5f68d3" title="msi_new" alt="" coords="920,171,995,197"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#ab5565a6110643c428b28b2c79fb47b08" title="toxav_new" alt="" coords="1117,259,1202,285"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="1285,461,1392,488"/>
+<area shape="rect" id="node8" href="$d9/d82/toxav_8h.html#a71ea4cbf449462254bc5982b810dfe20" title="toxav_answer" alt="" coords="715,461,817,488"/>
+<area shape="rect" id="node9" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="906,461,1009,488"/>
+<area shape="rect" id="node11" href="$d2/d9b/msi_8c.html#a7a5b1246a4f5680ee60c45e69e04dcd4" title="handle_timeout" alt="" coords="355,411,465,437"/>
+<area shape="rect" id="node19" href="$d9/d06/msi_8h.html#a85e4f629815819ee2abed82041bd9436" title="msi_kill" alt="" coords="377,259,443,285"/>
+<area shape="rect" id="node21" href="$d9/d82/toxav_8h.html#ae0d14b853f586b2e07d2d0ef62efc4eb" title="toxav_cancel" alt="" coords="908,360,1007,387"/>
+<area shape="rect" id="node12" href="$d2/d9b/msi_8c.html#ac4fd005ce0f0c990e7982acd92e341e3" title="handle_recv_ringing" alt="" coords="513,309,651,336"/>
+<area shape="rect" id="node14" href="$d9/d82/toxav_8h.html#a225958005e20091600e798e9827a5639" title="toxav_hangup" alt="" coords="715,411,817,437"/>
+<area shape="rect" id="node16" href="$d9/d82/toxav_8h.html#a843e5f488e25017d9c7b8acf097e0977" title="toxav_call" alt="" coords="725,512,807,539"/>
+<area shape="rect" id="node18" href="$d9/d82/toxav_8h.html#ad783f1a19a2765ff6924723193d05d07" title="toxav_reject" alt="" coords="1113,563,1206,589"/>
+<area shape="rect" id="node20" href="$d9/d82/toxav_8h.html#a10c356c3264067f4e8ebdc1cc7c6d545" title="toxav_kill" alt="" coords="543,208,621,235"/>
+<area shape="rect" id="node23" href="$d9/d82/toxav_8h.html#a2ad323fd957032a11b1fadd4668f41ee" title="toxav_change_settings" alt="" coords="1081,613,1237,640"/>
+<area shape="rect" id="node25" href="$d2/d9b/msi_8c.html#a6c1d69163b2cfedea11ed5ed688dc669" title="handle_recv_invite" alt="" coords="517,107,647,133"/>
+<area shape="rect" id="node27" href="$d2/d9b/msi_8c.html#adab5cbd8d80ff38f19008ee3fec808b8" title="handle_recv_reject" alt="" coords="517,56,647,83"/>
+<area shape="rect" id="node28" href="$d2/d9b/msi_8c.html#a94cb98234fb1cdeffe8ad8b8601c8dc9" title="handle_recv_end" alt="" coords="522,5,642,32"/>
+</map>

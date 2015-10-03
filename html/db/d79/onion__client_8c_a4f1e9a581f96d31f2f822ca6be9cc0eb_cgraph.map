@@ -1,0 +1,9 @@
+<map id="client_add_to_list" name="client_add_to_list">
+<area shape="rect" id="node2" href="$db/d79/onion__client_8c.html#a8b4a60d685081d29b3b61256241acaf5" title="cmp_entry" alt="" coords="199,31,282,58"/>
+<area shape="rect" id="node3" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="386,31,469,58"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="549,133,628,159"/>
+<area shape="rect" id="node5" href="$dc/dc1/_d_h_t_8c.html#a903a5bc580826fe447adb841b7782333" title="id_closest" alt="" coords="387,82,468,109"/>
+<area shape="rect" id="node6" href="$db/d79/onion__client_8c.html#a5f6d509093a5e8a3491d21cc21afc7b1" title="onion_add_path_node" alt="" coords="353,183,501,210"/>
+<area shape="rect" id="node7" href="$db/d79/onion__client_8c.html#a79b0950c5eea44ddc315ef8a9b2e47f1" title="set_path_timeouts" alt="" coords="176,234,305,261"/>
+<area shape="rect" id="node8" href="$d4/d18/onion_8c.html#a0037270c6e9bca59c4e0cd118ebfa593" title="onion_path_to_nodes" alt="" coords="355,285,500,311"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="init_video_encoder" name="init_video_encoder">
+<area shape="rect" id="node2" href="$d1/d16/codec_8h.html#aa99953343ed26c4b7914cac072ff95c1" title="cs_new" alt="" coords="227,31,293,57"/>
+<area shape="rect" id="node8" href="$d1/d16/codec_8h.html#a2c3fede54bd31b427fc5147cb450c714" title="cs_set_video_encoder\l_resolution" alt="" coords="184,82,336,123"/>
+<area shape="rect" id="node3" href="$d9/d82/toxav_8h.html#a9f2a69dda0bfe14d2a2bcf2497967f31" title="toxav_prepare_transmission" alt="" coords="384,31,569,57"/>
+<area shape="rect" id="node4" href="$d6/d19/toxav__basic__test_8c.html#a2a5cee1a2c214e77eb5297bdd1a60448" title="callback_call_started" alt="" coords="617,5,761,32"/>
+<area shape="rect" id="node7" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="638,56,741,83"/>
+<area shape="rect" id="node5" href="$d6/d19/toxav__basic__test_8c.html#a20d31a781f2f50db76459101b62c5720" title="register_callbacks" alt="" coords="809,5,936,32"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="984,5,1091,32"/>
+<area shape="rect" id="node9" href="$d9/d82/toxav_8h.html#ac15e39782145d25bf6ba397aaf910071" title="toxav_prepare_video\l_frame" alt="" coords="405,82,548,123"/>
+</map>

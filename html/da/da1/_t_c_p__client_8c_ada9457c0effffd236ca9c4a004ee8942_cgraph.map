@@ -1,0 +1,4 @@
+<map id="socks5_read_handshake_response" name="socks5_read_handshake_response">
+<area shape="rect" id="node2" href="$d4/d40/_t_c_p__server_8c.html#a88eda37b476d8dcfdba94899e740dd9e" title="read_TCP_packet" alt="" coords="220,13,347,39"/>
+<area shape="rect" id="node3" href="$d4/d40/_t_c_p__server_8c.html#ae80fe7119d00d2a7788c0839a90e0782" title="TCP_socket_data_recv\l_buffer" alt="" coords="395,5,553,47"/>
+</map>

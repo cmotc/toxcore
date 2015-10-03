@@ -1,0 +1,12 @@
+<map id="buffer_clear" name="buffer_clear">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a30114dcdaee5519093e2ff87708c92ed" title="buffer_free" alt="" coords="144,31,228,57"/>
+<area shape="rect" id="node3" href="$d1/d16/codec_8h.html#aa99953343ed26c4b7914cac072ff95c1" title="cs_new" alt="" coords="276,5,343,32"/>
+<area shape="rect" id="node9" href="$d1/d16/codec_8h.html#addde6ea51851fcce009bb7d45147a88f" title="cs_kill" alt="" coords="280,56,339,83"/>
+<area shape="rect" id="node4" href="$d9/d82/toxav_8h.html#a9f2a69dda0bfe14d2a2bcf2497967f31" title="toxav_prepare_transmission" alt="" coords="391,5,576,32"/>
+<area shape="rect" id="node5" href="$d6/d19/toxav__basic__test_8c.html#a2a5cee1a2c214e77eb5297bdd1a60448" title="callback_call_started" alt="" coords="624,5,768,32"/>
+<area shape="rect" id="node8" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="645,56,747,83"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#a20d31a781f2f50db76459101b62c5720" title="register_callbacks" alt="" coords="816,31,943,57"/>
+<area shape="rect" id="node7" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="991,69,1097,96"/>
+<area shape="rect" id="node10" href="$d9/d82/toxav_8h.html#a10c356c3264067f4e8ebdc1cc7c6d545" title="toxav_kill" alt="" coords="445,56,522,83"/>
+<area shape="rect" id="node11" href="$d9/d82/toxav_8h.html#aeef2a0ed5e716e7449d3f1c6053e31af" title="toxav_kill_transmission" alt="" coords="404,107,563,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="toxav_prepare_video_frame" name="toxav_prepare_video_frame">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a2c3fede54bd31b427fc5147cb450c714" title="cs_set_video_encoder\l_resolution" alt="" coords="196,5,348,47"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#ab07ecfbcd82777c995c23e3fe70f6a2b" title="init_video_encoder" alt="" coords="396,13,527,39"/>
+</map>

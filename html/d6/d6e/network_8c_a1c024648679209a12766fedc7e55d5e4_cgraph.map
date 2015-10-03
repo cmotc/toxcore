@@ -1,0 +1,6 @@
+<map id="addr_resolve_or_parse_ip" name="addr_resolve_or_parse_ip">
+<area shape="rect" id="node2" href="$d6/d6e/network_8c.html#a944255f7a47e106de5faea1bf7387a28" title="addr_parse_ip" alt="" coords="224,5,327,32"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#af329b139810a0b31f336bdf416333b24" title="addr_resolve" alt="" coords="227,56,323,83"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#ad953dedd6d25d03cf441960dd1e1fed1" title="networking_at_startup" alt="" coords="375,56,525,83"/>
+<area shape="rect" id="node5" href="$d6/d6e/network_8c.html#a9f5cd2a713e4a17d4c6d36650336cab0" title="current_time_actual" alt="" coords="573,56,709,83"/>
+</map>

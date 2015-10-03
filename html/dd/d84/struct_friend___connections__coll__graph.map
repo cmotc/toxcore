@@ -1,0 +1,37 @@
+<map id="Friend_Connections" name="Friend_Connections">
+<area shape="rect" id="node2" href="$d9/daf/struct_friend___conn.html" title="Friend_Conn" alt="" coords="1220,1111,1316,1137"/>
+<area shape="rect" id="node3" href="$db/d14/struct_i_p___port.html" title="IP_Port" alt="" coords="681,729,747,756"/>
+<area shape="rect" id="node8" href="$d3/d53/struct_node__format.html" title="Node_format" alt="" coords="904,861,1001,888"/>
+<area shape="rect" id="node10" href="$d6/db7/struct_crypto___connection.html" title="Crypto_Connection" alt="" coords="885,797,1020,824"/>
+<area shape="rect" id="node16" href="$df/d64/struct_t_c_p___proxy___info.html" title="TCP_Proxy_Info" alt="" coords="893,316,1012,343"/>
+<area shape="rect" id="node17" href="$d1/dc5/struct_t_c_p__con.html" title="TCP_con" alt="" coords="1578,244,1655,271"/>
+<area shape="rect" id="node18" href="$de/d14/struct_t_c_p___client___connection.html" title="TCP_Client_Connection" alt="" coords="1187,185,1349,212"/>
+<area shape="rect" id="node22" href="$de/d25/struct_i_p_p_ts_png.html" title="IPPTsPng" alt="" coords="911,521,994,548"/>
+<area shape="rect" id="node25" href="$d7/dd2/struct_packet___handles.html" title="Packet_Handles" alt="" coords="1044,736,1163,763"/>
+<area shape="rect" id="node26" href="$d5/d54/struct_cryptopacket___handles.html" title="Cryptopacket_Handles" alt="" coords="1373,620,1528,647"/>
+<area shape="rect" id="node33" href="$de/dd7/struct_onion___node.html" title="Onion_Node" alt="" coords="2152,1056,2247,1083"/>
+<area shape="rect" id="node37" href="$df/d31/struct_onion___path.html" title="Onion_Path" alt="" coords="1058,973,1149,1000"/>
+<area shape="rect" id="node4" href="$d4/d6d/struct_i_p.html" title="IP" alt="" coords="443,571,482,597"/>
+<area shape="rect" id="node5" href="$d3/da8/union_i_p4.html" title="IP4" alt="" coords="183,571,225,597"/>
+<area shape="rect" id="node7" href="$d7/dae/union_i_p6.html" title="IP6" alt="" coords="183,520,225,547"/>
+<area shape="rect" id="node15" href="$da/d7a/struct_t_c_p___connection__to.html" title="TCP_Connection_to" alt="" coords="249,12,389,39"/>
+<area shape="rect" id="node20" href="$de/d15/struct_d_h_t.html" title="DHT" alt="" coords="1890,563,1941,589"/>
+<area shape="rect" id="node27" href="$d0/d55/struct_d_h_t___friend.html" title="DHT_Friend" alt="" coords="1570,531,1663,557"/>
+<area shape="rect" id="node29" href="$d6/d07/struct_shared___keys.html" title="Shared_Keys" alt="" coords="536,361,636,388"/>
+<area shape="rect" id="node32" href="$d9/d68/struct_onion___client.html" title="Onion_Client" alt="" coords="2628,884,2725,911"/>
+<area shape="rect" id="node9" href="$de/d49/struct_net___crypto.html" title="Net_Crypto" alt="" coords="2403,572,2492,599"/>
+<area shape="rect" id="node11" href="$d2/d40/struct_packets___array.html" title="Packets_Array" alt="" coords="660,1119,768,1145"/>
+<area shape="rect" id="node12" href="$d7/d14/struct_packet___data.html" title="Packet_Data" alt="" coords="413,1119,512,1145"/>
+<area shape="rect" id="node13" href="$d6/d48/struct_b_s___l_i_s_t.html" title="BS_LIST" alt="" coords="2162,496,2237,523"/>
+<area shape="rect" id="node14" href="$d6/dd9/struct_t_c_p___connections.html" title="TCP_Connections" alt="" coords="2135,305,2264,332"/>
+<area shape="rect" id="node19" href="$df/d8f/struct_t_c_p___priority___list.html" title="TCP_Priority_List" alt="" coords="890,152,1015,179"/>
+<area shape="rect" id="node21" href="$d8/d1c/struct_client__data.html" title="Client_data" alt="" coords="1224,521,1312,548"/>
+<area shape="rect" id="node23" href="$dd/dee/struct_hardening.html" title="Hardening" alt="" coords="673,531,755,557"/>
+<area shape="rect" id="node24" href="$d3/d0b/struct_networking___core.html" title="Networking_Core" alt="" coords="1555,695,1678,721"/>
+<area shape="rect" id="node28" href="$d7/d70/struct_n_a_t.html" title="NAT" alt="" coords="1243,572,1293,599"/>
+<area shape="rect" id="node30" href="$d5/d39/struct_ping___array.html" title="Ping_Array" alt="" coords="1573,644,1660,671"/>
+<area shape="rect" id="node31" href="$db/df0/struct_ping___array___entry.html" title="Ping_Array_Entry" alt="" coords="1206,673,1330,700"/>
+<area shape="rect" id="node34" href="$d3/d16/struct_onion___friend.html" title="Onion_Friend" alt="" coords="2398,1048,2497,1075"/>
+<area shape="rect" id="node35" href="$d7/d37/struct_last___pinged.html" title="Last_Pinged" alt="" coords="2152,1003,2247,1029"/>
+<area shape="rect" id="node36" href="$dd/db7/struct_onion___client___paths.html" title="Onion_Client_Paths" alt="" coords="1381,956,1520,983"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="populate_path_nodes_tcp" name="populate_path_nodes_tcp">
+<area shape="rect" id="node2" href="$d8/dc6/net__crypto_8c.html#ac398e442ae77ace2af0156b9ce7f604c" title="copy_connected_tcp\l_relays" alt="" coords="237,5,380,47"/>
+<area shape="rect" id="node6" href="$db/d79/onion__client_8c.html#accbc9c20b5933ea088d718ea09abd6b8" title="onion_add_bs_path_node" alt="" coords="224,71,393,98"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#ac2e62c717ccebd2379e32ca9b330812c" title="tcp_copy_connected\l_relays" alt="" coords="441,5,584,47"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="632,13,767,39"/>
+<area shape="rect" id="node5" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="815,5,981,47"/>
+</map>

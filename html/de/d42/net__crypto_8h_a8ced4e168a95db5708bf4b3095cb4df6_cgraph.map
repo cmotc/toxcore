@@ -1,0 +1,13 @@
+<map id="set_direct_ip_port" name="set_direct_ip_port">
+<area shape="rect" id="node2" href="$d7/d40/list_8c.html#ace05755dd126bff18700a17d6f8edd28" title="bs_list_add" alt="" coords="211,9,299,36"/>
+<area shape="rect" id="node5" href="$d7/d40/list_8c.html#a365995457101cc16f8c6b25ead07fb6f" title="bs_list_remove" alt="" coords="200,60,311,87"/>
+<area shape="rect" id="node6" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="179,115,332,141"/>
+<area shape="rect" id="node8" href="$d6/d6e/network_8c.html#a6913335cf0b2a76303f5f61d18ea2277" title="ipport_equal" alt="" coords="209,165,301,192"/>
+<area shape="rect" id="node10" href="$d1/de5/_l_a_n__discovery_8c.html#a2d80a53390598eb8ededbc63f4e9c152" title="LAN_ip" alt="" coords="223,240,288,267"/>
+<area shape="rect" id="node12" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="216,291,295,317"/>
+<area shape="rect" id="node3" href="$d7/d40/list_8c.html#ae2aaa4149a770ed6e47a58af78fc6600" title="find" alt="" coords="428,56,471,83"/>
+<area shape="rect" id="node4" href="$d7/d40/list_8c.html#a7c246868ee5a3542509cdf90379c5bb2" title="resize" alt="" coords="421,5,478,32"/>
+<area shape="rect" id="node7" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="380,107,519,149"/>
+<area shape="rect" id="node9" href="$d6/d6e/network_8c.html#af982256c6d8486349bdc13a920884ef6" title="ip_equal" alt="" coords="414,173,485,200"/>
+<area shape="rect" id="node11" href="$d1/de5/_l_a_n__discovery_8c.html#a56fb8ae3cd774c1b1d5670b9c4fb8959" title="Local_ip" alt="" coords="414,248,485,275"/>
+</map>

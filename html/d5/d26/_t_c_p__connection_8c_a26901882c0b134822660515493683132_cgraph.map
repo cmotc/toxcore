@@ -1,0 +1,37 @@
+<map id="add_tcp_relay_connection" name="add_tcp_relay_connection">
+<area shape="rect" id="node2" href="$d5/d26/_t_c_p__connection_8c.html#a00d2fc46939eaff0106abe890760bee0" title="add_tcp_connection\l_to_conn" alt="" coords="442,5,581,47"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#af7a3111a46b9cb6947452393a2cbea31" title="add_tcp_number_relay\l_connection" alt="" coords="229,152,383,193"/>
+<area shape="rect" id="node5" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="456,71,567,98"/>
+<area shape="rect" id="node7" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="651,189,786,215"/>
+<area shape="rect" id="node18" href="$d5/d26/_t_c_p__connection_8c.html#af221264f649b29407becf0e4ca352cbd" title="add_tcp_relay_instance" alt="" coords="227,407,385,434"/>
+<area shape="rect" id="node35" href="$d5/d26/_t_c_p__connection_8c.html#a6146372f26967550f1260e7f72589fa4" title="find_tcp_connection\l_relay" alt="" coords="237,341,375,383"/>
+<area shape="rect" id="node36" href="$d5/d26/_t_c_p__connection_8c.html#a255916e82a74ad6c617216af786ec335" title="online_tcp_connection\l_from_conn" alt="" coords="231,459,381,500"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#a452c51915aabeb4300da3591a7d14096" title="tcp_connection_in_conn" alt="" coords="637,13,800,39"/>
+<area shape="rect" id="node9" href="$d5/d26/_t_c_p__connection_8c.html#a739c051ae50acb8bb1d84ff30ea96432" title="send_tcp_relay_routing\l_request" alt="" coords="433,123,589,164"/>
+<area shape="rect" id="node17" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="679,239,758,266"/>
+<area shape="rect" id="node6" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="647,64,790,105"/>
+<area shape="rect" id="node8" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="853,188,1019,229"/>
+<area shape="rect" id="node10" href="$da/da1/_t_c_p__client_8c.html#a0dc7de6475c22a0a31722bbf7ebb8dc5" title="send_routing_request" alt="" coords="645,130,792,157"/>
+<area shape="rect" id="node11" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="848,123,1024,164"/>
+<area shape="rect" id="node12" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="1110,79,1199,106"/>
+<area shape="rect" id="node13" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="1072,423,1237,450"/>
+<area shape="rect" id="node14" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="1094,130,1215,157"/>
+<area shape="rect" id="node15" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="1087,181,1222,207"/>
+<area shape="rect" id="node16" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="1285,181,1487,207"/>
+<area shape="rect" id="node19" href="$d5/d26/_t_c_p__connection_8c.html#a2cd69ef2e2153135f588193ef36acf3e" title="create_tcp_connection" alt="" coords="435,407,588,434"/>
+<area shape="rect" id="node20" href="$da/da1/_t_c_p__client_8c.html#aedb0d5c54ac7754bb342517247ac632d" title="new_TCP_connection" alt="" coords="436,498,587,525"/>
+<area shape="rect" id="node21" href="$da/da1/_t_c_p__client_8c.html#a60b303142f843cad13249065ddeefb17" title="connect_sock_to" alt="" coords="658,625,779,651"/>
+<area shape="rect" id="node22" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="649,675,789,702"/>
+<area shape="rect" id="node23" href="$da/da1/_t_c_p__client_8c.html#aec632a758fda6b73153ec16180750366" title="generate_handshake" alt="" coords="647,574,790,601"/>
+<area shape="rect" id="node26" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="682,726,755,753"/>
+<area shape="rect" id="node27" href="$d6/d6e/network_8c.html#ad953dedd6d25d03cf441960dd1e1fed1" title="networking_at_startup" alt="" coords="643,777,794,803"/>
+<area shape="rect" id="node29" href="$da/da1/_t_c_p__client_8c.html#a3000ce77c7c25ee8a08da815cbd0c7cb" title="proxy_http_generate\l_connection_request" alt="" coords="647,291,790,332"/>
+<area shape="rect" id="node31" href="$da/da1/_t_c_p__client_8c.html#a76c75a8969ec140e5799744179ba8048" title="proxy_socks5_generate\l_handshake" alt="" coords="639,356,799,397"/>
+<area shape="rect" id="node32" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="646,422,791,449"/>
+<area shape="rect" id="node33" href="$d6/d6e/network_8c.html#a379153c027c17d7c71797cb0e3ea41a3" title="set_socket_nosigpipe" alt="" coords="645,473,793,499"/>
+<area shape="rect" id="node34" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="677,523,761,550"/>
+<area shape="rect" id="node24" href="$dc/d85/crypto__core_8c.html#a8b1033efb47c625779d11be7d8eb9e24" title="new_nonce" alt="" coords="892,599,980,626"/>
+<area shape="rect" id="node25" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="1101,549,1208,575"/>
+<area shape="rect" id="node28" href="$d6/d6e/network_8c.html#a9f5cd2a713e4a17d4c6d36650336cab0" title="current_time_actual" alt="" coords="868,777,1004,803"/>
+<area shape="rect" id="node30" href="$d6/d6e/network_8c.html#ae25cce1bbb77b6a8b441bb940a75783f" title="ip_parse_addr" alt="" coords="885,298,987,325"/>
+</map>

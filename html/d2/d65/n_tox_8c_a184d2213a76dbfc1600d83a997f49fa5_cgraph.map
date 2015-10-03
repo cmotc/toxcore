@@ -1,0 +1,11 @@
+<map id="timeout_getch" name="timeout_getch">
+<area shape="rect" id="node2" href="$d2/d65/n_tox_8c.html#a98bd143de92c21739c898410eab0ac1d" title="new_lines" alt="" coords="189,56,269,83"/>
+<area shape="rect" id="node8" href="$d3/d69/tox_8c.html#ad32da51807cfe5023d63d2e9de5759c1" title="tox_iteration_interval" alt="" coords="157,107,300,133"/>
+<area shape="rect" id="node3" href="$d2/d65/n_tox_8c.html#ab52f6cff45dee7f6e3adf242b1fa03ba" title="new_lines_mark" alt="" coords="370,56,486,83"/>
+<area shape="rect" id="node4" href="$d2/d65/n_tox_8c.html#a940fcd70483beb81d4c45e58e8599d13" title="do_refresh" alt="" coords="581,56,663,83"/>
+<area shape="rect" id="node5" href="$d2/d65/n_tox_8c.html#a589df1ea39e70220cb713dba16cdb5ab" title="count_lines" alt="" coords="736,5,824,32"/>
+<area shape="rect" id="node6" href="$d2/d65/n_tox_8c.html#a8d3bd9e1823e8627c8ee5fcdf639cea8" title="wrap" alt="" coords="755,56,805,83"/>
+<area shape="rect" id="node7" href="$d2/d65/n_tox_8c.html#a63f4f6ed6f524ffbf7e0d096d8915700" title="wrap_bars" alt="" coords="739,107,821,133"/>
+<area shape="rect" id="node9" href="$d8/d8d/_messenger_8c.html#ae99fff78f4ac1f79f1faa817d31c7dfe" title="messenger_run_interval" alt="" coords="348,107,508,133"/>
+<area shape="rect" id="node10" href="$d8/dc6/net__crypto_8c.html#af0fcda7ce07347179ae4f327489c7643" title="crypto_run_interval" alt="" coords="556,107,688,133"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="handle_status" name="handle_status">
+<area shape="rect" id="node2" href="$d2/db1/friend__connection_8c.html#a0c0c32645b094058a6e6d6bcab4ed718" title="get_conn" alt="" coords="198,5,273,32"/>
+<area shape="rect" id="node4" href="$db/d79/onion__client_8c.html#a8b91a1e598508b83e0408fc65316ae73" title="onion_set_friend_online" alt="" coords="156,56,315,83"/>
+<area shape="rect" id="node5" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="403,81,481,108"/>
+<area shape="rect" id="node3" href="$d2/db1/friend__connection_8c.html#abecf42b27a016431837ee0b8a4ac5a5e" title="friendconn_id_not_valid" alt="" coords="363,5,521,32"/>
+</map>

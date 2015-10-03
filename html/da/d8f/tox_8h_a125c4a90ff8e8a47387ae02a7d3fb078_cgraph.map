@@ -1,0 +1,5 @@
+<map id="tox_self_get_friend_list" name="tox_self_get_friend_list">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#af7181add8f82138b95e524478a3a74af" title="copy_friendlist" alt="" coords="222,5,329,32"/>
+<area shape="rect" id="node3" href="$d3/d69/tox_8c.html#a31e930b94fefd4040a00b84195b59243" title="tox_self_get_friend\l_list_size" alt="" coords="209,57,341,98"/>
+<area shape="rect" id="node4" href="$d8/d8d/_messenger_8c.html#ab3db39cd14385440de61a378e25f03f1" title="count_friendlist" alt="" coords="389,64,500,91"/>
+</map>

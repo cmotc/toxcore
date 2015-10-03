@@ -1,0 +1,24 @@
+<map id="save_data" name="save_data">
+<area shape="rect" id="node2" href="$d3/d69/tox_8c.html#ae13c8810890ae2d73b8c46e0c8033ab4" title="tox_get_savedata" alt="" coords="136,283,261,310"/>
+<area shape="rect" id="node23" href="$d3/d69/tox_8c.html#ac2b90c8597ff7afa2e9532e81b65d412" title="tox_get_savedata_size" alt="" coords="309,75,465,102"/>
+<area shape="rect" id="node3" href="$d8/d8d/_messenger_8c.html#af0dfac679b1b57a0036f6511e12fe777" title="messenger_save" alt="" coords="327,310,448,337"/>
+<area shape="rect" id="node4" href="$d8/d8d/_messenger_8c.html#a4ae119dad636f15f1a5d628a13b107d8" title="messenger_size" alt="" coords="527,62,644,89"/>
+<area shape="rect" id="node5" href="$dc/dc1/_d_h_t_8c.html#a55d92a2419bf9384e3cbfe0ec5a8f4d6" title="DHT_size" alt="" coords="748,113,829,139"/>
+<area shape="rect" id="node6" href="$dc/dc1/_d_h_t_8c.html#aa980937ac320a4389b726e04da26cb44" title="packed_node_size" alt="" coords="922,62,1053,89"/>
+<area shape="rect" id="node7" href="$d8/d8d/_messenger_8c.html#ad436fa7850d7bf55222df42ff527c375" title="saved_friendslist_size" alt="" coords="713,163,864,190"/>
+<area shape="rect" id="node9" href="$de/df1/util_8c.html#aebd439a002cb183420a08996f7ffdbef" title="host_to_lendian32" alt="" coords="924,458,1051,485"/>
+<area shape="rect" id="node10" href="$d6/da4/friend__requests_8c.html#a1e61ffb4aba6cf8815238ccc2d18c794" title="get_nospam" alt="" coords="539,585,632,611"/>
+<area shape="rect" id="node11" href="$d8/d8d/_messenger_8c.html#a910e4555ff14d9974e6f1dd227d8dd99" title="z_state_save_subheader" alt="" coords="705,585,872,611"/>
+<area shape="rect" id="node12" href="$d8/dc6/net__crypto_8c.html#ae2f39ed236b85952fa913fdac1785671" title="save_keys" alt="" coords="543,635,628,662"/>
+<area shape="rect" id="node13" href="$d8/d8d/_messenger_8c.html#a25018a4f99e9bba64b138fbc5fe35eea" title="friends_list_save" alt="" coords="525,214,645,241"/>
+<area shape="rect" id="node15" href="$dc/dc1/_d_h_t_8c.html#a7510a9fdbacfffb5987590c4e193c40a" title="DHT_save" alt="" coords="543,433,628,459"/>
+<area shape="rect" id="node17" href="$dc/dc1/_d_h_t_8c.html#a1d6f2fcb008c989f333ae89e840f94b4" title="pack_nodes" alt="" coords="743,534,835,561"/>
+<area shape="rect" id="node18" href="$d8/dc6/net__crypto_8c.html#ac398e442ae77ace2af0156b9ce7f604c" title="copy_connected_tcp\l_relays" alt="" coords="514,316,657,357"/>
+<area shape="rect" id="node22" href="$db/d79/onion__client_8c.html#ad93584ad916d224037dd7a6e5caeebcf" title="onion_backup_nodes" alt="" coords="513,265,657,291"/>
+<area shape="rect" id="node8" href="$d8/d8d/_messenger_8c.html#ab3db39cd14385440de61a378e25f03f1" title="count_friendlist" alt="" coords="932,163,1043,190"/>
+<area shape="rect" id="node14" href="$de/df1/util_8c.html#aa199044077924fcae89d59d2a5af5629" title="host_to_net" alt="" coords="743,214,834,241"/>
+<area shape="rect" id="node16" href="$dc/dc1/_d_h_t_8c.html#a910e4555ff14d9974e6f1dd227d8dd99" title="z_state_save_subheader" alt="" coords="705,483,872,510"/>
+<area shape="rect" id="node19" href="$d5/d26/_t_c_p__connection_8c.html#ac2e62c717ccebd2379e32ca9b330812c" title="tcp_copy_connected\l_relays" alt="" coords="717,316,860,357"/>
+<area shape="rect" id="node20" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="920,323,1055,350"/>
+<area shape="rect" id="node21" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="1103,316,1269,357"/>
+</map>

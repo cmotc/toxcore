@@ -1,0 +1,12 @@
+<map id="send_announce_request" name="send_announce_request">
+<area shape="rect" id="node2" href="$df/d75/onion__announce_8c.html#ad4ee12caef533a0866e8a746041c92d8" title="create_announce_request" alt="" coords="216,56,387,83"/>
+<area shape="rect" id="node7" href="$d4/d18/onion_8c.html#a34cf7934690ab5336b99844383a445a8" title="create_onion_packet" alt="" coords="230,107,373,133"/>
+<area shape="rect" id="node11" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="257,157,346,184"/>
+<area shape="rect" id="node3" href="$dc/d85/crypto__core_8c.html#a014149333522d211490304255e139ec3" title="encrypt_data" alt="" coords="439,5,537,32"/>
+<area shape="rect" id="node6" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="435,56,541,83"/>
+<area shape="rect" id="node4" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="589,81,755,108"/>
+<area shape="rect" id="node5" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="602,5,742,32"/>
+<area shape="rect" id="node8" href="$d4/d18/onion_8c.html#ae9d8dde9317c06fe493658b8145de853" title="ipport_pack" alt="" coords="443,157,533,184"/>
+<area shape="rect" id="node9" href="$d4/d18/onion_8c.html#a6b9b6abcbb6fde502e7822236a978118" title="ip_pack" alt="" coords="639,157,705,184"/>
+<area shape="rect" id="node10" href="$dc/dc1/_d_h_t_8c.html#ae7f65a76f9c4b0093f45fc1777238459" title="to_net_family" alt="" coords="803,157,903,184"/>
+</map>

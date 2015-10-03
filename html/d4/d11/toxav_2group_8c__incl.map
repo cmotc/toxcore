@@ -1,0 +1,22 @@
+<map id="toxav/group.c" name="toxav/group.c">
+<area shape="rect" id="node2" href="$d8/da5/toxav_2group_8h.html" title="group.h" alt="" coords="947,80,1012,107"/>
+<area shape="rect" id="node37" href="$d8/d3c/util_8h.html" title="../toxcore/util.h" alt="" coords="1127,528,1237,555"/>
+<area shape="rect" id="node39" href="$d1/d8c/logger_8h.html" title="../toxcore/logger.h" alt="" coords="1244,229,1371,256"/>
+<area shape="rect" id="node4" href="$dd/de4/toxcore_2group_8h.html" title="../toxcore/group.h" alt="" coords="917,155,1041,181"/>
+<area shape="rect" id="node5" href="$d4/d30/_messenger_8h.html" title="Messenger.h" alt="" coords="827,229,924,256"/>
+<area shape="rect" id="node6" href="$d5/d24/friend__requests_8h.html" title="friend_requests.h" alt="" coords="715,304,838,331"/>
+<area shape="rect" id="node7" href="$d0/d08/friend__connection_8h.html" title="friend_connection.h" alt="" coords="709,379,844,405"/>
+<area shape="rect" id="node8" href="$de/d42/net__crypto_8h.html" title="net_crypto.h" alt="" coords="821,528,916,555"/>
+<area shape="rect" id="node9" href="$df/dad/_d_h_t_8h.html" title="DHT.h" alt="" coords="794,901,855,928"/>
+<area shape="rect" id="node28" href="$dd/db4/_l_a_n__discovery_8h.html" title="LAN_discovery.h" alt="" coords="715,603,838,629"/>
+<area shape="rect" id="node35" href="$d9/d26/onion__client_8h.html" title="onion_client.h" alt="" coords="631,453,733,480"/>
+<area shape="rect" id="node29" href="$da/d39/_t_c_p__connection_8h.html" title="TCP_connection.h" alt="" coords="913,603,1043,629"/>
+<area shape="rect" id="node10" href="$dd/d3e/crypto__core_8h.html" title="crypto_core.h" alt="" coords="913,976,1014,1003"/>
+<area shape="rect" id="node11" href="$d9/d94/network_8h.html" title="network.h" alt="" coords="667,1051,745,1077"/>
+<area shape="rect" id="node27" href="$dd/dec/ping__array_8h.html" title="ping_array.h" alt="" coords="659,976,753,1003"/>
+<area shape="rect" id="node30" href="$d0/df3/_t_c_p__client_8h.html" title="TCP_client.h" alt="" coords="965,677,1063,704"/>
+<area shape="rect" id="node31" href="$d6/d03/_t_c_p__server_8h.html" title="TCP_server.h" alt="" coords="963,752,1065,779"/>
+<area shape="rect" id="node32" href="$d3/db9/onion_8h.html" title="onion.h" alt="" coords="913,827,977,853"/>
+<area shape="rect" id="node33" href="$da/d23/list_8h.html" title="list.h" alt="" coords="1094,1051,1145,1077"/>
+<area shape="rect" id="node36" href="$d7/dfd/onion__announce_8h.html" title="onion_announce.h" alt="" coords="660,677,787,704"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="call_id_bigger" name="call_id_bigger">
+<area shape="rect" id="node2" href="$d2/d9b/msi_8c.html#a6c1d69163b2cfedea11ed5ed688dc669" title="handle_recv_invite" alt="" coords="155,5,285,32"/>
+<area shape="rect" id="node3" href="$d2/d9b/msi_8c.html#aa944624a15314d9d2eff6373f9506725" title="msi_handle_packet" alt="" coords="333,5,468,32"/>
+<area shape="rect" id="node4" href="$d9/d06/msi_8h.html#af33f2706f6d0f8e547716e2f6c5f68d3" title="msi_new" alt="" coords="516,5,591,32"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#ab5565a6110643c428b28b2c79fb47b08" title="toxav_new" alt="" coords="639,5,724,32"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="772,5,879,32"/>
+</map>

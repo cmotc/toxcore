@@ -1,0 +1,8 @@
+<map id="handle_crypto_handshake" name="handle_crypto_handshake">
+<area shape="rect" id="node2" href="$dc/d85/crypto__core_8c.html#ab0aff79180f3852c24ad8f6fd88caf18" title="decrypt_data" alt="" coords="236,31,333,57"/>
+<area shape="rect" id="node5" href="$d8/dc6/net__crypto_8c.html#aadb69c5328b7e0958fb1ee1961ec2f5c" title="open_cookie" alt="" coords="237,81,332,108"/>
+<area shape="rect" id="node7" href="$dc/d85/crypto__core_8c.html#a45ba09cd560b3be51f6cb7a3859f31b3" title="public_key_cmp" alt="" coords="227,132,343,159"/>
+<area shape="rect" id="node3" href="$dc/d85/crypto__core_8c.html#a824b257fcff74b9d17c5247223fbed29" title="decrypt_data_symmetric" alt="" coords="391,56,556,83"/>
+<area shape="rect" id="node4" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="403,5,543,32"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="434,107,513,133"/>
+</map>

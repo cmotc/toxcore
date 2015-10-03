@@ -1,0 +1,5 @@
+<map id="handle_remote_connection_change" name="handle_remote_connection_change">
+<area shape="rect" id="node2" href="$d2/d9b/msi_8c.html#af6701ab999e1734c40580997749daf6f" title="invoke_callback" alt="" coords="231,5,345,32"/>
+<area shape="rect" id="node3" href="$d2/d9b/msi_8c.html#abf7deacfacdcb5b7cc4cfc163583c40d" title="terminate_call" alt="" coords="237,56,339,83"/>
+<area shape="rect" id="node4" href="$d2/d9b/msi_8c.html#ab6f36f5852629fabd6e3c85451e5be65" title="timer_release" alt="" coords="393,56,493,83"/>
+</map>

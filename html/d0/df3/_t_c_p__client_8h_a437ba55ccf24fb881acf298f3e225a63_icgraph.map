@@ -1,0 +1,36 @@
+<map id="kill_TCP_connection" name="kill_TCP_connection">
+<area shape="rect" id="node2" href="$da/d39/_t_c_p__connection_8h.html#a6938788005ebe33a896755ac2b9f501a" title="kill_tcp_connections" alt="" coords="824,123,964,149"/>
+<area shape="rect" id="node20" href="$d5/d26/_t_c_p__connection_8c.html#aa2768924d23efbf6770245379d89da4c" title="kill_tcp_relay_connection" alt="" coords="196,275,364,301"/>
+<area shape="rect" id="node21" href="$d5/d26/_t_c_p__connection_8c.html#a81963b2aeca3eb88b3fea76869b19fad" title="reconnect_tcp_relay\l_connection" alt="" coords="441,326,580,367"/>
+<area shape="rect" id="node34" href="$d5/d26/_t_c_p__connection_8c.html#ac91d3707f1b16a4a9e0f6d4d70cdee14" title="sleep_tcp_relay_connection" alt="" coords="419,392,602,419"/>
+<area shape="rect" id="node35" href="$d2/d8d/_t_c_p__test_8c.html#a54051584eff6e81044025b36d88c9a2b" title="START_TEST" alt="" coords="227,431,333,457"/>
+<area shape="rect" id="node3" href="$d2/d8d/_t_c_p__test_8c.html#a1b7f98a901f4b8685223ec1dac1c1ce3" title="START_TEST" alt="" coords="1016,173,1123,200"/>
+<area shape="rect" id="node4" href="$de/d42/net__crypto_8h.html#a5e46c6f42e93e2aa968f8f63de90a53c" title="new_net_crypto" alt="" coords="1012,72,1127,99"/>
+<area shape="rect" id="node16" href="$de/d42/net__crypto_8h.html#abb3546495adde3f08c0474f31c5d3a37" title="kill_net_crypto" alt="" coords="1016,123,1123,149"/>
+<area shape="rect" id="node5" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="1175,123,1292,149"/>
+<area shape="rect" id="node14" href="$d7/dd9/onion__test_8c.html#a5945771cafdfe39074adf8ddd47ae81b" title="new_onions" alt="" coords="1188,21,1279,48"/>
+<area shape="rect" id="node6" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1368,148,1419,175"/>
+<area shape="rect" id="node7" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1358,97,1429,124"/>
+<area shape="rect" id="node8" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1495,107,1601,133"/>
+<area shape="rect" id="node9" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1516,157,1580,184"/>
+<area shape="rect" id="node11" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1663,68,1742,95"/>
+<area shape="rect" id="node13" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1523,5,1573,32"/>
+<area shape="rect" id="node10" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1677,128,1728,155"/>
+<area shape="rect" id="node12" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1804,124,1855,151"/>
+<area shape="rect" id="node15" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="1340,47,1447,73"/>
+<area shape="rect" id="node17" href="$d4/d30/_messenger_8h.html#a771c65c3057d870b0653c2fdf0a12fb7" title="kill_messenger" alt="" coords="1179,173,1288,200"/>
+<area shape="rect" id="node19" href="$d7/dd9/onion__test_8c.html#a11b4d3c94243b8abdd439dea94ee679e" title="kill_onions" alt="" coords="1192,72,1275,99"/>
+<area shape="rect" id="node18" href="$da/d8f/tox_8h.html#a52259e134bfb9396d9fef4fffe94e878" title="tox_kill" alt="" coords="1362,199,1425,225"/>
+<area shape="rect" id="node22" href="$d5/d26/_t_c_p__connection_8c.html#a6377f0f3d60ba706c5b014a9439696b7" title="do_tcp_conns" alt="" coords="665,275,768,301"/>
+<area shape="rect" id="node32" href="$d5/d26/_t_c_p__connection_8c.html#a359cec296ed123fc92b9b149266b30a4" title="unsleep_tcp_relay_connection" alt="" coords="412,224,609,251"/>
+<area shape="rect" id="node33" href="$d5/d26/_t_c_p__connection_8c.html#a49dd47efa4f43cd5ba37a4836c6e55ff" title="kill_nonused_tcp" alt="" coords="657,173,776,200"/>
+<area shape="rect" id="node23" href="$da/d39/_t_c_p__connection_8h.html#a30c1a9c57a8d07cc2327c0505d6619a4" title="do_tcp_connections" alt="" coords="825,199,963,225"/>
+<area shape="rect" id="node24" href="$d8/dc6/net__crypto_8c.html#adf499e22f45244e3660f9da6de77d2a3" title="do_tcp" alt="" coords="1039,224,1100,251"/>
+<area shape="rect" id="node25" href="$de/d42/net__crypto_8h.html#a6fa028eb320bf09ecd619c5053580436" title="do_net_crypto" alt="" coords="1181,224,1285,251"/>
+<area shape="rect" id="node26" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="1340,249,1447,276"/>
+<area shape="rect" id="node27" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1523,275,1573,301"/>
+<area shape="rect" id="node28" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1507,224,1589,251"/>
+<area shape="rect" id="node29" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1649,229,1756,256"/>
+<area shape="rect" id="node30" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1677,280,1729,307"/>
+<area shape="rect" id="node31" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1666,179,1739,205"/>
+</map>

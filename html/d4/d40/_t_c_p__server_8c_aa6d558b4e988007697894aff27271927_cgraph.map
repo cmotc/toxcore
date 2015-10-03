@@ -1,0 +1,8 @@
+<map id="new_listening_TCP_socket" name="new_listening_TCP_socket">
+<area shape="rect" id="node2" href="$d4/d40/_t_c_p__server_8c.html#a944f17c26a170be923cc64f9921e001b" title="bind_to_port" alt="" coords="263,5,357,32"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="273,56,347,83"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#ad2f109728a6345e6862686ea4baf5b27" title="set_socket_dualstack" alt="" coords="235,107,385,133"/>
+<area shape="rect" id="node5" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="237,157,383,184"/>
+<area shape="rect" id="node6" href="$d6/d6e/network_8c.html#ac278c3d25e3807f0b2be9d91c9db328f" title="set_socket_reuseaddr" alt="" coords="235,208,385,235"/>
+<area shape="rect" id="node7" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="268,259,352,285"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="kill_accepted" name="kill_accepted">
+<area shape="rect" id="node2" href="$d4/d40/_t_c_p__server_8c.html#a8fbde82c141c5368acc8ea8e8ad58fd2" title="del_accepted" alt="" coords="175,35,274,61"/>
+<area shape="rect" id="node7" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="188,85,261,112"/>
+<area shape="rect" id="node8" href="$d4/d40/_t_c_p__server_8c.html#a537d1f47612f3dbb19a92e557b062c20" title="rm_connection_index" alt="" coords="152,136,297,163"/>
+<area shape="rect" id="node3" href="$d7/d40/list_8c.html#a365995457101cc16f8c6b25ead07fb6f" title="bs_list_remove" alt="" coords="385,20,496,47"/>
+<area shape="rect" id="node6" href="$d4/d40/_t_c_p__server_8c.html#abdfaa164f396557d6499a8e5e3145b49" title="realloc_connection" alt="" coords="375,71,506,97"/>
+<area shape="rect" id="node4" href="$d7/d40/list_8c.html#ae2aaa4149a770ed6e47a58af78fc6600" title="find" alt="" coords="651,5,693,32"/>
+<area shape="rect" id="node5" href="$d7/d40/list_8c.html#a7c246868ee5a3542509cdf90379c5bb2" title="resize" alt="" coords="643,56,701,83"/>
+<area shape="rect" id="node9" href="$d4/d40/_t_c_p__server_8c.html#aad6cd0a2a98d4da60235be8000f2c66f" title="send_disconnect_notification" alt="" coords="345,136,536,163"/>
+<area shape="rect" id="node10" href="$d4/d40/_t_c_p__server_8c.html#a1b2fd7984b9d3eb39bf588fc9bc5e21f" title="write_packet_TCP_secure\l_connection" alt="" coords="584,129,760,170"/>
+<area shape="rect" id="node11" href="$d4/d40/_t_c_p__server_8c.html#a80fa82b117432f080f39f481ab5d9fef" title="send_pending_data" alt="" coords="823,60,958,87"/>
+<area shape="rect" id="node13" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="808,111,973,137"/>
+<area shape="rect" id="node14" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="830,161,951,188"/>
+<area shape="rect" id="node15" href="$d4/d40/_t_c_p__server_8c.html#ac9f38bf2eaf3cd2603c380091ae6ebad" title="add_priority" alt="" coords="846,212,935,239"/>
+<area shape="rect" id="node12" href="$d4/d40/_t_c_p__server_8c.html#a127449a3fca8398acf0ba361be8c5c83" title="send_pending_data_nonpriority" alt="" coords="1021,60,1223,87"/>
+</map>

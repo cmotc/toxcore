@@ -1,0 +1,9 @@
+<map id="tox_join_groupchat" name="tox_join_groupchat">
+<area shape="rect" id="node2" href="$db/d11/irc__syncbot_8c.html#acfc0f8259fbefbcb0ca1256c6842e7d4" title="callback_group_invite" alt="" coords="184,5,331,32"/>
+<area shape="rect" id="node5" href="$d9/d35/tox__test_8c.html#ad249c87d6056da5531b1e4265c03001a" title="print_group_invite\l_callback" alt="" coords="195,57,319,98"/>
+<area shape="rect" id="node7" href="$d2/d65/n_tox_8c.html#a1b2b2f68f7d6d5ebeb8cd60c0368cc51" title="print_invite" alt="" coords="215,123,300,149"/>
+<area shape="rect" id="node3" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="400,5,464,32"/>
+<area shape="rect" id="node4" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="533,5,584,32"/>
+<area shape="rect" id="node6" href="$d9/d35/tox__test_8c.html#a999b8d0cb6f7a7ea6f983f4f32e18f25" title="START_TEST" alt="" coords="379,64,485,91"/>
+<area shape="rect" id="node8" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="407,123,457,149"/>
+</map>

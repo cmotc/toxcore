@@ -1,0 +1,6 @@
+<map id="group_av_peer_new" name="group_av_peer_new">
+<area shape="rect" id="node2" href="$db/d46/toxav_2group_8c.html#a45154386c23834ec7a8807572cb7f189" title="create_queue" alt="" coords="219,5,319,32"/>
+<area shape="rect" id="node3" href="$df/de9/toxcore_2group_8c.html#a450e79abe59f479d322c59b4e7be0184" title="group_peer_set_object" alt="" coords="192,56,345,83"/>
+<area shape="rect" id="node4" href="$df/de9/toxcore_2group_8c.html#a11d3240a6755f36864ed2b072e826483" title="get_group_c" alt="" coords="393,56,487,83"/>
+<area shape="rect" id="node5" href="$df/de9/toxcore_2group_8c.html#a4ffc6ae8485f94d9177baf65f777c72e" title="groupnumber_not_valid" alt="" coords="535,56,691,83"/>
+</map>

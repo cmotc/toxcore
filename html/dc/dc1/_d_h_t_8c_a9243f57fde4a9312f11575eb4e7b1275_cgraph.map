@@ -1,0 +1,32 @@
+<map id="do_NAT" name="do_NAT">
+<area shape="rect" id="node2" href="$dc/dc1/_d_h_t_8c.html#a1b3c1814260eace443e6feb13227cc82" title="friend_iplist" alt="" coords="513,93,601,120"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#ac56c677f4bc8bf8311370ee105ae7cbb" title="ip_isset" alt="" coords="750,144,817,171"/>
+<area shape="rect" id="node5" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="1107,475,1185,501"/>
+<area shape="rect" id="node7" href="$dc/dc1/_d_h_t_8c.html#ae24a26ad9533b87cfbcb0093430bf136" title="NAT_commonip" alt="" coords="124,600,240,627"/>
+<area shape="rect" id="node10" href="$dc/dc1/_d_h_t_8c.html#a987dbba116d9982c336ea818f05e8c7c" title="NAT_getports" alt="" coords="131,651,233,677"/>
+<area shape="rect" id="node11" href="$dc/dc1/_d_h_t_8c.html#a7efc873280e2d502bf49489d3ebacc9c" title="punch_holes" alt="" coords="135,499,229,525"/>
+<area shape="rect" id="node26" href="$dc/dc1/_d_h_t_8c.html#a25f7b3704b34bb8745a0a60939e1f49c" title="send_NATping" alt="" coords="128,328,236,355"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="947,367,1030,393"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ada3d44b4f530d3c8c9cb69b732be94b1" title="id_equal" alt="" coords="748,296,819,323"/>
+<area shape="rect" id="node8" href="$d6/d6e/network_8c.html#a2bfd1efbce5b035b10c879a7e85c08df" title="ip_reset" alt="" coords="319,600,387,627"/>
+<area shape="rect" id="node9" href="$d6/d6e/network_8c.html#af982256c6d8486349bdc13a920884ef6" title="ip_equal" alt="" coords="318,651,389,677"/>
+<area shape="rect" id="node12" href="$d6/d6e/network_8c.html#a66563da83f68de4f5e9d7c5f2f72c8f3" title="ip_copy" alt="" coords="320,499,387,525"/>
+<area shape="rect" id="node13" href="$d9/d54/ping_8c.html#a1b3882fdfddc79be369ff230cd3e7a6a" title="send_ping_request" alt="" coords="288,549,419,576"/>
+<area shape="rect" id="node14" href="$dc/dc1/_d_h_t_8c.html#a087cceeacc5a14415b651c2980a24d34" title="DHT_get_shared_key_sent" alt="" coords="467,651,648,677"/>
+<area shape="rect" id="node17" href="$de/df1/util_8c.html#aa30049b8c1d82c280d6d872feea3353b" title="id_copy" alt="" coords="524,701,591,728"/>
+<area shape="rect" id="node18" href="$df/d02/ping__array_8c.html#a67470d42ee0e3e61bedfa598f3039266" title="ping_array_add" alt="" coords="502,752,613,779"/>
+<area shape="rect" id="node22" href="$dc/d85/crypto__core_8c.html#a8b1033efb47c625779d11be7d8eb9e24" title="new_nonce" alt="" coords="513,549,601,576"/>
+<area shape="rect" id="node24" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="701,549,866,576"/>
+<area shape="rect" id="node25" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="513,397,602,424"/>
+<area shape="rect" id="node15" href="$dc/dc1/_d_h_t_8c.html#a6cd4aa89d7bfcf6805c5ce6b273d9e9e" title="get_shared_key" alt="" coords="726,600,841,627"/>
+<area shape="rect" id="node16" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="919,493,1059,520"/>
+<area shape="rect" id="node19" href="$df/d02/ping__array_8c.html#a660fb4ff5c6564a9b61cfbc497d1191b" title="ping_array_clear_timedout" alt="" coords="696,651,871,677"/>
+<area shape="rect" id="node20" href="$df/d02/ping__array_8c.html#ad051ea35e31300366c9f8c167b27ca4c" title="clear_entry" alt="" coords="945,676,1032,703"/>
+<area shape="rect" id="node21" href="$dc/d85/crypto__core_8c.html#a1ce51b34ab2247e750b9c2a25121eb9e" title="random_64b" alt="" coords="737,803,830,829"/>
+<area shape="rect" id="node23" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="730,499,837,525"/>
+<area shape="rect" id="node27" href="$dc/d85/crypto__core_8c.html#a73129647dfd9e436ae6abc908daa4c21" title="create_request" alt="" coords="299,448,407,475"/>
+<area shape="rect" id="node29" href="$dc/dc1/_d_h_t_8c.html#aee23d763e291eefd141227cd9e3684ab" title="route_tofriend" alt="" coords="303,259,404,285"/>
+<area shape="rect" id="node31" href="$dc/dc1/_d_h_t_8c.html#ad1a9a37b7cda1411149867eb77070bd1" title="routeone_tofriend" alt="" coords="292,328,415,355"/>
+<area shape="rect" id="node28" href="$dc/d85/crypto__core_8c.html#a014149333522d211490304255e139ec3" title="encrypt_data" alt="" coords="509,499,606,525"/>
+<area shape="rect" id="node30" href="$dc/dc1/_d_h_t_8c.html#a6cbd0f66d63003cc0def913dc7a4254b" title="friend_number" alt="" coords="505,296,609,323"/>
+</map>

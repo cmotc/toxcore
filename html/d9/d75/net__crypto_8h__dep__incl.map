@@ -1,0 +1,31 @@
+<map id="toxcore/net_crypto.h" name="toxcore/net_crypto.h">
+<area shape="rect" id="node2" href="$d5/d29/crypto__test_8c.html" title="auto_tests/crypto_test.c" alt="" coords="813,80,976,107"/>
+<area shape="rect" id="node3" href="$d0/d08/friend__connection_8h.html" title="toxcore/friend_connection.h" alt="" coords="882,155,1065,181"/>
+<area shape="rect" id="node27" href="$d9/d26/onion__client_8h.html" title="toxcore/onion_client.h" alt="" coords="1051,80,1200,107"/>
+<area shape="rect" id="node30" href="$d8/dc6/net__crypto_8c.html" title="toxcore/net_crypto.c" alt="" coords="1224,80,1365,107"/>
+<area shape="rect" id="node4" href="$d5/d24/friend__requests_8h.html" title="toxcore/friend_requests.h" alt="" coords="889,229,1058,256"/>
+<area shape="rect" id="node6" href="$d4/d30/_messenger_8h.html" title="toxcore/Messenger.h" alt="" coords="659,304,803,331"/>
+<area shape="rect" id="node26" href="$d2/db1/friend__connection_8c.html" title="toxcore/friend_connection.c" alt="" coords="1082,229,1265,256"/>
+<area shape="rect" id="node5" href="$d2/dee/friends__test_8c.html" title="auto_tests/friends\l_test.c" alt="" coords="1258,379,1385,420"/>
+<area shape="rect" id="node23" href="$db/d5e/_d_h_t__bootstrap_8c.html" title="other/DHT_bootstrap.c" alt="" coords="1072,304,1227,331"/>
+<area shape="rect" id="node24" href="$d3/dfd/_d_h_t__test_8c.html" title="testing/DHT_test.c" alt="" coords="1251,304,1384,331"/>
+<area shape="rect" id="node25" href="$d6/da4/friend__requests_8c.html" title="toxcore/friend_requests.c" alt="" coords="827,304,997,331"/>
+<area shape="rect" id="node7" href="$d8/dda/messenger__test_8c.html" title="auto_tests/messenger\l_test.c" alt="" coords="890,379,1041,420"/>
+<area shape="rect" id="node8" href="$db/de9/_messenger__test_8c.html" title="testing/Messenger_test.c" alt="" coords="1065,386,1234,413"/>
+<area shape="rect" id="node9" href="$df/dc1/rtp_8h.html" title="toxav/rtp.h" alt="" coords="111,386,195,413"/>
+<area shape="rect" id="node12" href="$d9/d06/msi_8h.html" title="toxav/msi.h" alt="" coords="133,543,224,569"/>
+<area shape="rect" id="node16" href="$dd/de4/toxcore_2group_8h.html" title="toxcore/group.h" alt="" coords="396,386,508,413"/>
+<area shape="rect" id="node20" href="$d3/d69/tox_8c.html" title="toxcore/tox.c" alt="" coords="592,468,691,495"/>
+<area shape="rect" id="node21" href="$d8/d8d/_messenger_8c.html" title="toxcore/Messenger.c" alt="" coords="583,386,727,413"/>
+<area shape="rect" id="node22" href="$da/d84/toxdns_8c.html" title="toxdns/toxdns.c" alt="" coords="751,386,865,413"/>
+<area shape="rect" id="node10" href="$d1/d16/codec_8h.html" title="toxav/codec.h" alt="" coords="43,468,147,495"/>
+<area shape="rect" id="node11" href="$d5/def/codec_8c.html" title="toxav/codec.c" alt="" coords="5,617,109,644"/>
+<area shape="rect" id="node15" href="$d6/d46/rtp_8c.html" title="toxav/rtp.c" alt="" coords="171,468,255,495"/>
+<area shape="rect" id="node14" href="$d8/d0e/toxav_8c.html" title="toxav/toxav.c" alt="" coords="248,617,349,644"/>
+<area shape="rect" id="node13" href="$d2/d9b/msi_8c.html" title="toxav/msi.c" alt="" coords="133,617,224,644"/>
+<area shape="rect" id="node17" href="$d8/da5/toxav_2group_8h.html" title="toxav/group.h" alt="" coords="467,468,568,495"/>
+<area shape="rect" id="node19" href="$df/de9/toxcore_2group_8c.html" title="toxcore/group.c" alt="" coords="331,468,443,495"/>
+<area shape="rect" id="node18" href="$db/d46/toxav_2group_8c.html" title="toxav/group.c" alt="" coords="467,543,568,569"/>
+<area shape="rect" id="node28" href="$d7/dd9/onion__test_8c.html" title="auto_tests/onion_test.c" alt="" coords="1263,155,1422,181"/>
+<area shape="rect" id="node29" href="$db/d79/onion__client_8c.html" title="toxcore/onion_client.c" alt="" coords="1089,155,1239,181"/>
+</map>

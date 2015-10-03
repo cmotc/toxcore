@@ -1,0 +1,9 @@
+<map id="send_reponse" name="send_reponse">
+<area shape="rect" id="node2" href="$d2/d9b/msi_8c.html#a94cb98234fb1cdeffe8ad8b8601c8dc9" title="handle_recv_end" alt="" coords="161,5,281,32"/>
+<area shape="rect" id="node7" href="$d2/d9b/msi_8c.html#a6c1d69163b2cfedea11ed5ed688dc669" title="handle_recv_invite" alt="" coords="156,56,287,83"/>
+<area shape="rect" id="node8" href="$d2/d9b/msi_8c.html#adab5cbd8d80ff38f19008ee3fec808b8" title="handle_recv_reject" alt="" coords="156,107,287,133"/>
+<area shape="rect" id="node3" href="$d2/d9b/msi_8c.html#aa944624a15314d9d2eff6373f9506725" title="msi_handle_packet" alt="" coords="335,56,469,83"/>
+<area shape="rect" id="node4" href="$d9/d06/msi_8h.html#af33f2706f6d0f8e547716e2f6c5f68d3" title="msi_new" alt="" coords="517,56,592,83"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#ab5565a6110643c428b28b2c79fb47b08" title="toxav_new" alt="" coords="640,56,725,83"/>
+<area shape="rect" id="node6" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="773,56,880,83"/>
+</map>

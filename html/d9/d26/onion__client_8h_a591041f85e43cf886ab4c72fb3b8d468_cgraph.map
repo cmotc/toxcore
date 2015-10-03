@@ -1,0 +1,10 @@
+<map id="kill_onion_client" name="kill_onion_client">
+<area shape="rect" id="node2" href="$dc/dc1/_d_h_t_8c.html#a097913efd03d5106a66c15eb48b0e104" title="cryptopacket_registerhandler" alt="" coords="168,5,357,32"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#a230a192ca9463ec4985d4f86de439733" title="networking_registerhandler" alt="" coords="174,56,351,83"/>
+<area shape="rect" id="node4" href="$db/d79/onion__client_8c.html#a2dfcba5e4eb429f5f2ae79ae999149c4" title="oniondata_registerhandler" alt="" coords="177,107,348,133"/>
+<area shape="rect" id="node5" href="$df/d02/ping__array_8c.html#a7e093974e6d616c5bbcadfd434b49824" title="ping_array_free_all" alt="" coords="197,157,328,184"/>
+<area shape="rect" id="node7" href="$db/d79/onion__client_8c.html#aa5f27f182606ab701dfc948bfb3a1b42" title="realloc_onion_friends" alt="" coords="191,208,335,235"/>
+<area shape="rect" id="node8" href="$d5/d26/_t_c_p__connection_8c.html#a9c229dba32e28baa8cd90ae74429d803" title="set_onion_packet_tcp\l_connection_callback" alt="" coords="188,259,337,301"/>
+<area shape="rect" id="node6" href="$df/d02/ping__array_8c.html#ad051ea35e31300366c9f8c167b27ca4c" title="clear_entry" alt="" coords="429,157,515,184"/>
+<area shape="rect" id="node9" href="$d5/d26/_t_c_p__connection_8c.html#ace5ecc2f60ab4dad731e31147ea788e9" title="tcp_onion_callback" alt="" coords="405,267,539,293"/>
+</map>

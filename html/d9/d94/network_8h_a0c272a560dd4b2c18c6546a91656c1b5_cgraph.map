@@ -1,0 +1,12 @@
+<map id="new_networking" name="new_networking">
+<area shape="rect" id="node2" href="$d6/d6e/network_8c.html#a899cb8f62b49e71ba9f9f7a50254655c" title="new_networking_ex" alt="" coords="169,157,307,184"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#af71f49c78ce7b76ccf08785c6ec08706" title="ip_ntoa" alt="" coords="398,5,462,32"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#a8a36a1ed29a0d5dfe1f0095823039627" title="kill_networking" alt="" coords="376,56,484,83"/>
+<area shape="rect" id="node6" href="$d6/d6e/network_8c.html#ad953dedd6d25d03cf441960dd1e1fed1" title="networking_at_startup" alt="" coords="355,107,505,133"/>
+<area shape="rect" id="node8" href="$d6/d6e/network_8c.html#ad2f109728a6345e6862686ea4baf5b27" title="set_socket_dualstack" alt="" coords="355,157,505,184"/>
+<area shape="rect" id="node9" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="357,208,503,235"/>
+<area shape="rect" id="node10" href="$d6/d6e/network_8c.html#a379153c027c17d7c71797cb0e3ea41a3" title="set_socket_nosigpipe" alt="" coords="356,259,504,285"/>
+<area shape="rect" id="node11" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="388,309,472,336"/>
+<area shape="rect" id="node5" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="585,56,658,83"/>
+<area shape="rect" id="node7" href="$d6/d6e/network_8c.html#a9f5cd2a713e4a17d4c6d36650336cab0" title="current_time_actual" alt="" coords="553,107,689,133"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="queue_message" name="queue_message">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#ab27fdbd54a41e787c4a98b119d181b13" title="buffer_full" alt="" coords="177,5,255,32"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#aa27710dac4f829dad6d007cf01bdf55f" title="buffer_read" alt="" coords="173,56,259,83"/>
+<area shape="rect" id="node4" href="$d5/def/codec_8c.html#a5990d0123726b7f12cebdae0984475b4" title="buffer_write" alt="" coords="171,107,261,133"/>
+<area shape="rect" id="node5" href="$d5/def/codec_8c.html#a170dd2e497101775eea8695dbda58f9e" title="jbuf_write" alt="" coords="177,157,255,184"/>
+<area shape="rect" id="node7" href="$d6/d46/rtp_8c.html#a19cbf4e4c2831f2e162e7580bb7d5c7b" title="rtp_free_msg" alt="" coords="436,183,535,209"/>
+<area shape="rect" id="node6" href="$d5/def/codec_8c.html#a2ab3636512ac576d996c504f9226108d" title="jbuf_clear" alt="" coords="309,157,388,184"/>
+</map>

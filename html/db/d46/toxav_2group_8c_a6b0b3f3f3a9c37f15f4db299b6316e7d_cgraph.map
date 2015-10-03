@@ -1,0 +1,8 @@
+<map id="handle_group_audio_packet" name="handle_group_audio_packet">
+<area shape="rect" id="node2" href="$db/d46/toxav_2group_8c.html#a9156785c1b3cbd3de5a526d2ada8dca8" title="decode_audio_packet" alt="" coords="191,19,339,45"/>
+<area shape="rect" id="node4" href="$db/d46/toxav_2group_8c.html#a68a463d4df27fc6aa526a57e4bfc889b" title="queue" alt="" coords="236,95,293,121"/>
+<area shape="rect" id="node3" href="$db/d46/toxav_2group_8c.html#a4682adad6ec02296075091c23a0e7837" title="dequeue" alt="" coords="397,5,468,32"/>
+<area shape="rect" id="node5" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="391,56,474,83"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="527,81,605,108"/>
+<area shape="rect" id="node7" href="$db/d46/toxav_2group_8c.html#a4244524c0f9d5fa66f1a52880068603b" title="clear_queue" alt="" coords="387,157,479,184"/>
+</map>

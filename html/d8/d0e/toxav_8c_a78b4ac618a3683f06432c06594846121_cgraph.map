@@ -1,0 +1,10 @@
+<map id="toxav_do" name="toxav_do">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a478d9b52aca882a11b160e8bbb50dd74" title="cs_do" alt="" coords="131,107,189,133"/>
+<area shape="rect" id="node7" href="$db/d11/irc__syncbot_8c.html#ae8ecaef140b786a2720eadbb85918e81" title="current_time_monotonic" alt="" coords="240,208,401,235"/>
+<area shape="rect" id="node8" href="$d2/d9b/msi_8c.html#a6596ff23a6bcdd19c4fa1985dcc6b257" title="msi_do" alt="" coords="128,233,192,260"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#a6e1ec2c6aa4625da81486a73661df742" title="buffer_empty" alt="" coords="271,5,370,32"/>
+<area shape="rect" id="node4" href="$d5/def/codec_8c.html#aa27710dac4f829dad6d007cf01bdf55f" title="buffer_read" alt="" coords="277,56,364,83"/>
+<area shape="rect" id="node5" href="$d5/def/codec_8c.html#a5d946ee1be34a637150e7204137f91ea" title="jbuf_read" alt="" coords="283,107,358,133"/>
+<area shape="rect" id="node6" href="$d6/d46/rtp_8c.html#a19cbf4e4c2831f2e162e7580bb7d5c7b" title="rtp_free_msg" alt="" coords="271,157,370,184"/>
+<area shape="rect" id="node9" href="$d2/d9b/msi_8c.html#ab6f36f5852629fabd6e3c85451e5be65" title="timer_release" alt="" coords="271,259,371,285"/>
+</map>

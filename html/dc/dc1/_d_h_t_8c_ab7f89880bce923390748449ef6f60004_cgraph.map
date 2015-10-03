@@ -1,0 +1,11 @@
+<map id="get_somewhat_close_nodes" name="get_somewhat_close_nodes">
+<area shape="rect" id="node2" href="$dc/dc1/_d_h_t_8c.html#a40b090e4bc0b1280a8689b7931f320c6" title="get_close_nodes_inner" alt="" coords="199,132,353,159"/>
+<area shape="rect" id="node3" href="$dc/dc1/_d_h_t_8c.html#ac2887d26ab67ac2ca1347b0ed8dadbf5" title="client_in_nodelist" alt="" coords="403,5,525,32"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#ada3d44b4f530d3c8c9cb69b732be94b1" title="id_equal" alt="" coords="579,31,649,57"/>
+<area shape="rect" id="node5" href="$dc/dc1/_d_h_t_8c.html#a99cbbcdc9772e5c2b1ff8416074e88c0" title="hardening_correct" alt="" coords="401,107,527,133"/>
+<area shape="rect" id="node6" href="$dc/dc1/_d_h_t_8c.html#a903a5bc580826fe447adb841b7782333" title="id_closest" alt="" coords="423,157,505,184"/>
+<area shape="rect" id="node7" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="423,208,505,235"/>
+<area shape="rect" id="node9" href="$d1/de5/_l_a_n__discovery_8c.html#a2d80a53390598eb8ededbc63f4e9c152" title="LAN_ip" alt="" coords="431,283,497,309"/>
+<area shape="rect" id="node8" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="575,208,653,235"/>
+<area shape="rect" id="node10" href="$d1/de5/_l_a_n__discovery_8c.html#a56fb8ae3cd774c1b1d5670b9c4fb8959" title="Local_ip" alt="" coords="579,283,649,309"/>
+</map>

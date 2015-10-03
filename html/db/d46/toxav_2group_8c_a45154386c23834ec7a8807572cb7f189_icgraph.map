@@ -1,0 +1,8 @@
+<map id="create_queue" name="create_queue">
+<area shape="rect" id="node2" href="$db/d46/toxav_2group_8c.html#a20ee9ad2437bab6788db23a2968cd86f" title="group_av_peer_new" alt="" coords="153,31,292,57"/>
+<area shape="rect" id="node3" href="$db/d46/toxav_2group_8c.html#ab6f2cb7fef697bde984bf67a3036e4d0" title="groupchat_enable_av" alt="" coords="340,31,485,57"/>
+<area shape="rect" id="node4" href="$d8/da5/toxav_2group_8h.html#a0cf061415a40de14b1dca48921a6f687" title="add_av_groupchat" alt="" coords="533,5,661,32"/>
+<area shape="rect" id="node6" href="$d8/da5/toxav_2group_8h.html#a3bb53f02b23ac60cb1e76d3717a4e2e5" title="join_av_groupchat" alt="" coords="534,56,661,83"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#a71c8622e709969f80a862ee56da27184" title="toxav_add_av_groupchat" alt="" coords="709,5,876,32"/>
+<area shape="rect" id="node7" href="$d9/d82/toxav_8h.html#a02fd1017fbe8e974c2c0a39ee08067d7" title="toxav_join_av_groupchat" alt="" coords="709,56,876,83"/>
+</map>

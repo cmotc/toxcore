@@ -1,0 +1,10 @@
+<map id="send_tcp_onion_request" name="send_tcp_onion_request">
+<area shape="rect" id="node2" href="$d5/d26/_t_c_p__connection_8c.html#afb1a507e5f1af925b01666f1b9b4960a" title="tcp_send_onion_request" alt="" coords="216,81,379,108"/>
+<area shape="rect" id="node3" href="$da/da1/_t_c_p__client_8c.html#a236ad67f85cc718a03fda2da3ade0787" title="send_onion_request" alt="" coords="427,81,565,108"/>
+<area shape="rect" id="node4" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="613,74,789,115"/>
+<area shape="rect" id="node5" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="853,5,987,32"/>
+<area shape="rect" id="node7" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="837,56,1003,83"/>
+<area shape="rect" id="node8" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="859,107,981,133"/>
+<area shape="rect" id="node9" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="875,157,965,184"/>
+<area shape="rect" id="node6" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="1051,5,1252,32"/>
+</map>

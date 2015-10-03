@@ -1,0 +1,5 @@
+<map id="kill_tcp_connections" name="kill_tcp_connections">
+<area shape="rect" id="node2" href="$da/da1/_t_c_p__client_8c.html#a437ba55ccf24fb881acf298f3e225a63" title="kill_TCP_connection" alt="" coords="193,31,336,57"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="407,5,480,32"/>
+<area shape="rect" id="node4" href="$da/da1/_t_c_p__client_8c.html#aaf4385f749c6f9c21f4f4ac17b31a77b" title="wipe_priority_list" alt="" coords="384,56,503,83"/>
+</map>

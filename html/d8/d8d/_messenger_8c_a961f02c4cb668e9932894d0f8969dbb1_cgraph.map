@@ -1,0 +1,18 @@
+<map id="check_friend_connectionstatus" name="check_friend_connectionstatus">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#a2c0567bd0161368d60f7d9a93ecefa50" title="break_files" alt="" coords="288,5,373,32"/>
+<area shape="rect" id="node3" href="$d8/d8d/_messenger_8c.html#a6177eb11440d9263eae1465810989cfd" title="check_friend_tcp_udp" alt="" coords="256,107,405,133"/>
+<area shape="rect" id="node17" href="$d8/d8d/_messenger_8c.html#a3206124b119b06401ce65affb690976d" title="clear_receipts" alt="" coords="503,56,606,83"/>
+<area shape="rect" id="node4" href="$d8/d8d/_messenger_8c.html#a4b1f7ee3f635e7a80c8f3cbe98588e4d" title="m_get_friend_connectionstatus" alt="" coords="453,107,656,133"/>
+<area shape="rect" id="node5" href="$d8/d8d/_messenger_8c.html#a36587bd583123730d702e5a4cb894e5f" title="friend_not_valid" alt="" coords="733,56,846,83"/>
+<area shape="rect" id="node6" href="$d8/dc6/net__crypto_8c.html#afb5c59e6df7f38fe0bdf9e0f6c459869" title="crypto_connection_status" alt="" coords="704,107,875,133"/>
+<area shape="rect" id="node14" href="$d2/db1/friend__connection_8c.html#a8586e3dfb2047821c4214adf8d06a877" title="friend_connection_crypt\l_connection_id" alt="" coords="709,187,869,229"/>
+<area shape="rect" id="node7" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="931,40,1084,67"/>
+<area shape="rect" id="node9" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="968,92,1047,119"/>
+<area shape="rect" id="node10" href="$d5/d26/_t_c_p__connection_8c.html#ae843b0b4c8041f08bf9c18f68cae8a61" title="tcp_connection_to_online\l_tcp_relays" alt="" coords="923,143,1092,185"/>
+<area shape="rect" id="node8" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="1150,30,1289,71"/>
+<area shape="rect" id="node11" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="1164,96,1275,123"/>
+<area shape="rect" id="node13" href="$d5/d26/_t_c_p__connection_8c.html#a255916e82a74ad6c617216af786ec335" title="online_tcp_connection\l_from_conn" alt="" coords="1144,147,1295,189"/>
+<area shape="rect" id="node12" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="1347,89,1489,130"/>
+<area shape="rect" id="node15" href="$d2/db1/friend__connection_8c.html#a0c0c32645b094058a6e6d6bcab4ed718" title="get_conn" alt="" coords="970,209,1045,236"/>
+<area shape="rect" id="node16" href="$d2/db1/friend__connection_8c.html#abecf42b27a016431837ee0b8a4ac5a5e" title="friendconn_id_not_valid" alt="" coords="1140,213,1299,240"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="tox_get_savedata_size" name="tox_get_savedata_size">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#a4ae119dad636f15f1a5d628a13b107d8" title="messenger_size" alt="" coords="209,56,327,83"/>
+<area shape="rect" id="node3" href="$dc/dc1/_d_h_t_8c.html#a55d92a2419bf9384e3cbfe0ec5a8f4d6" title="DHT_size" alt="" coords="409,5,491,32"/>
+<area shape="rect" id="node4" href="$dc/dc1/_d_h_t_8c.html#aa980937ac320a4389b726e04da26cb44" title="packed_node_size" alt="" coords="573,31,704,57"/>
+<area shape="rect" id="node5" href="$d8/d8d/_messenger_8c.html#ad436fa7850d7bf55222df42ff527c375" title="saved_friendslist_size" alt="" coords="375,107,525,133"/>
+<area shape="rect" id="node6" href="$d8/d8d/_messenger_8c.html#ab3db39cd14385440de61a378e25f03f1" title="count_friendlist" alt="" coords="583,107,694,133"/>
+</map>

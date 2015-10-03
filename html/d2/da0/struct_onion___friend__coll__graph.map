@@ -1,0 +1,8 @@
+<map id="Onion_Friend" name="Onion_Friend">
+<area shape="rect" id="node2" href="$de/dd7/struct_onion___node.html" title="Onion_Node" alt="" coords="9,363,103,389"/>
+<area shape="rect" id="node3" href="$db/d14/struct_i_p___port.html" title="IP_Port" alt="" coords="23,273,89,300"/>
+<area shape="rect" id="node4" href="$d4/d6d/struct_i_p.html" title="IP" alt="" coords="37,184,75,211"/>
+<area shape="rect" id="node5" href="$d3/da8/union_i_p4.html" title="IP4" alt="" coords="5,95,48,121"/>
+<area shape="rect" id="node7" href="$d7/dae/union_i_p6.html" title="IP6" alt="" coords="77,95,120,121"/>
+<area shape="rect" id="node8" href="$d7/d37/struct_last___pinged.html" title="Last_Pinged" alt="" coords="127,363,222,389"/>
+</map>

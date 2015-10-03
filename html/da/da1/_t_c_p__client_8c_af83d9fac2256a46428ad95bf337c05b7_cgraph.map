@@ -1,0 +1,9 @@
+<map id="send_disconnect_request" name="send_disconnect_request">
+<area shape="rect" id="node2" href="$da/da1/_t_c_p__client_8c.html#abe305661e19883349d213c74c44ff93f" title="send_disconnect_notification" alt="" coords="224,81,415,108"/>
+<area shape="rect" id="node3" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="463,74,639,115"/>
+<area shape="rect" id="node4" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="702,5,837,32"/>
+<area shape="rect" id="node6" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="687,56,852,83"/>
+<area shape="rect" id="node7" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="709,107,830,133"/>
+<area shape="rect" id="node8" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="725,157,814,184"/>
+<area shape="rect" id="node5" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="900,5,1101,32"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="toxcore/friend_requests.h" name="toxcore/friend_requests.h">
+<area shape="rect" id="node2" href="$d0/d08/friend__connection_8h.html" title="friend_connection.h" alt="" coords="556,80,691,107"/>
+<area shape="rect" id="node3" href="$de/d42/net__crypto_8h.html" title="net_crypto.h" alt="" coords="533,229,628,256"/>
+<area shape="rect" id="node4" href="$df/dad/_d_h_t_8h.html" title="DHT.h" alt="" coords="543,603,605,629"/>
+<area shape="rect" id="node23" href="$dd/db4/_l_a_n__discovery_8h.html" title="LAN_discovery.h" alt="" coords="705,304,827,331"/>
+<area shape="rect" id="node30" href="$d9/d26/onion__client_8h.html" title="onion_client.h" alt="" coords="617,155,720,181"/>
+<area shape="rect" id="node24" href="$da/d39/_t_c_p__connection_8h.html" title="TCP_connection.h" alt="" coords="347,304,478,331"/>
+<area shape="rect" id="node5" href="$dd/d3e/crypto__core_8h.html" title="crypto_core.h" alt="" coords="429,677,530,704"/>
+<area shape="rect" id="node6" href="$d9/d94/network_8h.html" title="network.h" alt="" coords="576,752,655,779"/>
+<area shape="rect" id="node22" href="$dd/dec/ping__array_8h.html" title="ping_array.h" alt="" coords="611,677,705,704"/>
+<area shape="rect" id="node25" href="$d0/df3/_t_c_p__client_8h.html" title="TCP_client.h" alt="" coords="295,379,394,405"/>
+<area shape="rect" id="node26" href="$d6/d03/_t_c_p__server_8h.html" title="TCP_server.h" alt="" coords="293,453,396,480"/>
+<area shape="rect" id="node27" href="$d3/db9/onion_8h.html" title="onion.h" alt="" coords="507,528,571,555"/>
+<area shape="rect" id="node28" href="$da/d23/list_8h.html" title="list.h" alt="" coords="137,752,187,779"/>
+<area shape="rect" id="node31" href="$d7/dfd/onion__announce_8h.html" title="onion_announce.h" alt="" coords="647,379,773,405"/>
+</map>

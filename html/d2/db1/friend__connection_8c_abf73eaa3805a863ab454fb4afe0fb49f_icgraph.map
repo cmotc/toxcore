@@ -1,0 +1,44 @@
+<map id="handle_status" name="handle_status">
+<area shape="rect" id="node2" href="$d2/db1/friend__connection_8c.html#a53d1bd9e6126683e05e0e14cc70d1a8a" title="dht_pk_callback" alt="" coords="156,157,272,184"/>
+<area shape="rect" id="node3" href="$d2/db1/friend__connection_8c.html#ac2af058fd8684e6abc7b136889f5f4e5" title="friend_new_connection" alt="" coords="320,157,475,184"/>
+<area shape="rect" id="node6" href="$d2/db1/friend__connection_8c.html#ad12421e11a4e0a8ca7223e0d715d2b0c" title="handle_new_connections" alt="" coords="928,5,1096,32"/>
+<area shape="rect" id="node17" href="$d0/d08/friend__connection_8h.html#aea88c3aa2deff558e9b13ed5229cbb6b" title="do_friend_connections" alt="" coords="523,259,675,285"/>
+<area shape="rect" id="node24" href="$d0/d08/friend__connection_8h.html#a613a80a004fccd616de2a67d84a25d3c" title="new_friend_connection" alt="" coords="320,208,475,235"/>
+<area shape="rect" id="node43" href="$d0/d08/friend__connection_8h.html#a04fb221a2ac726ec3ca86be7b1e63238" title="set_dht_temp_pk" alt="" coords="336,309,459,336"/>
+<area shape="rect" id="node4" href="$d2/db1/friend__connection_8c.html#a6aa37bc6ee3246c06d37000677b205e8" title="dht_ip_callback" alt="" coords="543,157,655,184"/>
+<area shape="rect" id="node5" href="$d2/db1/friend__connection_8c.html#aa293768f213199a635ce0b4a94489cdf" title="change_dht_pk" alt="" coords="746,107,857,133"/>
+<area shape="rect" id="node7" href="$d0/d08/friend__connection_8h.html#a319bec2419cf5fc5525af4fae03b86ef" title="new_friend_connections" alt="" coords="1144,81,1307,108"/>
+<area shape="rect" id="node8" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="1381,81,1499,108"/>
+<area shape="rect" id="node9" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1630,31,1681,57"/>
+<area shape="rect" id="node10" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1620,183,1691,209"/>
+<area shape="rect" id="node11" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1785,228,1892,255"/>
+<area shape="rect" id="node12" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1807,279,1871,305"/>
+<area shape="rect" id="node14" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1799,177,1878,204"/>
+<area shape="rect" id="node16" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1813,329,1864,356"/>
+<area shape="rect" id="node13" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1940,380,1991,407"/>
+<area shape="rect" id="node15" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1940,279,1991,305"/>
+<area shape="rect" id="node18" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="1387,469,1493,496"/>
+<area shape="rect" id="node19" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1630,335,1681,361"/>
+<area shape="rect" id="node20" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1614,477,1697,504"/>
+<area shape="rect" id="node21" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1785,431,1892,457"/>
+<area shape="rect" id="node22" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1813,481,1865,508"/>
+<area shape="rect" id="node23" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1802,380,1875,407"/>
+<area shape="rect" id="node25" href="$df/de9/toxcore_2group_8c.html#ab08da4834d9772b1ef1f3b35ae5197c1" title="connect_to_closest" alt="" coords="531,309,666,336"/>
+<area shape="rect" id="node27" href="$d8/d8d/_messenger_8c.html#aa3be5ad998d2b0ced07aceab765eaa2f" title="init_new_friend" alt="" coords="544,208,653,235"/>
+<area shape="rect" id="node26" href="$dd/de4/toxcore_2group_8h.html#a9529a2149c68cbff38d43419d9ebeecc" title="do_groupchats" alt="" coords="1172,520,1279,547"/>
+<area shape="rect" id="node28" href="$d4/d30/_messenger_8h.html#ac77431b1ab0b12af003657e11057bd9c" title="m_addfriend" alt="" coords="755,317,848,344"/>
+<area shape="rect" id="node36" href="$d4/d30/_messenger_8h.html#a2f7aa06733a25e8c0edc8f31a22a78dc" title="m_addfriend_norequest" alt="" coords="723,191,880,217"/>
+<area shape="rect" id="node29" href="$d2/dee/friends__test_8c.html#a7266443b3a915168c8c968318182d3d5" title="parent_friend_request" alt="" coords="939,317,1085,344"/>
+<area shape="rect" id="node31" href="$d8/d8d/_messenger_8c.html#ad971e0d0877b61a160884d59527d39d9" title="friends_list_load" alt="" coords="954,216,1070,243"/>
+<area shape="rect" id="node35" href="$da/d8f/tox_8h.html#aa921c439baad10c03f8d93fda753b0b8" title="tox_friend_add" alt="" coords="1602,385,1709,412"/>
+<area shape="rect" id="node30" href="$d2/dee/friends__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1200,317,1251,344"/>
+<area shape="rect" id="node32" href="$d8/d8d/_messenger_8c.html#a122e94907e1063fdff78f54ee4b0852b" title="messenger_load_state\l_callback" alt="" coords="1149,201,1302,242"/>
+<area shape="rect" id="node33" href="$d4/d30/_messenger_8h.html#a4871cd41d2a53b07ee4b2467a844e17e" title="messenger_load" alt="" coords="1381,224,1499,251"/>
+<area shape="rect" id="node34" href="$d8/dda/messenger__test_8c.html#a9c4405dc5f0fb39abca715cf5fe62007" title="START_TEST" alt="" coords="1602,284,1709,311"/>
+<area shape="rect" id="node37" href="$d2/dee/friends__test_8c.html#ace1a1349a29721b64c0cfcf27e867f24" title="child_got_request" alt="" coords="950,267,1074,293"/>
+<area shape="rect" id="node38" href="$db/de9/_messenger__test_8c.html#a38c8dd7be210f3e938afa8e6eb4cd562" title="print_request" alt="" coords="1177,267,1274,293"/>
+<area shape="rect" id="node39" href="$da/d8f/tox_8h.html#ad499c853b628d04dd0f3c6ef5a14ebe4" title="tox_friend_add_norequest" alt="" coords="1355,132,1525,159"/>
+<area shape="rect" id="node40" href="$d0/de9/encryptsave__test_8c.html#a23435c36683784fe0b913e77c8445c32" title="accept_friend_request" alt="" coords="1580,132,1731,159"/>
+<area shape="rect" id="node41" href="$d9/d35/tox__test_8c.html#adb48712ca97fe3bd1c837671708d7915" title="g_accept_friend_request" alt="" coords="1573,81,1737,108"/>
+<area shape="rect" id="node42" href="$d9/d35/tox__test_8c.html#a999b8d0cb6f7a7ea6f983f4f32e18f25" title="START_TEST" alt="" coords="1785,81,1892,108"/>
+</map>
