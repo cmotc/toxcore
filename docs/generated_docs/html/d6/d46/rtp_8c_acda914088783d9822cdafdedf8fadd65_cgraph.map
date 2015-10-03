@@ -1,0 +1,17 @@
+<map id="rtp_new" name="rtp_new">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#a536d47dbfa35fb02c78068e1d11a1d2a" title="m_callback_rtp_packet" alt="" coords="121,5,277,32"/>
+<area shape="rect" id="node4" href="$dc/d85/crypto__core_8c.html#a5f13cbe4c46d8801e2c7467068f87306" title="random_int" alt="" coords="156,56,243,83"/>
+<area shape="rect" id="node5" href="$d6/d46/rtp_8c.html#af21bf57a274e3ff7de54f331ab03fbbc" title="rtp_handle_packet" alt="" coords="135,107,263,133"/>
+<area shape="rect" id="node3" href="$d8/d8d/_messenger_8c.html#a36587bd583123730d702e5a4cb894e5f" title="friend_not_valid" alt="" coords="341,5,455,32"/>
+<area shape="rect" id="node6" href="$d6/d46/rtp_8c.html#ae0abe437f26623dd117abd6074a45d9d" title="check_late_message" alt="" coords="325,56,471,83"/>
+<area shape="rect" id="node7" href="$d6/d46/rtp_8c.html#a36611d00dbaab35e5b65630057930c2f" title="msg_parse" alt="" coords="355,107,441,133"/>
+<area shape="rect" id="node11" href="$d6/d46/rtp_8c.html#a3bbb6216a42caaa8163fc61b8f78a801" title="queue_message" alt="" coords="339,259,457,285"/>
+<area shape="rect" id="node8" href="$d6/d46/rtp_8c.html#ae85560b498a96a4d7a6143ba8a75def2" title="extract_ext_header" alt="" coords="519,31,652,57"/>
+<area shape="rect" id="node9" href="$d6/d46/rtp_8c.html#ac092bb8ff79f03cf8892b112de73edf0" title="extract_header" alt="" coords="531,81,639,108"/>
+<area shape="rect" id="node10" href="$d6/d46/rtp_8c.html#a19cbf4e4c2831f2e162e7580bb7d5c7b" title="rtp_free_msg" alt="" coords="827,183,925,209"/>
+<area shape="rect" id="node12" href="$d5/def/codec_8c.html#ab27fdbd54a41e787c4a98b119d181b13" title="buffer_full" alt="" coords="546,233,625,260"/>
+<area shape="rect" id="node13" href="$d5/def/codec_8c.html#aa27710dac4f829dad6d007cf01bdf55f" title="buffer_read" alt="" coords="542,284,629,311"/>
+<area shape="rect" id="node14" href="$d5/def/codec_8c.html#a5990d0123726b7f12cebdae0984475b4" title="buffer_write" alt="" coords="540,335,631,361"/>
+<area shape="rect" id="node15" href="$d5/def/codec_8c.html#a170dd2e497101775eea8695dbda58f9e" title="jbuf_write" alt="" coords="546,385,625,412"/>
+<area shape="rect" id="node16" href="$d5/def/codec_8c.html#a2ab3636512ac576d996c504f9226108d" title="jbuf_clear" alt="" coords="700,309,779,336"/>
+</map>

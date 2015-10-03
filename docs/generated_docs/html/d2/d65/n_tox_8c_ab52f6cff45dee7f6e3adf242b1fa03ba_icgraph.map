@@ -1,0 +1,20 @@
+<map id="new_lines_mark" name="new_lines_mark">
+<area shape="rect" id="node2" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="567,165,640,191"/>
+<area shape="rect" id="node4" href="$d4/d9c/n_tox_8h.html#a98bd143de92c21739c898410eab0ac1d" title="new_lines" alt="" coords="169,393,249,419"/>
+<area shape="rect" id="node13" href="$d2/d65/n_tox_8c.html#a7005bda3c850077993145fc3ac952718" title="print_groupchatpeers" alt="" coords="311,89,453,115"/>
+<area shape="rect" id="node3" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="740,469,791,495"/>
+<area shape="rect" id="node5" href="$d2/d65/n_tox_8c.html#a7209b965126c3b606c3f0030a088ed27" title="tox_file_chunk_request" alt="" coords="525,443,681,470"/>
+<area shape="rect" id="node6" href="$d2/d65/n_tox_8c.html#a04df44b183472d79e926e88d3428e6d4" title="print_friendlist" alt="" coords="331,190,433,217"/>
+<area shape="rect" id="node7" href="$d2/d65/n_tox_8c.html#a25727e8f5042a70c3b4f6349c88f81ba" title="print_formatted_message" alt="" coords="297,241,467,267"/>
+<area shape="rect" id="node9" href="$d2/d65/n_tox_8c.html#a386f94811ff7c3a64effd8015be66320" title="print_request" alt="" coords="555,494,652,521"/>
+<area shape="rect" id="node10" href="$d2/d65/n_tox_8c.html#a89c9c8906f86908f757554904956c646" title="print_nickchange" alt="" coords="543,545,663,571"/>
+<area shape="rect" id="node11" href="$d2/d65/n_tox_8c.html#af7e7e6447808fb322ad10e91394bdd07" title="print_statuschange" alt="" coords="537,595,669,622"/>
+<area shape="rect" id="node12" href="$d2/d65/n_tox_8c.html#a1b2b2f68f7d6d5ebeb8cd60c0368cc51" title="print_invite" alt="" coords="561,646,646,673"/>
+<area shape="rect" id="node14" href="$d2/d65/n_tox_8c.html#abd4c8f1bd1d0db7b778e971b1a24519a" title="print_groupnamelistchange" alt="" coords="515,241,692,267"/>
+<area shape="rect" id="node15" href="$d2/d65/n_tox_8c.html#a9ebf29851e758893d4e507aaef04a14f" title="print_groupmessage" alt="" coords="313,697,451,723"/>
+<area shape="rect" id="node16" href="$d2/d65/n_tox_8c.html#a6d2460a7b0d3135f757dd8849dd3d353" title="file_request_accept" alt="" coords="315,747,449,774"/>
+<area shape="rect" id="node17" href="$d2/d65/n_tox_8c.html#a6d4f5fe76ced673923d8ef17321a227e" title="file_print_control" alt="" coords="323,798,441,825"/>
+<area shape="rect" id="node18" href="$d2/d65/n_tox_8c.html#a2d81671277a08fc6e90ef2dae0f3ea4e" title="write_file" alt="" coords="345,38,419,65"/>
+<area shape="rect" id="node19" href="$d2/d65/n_tox_8c.html#a184d2213a76dbfc1600d83a997f49fa5" title="timeout_getch" alt="" coords="330,342,434,369"/>
+<area shape="rect" id="node8" href="$d2/d65/n_tox_8c.html#ae2328c9f40aa212fc7e83381fc8f664f" title="print_message" alt="" coords="550,291,657,318"/>
+</map>

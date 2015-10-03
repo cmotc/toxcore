@@ -1,0 +1,13 @@
+<map id="auto_tests/TCP_test.c" name="auto_tests/TCP_test.c">
+<area shape="rect" id="node8" href="$d6/d03/_t_c_p__server_8h.html" title="../toxcore/TCP_server.h" alt="" coords="711,229,873,256"/>
+<area shape="rect" id="node25" href="$d0/df3/_t_c_p__client_8h.html" title="../toxcore/TCP_client.h" alt="" coords="691,155,848,181"/>
+<area shape="rect" id="node26" href="$d8/d3c/util_8h.html" title="../toxcore/util.h" alt="" coords="1133,80,1243,107"/>
+<area shape="rect" id="node29" href="$d1/d98/helpers_8h.html" title="helpers.h" alt="" coords="1520,80,1595,107"/>
+<area shape="rect" id="node30" href="$da/d39/_t_c_p__connection_8h.html" title="../toxcore/TCP_connection.h" alt="" coords="651,80,840,107"/>
+<area shape="rect" id="node9" href="$dd/d3e/crypto__core_8h.html" title="crypto_core.h" alt="" coords="621,453,723,480"/>
+<area shape="rect" id="node21" href="$d3/db9/onion_8h.html" title="onion.h" alt="" coords="760,304,824,331"/>
+<area shape="rect" id="node24" href="$da/d23/list_8h.html" title="list.h" alt="" coords="941,528,992,555"/>
+<area shape="rect" id="node10" href="$d9/d94/network_8h.html" title="network.h" alt="" coords="727,528,806,555"/>
+<area shape="rect" id="node22" href="$df/dad/_d_h_t_8h.html" title="DHT.h" alt="" coords="760,379,821,405"/>
+<area shape="rect" id="node23" href="$dd/dec/ping__array_8h.html" title="ping_array.h" alt="" coords="797,453,891,480"/>
+</map>

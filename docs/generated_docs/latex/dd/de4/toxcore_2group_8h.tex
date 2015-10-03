@@ -1,0 +1,2269 @@
+\hypertarget{toxcore_2group_8h}{\section{toxcore/group.h File Reference}
+\label{toxcore_2group_8h}\index{toxcore/group.\+h@{toxcore/group.\+h}}
+}
+{\ttfamily \#include \char`\"{}Messenger.\+h\char`\"{}}\\*
+Include dependency graph for group.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d26/toxcore_2group_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d5c/toxcore_2group_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_group___peer}{Group\+\_\+\+Peer}
+\item 
+struct \hyperlink{struct_group__c}{Group\+\_\+c}
+\item 
+struct \hyperlink{struct_group___chats}{Group\+\_\+\+Chats}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{toxcore_2group_8h_a57c6265ee7c8d9829418dc7854749dad}{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}~256
+\item 
+\#define \hyperlink{toxcore_2group_8h_ae49a7f6c02e0c31ee7e1a84b529f33d7}{D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~4
+\item 
+\#define \hyperlink{toxcore_2group_8h_ab4d6c744a36e49e0aa6cb3f1ea3de0f7}{M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~16
+\item 
+\#define \hyperlink{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H}~(1 + \hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}) /$\ast$ type + \hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S} so we can use \hyperlink{crypto__core_8h_a89b4a1a4a7d8bfabdf0e1b60f074e531}{new\+\_\+symmetric\+\_\+key}(...) to fill it $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea6449515dfdf789c9b02550bc408ca2cb}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D}, 
+\hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}
+ \}
+\item 
+enum \{ \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}, 
+\hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V}
+ \}
+\item 
+enum \{ \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da59fc98d9e4ab0b97405e3f509b8e4b19}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}, 
+\hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da375697d21bebe66381f9439c657ad7f4}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E}
+ \}
+\item 
+enum \{ \hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600afadf167439e54399b2a3d6414d8ccf95}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D}, 
+\hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2ddc5324e4aae3b073254a55e56b57bb}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L}, 
+\hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2bbbcf7a2d323bc7e36f0a1ca4b47fe9}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{toxcore_2group_8h_ac900761f5401134bec49443c866def98}{g\+\_\+callback\+\_\+group\+\_\+invite} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{toxcore_2group_8h_a43c7333276eeb0792b4157dd90789957}{g\+\_\+callback\+\_\+group\+\_\+message} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{toxcore_2group_8h_af5c4cc3003dc13ffec6413264fd302b6}{g\+\_\+callback\+\_\+group\+\_\+action} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{toxcore_2group_8h_a4819b45e57736979652615714cf9dbfe}{g\+\_\+callback\+\_\+group\+\_\+title} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{toxcore_2group_8h_a30b3538c4447bd279b31e423bc96984f}{g\+\_\+callback\+\_\+group\+\_\+namelistchange} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, uint8\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+int \hyperlink{toxcore_2group_8h_a4fa9eb1ad43b7b9026a861bd2b894461}{add\+\_\+groupchat} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, uint8\+\_\+t type)
+\item 
+int \hyperlink{toxcore_2group_8h_a526817b20616bdf13250e1020d2a1808}{del\+\_\+groupchat} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber)
+\item 
+int \hyperlink{toxcore_2group_8h_a32c6a812970d810c720937f6f5d1998a}{group\+\_\+peer\+\_\+pubkey} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, int peernumber, uint8\+\_\+t $\ast$pk)
+\item 
+int \hyperlink{toxcore_2group_8h_aca385bea140e668374002b11db01d78d}{group\+\_\+peername} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, int peernumber, uint8\+\_\+t $\ast$name)
+\item 
+int \hyperlink{toxcore_2group_8h_ab88ec06a4663a75e56afa84ae094df77}{invite\+\_\+friend} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int32\+\_\+t friendnumber, int groupnumber)
+\item 
+int \hyperlink{toxcore_2group_8h_a6f097de58345cf9500d0413198c583fc}{join\+\_\+groupchat} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int32\+\_\+t friendnumber, uint8\+\_\+t expected\+\_\+type, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+int \hyperlink{toxcore_2group_8h_a5089fa31b3523ab355414d9a6aeb653c}{group\+\_\+message\+\_\+send} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, const uint8\+\_\+t $\ast$message, uint16\+\_\+t length)
+\item 
+int \hyperlink{toxcore_2group_8h_a0797c0660c3628fd1b62ca99cc860443}{group\+\_\+action\+\_\+send} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, const uint8\+\_\+t $\ast$action, uint16\+\_\+t length)
+\item 
+int \hyperlink{toxcore_2group_8h_a262b7bf9d01d09574224f290575de0db}{group\+\_\+title\+\_\+send} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, const uint8\+\_\+t $\ast$title, uint8\+\_\+t title\+\_\+len)
+\item 
+int \hyperlink{toxcore_2group_8h_a4eb43d155a71bcb9e63954bdd1b6e3e6}{group\+\_\+title\+\_\+get} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, uint8\+\_\+t $\ast$title, uint32\+\_\+t max\+\_\+length)
+\item 
+int \hyperlink{toxcore_2group_8h_abd1478afe81f0399627adb7c8f725495}{group\+\_\+number\+\_\+peers} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber)
+\item 
+unsigned int \hyperlink{toxcore_2group_8h_a86daba4a594e2677b03851483ed3416c}{group\+\_\+peernumber\+\_\+is\+\_\+ours} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, int peernumber)
+\item 
+int \hyperlink{toxcore_2group_8h_a2ead81b9067921eff85dbab1f8fdc785}{group\+\_\+names} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, uint8\+\_\+t names\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}, uint16\+\_\+t lengths\mbox{[}$\,$\mbox{]}, uint16\+\_\+t length)
+\item 
+void \hyperlink{toxcore_2group_8h_aab3c37b13310ec0d9df5f3209c6fc5ac}{group\+\_\+lossy\+\_\+packet\+\_\+registerhandler} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, uint8\+\_\+t byte, int($\ast$function)(void $\ast$, int, int, void $\ast$, const uint8\+\_\+t $\ast$, uint16\+\_\+t))
+\item 
+int \hyperlink{toxcore_2group_8h_a7e20618640c4b45fe7f863c87ec2dfda}{send\+\_\+group\+\_\+lossy\+\_\+packet} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+uint32\+\_\+t \hyperlink{toxcore_2group_8h_ac8db2e732a8872d2f5f4113eddab07d6}{count\+\_\+chatlist} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c)
+\item 
+uint32\+\_\+t \hyperlink{toxcore_2group_8h_a9e7eb2c3af67e4b0964ddb553639a0a4}{copy\+\_\+chatlist} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int32\+\_\+t $\ast$out\+\_\+list, uint32\+\_\+t list\+\_\+size)
+\item 
+int \hyperlink{toxcore_2group_8h_aefde055f874f23db9e368a71719aefe3}{group\+\_\+get\+\_\+type} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber)
+\item 
+void \hyperlink{toxcore_2group_8h_aa79b54a63ec3831db2f92c5d52dc949f}{send\+\_\+name\+\_\+all\+\_\+groups} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c)
+\item 
+int \hyperlink{toxcore_2group_8h_add35f9833270b223b9120733e8c161b6}{group\+\_\+set\+\_\+object} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, void $\ast$object)
+\item 
+int \hyperlink{toxcore_2group_8h_a450e79abe59f479d322c59b4e7be0184}{group\+\_\+peer\+\_\+set\+\_\+object} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, int peernumber, void $\ast$object)
+\item 
+void $\ast$ \hyperlink{toxcore_2group_8h_ad3649b12ed32b2b37f6443e8dfcfb34f}{group\+\_\+get\+\_\+object} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber)
+\item 
+void $\ast$ \hyperlink{toxcore_2group_8h_a8e806c997fa1e969e2c26f5751b16593}{group\+\_\+peer\+\_\+get\+\_\+object} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, int peernumber)
+\item 
+int \hyperlink{toxcore_2group_8h_ac5a08e9cc9e4615a8702b642885b70b2}{callback\+\_\+groupchat\+\_\+peer\+\_\+new} (const \hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, void($\ast$function)(void $\ast$, int, int))
+\item 
+int \hyperlink{toxcore_2group_8h_a52cfb119bc0747a9b4d4fdd845ce44a0}{callback\+\_\+groupchat\+\_\+peer\+\_\+delete} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, void($\ast$function)(void $\ast$, int, int, void $\ast$))
+\item 
+int \hyperlink{toxcore_2group_8h_a3d26dd5b26565b3050268f7dc86f648c}{callback\+\_\+groupchat\+\_\+delete} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, void($\ast$function)(void $\ast$, int))
+\item 
+\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$ \hyperlink{toxcore_2group_8h_a16ac0b94fed484d710f76d390b7a85d8}{new\+\_\+groupchats} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})
+\item 
+void \hyperlink{toxcore_2group_8h_a9529a2149c68cbff38d43419d9ebeecc}{do\+\_\+groupchats} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c)
+\item 
+void \hyperlink{toxcore_2group_8h_af203efe57203e3b774d8e4f5e29cca81}{kill\+\_\+groupchats} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{toxcore_2group_8h_ae49a7f6c02e0c31ee7e1a84b529f33d7}{\index{toxcore/group.\+h@{toxcore/group.\+h}!D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+I\+R\+E\+D\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~4}}\label{toxcore_2group_8h_ae49a7f6c02e0c31ee7e1a84b529f33d7}
+
+
+Definition at line 61 of file group.\+h.
+
+
+
+Referenced by add\+\_\+to\+\_\+closest(), connect\+\_\+to\+\_\+closest(), delpeer(), handle\+\_\+packet\+\_\+online(), pk\+\_\+in\+\_\+closest\+\_\+peers(), and send\+\_\+lossy\+\_\+all\+\_\+close().
+
+\hypertarget{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H@{G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H@{G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H~(1 + {\bf crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}) /$\ast$ type + {\bf crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S} so we can use {\bf new\+\_\+symmetric\+\_\+key}(...) to fill it $\ast$/}}\label{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}
+
+
+Definition at line 63 of file group.\+h.
+
+
+
+Referenced by get\+\_\+group\+\_\+num(), handle\+\_\+friend\+\_\+invite\+\_\+packet(), invite\+\_\+friend(), join\+\_\+groupchat(), and send\+\_\+packet\+\_\+online().
+
+\hypertarget{toxcore_2group_8h_ab4d6c744a36e49e0aa6cb3f1ea3de0f7}{\index{toxcore/group.\+h@{toxcore/group.\+h}!M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~16}}\label{toxcore_2group_8h_ab4d6c744a36e49e0aa6cb3f1ea3de0f7}
+
+
+Definition at line 62 of file group.\+h.
+
+
+
+Referenced by add\+\_\+conn\+\_\+to\+\_\+groupchat(), connect\+\_\+to\+\_\+closest(), count\+\_\+close\+\_\+connected(), del\+\_\+groupchat(), friend\+\_\+in\+\_\+close(), remove\+\_\+close\+\_\+conn(), send\+\_\+lossy\+\_\+all\+\_\+close(), send\+\_\+message\+\_\+all\+\_\+close(), and set\+\_\+conns\+\_\+type\+\_\+close().
+
+\hypertarget{toxcore_2group_8h_a57c6265ee7c8d9829418dc7854749dad}{\index{toxcore/group.\+h@{toxcore/group.\+h}!M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T@{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}}
+\index{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T@{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T~256}}\label{toxcore_2group_8h_a57c6265ee7c8d9829418dc7854749dad}
+
+
+Definition at line 41 of file group.\+h.
+
+
+
+Referenced by lossy\+\_\+packet\+\_\+not\+\_\+received().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9e}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}\label{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}
+}]\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea6449515dfdf789c9b02550bc408ca2cb}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D}\label{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea6449515dfdf789c9b02550bc408ca2cb}
+}]\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}\label{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 30 of file group.\+h.
+
+
+\begin{DoxyCode}
+30      \{
+31     \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{GROUPCHAT\_STATUS\_NONE},
+32     \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea6449515dfdf789c9b02550bc408ca2cb}{GROUPCHAT\_STATUS\_VALID},
+33     \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{GROUPCHAT\_STATUS\_CONNECTED}
+34 \};
+\end{DoxyCode}
+\hypertarget{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}\label{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}
+}]\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V}\label{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 36 of file group.\+h.
+
+
+\begin{DoxyCode}
+36      \{
+37     \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}{GROUPCHAT\_TYPE\_TEXT},
+38     \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}{GROUPCHAT\_TYPE\_AV}
+39 \};
+\end{DoxyCode}
+\hypertarget{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E}\label{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}
+}]\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da59fc98d9e4ab0b97405e3f509b8e4b19}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}\label{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da59fc98d9e4ab0b97405e3f509b8e4b19}
+}]\index{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E@{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da375697d21bebe66381f9439c657ad7f4}{G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E}\label{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da375697d21bebe66381f9439c657ad7f4}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 65 of file group.\+h.
+
+
+\begin{DoxyCode}
+65      \{
+66     \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}{GROUPCHAT\_CLOSE\_NONE},
+67     \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da59fc98d9e4ab0b97405e3f509b8e4b19}{GROUPCHAT\_CLOSE\_CONNECTION},
+68     \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da375697d21bebe66381f9439c657ad7f4}{GROUPCHAT\_CLOSE\_ONLINE}
+69 \};
+\end{DoxyCode}
+\hypertarget{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D}}\item[{\em 
+\hypertarget{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600afadf167439e54399b2a3d6414d8ccf95}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+A\+D\+D}\label{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600afadf167439e54399b2a3d6414d8ccf95}
+}]\index{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L}}\item[{\em 
+\hypertarget{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2ddc5324e4aae3b073254a55e56b57bb}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+D\+E\+L}\label{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2ddc5324e4aae3b073254a55e56b57bb}
+}]\index{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E}!toxcore/group.\+h@{toxcore/group.\+h}}\index{toxcore/group.\+h@{toxcore/group.\+h}!C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E@{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2bbbcf7a2d323bc7e36f0a1ca4b47fe9}{C\+H\+A\+T\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+P\+E\+E\+R\+\_\+\+N\+A\+M\+E}\label{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2bbbcf7a2d323bc7e36f0a1ca4b47fe9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 171 of file group.\+h.
+
+
+\begin{DoxyCode}
+171      \{
+172     \hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600afadf167439e54399b2a3d6414d8ccf95}{CHAT\_CHANGE\_PEER\_ADD},
+173     \hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2ddc5324e4aae3b073254a55e56b57bb}{CHAT\_CHANGE\_PEER\_DEL},
+174     \hyperlink{toxcore_2group_8h_abed82baf7f470b522273a3e37c24c600a2bbbcf7a2d323bc7e36f0a1ca4b47fe9}{CHAT\_CHANGE\_PEER\_NAME},
+175 \};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{toxcore_2group_8h_a4fa9eb1ad43b7b9026a861bd2b894461}{\index{toxcore/group.\+h@{toxcore/group.\+h}!add\+\_\+groupchat@{add\+\_\+groupchat}}
+\index{add\+\_\+groupchat@{add\+\_\+groupchat}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{add\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{uint8\+\_\+t}]{type}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a4fa9eb1ad43b7b9026a861bd2b894461}
+
+
+Definition at line 667 of file group.\+c.
+
+
+
+References addpeer(), Group\+\_\+\+Chats\+::chats, create\+\_\+group\+\_\+chat(), Messenger\+::dht, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, Group\+\_\+c\+::identifier, Group\+\_\+\+Chats\+::m, Messenger\+::name, Messenger\+::name\+\_\+length, Messenger\+::net\+\_\+crypto, new\+\_\+symmetric\+\_\+key(), Group\+\_\+c\+::number\+\_\+joined, Group\+\_\+c\+::peer\+\_\+number, Group\+\_\+c\+::real\+\_\+pk, Net\+\_\+\+Crypto\+::self\+\_\+public\+\_\+key, D\+H\+T\+::self\+\_\+public\+\_\+key, setnick(), and Group\+\_\+c\+::status.
+
+
+
+Referenced by add\+\_\+av\+\_\+groupchat(), and tox\+\_\+add\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+668 \{
+669     \textcolor{keywordtype}{int} groupnumber = \hyperlink{toxcore_2group_8c_a0a739a733a50acd17a01b9bf0a173d2f}{create\_group\_chat}(g\_c);
+670 
+671     \textcolor{keywordflow}{if} (groupnumber == -1)
+672         \textcolor{keywordflow}{return} -1;
+673 
+674     \hyperlink{struct_group__c}{Group\_c} *g = &g\_c->\hyperlink{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{chats}[groupnumber];
+675 
+676     g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{GROUPCHAT\_STATUS\_CONNECTED};
+677     g->\hyperlink{struct_group__c_a50fa99a57ee7c9280fc90b7c33d760d0}{number\_joined} = -1;
+678     \hyperlink{crypto__core_8c_a89b4a1a4a7d8bfabdf0e1b60f074e531}{new\_symmetric\_key}(g->\hyperlink{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{identifier} + 1);
+679     g->\hyperlink{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{identifier}[0] = type;
+680     g->\hyperlink{struct_group__c_a264348ec1f724e05464ca97b7c432817}{peer\_number} = 0; \textcolor{comment}{/* Founder is peer 0. */}
+681     memcpy(g->\hyperlink{struct_group__c_ab42b4c90d81ac99b968c3edd1e21d706}{real\_pk}, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}->\hyperlink{struct_net___crypto_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, 
+      crypto\_box\_PUBLICKEYBYTES);
+682     \textcolor{keywordtype}{int} peer\_index = \hyperlink{toxcore_2group_8c_ad3ec486d9923daaaa99164f1ea392615}{addpeer}(g\_c, groupnumber, g->\hyperlink{struct_group__c_ab42b4c90d81ac99b968c3edd1e21d706}{real\_pk}, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->
+      \hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, 0);
+683 
+684     \textcolor{keywordflow}{if} (peer\_index == -1) \{
+685         \textcolor{keywordflow}{return} -1;
+686     \}
+687 
+688     \hyperlink{toxcore_2group_8c_a43eba3fa6d10b16fba5c35b6a1b55590}{setnick}(g\_c, groupnumber, peer\_index, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a11b8cc6595eea79e65c978209278e683}{name}, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->
+      \hyperlink{struct_messenger_a3573d7a906b26e9999cd74f2c4066601}{name\_length});
+689 
+690     \textcolor{keywordflow}{return} groupnumber;
+691 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a4fa9eb1ad43b7b9026a861bd2b894461_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a4fa9eb1ad43b7b9026a861bd2b894461_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a3d26dd5b26565b3050268f7dc86f648c}{\index{toxcore/group.\+h@{toxcore/group.\+h}!callback\+\_\+groupchat\+\_\+delete@{callback\+\_\+groupchat\+\_\+delete}}
+\index{callback\+\_\+groupchat\+\_\+delete@{callback\+\_\+groupchat\+\_\+delete}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{callback\+\_\+groupchat\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}int callback\+\_\+groupchat\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{void($\ast$)(void $\ast$, int)}]{function}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a3d26dd5b26565b3050268f7dc86f648c}
+
+
+Definition at line 1098 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::group\+\_\+on\+\_\+delete.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+1099 \{
+1100     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1101 
+1102     \textcolor{keywordflow}{if} (!g)
+1103         \textcolor{keywordflow}{return} -1;
+1104 
+1105     g->\hyperlink{struct_group__c_a43df326d671eb30dd294d5d71d3cd09c}{group\_on\_delete} = \textcolor{keyword}{function};
+1106     \textcolor{keywordflow}{return} 0;
+1107 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a3d26dd5b26565b3050268f7dc86f648c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a3d26dd5b26565b3050268f7dc86f648c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a52cfb119bc0747a9b4d4fdd845ce44a0}{\index{toxcore/group.\+h@{toxcore/group.\+h}!callback\+\_\+groupchat\+\_\+peer\+\_\+delete@{callback\+\_\+groupchat\+\_\+peer\+\_\+delete}}
+\index{callback\+\_\+groupchat\+\_\+peer\+\_\+delete@{callback\+\_\+groupchat\+\_\+peer\+\_\+delete}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{callback\+\_\+groupchat\+\_\+peer\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}int callback\+\_\+groupchat\+\_\+peer\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{void($\ast$)(void $\ast$, int, int, void $\ast$)}]{function}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a52cfb119bc0747a9b4d4fdd845ce44a0}
+
+
+Definition at line 1080 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::peer\+\_\+on\+\_\+leave.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+1081 \{
+1082     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1083 
+1084     \textcolor{keywordflow}{if} (!g)
+1085         \textcolor{keywordflow}{return} -1;
+1086 
+1087     g->\hyperlink{struct_group__c_a7a79b984292a5ea1f68aca7b73067370}{peer\_on\_leave} = \textcolor{keyword}{function};
+1088     \textcolor{keywordflow}{return} 0;
+1089 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a52cfb119bc0747a9b4d4fdd845ce44a0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a52cfb119bc0747a9b4d4fdd845ce44a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_ac5a08e9cc9e4615a8702b642885b70b2}{\index{toxcore/group.\+h@{toxcore/group.\+h}!callback\+\_\+groupchat\+\_\+peer\+\_\+new@{callback\+\_\+groupchat\+\_\+peer\+\_\+new}}
+\index{callback\+\_\+groupchat\+\_\+peer\+\_\+new@{callback\+\_\+groupchat\+\_\+peer\+\_\+new}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{callback\+\_\+groupchat\+\_\+peer\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}int callback\+\_\+groupchat\+\_\+peer\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{void($\ast$)(void $\ast$, int, int)}]{function}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_ac5a08e9cc9e4615a8702b642885b70b2}
+
+
+Definition at line 1062 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::peer\+\_\+on\+\_\+join.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+1063 \{
+1064     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1065 
+1066     \textcolor{keywordflow}{if} (!g)
+1067         \textcolor{keywordflow}{return} -1;
+1068 
+1069     g->\hyperlink{struct_group__c_a218cd2e97bdb682b90f72faa6eb08576}{peer\_on\_join} = \textcolor{keyword}{function};
+1070     \textcolor{keywordflow}{return} 0;
+1071 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ac5a08e9cc9e4615a8702b642885b70b2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ac5a08e9cc9e4615a8702b642885b70b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a9e7eb2c3af67e4b0964ddb553639a0a4}{\index{toxcore/group.\+h@{toxcore/group.\+h}!copy\+\_\+chatlist@{copy\+\_\+chatlist}}
+\index{copy\+\_\+chatlist@{copy\+\_\+chatlist}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{copy\+\_\+chatlist}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t copy\+\_\+chatlist (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int32\+\_\+t $\ast$}]{out\+\_\+list, }
+\item[{uint32\+\_\+t}]{list\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a9e7eb2c3af67e4b0964ddb553639a0a4}
+
+
+Definition at line 2298 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::chats, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, i, Group\+\_\+\+Chats\+::num\+\_\+chats, and Group\+\_\+c\+::status.
+
+
+
+Referenced by tox\+\_\+get\+\_\+chatlist().
+
+
+\begin{DoxyCode}
+2299 \{
+2300     \textcolor{keywordflow}{if} (!out\_list) \{
+2301         \textcolor{keywordflow}{return} 0;
+2302     \}
+2303 
+2304     \textcolor{keywordflow}{if} (g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats} == 0) \{
+2305         \textcolor{keywordflow}{return} 0;
+2306     \}
+2307 
+2308     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, ret = 0;
+2309 
+2310     \textcolor{keywordflow}{for} (i = 0; i < g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+2311         \textcolor{keywordflow}{if} (ret >= list\_size) \{
+2312             \textcolor{keywordflow}{break};  \textcolor{comment}{/* Abandon ship */}
+2313         \}
+2314 
+2315         \textcolor{keywordflow}{if} (g\_c->\hyperlink{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{chats}[i].\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} > \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{GROUPCHAT\_STATUS\_NONE}) \{
+2316             out\_list[ret] = \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2317             ret++;
+2318         \}
+2319     \}
+2320 
+2321     \textcolor{keywordflow}{return} ret;
+2322 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{dd/de4/toxcore_2group_8h_a9e7eb2c3af67e4b0964ddb553639a0a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_ac8db2e732a8872d2f5f4113eddab07d6}{\index{toxcore/group.\+h@{toxcore/group.\+h}!count\+\_\+chatlist@{count\+\_\+chatlist}}
+\index{count\+\_\+chatlist@{count\+\_\+chatlist}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{count\+\_\+chatlist}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t count\+\_\+chatlist (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_ac8db2e732a8872d2f5f4113eddab07d6}
+
+
+Definition at line 2279 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::chats, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, i, Group\+\_\+\+Chats\+::num\+\_\+chats, and Group\+\_\+c\+::status.
+
+
+
+Referenced by tox\+\_\+count\+\_\+chatlist().
+
+
+\begin{DoxyCode}
+2280 \{
+2281     uint32\_t ret = 0;
+2282     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2283 
+2284     \textcolor{keywordflow}{for} (i = 0; i < g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats}; i++) \{
+2285         \textcolor{keywordflow}{if} (g\_c->\hyperlink{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{chats}[i].\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{GROUPCHAT\_STATUS\_NONE}) \{
+2286             ret++;
+2287         \}
+2288     \}
+2289 
+2290     \textcolor{keywordflow}{return} ret;
+2291 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{dd/de4/toxcore_2group_8h_ac8db2e732a8872d2f5f4113eddab07d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a526817b20616bdf13250e1020d2a1808}{\index{toxcore/group.\+h@{toxcore/group.\+h}!del\+\_\+groupchat@{del\+\_\+groupchat}}
+\index{del\+\_\+groupchat@{del\+\_\+groupchat}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{del\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int del\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a526817b20616bdf13250e1020d2a1808}
+
+
+Definition at line 699 of file group.\+c.
+
+
+
+References Group\+\_\+c\+::close, Group\+\_\+\+Chats\+::fr\+\_\+c, get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, group\+\_\+kill\+\_\+peer\+\_\+send(), Group\+\_\+c\+::group\+\_\+on\+\_\+delete, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+N\+O\+N\+E, i, kill\+\_\+friend\+\_\+connection(), M\+A\+X\+\_\+\+G\+R\+O\+U\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, Group\+\_\+c\+::number, Group\+\_\+c\+::numpeers, Group\+\_\+\+Peer\+::object, Group\+\_\+c\+::object, Group\+\_\+c\+::peer\+\_\+number, Group\+\_\+c\+::peer\+\_\+on\+\_\+leave, Group\+\_\+c\+::type, and wipe\+\_\+group\+\_\+chat().
+
+
+
+Referenced by add\+\_\+av\+\_\+groupchat(), join\+\_\+av\+\_\+groupchat(), kill\+\_\+groupchats(), and tox\+\_\+del\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+700 \{
+701     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+702 
+703     \textcolor{keywordflow}{if} (!g)
+704         \textcolor{keywordflow}{return} -1;
+705 
+706     \hyperlink{toxcore_2group_8c_af5df5a0281b502226b702bca064df039}{group\_kill\_peer\_send}(g\_c, groupnumber, g->\hyperlink{struct_group__c_a264348ec1f724e05464ca97b7c432817}{peer\_number});
+707 
+708     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+709 
+710     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{toxcore_2group_8h_ab4d6c744a36e49e0aa6cb3f1ea3de0f7}{MAX\_GROUP\_CONNECTIONS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+711         \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{close}[i].\hyperlink{struct_group__c_a1d127017fb298b889f4ba24752d08b8e}{type} == \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}{GROUPCHAT\_CLOSE\_NONE})
+712             \textcolor{keywordflow}{continue};
+713 
+714         g->\hyperlink{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{close}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_group__c_a1d127017fb298b889f4ba24752d08b8e}{type} = \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2daec225048274e40e0a1517f1afc008834}{GROUPCHAT\_CLOSE\_NONE};
+715         \hyperlink{friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a}{kill\_friend\_connection}(g\_c->\hyperlink{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}{fr\_c}, g->\hyperlink{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{close}[i].
+      \hyperlink{struct_group__c_ad50c630d233a71112a7df136970caefc}{number});
+716     \}
+717 
+718     \textcolor{keywordflow}{for} (i = 0; i < g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+719         \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_a7a79b984292a5ea1f68aca7b73067370}{peer\_on\_leave})
+720             g->\hyperlink{struct_group__c_a7a79b984292a5ea1f68aca7b73067370}{peer\_on\_leave}(g->\hyperlink{struct_group__c_a077376d12464f945e2414d5499c79b3f}{object}, groupnumber, i, g->
+      \hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[i].\hyperlink{struct_group___peer_a077376d12464f945e2414d5499c79b3f}{object});
+721     \}
+722 
+723     free(g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group});
+724 
+725     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_a43df326d671eb30dd294d5d71d3cd09c}{group\_on\_delete})
+726         g->\hyperlink{struct_group__c_a43df326d671eb30dd294d5d71d3cd09c}{group\_on\_delete}(g->\hyperlink{struct_group__c_a077376d12464f945e2414d5499c79b3f}{object}, groupnumber);
+727 
+728     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a7dfafd474418e29ebd804200d0d4e6e3}{wipe\_group\_chat}(g\_c, groupnumber);
+729 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a526817b20616bdf13250e1020d2a1808_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a526817b20616bdf13250e1020d2a1808_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a9529a2149c68cbff38d43419d9ebeecc}{\index{toxcore/group.\+h@{toxcore/group.\+h}!do\+\_\+groupchats@{do\+\_\+groupchats}}
+\index{do\+\_\+groupchats@{do\+\_\+groupchats}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{do\+\_\+groupchats}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+groupchats (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a9529a2149c68cbff38d43419d9ebeecc}
+
+
+Definition at line 2241 of file group.\+c.
+
+
+
+References connect\+\_\+to\+\_\+closest(), get\+\_\+group\+\_\+c(), groupchat\+\_\+clear\+\_\+timedout(), G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, i, Group\+\_\+\+Chats\+::num\+\_\+chats, ping\+\_\+groupchat(), and Group\+\_\+c\+::status.
+
+
+
+Referenced by tox\+\_\+iterate().
+
+
+\begin{DoxyCode}
+2242 \{
+2243     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2244 
+2245     \textcolor{keywordflow}{for} (i = 0; i < g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+2246         \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, i);
+2247 
+2248         \textcolor{keywordflow}{if} (!g)
+2249             \textcolor{keywordflow}{continue};
+2250 
+2251         \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{GROUPCHAT\_STATUS\_CONNECTED}) \{
+2252             \hyperlink{toxcore_2group_8c_ab08da4834d9772b1ef1f3b35ae5197c1}{connect\_to\_closest}(g\_c, i);
+2253             \hyperlink{toxcore_2group_8c_a1103873d88cad80582662eb863fa6c03}{ping\_groupchat}(g\_c, i);
+2254             \hyperlink{toxcore_2group_8c_acfda9051487bdd5f51667aea724952e9}{groupchat\_clear\_timedout}(g\_c, i);
+2255         \}
+2256     \}
+2257 
+2258     \textcolor{comment}{//TODO}
+2259 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a9529a2149c68cbff38d43419d9ebeecc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a9529a2149c68cbff38d43419d9ebeecc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_af5c4cc3003dc13ffec6413264fd302b6}{\index{toxcore/group.\+h@{toxcore/group.\+h}!g\+\_\+callback\+\_\+group\+\_\+action@{g\+\_\+callback\+\_\+group\+\_\+action}}
+\index{g\+\_\+callback\+\_\+group\+\_\+action@{g\+\_\+callback\+\_\+group\+\_\+action}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{g\+\_\+callback\+\_\+group\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}void g\+\_\+callback\+\_\+group\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_af5c4cc3003dc13ffec6413264fd302b6}
+
+
+Definition at line 1012 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::action\+\_\+callback, and Group\+\_\+\+Chats\+::action\+\_\+callback\+\_\+userdata.
+
+
+
+Referenced by tox\+\_\+callback\+\_\+group\+\_\+action().
+
+
+\begin{DoxyCode}
+1014 \{
+1015     g\_c->\hyperlink{struct_group___chats_a61996fdab7da709944de726b88872d61}{action\_callback} = \textcolor{keyword}{function};
+1016     g\_c->\hyperlink{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}{action\_callback\_userdata} = userdata;
+1017 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_af5c4cc3003dc13ffec6413264fd302b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_ac900761f5401134bec49443c866def98}{\index{toxcore/group.\+h@{toxcore/group.\+h}!g\+\_\+callback\+\_\+group\+\_\+invite@{g\+\_\+callback\+\_\+group\+\_\+invite}}
+\index{g\+\_\+callback\+\_\+group\+\_\+invite@{g\+\_\+callback\+\_\+group\+\_\+invite}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{g\+\_\+callback\+\_\+group\+\_\+invite}]{\setlength{\rightskip}{0pt plus 5cm}void g\+\_\+callback\+\_\+group\+\_\+invite (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast${\bf m}, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_ac900761f5401134bec49443c866def98}
+
+
+Definition at line 990 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::invite\+\_\+callback, and Group\+\_\+\+Chats\+::invite\+\_\+callback\+\_\+userdata.
+
+
+
+Referenced by tox\+\_\+callback\+\_\+group\+\_\+invite().
+
+
+\begin{DoxyCode}
+992 \{
+993     g\_c->\hyperlink{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}{invite\_callback} = \textcolor{keyword}{function};
+994     g\_c->\hyperlink{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}{invite\_callback\_userdata} = userdata;
+995 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ac900761f5401134bec49443c866def98_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a43c7333276eeb0792b4157dd90789957}{\index{toxcore/group.\+h@{toxcore/group.\+h}!g\+\_\+callback\+\_\+group\+\_\+message@{g\+\_\+callback\+\_\+group\+\_\+message}}
+\index{g\+\_\+callback\+\_\+group\+\_\+message@{g\+\_\+callback\+\_\+group\+\_\+message}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{g\+\_\+callback\+\_\+group\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void g\+\_\+callback\+\_\+group\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a43c7333276eeb0792b4157dd90789957}
+
+
+Definition at line 1001 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::message\+\_\+callback, and Group\+\_\+\+Chats\+::message\+\_\+callback\+\_\+userdata.
+
+
+
+Referenced by tox\+\_\+callback\+\_\+group\+\_\+message().
+
+
+\begin{DoxyCode}
+1003 \{
+1004     g\_c->\hyperlink{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}{message\_callback} = \textcolor{keyword}{function};
+1005     g\_c->\hyperlink{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}{message\_callback\_userdata} = userdata;
+1006 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a43c7333276eeb0792b4157dd90789957_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a30b3538c4447bd279b31e423bc96984f}{\index{toxcore/group.\+h@{toxcore/group.\+h}!g\+\_\+callback\+\_\+group\+\_\+namelistchange@{g\+\_\+callback\+\_\+group\+\_\+namelistchange}}
+\index{g\+\_\+callback\+\_\+group\+\_\+namelistchange@{g\+\_\+callback\+\_\+group\+\_\+namelistchange}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{g\+\_\+callback\+\_\+group\+\_\+namelistchange}]{\setlength{\rightskip}{0pt plus 5cm}void g\+\_\+callback\+\_\+group\+\_\+namelistchange (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast${\bf m}, int, int, uint8\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a30b3538c4447bd279b31e423bc96984f}
+
+
+Definition at line 1036 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::group\+\_\+namelistchange\+\_\+userdata, and Group\+\_\+\+Chats\+::peer\+\_\+namelistchange.
+
+
+
+Referenced by tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change().
+
+
+\begin{DoxyCode}
+1038 \{
+1039     g\_c->\hyperlink{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}{peer\_namelistchange} = \textcolor{keyword}{function};
+1040     g\_c->\hyperlink{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}{group\_namelistchange\_userdata} = userdata;
+1041 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a30b3538c4447bd279b31e423bc96984f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a4819b45e57736979652615714cf9dbfe}{\index{toxcore/group.\+h@{toxcore/group.\+h}!g\+\_\+callback\+\_\+group\+\_\+title@{g\+\_\+callback\+\_\+group\+\_\+title}}
+\index{g\+\_\+callback\+\_\+group\+\_\+title@{g\+\_\+callback\+\_\+group\+\_\+title}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{g\+\_\+callback\+\_\+group\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}void g\+\_\+callback\+\_\+group\+\_\+title (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a4819b45e57736979652615714cf9dbfe}
+
+
+Definition at line 1048 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::title\+\_\+callback, and Group\+\_\+\+Chats\+::title\+\_\+callback\+\_\+userdata.
+
+
+
+Referenced by tox\+\_\+callback\+\_\+group\+\_\+title().
+
+
+\begin{DoxyCode}
+1050 \{
+1051     g\_c->\hyperlink{struct_group___chats_a3a2940882c161941fd7f3274064bd594}{title\_callback} = \textcolor{keyword}{function};
+1052     g\_c->\hyperlink{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}{title\_callback\_userdata} = userdata;
+1053 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{dd/de4/toxcore_2group_8h_a4819b45e57736979652615714cf9dbfe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a0797c0660c3628fd1b62ca99cc860443}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+action\+\_\+send@{group\+\_\+action\+\_\+send}}
+\index{group\+\_\+action\+\_\+send@{group\+\_\+action\+\_\+send}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+action\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+action\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{action, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a0797c0660c3628fd1b62ca99cc860443}
+
+
+Definition at line 1768 of file group.\+c.
+
+
+
+References P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+C\+T\+I\+O\+N, and send\+\_\+message\+\_\+group().
+
+
+
+Referenced by tox\+\_\+group\+\_\+action\+\_\+send().
+
+
+\begin{DoxyCode}
+1769 \{
+1770     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_ac302cc1a014208e6d96dbb7c86dd9733}{send\_message\_group}(g\_c, groupnumber, \hyperlink{_messenger_8h_a2fa8ad5a6eee88e35345e9d9fc04a98c}{PACKET\_ID\_ACTION}, action, 
+      length)) \{
+1771         \textcolor{keywordflow}{return} 0;
+1772     \} \textcolor{keywordflow}{else} \{
+1773         \textcolor{keywordflow}{return} -1;
+1774     \}
+1775 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a0797c0660c3628fd1b62ca99cc860443_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{dd/de4/toxcore_2group_8h_a0797c0660c3628fd1b62ca99cc860443_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_ad3649b12ed32b2b37f6443e8dfcfb34f}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+get\+\_\+object@{group\+\_\+get\+\_\+object}}
+\index{group\+\_\+get\+\_\+object@{group\+\_\+get\+\_\+object}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+get\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ group\+\_\+get\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_ad3649b12ed32b2b37f6443e8dfcfb34f}
+
+
+Definition at line 2136 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::object.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio(), and send\+\_\+audio\+\_\+packet().
+
+
+\begin{DoxyCode}
+2137 \{
+2138     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+2139 
+2140     \textcolor{keywordflow}{if} (!g)
+2141         \textcolor{keywordflow}{return} NULL;
+2142 
+2143     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a077376d12464f945e2414d5499c79b3f}{object};
+2144 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ad3649b12ed32b2b37f6443e8dfcfb34f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ad3649b12ed32b2b37f6443e8dfcfb34f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_aefde055f874f23db9e368a71719aefe3}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+get\+\_\+type@{group\+\_\+get\+\_\+type}}
+\index{group\+\_\+get\+\_\+type@{group\+\_\+get\+\_\+type}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+get\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_aefde055f874f23db9e368a71719aefe3}
+
+
+Definition at line 840 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::identifier.
+
+
+
+Referenced by tox\+\_\+group\+\_\+get\+\_\+type().
+
+
+\begin{DoxyCode}
+841 \{
+842     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+843 
+844     \textcolor{keywordflow}{if} (!g)
+845         \textcolor{keywordflow}{return} -1;
+846 
+847     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{identifier}[0];
+848 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aefde055f874f23db9e368a71719aefe3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{dd/de4/toxcore_2group_8h_aefde055f874f23db9e368a71719aefe3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_aab3c37b13310ec0d9df5f3209c6fc5ac}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+lossy\+\_\+packet\+\_\+registerhandler@{group\+\_\+lossy\+\_\+packet\+\_\+registerhandler}}
+\index{group\+\_\+lossy\+\_\+packet\+\_\+registerhandler@{group\+\_\+lossy\+\_\+packet\+\_\+registerhandler}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+lossy\+\_\+packet\+\_\+registerhandler}]{\setlength{\rightskip}{0pt plus 5cm}void group\+\_\+lossy\+\_\+packet\+\_\+registerhandler (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{uint8\+\_\+t}]{byte, }
+\item[{int($\ast$)(void $\ast$, int, int, void $\ast$, const uint8\+\_\+t $\ast$, uint16\+\_\+t)}]{function}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_aab3c37b13310ec0d9df5f3209c6fc5ac}
+
+
+Definition at line 1025 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::function, and Group\+\_\+\+Chats\+::lossy\+\_\+packethandlers.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+1027 \{
+1028     g\_c->\hyperlink{struct_group___chats_a3630aa7993bdd216d40637826a92649f}{lossy\_packethandlers}[byte].\hyperlink{struct_group___chats_acbfbbdaa6d4201766377ac50de985ae9}{function} = \textcolor{keyword}{function};
+1029 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aab3c37b13310ec0d9df5f3209c6fc5ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a5089fa31b3523ab355414d9a6aeb653c}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+message\+\_\+send@{group\+\_\+message\+\_\+send}}
+\index{group\+\_\+message\+\_\+send@{group\+\_\+message\+\_\+send}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+message\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+message\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{message, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a5089fa31b3523ab355414d9a6aeb653c}
+
+
+Definition at line 1755 of file group.\+c.
+
+
+
+References P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+M\+E\+S\+S\+A\+G\+E, and send\+\_\+message\+\_\+group().
+
+
+
+Referenced by tox\+\_\+group\+\_\+message\+\_\+send().
+
+
+\begin{DoxyCode}
+1756 \{
+1757     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_ac302cc1a014208e6d96dbb7c86dd9733}{send\_message\_group}(g\_c, groupnumber, \hyperlink{_messenger_8h_a254356a92e0c8c90a8e5ff6f828efc4c}{PACKET\_ID\_MESSAGE}, message,
+       length)) \{
+1758         \textcolor{keywordflow}{return} 0;
+1759     \} \textcolor{keywordflow}{else} \{
+1760         \textcolor{keywordflow}{return} -1;
+1761     \}
+1762 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a5089fa31b3523ab355414d9a6aeb653c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a5089fa31b3523ab355414d9a6aeb653c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a2ead81b9067921eff85dbab1f8fdc785}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+names@{group\+\_\+names}}
+\index{group\+\_\+names@{group\+\_\+names}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+names}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+names (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{uint8\+\_\+t}]{names\mbox{[}$\,$\mbox{]}\mbox{[}\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}, }
+\item[{uint16\+\_\+t}]{lengths\mbox{[}$\,$\mbox{]}, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a2ead81b9067921eff85dbab1f8fdc785}
+
+
+Definition at line 786 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), group\+\_\+peername(), i, and Group\+\_\+c\+::numpeers.
+
+
+
+Referenced by tox\+\_\+group\+\_\+get\+\_\+names().
+
+
+\begin{DoxyCode}
+788 \{
+789     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+790 
+791     \textcolor{keywordflow}{if} (!g)
+792         \textcolor{keywordflow}{return} -1;
+793 
+794     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+795 
+796     \textcolor{keywordflow}{for} (i = 0; i < g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers} && i < length; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+797         lengths[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = \hyperlink{toxcore_2group_8c_aca385bea140e668374002b11db01d78d}{group\_peername}(g\_c, groupnumber, i, names[i]);
+798     \}
+799 
+800     \textcolor{keywordflow}{return} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+801 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a2ead81b9067921eff85dbab1f8fdc785_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a2ead81b9067921eff85dbab1f8fdc785_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_abd1478afe81f0399627adb7c8f725495}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+number\+\_\+peers@{group\+\_\+number\+\_\+peers}}
+\index{group\+\_\+number\+\_\+peers@{group\+\_\+number\+\_\+peers}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+number\+\_\+peers}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+number\+\_\+peers (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_abd1478afe81f0399627adb7c8f725495}
+
+
+Definition at line 806 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::numpeers.
+
+
+
+Referenced by tox\+\_\+group\+\_\+number\+\_\+peers().
+
+
+\begin{DoxyCode}
+807 \{
+808     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+809 
+810     \textcolor{keywordflow}{if} (!g)
+811         \textcolor{keywordflow}{return} -1;
+812 
+813     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers};
+814 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_abd1478afe81f0399627adb7c8f725495_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_abd1478afe81f0399627adb7c8f725495_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a8e806c997fa1e969e2c26f5751b16593}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+peer\+\_\+get\+\_\+object@{group\+\_\+peer\+\_\+get\+\_\+object}}
+\index{group\+\_\+peer\+\_\+get\+\_\+object@{group\+\_\+peer\+\_\+get\+\_\+object}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+peer\+\_\+get\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ group\+\_\+peer\+\_\+get\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a8e806c997fa1e969e2c26f5751b16593}
+
+
+Definition at line 2151 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, Group\+\_\+c\+::numpeers, and Group\+\_\+\+Peer\+::object.
+
+
+\begin{DoxyCode}
+2152 \{
+2153     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+2154 
+2155     \textcolor{keywordflow}{if} (!g)
+2156         \textcolor{keywordflow}{return} NULL;
+2157 
+2158     \textcolor{keywordflow}{if} ((uint32\_t)peernumber >= g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers})
+2159         \textcolor{keywordflow}{return} NULL;
+2160 
+2161     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_a077376d12464f945e2414d5499c79b3f}{object};
+2162 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a8e806c997fa1e969e2c26f5751b16593_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a32c6a812970d810c720937f6f5d1998a}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+peer\+\_\+pubkey@{group\+\_\+peer\+\_\+pubkey}}
+\index{group\+\_\+peer\+\_\+pubkey@{group\+\_\+peer\+\_\+pubkey}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+peer\+\_\+pubkey}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+peer\+\_\+pubkey (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber, }
+\item[{uint8\+\_\+t $\ast$}]{pk}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a32c6a812970d810c720937f6f5d1998a}
+
+
+Definition at line 737 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, Group\+\_\+c\+::numpeers, and Group\+\_\+\+Peer\+::real\+\_\+pk.
+
+
+
+Referenced by tox\+\_\+group\+\_\+peer\+\_\+pubkey().
+
+
+\begin{DoxyCode}
+738 \{
+739     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+740 
+741     \textcolor{keywordflow}{if} (!g)
+742         \textcolor{keywordflow}{return} -1;
+743 
+744     \textcolor{keywordflow}{if} ((uint32\_t)peernumber >= g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers})
+745         \textcolor{keywordflow}{return} -1;
+746 
+747     memcpy(pk, g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_ab42b4c90d81ac99b968c3edd1e21d706}{real\_pk}, crypto\_box\_PUBLICKEYBYTES);
+748     \textcolor{keywordflow}{return} 0;
+749 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a32c6a812970d810c720937f6f5d1998a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{dd/de4/toxcore_2group_8h_a32c6a812970d810c720937f6f5d1998a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a450e79abe59f479d322c59b4e7be0184}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+peer\+\_\+set\+\_\+object@{group\+\_\+peer\+\_\+set\+\_\+object}}
+\index{group\+\_\+peer\+\_\+set\+\_\+object@{group\+\_\+peer\+\_\+set\+\_\+object}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+peer\+\_\+set\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+peer\+\_\+set\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a450e79abe59f479d322c59b4e7be0184}
+
+
+Definition at line 2117 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, Group\+\_\+c\+::numpeers, and Group\+\_\+\+Peer\+::object.
+
+
+
+Referenced by group\+\_\+av\+\_\+peer\+\_\+new().
+
+
+\begin{DoxyCode}
+2118 \{
+2119     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+2120 
+2121     \textcolor{keywordflow}{if} (!g)
+2122         \textcolor{keywordflow}{return} -1;
+2123 
+2124     \textcolor{keywordflow}{if} ((uint32\_t)peernumber >= g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers})
+2125         \textcolor{keywordflow}{return} -1;
+2126 
+2127     g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_a077376d12464f945e2414d5499c79b3f}{object} = object;
+2128     \textcolor{keywordflow}{return} 0;
+2129 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a450e79abe59f479d322c59b4e7be0184_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a450e79abe59f479d322c59b4e7be0184_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_aca385bea140e668374002b11db01d78d}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+peername@{group\+\_\+peername}}
+\index{group\+\_\+peername@{group\+\_\+peername}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+peername}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+peername (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber, }
+\item[{uint8\+\_\+t $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_aca385bea140e668374002b11db01d78d}
+
+
+Definition at line 757 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, Group\+\_\+\+Peer\+::nick, Group\+\_\+\+Peer\+::nick\+\_\+len, and Group\+\_\+c\+::numpeers.
+
+
+
+Referenced by group\+\_\+names(), and tox\+\_\+group\+\_\+peername().
+
+
+\begin{DoxyCode}
+758 \{
+759     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+760 
+761     \textcolor{keywordflow}{if} (!g)
+762         \textcolor{keywordflow}{return} -1;
+763 
+764     \textcolor{keywordflow}{if} ((uint32\_t)peernumber >= g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers})
+765         \textcolor{keywordflow}{return} -1;
+766 
+767     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_aa316280abcd8913a502b56397dd13e23}{nick\_len} == 0) \{
+768         memcpy(name, \textcolor{stringliteral}{"Tox User"}, 8);
+769         \textcolor{keywordflow}{return} 8;
+770     \}
+771 
+772     memcpy(name, g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_ae7cf3fd18e321fab5a711e72622301b9}{nick}, g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].
+      \hyperlink{struct_group___peer_aa316280abcd8913a502b56397dd13e23}{nick\_len});
+773     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_aa316280abcd8913a502b56397dd13e23}{nick\_len};
+774 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aca385bea140e668374002b11db01d78d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aca385bea140e668374002b11db01d78d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a86daba4a594e2677b03851483ed3416c}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+peernumber\+\_\+is\+\_\+ours@{group\+\_\+peernumber\+\_\+is\+\_\+ours}}
+\index{group\+\_\+peernumber\+\_\+is\+\_\+ours@{group\+\_\+peernumber\+\_\+is\+\_\+ours}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+peernumber\+\_\+is\+\_\+ours}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int group\+\_\+peernumber\+\_\+is\+\_\+ours (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a86daba4a594e2677b03851483ed3416c}
+
+
+Definition at line 819 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::group, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, Group\+\_\+c\+::numpeers, Group\+\_\+\+Peer\+::peer\+\_\+number, Group\+\_\+c\+::peer\+\_\+number, and Group\+\_\+c\+::status.
+
+
+
+Referenced by tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours().
+
+
+\begin{DoxyCode}
+820 \{
+821     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+822 
+823     \textcolor{keywordflow}{if} (!g)
+824         \textcolor{keywordflow}{return} 0;
+825 
+826     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{GROUPCHAT\_STATUS\_CONNECTED})
+827         \textcolor{keywordflow}{return} 0;
+828 
+829     \textcolor{keywordflow}{if} ((uint32\_t)peernumber >= g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers})
+830         \textcolor{keywordflow}{return} 0;
+831 
+832     \textcolor{keywordflow}{return} g->\hyperlink{struct_group__c_a264348ec1f724e05464ca97b7c432817}{peer\_number} == g->\hyperlink{struct_group__c_a1f68599dc07252599a98f6d044a184e9}{group}[peernumber].\hyperlink{struct_group___peer_a264348ec1f724e05464ca97b7c432817}{peer\_number};
+833 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a86daba4a594e2677b03851483ed3416c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a86daba4a594e2677b03851483ed3416c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_add35f9833270b223b9120733e8c161b6}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+set\+\_\+object@{group\+\_\+set\+\_\+object}}
+\index{group\+\_\+set\+\_\+object@{group\+\_\+set\+\_\+object}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+set\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+set\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_add35f9833270b223b9120733e8c161b6}
+
+
+Definition at line 2101 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), and Group\+\_\+c\+::object.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+2102 \{
+2103     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+2104 
+2105     \textcolor{keywordflow}{if} (!g)
+2106         \textcolor{keywordflow}{return} -1;
+2107 
+2108     g->\hyperlink{struct_group__c_a077376d12464f945e2414d5499c79b3f}{object} = object;
+2109     \textcolor{keywordflow}{return} 0;
+2110 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_add35f9833270b223b9120733e8c161b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_add35f9833270b223b9120733e8c161b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a4eb43d155a71bcb9e63954bdd1b6e3e6}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+title\+\_\+get@{group\+\_\+title\+\_\+get}}
+\index{group\+\_\+title\+\_\+get@{group\+\_\+title\+\_\+get}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+title\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+title\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{uint8\+\_\+t $\ast$}]{title, }
+\item[{uint32\+\_\+t}]{max\+\_\+length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a4eb43d155a71bcb9e63954bdd1b6e3e6}
+
+
+Definition at line 1222 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H, Group\+\_\+c\+::title, and Group\+\_\+c\+::title\+\_\+len.
+
+
+
+Referenced by tox\+\_\+group\+\_\+get\+\_\+title().
+
+
+\begin{DoxyCode}
+1223 \{
+1224     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1225 
+1226     \textcolor{keywordflow}{if} (!g)
+1227         \textcolor{keywordflow}{return} -1;
+1228 
+1229     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len} == 0 || g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len} > \hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{MAX\_NAME\_LENGTH})
+1230         \textcolor{keywordflow}{return} -1;
+1231 
+1232     \textcolor{keywordflow}{if} (max\_length > g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len})
+1233         max\_length = g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len};
+1234 
+1235     memcpy(title, g->\hyperlink{struct_group__c_a9ace0499016685340a1f3009a7aa01e0}{title}, max\_length);
+1236     \textcolor{keywordflow}{return} max\_length;
+1237 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a4eb43d155a71bcb9e63954bdd1b6e3e6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a4eb43d155a71bcb9e63954bdd1b6e3e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a262b7bf9d01d09574224f290575de0db}{\index{toxcore/group.\+h@{toxcore/group.\+h}!group\+\_\+title\+\_\+send@{group\+\_\+title\+\_\+send}}
+\index{group\+\_\+title\+\_\+send@{group\+\_\+title\+\_\+send}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{group\+\_\+title\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+title\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{title, }
+\item[{uint8\+\_\+t}]{title\+\_\+len}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a262b7bf9d01d09574224f290575de0db}
+
+
+Definition at line 1190 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), G\+R\+O\+U\+P\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+I\+T\+L\+E\+\_\+\+I\+D, M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H, Group\+\_\+c\+::numpeers, send\+\_\+message\+\_\+group(), Group\+\_\+c\+::title, and Group\+\_\+c\+::title\+\_\+len.
+
+
+
+Referenced by tox\+\_\+group\+\_\+set\+\_\+title().
+
+
+\begin{DoxyCode}
+1191 \{
+1192     \textcolor{keywordflow}{if} (title\_len > \hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{MAX\_NAME\_LENGTH} || title\_len == 0)
+1193         \textcolor{keywordflow}{return} -1;
+1194 
+1195     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1196 
+1197     \textcolor{keywordflow}{if} (!g)
+1198         \textcolor{keywordflow}{return} -1;
+1199 
+1200     \textcolor{comment}{/* same as already set? */}
+1201     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len} == title\_len && !memcmp(g->\hyperlink{struct_group__c_a9ace0499016685340a1f3009a7aa01e0}{title}, title, title\_len))
+1202         \textcolor{keywordflow}{return} 0;
+1203 
+1204     memcpy(g->\hyperlink{struct_group__c_a9ace0499016685340a1f3009a7aa01e0}{title}, title, title\_len);
+1205     g->\hyperlink{struct_group__c_ac32d4f2bb9021dfa0b7ce5f9537412d7}{title\_len} = title\_len;
+1206 
+1207     \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_a6c81294c96de8914431dbf825934b528}{numpeers} == 1)
+1208         \textcolor{keywordflow}{return} 0;
+1209 
+1210     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_ac302cc1a014208e6d96dbb7c86dd9733}{send\_message\_group}(g\_c, groupnumber, 
+      \hyperlink{toxcore_2group_8c_aab29b4ca873b8909080da85c65acf050}{GROUP\_MESSAGE\_TITLE\_ID}, title, title\_len))
+1211         \textcolor{keywordflow}{return} 0;
+1212     \textcolor{keywordflow}{else}
+1213         \textcolor{keywordflow}{return} -1;
+1214 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a262b7bf9d01d09574224f290575de0db_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a262b7bf9d01d09574224f290575de0db_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_ab88ec06a4663a75e56afa84ae094df77}{\index{toxcore/group.\+h@{toxcore/group.\+h}!invite\+\_\+friend@{invite\+\_\+friend}}
+\index{invite\+\_\+friend@{invite\+\_\+friend}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{invite\+\_\+friend}]{\setlength{\rightskip}{0pt plus 5cm}int invite\+\_\+friend (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int32\+\_\+t}]{friendnumber, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_ab88ec06a4663a75e56afa84ae094df77}
+
+
+Definition at line 900 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H, Group\+\_\+c\+::identifier, invite, I\+N\+V\+I\+T\+E\+\_\+\+I\+D, I\+N\+V\+I\+T\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E, Group\+\_\+\+Chats\+::m, send\+\_\+group\+\_\+invite\+\_\+packet(), and wipe\+\_\+group\+\_\+chat().
+
+
+
+Referenced by tox\+\_\+invite\+\_\+friend().
+
+
+\begin{DoxyCode}
+901 \{
+902     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+903 
+904     \textcolor{keywordflow}{if} (!g)
+905         \textcolor{keywordflow}{return} -1;
+906 
+907     uint8\_t \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a1626b80e8928e701cbf05e1794eb4504}{invite}[\hyperlink{toxcore_2group_8c_a44ccacb3c5ca314b5edf8295837b108a}{INVITE\_PACKET\_SIZE}];
+908     invite[0] = \hyperlink{toxcore_2group_8c_af82a138924c6ee2d4a228d89f07992e2}{INVITE\_ID};
+909     uint16\_t groupchat\_num = htons((uint16\_t)groupnumber);
+910     memcpy(invite + 1, &groupchat\_num, \textcolor{keyword}{sizeof}(groupchat\_num));
+911     memcpy(invite + 1 + \textcolor{keyword}{sizeof}(groupchat\_num), g->\hyperlink{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{identifier}, 
+      \hyperlink{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{GROUP\_IDENTIFIER\_LENGTH});
+912 
+913     \textcolor{keywordflow}{if} (\hyperlink{_messenger_8c_a64b0347daadcf7ef303ab013481b1eb2}{send\_group\_invite\_packet}(g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, friendnumber, invite, \textcolor{keyword}{sizeof}(invite))) \{
+914         \textcolor{keywordflow}{return} 0;
+915     \} \textcolor{keywordflow}{else} \{
+916         \hyperlink{toxcore_2group_8c_a7dfafd474418e29ebd804200d0d4e6e3}{wipe\_group\_chat}(g\_c, groupnumber);
+917         \textcolor{keywordflow}{return} -1;
+918     \}
+919 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ab88ec06a4663a75e56afa84ae094df77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_ab88ec06a4663a75e56afa84ae094df77_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a6f097de58345cf9500d0413198c583fc}{\index{toxcore/group.\+h@{toxcore/group.\+h}!join\+\_\+groupchat@{join\+\_\+groupchat}}
+\index{join\+\_\+groupchat@{join\+\_\+groupchat}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{join\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int join\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int32\+\_\+t}]{friendnumber, }
+\item[{uint8\+\_\+t}]{expected\+\_\+type, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a6f097de58345cf9500d0413198c583fc}
+
+
+Definition at line 930 of file group.\+c.
+
+
+
+References add\+\_\+conn\+\_\+to\+\_\+groupchat(), Group\+\_\+\+Chats\+::chats, Group\+\_\+c\+::close, create\+\_\+group\+\_\+chat(), get\+\_\+group\+\_\+num(), getfriendcon\+\_\+id(), G\+R\+O\+U\+P\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H, Group\+\_\+c\+::group\+\_\+number, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+O\+N\+L\+I\+N\+E, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+V\+A\+L\+I\+D, Group\+\_\+c\+::identifier, I\+N\+V\+I\+T\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+D, I\+N\+V\+I\+T\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E, Group\+\_\+\+Chats\+::m, Messenger\+::net\+\_\+crypto, Group\+\_\+c\+::number\+\_\+joined, Group\+\_\+c\+::real\+\_\+pk, Net\+\_\+\+Crypto\+::self\+\_\+public\+\_\+key, send\+\_\+group\+\_\+invite\+\_\+packet(), send\+\_\+peer\+\_\+query(), Group\+\_\+c\+::status, and Group\+\_\+c\+::type.
+
+
+
+Referenced by join\+\_\+av\+\_\+groupchat(), and tox\+\_\+join\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+931 \{
+932     \textcolor{keywordflow}{if} (length != \textcolor{keyword}{sizeof}(uint16\_t) + \hyperlink{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{GROUP\_IDENTIFIER\_LENGTH})
+933         \textcolor{keywordflow}{return} -1;
+934 
+935     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[\textcolor{keyword}{sizeof}(uint16\_t)] != expected\_type)
+936         \textcolor{keywordflow}{return} -1;
+937 
+938     \textcolor{keywordtype}{int} friendcon\_id = \hyperlink{_messenger_8c_adde4551a2e1898aab1de8e0b7f7c9792}{getfriendcon\_id}(g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, friendnumber);
+939 
+940     \textcolor{keywordflow}{if} (friendcon\_id == -1)
+941         \textcolor{keywordflow}{return} -1;
+942 
+943     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_a9915d747670099a44c1e14b939ea5363}{get\_group\_num}(g\_c, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + \textcolor{keyword}{sizeof}(uint16\_t)) != -1)
+944         \textcolor{keywordflow}{return} -1;
+945 
+946     \textcolor{keywordtype}{int} groupnumber = \hyperlink{toxcore_2group_8c_a0a739a733a50acd17a01b9bf0a173d2f}{create\_group\_chat}(g\_c);
+947 
+948     \textcolor{keywordflow}{if} (groupnumber == -1)
+949         \textcolor{keywordflow}{return} -1;
+950 
+951     \hyperlink{struct_group__c}{Group\_c} *g = &g\_c->\hyperlink{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{chats}[groupnumber];
+952 
+953     uint16\_t group\_num = htons(groupnumber);
+954     g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea6449515dfdf789c9b02550bc408ca2cb}{GROUPCHAT\_STATUS\_VALID};
+955     g->\hyperlink{struct_group__c_a50fa99a57ee7c9280fc90b7c33d760d0}{number\_joined} = -1;
+956     memcpy(g->\hyperlink{struct_group__c_ab42b4c90d81ac99b968c3edd1e21d706}{real\_pk}, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}->\hyperlink{struct_net___crypto_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, 
+      crypto\_box\_PUBLICKEYBYTES);
+957 
+958     uint8\_t response[\hyperlink{toxcore_2group_8c_aeb689d94e5f56084849ac1112008c5bb}{INVITE\_RESPONSE\_PACKET\_SIZE}];
+959     response[0] = \hyperlink{toxcore_2group_8c_a65b9964ee5301b98649e60114460ede8}{INVITE\_RESPONSE\_ID};
+960     memcpy(response + 1, &group\_num, \textcolor{keyword}{sizeof}(uint16\_t));
+961     memcpy(response + 1 + \textcolor{keyword}{sizeof}(uint16\_t), \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \textcolor{keyword}{sizeof}(uint16\_t) + 
+      \hyperlink{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{GROUP\_IDENTIFIER\_LENGTH});
+962 
+963     \textcolor{keywordflow}{if} (\hyperlink{_messenger_8c_a64b0347daadcf7ef303ab013481b1eb2}{send\_group\_invite\_packet}(g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, friendnumber, response, \textcolor{keyword}{sizeof}(response))
+      ) \{
+964         uint16\_t other\_groupnum;
+965         memcpy(&other\_groupnum, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \textcolor{keyword}{sizeof}(other\_groupnum));
+966         other\_groupnum = ntohs(other\_groupnum);
+967         memcpy(g->\hyperlink{struct_group__c_a590984b7f44686ea4892ffa2651b0cda}{identifier}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + \textcolor{keyword}{sizeof}(uint16\_t), 
+      \hyperlink{toxcore_2group_8h_abe67a1388deb599ec26ecae07a1d4e9e}{GROUP\_IDENTIFIER\_LENGTH});
+968         \textcolor{keywordtype}{int} close\_index = \hyperlink{toxcore_2group_8c_ab48e96a53cc90551754943ce3df01673}{add\_conn\_to\_groupchat}(g\_c, friendcon\_id, groupnumber, 0, 1);
+969 
+970         \textcolor{keywordflow}{if} (close\_index != -1) \{
+971             g->\hyperlink{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{close}[close\_index].\hyperlink{struct_group__c_a60c6a6ce4c702d61048d0f38f3974ef8}{group\_number} = other\_groupnum;
+972             g->\hyperlink{struct_group__c_a6c24608383f70ad37f70307f492e3abc}{close}[close\_index].\hyperlink{struct_group__c_a1d127017fb298b889f4ba24752d08b8e}{type} = \hyperlink{toxcore_2group_8h_a0411cd49bb5b71852cecd93bcbf0ca2da375697d21bebe66381f9439c657ad7f4}{GROUPCHAT\_CLOSE\_ONLINE};
+973             g->\hyperlink{struct_group__c_a50fa99a57ee7c9280fc90b7c33d760d0}{number\_joined} = friendcon\_id;
+974         \}
+975 
+976         \hyperlink{toxcore_2group_8c_a1d102fdae79367ce06e55cda3cd9f441}{send\_peer\_query}(g\_c, friendcon\_id, other\_groupnum);
+977         \textcolor{keywordflow}{return} groupnumber;
+978     \} \textcolor{keywordflow}{else} \{
+979         g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea3de12837ac42b1a52f94f44781442f78}{GROUPCHAT\_STATUS\_NONE};
+980         \textcolor{keywordflow}{return} -1;
+981     \}
+982 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a6f097de58345cf9500d0413198c583fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a6f097de58345cf9500d0413198c583fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_af203efe57203e3b774d8e4f5e29cca81}{\index{toxcore/group.\+h@{toxcore/group.\+h}!kill\+\_\+groupchats@{kill\+\_\+groupchats}}
+\index{kill\+\_\+groupchats@{kill\+\_\+groupchats}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{kill\+\_\+groupchats}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+groupchats (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_af203efe57203e3b774d8e4f5e29cca81}
+
+
+Definition at line 2262 of file group.\+c.
+
+
+
+References del\+\_\+groupchat(), Messenger\+::group\+\_\+chat\+\_\+object, i, Group\+\_\+\+Chats\+::m, m\+\_\+callback\+\_\+group\+\_\+invite(), and Group\+\_\+\+Chats\+::num\+\_\+chats.
+
+
+
+Referenced by tox\+\_\+kill().
+
+
+\begin{DoxyCode}
+2263 \{
+2264     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2265 
+2266     \textcolor{keywordflow}{for} (i = 0; i < g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+2267         \hyperlink{toxcore_2group_8c_a526817b20616bdf13250e1020d2a1808}{del\_groupchat}(g\_c, i);
+2268     \}
+2269 
+2270     \hyperlink{_messenger_8c_a8f44fb569e74f4612c53da8264d16aac}{m\_callback\_group\_invite}(g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, NULL);
+2271     g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object} = 0;
+2272     free(g\_c);
+2273 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_af203efe57203e3b774d8e4f5e29cca81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{dd/de4/toxcore_2group_8h_af203efe57203e3b774d8e4f5e29cca81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a16ac0b94fed484d710f76d390b7a85d8}{\index{toxcore/group.\+h@{toxcore/group.\+h}!new\+\_\+groupchats@{new\+\_\+groupchats}}
+\index{new\+\_\+groupchats@{new\+\_\+groupchats}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{new\+\_\+groupchats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\+\_\+\+Chats}$\ast$ new\+\_\+groupchats (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a16ac0b94fed484d710f76d390b7a85d8}
+
+
+Definition at line 2222 of file group.\+c.
+
+
+
+References Group\+\_\+\+Chats\+::fr\+\_\+c, Messenger\+::fr\+\_\+c, Messenger\+::group\+\_\+chat\+\_\+object, handle\+\_\+friend\+\_\+invite\+\_\+packet(), m, Group\+\_\+\+Chats\+::m, and m\+\_\+callback\+\_\+group\+\_\+invite().
+
+
+
+Referenced by tox\+\_\+new().
+
+
+\begin{DoxyCode}
+2223 \{
+2224     \textcolor{keywordflow}{if} (!m)
+2225         \textcolor{keywordflow}{return} NULL;
+2226 
+2227     \hyperlink{struct_group___chats}{Group\_Chats} *temp = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_group___chats}{Group\_Chats}));
+2228 
+2229     \textcolor{keywordflow}{if} (temp == NULL)
+2230         \textcolor{keywordflow}{return} NULL;
+2231 
+2232     temp->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m};
+2233     temp->\hyperlink{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}{fr\_c} = m->\hyperlink{struct_messenger_ae26eb43a606fff20fe70209d051c40f9}{fr\_c};
+2234     m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object} = temp;
+2235     \hyperlink{_messenger_8c_a8f44fb569e74f4612c53da8264d16aac}{m\_callback\_group\_invite}(m, &
+      \hyperlink{toxcore_2group_8c_a5827237272acfda26ad786049a80e42a}{handle\_friend\_invite\_packet});
+2236 
+2237     \textcolor{keywordflow}{return} temp;
+2238 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a16ac0b94fed484d710f76d390b7a85d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a16ac0b94fed484d710f76d390b7a85d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_a7e20618640c4b45fe7f863c87ec2dfda}{\index{toxcore/group.\+h@{toxcore/group.\+h}!send\+\_\+group\+\_\+lossy\+\_\+packet@{send\+\_\+group\+\_\+lossy\+\_\+packet}}
+\index{send\+\_\+group\+\_\+lossy\+\_\+packet@{send\+\_\+group\+\_\+lossy\+\_\+packet}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{send\+\_\+group\+\_\+lossy\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+group\+\_\+lossy\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_a7e20618640c4b45fe7f863c87ec2dfda}
+
+
+Definition at line 1782 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), Group\+\_\+c\+::lossy\+\_\+message\+\_\+number, Group\+\_\+c\+::peer\+\_\+number, and send\+\_\+lossy\+\_\+all\+\_\+close().
+
+
+
+Referenced by send\+\_\+audio\+\_\+packet().
+
+
+\begin{DoxyCode}
+1783 \{
+1784     \textcolor{comment}{//TODO: length check here?}
+1785     \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, groupnumber);
+1786 
+1787     \textcolor{keywordflow}{if} (!g)
+1788         \textcolor{keywordflow}{return} -1;
+1789 
+1790     uint8\_t packet[\textcolor{keyword}{sizeof}(uint16\_t) * 2 + length];
+1791     uint16\_t peer\_number = htons(g->\hyperlink{struct_group__c_a264348ec1f724e05464ca97b7c432817}{peer\_number});
+1792     memcpy(packet, &peer\_number, \textcolor{keyword}{sizeof}(uint16\_t));
+1793     uint16\_t message\_num = htons(g->\hyperlink{struct_group__c_acc475ae1ff50d43f08a2cc920a5d2ae5}{lossy\_message\_number});
+1794     memcpy(packet + \textcolor{keyword}{sizeof}(uint16\_t), &message\_num, \textcolor{keyword}{sizeof}(uint16\_t));
+1795     memcpy(packet + \textcolor{keyword}{sizeof}(uint16\_t) * 2, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+1796 
+1797     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_a593b5363a3865f21759df2ecc0a8c45a}{send\_lossy\_all\_close}(g\_c, groupnumber, packet, \textcolor{keyword}{sizeof}(packet), -1) == 0) \{
+1798         \textcolor{keywordflow}{return} -1;
+1799     \}
+1800 
+1801     ++g->\hyperlink{struct_group__c_acc475ae1ff50d43f08a2cc920a5d2ae5}{lossy\_message\_number};
+1802     \textcolor{keywordflow}{return} 0;
+1803 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a7e20618640c4b45fe7f863c87ec2dfda_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_a7e20618640c4b45fe7f863c87ec2dfda_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxcore_2group_8h_aa79b54a63ec3831db2f92c5d52dc949f}{\index{toxcore/group.\+h@{toxcore/group.\+h}!send\+\_\+name\+\_\+all\+\_\+groups@{send\+\_\+name\+\_\+all\+\_\+groups}}
+\index{send\+\_\+name\+\_\+all\+\_\+groups@{send\+\_\+name\+\_\+all\+\_\+groups}!toxcore/group.\+h@{toxcore/group.\+h}}
+\subsubsection[{send\+\_\+name\+\_\+all\+\_\+groups}]{\setlength{\rightskip}{0pt plus 5cm}void send\+\_\+name\+\_\+all\+\_\+groups (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{toxcore_2group_8h_aa79b54a63ec3831db2f92c5d52dc949f}
+
+
+Definition at line 2205 of file group.\+c.
+
+
+
+References get\+\_\+group\+\_\+c(), group\+\_\+name\+\_\+send(), G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, i, Group\+\_\+\+Chats\+::m, Messenger\+::name, Messenger\+::name\+\_\+length, Group\+\_\+\+Chats\+::num\+\_\+chats, and Group\+\_\+c\+::status.
+
+
+
+Referenced by tox\+\_\+self\+\_\+set\+\_\+name().
+
+
+\begin{DoxyCode}
+2206 \{
+2207     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2208 
+2209     \textcolor{keywordflow}{for} (i = 0; i < g\_c->\hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\_chats}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+2210         \hyperlink{struct_group__c}{Group\_c} *g = \hyperlink{toxcore_2group_8c_a11d3240a6755f36864ed2b072e826483}{get\_group\_c}(g\_c, i);
+2211 
+2212         \textcolor{keywordflow}{if} (!g)
+2213             \textcolor{keywordflow}{continue};
+2214 
+2215         \textcolor{keywordflow}{if} (g->\hyperlink{struct_group__c_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{toxcore_2group_8h_a61dadd085c1777f559549e05962b2c9ea168545b20e428420e53744787076c10e}{GROUPCHAT\_STATUS\_CONNECTED}) \{
+2216             \hyperlink{toxcore_2group_8c_afa6172f19b4153d866057d744bdf0a11}{group\_name\_send}(g\_c, i, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a11b8cc6595eea79e65c978209278e683}{name}, g\_c->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->
+      \hyperlink{struct_messenger_a3573d7a906b26e9999cd74f2c4066601}{name\_length});
+2217         \}
+2218     \}
+2219 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aa79b54a63ec3831db2f92c5d52dc949f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de4/toxcore_2group_8h_aa79b54a63ec3831db2f92c5d52dc949f_icgraph}
+\end{center}
+\end{figure}
+
+

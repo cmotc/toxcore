@@ -1,0 +1,8 @@
+<map id="TCP_Client_Connection" name="TCP_Client_Connection">
+<area shape="rect" id="node2" href="$df/d64/struct_t_c_p___proxy___info.html" title="TCP_Proxy_Info" alt="" coords="135,363,254,389"/>
+<area shape="rect" id="node3" href="$db/d14/struct_i_p___port.html" title="IP_Port" alt="" coords="80,273,147,300"/>
+<area shape="rect" id="node4" href="$d4/d6d/struct_i_p.html" title="IP" alt="" coords="94,184,133,211"/>
+<area shape="rect" id="node5" href="$d3/da8/union_i_p4.html" title="IP4" alt="" coords="43,95,85,121"/>
+<area shape="rect" id="node7" href="$d7/dae/union_i_p6.html" title="IP6" alt="" coords="109,95,152,121"/>
+<area shape="rect" id="node8" href="$df/d8f/struct_t_c_p___priority___list.html" title="TCP_Priority_List" alt="" coords="279,363,404,389"/>
+</map>

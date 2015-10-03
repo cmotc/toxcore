@@ -1,0 +1,5 @@
+<map id="group_get_object" name="group_get_object">
+<area shape="rect" id="node2" href="$d8/da5/toxav_2group_8h.html#abed2d235751a4282d79ff38abc3bf228" title="group_send_audio" alt="" coords="357,5,484,32"/>
+<area shape="rect" id="node4" href="$db/d46/toxav_2group_8c.html#a8b24466efb3298dc9fef80bf18485b82" title="send_audio_packet" alt="" coords="175,31,309,57"/>
+<area shape="rect" id="node3" href="$d9/d82/toxav_8h.html#ad78d09fb2b5ac7b1bd5c2395a7bdb5c6" title="toxav_group_send_audio" alt="" coords="532,5,699,32"/>
+</map>

@@ -1,0 +1,139 @@
+\hypertarget{struct_friend___connections}{\section{Friend\+\_\+\+Connections Struct Reference}
+\label{struct_friend___connections}\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+}
+
+
+{\ttfamily \#include $<$friend\+\_\+connection.\+h$>$}
+
+
+
+Collaboration diagram for Friend\+\_\+\+Connections\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/struct_friend___connections__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$ \hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\+\_\+crypto}
+\item 
+\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$ \hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht}
+\item 
+\hyperlink{struct_onion___client}{Onion\+\_\+\+Client} $\ast$ \hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\+\_\+c}
+\item 
+\hyperlink{struct_friend___conn}{Friend\+\_\+\+Conn} $\ast$ \hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}
+\item 
+uint32\+\_\+t \hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\+\_\+cons}
+\item 
+int($\ast$ \hyperlink{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}{fr\+\_\+request\+\_\+callback} )(void $\ast$object, const uint8\+\_\+t $\ast$source\+\_\+pubkey, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len)
+\item 
+void $\ast$ \hyperlink{struct_friend___connections_abd31f2a386ec582b378de4fc3f05ea6c}{fr\+\_\+request\+\_\+object}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___connections_a4f77ba6531c78b4f6a2a46843d06cc26}{last\+\_\+\+L\+A\+Ndiscovery}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 104 of file friend\+\_\+connection.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!conns@{conns}}
+\index{conns@{conns}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{conns}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Friend\+\_\+\+Conn}$\ast$ conns}}\label{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}
+
+
+Definition at line 109 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by create\+\_\+friend\+\_\+conn(), friendconn\+\_\+id\+\_\+not\+\_\+valid(), get\+\_\+conn(), new\+\_\+friend\+\_\+connection(), realloc\+\_\+friendconns(), and wipe\+\_\+friend\+\_\+conn().
+
+\hypertarget{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!dht@{dht}}
+\index{dht@{dht}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{dht}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+H\+T}$\ast$ dht}}\label{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}
+
+
+Definition at line 106 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk(), do\+\_\+friend\+\_\+connections(), kill\+\_\+friend\+\_\+connection(), kill\+\_\+friend\+\_\+connections(), L\+A\+Ndiscovery(), and new\+\_\+friend\+\_\+connections().
+
+\hypertarget{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!fr\+\_\+request\+\_\+callback@{fr\+\_\+request\+\_\+callback}}
+\index{fr\+\_\+request\+\_\+callback@{fr\+\_\+request\+\_\+callback}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{fr\+\_\+request\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ fr\+\_\+request\+\_\+callback)(void $\ast$object, const uint8\+\_\+t $\ast$source\+\_\+pubkey, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len)}}\label{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}
+
+
+Definition at line 112 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by handle\+\_\+packet(), and set\+\_\+friend\+\_\+request\+\_\+callback().
+
+\hypertarget{struct_friend___connections_abd31f2a386ec582b378de4fc3f05ea6c}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!fr\+\_\+request\+\_\+object@{fr\+\_\+request\+\_\+object}}
+\index{fr\+\_\+request\+\_\+object@{fr\+\_\+request\+\_\+object}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{fr\+\_\+request\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ fr\+\_\+request\+\_\+object}}\label{struct_friend___connections_abd31f2a386ec582b378de4fc3f05ea6c}
+
+
+Definition at line 113 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by handle\+\_\+packet(), and set\+\_\+friend\+\_\+request\+\_\+callback().
+
+\hypertarget{struct_friend___connections_a4f77ba6531c78b4f6a2a46843d06cc26}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!last\+\_\+\+L\+A\+Ndiscovery@{last\+\_\+\+L\+A\+Ndiscovery}}
+\index{last\+\_\+\+L\+A\+Ndiscovery@{last\+\_\+\+L\+A\+Ndiscovery}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{last\+\_\+\+L\+A\+Ndiscovery}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+\+L\+A\+Ndiscovery}}\label{struct_friend___connections_a4f77ba6531c78b4f6a2a46843d06cc26}
+
+
+Definition at line 115 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by L\+A\+Ndiscovery().
+
+\hypertarget{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!net\+\_\+crypto@{net\+\_\+crypto}}
+\index{net\+\_\+crypto@{net\+\_\+crypto}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{net\+\_\+crypto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+\_\+\+Crypto}$\ast$ net\+\_\+crypto}}\label{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}
+
+
+Definition at line 105 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), dht\+\_\+ip\+\_\+callback(), dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), friend\+\_\+new\+\_\+connection(), handle\+\_\+new\+\_\+connections(), kill\+\_\+friend\+\_\+connection(), new\+\_\+friend\+\_\+connections(), send\+\_\+friend\+\_\+request\+\_\+packet(), send\+\_\+lossy\+\_\+group\+\_\+peer(), send\+\_\+packet\+\_\+group\+\_\+peer(), send\+\_\+packet\+\_\+online(), send\+\_\+ping(), send\+\_\+relays(), and tcp\+\_\+relay\+\_\+node\+\_\+callback().
+
+\hypertarget{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!num\+\_\+cons@{num\+\_\+cons}}
+\index{num\+\_\+cons@{num\+\_\+cons}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{num\+\_\+cons}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t num\+\_\+cons}}\label{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}
+
+
+Definition at line 110 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by create\+\_\+friend\+\_\+conn(), do\+\_\+friend\+\_\+connections(), friendconn\+\_\+id\+\_\+not\+\_\+valid(), getfriend\+\_\+conn\+\_\+id\+\_\+pk(), kill\+\_\+friend\+\_\+connections(), and wipe\+\_\+friend\+\_\+conn().
+
+\hypertarget{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{\index{Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}!onion\+\_\+c@{onion\+\_\+c}}
+\index{onion\+\_\+c@{onion\+\_\+c}!Friend\+\_\+\+Connections@{Friend\+\_\+\+Connections}}
+\subsubsection[{onion\+\_\+c}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Onion\+\_\+\+Client}$\ast$ onion\+\_\+c}}\label{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}
+
+
+Definition at line 107 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by dht\+\_\+pk\+\_\+callback(), handle\+\_\+status(), kill\+\_\+friend\+\_\+connection(), new\+\_\+friend\+\_\+connection(), new\+\_\+friend\+\_\+connections(), send\+\_\+friend\+\_\+request\+\_\+packet(), and set\+\_\+friend\+\_\+request\+\_\+callback().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{friend__connection_8h}{friend\+\_\+connection.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="DHT_non_lan_connected" name="DHT_non_lan_connected">
+<area shape="rect" id="node2" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="243,5,326,32"/>
+<area shape="rect" id="node4" href="$d1/de5/_l_a_n__discovery_8c.html#a2d80a53390598eb8ededbc63f4e9c152" title="LAN_ip" alt="" coords="252,80,317,107"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#a849af10dd491723cf3abdef599846897" title="unix_time_update" alt="" coords="223,131,347,157"/>
+<area shape="rect" id="node3" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="436,5,515,32"/>
+<area shape="rect" id="node5" href="$d1/de5/_l_a_n__discovery_8c.html#a56fb8ae3cd774c1b1d5670b9c4fb8959" title="Local_ip" alt="" coords="440,80,511,107"/>
+<area shape="rect" id="node7" href="$db/d11/irc__syncbot_8c.html#ae8ecaef140b786a2720eadbb85918e81" title="current_time_monotonic" alt="" coords="395,131,556,157"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="msi_msg_set_csettings" name="msi_msg_set_csettings">
+<area shape="rect" id="node2" href="$d9/d06/msi_8h.html#a3cf8337cde29970de207c3c77c953261" title="msi_answer" alt="" coords="243,5,335,32"/>
+<area shape="rect" id="node5" href="$d9/d06/msi_8h.html#ad82b81e88f4a912b7ec492baf6ab7ea8" title="msi_change_csettings" alt="" coords="213,107,365,133"/>
+<area shape="rect" id="node8" href="$d9/d06/msi_8h.html#a9f714a4729f22ca5810ff0ee89313fab" title="msi_invite" alt="" coords="249,56,330,83"/>
+<area shape="rect" id="node3" href="$d9/d82/toxav_8h.html#a71ea4cbf449462254bc5982b810dfe20" title="toxav_answer" alt="" coords="440,5,543,32"/>
+<area shape="rect" id="node4" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="619,31,722,57"/>
+<area shape="rect" id="node6" href="$d9/d82/toxav_8h.html#a2ad323fd957032a11b1fadd4668f41ee" title="toxav_change_settings" alt="" coords="413,107,569,133"/>
+<area shape="rect" id="node7" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="617,81,724,108"/>
+<area shape="rect" id="node9" href="$d9/d82/toxav_8h.html#a843e5f488e25017d9c7b8acf097e0977" title="toxav_call" alt="" coords="451,56,532,83"/>
+</map>

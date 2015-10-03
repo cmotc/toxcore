@@ -1,0 +1,15 @@
+<map id="kill_tcp_connection_to" name="kill_tcp_connection_to">
+<area shape="rect" id="node2" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="234,5,345,32"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="222,107,357,133"/>
+<area shape="rect" id="node6" href="$da/da1/_t_c_p__client_8c.html#af83d9fac2256a46428ad95bf337c05b7" title="send_disconnect_request" alt="" coords="204,159,375,185"/>
+<area shape="rect" id="node14" href="$d5/d26/_t_c_p__connection_8c.html#a10a5b3ddc6f1bfa7785301f33c369695" title="wipe_connection" alt="" coords="230,56,349,83"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="447,18,589,59"/>
+<area shape="rect" id="node5" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="435,97,601,138"/>
+<area shape="rect" id="node7" href="$da/da1/_t_c_p__client_8c.html#abe305661e19883349d213c74c44ff93f" title="send_disconnect_notification" alt="" coords="423,163,613,189"/>
+<area shape="rect" id="node8" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="661,155,837,197"/>
+<area shape="rect" id="node9" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="923,87,1013,113"/>
+<area shape="rect" id="node10" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="885,137,1051,164"/>
+<area shape="rect" id="node11" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="907,188,1029,215"/>
+<area shape="rect" id="node12" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="901,239,1035,265"/>
+<area shape="rect" id="node13" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="1099,239,1300,265"/>
+</map>

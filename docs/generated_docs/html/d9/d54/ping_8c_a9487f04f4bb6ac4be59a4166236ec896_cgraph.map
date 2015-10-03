@@ -1,0 +1,5 @@
+<map id="kill_ping" name="kill_ping">
+<area shape="rect" id="node2" href="$d6/d6e/network_8c.html#a230a192ca9463ec4985d4f86de439733" title="networking_registerhandler" alt="" coords="123,5,300,32"/>
+<area shape="rect" id="node3" href="$df/d02/ping__array_8c.html#a7e093974e6d616c5bbcadfd434b49824" title="ping_array_free_all" alt="" coords="146,56,277,83"/>
+<area shape="rect" id="node4" href="$df/d02/ping__array_8c.html#ad051ea35e31300366c9f8c167b27ca4c" title="clear_entry" alt="" coords="348,56,435,83"/>
+</map>

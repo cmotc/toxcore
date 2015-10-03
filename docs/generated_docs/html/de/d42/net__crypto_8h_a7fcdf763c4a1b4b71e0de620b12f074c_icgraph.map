@@ -1,0 +1,41 @@
+<map id="send_lossy_cryptpacket" name="send_lossy_cryptpacket">
+<area shape="rect" id="node2" href="$d4/d30/_messenger_8h.html#a2ebb5527b47fb87384093c4aa3c384c0" title="send_custom_lossy_packet" alt="" coords="216,136,400,163"/>
+<area shape="rect" id="node11" href="$df/de9/toxcore_2group_8c.html#ae3bb029450c53089066ace620abfe971" title="send_lossy_group_peer" alt="" coords="229,255,387,281"/>
+<area shape="rect" id="node3" href="$df/dc1/rtp_8h.html#a061d9b8e8abbcfb87d365bf65297e3f3" title="rtp_send_msg" alt="" coords="472,77,576,104"/>
+<area shape="rect" id="node9" href="$da/d8f/tox_8h.html#a83a51aeda057c82ed1e844962a84fe46" title="tox_friend_send_lossy\l_packet" alt="" coords="448,129,600,170"/>
+<area shape="rect" id="node4" href="$d8/d0e/toxav_8c.html#aa03b009616ed838e27caded4f69483d1" title="toxav_send_rtp_payload" alt="" coords="653,77,816,104"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#a0b848edf3ccbf9088d79ad77e308ac29" title="toxav_send_audio" alt="" coords="886,31,1013,57"/>
+<area shape="rect" id="node8" href="$d8/d0e/toxav_8c.html#a4aa0876a176b4e5e7abea2f72059a502" title="toxav_send_video" alt="" coords="886,81,1013,108"/>
+<area shape="rect" id="node6" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="1095,5,1197,32"/>
+<area shape="rect" id="node7" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="1093,56,1199,83"/>
+<area shape="rect" id="node10" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1692,108,1799,135"/>
+<area shape="rect" id="node12" href="$df/de9/toxcore_2group_8c.html#a593b5363a3865f21759df2ecc0a8c45a" title="send_lossy_all_close" alt="" coords="451,359,597,385"/>
+<area shape="rect" id="node13" href="$df/de9/toxcore_2group_8c.html#ac0762dd7405b5b863aca34d0b52d8e98" title="handle_lossy" alt="" coords="685,359,784,385"/>
+<area shape="rect" id="node37" href="$dd/de4/toxcore_2group_8h.html#a7e20618640c4b45fe7f863c87ec2dfda" title="send_group_lossy_packet" alt="" coords="648,439,821,465"/>
+<area shape="rect" id="node14" href="$df/de9/toxcore_2group_8c.html#ab48e96a53cc90551754943ce3df01673" title="add_conn_to_groupchat" alt="" coords="869,359,1029,385"/>
+<area shape="rect" id="node15" href="$df/de9/toxcore_2group_8c.html#ab08da4834d9772b1ef1f3b35ae5197c1" title="connect_to_closest" alt="" coords="1079,257,1213,284"/>
+<area shape="rect" id="node22" href="$df/de9/toxcore_2group_8c.html#a5827237272acfda26ad786049a80e42a" title="handle_friend_invite\l_packet" alt="" coords="1077,351,1215,393"/>
+<area shape="rect" id="node29" href="$dd/de4/toxcore_2group_8h.html#a6f097de58345cf9500d0413198c583fc" title="join_groupchat" alt="" coords="1093,417,1199,444"/>
+<area shape="rect" id="node16" href="$dd/de4/toxcore_2group_8h.html#a9529a2149c68cbff38d43419d9ebeecc" title="do_groupchats" alt="" coords="1293,235,1399,261"/>
+<area shape="rect" id="node17" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1519,209,1602,236"/>
+<area shape="rect" id="node18" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1719,159,1771,185"/>
+<area shape="rect" id="node19" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1847,260,1897,287"/>
+<area shape="rect" id="node20" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1709,260,1782,287"/>
+<area shape="rect" id="node21" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1847,412,1897,439"/>
+<area shape="rect" id="node23" href="$dd/de4/toxcore_2group_8h.html#a16ac0b94fed484d710f76d390b7a85d8" title="new_groupchats" alt="" coords="1287,360,1405,387"/>
+<area shape="rect" id="node24" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1525,361,1596,388"/>
+<area shape="rect" id="node25" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1692,361,1799,388"/>
+<area shape="rect" id="node26" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1713,311,1777,337"/>
+<area shape="rect" id="node27" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1706,412,1785,439"/>
+<area shape="rect" id="node28" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1720,463,1771,489"/>
+<area shape="rect" id="node30" href="$d8/da5/toxav_2group_8h.html#a3bb53f02b23ac60cb1e76d3717a4e2e5" title="join_av_groupchat" alt="" coords="1283,464,1409,491"/>
+<area shape="rect" id="node32" href="$d3/d8f/tox__old__code_8h.html#a26cf750df10de88c8e5024db883fff97" title="tox_join_groupchat" alt="" coords="1281,413,1411,440"/>
+<area shape="rect" id="node31" href="$d9/d82/toxav_8h.html#a02fd1017fbe8e974c2c0a39ee08067d7" title="toxav_join_av_groupchat" alt="" coords="1477,531,1644,557"/>
+<area shape="rect" id="node33" href="$d9/d35/tox__test_8c.html#ad249c87d6056da5531b1e4265c03001a" title="print_group_invite\l_callback" alt="" coords="1499,465,1623,506"/>
+<area shape="rect" id="node35" href="$db/d11/irc__syncbot_8c.html#acfc0f8259fbefbcb0ca1256c6842e7d4" title="callback_group_invite" alt="" coords="1487,311,1634,337"/>
+<area shape="rect" id="node36" href="$d2/d65/n_tox_8c.html#a1b2b2f68f7d6d5ebeb8cd60c0368cc51" title="print_invite" alt="" coords="1518,413,1603,440"/>
+<area shape="rect" id="node34" href="$d9/d35/tox__test_8c.html#a999b8d0cb6f7a7ea6f983f4f32e18f25" title="START_TEST" alt="" coords="1692,564,1799,591"/>
+<area shape="rect" id="node38" href="$db/d46/toxav_2group_8c.html#a8b24466efb3298dc9fef80bf18485b82" title="send_audio_packet" alt="" coords="882,479,1017,505"/>
+<area shape="rect" id="node39" href="$d8/da5/toxav_2group_8h.html#abed2d235751a4282d79ff38abc3bf228" title="group_send_audio" alt="" coords="1083,493,1209,520"/>
+<area shape="rect" id="node40" href="$d9/d82/toxav_8h.html#ad78d09fb2b5ac7b1bd5c2395a7bdb5c6" title="toxav_group_send_audio" alt="" coords="1263,515,1429,541"/>
+</map>

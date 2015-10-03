@@ -1,0 +1,37 @@
+<map id="send_group_lossy_packet" name="send_group_lossy_packet">
+<area shape="rect" id="node2" href="$df/de9/toxcore_2group_8c.html#a11d3240a6755f36864ed2b072e826483" title="get_group_c" alt="" coords="454,5,547,32"/>
+<area shape="rect" id="node4" href="$df/de9/toxcore_2group_8c.html#a593b5363a3865f21759df2ecc0a8c45a" title="send_lossy_all_close" alt="" coords="227,56,373,83"/>
+<area shape="rect" id="node3" href="$df/de9/toxcore_2group_8c.html#a4ffc6ae8485f94d9177baf65f777c72e" title="groupnumber_not_valid" alt="" coords="638,5,794,32"/>
+<area shape="rect" id="node5" href="$df/de9/toxcore_2group_8c.html#ae3bb029450c53089066ace620abfe971" title="send_lossy_group_peer" alt="" coords="421,157,580,184"/>
+<area shape="rect" id="node35" href="$d2/db1/friend__connection_8c.html#a4605fa0bd8ff3f9bd217ee6dcadbfe5f" title="get_friendcon_public_keys" alt="" coords="628,56,804,83"/>
+<area shape="rect" id="node36" href="$df/de9/toxcore_2group_8c.html#afb13bc1afd72ceb013653353d9a82ac8" title="calculate_comp_value" alt="" coords="425,107,576,133"/>
+<area shape="rect" id="node6" href="$d8/dc6/net__crypto_8c.html#a7fcdf763c4a1b4b71e0de620b12f074c" title="send_lossy_cryptpacket" alt="" coords="635,173,797,200"/>
+<area shape="rect" id="node32" href="$d2/db1/friend__connection_8c.html#a8586e3dfb2047821c4214adf8d06a877" title="friend_connection_crypt\l_connection_id" alt="" coords="636,107,796,149"/>
+<area shape="rect" id="node7" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="1687,264,1840,291"/>
+<area shape="rect" id="node9" href="$d8/dc6/net__crypto_8c.html#a572e703b36ffafdc4cf9dafd31a279d7" title="send_data_packet_helper" alt="" coords="852,231,1023,257"/>
+<area shape="rect" id="node8" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="1910,257,2049,298"/>
+<area shape="rect" id="node10" href="$d8/dc6/net__crypto_8c.html#a507dd998c297ff5a666bd08121dd4143" title="send_data_packet" alt="" coords="1086,256,1214,283"/>
+<area shape="rect" id="node11" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="2335,683,2500,709"/>
+<area shape="rect" id="node12" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="2357,356,2478,383"/>
+<area shape="rect" id="node13" href="$d8/dc6/net__crypto_8c.html#a94d4c99b16cb7bd2dd61f9a7a8caf94a" title="send_packet_to" alt="" coords="1277,357,1392,384"/>
+<area shape="rect" id="node14" href="$d8/dc6/net__crypto_8c.html#afb5c59e6df7f38fe0bdf9e0f6c459869" title="crypto_connection_status" alt="" coords="1450,408,1621,435"/>
+<area shape="rect" id="node20" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="1491,307,1580,333"/>
+<area shape="rect" id="node21" href="$d5/d26/_t_c_p__connection_8c.html#a455e955e01d34ff3db0b22b8f6d49d98" title="send_packet_tcp_connection" alt="" coords="1440,505,1631,532"/>
+<area shape="rect" id="node15" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="1724,404,1803,431"/>
+<area shape="rect" id="node16" href="$d5/d26/_t_c_p__connection_8c.html#ae843b0b4c8041f08bf9c18f68cae8a61" title="tcp_connection_to_online\l_tcp_relays" alt="" coords="1679,338,1848,379"/>
+<area shape="rect" id="node17" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="1924,388,2035,415"/>
+<area shape="rect" id="node19" href="$d5/d26/_t_c_p__connection_8c.html#a255916e82a74ad6c617216af786ec335" title="online_tcp_connection\l_from_conn" alt="" coords="1904,322,2055,363"/>
+<area shape="rect" id="node18" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="2127,381,2270,422"/>
+<area shape="rect" id="node22" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="1696,505,1831,532"/>
+<area shape="rect" id="node24" href="$da/da1/_t_c_p__client_8c.html#aea842652030d00bd8302e3c0201f95b9" title="send_data" alt="" coords="1722,556,1805,583"/>
+<area shape="rect" id="node31" href="$da/da1/_t_c_p__client_8c.html#a7818a314434c2bb01c3ea406744f076b" title="send_oob_packet" alt="" coords="1701,632,1825,659"/>
+<area shape="rect" id="node23" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="1896,439,2063,481"/>
+<area shape="rect" id="node25" href="$da/da1/_t_c_p__client_8c.html#a8e1ca90aa8db34a58b3b38cfcb1bb9de" title="send_ping_response" alt="" coords="1909,607,2050,633"/>
+<area shape="rect" id="node26" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="2111,574,2287,615"/>
+<area shape="rect" id="node30" href="$da/da1/_t_c_p__client_8c.html#a5aad81831c1333b763c9fd5eaf41603f" title="send_ping_request" alt="" coords="1914,556,2045,583"/>
+<area shape="rect" id="node27" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="2350,607,2485,633"/>
+<area shape="rect" id="node29" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="2373,556,2462,583"/>
+<area shape="rect" id="node28" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="2548,607,2749,633"/>
+<area shape="rect" id="node33" href="$d2/db1/friend__connection_8c.html#a0c0c32645b094058a6e6d6bcab4ed718" title="get_conn" alt="" coords="900,85,975,112"/>
+<area shape="rect" id="node34" href="$d2/db1/friend__connection_8c.html#abecf42b27a016431837ee0b8a4ac5a5e" title="friendconn_id_not_valid" alt="" coords="1071,85,1229,112"/>
+</map>

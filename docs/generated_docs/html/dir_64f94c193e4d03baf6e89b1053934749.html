@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -47,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,27 +61,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dir_64f94c193e4d03baf6e89b1053934749.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,6 +75,11 @@ $(document).ready(function(){initNavTree('dir_64f94c193e4d03baf6e89b1053934749.h
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_64f94c193e4d03baf6e89b1053934749.html">testing</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">testing Directory Reference</div>  </div>
@@ -106,42 +90,38 @@ Directory dependency graph for testing:</div>
 <div class="dyncontent">
 <div class="center"><img src="dir_64f94c193e4d03baf6e89b1053934749_dep.png" border="0" usemap="#dir__64f94c193e4d03baf6e89b1053934749__dep" alt="testing"/></div>
 <map name="dir__64f94c193e4d03baf6e89b1053934749__dep" id="dir__64f94c193e4d03baf6e89b1053934749__dep">
-<area shape="rect" id="node1" href="dir_64f94c193e4d03baf6e89b1053934749.html" title="testing" alt="" coords="5,5,77,53"/></map>
+<area shape="rect" id="node1" href="dir_64f94c193e4d03baf6e89b1053934749.html" title="testing" alt="" coords="41,5,113,53"/><area shape="rect" id="node2" href="dir_f538e1f8007c4e3477aa276315f3602c.html" title="toxdns" alt="" coords="5,101,77,149"/><area shape="rect" id="edge1-headlabel" href="dir_000003_000006.html" title="1" alt="" coords="61,80,69,95"/><area shape="rect" id="node3" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html" title="toxcore" alt="" coords="41,197,113,245"/><area shape="rect" id="edge2-headlabel" href="dir_000003_000005.html" title="9" alt="" coords="90,174,98,188"/><area shape="rect" id="edge3-headlabel" href="dir_000006_000005.html" title="2" alt="" coords="66,170,74,185"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:_d_h_t__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>DHT_test.c</b> <a href="_d_h_t__test_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d3/dfd/_d_h_t__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/dfd/_d_h_t__test_8c.html">DHT_test.c</a> <a href="d3/dfd/_d_h_t__test_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dns3__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>dns3_test.c</b> <a href="dns3__test_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:db/d81/dns3__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db/d81/dns3__test_8c.html">dns3_test.c</a> <a href="db/d81/dns3__test_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:irc__syncbot_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>irc_syncbot.c</b> <a href="irc__syncbot_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:db/d11/irc__syncbot_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db/d11/irc__syncbot_8c.html">irc_syncbot.c</a> <a href="db/d11/irc__syncbot_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:testing_2_makefile_8inc"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>Makefile.inc</b> <a href="testing_2_makefile_8inc_source.html">[code]</a></td></tr>
+<tr class="memitem:d6/d29/testing_2_makefile_8inc"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/d29/testing_2_makefile_8inc.html">Makefile.inc</a> <a href="d6/d29/testing_2_makefile_8inc_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_messenger__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>Messenger_test.c</b> <a href="_messenger__test_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:db/de9/_messenger__test_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db/de9/_messenger__test_8c.html">Messenger_test.c</a> <a href="db/de9/_messenger__test_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:misc__tools_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>misc_tools.c</b> <a href="misc__tools_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d5/da3/misc__tools_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d5/da3/misc__tools_8c.html">misc_tools.c</a> <a href="d5/da3/misc__tools_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:n_tox_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>nTox.c</b> <a href="n_tox_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d2/d65/n_tox_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d2/d65/n_tox_8c.html">nTox.c</a> <a href="d2/d65/n_tox_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:n_tox_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>nTox.h</b> <a href="n_tox_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d9c/n_tox_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d9c/n_tox_8h.html">nTox.h</a> <a href="d4/d9c/n_tox_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox__shell_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox_shell.c</b> <a href="tox__shell_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d7/db1/tox__shell_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d7/db1/tox__shell_8c.html">tox_shell.c</a> <a href="d7/db1/tox__shell_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox__sync_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox_sync.c</b> <a href="tox__sync_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:dd/d99/tox__sync_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dd/d99/tox__sync_8c.html">tox_sync.c</a> <a href="dd/d99/tox__sync_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_64f94c193e4d03baf6e89b1053934749.html">testing</a></li>
-    <li class="footer">Generated on Mon Sep 14 2015 09:00:35 for libtoxcore by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Oct 2 2015 23:41:34 for libtoxcore by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
 </body>
 </html>

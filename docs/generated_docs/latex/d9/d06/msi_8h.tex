@@ -1,0 +1,1223 @@
+\hypertarget{msi_8h}{\section{toxav/msi.h File Reference}
+\label{msi_8h}\index{toxav/msi.\+h@{toxav/msi.\+h}}
+}
+{\ttfamily \#include \char`\"{}codec.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+Messenger.\+h\char`\"{}}\\*
+Include dependency graph for msi.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d9d/msi_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{da/d92/msi_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___m_s_i_codec_settings}{\+\_\+\+M\+S\+I\+Codec\+Settings}
+\item 
+struct \hyperlink{struct___m_s_i_call}{\+\_\+\+M\+S\+I\+Call}
+\item 
+struct \hyperlink{struct___m_s_i_session}{\+\_\+\+M\+S\+I\+Session}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \hyperlink{msi_8h_a861af5c5c180987c1c86739b4321076c}{M\+S\+I\+Call\+I\+D\+Type} \mbox{[}12\mbox{]}
+\item 
+typedef uint8\+\_\+t \hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{M\+S\+I\+Reason\+Str\+Type} \mbox{[}255\mbox{]}
+\item 
+typedef void($\ast$ \hyperlink{msi_8h_afe514f5cbbbb1153f50ab068d405b864}{M\+S\+I\+Callback\+Type} )(void $\ast$agent, int32\+\_\+t call\+\_\+idx, void $\ast$arg)
+\item 
+typedef struct \hyperlink{struct___m_s_i_codec_settings}{\+\_\+\+M\+S\+I\+Codec\+Settings} \hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings}
+\item 
+typedef struct \hyperlink{struct___m_s_i_call}{\+\_\+\+M\+S\+I\+Call} \hyperlink{msi_8h_abec1a89deb19c1a1494d473b613e76eb}{M\+S\+I\+Call}
+\item 
+typedef struct \hyperlink{struct___m_s_i_session}{\+\_\+\+M\+S\+I\+Session} \hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6}{M\+S\+I\+Call\+Type} \{ \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a4a64c16a6c74d9e29598b14b97bf5a45}{msi\+\_\+\+Type\+Audio} = 192, 
+\hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a5db9e0515683460259700cbbdb916e68}{msi\+\_\+\+Type\+Video}
+ \}
+\item 
+enum \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}{M\+S\+I\+Call\+State} \{ \\*
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\+\_\+\+Call\+Inviting}, 
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}{msi\+\_\+\+Call\+Starting}, 
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\+\_\+\+Call\+Active}, 
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a77fa7e7ec597c432e87619130ca53228}{msi\+\_\+\+Call\+Hold}, 
+\\*
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}{msi\+\_\+\+Call\+Over}
+ \}
+\item 
+enum \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401}{M\+S\+I\+Callback\+I\+D} \{ \\*
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401ac7af67722adb9603bff7b9eaff69134b}{msi\+\_\+\+On\+Invite}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a00f6e10224bff238634a317bae38eca0}{msi\+\_\+\+On\+Ringing}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401af7cf963a6bd2bb46d8c387d5d65b7a4a}{msi\+\_\+\+On\+Start}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a50c912182b9d89d9b43643ab91517a3a}{msi\+\_\+\+On\+Cancel}, 
+\\*
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a97b05086f1a248b23580d3dbb8e4aa13}{msi\+\_\+\+On\+Reject}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a621554da0c501fc1b3f8be5b46ad7eaa}{msi\+\_\+\+On\+End}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a211f73b9481d8f9468b79059a6ef24ec}{msi\+\_\+\+On\+Request\+Timeout}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401ab8bd4ae06f000c0b590128c472218343}{msi\+\_\+\+On\+Peer\+Timeout}, 
+\\*
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a29ce7dec5e8fb8c8b5e5603b3c5f0ec4}{msi\+\_\+\+On\+Peer\+C\+S\+Change}, 
+\hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a06d2be36247d0a05f55070c644149b0f}{msi\+\_\+\+On\+Self\+C\+S\+Change}
+ \}
+\item 
+enum \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229}{M\+S\+I\+Error} \{ \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\+\_\+\+Error\+No\+Call} = -\/20, 
+\hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\+\_\+\+Error\+Invalid\+State} = -\/21, 
+\hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229af5059b2f3d7d5e755fcb41848c892980}{msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer} = -\/22, 
+\hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a0ac1d3777fd5cd52a50e7ce8aec7d4ed}{msi\+\_\+\+Error\+Reached\+Call\+Limit} = -\/23
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$ \hyperlink{msi_8h_af33f2706f6d0f8e547716e2f6c5f68d3}{msi\+\_\+new} (\hyperlink{struct_messenger}{Messenger} $\ast$messenger, int32\+\_\+t max\+\_\+calls)
+\item 
+int \hyperlink{msi_8h_a85e4f629815819ee2abed82041bd9436}{msi\+\_\+kill} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session)
+\item 
+void \hyperlink{msi_8h_a1121e56554f776e97436cc9a6a3769c4}{msi\+\_\+register\+\_\+callback} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, \hyperlink{msi_8h_afe514f5cbbbb1153f50ab068d405b864}{M\+S\+I\+Callback\+Type} callback, \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401}{M\+S\+I\+Callback\+I\+D} id, void $\ast$userdata)
+\item 
+int \hyperlink{msi_8h_a9f714a4729f22ca5810ff0ee89313fab}{msi\+\_\+invite} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t $\ast$call\+\_\+index, const \hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings} $\ast$csettings, uint32\+\_\+t rngsec, uint32\+\_\+t \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\+\_\+id})
+\item 
+int \hyperlink{msi_8h_a8023a8417a3e79e382a9ff3d99cdd24a}{msi\+\_\+hangup} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index)
+\item 
+int \hyperlink{msi_8h_a3cf8337cde29970de207c3c77c953261}{msi\+\_\+answer} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index, const \hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings} $\ast$csettings)
+\item 
+int \hyperlink{msi_8h_aefbf5f591676d4b56853b21fdf215e69}{msi\+\_\+cancel} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index, uint32\+\_\+t peer, const char $\ast$reason)
+\item 
+int \hyperlink{msi_8h_a9d846fba046c8539b9e183cc01a25fe9}{msi\+\_\+reject} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index, const char $\ast$reason)
+\item 
+int \hyperlink{msi_8h_a4d2aa9bfe7f4a96275204f2797d6e7eb}{msi\+\_\+stopcall} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index)
+\item 
+int \hyperlink{msi_8h_ad82b81e88f4a912b7ec492baf6ab7ea8}{msi\+\_\+change\+\_\+csettings} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session, int32\+\_\+t call\+\_\+index, const \hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings} $\ast$csettings)
+\item 
+void \hyperlink{msi_8h_a6596ff23a6bcdd19c4fa1985dcc6b257}{msi\+\_\+do} (\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$session)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{msi_8h_abec1a89deb19c1a1494d473b613e76eb}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Call@{M\+S\+I\+Call}}
+\index{M\+S\+I\+Call@{M\+S\+I\+Call}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Call}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+M\+S\+I\+Call}  {\bf M\+S\+I\+Call}}}\label{msi_8h_abec1a89deb19c1a1494d473b613e76eb}
+The call struct. \hypertarget{msi_8h_afe514f5cbbbb1153f50ab068d405b864}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Callback\+Type@{M\+S\+I\+Callback\+Type}}
+\index{M\+S\+I\+Callback\+Type@{M\+S\+I\+Callback\+Type}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Callback\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( $\ast$ M\+S\+I\+Callback\+Type)(void $\ast$agent, int32\+\_\+t call\+\_\+idx, void $\ast$arg)}}\label{msi_8h_afe514f5cbbbb1153f50ab068d405b864}
+
+
+Definition at line 30 of file msi.\+h.
+
+\hypertarget{msi_8h_a861af5c5c180987c1c86739b4321076c}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Call\+I\+D\+Type@{M\+S\+I\+Call\+I\+D\+Type}}
+\index{M\+S\+I\+Call\+I\+D\+Type@{M\+S\+I\+Call\+I\+D\+Type}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Call\+I\+D\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t M\+S\+I\+Call\+I\+D\+Type\mbox{[}12\mbox{]}}}\label{msi_8h_a861af5c5c180987c1c86739b4321076c}
+\hyperlink{msi_8h}{msi.\+h}
+
+Copyright (C) 2013 Tox project All Rights Reserved.
+
+This file is part of Tox.
+
+Tox is free software\+: you can redistribute it and/or modify it under the terms of the G\+N\+U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+Tox is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+U\+T A\+N\+Y W\+A\+R\+R\+A\+N\+T\+Y; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+T\+Y or F\+I\+T\+N\+E\+S\+S F\+O\+R A P\+A\+R\+T\+I\+C\+U\+L\+A\+R P\+U\+R\+P\+O\+S\+E. See the G\+N\+U General Public License for more details.
+
+You should have received a copy of the G\+N\+U General Public License along with Tox. If not, see \href{http://www.gnu.org/licenses/}{\tt http\+://www.\+gnu.\+org/licenses/}. 
+
+Definition at line 28 of file msi.\+h.
+
+\hypertarget{msi_8h_abe548d26a24458ebf9ab33310ee19600}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+C\+Settings@{M\+S\+I\+C\+Settings}}
+\index{M\+S\+I\+C\+Settings@{M\+S\+I\+C\+Settings}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+C\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+M\+S\+I\+Codec\+Settings}  {\bf M\+S\+I\+C\+Settings}}}\label{msi_8h_abe548d26a24458ebf9ab33310ee19600}
+Encoding settings. \hypertarget{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Reason\+Str\+Type@{M\+S\+I\+Reason\+Str\+Type}}
+\index{M\+S\+I\+Reason\+Str\+Type@{M\+S\+I\+Reason\+Str\+Type}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Reason\+Str\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t M\+S\+I\+Reason\+Str\+Type\mbox{[}255\mbox{]}}}\label{msi_8h_acc1e8c2d1829721c4addd8547458c9db}
+
+
+Definition at line 29 of file msi.\+h.
+
+\hypertarget{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Session@{M\+S\+I\+Session}}
+\index{M\+S\+I\+Session@{M\+S\+I\+Session}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Session}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+M\+S\+I\+Session}  {\bf M\+S\+I\+Session}}}\label{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}
+Control session struct 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Callback\+I\+D@{M\+S\+I\+Callback\+I\+D}}
+\index{M\+S\+I\+Callback\+I\+D@{M\+S\+I\+Callback\+I\+D}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Callback\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf M\+S\+I\+Callback\+I\+D}}}\label{msi_8h_aba083d202aa40ee6d37db924fe486401}
+Callbacks ids that handle the states \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{msi\+\_\+\+On\+Invite@{msi\+\_\+\+On\+Invite}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Invite@{msi\+\_\+\+On\+Invite}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401ac7af67722adb9603bff7b9eaff69134b}{msi\+\_\+\+On\+Invite}\label{msi_8h_aba083d202aa40ee6d37db924fe486401ac7af67722adb9603bff7b9eaff69134b}
+}]\index{msi\+\_\+\+On\+Ringing@{msi\+\_\+\+On\+Ringing}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Ringing@{msi\+\_\+\+On\+Ringing}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a00f6e10224bff238634a317bae38eca0}{msi\+\_\+\+On\+Ringing}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a00f6e10224bff238634a317bae38eca0}
+}]\index{msi\+\_\+\+On\+Start@{msi\+\_\+\+On\+Start}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Start@{msi\+\_\+\+On\+Start}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401af7cf963a6bd2bb46d8c387d5d65b7a4a}{msi\+\_\+\+On\+Start}\label{msi_8h_aba083d202aa40ee6d37db924fe486401af7cf963a6bd2bb46d8c387d5d65b7a4a}
+}]\index{msi\+\_\+\+On\+Cancel@{msi\+\_\+\+On\+Cancel}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Cancel@{msi\+\_\+\+On\+Cancel}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a50c912182b9d89d9b43643ab91517a3a}{msi\+\_\+\+On\+Cancel}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a50c912182b9d89d9b43643ab91517a3a}
+}]\index{msi\+\_\+\+On\+Reject@{msi\+\_\+\+On\+Reject}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Reject@{msi\+\_\+\+On\+Reject}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a97b05086f1a248b23580d3dbb8e4aa13}{msi\+\_\+\+On\+Reject}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a97b05086f1a248b23580d3dbb8e4aa13}
+}]\index{msi\+\_\+\+On\+End@{msi\+\_\+\+On\+End}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+End@{msi\+\_\+\+On\+End}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a621554da0c501fc1b3f8be5b46ad7eaa}{msi\+\_\+\+On\+End}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a621554da0c501fc1b3f8be5b46ad7eaa}
+}]\index{msi\+\_\+\+On\+Request\+Timeout@{msi\+\_\+\+On\+Request\+Timeout}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Request\+Timeout@{msi\+\_\+\+On\+Request\+Timeout}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a211f73b9481d8f9468b79059a6ef24ec}{msi\+\_\+\+On\+Request\+Timeout}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a211f73b9481d8f9468b79059a6ef24ec}
+}]\index{msi\+\_\+\+On\+Peer\+Timeout@{msi\+\_\+\+On\+Peer\+Timeout}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Peer\+Timeout@{msi\+\_\+\+On\+Peer\+Timeout}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401ab8bd4ae06f000c0b590128c472218343}{msi\+\_\+\+On\+Peer\+Timeout}\label{msi_8h_aba083d202aa40ee6d37db924fe486401ab8bd4ae06f000c0b590128c472218343}
+}]\index{msi\+\_\+\+On\+Peer\+C\+S\+Change@{msi\+\_\+\+On\+Peer\+C\+S\+Change}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Peer\+C\+S\+Change@{msi\+\_\+\+On\+Peer\+C\+S\+Change}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a29ce7dec5e8fb8c8b5e5603b3c5f0ec4}{msi\+\_\+\+On\+Peer\+C\+S\+Change}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a29ce7dec5e8fb8c8b5e5603b3c5f0ec4}
+}]\index{msi\+\_\+\+On\+Self\+C\+S\+Change@{msi\+\_\+\+On\+Self\+C\+S\+Change}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+On\+Self\+C\+S\+Change@{msi\+\_\+\+On\+Self\+C\+S\+Change}}\item[{\em 
+\hypertarget{msi_8h_aba083d202aa40ee6d37db924fe486401a06d2be36247d0a05f55070c644149b0f}{msi\+\_\+\+On\+Self\+C\+S\+Change}\label{msi_8h_aba083d202aa40ee6d37db924fe486401a06d2be36247d0a05f55070c644149b0f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 74 of file msi.\+h.
+
+
+\begin{DoxyCode}
+74              \{
+75     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401ac7af67722adb9603bff7b9eaff69134b}{msi\_OnInvite}, \textcolor{comment}{/* Incoming call */}
+76     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a00f6e10224bff238634a317bae38eca0}{msi\_OnRinging}, \textcolor{comment}{/* When peer is ready to accept/reject the call */}
+77     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401af7cf963a6bd2bb46d8c387d5d65b7a4a}{msi\_OnStart}, \textcolor{comment}{/* Call (RTP transmission) started */}
+78     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a50c912182b9d89d9b43643ab91517a3a}{msi\_OnCancel}, \textcolor{comment}{/* The side that initiated call canceled invite */}
+79     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a97b05086f1a248b23580d3dbb8e4aa13}{msi\_OnReject}, \textcolor{comment}{/* The side that was invited rejected the call */}
+80     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a621554da0c501fc1b3f8be5b46ad7eaa}{msi\_OnEnd}, \textcolor{comment}{/* Call that was active ended */}
+81     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a211f73b9481d8f9468b79059a6ef24ec}{msi\_OnRequestTimeout}, \textcolor{comment}{/* When the requested action didn't get response in specified
+       time */}
+82     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401ab8bd4ae06f000c0b590128c472218343}{msi\_OnPeerTimeout}, \textcolor{comment}{/* Peer timed out; stop the call */}
+83     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a29ce7dec5e8fb8c8b5e5603b3c5f0ec4}{msi\_OnPeerCSChange}, \textcolor{comment}{/* Peer requested Csettings change */}
+84     \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401a06d2be36247d0a05f55070c644149b0f}{msi\_OnSelfCSChange} \textcolor{comment}{/* Csettings change confirmation */}
+85 \} \hyperlink{msi_8h_aba083d202aa40ee6d37db924fe486401}{MSICallbackID};
+\end{DoxyCode}
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Call\+State@{M\+S\+I\+Call\+State}}
+\index{M\+S\+I\+Call\+State@{M\+S\+I\+Call\+State}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Call\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf M\+S\+I\+Call\+State}}}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}
+Call state identifiers. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{msi\+\_\+\+Call\+Inviting@{msi\+\_\+\+Call\+Inviting}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Call\+Inviting@{msi\+\_\+\+Call\+Inviting}}\item[{\em 
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\+\_\+\+Call\+Inviting}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}
+}]\index{msi\+\_\+\+Call\+Starting@{msi\+\_\+\+Call\+Starting}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Call\+Starting@{msi\+\_\+\+Call\+Starting}}\item[{\em 
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}{msi\+\_\+\+Call\+Starting}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}
+}]\index{msi\+\_\+\+Call\+Active@{msi\+\_\+\+Call\+Active}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Call\+Active@{msi\+\_\+\+Call\+Active}}\item[{\em 
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\+\_\+\+Call\+Active}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}
+}]\index{msi\+\_\+\+Call\+Hold@{msi\+\_\+\+Call\+Hold}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Call\+Hold@{msi\+\_\+\+Call\+Hold}}\item[{\em 
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a77fa7e7ec597c432e87619130ca53228}{msi\+\_\+\+Call\+Hold}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a77fa7e7ec597c432e87619130ca53228}
+}]\index{msi\+\_\+\+Call\+Over@{msi\+\_\+\+Call\+Over}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Call\+Over@{msi\+\_\+\+Call\+Over}}\item[{\em 
+\hypertarget{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}{msi\+\_\+\+Call\+Over}\label{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 44 of file msi.\+h.
+
+
+\begin{DoxyCode}
+44              \{
+45     \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\_CallInviting}, \textcolor{comment}{/* when sending call invite */}
+46     \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}{msi\_CallStarting}, \textcolor{comment}{/* when getting call invite */}
+47     \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\_CallActive},
+48     \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a77fa7e7ec597c432e87619130ca53228}{msi\_CallHold},
+49     \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}{msi\_CallOver}
+50 
+51 \} \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}{MSICallState};
+\end{DoxyCode}
+\hypertarget{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Call\+Type@{M\+S\+I\+Call\+Type}}
+\index{M\+S\+I\+Call\+Type@{M\+S\+I\+Call\+Type}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Call\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf M\+S\+I\+Call\+Type}}}\label{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6}
+Call type identifier. Also used as rtp callback prefix. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{msi\+\_\+\+Type\+Audio@{msi\+\_\+\+Type\+Audio}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Type\+Audio@{msi\+\_\+\+Type\+Audio}}\item[{\em 
+\hypertarget{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a4a64c16a6c74d9e29598b14b97bf5a45}{msi\+\_\+\+Type\+Audio}\label{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a4a64c16a6c74d9e29598b14b97bf5a45}
+}]\index{msi\+\_\+\+Type\+Video@{msi\+\_\+\+Type\+Video}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Type\+Video@{msi\+\_\+\+Type\+Video}}\item[{\em 
+\hypertarget{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a5db9e0515683460259700cbbdb916e68}{msi\+\_\+\+Type\+Video}\label{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a5db9e0515683460259700cbbdb916e68}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 35 of file msi.\+h.
+
+
+\begin{DoxyCode}
+35              \{
+36     \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a4a64c16a6c74d9e29598b14b97bf5a45}{msi\_TypeAudio} = 192,
+37     \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a5db9e0515683460259700cbbdb916e68}{msi\_TypeVideo}
+38 \} \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6}{MSICallType};
+\end{DoxyCode}
+\hypertarget{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229}{\index{msi.\+h@{msi.\+h}!M\+S\+I\+Error@{M\+S\+I\+Error}}
+\index{M\+S\+I\+Error@{M\+S\+I\+Error}!msi.\+h@{msi.\+h}}
+\subsubsection[{M\+S\+I\+Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf M\+S\+I\+Error}}}\label{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229}
+Errors \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{msi\+\_\+\+Error\+No\+Call@{msi\+\_\+\+Error\+No\+Call}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Error\+No\+Call@{msi\+\_\+\+Error\+No\+Call}}\item[{\em 
+\hypertarget{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\+\_\+\+Error\+No\+Call}\label{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}
+}]\index{msi\+\_\+\+Error\+Invalid\+State@{msi\+\_\+\+Error\+Invalid\+State}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Error\+Invalid\+State@{msi\+\_\+\+Error\+Invalid\+State}}\item[{\em 
+\hypertarget{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\+\_\+\+Error\+Invalid\+State}\label{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}
+}]\index{msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer@{msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer@{msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer}}\item[{\em 
+\hypertarget{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229af5059b2f3d7d5e755fcb41848c892980}{msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer}\label{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229af5059b2f3d7d5e755fcb41848c892980}
+}]\index{msi\+\_\+\+Error\+Reached\+Call\+Limit@{msi\+\_\+\+Error\+Reached\+Call\+Limit}!msi.\+h@{msi.\+h}}\index{msi.\+h@{msi.\+h}!msi\+\_\+\+Error\+Reached\+Call\+Limit@{msi\+\_\+\+Error\+Reached\+Call\+Limit}}\item[{\em 
+\hypertarget{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a0ac1d3777fd5cd52a50e7ce8aec7d4ed}{msi\+\_\+\+Error\+Reached\+Call\+Limit}\label{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a0ac1d3777fd5cd52a50e7ce8aec7d4ed}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 90 of file msi.\+h.
+
+
+\begin{DoxyCode}
+90              \{
+91     \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall} = -20, \textcolor{comment}{/* Trying to perform call action while not in a call */}
+92     \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState} = -21, \textcolor{comment}{/* Trying to perform call action while in invalid
+       state*/}
+93     \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229af5059b2f3d7d5e755fcb41848c892980}{msi\_ErrorAlreadyInCallWithPeer} = -22, \textcolor{comment}{/* Trying to call peer when already
+       in a call with peer */}
+94     \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a0ac1d3777fd5cd52a50e7ce8aec7d4ed}{msi\_ErrorReachedCallLimit} = -23, \textcolor{comment}{/* Cannot handle more calls */}
+95 \} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229}{MSIError};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{msi_8h_a3cf8337cde29970de207c3c77c953261}{\index{msi.\+h@{msi.\+h}!msi\+\_\+answer@{msi\+\_\+answer}}
+\index{msi\+\_\+answer@{msi\+\_\+answer}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+answer}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+answer (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{const {\bf M\+S\+I\+C\+Settings} $\ast$}]{csettings}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a3cf8337cde29970de207c3c77c953261}
+Answer active call request. 
+
+Definition at line 1403 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, \+\_\+\+M\+S\+I\+Call\+::csettings\+\_\+local, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Call\+Active, msi\+\_\+\+Call\+Starting, msi\+\_\+\+Error\+Invalid\+State, msi\+\_\+\+Error\+No\+Call, msi\+\_\+msg\+\_\+set\+\_\+csettings(), msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peers, send\+\_\+message(), starting, \+\_\+\+M\+S\+I\+Call\+::state, and Type\+Response.
+
+
+
+Referenced by toxav\+\_\+answer().
+
+
+\begin{DoxyCode}
+1404 \{
+1405     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1406     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Answering call: %u"}, session, call\_index);
+1407 
+1408     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1409         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Invalid call index!"});
+1410         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1411         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1412     \}
+1413 
+1414     \textcolor{keywordflow}{if} ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} != \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}{msi\_CallStarting} ) \{
+1415         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is in invalid state!"});
+1416         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1417         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState};
+1418     \}
+1419 
+1420     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_starting = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( 
+      \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa44af861e1cb1f54554d3a48a9dfa343b}{TypeResponse}, \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ea658598d69535d5877bf2fa0af0dcfafa}{starting} );
+1421 
+1422     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}{csettings\_local} = *csettings;
+1423 
+1424     \hyperlink{msi_8c_ad8cf444077a0744601cf9107fbb6dbb8}{msi\_msg\_set\_csettings}(msg\_starting, csettings);
+1425 
+1426     \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index], msg\_starting, session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}[0] );
+1427     free ( msg\_starting );
+1428 
+1429     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} = \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\_CallActive};
+1430 
+1431     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1432     \textcolor{keywordflow}{return} 0;
+1433 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a3cf8337cde29970de207c3c77c953261_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a3cf8337cde29970de207c3c77c953261_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_aefbf5f591676d4b56853b21fdf215e69}{\index{msi.\+h@{msi.\+h}!msi\+\_\+cancel@{msi\+\_\+cancel}}
+\index{msi\+\_\+cancel@{msi\+\_\+cancel}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+cancel}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+cancel (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{uint32\+\_\+t}]{peer, }
+\item[{const char $\ast$}]{reason}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_aefbf5f591676d4b56853b21fdf215e69}
+Cancel request. 
+
+Definition at line 1435 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, cancel, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Call\+Inviting, msi\+\_\+\+Error\+Invalid\+State, msi\+\_\+\+Error\+No\+Call, msi\+\_\+msg\+\_\+set\+\_\+reason(), msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, send\+\_\+message(), \+\_\+\+M\+S\+I\+Call\+::state, terminate\+\_\+call(), and Type\+Request.
+
+
+
+Referenced by handle\+\_\+timeout(), msi\+\_\+kill(), and toxav\+\_\+cancel().
+
+
+\begin{DoxyCode}
+1436 \{
+1437     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1438     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Canceling call: %u; reason: %s"}, session, call\_index, reason ? 
+      reason : \textcolor{stringliteral}{"Unknown"});
+1439 
+1440     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1441         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Invalid call index!"});
+1442         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1443         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1444     \}
+1445 
+1446     \textcolor{keywordflow}{if} ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} != \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\_CallInviting} ) \{
+1447         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is in invalid state: %u"}, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->
+      \hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state});
+1448         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1449         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState};
+1450     \}
+1451 
+1452     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_cancel = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( 
+      \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa3bc11c46b5beb3df428936d6f53b03f7}{TypeRequest}, \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028afa28df73c87d81742155531f0f36dc71}{cancel} );
+1453 
+1454     \textcolor{comment}{/* FIXME */}
+1455 \textcolor{preprocessor}{#if 0}
+1456 
+1457     \textcolor{keywordflow}{if} ( reason && strlen(reason) < \textcolor{keyword}{sizeof}(\hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType}) ) \{
+1458         \hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType} reason\_cast;
+1459         memset(reason\_cast, \textcolor{charliteral}{'\(\backslash\)0'}, \textcolor{keyword}{sizeof}(\hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType}));
+1460         memcpy(reason\_cast, reason, strlen(reason));
+1461         \hyperlink{msi_8c_abc73c78a9121c32f35e4847af962c889}{msi\_msg\_set\_reason}(msg\_cancel, reason\_cast);
+1462     \}
+1463 
+1464 \textcolor{preprocessor}{#else}
+1465     (void)reason;
+1466 
+1467 \textcolor{preprocessor}{#endif}
+1468 
+1469     \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index], msg\_cancel, peer );
+1470     free ( msg\_cancel );
+1471 
+1472     \hyperlink{msi_8c_abf7deacfacdcb5b7cc4cfc163583c40d}{terminate\_call} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] );
+1473     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1474 
+1475     \textcolor{keywordflow}{return} 0;
+1476 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_aefbf5f591676d4b56853b21fdf215e69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_aefbf5f591676d4b56853b21fdf215e69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_ad82b81e88f4a912b7ec492baf6ab7ea8}{\index{msi.\+h@{msi.\+h}!msi\+\_\+change\+\_\+csettings@{msi\+\_\+change\+\_\+csettings}}
+\index{msi\+\_\+change\+\_\+csettings@{msi\+\_\+change\+\_\+csettings}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+change\+\_\+csettings}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+change\+\_\+csettings (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{const {\bf M\+S\+I\+C\+Settings} $\ast$}]{csettings}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_ad82b81e88f4a912b7ec492baf6ab7ea8}
+Change codec settings of the current call. 
+
+Definition at line 1542 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Codec\+Settings\+::audio\+\_\+bitrate, \+\_\+\+M\+S\+I\+Codec\+Settings\+::audio\+\_\+channels, \+\_\+\+M\+S\+I\+Codec\+Settings\+::audio\+\_\+frame\+\_\+duration, \+\_\+\+M\+S\+I\+Codec\+Settings\+::audio\+\_\+sample\+\_\+rate, \+\_\+\+M\+S\+I\+Codec\+Settings\+::call\+\_\+type, \+\_\+\+M\+S\+I\+Session\+::calls, \+\_\+\+M\+S\+I\+Call\+::csettings\+\_\+local, invite, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, \+\_\+\+M\+S\+I\+Codec\+Settings\+::max\+\_\+video\+\_\+height, \+\_\+\+M\+S\+I\+Codec\+Settings\+::max\+\_\+video\+\_\+width, msi\+\_\+\+Call\+Active, msi\+\_\+\+Error\+Invalid\+State, msi\+\_\+\+Error\+No\+Call, msi\+\_\+msg\+\_\+set\+\_\+csettings(), msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peers, send\+\_\+message(), \+\_\+\+M\+S\+I\+Call\+::state, Type\+Request, and \+\_\+\+M\+S\+I\+Codec\+Settings\+::video\+\_\+bitrate.
+
+
+
+Referenced by toxav\+\_\+change\+\_\+settings().
+
+
+\begin{DoxyCode}
+1543 \{
+1544     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1545 
+1546     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Changing media on call: %d"}, call\_index);
+1547 
+1548     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1549         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Invalid call index!"});
+1550         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1551         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1552     \}
+1553 
+1554     \hyperlink{struct___m_s_i_call}{MSICall} *call = session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index];
+1555 
+1556     \textcolor{keywordflow}{if} ( call->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} != \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\_CallActive} ) \{
+1557         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is not active!"});
+1558         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1559         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState};
+1560     \}
+1561 
+1562     \hyperlink{struct___m_s_i_codec_settings}{MSICSettings} *local = &call->\hyperlink{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}{csettings\_local};
+1563 
+1564     \textcolor{keywordflow}{if} (
+1565         local->\hyperlink{struct___m_s_i_codec_settings_a24d841d0ab8a0b3f12f559aec494e4fe}{call\_type} == csettings->\hyperlink{struct___m_s_i_codec_settings_a24d841d0ab8a0b3f12f559aec494e4fe}{call\_type} &&
+1566         local->\hyperlink{struct___m_s_i_codec_settings_af0eac99d4181795e8a595d244e745192}{video\_bitrate} == csettings->\hyperlink{struct___m_s_i_codec_settings_af0eac99d4181795e8a595d244e745192}{video\_bitrate} &&
+1567         local->\hyperlink{struct___m_s_i_codec_settings_ab81ecded1f7c46e120c8f2afa7b2c5cc}{max\_video\_width} == csettings->\hyperlink{struct___m_s_i_codec_settings_ab81ecded1f7c46e120c8f2afa7b2c5cc}{max\_video\_width} &&
+1568         local->\hyperlink{struct___m_s_i_codec_settings_a4fef4b2fa1a8ae8446314ad0af4ce698}{max\_video\_height} == csettings->\hyperlink{struct___m_s_i_codec_settings_a4fef4b2fa1a8ae8446314ad0af4ce698}{max\_video\_height} &&
+1569         local->\hyperlink{struct___m_s_i_codec_settings_a5d9a8b59b2eb1eef8dbdcb032bf1dd01}{audio\_bitrate} == csettings->\hyperlink{struct___m_s_i_codec_settings_a5d9a8b59b2eb1eef8dbdcb032bf1dd01}{audio\_bitrate} &&
+1570         local->\hyperlink{struct___m_s_i_codec_settings_a61b592233f5a65705eb2600d38e365cd}{audio\_frame\_duration} == csettings->
+      \hyperlink{struct___m_s_i_codec_settings_a61b592233f5a65705eb2600d38e365cd}{audio\_frame\_duration} &&
+1571         local->\hyperlink{struct___m_s_i_codec_settings_a66da4482e934a2700e07a39fa0838559}{audio\_sample\_rate} == csettings->
+      \hyperlink{struct___m_s_i_codec_settings_a66da4482e934a2700e07a39fa0838559}{audio\_sample\_rate} &&
+1572         local->\hyperlink{struct___m_s_i_codec_settings_a1b04e9669a2929f425e867440b6d826d}{audio\_channels} == csettings->\hyperlink{struct___m_s_i_codec_settings_a1b04e9669a2929f425e867440b6d826d}{audio\_channels} ) \{
+1573         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is already set accordingly!"});
+1574         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1575         \textcolor{keywordflow}{return} -1;
+1576     \}
+1577 
+1578     *local = *csettings;
+1579 
+1580     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_invite = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( 
+      \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa3bc11c46b5beb3df428936d6f53b03f7}{TypeRequest}, \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a1626b80e8928e701cbf05e1794eb4504}{invite} );
+1581 
+1582     \hyperlink{msi_8c_ad8cf444077a0744601cf9107fbb6dbb8}{msi\_msg\_set\_csettings} ( msg\_invite, local );
+1583     \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, call, msg\_invite, call->\hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}[0] );
+1584     free ( msg\_invite );
+1585 
+1586     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Request for media change sent"});
+1587 
+1588     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1589 
+1590     \textcolor{keywordflow}{return} 0;
+1591 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_ad82b81e88f4a912b7ec492baf6ab7ea8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_ad82b81e88f4a912b7ec492baf6ab7ea8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a6596ff23a6bcdd19c4fa1985dcc6b257}{\index{msi.\+h@{msi.\+h}!msi\+\_\+do@{msi\+\_\+do}}
+\index{msi\+\_\+do@{msi\+\_\+do}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+do}]{\setlength{\rightskip}{0pt plus 5cm}void msi\+\_\+do (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a6596ff23a6bcdd19c4fa1985dcc6b257}
+Main msi loop 
+
+Definition at line 1593 of file msi.\+c.
+
+
+
+References current\+\_\+time\+\_\+monotonic(), \+\_\+\+Timer\+::func, \+\_\+\+Timer\+::id, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+Timer\+::timeout, \+\_\+\+M\+S\+I\+Session\+::timer\+\_\+handler, timer\+\_\+release(), and \+\_\+\+Timer\+Handler\+::timers.
+
+
+
+Referenced by toxav\+\_\+do().
+
+
+\begin{DoxyCode}
+1594 \{
+1595     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1596 
+1597     \hyperlink{struct___timer_handler}{TimerHandler} *timer = session->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler};
+1598 
+1599     uint64\_t time = \hyperlink{irc__syncbot_8c_ae8ecaef140b786a2720eadbb85918e81}{current\_time\_monotonic}();
+1600 
+1601     \textcolor{keywordflow}{while} ( timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0] && timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]->\hyperlink{struct___timer_a053cdea1d85795444fe1aaa6b277a0ec}{timeout} < time ) \{
+1602         \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Executing timer assigned at: %d"}, timer->
+      \hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]->\hyperlink{struct___timer_a053cdea1d85795444fe1aaa6b277a0ec}{timeout});
+1603 
+1604         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]->\hyperlink{struct___timer_a7441ef0865bcb3db9b8064dd7375c1ea}{id};
+1605         timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]->\hyperlink{struct___timer_a7b75ecf42c49a289b6dd4fefdbf86605}{func}(timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]);
+1606 
+1607         \textcolor{comment}{/* In case function has released timer */}
+1608         \textcolor{keywordflow}{if} (timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0] && timer->\hyperlink{struct___timer_handler_af6a69553fb8462326147c121a4c3e98c}{timers}[0]->\hyperlink{struct___timer_a7441ef0865bcb3db9b8064dd7375c1ea}{id} == \textcolor{keywordtype}{id})
+1609             \hyperlink{msi_8c_ab6f36f5852629fabd6e3c85451e5be65}{timer\_release}(timer, \textcolor{keywordtype}{id});
+1610     \}
+1611 
+1612     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1613 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{d9/d06/msi_8h_a6596ff23a6bcdd19c4fa1985dcc6b257_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d06/msi_8h_a6596ff23a6bcdd19c4fa1985dcc6b257_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a8023a8417a3e79e382a9ff3d99cdd24a}{\index{msi.\+h@{msi.\+h}!msi\+\_\+hangup@{msi\+\_\+hangup}}
+\index{msi\+\_\+hangup@{msi\+\_\+hangup}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+hangup}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+hangup (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a8023a8417a3e79e382a9ff3d99cdd24a}
+Hangup active call. 
+
+Definition at line 1367 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, end, handle\+\_\+timeout(), L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, m\+\_\+deftout, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Call\+Active, msi\+\_\+\+Call\+Over, msi\+\_\+\+Error\+Invalid\+State, msi\+\_\+\+Error\+No\+Call, msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peer\+\_\+count, \+\_\+\+M\+S\+I\+Call\+::peers, \+\_\+\+M\+S\+I\+Call\+::request\+\_\+timer\+\_\+id, send\+\_\+message(), \+\_\+\+M\+S\+I\+Call\+::state, timer\+\_\+alloc(), and Type\+Request.
+
+
+
+Referenced by toxav\+\_\+hangup().
+
+
+\begin{DoxyCode}
+1368 \{
+1369     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1370     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Hanging up call: %u"}, session, call\_index);
+1371 
+1372     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1373         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Invalid call index!"});
+1374         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1375         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1376     \}
+1377 
+1378     \textcolor{keywordflow}{if} ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} != \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675abd210588def2a0d8ee3355cefbd28156}{msi\_CallActive} ) \{
+1379         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is not active!"});
+1380         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1381         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState};
+1382     \}
+1383 
+1384     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_end = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa3bc11c46b5beb3df428936d6f53b03f7}{TypeRequest}, 
+      \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end} );
+1385 
+1386     \textcolor{comment}{/* hangup for each peer */}
+1387     \textcolor{keywordtype}{int} it = 0;
+1388 
+1389     \textcolor{keywordflow}{for} ( ; it < session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a62e9da1e57f84fd224590c4d466724aa}{peer\_count}; it ++ )
+1390         \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index], msg\_end, session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}[it] );
+1391 
+1392     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} = \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}{msi\_CallOver};
+1393 
+1394     free ( msg\_end );
+1395 
+1396     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}{request\_timer\_id} =
+1397         \hyperlink{msi_8c_a0a093063a8a2e48ca88d8d47234415cb}{timer\_alloc} ( session, \hyperlink{msi_8c_a7a5b1246a4f5680ee60c45e69e04dcd4}{handle\_timeout}, call\_index, 
+      \hyperlink{msi_8c_a41cb7a80dff15699d766e4364228a47c}{m\_deftout} );
+1398 
+1399     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1400     \textcolor{keywordflow}{return} 0;
+1401 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a8023a8417a3e79e382a9ff3d99cdd24a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a8023a8417a3e79e382a9ff3d99cdd24a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a9f714a4729f22ca5810ff0ee89313fab}{\index{msi.\+h@{msi.\+h}!msi\+\_\+invite@{msi\+\_\+invite}}
+\index{msi\+\_\+invite@{msi\+\_\+invite}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+invite}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+invite (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t $\ast$}]{call\+\_\+index, }
+\item[{const {\bf M\+S\+I\+C\+Settings} $\ast$}]{csettings, }
+\item[{uint32\+\_\+t}]{rngsec, }
+\item[{uint32\+\_\+t}]{friend\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a9f714a4729f22ca5810ff0ee89313fab}
+Send invite request to friend\+\_\+id. 
+
+Definition at line 1313 of file msi.\+c.
+
+
+
+References add\+\_\+peer(), \+\_\+\+M\+S\+I\+Call\+::call\+\_\+idx, \+\_\+\+M\+S\+I\+Session\+::calls, \+\_\+\+M\+S\+I\+Call\+::csettings\+\_\+local, handle\+\_\+timeout(), i, \+\_\+\+M\+S\+I\+Call\+::id, init\+\_\+call(), invite, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, m\+\_\+deftout, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Call\+Inviting, msi\+\_\+\+Error\+Already\+In\+Call\+With\+Peer, msi\+\_\+\+Error\+Reached\+Call\+Limit, msi\+\_\+msg\+\_\+set\+\_\+csettings(), msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peers, \+\_\+\+M\+S\+I\+Call\+::request\+\_\+timer\+\_\+id, send\+\_\+message(), \+\_\+\+M\+S\+I\+Call\+::state, t\+\_\+randomstr(), timer\+\_\+alloc(), and Type\+Request.
+
+
+
+Referenced by toxav\+\_\+call().
+
+
+\begin{DoxyCode}
+1318 \{
+1319     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1320 
+1321     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Inviting friend: %u"}, session, 
+      \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id});
+1322 
+1323 
+1324     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0;
+1325 
+1326     \textcolor{keywordflow}{for} (; i < session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls}; i ++)
+1327         \textcolor{keywordflow}{if} (session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[i] && session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[i]->\hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}[0] == 
+      \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id}) \{
+1328             \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Already in a call with friend %d"}, 
+      \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id});
+1329             pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1330             \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229af5059b2f3d7d5e755fcb41848c892980}{msi\_ErrorAlreadyInCallWithPeer};
+1331         \}
+1332 
+1333 
+1334     \hyperlink{struct___m_s_i_call}{MSICall} *call = \hyperlink{msi_8c_adac49290dc2c80bd0921ffbedb78966f}{init\_call} ( session, 1, rngsec ); \textcolor{comment}{/* Just one peer for now */}
+1335 
+1336     \textcolor{keywordflow}{if} ( !call ) \{
+1337         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1338         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Cannot handle more calls"});
+1339         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a0ac1d3777fd5cd52a50e7ce8aec7d4ed}{msi\_ErrorReachedCallLimit};
+1340     \}
+1341 
+1342     *call\_index = call->\hyperlink{struct___m_s_i_call_ad6b287fd08a0cc466cd41bd2e76d5808}{call\_idx};
+1343 
+1344     \hyperlink{msi_8c_acab20b1c203cf44d500df2307b62ae9c}{t\_randomstr} ( call->\hyperlink{struct___m_s_i_call_aa135fbffd11268758f5f21269fb46853}{id}, \textcolor{keyword}{sizeof}(call->\hyperlink{struct___m_s_i_call_aa135fbffd11268758f5f21269fb46853}{id}) );
+1345 
+1346     \hyperlink{msi_8c_ae93f60c5c6d4713db189c4059e36e4c1}{add\_peer} ( call, \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id} );
+1347 
+1348     call->\hyperlink{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}{csettings\_local} = *csettings;
+1349 
+1350     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_invite = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( 
+      \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa3bc11c46b5beb3df428936d6f53b03f7}{TypeRequest}, \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a1626b80e8928e701cbf05e1794eb4504}{invite} );
+1351 
+1352     \hyperlink{msi_8c_ad8cf444077a0744601cf9107fbb6dbb8}{msi\_msg\_set\_csettings}(msg\_invite, csettings);
+1353     \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, call, msg\_invite, \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id} );
+1354     free( msg\_invite );
+1355 
+1356     call->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} = \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\_CallInviting};
+1357 
+1358     call->\hyperlink{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}{request\_timer\_id} = \hyperlink{msi_8c_a0a093063a8a2e48ca88d8d47234415cb}{timer\_alloc} ( session, 
+      \hyperlink{msi_8c_a7a5b1246a4f5680ee60c45e69e04dcd4}{handle\_timeout}, call->\hyperlink{struct___m_s_i_call_ad6b287fd08a0cc466cd41bd2e76d5808}{call\_idx}, \hyperlink{msi_8c_a41cb7a80dff15699d766e4364228a47c}{m\_deftout} );
+1359 
+1360     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Invite sent"});
+1361 
+1362     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1363 
+1364     \textcolor{keywordflow}{return} 0;
+1365 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a9f714a4729f22ca5810ff0ee89313fab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a9f714a4729f22ca5810ff0ee89313fab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a85e4f629815819ee2abed82041bd9436}{\index{msi.\+h@{msi.\+h}!msi\+\_\+kill@{msi\+\_\+kill}}
+\index{msi\+\_\+kill@{msi\+\_\+kill}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a85e4f629815819ee2abed82041bd9436}
+Terminate control session. 
+
+Definition at line 1273 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, m\+\_\+callback\+\_\+msi\+\_\+packet(), \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, \+\_\+\+M\+S\+I\+Session\+::messenger\+\_\+handle, msi\+\_\+\+Call\+Inviting, msi\+\_\+cancel(), msi\+\_\+stopcall(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peers, \+\_\+\+M\+S\+I\+Call\+::state, and \+\_\+\+M\+S\+I\+Session\+::timer\+\_\+handler.
+
+
+
+Referenced by toxav\+\_\+kill(), and toxav\+\_\+new().
+
+
+\begin{DoxyCode}
+1274 \{
+1275     \textcolor{keywordflow}{if} (session == NULL) \{
+1276         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Tried to terminate non-existing session"});
+1277         \textcolor{keywordflow}{return} -1;
+1278     \}
+1279 
+1280     \hyperlink{_messenger_8c_a6f1431ef7ea09d3bac1b93f4dfa75764}{m\_callback\_msi\_packet}((\textcolor{keyword}{struct} \hyperlink{struct_messenger}{Messenger} *) session->
+      \hyperlink{struct___m_s_i_session_a2adfe301d17504006b8321f71f642039}{messenger\_handle}, NULL, NULL);
+1281     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1282 
+1283     \textcolor{comment}{/* Cancel active calls */}
+1284     int32\_t idx = 0;
+1285 
+1286     \textcolor{keywordflow}{for} (; idx < session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls}; idx ++) \textcolor{keywordflow}{if} ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[idx] ) \{
+1287             \textcolor{comment}{/* Cancel all? */}
+1288             uint16\_t \_it = 0;
+1289             \textcolor{comment}{/*for ( ; \_it < session->calls[idx]->peer\_count; \_it++ )}
+1290 \textcolor{comment}{                * FIXME: will not work on multiple peers, must cancel call for all peers}
+1291 \textcolor{comment}{                */}
+1292             \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}{MSICallState} state = session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[idx]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state};
+1293 
+1294             \textcolor{keywordflow}{if} (state == \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a8985e709f0a11b30a998d833c7e29132}{msi\_CallInviting}) \{
+1295                 \hyperlink{msi_8c_aefbf5f591676d4b56853b21fdf215e69}{msi\_cancel}( session, idx, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[idx]->
+      \hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers} [\_it], \textcolor{stringliteral}{"MSI session terminated!"} );
+1296             \} \textcolor{keywordflow}{else} \{
+1297                 \hyperlink{msi_8c_a4d2aa9bfe7f4a96275204f2797d6e7eb}{msi\_stopcall}(session, idx);
+1298             \}
+1299         \}
+1300 
+1301     free(((\hyperlink{struct___timer_handler}{TimerHandler} *)session->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler})->timers);
+1302     free(session->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler});
+1303 
+1304     free ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls} );
+1305     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1306     pthread\_mutex\_destroy(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1307 
+1308     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Terminated session: %p"}, session);
+1309     free ( session );
+1310     \textcolor{keywordflow}{return} 0;
+1311 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a85e4f629815819ee2abed82041bd9436_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d9/d06/msi_8h_a85e4f629815819ee2abed82041bd9436_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_af33f2706f6d0f8e547716e2f6c5f68d3}{\index{msi.\+h@{msi.\+h}!msi\+\_\+new@{msi\+\_\+new}}
+\index{msi\+\_\+new@{msi\+\_\+new}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+Session}$\ast$ msi\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{messenger, }
+\item[{int32\+\_\+t}]{max\+\_\+calls}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_af33f2706f6d0f8e547716e2f6c5f68d3}
+Start the control session. 
+
+Definition at line 1202 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::agent\+\_\+handler, \+\_\+\+M\+S\+I\+Session\+::call\+\_\+timeout, \+\_\+\+M\+S\+I\+Session\+::calls, create\+\_\+recursive\+\_\+mutex(), error, \+\_\+\+M\+S\+I\+Session\+::frequ, handle\+\_\+remote\+\_\+connection\+\_\+change(), L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, m\+\_\+callback\+\_\+connectionstatus\+\_\+internal\+\_\+av(), m\+\_\+callback\+\_\+msi\+\_\+packet(), \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, \+\_\+\+M\+S\+I\+Session\+::messenger\+\_\+handle, msi\+\_\+handle\+\_\+packet(), \+\_\+\+M\+S\+I\+Session\+::mutex, and \+\_\+\+M\+S\+I\+Session\+::timer\+\_\+handler.
+
+
+
+Referenced by toxav\+\_\+new().
+
+
+\begin{DoxyCode}
+1203 \{
+1204     \textcolor{keywordflow}{if} (messenger == NULL) \{
+1205         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Could not init session on empty messenger!"});
+1206         \textcolor{keywordflow}{return} NULL;
+1207     \}
+1208 
+1209     \textcolor{keywordflow}{if} ( !max\_calls ) \{
+1210         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Invalid max call treshold!"});
+1211         \textcolor{keywordflow}{return} NULL;
+1212     \}
+1213 
+1214     \hyperlink{struct___m_s_i_session}{MSISession} *retu = calloc ( \textcolor{keyword}{sizeof} ( \hyperlink{struct___m_s_i_session}{MSISession} ), 1 );
+1215 
+1216     \textcolor{keywordflow}{if} (retu == NULL) \{
+1217         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Allocation failed! Program might misbehave!"});
+1218         \textcolor{keywordflow}{return} NULL;
+1219     \}
+1220 
+1221     \textcolor{keywordflow}{if} (!(retu->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls} = calloc( \textcolor{keyword}{sizeof} (\hyperlink{struct___m_s_i_call}{MSICall} *), max\_calls ))) \{
+1222         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Allocation failed! Program might misbehave!"});
+1223         \textcolor{keywordflow}{goto} \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error};
+1224     \}
+1225 
+1226     retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler} = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct___timer_handler}{TimerHandler}));
+1227 
+1228     \textcolor{keywordflow}{if} (retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler} == NULL) \{
+1229         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Allocation failed! Program might misbehave!"});
+1230         \textcolor{keywordflow}{goto} \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error};
+1231     \}
+1232 
+1233     \textcolor{comment}{/* Allocate space for timers */}
+1234     ((\hyperlink{struct___timer_handler}{TimerHandler} *)retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler})->max\_capacity = max\_calls * 10;
+1235 
+1236     \textcolor{keywordflow}{if} (!(((\hyperlink{struct___timer_handler}{TimerHandler} *)retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler})->timers = calloc(max\_calls * 10, \textcolor{keyword}{
+      sizeof}(\hyperlink{struct___timer}{Timer} *)))) \{
+1237         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Allocation failed! Program might misbehave!"});
+1238         \textcolor{keywordflow}{goto} \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error};
+1239     \}
+1240 
+1241     \textcolor{keywordflow}{if} (\hyperlink{util_8c_a2f0ae269c015342e2d29a251237ccce2}{create\_recursive\_mutex}(retu->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex}) != 0) \{
+1242         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Failed to init mutex! Program might misbehave"});
+1243         \textcolor{keywordflow}{goto} \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error};
+1244     \}
+1245 
+1246     retu->\hyperlink{struct___m_s_i_session_a2adfe301d17504006b8321f71f642039}{messenger\_handle} = messenger;
+1247     retu->\hyperlink{struct___m_s_i_session_ae284478ea42e8d4ed283876c3ae18c8a}{agent\_handler} = NULL;
+1248     retu->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} = max\_calls;
+1249     retu->\hyperlink{struct___m_s_i_session_a54c9341406a254204cca6d48dd54cdc8}{frequ} = 10000; \textcolor{comment}{/* default value? */}
+1250     retu->\hyperlink{struct___m_s_i_session_a4a61d9413f442d27898849e0d8a26720}{call\_timeout} = 30000; \textcolor{comment}{/* default value? */}
+1251 
+1252     \hyperlink{_messenger_8c_a6f1431ef7ea09d3bac1b93f4dfa75764}{m\_callback\_msi\_packet}(messenger, \hyperlink{msi_8c_aa944624a15314d9d2eff6373f9506725}{msi\_handle\_packet}, retu );
+1253 
+1254     \textcolor{comment}{/* This is called when remote terminates session */}
+1255     \hyperlink{_messenger_8c_a306c3602085500d8d23adbd52ac59006}{m\_callback\_connectionstatus\_internal\_av}(messenger, 
+      \hyperlink{msi_8c_a4d438c93388bdd8b338bd50632144de5}{handle\_remote\_connection\_change}, retu);
+1256 
+1257     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"New msi session: %p max calls: %u"}, retu, max\_calls);
+1258     \textcolor{keywordflow}{return} retu;
+1259 
+1260 \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}:
+1261 
+1262     \textcolor{keywordflow}{if} (retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler}) \{
+1263         free(((\hyperlink{struct___timer_handler}{TimerHandler} *)retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler})->timers);
+1264         free(retu->\hyperlink{struct___m_s_i_session_a06ab765308a606d809c4c2a2c71710ce}{timer\_handler});
+1265     \}
+1266 
+1267     free(retu->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls});
+1268     free(retu);
+1269     \textcolor{keywordflow}{return} NULL;
+1270 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_af33f2706f6d0f8e547716e2f6c5f68d3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_af33f2706f6d0f8e547716e2f6c5f68d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a1121e56554f776e97436cc9a6a3769c4}{\index{msi.\+h@{msi.\+h}!msi\+\_\+register\+\_\+callback@{msi\+\_\+register\+\_\+callback}}
+\index{msi\+\_\+register\+\_\+callback@{msi\+\_\+register\+\_\+callback}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+register\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void msi\+\_\+register\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{{\bf M\+S\+I\+Callback\+Type}}]{callback, }
+\item[{{\bf M\+S\+I\+Callback\+I\+D}}]{id, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a1121e56554f776e97436cc9a6a3769c4}
+Callback setter. 
+
+Definition at line 1195 of file msi.\+c.
+
+
+
+Referenced by toxav\+\_\+register\+\_\+callstate\+\_\+callback().
+
+
+\begin{DoxyCode}
+1196 \{
+1197     session->callbacks[id].first = callback;
+1198     session->callbacks[id].second = userdata;
+1199 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a1121e56554f776e97436cc9a6a3769c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a9d846fba046c8539b9e183cc01a25fe9}{\index{msi.\+h@{msi.\+h}!msi\+\_\+reject@{msi\+\_\+reject}}
+\index{msi\+\_\+reject@{msi\+\_\+reject}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+reject}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+reject (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{const char $\ast$}]{reason}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a9d846fba046c8539b9e183cc01a25fe9}
+Reject incoming call. 
+
+Definition at line 1478 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, handle\+\_\+timeout(), L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, m\+\_\+deftout, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Call\+Over, msi\+\_\+\+Call\+Starting, msi\+\_\+\+Error\+Invalid\+State, msi\+\_\+\+Error\+No\+Call, msi\+\_\+msg\+\_\+set\+\_\+reason(), msi\+\_\+new\+\_\+message(), \+\_\+\+M\+S\+I\+Session\+::mutex, \+\_\+\+M\+S\+I\+Call\+::peer\+\_\+count, \+\_\+\+M\+S\+I\+Call\+::peers, reject, \+\_\+\+M\+S\+I\+Call\+::request\+\_\+timer\+\_\+id, send\+\_\+message(), \+\_\+\+M\+S\+I\+Call\+::state, timer\+\_\+alloc(), and Type\+Request.
+
+
+
+Referenced by toxav\+\_\+reject().
+
+
+\begin{DoxyCode}
+1479 \{
+1480     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1481     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Rejecting call: %u; reason: %s"}, session, call\_index, reason ? 
+      reason : \textcolor{stringliteral}{"Unknown"});
+1482 
+1483     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1484         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Invalid call index!"});
+1485         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1486         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1487     \}
+1488 
+1489     \textcolor{keywordflow}{if} ( session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} != \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a62ecc3b8e850f62e9e14a2e38d6061bf}{msi\_CallStarting} ) \{
+1490         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Call is in invalid state!"});
+1491         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1492         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229a4c874bed9952017bb68e0a27d87a9cde}{msi\_ErrorInvalidState};
+1493     \}
+1494 
+1495     \hyperlink{struct___m_s_i_message}{MSIMessage} *msg\_reject = \hyperlink{msi_8c_aed030e510836ee3cc994f84f06a0cc98}{msi\_new\_message} ( 
+      \hyperlink{msi_8c_a6557c179987e0c84ccb97c9f29a302efa3bc11c46b5beb3df428936d6f53b03f7}{TypeRequest}, \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028ac3938f36421013c679a406260a404daa}{reject} );
+1496 
+1497     \textcolor{comment}{/* FIXME */}
+1498 \textcolor{preprocessor}{#if 0}
+1499 
+1500     \textcolor{keywordflow}{if} ( reason && strlen(reason) < \textcolor{keyword}{sizeof}(\hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType}) ) \{
+1501         \hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType} reason\_cast;
+1502         memset(reason\_cast, \textcolor{charliteral}{'\(\backslash\)0'}, \textcolor{keyword}{sizeof}(\hyperlink{msi_8h_acc1e8c2d1829721c4addd8547458c9db}{MSIReasonStrType}));
+1503         memcpy(reason\_cast, reason, strlen(reason));
+1504         \hyperlink{msi_8c_abc73c78a9121c32f35e4847af962c889}{msi\_msg\_set\_reason}(msg\_reject, reason\_cast);
+1505     \}
+1506 
+1507 \textcolor{preprocessor}{#else}
+1508     (void)reason;
+1509 
+1510 \textcolor{preprocessor}{#endif}
+1511 
+1512     \hyperlink{msi_8c_ae174427d97e924339f9e2a961ec773a1}{send\_message} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index], msg\_reject,
+1513                    session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}[session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->
+      \hyperlink{struct___m_s_i_call_a62e9da1e57f84fd224590c4d466724aa}{peer\_count} - 1] );
+1514     free ( msg\_reject );
+1515 
+1516     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state} = \hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675a925ec11e0e4a3a9af7d714629632d44b}{msi\_CallOver};
+1517     session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index]->\hyperlink{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}{request\_timer\_id} =
+1518         \hyperlink{msi_8c_a0a093063a8a2e48ca88d8d47234415cb}{timer\_alloc} ( session, \hyperlink{msi_8c_a7a5b1246a4f5680ee60c45e69e04dcd4}{handle\_timeout}, call\_index, 
+      \hyperlink{msi_8c_a41cb7a80dff15699d766e4364228a47c}{m\_deftout} );
+1519 
+1520     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1521     \textcolor{keywordflow}{return} 0;
+1522 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a9d846fba046c8539b9e183cc01a25fe9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a9d846fba046c8539b9e183cc01a25fe9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{msi_8h_a4d2aa9bfe7f4a96275204f2797d6e7eb}{\index{msi.\+h@{msi.\+h}!msi\+\_\+stopcall@{msi\+\_\+stopcall}}
+\index{msi\+\_\+stopcall@{msi\+\_\+stopcall}!msi.\+h@{msi.\+h}}
+\subsubsection[{msi\+\_\+stopcall}]{\setlength{\rightskip}{0pt plus 5cm}int msi\+\_\+stopcall (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+S\+I\+Session} $\ast$}]{session, }
+\item[{int32\+\_\+t}]{call\+\_\+index}
+\end{DoxyParamCaption}
+)}}\label{msi_8h_a4d2aa9bfe7f4a96275204f2797d6e7eb}
+Terminate the call. 
+
+Definition at line 1524 of file msi.\+c.
+
+
+
+References \+\_\+\+M\+S\+I\+Session\+::calls, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, \+\_\+\+M\+S\+I\+Session\+::max\+\_\+calls, msi\+\_\+\+Error\+No\+Call, \+\_\+\+M\+S\+I\+Session\+::mutex, and terminate\+\_\+call().
+
+
+
+Referenced by msi\+\_\+kill(), and toxav\+\_\+stop\+\_\+call().
+
+
+\begin{DoxyCode}
+1525 \{
+1526     pthread\_mutex\_lock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1527     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Session: %p Stopping call index: %u"}, session, call\_index);
+1528 
+1529     \textcolor{keywordflow}{if} ( call\_index < 0 || call\_index >= session->\hyperlink{struct___m_s_i_session_ae4bbb4682dc5c74588083ca06ac2f76f}{max\_calls} || !session->
+      \hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] ) \{
+1530         pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1531         \textcolor{keywordflow}{return} \hyperlink{msi_8h_a52e2ed4d0fa75f870135d452f1f6c229ad3798ce3d9dc448484bf6bfea7a176d3}{msi\_ErrorNoCall};
+1532     \}
+1533 
+1534     \textcolor{comment}{/* just terminate it */}
+1535 
+1536     \hyperlink{msi_8c_abf7deacfacdcb5b7cc4cfc163583c40d}{terminate\_call} ( session, session->\hyperlink{struct___m_s_i_session_ac40fee673bae4030b812579c57389a02}{calls}[call\_index] );
+1537 
+1538     pthread\_mutex\_unlock(session->\hyperlink{struct___m_s_i_session_ab4293016252c4d4e63549b0773fa0f33}{mutex});
+1539     \textcolor{keywordflow}{return} 0;
+1540 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a4d2aa9bfe7f4a96275204f2797d6e7eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d06/msi_8h_a4d2aa9bfe7f4a96275204f2797d6e7eb_icgraph}
+\end{center}
+\end{figure}
+
+

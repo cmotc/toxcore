@@ -1,0 +1,340 @@
+\#\+Install Instructions
+
+
+\begin{DoxyItemize}
+\item \href{#installation}{\tt Installation}
+\begin{DoxyItemize}
+\item \href{#unix}{\tt Unix like}
+\begin{DoxyItemize}
+\item \href{#quick-install}{\tt Quick install}
+\item \href{#build-manually}{\tt Build manually}
+\begin{DoxyItemize}
+\item \href{#compile-toxcore}{\tt Compile toxcore}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \href{#osx}{\tt O\+S X}
+\begin{DoxyItemize}
+\item \href{#homebrew}{\tt Homebrew}
+\item \href{#non-homebrew}{\tt Non-\/\+Homebrew}
+\end{DoxyItemize}
+\item \href{#windows}{\tt Windows}
+\begin{DoxyItemize}
+\item \href{#windows-cross-compile}{\tt Cross-\/\+Compile}
+\begin{DoxyItemize}
+\item \href{#windows-cross-compile-vm}{\tt Setting up a V\+M}
+\item \href{#windows-cross-compile-environment}{\tt Setting up the environment}
+\item \href{#windows-cross-compile-compiling}{\tt Compiling}
+\end{DoxyItemize}
+\item \href{#windows-native}{\tt Native}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \href{#additional}{\tt Additional}
+\begin{DoxyItemize}
+\item \href{#aconf}{\tt Advanced configure options}
+\item \href{#av}{\tt A/\+V support}
+\begin{DoxyItemize}
+\item \href{#libtoxav}{\tt libtoxav}
+\end{DoxyItemize}
+\item \href{#bootstrapd}{\tt Bootstrap daemon}
+\item \href{#ntox}{\tt n\+Tox}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\label{_installation}%
+ \subsection*{Installation}
+
+\label{_unix}%
+ \subsubsection*{Most Unix like O\+Ses\+:}
+
+\paragraph*{Quick install\+:}
+
+On Gentoo\+: ``` \section*{layman -\/f \&\& layman -\/a tox-\/overlay \&\& emerge net-\/libs/tox}
+
+```
+
+And you're done {\ttfamily \+:)} If you happen to run some other distro which isn't made for compiling, there are steps below\+:
+
+\paragraph*{Build manually}
+
+Build dependencies\+:
+
+Note\+: package fetching commands may vary by O\+S.
+
+On Ubuntu {\ttfamily $<$ 15.\+04} / Debian {\ttfamily $<$ 8}\+:
+
+```bash sudo apt-\/get install build-\/essential libtool autotools-\/dev automake checkinstall check git yasm ```
+
+On Ubuntu {\ttfamily $>$= 15.\+04} / Debian {\ttfamily $>$= 8}\+: ```bash sudo apt-\/get install build-\/essential libtool autotools-\/dev automake checkinstall check git yasm libsodium13 libsodium-\/dev ```
+
+On Fedora\+:
+
+```bash dnf groupinstall \char`\"{}\+Development Tools\char`\"{} dnf install libtool autoconf automake check check-\/devel `{\ttfamily  Using}dnf install "Development Tools\char`\"{}$<$tt$>$is also valid and slightly shorter / cleaner way.$<$/tt$>$@\char`\"{}Rpm Development Tools"`` would carry the remaining dependencies listed here.
+
+On Sun\+O\+S\+:
+
+```pfexcec pkg install autoconf automake gcc-\/47 ``` On Free\+B\+S\+D 10+\+:
+
+```tcsh pkg install net-\/im/tox ``` Note, if you install from ports select Na\+Cl for performance, and sodium if you want it to be portable.
+
+{\bfseries For A/\+V support, also install the dependences listed in the \href{#libtoxav}{\tt libtoxav} section.} Note that you have to install those dependencies {\bfseries before} compiling {\ttfamily toxcore}.
+
+You should get and install \href{https://github.com/jedisct1/libsodium}{\tt libsodium}. If you have installed {\ttfamily libsodium} from repo, ommit this step, and jump directly to \href{#compile-toxcore}{\tt compiling toxcore}\+: ```bash git clone git\+://github.com/jedisct1/libsodium.\+git cd libsodium git checkout tags/1.\+0.\+3 ./autogen.sh ./configure \&\& make check sudo checkinstall --install --pkgname libsodium --pkgversion 1.\+0.\+0 --nodoc sudo ldconfig cd .. ```
+
+Or if checkinstall is not easily available for your distribution (e.\+g., Fedora), this will install the libs to /usr/local/lib and the headers to /usr/local/include\+:
+
+```bash git clone git\+://github.com/jedisct1/libsodium.\+git cd libsodium git checkout tags/1.\+0.\+3 ./autogen.sh ./configure make check sudo make install cd .. ```
+
+If your default prefix is {\ttfamily /usr/local} and you happen to get an error that says {\ttfamily \char`\"{}error while loading shared libraries\+: libtoxcore.\+so.\+0\+: cannot open shared object file\+: No such file or directory\char`\"{}}, then you can try running {\ttfamily sudo ldconfig}. If that doesn't fix it, run\+:
+
+```bash echo '/usr/local/lib/' $\vert$ sudo tee -\/a /etc/ld.so.\+conf.\+d/locallib.conf sudo ldconfig ```
+
+You may run into a situation where there is no {\ttfamily /etc/ld.so.\+conf.\+d} directory. You could either create it manually, or append path to local library to {\ttfamily ld.\+so.\+conf}\+:
+
+```bash echo '/usr/local/lib/' $\vert$ sudo tee -\/a /etc/ld.so.\+conf sudo ldconfig ```
+
+\subparagraph*{Compile toxcore}
+
+Then clone this repo, generate makefile, and install {\ttfamily toxcore} system-\/wide\+: ```bash git clone git\+://github.com/irungentoo/toxcore.\+git cd toxcore autoreconf -\/i ./configure make sudo make install ```
+
+\label{_osx}%
+ \subsubsection*{O\+S X\+:}
+
+You need the latest X\+Code with the Developer Tools (Preferences -\/$>$ Downloads -\/$>$ Command Line Tools). The following libraries are required along with libsodium and cmake for Mountain Lion and X\+Code 4.\+6.\+3 install libtool, automake and autoconf. You can download them with Homebrew, or install them manually.
+
+{\bfseries Note\+: O\+S X users can also install Toxcore using \href{other/osx_build_script_toxcore.sh}{\tt osx\+\_\+build\+\_\+script\+\_\+toxcore.\+sh}}
+
+There are no binaries/executables going to /bin/ or /usr/bin/ now. Everything is compiled and ran from the inside your local branch. See \href{#usage}{\tt Usage} below. \label{_homebrew}%
+ \paragraph*{Homebrew\+:}
+
+To install from the formula\+: ```bash brew tap Tox/tox brew install --H\+E\+A\+D libtoxcore ```
+
+To do it manually\+: ``` brew install libtool automake autoconf libsodium check ``` Then clone this repo and generate makefile\+: ```bash git clone git\+://github.com/irungentoo/toxcore.\+git cd toxcore autoreconf -\/i ./configure make make install ```
+
+If execution fails with errors like \char`\"{}dyld\+: Library not loaded\+: /opt/tox-\/im/lib/libtoxcore.\+0.\+dylib\char`\"{}, you may need to specify libsodium path\+:
+
+Determine paths\+: ``` brew list libsodium ```
+
+Configure include and lib folder and build again\+: ```bash ./configure --with-\/libsodium-\/headers=/usr/local/\+Cellar/libsodium/1.0.\+0/include/ --with-\/libsodium-\/libs=/usr/local/\+Cellar/libsodium/1.0.\+0/lib/ make make install ```
+
+\label{_non-homebrew}%
+ \paragraph*{Non-\/homebrew\+:}
+
+Grab the following packages\+:
+\begin{DoxyItemize}
+\item \href{https://gnu.org/software/libtool/}{\tt https\+://gnu.\+org/software/libtool/}
+\item \href{https://gnu.org/software/autoconf/}{\tt https\+://gnu.\+org/software/autoconf/}
+\item \href{https://gnu.org/software/automake/}{\tt https\+://gnu.\+org/software/automake/}
+\item \href{https://github.com/jedisct1/libsodium}{\tt https\+://github.\+com/jedisct1/libsodium}
+\item \href{http://check.sourceforge.net/}{\tt http\+://check.\+sourceforge.\+net/}
+\item \href{http://yasm.tortall.net/Download.html}{\tt http\+://yasm.\+tortall.\+net/\+Download.\+html} (install before libvpx)
+\item \href{https://code.google.com/p/webm/downloads/list}{\tt https\+://code.\+google.\+com/p/webm/downloads/list}
+\item \href{http://www.opus-codec.org/downloads/}{\tt http\+://www.\+opus-\/codec.\+org/downloads/}
+\item \href{http://www.freedesktop.org/wiki/Software/pkg-config/}{\tt http\+://www.\+freedesktop.\+org/wiki/\+Software/pkg-\/config/}
+\end{DoxyItemize}
+
+Macports\+: (\href{https://www.macports.org/}{\tt https\+://www.\+macports.\+org/}) All toxcore dependencies can be installed from Mac\+Ports. This is often easier on Power\+P\+C Macs, and any version of O\+S X prior to 10.\+6, since Homebrew is supported on 10.\+6 and up, but not much (or at all) on older systems. A few packages have slightly different names from the corresponding package in Debian.
+
+Same\+: libtool autoconf automake libsodium check yasm Different\+: libvpx (webm) libopus pkgconfig gettext
+
+(the libintl, from gettext, built into O\+S X 10.\+5 is missing libintl\+\_\+setlocale, but the Macports build has it)
+
+Verify where libintl is on your system\+: (Mac\+Ports puts it in /opt/local) ``` for d in /usr/local/lib /opt/local/lib /usr/lib /lib; do ls -\/l \$d/libintl.$\ast$; done ```
+
+Check if that copy has libintl\+\_\+setlocale\+: ``` nm /opt/local/lib/libintl.8.\+dylib $\vert$ grep \+\_\+libintl\+\_\+setlocale ```
+
+Certain other tools may not be installed, or outdated, and should also be installed from Mac\+Ports for simplicity\+: git cmake
+
+If libsodium was installed with Mac\+Ports, you may want to symlink the copy in /opt/local/lib to /usr/local/lib. That way you don't need special configure switches for toxcore to find libsodium, and every time Mac\+Ports updates libsodium, the new version will be linked to toxcore every time you build\+: ``` ln -\/s /opt/local/lib/libsodium.dylib /usr/local/lib/libsodium.dylib ```
+
+Much of the build can then be done as for other platforms\+: git clone, and so on. Differences will be noted with (O\+S X 10.\+5 specific)
+
+pkg-\/config is important for enabling a/v support in tox core, failure to install pkg-\/config will prevent tox core form finding the required libopus/libvpx libraries. (pkg-\/config may not configure properly, if you get an error about G\+L\+I\+B, run configure with the following parameter, --with-\/internal-\/glib).
+
+Uncompress and install them all. Make sure to follow the R\+E\+A\+D\+M\+E as the instructions change, but they all follow the same pattern below\+:
+
+```bash ./configure make sudo make install ```
+
+Compiling and installing Tox Core
+
+```bash cd toxcore autoreconf -\/i ./configure (O\+S X 10.\+5 specific) ./configure C\+C=\char`\"{}gcc -\/arch ppc -\/arch i386\char`\"{} C\+X\+X=\char`\"{}g++ -\/arch ppc -\/arch i386\char`\"{} C\+P\+P=\char`\"{}gcc -\/\+E\char`\"{} C\+X\+X\+C\+P\+P=\char`\"{}g++ -\/\+E\char`\"{} make make install (O\+S X 10.\+5 specific) should be\+: sudo make install If it worked, you should have all the toxcore dylibs in /usr/local/lib\+: (besides the four below, the rest are symlinks to these) \$ ls -\/la /usr/local/lib/libtox$\ast$.dylib libtoxav.\+0.\+dylib libtoxcore.\+0.\+dylib libtoxdns.\+0.\+dylib libtoxencryptsave.\+0.\+dylib to check what C\+P\+U architecture they're compiled for\+: \$ lipo -\/i /usr/local/lib/libtoxencryptsave.0.\+dylib You should now be able to move on to compiling Toxic/\+Venom or some other client application There is also a shell script called \char`\"{}osx\+\_\+build\+\_\+script\+\_\+toxcore.\+txt\char`\"{} which automates everything from \char`\"{}git pull\char`\"{} to \char`\"{}sudo make install\char`\"{}, once the dependencies are already taken care of by Mac\+Ports. ```
+
+If after running ./configure you get an error about core being unable to find libsodium (and you have installed it) run the following in place of ./configure;
+
+``` ./configure --with-\/libsodium-\/headers=/usr/local/include/ --with-\/libsodium-\/libs=/usr/local/lib ```
+
+Ensure you set the locations correctly depending on where you installed libsodium on your computer.
+
+If there is a problem with opus (for A/\+V) and you don't get a libtoxav, then try to set the pkg-\/config environment variable beforehand\+:
+
+``` export P\+K\+G\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H=/usr/local/lib/pkgconfig ```
+
+\label{_windows}%
+ \subsubsection*{Windows\+:}
+
+\label{_windows-cross-compile}%
+
+
+\paragraph*{Cross-\/compile}
+
+It's a bit challenging to build Tox and all of its dependencies nativly on Windows, so we will show an easier, less error and headache prone method of building it -- cross-\/compiling.
+
+\label{_windows-cross-compile-vm}%
+ \subparagraph*{Setting up a V\+M}
+
+We will assume that you don't have any V\+M running Linux around and will guide you from the ground up.
+
+First, you would need to get a virtual machine and a Linux distribution image file.
+
+For a virtual machine we will use Virtual\+Box. You can get it \href{https://www.virtualbox.org/wiki/Downloads}{\tt here}.
+
+For a Linux distribution we will use Lubuntu 14.\+04 32-\/bit, which you can get \href{https://help.ubuntu.com/community/Lubuntu/GetLubuntu}{\tt here}.
+
+After you have those downloaded, install the Virtual\+Box and create a V\+M in it. The default of 512mb of R\+A\+M and 8gb of dynamically-\/allocated virtual hard drive would be enough.
+
+When you have created the V\+M, go into its {\bfseries Settings} -\/$>$ {\bfseries System} -\/$>$ {\bfseries Processor} and add some cores, if you have any additional available, for faster builds.
+
+Then, go to {\bfseries Settings} -\/$>$ {\bfseries Storage}, click on {\bfseries Empty} under {\bfseries Controller\+: I\+D\+E}, click on the little disc icon on the right side of the window, click on {\bfseries Choose a virtual C\+D/\+D\+V\+D disk file} and select the downloaded Lubuntu image file.
+
+Start the V\+M and follow the installation instructions.
+
+After Lubuntu is installed and you have booted into it, in Virtual\+Box menu on top of the window select {\bfseries Devices} -\/$>$ {\bfseries Insert Guest Additions C\+D image...}.
+
+Open terminal from {\bfseries Lubuntu's menu} -\/$>$ {\bfseries Accessories}.
+
+Execute\+: ```bash sudo apt-\/get update sudo apt-\/get install build-\/essential -\/y cd /media/$\ast$/$\ast$/ sudo ./\+V\+Box\+Linux\+Additions.run ```
+
+After that, create a folder called {\ttfamily toxbuild} somewhere on your Windows system. The go to {\bfseries Devices} -\/$>$ {\bfseries Shared Folders Settings...} in the Virtual\+Box menu, add the {\ttfamily toxbuild} folder there and set {\bfseries Auto-\/mount} and {\bfseries Make Permanent} options.
+
+Execute\+: ``{\ttfamily bash sudo adduser}whoami{\ttfamily vboxsf }`` Note the use of a \href{http://en.wikipedia.org/wiki/Grave_accent}{\tt grave accent} instead of an apostrophe.
+
+Then just reboot the system with\+: ```bash sudo reboot ```
+
+After the system is booted, go to {\bfseries Devices} -\/$>$ {\bfseries Shared Clipboard} and select {\bfseries Bidirectional}. Now you will be able to copy-\/paste text between the host and the guest systems.
+
+Now that the virtual machine is all set up, let's move to getting build dependencies and setting up environment variables.
+
+\label{_windows-cross-compile-environment}%
+ \subparagraph*{Setting up the environment}
+
+First we will install all tools that we would need for building\+: ```bash sudo apt-\/get install build-\/essential libtool autotools-\/dev automake checkinstall check git yasm pkg-\/config mingw-\/w64 -\/y ```
+
+Then we will define a few variables, {\bfseries depending on which you will build either 32-\/bit or 64-\/bit Tox}.
+
+For 32-\/bit Tox build, do\+: ```bash W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N=i686-\/w64-\/mingw32 L\+I\+B\+\_\+\+V\+P\+X\+\_\+\+T\+A\+R\+G\+E\+T=x86-\/win32-\/gcc ```
+
+For 64-\/bit Tox build, do\+: ```bash W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N=x86\+\_\+64-\/w64-\/mingw32 L\+I\+B\+\_\+\+V\+P\+X\+\_\+\+T\+A\+R\+G\+E\+T=x86\+\_\+64-\/win64-\/gcc ```
+
+This is the only difference between 32-\/bit and 64-\/bit build procedures.
+
+For speeding up the build process do\+: ``` M\+A\+K\+E\+F\+L\+A\+G\+S=j export M\+A\+K\+E\+F\+L\+A\+G\+S ```
+
+And let's make a folder where we will be building everything at ```bash cd $\sim$ mkdir prefix cd prefix P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R= cd .. mkdir build cd build ```
+
+\label{_windows-cross-compile-compiling}%
+ \subparagraph*{Compiling}
+
+Now we will build libraries needed for audio/video\+: V\+P\+X and Opus.
+
+V\+P\+X\+: ```bash git clone \href{https://chromium.googlesource.com/webm/libvpx}{\tt https\+://chromium.\+googlesource.\+com/webm/libvpx} cd libvpx git checkout tags/v1.\+3.\+0 C\+R\+O\+S\+S=\char`\"{}\$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N\char`\"{}-\/ ./configure --target=\char`\"{}\$\+L\+I\+B\+\_\+\+V\+P\+X\+\_\+\+T\+A\+R\+G\+E\+T\char`\"{} --prefix=\char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} --disable-\/examples --disable-\/unit-\/tests --disable-\/shared --enable-\/static make make install cd .. ```
+
+Opus\+: ```bash wget \href{http://downloads.xiph.org/releases/opus/opus-1.1.tar.gz}{\tt http\+://downloads.\+xiph.\+org/releases/opus/opus-\/1.\+1.\+tar.\+gz} tar -\/xf opus-\/1.\+1.\+tar.\+gz cd opus-\/1.\+1 ./configure --host=\char`\"{}\$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N\char`\"{} --prefix=\char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} --disable-\/extra-\/programs --disable-\/doc --disable-\/shared --enable-\/static make make install cd .. ```
+
+Now we will build sodium crypto library\+: ```bash git clone \href{https://github.com/jedisct1/libsodium/}{\tt https\+://github.\+com/jedisct1/libsodium/} cd libsodium git checkout tags/1.\+0.\+3 ./autogen.sh ./configure --host=\char`\"{}\$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N\char`\"{} --prefix=\char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} --disable-\/shared --enable-\/static make make install cd .. ```
+
+And finally we will build Tox\+: ```bash git clone \href{https://github.com/irungentoo/toxcore}{\tt https\+://github.\+com/irungentoo/toxcore} cd toxcore ./autogen.sh ./configure --host=\char`\"{}\$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N\char`\"{} --prefix=\char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} --disable-\/ntox --disable-\/tests --disable-\/testing --with-\/dependency-\/search=\char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} --disable-\/shared --enable-\/static make make install cd .. ```
+
+Then we make Tox shared library\+: ```bash cd \char`\"{}\$\+P\+R\+E\+F\+I\+X\+\_\+\+D\+I\+R\char`\"{} mkdir tmp cd tmp \$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N-\/ar x ../lib/libtoxcore.a \$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N-\/ar x ../lib/libtoxav.a \$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N-\/ar x ../lib/libtoxdns.a \$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N-\/ar x ../lib/libtoxencryptsave.a \$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N-\/gcc -\/\+Wl,--export-\/all-\/symbols -\/\+Wl,--out-\/implib=libtox.\+dll.\+a -\/shared -\/o libtox.\+dll $\ast$.o ../lib/$\ast$.a /usr/\$\+W\+I\+N\+D\+O\+W\+S\+\_\+\+T\+O\+O\+L\+C\+H\+A\+I\+N/lib/libwinpthread.a -\/liphlpapi -\/lws2\+\_\+32 -\/static-\/libgcc ```
+
+And we will copy it over to the {\ttfamily toxbuild} directory\+: ```bash mkdir -\/p /media/sf\+\_\+toxbuild/release/lib cp libtox.\+dll.\+a /media/sf\+\_\+toxbuild/release/lib mkdir -\/p /media/sf\+\_\+toxbuild/release/bin cp libtox.\+dll /media/sf\+\_\+toxbuild/release/bin mkdir -\/p /media/sf\+\_\+toxbuild/release/include cp -\/r ../include/tox /media/sf\+\_\+toxbuild/release/include ```
+
+That's it. Now you should have {\ttfamily release/bin/libtox.\+dll}, {\ttfamily release/bin/libtox.\+dll.\+a} and {\ttfamily release/include/tox/$<$headers$>$} in your {\ttfamily toxbuild} directory on the Windows system.
+
+\label{_windows-native}%
+ \paragraph*{Native}
+
+Note that the Native instructions are incomplete, in a sense that they miss instructions needed for adding audio/video support to Tox. You also might stumble upon some unknown Min\+G\+W+msys issues while trying to build it.
+
+You should install\+:
+\begin{DoxyItemize}
+\item \href{http://sourceforge.net/projects/mingw/}{\tt Min\+G\+W}
+\end{DoxyItemize}
+
+When installing Min\+G\+W, make sure to select the M\+S\+Y\+S option in the installer. Min\+G\+W will install an \char`\"{}\+Min\+G\+W shell\char`\"{} (you should get a shortcut for it), make sure to perform all operations (i.\+e., generating/running configure script, compiling, etc.) from the Min\+G\+W shell.
+
+First download the source tarball from \href{https://download.libsodium.org/libsodium/releases/}{\tt https\+://download.\+libsodium.\+org/libsodium/releases/} and build it. Assuming that you got the libsodium-\/1.\+0.\+0.\+tar.\+gz release\+: ```cmd tar -\/zxvf libsodium-\/1.\+0.\+0.\+tar.\+gz cd libsodium-\/1.\+0.\+0 ./configure make make install cd .. ```
+
+You can also use a precompiled win32 binary of libsodium, however you will have to place the files in places where they can be found, i.\+e., dll's go to /bin headers to /include and libraries to /lib directories in your Min\+G\+W shell.
+
+Next, install toxcore library, should either clone this repo by using git, or just download a \href{https://github.com/irungentoo/toxcore/archive/master.zip}{\tt zip of current Master branch} and extract it somewhere.
+
+Assuming that you now have the sources in the toxcore directory\+:
+
+```cmd cd toxcore autoreconf -\/i ./configure make make install ```
+
+\label{_Clients}%
+ \paragraph*{Clients\+:}
+
+While \href{https://github.com/tox/toxic}{\tt Toxic} is no longer in core, a list of Tox clients are located in our \href{https://wiki.tox.chat/doku.php?id=clients}{\tt wiki}
+
+\label{_additional}%
+ \subsection*{Additional}
+
+\label{_aconf}%
+ \subsubsection*{Advanced configure options\+:}
+
+
+\begin{DoxyItemize}
+\item --prefix=/where/to/install
+\item --with-\/libsodium-\/headers=/path/to/libsodium/include/
+\item --with-\/libsodium-\/libs=/path/to/sodiumtest/lib/
+\item --enable-\/silent-\/rules less verbose build output (undo\+: \char`\"{}make V=1\char`\"{})
+\item --disable-\/silent-\/rules verbose build output (undo\+: \char`\"{}make V=0\char`\"{})
+\item --disable-\/tests build unit tests (default\+: auto)
+\item --disable-\/av disable A/\+V support (default\+: auto) see\+: \href{#libtoxav}{\tt libtoxav}
+\item --enable-\/ntox build n\+Tox client (default\+: no) see\+: \href{#ntox}{\tt n\+Tox}
+\item --enable-\/daemon build \hyperlink{struct_d_h_t}{D\+H\+T} bootstrap daemon (default=no) see\+: \href{#bootstrapd}{\tt Bootstrap daemon}
+\item --enable-\/shared\mbox{[}=P\+K\+G\+S\mbox{]} build shared libraries \mbox{[}default=yes\mbox{]}
+\item --enable-\/static\mbox{[}=P\+K\+G\+S\mbox{]} build static libraries \mbox{[}default=yes\mbox{]}
+\end{DoxyItemize}
+
+\label{_av}%
+ \subsubsection*{A/\+V support\+:}
+
+\label{_libtoxav}%
+ \paragraph*{libtoxav\+:}
+
+'libtoxav' is needed for A/\+V support and it's enabled by default. You can disable it by adding --disable-\/av argument to ./configure script like so\+: ```bash ./configure --disable-\/av ```
+
+There are 2 dependencies required for libtoxav\+: libopus and libvpx. If they are not installed A/\+V support is dropped.
+
+Install on fedora\+: ```bash yum install opus-\/devel libvpx-\/devel ```
+
+Install on ubuntu\+: ```bash sudo apt-\/get install libopus-\/dev libvpx-\/dev pkg-\/config ``` If you get the \char`\"{}\+Unable to locate package libopus-\/dev\char`\"{} message, add the following ppa and try again\+: ```bash sudo add-\/apt-\/repository ppa\+:ubuntu-\/sdk-\/team/ppa \&\& sudo apt-\/get update \&\& sudo apt-\/get dist-\/upgrade ```
+
+Install from source (example for most unix-\/like O\+S's)\+:
+
+libvpx\+: ```bash git clone \href{https://chromium.googlesource.com/webm/libvpx}{\tt https\+://chromium.\+googlesource.\+com/webm/libvpx} cd libvpx ./configure make -\/j3 sudo make install cd .. ```
+
+libopus\+: ```bash wget \href{http://downloads.xiph.org/releases/opus/opus-1.0.3.tar.gz}{\tt http\+://downloads.\+xiph.\+org/releases/opus/opus-\/1.\+0.\+3.\+tar.\+gz} tar xvzf opus-\/1.\+0.\+3.\+tar.\+gz cd opus-\/1.\+0.\+3 ./configure make -\/j3 sudo make install cd .. ```
+
+\label{_bootstrapd}%
+ \subsubsection*{Bootstrap daemon\+:}
+
+Daemon is disabled by default. You can enable it by adding --enable-\/daemon argument to ./configure script like so\+: ```bash ./configure --enable-\/daemon ``{\ttfamily  There is one dependency required for bootstrap daemon\+:}libconfig-\/dev` $>$= 1.\+4.
+
+Install on fedora\+: ```bash yum install libconfig-\/devel ```
+
+Install on ubuntu\+: ```bash sudo apt-\/get install libconfig-\/dev ```
+
+O\+S X homebrew\+: ``` brew install libconfig ``` O\+S X non-\/homebrew\+: Grab the following \href{http://www.hyperrealm.com/libconfig/}{\tt package}, uncompress and install
+
+See this \hyperlink{md_other_bootstrap_daemon__r_e_a_d_m_e}{readme} on how to set up the bootstrap daemon.
+
+\label{_ntox}%
+ \subsubsection*{n\+Tox test cli\+:}
+
+n\+Tox is disabled by default. You can enable it by adding --enable-\/ntox argument to ./configure script like so\+: ```bash ./configure --enable-\/ntox ``` There is one dependency required for n\+Tox\+: libncurses.
+
+Install on fedora\+: ```bash yum install ncurses-\/devel ```
+
+Install on ubuntu\+: ```bash sudo apt-\/get install ncurses-\/dev ``` 

@@ -1,0 +1,126 @@
+\hypertarget{struct_new___connection}{\section{New\+\_\+\+Connection Struct Reference}
+\label{struct_new___connection}\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+}
+
+
+{\ttfamily \#include $<$net\+\_\+crypto.\+h$>$}
+
+
+
+Collaboration diagram for New\+\_\+\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{dd/d92/struct_new___connection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_new___connection_afffde330c649378add9a507c9c151586}{source}
+\item 
+uint8\+\_\+t \hyperlink{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_new___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{recv\+\_\+nonce} \mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_new___connection_ac040d4ba2a22ee327952009e7396bb2f}{peersessionpublic\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_new___connection_a78fb2cbe7af4d12847f2f044c35e7823}{cookie}
+\item 
+uint8\+\_\+t \hyperlink{struct_new___connection_a801672aeddedd60f76a667a2275a95ce}{cookie\+\_\+length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 167 of file net\+\_\+crypto.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_new___connection_a78fb2cbe7af4d12847f2f044c35e7823}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!cookie@{cookie}}
+\index{cookie@{cookie}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{cookie}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ cookie}}\label{struct_new___connection_a78fb2cbe7af4d12847f2f044c35e7823}
+
+
+Definition at line 173 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), and handle\+\_\+new\+\_\+connection\+\_\+handshake().
+
+\hypertarget{struct_new___connection_a801672aeddedd60f76a667a2275a95ce}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!cookie\+\_\+length@{cookie\+\_\+length}}
+\index{cookie\+\_\+length@{cookie\+\_\+length}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{cookie\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t cookie\+\_\+length}}\label{struct_new___connection_a801672aeddedd60f76a667a2275a95ce}
+
+
+Definition at line 174 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), and handle\+\_\+new\+\_\+connection\+\_\+handshake().
+
+\hypertarget{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!dht\+\_\+public\+\_\+key@{dht\+\_\+public\+\_\+key}}
+\index{dht\+\_\+public\+\_\+key@{dht\+\_\+public\+\_\+key}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{dht\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dht\+\_\+public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}
+
+
+Definition at line 170 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), and handle\+\_\+new\+\_\+connections().
+
+\hypertarget{struct_new___connection_ac040d4ba2a22ee327952009e7396bb2f}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!peersessionpublic\+\_\+key@{peersessionpublic\+\_\+key}}
+\index{peersessionpublic\+\_\+key@{peersessionpublic\+\_\+key}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{peersessionpublic\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t peersessionpublic\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_new___connection_ac040d4ba2a22ee327952009e7396bb2f}
+
+
+Definition at line 172 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), and handle\+\_\+new\+\_\+connection\+\_\+handshake().
+
+\hypertarget{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!public\+\_\+key@{public\+\_\+key}}
+\index{public\+\_\+key@{public\+\_\+key}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}
+
+
+Definition at line 169 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), and handle\+\_\+new\+\_\+connections().
+
+\hypertarget{struct_new___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!recv\+\_\+nonce@{recv\+\_\+nonce}}
+\index{recv\+\_\+nonce@{recv\+\_\+nonce}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{recv\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t recv\+\_\+nonce\mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_new___connection_aae0467706f97aa3ef23e5dc9c3c199d7}
+
+
+Definition at line 171 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), and handle\+\_\+new\+\_\+connection\+\_\+handshake().
+
+\hypertarget{struct_new___connection_afffde330c649378add9a507c9c151586}{\index{New\+\_\+\+Connection@{New\+\_\+\+Connection}!source@{source}}
+\index{source@{source}!New\+\_\+\+Connection@{New\+\_\+\+Connection}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} source}}\label{struct_new___connection_afffde330c649378add9a507c9c151586}
+
+
+Definition at line 168 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), and handle\+\_\+new\+\_\+connections().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{net__crypto_8h}{net\+\_\+crypto.\+h}\end{DoxyCompactItemize}

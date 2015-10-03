@@ -1,0 +1,18 @@
+<map id="buffer_read" name="buffer_read">
+<area shape="rect" id="node2" href="$d5/def/codec_8c.html#a6b10a945e7d4808b0192ee3b949babd3" title="buffer_clear" alt="" coords="153,107,244,133"/>
+<area shape="rect" id="node13" href="$d1/d16/codec_8h.html#a478d9b52aca882a11b160e8bbb50dd74" title="cs_do" alt="" coords="341,208,398,235"/>
+<area shape="rect" id="node15" href="$d6/d46/rtp_8c.html#a3bbb6216a42caaa8163fc61b8f78a801" title="queue_message" alt="" coords="140,157,257,184"/>
+<area shape="rect" id="node3" href="$d5/def/codec_8c.html#a30114dcdaee5519093e2ff87708c92ed" title="buffer_free" alt="" coords="327,107,411,133"/>
+<area shape="rect" id="node4" href="$d1/d16/codec_8h.html#addde6ea51851fcce009bb7d45147a88f" title="cs_kill" alt="" coords="486,56,545,83"/>
+<area shape="rect" id="node12" href="$d1/d16/codec_8h.html#aa99953343ed26c4b7914cac072ff95c1" title="cs_new" alt="" coords="482,107,549,133"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#a10c356c3264067f4e8ebdc1cc7c6d545" title="toxav_kill" alt="" coords="651,5,729,32"/>
+<area shape="rect" id="node6" href="$d9/d82/toxav_8h.html#a9f2a69dda0bfe14d2a2bcf2497967f31" title="toxav_prepare_transmission" alt="" coords="597,107,783,133"/>
+<area shape="rect" id="node11" href="$d9/d82/toxav_8h.html#aeef2a0ed5e716e7449d3f1c6053e31af" title="toxav_kill_transmission" alt="" coords="611,56,769,83"/>
+<area shape="rect" id="node7" href="$d6/d19/toxav__basic__test_8c.html#a2a5cee1a2c214e77eb5297bdd1a60448" title="callback_call_started" alt="" coords="831,157,975,184"/>
+<area shape="rect" id="node10" href="$d6/dc0/toxav__many__test_8c.html#aba50a9b07c2b19443bb2aae141579dcc" title="in_thread_call" alt="" coords="851,107,954,133"/>
+<area shape="rect" id="node8" href="$d6/d19/toxav__basic__test_8c.html#a20d31a781f2f50db76459101b62c5720" title="register_callbacks" alt="" coords="1023,157,1149,184"/>
+<area shape="rect" id="node9" href="$d6/d19/toxav__basic__test_8c.html#aa1d0def2e9aa37d5cb681d81baa07667" title="START_TEST" alt="" coords="1197,157,1304,184"/>
+<area shape="rect" id="node14" href="$d9/d82/toxav_8h.html#a78b4ac618a3683f06432c06594846121" title="toxav_do" alt="" coords="1049,208,1123,235"/>
+<area shape="rect" id="node16" href="$d6/d46/rtp_8c.html#af21bf57a274e3ff7de54f331ab03fbbc" title="rtp_handle_packet" alt="" coords="305,157,433,184"/>
+<area shape="rect" id="node17" href="$df/dc1/rtp_8h.html#acda914088783d9822cdafdedf8fadd65" title="rtp_new" alt="" coords="481,157,549,184"/>
+</map>

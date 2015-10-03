@@ -1,0 +1,7 @@
+<map id="accept_connection" name="accept_connection">
+<area shape="rect" id="node2" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="380,6,453,32"/>
+<area shape="rect" id="node3" href="$d4/d40/_t_c_p__server_8c.html#a51bace7dc1f6b7e7049430de070f3864" title="kill_TCP_connection" alt="" coords="187,31,329,58"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="185,82,331,108"/>
+<area shape="rect" id="node5" href="$d6/d6e/network_8c.html#a379153c027c17d7c71797cb0e3ea41a3" title="set_socket_nosigpipe" alt="" coords="184,132,332,159"/>
+<area shape="rect" id="node6" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="216,183,300,210"/>
+</map>

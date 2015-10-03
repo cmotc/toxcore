@@ -1,0 +1,29 @@
+<map id="host_to_net" name="host_to_net">
+<area shape="rect" id="node2" href="$d4/d30/_messenger_8h.html#afb102dea48881485a6ea82b43468b327" title="file_seek" alt="" coords="183,24,257,51"/>
+<area shape="rect" id="node6" href="$d8/d8d/_messenger_8c.html#af0e440a0c993bf8a9adbf85b37753337" title="file_sendrequest" alt="" coords="161,100,279,127"/>
+<area shape="rect" id="node12" href="$d8/d8d/_messenger_8c.html#a25018a4f99e9bba64b138fbc5fe35eea" title="friends_list_save" alt="" coords="160,227,280,253"/>
+<area shape="rect" id="node20" href="$db/d79/onion__client_8c.html#a64e317f7dd22c983c325f62aed9ecfae" title="send_dhtpk_announce" alt="" coords="144,151,296,177"/>
+<area shape="rect" id="node3" href="$da/d8f/tox_8h.html#ac8b17d75fb733a45a5a07a7ea04ff5b3" title="tox_file_seek" alt="" coords="344,12,443,39"/>
+<area shape="rect" id="node4" href="$d9/d35/tox__test_8c.html#a26511de8b96c24fd18e8255e13822b5f" title="tox_file_receive" alt="" coords="495,5,608,32"/>
+<area shape="rect" id="node5" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="988,49,1095,76"/>
+<area shape="rect" id="node7" href="$d4/d30/_messenger_8h.html#a9390d980f0320f6c53c932c7244fa504" title="new_filesender" alt="" coords="497,100,606,127"/>
+<area shape="rect" id="node8" href="$da/d8f/tox_8h.html#a57990fd242dca24aa7e1f29f5fa56be7" title="tox_file_send" alt="" coords="673,100,772,127"/>
+<area shape="rect" id="node9" href="$d2/d65/n_tox_8c.html#aa834c164f5a649c381bb5dcca7a5b4fc" title="add_filesender" alt="" coords="833,100,940,127"/>
+<area shape="rect" id="node10" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1005,201,1078,228"/>
+<area shape="rect" id="node11" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1143,252,1193,279"/>
+<area shape="rect" id="node13" href="$d4/d30/_messenger_8h.html#af0dfac679b1b57a0036f6511e12fe777" title="messenger_save" alt="" coords="491,277,612,304"/>
+<area shape="rect" id="node14" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="861,252,912,279"/>
+<area shape="rect" id="node15" href="$d8/dda/messenger__test_8c.html#a9c4405dc5f0fb39abca715cf5fe62007" title="START_TEST" alt="" coords="669,303,776,329"/>
+<area shape="rect" id="node16" href="$da/d8f/tox_8h.html#a63116d9c9454da73a56463d9093e53e4" title="tox_get_savedata" alt="" coords="660,353,785,380"/>
+<area shape="rect" id="node17" href="$d2/d65/n_tox_8c.html#a631b615f9972e1b5609e5773d809f9b4" title="save_data" alt="" coords="845,303,928,329"/>
+<area shape="rect" id="node19" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="833,353,940,380"/>
+<area shape="rect" id="node18" href="$d2/d65/n_tox_8c.html#a86825faeca35dae8e6c4ab666d4543d6" title="save_data_file" alt="" coords="988,303,1095,329"/>
+<area shape="rect" id="node21" href="$db/d79/onion__client_8c.html#a02301d507ab3c11bfee8112560f36f87" title="do_friend" alt="" coords="356,151,431,177"/>
+<area shape="rect" id="node22" href="$d9/d26/onion__client_8h.html#aa1771a7c1ebf446973e8d2bbb7ea8c2d" title="do_onion_client" alt="" coords="495,151,607,177"/>
+<area shape="rect" id="node23" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="669,201,776,228"/>
+<area shape="rect" id="node27" href="$d7/dd9/onion__test_8c.html#ab45bd517e9eb750ba65272a4a8ebc250" title="do_onions" alt="" coords="682,151,763,177"/>
+<area shape="rect" id="node24" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="845,201,928,228"/>
+<area shape="rect" id="node25" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1016,151,1067,177"/>
+<area shape="rect" id="node26" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1015,252,1067,279"/>
+<area shape="rect" id="node28" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="833,151,940,177"/>
+</map>

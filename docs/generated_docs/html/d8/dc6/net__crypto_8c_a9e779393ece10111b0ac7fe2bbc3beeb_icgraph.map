@@ -1,0 +1,20 @@
+<map id="crypto_connection_add_source" name="crypto_connection_add_source">
+<area shape="rect" id="node2" href="$de/d42/net__crypto_8h.html#ab11f6e96035c3717a21b809d5373f96f" title="accept_crypto_connection" alt="" coords="209,81,384,108"/>
+<area shape="rect" id="node14" href="$d8/dc6/net__crypto_8c.html#ae8139c35468806f25d5aed185edcc5a1" title="handle_new_connection\l_handshake" alt="" coords="216,133,377,174"/>
+<area shape="rect" id="node3" href="$d2/db1/friend__connection_8c.html#ad12421e11a4e0a8ca7223e0d715d2b0c" title="handle_new_connections" alt="" coords="432,81,600,108"/>
+<area shape="rect" id="node4" href="$d0/d08/friend__connection_8h.html#a319bec2419cf5fc5525af4fae03b86ef" title="new_friend_connections" alt="" coords="648,81,811,108"/>
+<area shape="rect" id="node5" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="859,81,976,108"/>
+<area shape="rect" id="node6" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1052,31,1103,57"/>
+<area shape="rect" id="node7" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1042,81,1113,108"/>
+<area shape="rect" id="node8" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1179,5,1285,32"/>
+<area shape="rect" id="node9" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1200,56,1264,83"/>
+<area shape="rect" id="node11" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1193,107,1271,133"/>
+<area shape="rect" id="node13" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1207,157,1257,184"/>
+<area shape="rect" id="node10" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1333,56,1384,83"/>
+<area shape="rect" id="node12" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1333,107,1384,133"/>
+<area shape="rect" id="node15" href="$d8/dc6/net__crypto_8c.html#a86a3ff661a8b9b10fd7c0daee3901091" title="tcp_oob_callback" alt="" coords="455,132,577,159"/>
+<area shape="rect" id="node19" href="$d8/dc6/net__crypto_8c.html#a812ca8a7291e22ce343669c9835c7c12" title="udp_handle_packet" alt="" coords="449,183,583,209"/>
+<area shape="rect" id="node16" href="$de/d42/net__crypto_8h.html#a5e46c6f42e93e2aa968f8f63de90a53c" title="new_net_crypto" alt="" coords="672,132,787,159"/>
+<area shape="rect" id="node17" href="$d7/dd9/onion__test_8c.html#a5945771cafdfe39074adf8ddd47ae81b" title="new_onions" alt="" coords="872,132,963,159"/>
+<area shape="rect" id="node18" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="1024,132,1131,159"/>
+</map>

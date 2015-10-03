@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['save_5fbootstap_5ffrequency',['SAVE_BOOTSTAP_FREQUENCY',['../dc/dc1/_d_h_t_8c.html#a696df5fcb740674dfec58340660641be',1,'DHT.c']]],
+  ['saved_5ffriend_5frequest_5fsize',['SAVED_FRIEND_REQUEST_SIZE',['../d8/d8d/_messenger_8c.html#a5546558d2255f81d24707b447cb5bb94',1,'Messenger.c']]],
+  ['second_5fflag',['SECOND_FLAG',['../d2/dee/friends__test_8c.html#aa544aec475f2b71717b00c002f09d9fb',1,'friends_test.c']]],
+  ['send_5f1',['SEND_1',['../d4/d18/onion_8c.html#aeb042381456a47261906ba91c1a6d75a',1,'onion.c']]],
+  ['send_5f2',['SEND_2',['../d4/d18/onion_8c.html#aa5661900101014573923ad9500868ac0',1,'onion.c']]],
+  ['send_5f3',['SEND_3',['../d4/d18/onion_8c.html#a522d6f5f9629ff14b4aded49ada7a550',1,'onion.c']]],
+  ['send_5fbase',['SEND_BASE',['../d4/d18/onion_8c.html#ad40bb79953288e33ace996a24cc7c86f',1,'onion.c']]],
+  ['server_5fconnect',['SERVER_CONNECT',['../db/d11/irc__syncbot_8c.html#a48e81c79f3062741c646c2677f32c8e2',1,'irc_syncbot.c']]],
+  ['set_5ferror_5fparameter',['SET_ERROR_PARAMETER',['../d3/d69/tox_8c.html#a0513b78b0993a4834ac065e3d1667dac',1,'SET_ERROR_PARAMETER():&#160;tox.c'],['../df/d1d/toxencryptsave_8c.html#a0513b78b0993a4834ac065e3d1667dac',1,'SET_ERROR_PARAMETER():&#160;toxencryptsave.c']]],
+  ['sfile',['SFILE',['../d1/d22/logger_8c.html#af563015c0f4305971b76b9f4bf408090',1,'logger.c']]],
+  ['share_5frelays_5finterval',['SHARE_RELAYS_INTERVAL',['../d0/d08/friend__connection_8h.html#a19e48bdb6f18161c3306b82439e6ce62',1,'friend_connection.h']]],
+  ['silent_5ftimeout',['SILENT_TIMEOUT',['../db/d11/irc__syncbot_8c.html#a3971be0455ed437a30b47dacf0f9a78c',1,'irc_syncbot.c']]],
+  ['size_5f32',['size_32',['../d6/d46/rtp_8c.html#a5fc1e31d8a7a38d5cd4c33fb418fd75c',1,'rtp.c']]],
+  ['size_5fip',['SIZE_IP',['../d9/d94/network_8h.html#a347bab05abec85d23b5207309a5223b8',1,'network.h']]],
+  ['size_5fip4',['SIZE_IP4',['../d9/d94/network_8h.html#af01e75c1c63a39bcd2aacdf3018b18c9',1,'network.h']]],
+  ['size_5fip6',['SIZE_IP6',['../d9/d94/network_8h.html#a5d7430ad26f80239b9fe1bbcd51b5ed2',1,'network.h']]],
+  ['size_5fipport',['SIZE_IPPORT',['../d9/d94/network_8h.html#a42c0a5872a869ac0cfd8200935ed49ee',1,'network.h']]],
+  ['size_5fport',['SIZE_PORT',['../d9/d94/network_8h.html#a7771606fa737c038bcad05c8926b9ddd',1,'network.h']]],
+  ['sleep',['sleep',['../d1/d36/tox-bootstrapd_8c.html#acc8612feeec5f569b1e096e3110d0dca',1,'tox-bootstrapd.c']]],
+  ['sleep_5ftime_5fmilliseconds',['SLEEP_TIME_MILLISECONDS',['../d1/d36/tox-bootstrapd_8c.html#afb56b9187945a9a5a8ae0b48fb918b37',1,'tox-bootstrapd.c']]],
+  ['string_5flength',['STRING_LENGTH',['../d4/d9c/n_tox_8h.html#ac829415013d8120cedee928452ae0f55',1,'nTox.h']]],
+  ['string_5flength_5fwrapped',['STRING_LENGTH_WRAPPED',['../d2/d65/n_tox_8c.html#a12a829f108695f62e3f932e624504650',1,'nTox.c']]],
+  ['strings_5fequal',['STRINGS_EQUAL',['../d8/dda/messenger__test_8c.html#a15bafd08050e1fe690d0955499e4cbae',1,'messenger_test.c']]],
+  ['swap',['swap',['../d2/d98/dht__test_8c.html#a369180e5e0a23addbc2a6a9e24fee590',1,'dht_test.c']]]
+];

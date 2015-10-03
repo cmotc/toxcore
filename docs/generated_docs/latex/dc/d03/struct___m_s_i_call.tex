@@ -1,0 +1,178 @@
+\hypertarget{struct___m_s_i_call}{\section{\+\_\+\+M\+S\+I\+Call Struct Reference}
+\label{struct___m_s_i_call}\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+}
+
+
+{\ttfamily \#include $<$msi.\+h$>$}
+
+
+
+Collaboration diagram for \+\_\+\+M\+S\+I\+Call\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{d5/d5b/struct___m_s_i_call__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___m_s_i_session}{\+\_\+\+M\+S\+I\+Session} $\ast$ \hyperlink{struct___m_s_i_call_ab8c2a41964c26c7f08f62fa440541b12}{session}
+\item 
+\hyperlink{msi_8h_afbc789bbdb9a4d00eda005500f7c1675}{M\+S\+I\+Call\+State} \hyperlink{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{state}
+\item 
+\hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings} \hyperlink{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}{csettings\+\_\+local}
+\item 
+\hyperlink{msi_8h_abe548d26a24458ebf9ab33310ee19600}{M\+S\+I\+C\+Settings} $\ast$ \hyperlink{struct___m_s_i_call_a3b7fc70c2772bbdc453eeff763fc0b4c}{csettings\+\_\+peer}
+\item 
+\hyperlink{msi_8h_a861af5c5c180987c1c86739b4321076c}{M\+S\+I\+Call\+I\+D\+Type} \hyperlink{struct___m_s_i_call_aa135fbffd11268758f5f21269fb46853}{id}
+\item 
+int \hyperlink{struct___m_s_i_call_ad8fefcfbba597fbff4216644f2872acf}{ringing\+\_\+tout\+\_\+ms}
+\item 
+int \hyperlink{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}{request\+\_\+timer\+\_\+id}
+\item 
+int \hyperlink{struct___m_s_i_call_a94fdc66dbd509ba4e89edcedb8e11022}{ringing\+\_\+timer\+\_\+id}
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{peers}
+\item 
+uint16\+\_\+t \hyperlink{struct___m_s_i_call_a62e9da1e57f84fd224590c4d466724aa}{peer\+\_\+count}
+\item 
+int32\+\_\+t \hyperlink{struct___m_s_i_call_ad6b287fd08a0cc466cd41bd2e76d5808}{call\+\_\+idx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The call struct. 
+
+Definition at line 100 of file msi.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct___m_s_i_call_ad6b287fd08a0cc466cd41bd2e76d5808}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!call\+\_\+idx@{call\+\_\+idx}}
+\index{call\+\_\+idx@{call\+\_\+idx}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{call\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t call\+\_\+idx}}\label{struct___m_s_i_call_ad6b287fd08a0cc466cd41bd2e76d5808}
+
+
+Definition at line 118 of file msi.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+cancel(), handle\+\_\+recv\+\_\+end(), handle\+\_\+recv\+\_\+ending(), handle\+\_\+recv\+\_\+error(), handle\+\_\+recv\+\_\+invite(), handle\+\_\+recv\+\_\+reject(), handle\+\_\+recv\+\_\+ringing(), handle\+\_\+recv\+\_\+start(), handle\+\_\+recv\+\_\+starting(), handle\+\_\+timeout(), init\+\_\+call(), msi\+\_\+invite(), and terminate\+\_\+call().
+
+\hypertarget{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!csettings\+\_\+local@{csettings\+\_\+local}}
+\index{csettings\+\_\+local@{csettings\+\_\+local}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{csettings\+\_\+local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+C\+Settings} csettings\+\_\+local}}\label{struct___m_s_i_call_ae57cfc81fffd82f53953c6546bb9f3c3}
+
+
+Definition at line 105 of file msi.\+h.
+
+
+
+Referenced by msi\+\_\+answer(), msi\+\_\+change\+\_\+csettings(), msi\+\_\+invite(), and toxav\+\_\+prepare\+\_\+transmission().
+
+\hypertarget{struct___m_s_i_call_a3b7fc70c2772bbdc453eeff763fc0b4c}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!csettings\+\_\+peer@{csettings\+\_\+peer}}
+\index{csettings\+\_\+peer@{csettings\+\_\+peer}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{csettings\+\_\+peer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+C\+Settings}$\ast$ csettings\+\_\+peer}}\label{struct___m_s_i_call_a3b7fc70c2772bbdc453eeff763fc0b4c}
+
+
+Definition at line 106 of file msi.\+h.
+
+
+
+Referenced by flush\+\_\+peer\+\_\+csettings(), handle\+\_\+recv\+\_\+invite(), init\+\_\+call(), terminate\+\_\+call(), toxav\+\_\+get\+\_\+peer\+\_\+csettings(), and toxav\+\_\+prepare\+\_\+transmission().
+
+\hypertarget{struct___m_s_i_call_aa135fbffd11268758f5f21269fb46853}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!id@{id}}
+\index{id@{id}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+Call\+I\+D\+Type} id}}\label{struct___m_s_i_call_aa135fbffd11268758f5f21269fb46853}
+
+
+Definition at line 108 of file msi.\+h.
+
+
+
+Referenced by find\+\_\+call(), handle\+\_\+recv\+\_\+invite(), msi\+\_\+invite(), send\+\_\+error(), and send\+\_\+message().
+
+\hypertarget{struct___m_s_i_call_a62e9da1e57f84fd224590c4d466724aa}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!peer\+\_\+count@{peer\+\_\+count}}
+\index{peer\+\_\+count@{peer\+\_\+count}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{peer\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t peer\+\_\+count}}\label{struct___m_s_i_call_a62e9da1e57f84fd224590c4d466724aa}
+
+
+Definition at line 116 of file msi.\+h.
+
+
+
+Referenced by add\+\_\+peer(), handle\+\_\+remote\+\_\+connection\+\_\+change(), msi\+\_\+hangup(), msi\+\_\+reject(), toxav\+\_\+get\+\_\+peer\+\_\+csettings(), and toxav\+\_\+get\+\_\+peer\+\_\+id().
+
+\hypertarget{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!peers@{peers}}
+\index{peers@{peers}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{peers}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t$\ast$ peers}}\label{struct___m_s_i_call_a55d2568491d616f7fef07bc7137c8c23}
+
+
+Definition at line 115 of file msi.\+h.
+
+
+
+Referenced by add\+\_\+peer(), handle\+\_\+recv\+\_\+invite(), handle\+\_\+remote\+\_\+connection\+\_\+change(), handle\+\_\+timeout(), msi\+\_\+answer(), msi\+\_\+change\+\_\+csettings(), msi\+\_\+hangup(), msi\+\_\+invite(), msi\+\_\+kill(), msi\+\_\+reject(), terminate\+\_\+call(), toxav\+\_\+get\+\_\+peer\+\_\+id(), and toxav\+\_\+prepare\+\_\+transmission().
+
+\hypertarget{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!request\+\_\+timer\+\_\+id@{request\+\_\+timer\+\_\+id}}
+\index{request\+\_\+timer\+\_\+id@{request\+\_\+timer\+\_\+id}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{request\+\_\+timer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int request\+\_\+timer\+\_\+id}}\label{struct___m_s_i_call_a8ccfd1cd9f807007763f41eafd801130}
+
+
+Definition at line 112 of file msi.\+h.
+
+
+
+Referenced by init\+\_\+call(), msi\+\_\+handle\+\_\+packet(), msi\+\_\+hangup(), msi\+\_\+invite(), msi\+\_\+reject(), and terminate\+\_\+call().
+
+\hypertarget{struct___m_s_i_call_a94fdc66dbd509ba4e89edcedb8e11022}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!ringing\+\_\+timer\+\_\+id@{ringing\+\_\+timer\+\_\+id}}
+\index{ringing\+\_\+timer\+\_\+id@{ringing\+\_\+timer\+\_\+id}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{ringing\+\_\+timer\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int ringing\+\_\+timer\+\_\+id}}\label{struct___m_s_i_call_a94fdc66dbd509ba4e89edcedb8e11022}
+
+
+Definition at line 113 of file msi.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+ringing(), handle\+\_\+recv\+\_\+starting(), init\+\_\+call(), and terminate\+\_\+call().
+
+\hypertarget{struct___m_s_i_call_ad8fefcfbba597fbff4216644f2872acf}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!ringing\+\_\+tout\+\_\+ms@{ringing\+\_\+tout\+\_\+ms}}
+\index{ringing\+\_\+tout\+\_\+ms@{ringing\+\_\+tout\+\_\+ms}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{ringing\+\_\+tout\+\_\+ms}]{\setlength{\rightskip}{0pt plus 5cm}int ringing\+\_\+tout\+\_\+ms}}\label{struct___m_s_i_call_ad8fefcfbba597fbff4216644f2872acf}
+
+
+Definition at line 110 of file msi.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+ringing(), and init\+\_\+call().
+
+\hypertarget{struct___m_s_i_call_ab8c2a41964c26c7f08f62fa440541b12}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!session@{session}}
+\index{session@{session}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \+\_\+\+M\+S\+I\+Session}$\ast$ session}}\label{struct___m_s_i_call_ab8c2a41964c26c7f08f62fa440541b12}
+
+
+Definition at line 101 of file msi.\+h.
+
+
+
+Referenced by init\+\_\+call().
+
+\hypertarget{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}{\index{\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}!state@{state}}
+\index{state@{state}!\+\_\+\+M\+S\+I\+Call@{\+\_\+\+M\+S\+I\+Call}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+Call\+State} state}}\label{struct___m_s_i_call_a4a1fc0e5d23dbdc357786d4c69eda9b9}
+
+
+Definition at line 103 of file msi.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+invite(), handle\+\_\+recv\+\_\+start(), handle\+\_\+recv\+\_\+starting(), msi\+\_\+answer(), msi\+\_\+cancel(), msi\+\_\+change\+\_\+csettings(), msi\+\_\+hangup(), msi\+\_\+invite(), msi\+\_\+kill(), msi\+\_\+reject(), and toxav\+\_\+get\+\_\+call\+\_\+state().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxav/\hyperlink{msi_8h}{msi.\+h}\end{DoxyCompactItemize}

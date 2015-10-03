@@ -1,0 +1,310 @@
+\hypertarget{_d_h_t__bootstrap_8c}{\section{other/\+D\+H\+T\+\_\+bootstrap.c File Reference}
+\label{_d_h_t__bootstrap_8c}\index{other/\+D\+H\+T\+\_\+bootstrap.\+c@{other/\+D\+H\+T\+\_\+bootstrap.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/\+D\+H\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+L\+A\+N\+\_\+discovery.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/friend\+\_\+requests.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+T\+C\+P\+\_\+server.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../testing/misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+Include dependency graph for D\+H\+T\+\_\+bootstrap.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d85/_d_h_t__bootstrap_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_h_t__bootstrap_8c_a3fc7cbbeb22c3288d397d25715fb8a35}{T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}
+\item 
+\#define \hyperlink{_d_h_t__bootstrap_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+R\+T}~33445
+\item 
+\#define \hyperlink{_d_h_t__bootstrap_8c_af89985dbf9e670e3e7baebb0e05a0f46}{N\+U\+M\+\_\+\+P\+O\+R\+T\+S}~3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5}{manage\+\_\+keys} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht)
+\item 
+int \hyperlink{_d_h_t__bootstrap_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_h_t__bootstrap_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{_d_h_t__bootstrap_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 55 of file D\+H\+T\+\_\+bootstrap.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{_d_h_t__bootstrap_8c_af89985dbf9e670e3e7baebb0e05a0f46}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!N\+U\+M\+\_\+\+P\+O\+R\+T\+S@{N\+U\+M\+\_\+\+P\+O\+R\+T\+S}}
+\index{N\+U\+M\+\_\+\+P\+O\+R\+T\+S@{N\+U\+M\+\_\+\+P\+O\+R\+T\+S}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{N\+U\+M\+\_\+\+P\+O\+R\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+U\+M\+\_\+\+P\+O\+R\+T\+S~3}}\label{_d_h_t__bootstrap_8c_af89985dbf9e670e3e7baebb0e05a0f46}
+
+
+Referenced by main().
+
+\hypertarget{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!P\+O\+R\+T@{P\+O\+R\+T}}
+\index{P\+O\+R\+T@{P\+O\+R\+T}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T~33445}}\label{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}
+
+
+Definition at line 58 of file D\+H\+T\+\_\+bootstrap.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{_d_h_t__bootstrap_8c_a3fc7cbbeb22c3288d397d25715fb8a35}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D@{T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}}
+\index{T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D@{T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+D}}\label{_d_h_t__bootstrap_8c_a3fc7cbbeb22c3288d397d25715fb8a35}
+
+
+Definition at line 34 of file D\+H\+T\+\_\+bootstrap.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_d_h_t__bootstrap_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!main@{main}}
+\index{main@{main}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_d_h_t__bootstrap_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 102 of file D\+H\+T\+\_\+bootstrap.\+c.
+
+
+
+References bootstrap\+\_\+set\+\_\+callbacks(), c\+\_\+sleep, cmdline\+\_\+parsefor\+\_\+ipv46(), D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), D\+H\+T\+\_\+isconnected(), do\+\_\+\+D\+H\+T(), do\+\_\+\+T\+C\+P\+\_\+server(), hex\+\_\+string\+\_\+to\+\_\+bin(), i, ip, ip\+\_\+init(), is\+\_\+timeout(), L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L, L\+A\+Ndiscovery\+\_\+init(), manage\+\_\+keys(), D\+H\+T\+::net, networking\+\_\+poll(), new\+\_\+\+D\+H\+T(), new\+\_\+networking(), new\+\_\+onion(), new\+\_\+onion\+\_\+announce(), new\+\_\+\+T\+C\+P\+\_\+server(), N\+U\+M\+\_\+\+P\+O\+R\+T\+S, port, P\+O\+R\+T, Networking\+\_\+\+Core\+::port, ports, printf(), D\+H\+T\+::self\+\_\+public\+\_\+key, D\+H\+T\+::self\+\_\+secret\+\_\+key, send\+\_\+\+L\+A\+Ndiscovery(), T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T, and unix\+\_\+time().
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{if} (argc == 2 && !strncasecmp(argv[1], \textcolor{stringliteral}{"-h"}, 3)) \{
+105         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Usage (connected)  : %s [--ipv4|--ipv6] IP PORT KEY\(\backslash\)n"}, argv[0]);
+106         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Usage (unconnected): %s [--ipv4|--ipv6]\(\backslash\)n"}, argv[0]);
+107         exit(0);
+108     \}
+109 
+110     \textcolor{comment}{/* let user override default by cmdline */}
+111     uint8\_t ipv6enabled = \hyperlink{network_8h_a5cba5a89816e720fa45984ad44859726}{TOX\_ENABLE\_IPV6\_DEFAULT}; \textcolor{comment}{/* x */}
+112     \textcolor{keywordtype}{int} argvoffset = \hyperlink{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{cmdline\_parsefor\_ipv46}(argc, argv, &ipv6enabled);
+113 
+114     \textcolor{keywordflow}{if} (argvoffset < 0)
+115         exit(1);
+116 
+117     \textcolor{comment}{/* Initialize networking -}
+118 \textcolor{comment}{       Bind to ip 0.0.0.0 / [::] : PORT */}
+119     \hyperlink{struct_i_p}{IP} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip};
+120     \hyperlink{network_8c_a6aa0dce9c25e370af93bf4a14f79c709}{ip\_init}(&ip, ipv6enabled);
+121 
+122     \hyperlink{struct_d_h_t}{DHT} *dht = \hyperlink{_d_h_t_8c_adad04fa897751b06948a172044bf1c58}{new\_DHT}(\hyperlink{network_8c_a0c272a560dd4b2c18c6546a91656c1b5}{new\_networking}(ip, \hyperlink{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}{PORT}));
+123     \hyperlink{struct_onion}{Onion} *onion = \hyperlink{onion_8c_a71877ec5931feec418ed1ae10b0963d8}{new\_onion}(dht);
+124     \hyperlink{struct_onion___announce}{Onion\_Announce} *onion\_a = \hyperlink{onion__announce_8c_a1807a1d99b93e29c2a27648afe3e6c2c}{new\_onion\_announce}(dht);
+125 
+126 \textcolor{preprocessor}{#ifdef DHT\_NODE\_EXTRA\_PACKETS}
+127     \hyperlink{bootstrap__node__packets_8c_af45f0ce6a723f57dc9f667f2fcd4772c}{bootstrap\_set\_callbacks}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, DHT\_VERSION\_NUMBER, DHT\_MOTD, \textcolor{keyword}{sizeof}(
+      DHT\_MOTD));
+128 \textcolor{preprocessor}{#endif}
+129 
+130     \textcolor{keywordflow}{if} (!(onion && onion\_a)) \{
+131         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Something failed to initialize.\(\backslash\)n"});
+132         exit(1);
+133     \}
+134 
+135     perror(\textcolor{stringliteral}{"Initialization"});
+136 
+137     \hyperlink{_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5}{manage\_keys}(dht);
+138     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Public key: "});
+139     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+140 
+141 \textcolor{preprocessor}{#ifdef TCP\_RELAY\_ENABLED}
+142 \textcolor{preprocessor}{#define NUM\_PORTS 3}
+143     uint16\_t \hyperlink{_t_c_p__test_8c_a04e5444bf6a826487066ba973577f674}{ports}[\hyperlink{_d_h_t__bootstrap_8c_af89985dbf9e670e3e7baebb0e05a0f46}{NUM\_PORTS}] = \{443, 3389, \hyperlink{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}{PORT}\};
+144     \hyperlink{struct_t_c_p___server}{TCP\_Server} *tcp\_s = \hyperlink{_t_c_p__server_8c_a148e632f4c51645cbc1b414bc3584b60}{new\_TCP\_server}(ipv6enabled, 
+      \hyperlink{_d_h_t__bootstrap_8c_af89985dbf9e670e3e7baebb0e05a0f46}{NUM\_PORTS}, ports, dht->\hyperlink{struct_d_h_t_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, onion);
+145 
+146     \textcolor{keywordflow}{if} (tcp\_s == NULL) \{
+147         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"TCP server failed to initialize.\(\backslash\)n"});
+148         exit(1);
+149     \}
+150 
+151 \textcolor{preprocessor}{#endif}
+152 
+153     FILE *file;
+154     file = fopen(\textcolor{stringliteral}{"PUBLIC\_ID.txt"}, \textcolor{stringliteral}{"w"});
+155 
+156     \textcolor{keywordflow}{for} (i = 0; i < 32; i++) \{
+157         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%02hhX"}, dht->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}[i]);
+158         fprintf(file, \textcolor{stringliteral}{"%02hhX"}, dht->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}[i]);
+159     \}
+160 
+161     fclose(file);
+162 
+163     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)n"});
+164     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Port: %u\(\backslash\)n"}, ntohs(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}->\hyperlink{struct_networking___core_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}));
+165 
+166     \textcolor{keywordflow}{if} (argc > argvoffset + 3) \{
+167         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Trying to bootstrap into the network...\(\backslash\)n"});
+168         uint16\_t \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = htons(atoi(argv[argvoffset + 2]));
+169         uint8\_t *bootstrap\_key = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(argv[argvoffset + 3]);
+170         \textcolor{keywordtype}{int} res = \hyperlink{_d_h_t_8c_af342c78837dbed569d4a75a0516455fc}{DHT\_bootstrap\_from\_address}(dht, argv[argvoffset + 1],
+171                                              ipv6enabled, port, bootstrap\_key);
+172         free(bootstrap\_key);
+173 
+174         \textcolor{keywordflow}{if} (!res) \{
+175             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Failed to convert \(\backslash\)"%s\(\backslash\)" into an IP address. Exiting...\(\backslash\)n"}, argv[argvoffset + 1])
+      ;
+176             exit(1);
+177         \}
+178     \}
+179 
+180     \textcolor{keywordtype}{int} is\_waiting\_for\_dht\_connection = 1;
+181 
+182     uint64\_t last\_LANdiscovery = 0;
+183     \hyperlink{_l_a_n__discovery_8c_ab5177e8d5fc82b7c156f777f13649912}{LANdiscovery\_init}(dht);
+184 
+185     \textcolor{keywordflow}{while} (1) \{
+186         \textcolor{keywordflow}{if} (is\_waiting\_for\_dht\_connection && \hyperlink{_d_h_t_8c_a93770fe498d41d1c6b420275680967b6}{DHT\_isconnected}(dht)) \{
+187             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Connected to other bootstrap node successfully.\(\backslash\)n"});
+188             is\_waiting\_for\_dht\_connection = 0;
+189         \}
+190 
+191         \hyperlink{_d_h_t_8c_a5be9dfb66fbf1fa7c267b016f3357534}{do\_DHT}(dht);
+192 
+193         \textcolor{keywordflow}{if} (\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(last\_LANdiscovery, is\_waiting\_for\_dht\_connection ? 5 : 
+      \hyperlink{_l_a_n__discovery_8h_a603390b71ba701f06b39520052b813c4}{LAN\_DISCOVERY\_INTERVAL})) \{
+194             \hyperlink{_l_a_n__discovery_8c_a929a14971d13e5aad2661e834e406391}{send\_LANdiscovery}(htons(\hyperlink{_d_h_t__bootstrap_8c_a614217d263be1fb1a5f76e2ff7be19a2}{PORT}), dht);
+195             last\_LANdiscovery = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+196         \}
+197 
+198 \textcolor{preprocessor}{#ifdef TCP\_RELAY\_ENABLED}
+199         \hyperlink{_t_c_p__server_8c_a40e8a0302a359dd4f712eb1e9c346fe5}{do\_TCP\_server}(tcp\_s);
+200 \textcolor{preprocessor}{#endif}
+201         \hyperlink{network_8c_ab6765fe4b08536210a20ac728f991e13}{networking\_poll}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net});
+202 
+203         \hyperlink{_d_h_t__bootstrap_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(1);
+204     \}
+205 
+206     \textcolor{keywordflow}{return} 0;
+207 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/d5e/_d_h_t__bootstrap_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5}{\index{D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}!manage\+\_\+keys@{manage\+\_\+keys}}
+\index{manage\+\_\+keys@{manage\+\_\+keys}!D\+H\+T\+\_\+bootstrap.\+c@{D\+H\+T\+\_\+bootstrap.\+c}}
+\subsubsection[{manage\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}void manage\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht}
+\end{DoxyParamCaption}
+)}}\label{_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5}
+
+
+Definition at line 61 of file D\+H\+T\+\_\+bootstrap.\+c.
+
+
+
+References printf(), D\+H\+T\+::self\+\_\+public\+\_\+key, and D\+H\+T\+::self\+\_\+secret\+\_\+key.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keyword}{const} uint32\_t KEYS\_SIZE = crypto\_box\_PUBLICKEYBYTES + crypto\_box\_SECRETKEYBYTES;
+64     uint8\_t keys[KEYS\_SIZE];
+65 
+66     FILE *keys\_file = fopen(\textcolor{stringliteral}{"key"}, \textcolor{stringliteral}{"r"});
+67 
+68     \textcolor{keywordflow}{if} (keys\_file != NULL) \{
+69         \textcolor{comment}{/* If file was opened successfully -- load keys,}
+70 \textcolor{comment}{           otherwise save new keys */}
+71         \textcolor{keywordtype}{size\_t} read\_size = fread(keys, \textcolor{keyword}{sizeof}(uint8\_t), KEYS\_SIZE, keys\_file);
+72 
+73         \textcolor{keywordflow}{if} (read\_size != KEYS\_SIZE) \{
+74             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Error while reading the key file\(\backslash\)nExiting.\(\backslash\)n"});
+75             exit(1);
+76         \}
+77 
+78         memcpy(dht->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, keys, crypto\_box\_PUBLICKEYBYTES);
+79         memcpy(dht->\hyperlink{struct_d_h_t_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, keys + crypto\_box\_PUBLICKEYBYTES, 
+      crypto\_box\_SECRETKEYBYTES);
+80         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Keys loaded successfully.\(\backslash\)n"});
+81     \} \textcolor{keywordflow}{else} \{
+82         memcpy(keys, dht->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, crypto\_box\_PUBLICKEYBYTES);
+83         memcpy(keys + crypto\_box\_PUBLICKEYBYTES, dht->\hyperlink{struct_d_h_t_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, 
+      crypto\_box\_SECRETKEYBYTES);
+84         keys\_file = fopen(\textcolor{stringliteral}{"key"}, \textcolor{stringliteral}{"w"});
+85 
+86         \textcolor{keywordflow}{if} (keys\_file == NULL) \{
+87             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Error opening key file in write mode.\(\backslash\)nKeys will not be saved.\(\backslash\)n"});
+88             \textcolor{keywordflow}{return};
+89         \}
+90 
+91         \textcolor{keywordflow}{if} (fwrite(keys, \textcolor{keyword}{sizeof}(uint8\_t), KEYS\_SIZE, keys\_file) != KEYS\_SIZE) \{
+92             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Error while writing the key file.\(\backslash\)nExiting.\(\backslash\)n"});
+93             exit(1);
+94         \}
+95 
+96         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Keys saved successfully.\(\backslash\)n"});
+97     \}
+98 
+99     fclose(keys\_file);
+100 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{db/d5e/_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{db/d5e/_d_h_t__bootstrap_8c_a09cc2aaf752bca1e1cc4cb44fe0277c5_icgraph}
+\end{center}
+\end{figure}
+
+

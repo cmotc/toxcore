@@ -1,0 +1,162 @@
+\hypertarget{struct_d_h_t___friend}{\section{D\+H\+T\+\_\+\+Friend Struct Reference}
+\label{struct_d_h_t___friend}\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+}
+
+
+{\ttfamily \#include $<$D\+H\+T.\+h$>$}
+
+
+
+Collaboration diagram for D\+H\+T\+\_\+\+Friend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d6/da5/struct_d_h_t___friend__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_d_h_t___friend_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\hyperlink{struct_client__data}{Client\+\_\+data} \hyperlink{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}{client\+\_\+list} \mbox{[}\hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+L\+I\+E\+N\+T\+S}\mbox{]}
+\item 
+uint64\+\_\+t \hyperlink{struct_d_h_t___friend_acdb8d1d26f42ba99ca73f45cb5643d1e}{lastgetnode}
+\item 
+uint32\+\_\+t \hyperlink{struct_d_h_t___friend_aae62716bf77c5ba5fca784702d47a5ff}{bootstrap\+\_\+times}
+\item 
+\hyperlink{struct_n_a_t}{N\+A\+T} \hyperlink{struct_d_h_t___friend_a96318690475243d010825feb2a67b41c}{nat}
+\item 
+uint16\+\_\+t \hyperlink{struct_d_h_t___friend_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\+\_\+count}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>void($\ast$ \hyperlink{struct_d_h_t___friend_abc638e20365d8487c7bc56894c5ef969}{ip\_callback} )(void $\ast$, int32\_t, \hyperlink{struct_i_p___port}{IP\_Port})\\
+\>void $\ast$ \hyperlink{struct_d_h_t___friend_a735984d41155bc1032e09bece8f8d66d}{data}\\
+\>int32\_t \hyperlink{struct_d_h_t___friend_a875e6b85754551c9eaea424a5a4c7934}{number}\\
+\} \hyperlink{struct_d_h_t___friend_a1ef2d93ffeb76ceb01d28ecb1244547c}{callbacks} \mbox{[}\hyperlink{_d_h_t_8h_a5a2a8d3d5ad30ebd3efec91f27ccf394}{DHT\_FRIEND\_MAX\_LOCKS}\mbox{]}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 126 of file D\+H\+T.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_d_h_t___friend_aae62716bf77c5ba5fca784702d47a5ff}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!bootstrap\+\_\+times@{bootstrap\+\_\+times}}
+\index{bootstrap\+\_\+times@{bootstrap\+\_\+times}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{bootstrap\+\_\+times}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bootstrap\+\_\+times}}\label{struct_d_h_t___friend_aae62716bf77c5ba5fca784702d47a5ff}
+
+
+Definition at line 133 of file D\+H\+T.\+h.
+
+
+
+Referenced by do\+\_\+\+D\+H\+T\+\_\+friends().
+
+\hypertarget{struct_d_h_t___friend_a1ef2d93ffeb76ceb01d28ecb1244547c}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{callbacks}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   callbacks\mbox{[}{\bf D\+H\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+K\+S}\mbox{]}}}\label{struct_d_h_t___friend_a1ef2d93ffeb76ceb01d28ecb1244547c}
+
+
+Referenced by addto\+\_\+lists().
+
+\hypertarget{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!client\+\_\+list@{client\+\_\+list}}
+\index{client\+\_\+list@{client\+\_\+list}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{client\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+\_\+data} client\+\_\+list\mbox{[}{\bf M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+L\+I\+E\+N\+T\+S}\mbox{]}}}\label{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}
+
+
+Definition at line 128 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists(), D\+H\+T\+\_\+getfriendip(), D\+H\+T\+\_\+save(), D\+H\+T\+\_\+size(), do\+\_\+\+D\+H\+T\+\_\+friends(), do\+\_\+messenger(), get\+\_\+somewhat\+\_\+close\+\_\+nodes(), ping\+\_\+node\+\_\+from\+\_\+getnodes\+\_\+ok(), print\+\_\+friendlist(), returnedip\+\_\+ports(), and test\+\_\+addto\+\_\+lists().
+
+\hypertarget{struct_d_h_t___friend_a735984d41155bc1032e09bece8f8d66d}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!data@{data}}
+\index{data@{data}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ data}}\label{struct_d_h_t___friend_a735984d41155bc1032e09bece8f8d66d}
+
+
+Definition at line 141 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists().
+
+\hypertarget{struct_d_h_t___friend_abc638e20365d8487c7bc56894c5ef969}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!ip\+\_\+callback@{ip\+\_\+callback}}
+\index{ip\+\_\+callback@{ip\+\_\+callback}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{ip\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ip\+\_\+callback)(void $\ast$, int32\+\_\+t, {\bf I\+P\+\_\+\+Port})}}\label{struct_d_h_t___friend_abc638e20365d8487c7bc56894c5ef969}
+
+
+Definition at line 140 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists().
+
+\hypertarget{struct_d_h_t___friend_acdb8d1d26f42ba99ca73f45cb5643d1e}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!lastgetnode@{lastgetnode}}
+\index{lastgetnode@{lastgetnode}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{lastgetnode}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t lastgetnode}}\label{struct_d_h_t___friend_acdb8d1d26f42ba99ca73f45cb5643d1e}
+
+
+Definition at line 131 of file D\+H\+T.\+h.
+
+
+
+Referenced by do\+\_\+\+D\+H\+T\+\_\+friends().
+
+\hypertarget{struct_d_h_t___friend_a712c4c639bfc0f5a8616eead3e24ca4e}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!lock\+\_\+count@{lock\+\_\+count}}
+\index{lock\+\_\+count@{lock\+\_\+count}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{lock\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t lock\+\_\+count}}\label{struct_d_h_t___friend_a712c4c639bfc0f5a8616eead3e24ca4e}
+
+
+Definition at line 138 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists(), D\+H\+T\+\_\+addfriend(), and D\+H\+T\+\_\+delfriend().
+
+\hypertarget{struct_d_h_t___friend_a96318690475243d010825feb2a67b41c}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!nat@{nat}}
+\index{nat@{nat}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{nat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+A\+T} nat}}\label{struct_d_h_t___friend_a96318690475243d010825feb2a67b41c}
+
+
+Definition at line 136 of file D\+H\+T.\+h.
+
+
+
+Referenced by do\+\_\+\+N\+A\+T(), and punch\+\_\+holes().
+
+\hypertarget{struct_d_h_t___friend_a875e6b85754551c9eaea424a5a4c7934}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!number@{number}}
+\index{number@{number}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t number}}\label{struct_d_h_t___friend_a875e6b85754551c9eaea424a5a4c7934}
+
+
+Definition at line 142 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists().
+
+\hypertarget{struct_d_h_t___friend_aaa806bb1136fb3d4b5d8d8970b596ff7}{\index{D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}!public\+\_\+key@{public\+\_\+key}}
+\index{public\+\_\+key@{public\+\_\+key}!D\+H\+T\+\_\+\+Friend@{D\+H\+T\+\_\+\+Friend}}
+\subsubsection[{public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_d_h_t___friend_aaa806bb1136fb3d4b5d8d8970b596ff7}
+
+
+Definition at line 127 of file D\+H\+T.\+h.
+
+
+
+Referenced by addto\+\_\+lists(), D\+H\+T\+\_\+getfriendip(), do\+\_\+\+D\+H\+T\+\_\+friends(), do\+\_\+messenger(), do\+\_\+\+N\+A\+T(), friend\+\_\+number(), print\+\_\+friendlist(), punch\+\_\+holes(), returnedip\+\_\+ports(), and test\+\_\+addto\+\_\+lists().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{_d_h_t_8h}{D\+H\+T.\+h}\end{DoxyCompactItemize}

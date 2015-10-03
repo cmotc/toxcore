@@ -1,0 +1,6 @@
+<map id="groupchat_enable_av" name="groupchat_enable_av">
+<area shape="rect" id="node2" href="$d8/da5/toxav_2group_8h.html#a0cf061415a40de14b1dca48921a6f687" title="add_av_groupchat" alt="" coords="199,5,327,32"/>
+<area shape="rect" id="node4" href="$d8/da5/toxav_2group_8h.html#a3bb53f02b23ac60cb1e76d3717a4e2e5" title="join_av_groupchat" alt="" coords="199,56,326,83"/>
+<area shape="rect" id="node3" href="$d9/d82/toxav_8h.html#a71c8622e709969f80a862ee56da27184" title="toxav_add_av_groupchat" alt="" coords="375,5,541,32"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#a02fd1017fbe8e974c2c0a39ee08067d7" title="toxav_join_av_groupchat" alt="" coords="375,56,541,83"/>
+</map>

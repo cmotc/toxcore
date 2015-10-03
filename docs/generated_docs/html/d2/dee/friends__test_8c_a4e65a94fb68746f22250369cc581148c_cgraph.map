@@ -1,0 +1,8 @@
+<map id="parent_wait_for_message" name="parent_wait_for_message">
+<area shape="rect" id="node2" href="$d2/dee/friends__test_8c.html#a4cefd91a5733f30557835867b0174103" title="do_tox" alt="" coords="224,31,285,57"/>
+<area shape="rect" id="node3" href="$dc/dc1/_d_h_t_8c.html#a93770fe498d41d1c6b420275680967b6" title="DHT_isconnected" alt="" coords="333,31,460,57"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#a849af10dd491723cf3abdef599846897" title="unix_time_update" alt="" coords="508,5,632,32"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="529,56,611,83"/>
+<area shape="rect" id="node5" href="$db/d11/irc__syncbot_8c.html#ae8ecaef140b786a2720eadbb85918e81" title="current_time_monotonic" alt="" coords="680,5,841,32"/>
+<area shape="rect" id="node7" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="721,56,800,83"/>
+</map>

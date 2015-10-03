@@ -1,0 +1,7 @@
+<map id="getfriendname_terminated" name="getfriendname_terminated">
+<area shape="rect" id="node2" href="$d3/d69/tox_8c.html#a7096298c91c86a9e815beb1f3bde6b42" title="tox_friend_get_name" alt="" coords="241,5,384,32"/>
+<area shape="rect" id="node5" href="$d3/d69/tox_8c.html#a577e882cf9b80f620ca6bd8a6991cf6d" title="tox_friend_get_name_size" alt="" coords="225,56,400,83"/>
+<area shape="rect" id="node3" href="$d8/d8d/_messenger_8c.html#a59c33c3a3b0e1dd9f86267f59c380bee" title="getname" alt="" coords="476,5,548,32"/>
+<area shape="rect" id="node4" href="$d8/d8d/_messenger_8c.html#a36587bd583123730d702e5a4cb894e5f" title="friend_not_valid" alt="" coords="624,31,737,57"/>
+<area shape="rect" id="node6" href="$d8/d8d/_messenger_8c.html#aadf7f2cd48886fe7b9a38e6c63b2ff9d" title="m_get_name_size" alt="" coords="448,56,576,83"/>
+</map>

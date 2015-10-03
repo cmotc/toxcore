@@ -1,0 +1,883 @@
+\hypertarget{messenger__test_8c}{\section{auto\+\_\+tests/messenger\+\_\+test.c File Reference}
+\label{messenger__test_8c}\index{auto\+\_\+tests/messenger\+\_\+test.\+c@{auto\+\_\+tests/messenger\+\_\+test.\+c}}
+}
+{\ttfamily \#include \char`\"{}../testing/misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+Messenger.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$check.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\\*
+Include dependency graph for messenger\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd0/messenger__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R}~((1) $<$$<$ (sizeof(uint16\+\_\+t) $\ast$ 7))
+\item 
+\#define \hyperlink{messenger__test_8c_a15bafd08050e1fe690d0955499e4cbae}{S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L}(X, Y)~(strcmp(X, Y) == 0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{messenger__test_8c_acb2665d4ea00c2da66251120149841f1}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+sendmesage)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_aa7760a9fd77b94e5972ad98fa773a8ac}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+get\+\_\+userstatus\+\_\+size)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a2e31c7472ca2bae20942b5b7bb8532a7}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+set\+\_\+userstatus)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_abd0bd2f7090927784ed67ea15fcf19ab}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+get\+\_\+friend\+\_\+connectionstatus)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a87227f89372ffdc594d064e7714cc5f7}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+friend\+\_\+exists)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a0d7e5cba3f1de72c42741b80489f5df0}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+m\+\_\+delfriend)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a90575a940f87eb781cea96298832652b}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+setname)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a8027a6f73b73b8fbc51b48d56814bfef}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+getself\+\_\+name)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_afe012a605711ed8000a18d9f0eab466c}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+getname)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a86a26950f83bcd6bd68640da6a5c96a4}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+dht\+\_\+state\+\_\+saveloadsave)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{messenger__test_8c_a9c4405dc5f0fb39abca715cf5fe62007}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+messenger\+\_\+state\+\_\+saveloadsave)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T Suite $\ast$ \hyperlink{messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9}{messenger\+\_\+suite} (void)
+\item 
+int \hyperlink{messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{messenger__test_8c_a075df4c2c1412747210d93a631ed06f2}{friend\+\_\+id\+\_\+str} = \char`\"{}e4b3d5030bc99494605aecc33ceec8875640c1d74aa32790e821b17e98771c4a00000000f1db\char`\"{}
+\item 
+char $\ast$ \hyperlink{messenger__test_8c_a215d7e0460589ac669861ce930f90eac}{good\+\_\+id\+\_\+a\+\_\+str} = \char`\"{}D\+B9\+B569\+D14850\+E\+D8364\+C3744\+C\+A\+C2\+C8\+F\+F78985\+D213\+E980\+C7\+C508\+D0\+E91\+E8\+E45441\char`\"{}
+\item 
+char $\ast$ \hyperlink{messenger__test_8c_a6cbbcdbdedf2d6105475e81e829da331}{good\+\_\+id\+\_\+b\+\_\+str} = \char`\"{}d3f14b6d384d8f5f2a66cff637e69f28f539c5de61bc29744785291fa4ef4d64\char`\"{}
+\item 
+char $\ast$ \hyperlink{messenger__test_8c_a84ed8f499dba364289c8cc472cae3baa}{bad\+\_\+id\+\_\+str} = \char`\"{}9\+B569\+D14ff637e69f2\char`\"{}
+\item 
+unsigned char $\ast$ \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\+\_\+id} = N\+U\+L\+L
+\item 
+unsigned char $\ast$ \hyperlink{messenger__test_8c_a30c40500be617787692b4cf65e27cc37}{good\+\_\+id\+\_\+a} = N\+U\+L\+L
+\item 
+unsigned char $\ast$ \hyperlink{messenger__test_8c_a699ebf5efdcda05d92f5d3464fbbc5d3}{good\+\_\+id\+\_\+b} = N\+U\+L\+L
+\item 
+unsigned char $\ast$ \hyperlink{messenger__test_8c_af7cae21e4c94b90da8e36e572f40a944}{bad\+\_\+id} = N\+U\+L\+L
+\item 
+int \hyperlink{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}{friend\+\_\+id\+\_\+num} = 0
+\item 
+\hyperlink{struct_messenger}{Messenger} $\ast$ \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R@{R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R}}
+\index{R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R@{R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R~((1) $<$$<$ (sizeof(uint16\+\_\+t) $\ast$ 7))}}\label{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}
+
+
+Definition at line 26 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{messenger__test_8c_a15bafd08050e1fe690d0955499e4cbae}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L@{S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L}}
+\index{S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L@{S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+Q\+U\+A\+L(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y}
+\end{DoxyParamCaption}
+)~(strcmp(X, Y) == 0)}}\label{messenger__test_8c_a15bafd08050e1fe690d0955499e4cbae}
+
+
+Definition at line 27 of file messenger\+\_\+test.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 326 of file messenger\+\_\+test.\+c.
+
+
+
+References bad\+\_\+id, bad\+\_\+id\+\_\+str, friend\+\_\+id, friend\+\_\+id\+\_\+num, friend\+\_\+id\+\_\+str, getfriend\+\_\+id(), good\+\_\+id\+\_\+a, good\+\_\+id\+\_\+a\+\_\+str, good\+\_\+id\+\_\+b, good\+\_\+id\+\_\+b\+\_\+str, hex\+\_\+string\+\_\+to\+\_\+bin(), Messenger\+\_\+\+Options\+::ipv6enabled, kill\+\_\+messenger(), m\+\_\+addfriend\+\_\+norequest(), messenger\+\_\+suite(), new\+\_\+messenger(), and T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T.
+
+
+\begin{DoxyCode}
+327 \{
+328     Suite *messenger = \hyperlink{messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9}{messenger\_suite}();
+329     SRunner *test\_runner = srunner\_create(messenger);
+330     \textcolor{keywordtype}{int} number\_failed = 0;
+331 
+332     \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id} = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(\hyperlink{messenger__test_8c_a075df4c2c1412747210d93a631ed06f2}{friend\_id\_str});
+333     \hyperlink{messenger__test_8c_a30c40500be617787692b4cf65e27cc37}{good\_id\_a} = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(\hyperlink{messenger__test_8c_a215d7e0460589ac669861ce930f90eac}{good\_id\_a\_str});
+334     \hyperlink{messenger__test_8c_a699ebf5efdcda05d92f5d3464fbbc5d3}{good\_id\_b} = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(\hyperlink{messenger__test_8c_a6cbbcdbdedf2d6105475e81e829da331}{good\_id\_b\_str});
+335     \hyperlink{messenger__test_8c_af7cae21e4c94b90da8e36e572f40a944}{bad\_id}    = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(\hyperlink{messenger__test_8c_a84ed8f499dba364289c8cc472cae3baa}{bad\_id\_str});
+336 
+337     \textcolor{comment}{/* IPv6 status from global define */}
+338     \hyperlink{struct_messenger___options}{Messenger\_Options} options = \{0\};
+339     options.\hyperlink{struct_messenger___options_abf85a84f394474115b9f45f037ad3378}{ipv6enabled} = \hyperlink{network_8h_a5cba5a89816e720fa45984ad44859726}{TOX\_ENABLE\_IPV6\_DEFAULT};
+340     \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = \hyperlink{_messenger_8c_af015ea2e74c58196e0564719a6c6a112}{new\_messenger}(&options, 0);
+341 
+342     \textcolor{comment}{/* setup a default friend and friendnum */}
+343     \textcolor{keywordflow}{if} (\hyperlink{_messenger_8c_a2f7aa06733a25e8c0edc8f31a22a78dc}{m\_addfriend\_norequest}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)\hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id}) < 0)
+344         fputs(\textcolor{stringliteral}{"m\_addfriend\_norequest() failed on a valid ID!\(\backslash\)n"}
+345               \textcolor{stringliteral}{"this was CRITICAL to the test, and the build WILL fail.\(\backslash\)n"}
+346               \textcolor{stringliteral}{"the tests will continue now...\(\backslash\)n\(\backslash\)n"}, stderr);
+347 
+348     \textcolor{keywordflow}{if} ((\hyperlink{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}{friend\_id\_num} = \hyperlink{_messenger_8c_a32203f86be17e650ef0f7e5b7eff66bc}{getfriend\_id}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)
+      \hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id})) < 0)
+349         fputs(\textcolor{stringliteral}{"getfriend\_id() failed on a valid ID!\(\backslash\)n"}
+350               \textcolor{stringliteral}{"this was CRITICAL to the test, and the build WILL fail.\(\backslash\)n"}
+351               \textcolor{stringliteral}{"the tests will continue now...\(\backslash\)n\(\backslash\)n"}, stderr);
+352 
+353     srunner\_run\_all(test\_runner, CK\_NORMAL);
+354     number\_failed = srunner\_ntests\_failed(test\_runner);
+355 
+356     srunner\_free(test\_runner);
+357     free(\hyperlink{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{friend\_id});
+358     free(\hyperlink{messenger__test_8c_a30c40500be617787692b4cf65e27cc37}{good\_id\_a});
+359     free(\hyperlink{messenger__test_8c_a699ebf5efdcda05d92f5d3464fbbc5d3}{good\_id\_b});
+360     free(\hyperlink{messenger__test_8c_af7cae21e4c94b90da8e36e572f40a944}{bad\_id});
+361 
+362     \hyperlink{_messenger_8c_a771c65c3057d870b0653c2fdf0a12fb7}{kill\_messenger}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+363 
+364     \textcolor{keywordflow}{return} number\_failed;
+365 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/dda/messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!messenger\+\_\+suite@{messenger\+\_\+suite}}
+\index{messenger\+\_\+suite@{messenger\+\_\+suite}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{messenger\+\_\+suite}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T Suite$\ast$ messenger\+\_\+suite (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9}
+
+
+Definition at line 303 of file messenger\+\_\+test.\+c.
+
+
+
+References D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E, getname(), getself\+\_\+name(), m\+\_\+delfriend(), m\+\_\+friend\+\_\+exists(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), m\+\_\+set\+\_\+userstatus(), and setname().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+304 \{
+305     Suite *s = suite\_create(\textcolor{stringliteral}{"Messenger"});
+306 
+307     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(dht\_state\_saveloadsave);
+308     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(messenger\_state\_saveloadsave);
+309 
+310     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_a6d4bfd8f9f8ecfff61c2619988fd3bb9}{getself\_name});
+311     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(m\_get\_userstatus\_size);
+312     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_ab4a416ae0bb471de245dcbd790367420}{m\_set\_userstatus});
+313 
+314     \textcolor{comment}{/* DEFTESTCASE(m\_addfriend); */}
+315     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_ac652e6df9a2c7024fae6700bb7927c61}{m\_friend\_exists});
+316     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_a4b1f7ee3f635e7a80c8f3cbe98588e4d}{m\_get\_friend\_connectionstatus});
+317     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_a7a7b52e12232948dfe96d8e7dea50610}{m\_delfriend});
+318 
+319     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_a74824e98cf3b2607cb8624d46cd2e227}{setname});
+320     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(\hyperlink{_messenger_8c_a59c33c3a3b0e1dd9f86267f59c380bee}{getname});
+321     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(m\_sendmesage);
+322 
+323     \textcolor{keywordflow}{return} s;
+324 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{d8/dda/messenger__test_8c_a921391ba2a74ae4536cfcd2c789c78f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_acb2665d4ea00c2da66251120149841f1}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+sendmesage}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_acb2665d4ea00c2da66251120149841f1}
+
+
+Definition at line 46 of file messenger\+\_\+test.\+c.
+
+
+
+References friend\+\_\+id\+\_\+num, m\+\_\+send\+\_\+message\+\_\+generic(), M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E, M\+E\+S\+S\+A\+G\+E\+\_\+\+N\+O\+R\+M\+A\+L, and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordtype}{char} *message = \textcolor{stringliteral}{"h-hi :3"};
+49     \textcolor{keywordtype}{int} good\_len = strlen(message);
+50     \textcolor{keywordtype}{int} bad\_len = \hyperlink{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{MAX\_CRYPTO\_PACKET\_SIZE};
+51 
+52 
+53     ck\_assert(\hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1, 
+      \hyperlink{_messenger_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b0309750c8c5bf0ad071cf382f10c67}{MESSAGE\_NORMAL}, (uint8\_t *)message, good\_len, 0) == -1);
+54     ck\_assert(\hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}, 
+      \hyperlink{_messenger_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b0309750c8c5bf0ad071cf382f10c67}{MESSAGE\_NORMAL}, (uint8\_t *)message, good\_len, 0) == -1);
+55     ck\_assert(\hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, 17, 
+      \hyperlink{_messenger_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b0309750c8c5bf0ad071cf382f10c67}{MESSAGE\_NORMAL}, (uint8\_t *)message, good\_len, 0) == -1);
+56     ck\_assert(\hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}{friend\_id\_num}, 
+      \hyperlink{_messenger_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b0309750c8c5bf0ad071cf382f10c67}{MESSAGE\_NORMAL}, (uint8\_t *)message, bad\_len, 0) == -2);
+57 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_acb2665d4ea00c2da66251120149841f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_aa7760a9fd77b94e5972ad98fa773a8ac}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+get\+\_\+userstatus\+\_\+size}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_aa7760a9fd77b94e5972ad98fa773a8ac}
+
+
+Definition at line 60 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), friend\+\_\+id\+\_\+num, m\+\_\+get\+\_\+statusmessage\+\_\+size(), M\+A\+X\+\_\+\+S\+T\+A\+T\+U\+S\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+T\+H, and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+61 \{
+62     \textcolor{keywordtype}{int} rc = 0;
+63     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a84d0c0e28a2c64f66e114a69619414aa}{m\_get\_statusmessage\_size}(
+      \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1) == -1),
+64                   \textcolor{stringliteral}{"m\_get\_statusmessage\_size did NOT catch an argument of -1"});
+65     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a84d0c0e28a2c64f66e114a69619414aa}{m\_get\_statusmessage\_size}(
+      \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}) == -1),
+66                   \textcolor{stringliteral}{"m\_get\_statusmessage\_size did NOT catch the following argument: %d\(\backslash\)n"},
+67                   \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER});
+68     rc = \hyperlink{_messenger_8c_a84d0c0e28a2c64f66e114a69619414aa}{m\_get\_statusmessage\_size}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}{friend\_id\_num});
+69 
+70     \textcolor{comment}{/* this WILL error if the original m\_addfriend\_norequest() failed */}
+71     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((rc >= 0 && rc <= \hyperlink{_messenger_8h_a0d1a4b91dd43b4cb07dfefab7fc6bee1}{MAX\_STATUSMESSAGE\_LENGTH}),
+72                   \textcolor{stringliteral}{"m\_get\_statusmessage\_size is returning out of range values! (%i)\(\backslash\)n"}
+73                   \textcolor{stringliteral}{"(this can be caused by the error of m\_addfriend\_norequest"}
+74                   \textcolor{stringliteral}{" in the beginning of the suite)\(\backslash\)n"}, rc);
+75 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_aa7760a9fd77b94e5972ad98fa773a8ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a2e31c7472ca2bae20942b5b7bb8532a7}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+set\+\_\+userstatus}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a2e31c7472ca2bae20942b5b7bb8532a7}
+
+
+Definition at line 78 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), m\+\_\+set\+\_\+statusmessage(), M\+A\+X\+\_\+\+S\+T\+A\+T\+U\+S\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+T\+H, and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+79 \{
+80     \textcolor{keywordtype}{char} *status = \textcolor{stringliteral}{"online!"};
+81     uint16\_t good\_length = strlen(status);
+82     uint16\_t bad\_length = \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER};
+83 
+84     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_ae826ef8eb56b45f67f3d37be99df7270}{m\_set\_statusmessage}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)status, bad\_length) 
+      == -1),
+85                   \textcolor{stringliteral}{"m\_set\_userstatus did NOT catch the following length: %d\(\backslash\)n"},
+86                   \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER});
+87 
+88     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_ae826ef8eb56b45f67f3d37be99df7270}{m\_set\_statusmessage}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)status, good\_length) 
+      == 0),
+89                   \textcolor{stringliteral}{"m\_set\_userstatus did NOT return 0 on the following length: %d\(\backslash\)n"}
+90                   \textcolor{stringliteral}{"MAX\_STATUSMESSAGE\_LENGTH: %d\(\backslash\)n"}, good\_length, 
+      \hyperlink{_messenger_8h_a0d1a4b91dd43b4cb07dfefab7fc6bee1}{MAX\_STATUSMESSAGE\_LENGTH});
+91 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d8/dda/messenger__test_8c_a2e31c7472ca2bae20942b5b7bb8532a7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_abd0bd2f7090927784ed67ea15fcf19ab}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+get\+\_\+friend\+\_\+connectionstatus}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_abd0bd2f7090927784ed67ea15fcf19ab}
+
+
+Definition at line 94 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+95 \{
+96     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a4b1f7ee3f635e7a80c8f3cbe98588e4d}{m\_get\_friend\_connectionstatus}(
+      \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1) == -1),
+97                   \textcolor{stringliteral}{"m\_get\_friend\_connectionstatus did NOT catch an argument of -1.\(\backslash\)n"});
+98     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a4b1f7ee3f635e7a80c8f3cbe98588e4d}{m\_get\_friend\_connectionstatus}(
+      \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}) == -1),
+99                   \textcolor{stringliteral}{"m\_get\_friend\_connectionstatus did NOT catch an argument of %d.\(\backslash\)n"},
+100                   \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER});
+101 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_abd0bd2f7090927784ed67ea15fcf19ab_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a87227f89372ffdc594d064e7714cc5f7}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+friend\+\_\+exists}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a87227f89372ffdc594d064e7714cc5f7}
+
+
+Definition at line 104 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), m\+\_\+friend\+\_\+exists(), and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+105 \{
+106     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_ac652e6df9a2c7024fae6700bb7927c61}{m\_friend\_exists}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1) == 0),
+107                   \textcolor{stringliteral}{"m\_friend\_exists did NOT catch an argument of -1.\(\backslash\)n"});
+108     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_ac652e6df9a2c7024fae6700bb7927c61}{m\_friend\_exists}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, 
+      \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}) == 0),
+109                   \textcolor{stringliteral}{"m\_friend\_exists did NOT catch an argument of %d.\(\backslash\)n"},
+110                   \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER});
+111 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_a87227f89372ffdc594d064e7714cc5f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a0d7e5cba3f1de72c42741b80489f5df0}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+m\+\_\+delfriend}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a0d7e5cba3f1de72c42741b80489f5df0}
+
+
+Definition at line 114 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), m\+\_\+delfriend(), and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+115 \{
+116     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a7a7b52e12232948dfe96d8e7dea50610}{m\_delfriend}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1) == -1),
+117                   \textcolor{stringliteral}{"m\_delfriend did NOT catch an argument of -1\(\backslash\)n"});
+118     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a7a7b52e12232948dfe96d8e7dea50610}{m\_delfriend}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}) == -1),
+119                   \textcolor{stringliteral}{"m\_delfriend did NOT catch the following number: %d\(\backslash\)n"},
+120                   \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER});
+121 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_a0d7e5cba3f1de72c42741b80489f5df0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a90575a940f87eb781cea96298832652b}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+setname}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a90575a940f87eb781cea96298832652b}
+
+
+Definition at line 157 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R, and setname().
+
+
+\begin{DoxyCode}
+158 \{
+159     \textcolor{keywordtype}{char} *good\_name = \textcolor{stringliteral}{"consensualCorn"};
+160     \textcolor{keywordtype}{int} good\_length = strlen(good\_name);
+161     \textcolor{keywordtype}{int} bad\_length = \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER};
+162 
+163     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a74824e98cf3b2607cb8624d46cd2e227}{setname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)good\_name, bad\_length) == -1),
+164                   \textcolor{stringliteral}{"setname() did NOT error on %d as a length argument!\(\backslash\)n"}, bad\_length);
+165 
+166     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((\hyperlink{_messenger_8c_a74824e98cf3b2607cb8624d46cd2e227}{setname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)good\_name, good\_length) == 0),
+167                   \textcolor{stringliteral}{"setname() did NOT return 0 on good arguments!\(\backslash\)n"});
+168 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d8/dda/messenger__test_8c_a90575a940f87eb781cea96298832652b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a8027a6f73b73b8fbc51b48d56814bfef}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+getself\+\_\+name}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a8027a6f73b73b8fbc51b48d56814bfef}
+
+
+Definition at line 171 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), getself\+\_\+name(), and setname().
+
+
+\begin{DoxyCode}
+172 \{
+173     \textcolor{keywordtype}{char} *nickname = \textcolor{stringliteral}{"testGallop"};
+174     \textcolor{keywordtype}{int} len = strlen(nickname);
+175     \textcolor{keywordtype}{char} nick\_check[len];
+176 
+177     \hyperlink{_messenger_8c_a74824e98cf3b2607cb8624d46cd2e227}{setname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)nickname, len);
+178     \hyperlink{_messenger_8c_a6d4bfd8f9f8ecfff61c2619988fd3bb9}{getself\_name}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)nick\_check);
+179 
+180     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}((memcmp(nickname, nick\_check, len) == 0),
+181                   \textcolor{stringliteral}{"getself\_name failed to return the known name!\(\backslash\)n"}
+182                   \textcolor{stringliteral}{"known name: %s\(\backslash\)nreturned: %s\(\backslash\)n"}, nickname, nick\_check);
+183 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d8/dda/messenger__test_8c_a8027a6f73b73b8fbc51b48d56814bfef_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_afe012a605711ed8000a18d9f0eab466c}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+getname}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_afe012a605711ed8000a18d9f0eab466c}
+
+
+Definition at line 203 of file messenger\+\_\+test.\+c.
+
+
+
+References Messenger\+::friendlist, getname(), M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H, Friend\+::name, Friend\+::name\+\_\+length, and R\+E\+A\+L\+L\+Y\+\_\+\+B\+I\+G\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+\begin{DoxyCode}
+204 \{
+205     uint8\_t name\_buf[\hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{MAX\_NAME\_LENGTH}];
+206     uint8\_t test\_name[] = \{\textcolor{charliteral}{'f'}, \textcolor{charliteral}{'o'}, \textcolor{charliteral}{'o'}\};
+207 
+208     ck\_assert(\hyperlink{_messenger_8c_a59c33c3a3b0e1dd9f86267f59c380bee}{getname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, -1, name\_buf) == -1);
+209     ck\_assert(\hyperlink{_messenger_8c_a59c33c3a3b0e1dd9f86267f59c380bee}{getname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{messenger__test_8c_a58ab1de66732b72780b88744c97f4b73}{REALLY\_BIG\_NUMBER}, name\_buf) == -1);
+210 
+211     memcpy(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a42c185c16c5df7707ba4d70bb6ee75e7}{friendlist}[0].\hyperlink{struct_friend_a11b8cc6595eea79e65c978209278e683}{name}, &test\_name[0], 3);
+212     \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a42c185c16c5df7707ba4d70bb6ee75e7}{friendlist}[0].\hyperlink{struct_friend_a3573d7a906b26e9999cd74f2c4066601}{name\_length} = 4;
+213     ck\_assert(\hyperlink{_messenger_8c_a59c33c3a3b0e1dd9f86267f59c380bee}{getname}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, 0, &name\_buf[0]) == 4);
+214 
+215     ck\_assert(strcmp((\textcolor{keywordtype}{char} *)&name\_buf[0], \textcolor{stringliteral}{"foo"}) == 0);
+216 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_afe012a605711ed8000a18d9f0eab466c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a86a26950f83bcd6bd68640da6a5c96a4}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+dht\+\_\+state\+\_\+saveloadsave}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a86a26950f83bcd6bd68640da6a5c96a4}
+
+
+Definition at line 219 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), Messenger\+::dht, D\+H\+T\+\_\+load(), D\+H\+T\+\_\+save(), D\+H\+T\+\_\+size(), and i.
+
+
+\begin{DoxyCode}
+220 \{
+221     \textcolor{comment}{/* validate that:}
+222 \textcolor{comment}{     * a) saving stays within the confined space}
+223 \textcolor{comment}{     * b) a save()d state can be load()ed back successfully}
+224 \textcolor{comment}{     * c) a second save() is of equal size}
+225 \textcolor{comment}{     * d) the second save() is of equal content */}
+226     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, extra = 64;
+227     \textcolor{keywordtype}{size\_t} size = \hyperlink{_d_h_t_8c_a55d92a2419bf9384e3cbfe0ec5a8f4d6}{DHT\_size}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+228     uint8\_t buffer[size + 2 * extra];
+229     memset(buffer, 0xCD, extra);
+230     memset(buffer + extra + size, 0xCD, extra);
+231     \hyperlink{_d_h_t_8c_a7510a9fdbacfffb5987590c4e193c40a}{DHT\_save}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, buffer + extra);
+232 
+233     \textcolor{keywordflow}{for} (i = 0; i < extra; i++) \{
+234         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(buffer[i] == 0xCD, \textcolor{stringliteral}{"Buffer underwritten from DHT\_save() @%u"}, i);
+235         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(buffer[extra + size + i] == 0xCD, \textcolor{stringliteral}{"Buffer overwritten from DHT\_save()
+       @%u"}, i);
+236     \}
+237 
+238     \textcolor{keywordtype}{int} res = \hyperlink{_d_h_t_8c_a36e42ad71b293cd0ada8a7b6de9ad86b}{DHT\_load}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, buffer + extra, size);
+239 
+240     \textcolor{keywordflow}{if} (res == -1)
+241         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 0, \textcolor{stringliteral}{"Failed to load back stored buffer: res == -1"});
+242     \textcolor{keywordflow}{else} \{
+243         \textcolor{keywordtype}{char} msg[128];
+244         \textcolor{keywordtype}{size\_t} offset = res >> 4;
+245         uint8\_t *ptr = buffer + extra + offset;
+246         sprintf(msg, \textcolor{stringliteral}{"Failed to load back stored buffer: 0x%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx
+       @%zu/%zu, code %d"},
+247                 ptr[-2], ptr[-1], ptr[0], ptr[1], ptr[2], ptr[3], ptr[4], ptr[5], offset, size, res & 0x0F)
+      ;
+248         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 0, msg);
+249     \}
+250 
+251     \textcolor{keywordtype}{size\_t} size2 = \hyperlink{_d_h_t_8c_a55d92a2419bf9384e3cbfe0ec5a8f4d6}{DHT\_size}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+252     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(size == size2, \textcolor{stringliteral}{"Messenger \(\backslash\)"grew\(\backslash\)" in size from a store/load cycle: %u -> %u
+      "}, size, size2);
+253 
+254     uint8\_t buffer2[size2];
+255     \hyperlink{_d_h_t_8c_a7510a9fdbacfffb5987590c4e193c40a}{DHT\_save}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, buffer2);
+256 
+257     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(!memcmp(buffer + extra, buffer2, size), \textcolor{stringliteral}{"DHT state changed by
+       store/load/store cycle"});
+258 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_a86a26950f83bcd6bd68640da6a5c96a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{messenger__test_8c_a9c4405dc5f0fb39abca715cf5fe62007}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+messenger\+\_\+state\+\_\+saveloadsave}]{}
+\end{DoxyParamCaption}
+)}}\label{messenger__test_8c_a9c4405dc5f0fb39abca715cf5fe62007}
+
+
+Definition at line 261 of file messenger\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), i, messenger\+\_\+load(), messenger\+\_\+save(), and messenger\+\_\+size().
+
+
+\begin{DoxyCode}
+262 \{
+263     \textcolor{comment}{/* validate that:}
+264 \textcolor{comment}{     * a) saving stays within the confined space}
+265 \textcolor{comment}{     * b) a save()d state can be load()ed back successfully}
+266 \textcolor{comment}{     * c) a second save() is of equal size}
+267 \textcolor{comment}{     * d) the second save() is of equal content */}
+268     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, extra = 64;
+269     \textcolor{keywordtype}{size\_t} size = \hyperlink{_messenger_8c_a4ae119dad636f15f1a5d628a13b107d8}{messenger\_size}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+270     uint8\_t buffer[size + 2 * extra];
+271     memset(buffer, 0xCD, extra);
+272     memset(buffer + extra + size, 0xCD, extra);
+273     \hyperlink{_messenger_8c_af0dfac679b1b57a0036f6511e12fe777}{messenger\_save}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, buffer + extra);
+274 
+275     \textcolor{keywordflow}{for} (i = 0; i < extra; i++) \{
+276         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(buffer[i] == 0xCD, \textcolor{stringliteral}{"Buffer underwritten from messenger\_save() @%u"}, i);
+277         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(buffer[extra + size + i] == 0xCD, \textcolor{stringliteral}{"Buffer overwritten from
+       messenger\_save() @%u"}, i);
+278     \}
+279 
+280     \textcolor{keywordtype}{int} res = \hyperlink{_messenger_8c_a4871cd41d2a53b07ee4b2467a844e17e}{messenger\_load}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, buffer + extra, size);
+281 
+282     \textcolor{keywordflow}{if} (res == -1)
+283         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 0, \textcolor{stringliteral}{"Failed to load back stored buffer: res == -1"});
+284     \textcolor{keywordflow}{else} \{
+285         \textcolor{keywordtype}{char} msg[128];
+286         \textcolor{keywordtype}{size\_t} offset = res >> 4;
+287         uint8\_t *ptr = buffer + extra + offset;
+288         sprintf(msg, \textcolor{stringliteral}{"Failed to load back stored buffer: 0x%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx
+       @%zu/%zu, code %d"},
+289                 ptr[-2], ptr[-1], ptr[0], ptr[1], ptr[2], ptr[3], ptr[4], ptr[5], offset, size, res & 0x0F)
+      ;
+290         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 0, msg);
+291     \}
+292 
+293     \textcolor{keywordtype}{size\_t} size2 = \hyperlink{_messenger_8c_a4ae119dad636f15f1a5d628a13b107d8}{messenger\_size}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+294     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(size == size2, \textcolor{stringliteral}{"Messenger \(\backslash\)"grew\(\backslash\)" in size from a store/load cycle: %u -> %u
+      "}, size, size2);
+295 
+296     uint8\_t buffer2[size2];
+297     \hyperlink{_messenger_8c_af0dfac679b1b57a0036f6511e12fe777}{messenger\_save}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, buffer2);
+298 
+299     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(!memcmp(buffer + extra, buffer2, size), \textcolor{stringliteral}{"Messenger state changed by
+       store/load/store cycle"});
+300 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dda/messenger__test_8c_a9c4405dc5f0fb39abca715cf5fe62007_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{messenger__test_8c_af7cae21e4c94b90da8e36e572f40a944}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!bad\+\_\+id@{bad\+\_\+id}}
+\index{bad\+\_\+id@{bad\+\_\+id}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{bad\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ bad\+\_\+id = N\+U\+L\+L}}\label{messenger__test_8c_af7cae21e4c94b90da8e36e572f40a944}
+
+
+Definition at line 40 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a84ed8f499dba364289c8cc472cae3baa}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!bad\+\_\+id\+\_\+str@{bad\+\_\+id\+\_\+str}}
+\index{bad\+\_\+id\+\_\+str@{bad\+\_\+id\+\_\+str}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{bad\+\_\+id\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ bad\+\_\+id\+\_\+str = \char`\"{}9\+B569\+D14ff637e69f2\char`\"{}}}\label{messenger__test_8c_a84ed8f499dba364289c8cc472cae3baa}
+
+
+Definition at line 35 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!friend\+\_\+id@{friend\+\_\+id}}
+\index{friend\+\_\+id@{friend\+\_\+id}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{friend\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ friend\+\_\+id = N\+U\+L\+L}}\label{messenger__test_8c_a5d7925718457bca84bda0952f9463a3c}
+
+
+Definition at line 37 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by m\+\_\+addfriend(), and main().
+
+\hypertarget{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!friend\+\_\+id\+\_\+num@{friend\+\_\+id\+\_\+num}}
+\index{friend\+\_\+id\+\_\+num@{friend\+\_\+id\+\_\+num}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{friend\+\_\+id\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+id\+\_\+num = 0}}\label{messenger__test_8c_a7a626313bd1f4279932742efebe2f496}
+
+
+Definition at line 42 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{messenger__test_8c_a075df4c2c1412747210d93a631ed06f2}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!friend\+\_\+id\+\_\+str@{friend\+\_\+id\+\_\+str}}
+\index{friend\+\_\+id\+\_\+str@{friend\+\_\+id\+\_\+str}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{friend\+\_\+id\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ friend\+\_\+id\+\_\+str = \char`\"{}e4b3d5030bc99494605aecc33ceec8875640c1d74aa32790e821b17e98771c4a00000000f1db\char`\"{}}}\label{messenger__test_8c_a075df4c2c1412747210d93a631ed06f2}
+
+
+Definition at line 29 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a30c40500be617787692b4cf65e27cc37}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!good\+\_\+id\+\_\+a@{good\+\_\+id\+\_\+a}}
+\index{good\+\_\+id\+\_\+a@{good\+\_\+id\+\_\+a}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{good\+\_\+id\+\_\+a}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ good\+\_\+id\+\_\+a = N\+U\+L\+L}}\label{messenger__test_8c_a30c40500be617787692b4cf65e27cc37}
+
+
+Definition at line 38 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a215d7e0460589ac669861ce930f90eac}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!good\+\_\+id\+\_\+a\+\_\+str@{good\+\_\+id\+\_\+a\+\_\+str}}
+\index{good\+\_\+id\+\_\+a\+\_\+str@{good\+\_\+id\+\_\+a\+\_\+str}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{good\+\_\+id\+\_\+a\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ good\+\_\+id\+\_\+a\+\_\+str = \char`\"{}D\+B9\+B569\+D14850\+E\+D8364\+C3744\+C\+A\+C2\+C8\+F\+F78985\+D213\+E980\+C7\+C508\+D0\+E91\+E8\+E45441\char`\"{}}}\label{messenger__test_8c_a215d7e0460589ac669861ce930f90eac}
+
+
+Definition at line 32 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a699ebf5efdcda05d92f5d3464fbbc5d3}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!good\+\_\+id\+\_\+b@{good\+\_\+id\+\_\+b}}
+\index{good\+\_\+id\+\_\+b@{good\+\_\+id\+\_\+b}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{good\+\_\+id\+\_\+b}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ good\+\_\+id\+\_\+b = N\+U\+L\+L}}\label{messenger__test_8c_a699ebf5efdcda05d92f5d3464fbbc5d3}
+
+
+Definition at line 39 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_a6cbbcdbdedf2d6105475e81e829da331}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!good\+\_\+id\+\_\+b\+\_\+str@{good\+\_\+id\+\_\+b\+\_\+str}}
+\index{good\+\_\+id\+\_\+b\+\_\+str@{good\+\_\+id\+\_\+b\+\_\+str}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{good\+\_\+id\+\_\+b\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ good\+\_\+id\+\_\+b\+\_\+str = \char`\"{}d3f14b6d384d8f5f2a66cff637e69f28f539c5de61bc29744785291fa4ef4d64\char`\"{}}}\label{messenger__test_8c_a6cbbcdbdedf2d6105475e81e829da331}
+
+
+Definition at line 33 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{\index{messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}!m@{m}}
+\index{m@{m}!messenger\+\_\+test.\+c@{messenger\+\_\+test.\+c}}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Messenger}$\ast$ m}}\label{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}
+
+
+Definition at line 44 of file messenger\+\_\+test.\+c.
+
+
+
+Referenced by do\+\_\+\+Assoc(), jbuf\+\_\+write(), load\+\_\+data(), main(), new\+\_\+groupchats(), new\+\_\+messenger(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+add\+\_\+groupchat(), tox\+\_\+add\+\_\+tcp\+\_\+relay(), tox\+\_\+bootstrap(), tox\+\_\+callback\+\_\+file\+\_\+chunk\+\_\+request(), tox\+\_\+callback\+\_\+file\+\_\+recv(), tox\+\_\+callback\+\_\+file\+\_\+recv\+\_\+chunk(), tox\+\_\+callback\+\_\+file\+\_\+recv\+\_\+control(), tox\+\_\+callback\+\_\+friend\+\_\+connection\+\_\+status(), tox\+\_\+callback\+\_\+friend\+\_\+lossless\+\_\+packet(), tox\+\_\+callback\+\_\+friend\+\_\+lossy\+\_\+packet(), tox\+\_\+callback\+\_\+friend\+\_\+message(), tox\+\_\+callback\+\_\+friend\+\_\+name(), tox\+\_\+callback\+\_\+friend\+\_\+read\+\_\+receipt(), tox\+\_\+callback\+\_\+friend\+\_\+request(), tox\+\_\+callback\+\_\+friend\+\_\+status(), tox\+\_\+callback\+\_\+friend\+\_\+status\+\_\+message(), tox\+\_\+callback\+\_\+friend\+\_\+typing(), tox\+\_\+callback\+\_\+group\+\_\+action(), tox\+\_\+callback\+\_\+group\+\_\+invite(), tox\+\_\+callback\+\_\+group\+\_\+message(), tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change(), tox\+\_\+callback\+\_\+group\+\_\+title(), tox\+\_\+callback\+\_\+self\+\_\+connection\+\_\+status(), tox\+\_\+count\+\_\+chatlist(), tox\+\_\+del\+\_\+groupchat(), tox\+\_\+file\+\_\+control(), tox\+\_\+file\+\_\+get\+\_\+file\+\_\+id(), tox\+\_\+file\+\_\+seek(), tox\+\_\+file\+\_\+send(), tox\+\_\+file\+\_\+send\+\_\+chunk(), tox\+\_\+friend\+\_\+add(), tox\+\_\+friend\+\_\+add\+\_\+norequest(), tox\+\_\+friend\+\_\+by\+\_\+public\+\_\+key(), tox\+\_\+friend\+\_\+delete(), tox\+\_\+friend\+\_\+exists(), tox\+\_\+friend\+\_\+get\+\_\+connection\+\_\+status(), tox\+\_\+friend\+\_\+get\+\_\+last\+\_\+online(), tox\+\_\+friend\+\_\+get\+\_\+name(), tox\+\_\+friend\+\_\+get\+\_\+name\+\_\+size(), tox\+\_\+friend\+\_\+get\+\_\+public\+\_\+key(), tox\+\_\+friend\+\_\+get\+\_\+status(), tox\+\_\+friend\+\_\+get\+\_\+status\+\_\+message(), tox\+\_\+friend\+\_\+get\+\_\+status\+\_\+message\+\_\+size(), tox\+\_\+friend\+\_\+get\+\_\+typing(), tox\+\_\+friend\+\_\+send\+\_\+lossless\+\_\+packet(), tox\+\_\+friend\+\_\+send\+\_\+lossy\+\_\+packet(), tox\+\_\+friend\+\_\+send\+\_\+message(), tox\+\_\+get\+\_\+chatlist(), tox\+\_\+get\+\_\+savedata(), tox\+\_\+get\+\_\+savedata\+\_\+size(), tox\+\_\+group\+\_\+action\+\_\+send(), tox\+\_\+group\+\_\+get\+\_\+names(), tox\+\_\+group\+\_\+get\+\_\+title(), tox\+\_\+group\+\_\+get\+\_\+type(), tox\+\_\+group\+\_\+message\+\_\+send(), tox\+\_\+group\+\_\+number\+\_\+peers(), tox\+\_\+group\+\_\+peer\+\_\+pubkey(), tox\+\_\+group\+\_\+peername(), tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours(), tox\+\_\+group\+\_\+set\+\_\+title(), tox\+\_\+invite\+\_\+friend(), tox\+\_\+iterate(), tox\+\_\+iteration\+\_\+interval(), tox\+\_\+join\+\_\+groupchat(), tox\+\_\+kill(), tox\+\_\+new(), tox\+\_\+self\+\_\+get\+\_\+address(), tox\+\_\+self\+\_\+get\+\_\+connection\+\_\+status(), tox\+\_\+self\+\_\+get\+\_\+dht\+\_\+id(), tox\+\_\+self\+\_\+get\+\_\+friend\+\_\+list(), tox\+\_\+self\+\_\+get\+\_\+friend\+\_\+list\+\_\+size(), tox\+\_\+self\+\_\+get\+\_\+name(), tox\+\_\+self\+\_\+get\+\_\+name\+\_\+size(), tox\+\_\+self\+\_\+get\+\_\+nospam(), tox\+\_\+self\+\_\+get\+\_\+public\+\_\+key(), tox\+\_\+self\+\_\+get\+\_\+secret\+\_\+key(), tox\+\_\+self\+\_\+get\+\_\+status(), tox\+\_\+self\+\_\+get\+\_\+status\+\_\+message(), tox\+\_\+self\+\_\+get\+\_\+status\+\_\+message\+\_\+size(), tox\+\_\+self\+\_\+get\+\_\+tcp\+\_\+port(), tox\+\_\+self\+\_\+get\+\_\+udp\+\_\+port(), tox\+\_\+self\+\_\+set\+\_\+name(), tox\+\_\+self\+\_\+set\+\_\+nospam(), tox\+\_\+self\+\_\+set\+\_\+status(), tox\+\_\+self\+\_\+set\+\_\+status\+\_\+message(), tox\+\_\+self\+\_\+set\+\_\+typing(), toxav\+\_\+add\+\_\+av\+\_\+groupchat(), toxav\+\_\+group\+\_\+send\+\_\+audio(), toxav\+\_\+join\+\_\+av\+\_\+groupchat(), and wrap().
+

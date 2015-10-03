@@ -1,0 +1,1391 @@
+\hypertarget{rtp_8c}{\section{toxav/rtp.c File Reference}
+\label{rtp_8c}\index{toxav/rtp.\+c@{toxav/rtp.\+c}}
+}
+{\ttfamily \#include \char`\"{}rtp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/logger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/util.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for rtp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d1f/rtp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{size\+\_\+32}~4
+\item 
+\#define \hyperlink{rtp_8c_a8aa5a1d6d0cc449c5bdd58a54278b679}{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}(\+\_\+h, \+\_\+v)~do \{ ( \+\_\+h-\/$>$flags ) \&= 0x3\+F; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 6 ) \& 0x\+C0 ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_a2a1e579ecd616f8c1c560293c54aa90f}{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}(\+\_\+h, \+\_\+v)~do \{ if ( \+\_\+v $>$ 0 ) \+\_\+v = 1; ( \+\_\+h-\/$>$flags ) \&= 0x\+D\+F; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 5 ) \& 0x20 ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_acb8b386d8ba6115b34b58d6e33eb3256}{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}(\+\_\+h, \+\_\+v)~do \{ if ( \+\_\+v $>$ 0 ) \+\_\+v = 1; ( \+\_\+h-\/$>$flags ) \&= 0x\+E\+F;( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 4 ) \& 0x10 ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_a88dd5b20ca9daa96de3cdcafa3895b02}{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}(\+\_\+h, \+\_\+v)~do \{ ( \+\_\+h-\/$>$flags ) \&= 0x\+F0; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( \+\_\+v ) \& 0x0\+F ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_a1a69e83ab14ed60bdc0e841a80ed7efe}{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}(\+\_\+h, \+\_\+v)~do \{ if ( \+\_\+v $>$ 1 ) \+\_\+v = 1; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) \&= 0x7\+F; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 7 ) /$\ast$\& 0x80 $\ast$/ ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_afc60554f0dad68e2b91c0154c1580028}{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}(\+\_\+h, \+\_\+v)~do \{ if ( \+\_\+v $>$ 127 ) \+\_\+v = 127; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) \&= 0x80; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) $\vert$= ( ( \+\_\+v ) /$\ast$ \& 0x7\+F $\ast$/ ); \} while(0)
+\item 
+\#define \hyperlink{rtp_8c_afe2d83cf628b4699675329db103f6e3d}{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}(\+\_\+h)~(( \+\_\+h-\/$>$flags \& 0xd0 ) $>$$>$ 6)
+\item 
+\#define \hyperlink{rtp_8c_a1f51eb07ccda0aef630fd19240eed1ca}{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}(\+\_\+h)~(( \+\_\+h-\/$>$flags \& 0x20 ) $>$$>$ 5)
+\item 
+\#define \hyperlink{rtp_8c_a8fd0b0e8b51dbf51eb07950b9a770c2a}{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}(\+\_\+h)~(( \+\_\+h-\/$>$flags \& 0x10 ) $>$$>$ 4)
+\item 
+\#define \hyperlink{rtp_8c_a0b6837440f91ce2dd18bd75b3bad0ce8}{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}(\+\_\+h)~( \+\_\+h-\/$>$flags \& 0x0f )
+\item 
+\#define \hyperlink{rtp_8c_a73cbb533d70de10a75a4665d7c0a0026}{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}(\+\_\+h)~(( \+\_\+h-\/$>$marker\+\_\+payloadt ) $>$$>$ 7)
+\item 
+\#define \hyperlink{rtp_8c_a5511091a620aacd4b2d74d88225aea3e}{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}(\+\_\+h)~((\+\_\+h-\/$>$marker\+\_\+payloadt) \& 0x7f)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801}{queue\+\_\+message} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$\+\_\+session, \hyperlink{rtp_8h_ab98525fe7a493c34d9dc586aa5b029b6}{R\+T\+P\+Message} $\ast$\+\_\+msg)
+\item 
+static int \hyperlink{rtp_8c_ae0abe437f26623dd117abd6074a45d9d}{check\+\_\+late\+\_\+message} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session, \hyperlink{rtp_8h_ab98525fe7a493c34d9dc586aa5b029b6}{R\+T\+P\+Message} $\ast$msg)
+\item 
+\hyperlink{rtp_8h_a75f2f434fb40aaadc6665cb0c9010e49}{R\+T\+P\+Header} $\ast$ \hyperlink{rtp_8c_ac092bb8ff79f03cf8892b112de73edf0}{extract\+\_\+header} (const uint8\+\_\+t $\ast$payload, int length)
+\item 
+\hyperlink{rtp_8h_ab384df54f92f379aa578740b96a3aaaa}{R\+T\+P\+Ext\+Header} $\ast$ \hyperlink{rtp_8c_ae85560b498a96a4d7a6143ba8a75def2}{extract\+\_\+ext\+\_\+header} (const uint8\+\_\+t $\ast$payload, uint16\+\_\+t length)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{rtp_8c_a8128ae518e257a243ee8e91e13716561}{add\+\_\+header} (\hyperlink{rtp_8h_a75f2f434fb40aaadc6665cb0c9010e49}{R\+T\+P\+Header} $\ast$header, uint8\+\_\+t $\ast$payload)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{rtp_8c_a8d9087c24d6e8baa293e787799dfdc40}{add\+\_\+ext\+\_\+header} (\hyperlink{rtp_8h_ab384df54f92f379aa578740b96a3aaaa}{R\+T\+P\+Ext\+Header} $\ast$header, uint8\+\_\+t $\ast$payload)
+\item 
+\hyperlink{rtp_8h_a75f2f434fb40aaadc6665cb0c9010e49}{R\+T\+P\+Header} $\ast$ \hyperlink{rtp_8c_a34983523df83bed8f00380ffc692b5b5}{build\+\_\+header} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session)
+\item 
+\hyperlink{rtp_8h_ab98525fe7a493c34d9dc586aa5b029b6}{R\+T\+P\+Message} $\ast$ \hyperlink{rtp_8c_a36611d00dbaab35e5b65630057930c2f}{msg\+\_\+parse} (const uint8\+\_\+t $\ast$data, int length)
+\item 
+int \hyperlink{rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc}{rtp\+\_\+handle\+\_\+packet} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint32\+\_\+t friendnumber, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length, void $\ast$object)
+\item 
+\hyperlink{rtp_8h_ab98525fe7a493c34d9dc586aa5b029b6}{R\+T\+P\+Message} $\ast$ \hyperlink{rtp_8c_a260a2df3b1d5071548a248619342c45c}{rtp\+\_\+new\+\_\+message} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session, const uint8\+\_\+t $\ast$data, uint32\+\_\+t length)
+\item 
+int \hyperlink{rtp_8c_a061d9b8e8abbcfb87d365bf65297e3f3}{rtp\+\_\+send\+\_\+msg} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session, \hyperlink{struct_messenger}{Messenger} $\ast$messenger, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+void \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\+\_\+free\+\_\+msg} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session, \hyperlink{rtp_8h_ab98525fe7a493c34d9dc586aa5b029b6}{R\+T\+P\+Message} $\ast$msg)
+\item 
+\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$ \hyperlink{rtp_8c_acda914088783d9822cdafdedf8fadd65}{rtp\+\_\+new} (int payload\+\_\+type, \hyperlink{struct_messenger}{Messenger} $\ast$messenger, int friend\+\_\+num)
+\item 
+void \hyperlink{rtp_8c_a8e1f9ce4d45738658914f4ef7c3144bc}{rtp\+\_\+kill} (\hyperlink{rtp_8h_aecafd8fd6e485ceb09747d50703bcd06}{R\+T\+P\+Session} $\ast$session, \hyperlink{struct_messenger}{Messenger} $\ast$messenger)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rtp_8c_a88dd5b20ca9daa96de3cdcafa3895b02}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}}
+\index{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ ( \+\_\+h-\/$>$flags ) \&= 0x\+F0; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( \+\_\+v ) \& 0x0\+F ); \} while(0)}}\label{rtp_8c_a88dd5b20ca9daa96de3cdcafa3895b02}
+
+
+Definition at line 38 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_acb8b386d8ba6115b34b58d6e33eb3256}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}}
+\index{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ if ( \+\_\+v $>$ 0 ) \+\_\+v = 1; ( \+\_\+h-\/$>$flags ) \&= 0x\+E\+F;( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 4 ) \& 0x10 ); \} while(0)}}\label{rtp_8c_acb8b386d8ba6115b34b58d6e33eb3256}
+
+
+Definition at line 37 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_a2a1e579ecd616f8c1c560293c54aa90f}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}}
+\index{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ if ( \+\_\+v $>$ 0 ) \+\_\+v = 1; ( \+\_\+h-\/$>$flags ) \&= 0x\+D\+F; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 5 ) \& 0x20 ); \} while(0)}}\label{rtp_8c_a2a1e579ecd616f8c1c560293c54aa90f}
+
+
+Definition at line 36 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_a8aa5a1d6d0cc449c5bdd58a54278b679}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N@{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ ( \+\_\+h-\/$>$flags ) \&= 0x3\+F; ( \+\_\+h-\/$>$flags ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 6 ) \& 0x\+C0 ); \} while(0)}}\label{rtp_8c_a8aa5a1d6d0cc449c5bdd58a54278b679}
+
+
+Definition at line 35 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_a1a69e83ab14ed60bdc0e841a80ed7efe}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R@{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}}
+\index{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R@{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ if ( \+\_\+v $>$ 1 ) \+\_\+v = 1; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) \&= 0x7\+F; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) $\vert$= ( ( ( \+\_\+v ) $<$$<$ 7 ) /$\ast$\& 0x80 $\ast$/ ); \} while(0)}}\label{rtp_8c_a1a69e83ab14ed60bdc0e841a80ed7efe}
+
+
+Definition at line 39 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_afc60554f0dad68e2b91c0154c1580028}{\index{rtp.\+c@{rtp.\+c}!A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D@{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}}
+\index{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D@{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h, }
+\item[{}]{\+\_\+v}
+\end{DoxyParamCaption}
+)~do \{ if ( \+\_\+v $>$ 127 ) \+\_\+v = 127; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) \&= 0x80; ( \+\_\+h-\/$>$marker\+\_\+payloadt ) $\vert$= ( ( \+\_\+v ) /$\ast$ \& 0x7\+F $\ast$/ ); \} while(0)}}\label{rtp_8c_afc60554f0dad68e2b91c0154c1580028}
+
+
+Definition at line 40 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header().
+
+\hypertarget{rtp_8c_a0b6837440f91ce2dd18bd75b3bad0ce8}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}}
+\index{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~( \+\_\+h-\/$>$flags \& 0x0f )}}\label{rtp_8c_a0b6837440f91ce2dd18bd75b3bad0ce8}
+
+
+Definition at line 45 of file rtp.\+c.
+
+
+
+Referenced by add\+\_\+header(), and extract\+\_\+header().
+
+\hypertarget{rtp_8c_a8fd0b0e8b51dbf51eb07950b9a770c2a}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}}
+\index{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~(( \+\_\+h-\/$>$flags \& 0x10 ) $>$$>$ 4)}}\label{rtp_8c_a8fd0b0e8b51dbf51eb07950b9a770c2a}
+
+
+Definition at line 44 of file rtp.\+c.
+
+
+
+Referenced by msg\+\_\+parse().
+
+\hypertarget{rtp_8c_a1f51eb07ccda0aef630fd19240eed1ca}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}}
+\index{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~(( \+\_\+h-\/$>$flags \& 0x20 ) $>$$>$ 5)}}\label{rtp_8c_a1f51eb07ccda0aef630fd19240eed1ca}
+
+
+Definition at line 43 of file rtp.\+c.
+
+\hypertarget{rtp_8c_afe2d83cf628b4699675329db103f6e3d}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N@{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~(( \+\_\+h-\/$>$flags \& 0xd0 ) $>$$>$ 6)}}\label{rtp_8c_afe2d83cf628b4699675329db103f6e3d}
+
+
+Definition at line 42 of file rtp.\+c.
+
+
+
+Referenced by extract\+\_\+header().
+
+\hypertarget{rtp_8c_a73cbb533d70de10a75a4665d7c0a0026}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R@{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}}
+\index{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R@{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~(( \+\_\+h-\/$>$marker\+\_\+payloadt ) $>$$>$ 7)}}\label{rtp_8c_a73cbb533d70de10a75a4665d7c0a0026}
+
+
+Definition at line 46 of file rtp.\+c.
+
+\hypertarget{rtp_8c_a5511091a620aacd4b2d74d88225aea3e}{\index{rtp.\+c@{rtp.\+c}!G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D@{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}}
+\index{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D@{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+h}
+\end{DoxyParamCaption}
+)~((\+\_\+h-\/$>$marker\+\_\+payloadt) \& 0x7f)}}\label{rtp_8c_a5511091a620aacd4b2d74d88225aea3e}
+
+
+Definition at line 47 of file rtp.\+c.
+
+\hypertarget{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{\index{rtp.\+c@{rtp.\+c}!size\+\_\+32@{size\+\_\+32}}
+\index{size\+\_\+32@{size\+\_\+32}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{size\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define size\+\_\+32~4}}\label{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}
+
+
+Definition at line 33 of file rtp.\+c.
+
+
+
+Referenced by build\+\_\+header(), msg\+\_\+parse(), and rtp\+\_\+new\+\_\+message().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rtp_8c_a8d9087c24d6e8baa293e787799dfdc40}{\index{rtp.\+c@{rtp.\+c}!add\+\_\+ext\+\_\+header@{add\+\_\+ext\+\_\+header}}
+\index{add\+\_\+ext\+\_\+header@{add\+\_\+ext\+\_\+header}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{add\+\_\+ext\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ add\+\_\+ext\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Ext\+Header} $\ast$}]{header, }
+\item[{uint8\+\_\+t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a8d9087c24d6e8baa293e787799dfdc40}
+Adds extension header to payload. Make sure {\itshape payload} has enough space. 
+
+Definition at line 230 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Ext\+Header\+::length, \+\_\+\+R\+T\+P\+Ext\+Header\+::table, \+\_\+\+R\+T\+P\+Ext\+Header\+::type, and x.
+
+
+
+Referenced by rtp\+\_\+new\+\_\+message().
+
+
+\begin{DoxyCode}
+231 \{
+232     uint8\_t *it = payload;
+233     uint16\_t length;
+234     uint16\_t type;
+235     uint32\_t entry;
+236 
+237     length = htons(header->\hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length});
+238     memcpy(it, &length, \textcolor{keyword}{sizeof}(length));
+239     it += 2;
+240     type = htons(header->\hyperlink{struct___r_t_p_ext_header_acb5cfd209ba75c853d03f701e7f91679}{type});
+241     memcpy(it, &type, \textcolor{keyword}{sizeof}(type));
+242     it -= 2; \textcolor{comment}{/* Return to 0 position */}
+243 
+244     \textcolor{keywordflow}{if} ( header->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table} ) \{
+245 
+246         uint16\_t \hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x};
+247 
+248         \textcolor{keywordflow}{for} ( x = 0; x < header->\hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length}; x++ ) \{
+249             it += 4;
+250             entry = htonl(header->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table}[x]);
+251             memcpy(it, &entry, \textcolor{keyword}{sizeof}(entry));
+252         \}
+253     \}
+254 
+255     \textcolor{keywordflow}{return} it + 4;
+256 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a8d9087c24d6e8baa293e787799dfdc40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a8128ae518e257a243ee8e91e13716561}{\index{rtp.\+c@{rtp.\+c}!add\+\_\+header@{add\+\_\+header}}
+\index{add\+\_\+header@{add\+\_\+header}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{add\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ add\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Header} $\ast$}]{header, }
+\item[{uint8\+\_\+t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a8128ae518e257a243ee8e91e13716561}
+Adds header to payload. Make sure {\itshape payload} has enough space. 
+
+Definition at line 189 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Header\+::csrc, \+\_\+\+R\+T\+P\+Header\+::flags, G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C, \+\_\+\+R\+T\+P\+Header\+::marker\+\_\+payloadt, \+\_\+\+R\+T\+P\+Header\+::sequnum, \+\_\+\+R\+T\+P\+Header\+::ssrc, \+\_\+\+R\+T\+P\+Header\+::timestamp, and x.
+
+
+
+Referenced by rtp\+\_\+new\+\_\+message().
+
+
+\begin{DoxyCode}
+190 \{
+191     uint8\_t cc = \hyperlink{rtp_8c_a0b6837440f91ce2dd18bd75b3bad0ce8}{GET\_FLAG\_CSRCC} ( header );
+192     uint8\_t *it = payload;
+193     uint16\_t sequnum;
+194     uint32\_t timestamp;
+195     uint32\_t ssrc;
+196     uint32\_t csrc;
+197 
+198 
+199     \textcolor{comment}{/* Add sequence number first */}
+200     sequnum = htons(header->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum});
+201     memcpy(it, &sequnum, \textcolor{keyword}{sizeof}(sequnum));
+202     it += 2;
+203 
+204     *it = header->\hyperlink{struct___r_t_p_header_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
+205     ++it;
+206     *it = header->\hyperlink{struct___r_t_p_header_a18075763f8af96670c357b0322a71d96}{marker\_payloadt};
+207     ++it;
+208 
+209 
+210     timestamp = htonl(header->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp});
+211     memcpy(it, &timestamp, \textcolor{keyword}{sizeof}(timestamp));
+212     it += 4;
+213     ssrc = htonl(header->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc});
+214     memcpy(it, &ssrc, \textcolor{keyword}{sizeof}(ssrc));
+215 
+216     uint8\_t \hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x};
+217 
+218     \textcolor{keywordflow}{for} ( x = 0; x < cc; x++ ) \{
+219         it += 4;
+220         csrc = htonl(header->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[x]);
+221         memcpy(it, &csrc, \textcolor{keyword}{sizeof}(csrc));
+222     \}
+223 
+224     \textcolor{keywordflow}{return} it + 4;
+225 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a8128ae518e257a243ee8e91e13716561_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a34983523df83bed8f00380ffc692b5b5}{\index{rtp.\+c@{rtp.\+c}!build\+\_\+header@{build\+\_\+header}}
+\index{build\+\_\+header@{build\+\_\+header}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{build\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Header}$\ast$ build\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a34983523df83bed8f00380ffc692b5b5}
+Builds header from control session values. 
+
+Definition at line 261 of file rtp.\+c.
+
+
+
+References A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C, A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N, A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+P\+A\+D\+D\+I\+N\+G, A\+D\+D\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N, A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+A\+R\+K\+E\+R, A\+D\+D\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+A\+Y\+L\+O\+A\+D, \+\_\+\+R\+T\+P\+Session\+::cc, \+\_\+\+R\+T\+P\+Header\+::csrc, \+\_\+\+R\+T\+P\+Session\+::csrc, current\+\_\+time\+\_\+monotonic(), \+\_\+\+R\+T\+P\+Session\+::extension, i, \+\_\+\+R\+T\+P\+Header\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, \+\_\+\+R\+T\+P\+Session\+::marker, \+\_\+\+R\+T\+P\+Session\+::padding, \+\_\+\+R\+T\+P\+Session\+::payload\+\_\+type, \+\_\+\+R\+T\+P\+Header\+::sequnum, \+\_\+\+R\+T\+P\+Session\+::sequnum, size\+\_\+32, \+\_\+\+R\+T\+P\+Header\+::ssrc, \+\_\+\+R\+T\+P\+Session\+::ssrc, \+\_\+\+R\+T\+P\+Header\+::timestamp, and \+\_\+\+R\+T\+P\+Session\+::version.
+
+
+
+Referenced by rtp\+\_\+new\+\_\+message().
+
+
+\begin{DoxyCode}
+262 \{
+263     \hyperlink{struct___r_t_p_header}{RTPHeader} *retu = calloc ( 1, \textcolor{keyword}{sizeof} (\hyperlink{struct___r_t_p_header}{RTPHeader}) );
+264 
+265     \textcolor{keywordflow}{if} ( !retu ) \{
+266         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+267         \textcolor{keywordflow}{return} NULL;
+268     \}
+269 
+270     \hyperlink{rtp_8c_a8aa5a1d6d0cc449c5bdd58a54278b679}{ADD\_FLAG\_VERSION} ( retu, session->\hyperlink{struct___r_t_p_session_ab22abc2906422da61885ac6c8e6a1a59}{version} );
+271     \hyperlink{rtp_8c_a2a1e579ecd616f8c1c560293c54aa90f}{ADD\_FLAG\_PADDING} ( retu, session->\hyperlink{struct___r_t_p_session_a78a52d3de83ec4d91a7746456627089f}{padding} );
+272     \hyperlink{rtp_8c_acb8b386d8ba6115b34b58d6e33eb3256}{ADD\_FLAG\_EXTENSION} ( retu, session->\hyperlink{struct___r_t_p_session_a91c592cf70c61ba0788394767185be4c}{extension} );
+273     \hyperlink{rtp_8c_a88dd5b20ca9daa96de3cdcafa3895b02}{ADD\_FLAG\_CSRCC} ( retu, session->\hyperlink{struct___r_t_p_session_a622e15900f3d90f1391cf9812d1a8078}{cc} );
+274     \hyperlink{rtp_8c_a1a69e83ab14ed60bdc0e841a80ed7efe}{ADD\_SETTING\_MARKER} ( retu, session->\hyperlink{struct___r_t_p_session_ae00c35797c92d6f67470b088dc2c1876}{marker} );
+275     \hyperlink{rtp_8c_afc60554f0dad68e2b91c0154c1580028}{ADD\_SETTING\_PAYLOAD} ( retu, session->\hyperlink{struct___r_t_p_session_a9cdef377149cce5efd90b1e60596573a}{payload\_type} );
+276 
+277     retu->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum} = session->\hyperlink{struct___r_t_p_session_afe208c7dec97b8f61e08094e61bf096e}{sequnum};
+278     retu->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp} = \hyperlink{irc__syncbot_8c_ae8ecaef140b786a2720eadbb85918e81}{current\_time\_monotonic}(); \textcolor{comment}{/* milliseconds */}
+279     retu->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc} = session->\hyperlink{struct___r_t_p_session_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc};
+280 
+281     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+282 
+283     \textcolor{keywordflow}{for} ( i = 0; i < session->\hyperlink{struct___r_t_p_session_a622e15900f3d90f1391cf9812d1a8078}{cc}; i++ )
+284         retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[i] = session->\hyperlink{struct___r_t_p_session_a8bbd14e68a057e6de8ba3fa4c6afd4fa}{csrc}[i];
+285 
+286     retu->\hyperlink{struct___r_t_p_header_aebb70c2aab3407a9f05334c47131a43b}{length} = 12 \textcolor{comment}{/* Minimum header len */} + ( session->\hyperlink{struct___r_t_p_session_a622e15900f3d90f1391cf9812d1a8078}{cc} * \hyperlink{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{size\_32} );
+287 
+288     \textcolor{keywordflow}{return} retu;
+289 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d6/d46/rtp_8c_a34983523df83bed8f00380ffc692b5b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a34983523df83bed8f00380ffc692b5b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_ae0abe437f26623dd117abd6074a45d9d}{\index{rtp.\+c@{rtp.\+c}!check\+\_\+late\+\_\+message@{check\+\_\+late\+\_\+message}}
+\index{check\+\_\+late\+\_\+message@{check\+\_\+late\+\_\+message}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{check\+\_\+late\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}static int check\+\_\+late\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session, }
+\item[{{\bf R\+T\+P\+Message} $\ast$}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{rtp_8c_ae0abe437f26623dd117abd6074a45d9d}
+Checks if message came in late. 
+
+Definition at line 52 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Message\+::header, \+\_\+\+R\+T\+P\+Session\+::rsequnum, \+\_\+\+R\+T\+P\+Header\+::sequnum, \+\_\+\+R\+T\+P\+Header\+::timestamp, and \+\_\+\+R\+T\+P\+Session\+::timestamp.
+
+
+
+Referenced by rtp\+\_\+handle\+\_\+packet().
+
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{comment}{/*}
+55 \textcolor{comment}{     * Check Sequence number. If this new msg has lesser number then the session->rsequnum}
+56 \textcolor{comment}{     * it shows that the message came in late. Also check timestamp to be 100% certain.}
+57 \textcolor{comment}{     *}
+58 \textcolor{comment}{     */}
+59     \textcolor{keywordflow}{return} ( msg->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum} < session->\hyperlink{struct___r_t_p_session_a1bef56c38f8d3bc3ab5d381e11c29d0d}{rsequnum} && msg->
+      \hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp} < session->\hyperlink{struct___r_t_p_session_ab20b0c7772544cf5d318507f34231fbe}{timestamp} ) ? 0 : -1;
+60 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_ae0abe437f26623dd117abd6074a45d9d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_ae85560b498a96a4d7a6143ba8a75def2}{\index{rtp.\+c@{rtp.\+c}!extract\+\_\+ext\+\_\+header@{extract\+\_\+ext\+\_\+header}}
+\index{extract\+\_\+ext\+\_\+header@{extract\+\_\+ext\+\_\+header}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{extract\+\_\+ext\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Ext\+Header}$\ast$ extract\+\_\+ext\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{payload, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_ae85560b498a96a4d7a6143ba8a75def2}
+Extracts external header from payload. Must be called A\+F\+T\+E\+R \hyperlink{rtp_8c_ac092bb8ff79f03cf8892b112de73edf0}{extract\+\_\+header()}! 
+
+Definition at line 141 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Ext\+Header\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, \+\_\+\+R\+T\+P\+Ext\+Header\+::table, \+\_\+\+R\+T\+P\+Ext\+Header\+::type, and x.
+
+
+
+Referenced by msg\+\_\+parse().
+
+
+\begin{DoxyCode}
+142 \{
+143     \textcolor{keyword}{const} uint8\_t *it = payload;
+144 
+145     \hyperlink{struct___r_t_p_ext_header}{RTPExtHeader} *retu = calloc(1, \textcolor{keyword}{sizeof} (\hyperlink{struct___r_t_p_ext_header}{RTPExtHeader}));
+146 
+147     \textcolor{keywordflow}{if} ( !retu ) \{
+148         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+149         \textcolor{keywordflow}{return} NULL;
+150     \}
+151 
+152     uint16\_t ext\_length;
+153     memcpy(&ext\_length, it, \textcolor{keyword}{sizeof}(ext\_length));
+154     ext\_length = ntohs(ext\_length);
+155     it += 2;
+156 
+157 
+158     \textcolor{keywordflow}{if} ( length < ( ext\_length * \textcolor{keyword}{sizeof}(uint32\_t) ) ) \{
+159         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Length invalid!"});
+160         free(retu);
+161         \textcolor{keywordflow}{return} NULL;
+162     \}
+163 
+164     retu->\hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length}  = ext\_length;
+165     memcpy(&retu->\hyperlink{struct___r_t_p_ext_header_acb5cfd209ba75c853d03f701e7f91679}{type}, it, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_ext_header_acb5cfd209ba75c853d03f701e7f91679}{type}));
+166     retu->\hyperlink{struct___r_t_p_ext_header_acb5cfd209ba75c853d03f701e7f91679}{type} = ntohs(retu->\hyperlink{struct___r_t_p_ext_header_acb5cfd209ba75c853d03f701e7f91679}{type});
+167     it += 2;
+168 
+169     \textcolor{keywordflow}{if} ( !(retu->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table} = calloc(ext\_length, \textcolor{keyword}{sizeof} (uint32\_t))) ) \{
+170         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+171         free(retu);
+172         \textcolor{keywordflow}{return} NULL;
+173     \}
+174 
+175     uint16\_t \hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x};
+176 
+177     \textcolor{keywordflow}{for} ( x = 0; x < ext\_length; x++ ) \{
+178         it += 4;
+179         memcpy(&(retu->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table}[x]), it, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table}[x]));
+180         retu->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table}[\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}] = ntohl(retu->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table}[x]);
+181     \}
+182 
+183     \textcolor{keywordflow}{return} retu;
+184 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_ae85560b498a96a4d7a6143ba8a75def2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_ac092bb8ff79f03cf8892b112de73edf0}{\index{rtp.\+c@{rtp.\+c}!extract\+\_\+header@{extract\+\_\+header}}
+\index{extract\+\_\+header@{extract\+\_\+header}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{extract\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Header}$\ast$ extract\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{payload, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_ac092bb8ff79f03cf8892b112de73edf0}
+Extracts header from payload. 
+
+Definition at line 66 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Header\+::csrc, \+\_\+\+R\+T\+P\+Header\+::flags, G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+C\+S\+R\+C\+C, G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+V\+E\+R\+S\+I\+O\+N, \+\_\+\+R\+T\+P\+Header\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, \+\_\+\+R\+T\+P\+Header\+::marker\+\_\+payloadt, R\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N, \+\_\+\+R\+T\+P\+Header\+::sequnum, \+\_\+\+R\+T\+P\+Header\+::ssrc, \+\_\+\+R\+T\+P\+Header\+::timestamp, and x.
+
+
+
+Referenced by msg\+\_\+parse().
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{if} ( !payload || !length ) \{
+69         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"No payload to extract!"});
+70         \textcolor{keywordflow}{return} NULL;
+71     \}
+72 
+73     \hyperlink{struct___r_t_p_header}{RTPHeader} *retu = calloc(1, \textcolor{keyword}{sizeof} (\hyperlink{struct___r_t_p_header}{RTPHeader}));
+74 
+75     \textcolor{keywordflow}{if} ( !retu ) \{
+76         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+77         \textcolor{keywordflow}{return} NULL;
+78     \}
+79 
+80     memcpy(&retu->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum}, payload, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum}));
+81     retu->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum} = ntohs(retu->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum});
+82 
+83     \textcolor{keyword}{const} uint8\_t *it = payload + 2;
+84 
+85     retu->\hyperlink{struct___r_t_p_header_aa2585d779da0ab21273a8d92de9a0ebe}{flags} = *it;
+86     ++it;
+87 
+88     \textcolor{comment}{/* This indicates if the first 2 bits are valid.}
+89 \textcolor{comment}{     * Now it may happen that this is out of order but}
+90 \textcolor{comment}{     * it cuts down chances of parsing some invalid value}
+91 \textcolor{comment}{     */}
+92 
+93     \textcolor{keywordflow}{if} ( \hyperlink{rtp_8c_afe2d83cf628b4699675329db103f6e3d}{GET\_FLAG\_VERSION}(retu) != \hyperlink{rtp_8h_a45dc32aa4b3075cfa01349a743c52d54}{RTP\_VERSION} ) \{
+94         \textcolor{comment}{/* Deallocate */}
+95         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Invalid version!"});
+96         free(retu);
+97         \textcolor{keywordflow}{return} NULL;
+98     \}
+99 
+100     \textcolor{comment}{/*}
+101 \textcolor{comment}{     * Added a check for the size of the header little sooner so}
+102 \textcolor{comment}{     * I don't need to parse the other stuff if it's bad}
+103 \textcolor{comment}{     */}
+104     uint8\_t cc = \hyperlink{rtp_8c_a0b6837440f91ce2dd18bd75b3bad0ce8}{GET\_FLAG\_CSRCC} ( retu );
+105     \textcolor{keywordtype}{int} total = 12 \textcolor{comment}{/* Minimum header len */} + ( cc * 4 );
+106 
+107     \textcolor{keywordflow}{if} ( length < total ) \{
+108         \textcolor{comment}{/* Deallocate */}
+109         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Length invalid!"});
+110         free(retu);
+111         \textcolor{keywordflow}{return} NULL;
+112     \}
+113 
+114     memset(retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}, 0, 16 * sizeof (uint32\_t));
+115 
+116     retu->\hyperlink{struct___r_t_p_header_a18075763f8af96670c357b0322a71d96}{marker\_payloadt} = *it;
+117     ++it;
+118     retu->\hyperlink{struct___r_t_p_header_aebb70c2aab3407a9f05334c47131a43b}{length} = total;
+119 
+120 
+121     memcpy(&retu->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp}, it, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp}));
+122     retu->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp} = ntohl(retu->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp});
+123     it += 4;
+124     memcpy(&retu->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc}, it, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc}));
+125     retu->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc} = ntohl(retu->\hyperlink{struct___r_t_p_header_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc});
+126 
+127     uint8\_t \hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x};
+128 
+129     \textcolor{keywordflow}{for} ( x = 0; x < cc; x++ ) \{
+130         it += 4;
+131         memcpy(&retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[x], it, \textcolor{keyword}{sizeof}(retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[x]));
+132         retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}] = ntohl(retu->\hyperlink{struct___r_t_p_header_a67d30a003e4e6edc3e5a6304d3a3a301}{csrc}[x]);
+133     \}
+134 
+135     \textcolor{keywordflow}{return} retu;
+136 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_ac092bb8ff79f03cf8892b112de73edf0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a36611d00dbaab35e5b65630057930c2f}{\index{rtp.\+c@{rtp.\+c}!msg\+\_\+parse@{msg\+\_\+parse}}
+\index{msg\+\_\+parse@{msg\+\_\+parse}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{msg\+\_\+parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Message}$\ast$ msg\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a36611d00dbaab35e5b65630057930c2f}
+Parses data into R\+T\+P\+Message struct. Stores headers separately from the payload data and so the length variable is set accordingly. 
+
+Definition at line 296 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Message\+::data, \+\_\+\+R\+T\+P\+Message\+::ext\+\_\+header, extract\+\_\+ext\+\_\+header(), extract\+\_\+header(), G\+E\+T\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+N, \+\_\+\+R\+T\+P\+Message\+::header, \+\_\+\+R\+T\+P\+Header\+::length, \+\_\+\+R\+T\+P\+Ext\+Header\+::length, \+\_\+\+R\+T\+P\+Message\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, M\+A\+X\+\_\+\+R\+T\+P\+\_\+\+S\+I\+Z\+E, \+\_\+\+R\+T\+P\+Message\+::next, rtp\+\_\+free\+\_\+msg(), and size\+\_\+32.
+
+
+
+Referenced by rtp\+\_\+handle\+\_\+packet().
+
+
+\begin{DoxyCode}
+297 \{
+298     \hyperlink{struct___r_t_p_message}{RTPMessage} *retu = calloc(1, \textcolor{keyword}{sizeof} (\hyperlink{struct___r_t_p_message}{RTPMessage}));
+299 
+300     retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header} = \hyperlink{rtp_8c_ac092bb8ff79f03cf8892b112de73edf0}{extract\_header} ( \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length ); \textcolor{comment}{/* It allocates memory and all 
+      */}
+301 
+302     \textcolor{keywordflow}{if} ( !retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header} ) \{
+303         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Header failed to extract!"});
+304         free(retu);
+305         \textcolor{keywordflow}{return} NULL;
+306     \}
+307 
+308     uint16\_t from\_pos = retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_aebb70c2aab3407a9f05334c47131a43b}{length};
+309     retu->\hyperlink{struct___r_t_p_message_aebb70c2aab3407a9f05334c47131a43b}{length} = length - from\_pos;
+310 
+311 
+312 
+313     \textcolor{keywordflow}{if} ( \hyperlink{rtp_8c_a8fd0b0e8b51dbf51eb07950b9a770c2a}{GET\_FLAG\_EXTENSION} ( retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header} ) ) \{
+314         retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} = \hyperlink{rtp_8c_ae85560b498a96a4d7a6143ba8a75def2}{extract\_ext\_header} ( \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + from\_pos, length );
+315 
+316         \textcolor{keywordflow}{if} ( retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} ) \{
+317             retu->\hyperlink{struct___r_t_p_message_aebb70c2aab3407a9f05334c47131a43b}{length} -= ( 4 \textcolor{comment}{/* Minimum ext header len */} + retu->
+      \hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}->\hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length} * \hyperlink{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{size\_32} );
+318             from\_pos += ( 4 \textcolor{comment}{/* Minimum ext header len */} + retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}->
+      \hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length} * \hyperlink{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{size\_32} );
+319         \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{/* Error */}
+320             \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Ext Header failed to extract!"});
+321             \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg}(NULL, retu);
+322             \textcolor{keywordflow}{return} NULL;
+323         \}
+324     \} \textcolor{keywordflow}{else} \{
+325         retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} = NULL;
+326     \}
+327 
+328     \textcolor{keywordflow}{if} ( length - from\_pos <= \hyperlink{rtp_8h_ac552c225344e6f60cbadb539fe35e6f5}{MAX\_RTP\_SIZE} )
+329         memcpy ( retu->\hyperlink{struct___r_t_p_message_a89f8083b50c7cef74e96797bb74f8757}{data}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + from\_pos, length - from\_pos );
+330     \textcolor{keywordflow}{else} \{
+331         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Invalid length!"});
+332         \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg}(NULL, retu);
+333         \textcolor{keywordflow}{return} NULL;
+334     \}
+335 
+336     retu->\hyperlink{struct___r_t_p_message_af02d4bf6724c59e5df90bacdfc8a8499}{next} = NULL;
+337 
+338     \textcolor{keywordflow}{return} retu;
+339 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{d6/d46/rtp_8c_a36611d00dbaab35e5b65630057930c2f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a36611d00dbaab35e5b65630057930c2f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801}{\index{rtp.\+c@{rtp.\+c}!queue\+\_\+message@{queue\+\_\+message}}
+\index{queue\+\_\+message@{queue\+\_\+message}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{queue\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void queue\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{\+\_\+session, }
+\item[{{\bf R\+T\+P\+Message} $\ast$}]{\+\_\+msg}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801}
+\hyperlink{rtp_8c}{rtp.\+c}
+
+Copyright (C) 2013 Tox project All Rights Reserved.
+
+This file is part of Tox.
+
+Tox is free software\+: you can redistribute it and/or modify it under the terms of the G\+N\+U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+Tox is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+U\+T A\+N\+Y W\+A\+R\+R\+A\+N\+T\+Y; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+T\+Y or F\+I\+T\+N\+E\+S\+S F\+O\+R A P\+A\+R\+T\+I\+C\+U\+L\+A\+R P\+U\+R\+P\+O\+S\+E. See the G\+N\+U General Public License for more details.
+
+You should have received a copy of the G\+N\+U General Public License along with Tox. If not, see \href{http://www.gnu.org/licenses/}{\tt http\+://www.\+gnu.\+org/licenses/}. 
+
+Definition at line 617 of file codec.\+c.
+
+
+
+References buffer\+\_\+full(), buffer\+\_\+read(), buffer\+\_\+write(), \+\_\+\+R\+T\+P\+Session\+::cs, \+\_\+\+R\+T\+P\+Message\+::data, end, \+\_\+\+C\+S\+Session\+::frame\+\_\+buf, \+\_\+\+C\+S\+Session\+::frame\+\_\+size, \+\_\+\+C\+S\+Session\+::frameid\+\_\+in, \+\_\+\+R\+T\+P\+Message\+::header, \+\_\+\+C\+S\+Session\+::j\+\_\+buf, jbuf\+\_\+write(), \+\_\+\+C\+S\+Session\+::last\+\_\+timestamp, \+\_\+\+R\+T\+P\+Message\+::length, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, \+\_\+\+C\+S\+Session\+::max\+\_\+video\+\_\+frame\+\_\+size, msi\+\_\+\+Type\+Audio, \+\_\+\+R\+T\+P\+Session\+::payload\+\_\+type, \+\_\+\+C\+S\+Session\+::queue\+\_\+mutex, rtp\+\_\+free\+\_\+msg(), \+\_\+\+R\+T\+P\+Header\+::timestamp, \+\_\+\+C\+S\+Session\+::vbuf\+\_\+raw, \+\_\+\+C\+S\+Session\+::video\+\_\+frame\+\_\+piece\+\_\+size, and V\+I\+D\+E\+O\+F\+R\+A\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E.
+
+
+
+Referenced by rtp\+\_\+handle\+\_\+packet().
+
+
+\begin{DoxyCode}
+618 \{
+619     \textcolor{comment}{/* This function is unregistered during call termination befor destroing}
+620 \textcolor{comment}{     * Codec session so no need to check for validity of cs}
+621 \textcolor{comment}{     */}
+622     \hyperlink{struct___c_s_session}{CSSession} *cs = session->cs;
+623 
+624     \textcolor{keywordflow}{if} (!cs) \textcolor{keywordflow}{return};
+625 
+626     \textcolor{comment}{/* Audio */}
+627     \textcolor{keywordflow}{if} (session->payload\_type == \hyperlink{msi_8h_a54df3a97d8d112a3a4a6476c9f9284a6a4a64c16a6c74d9e29598b14b97bf5a45}{msi\_TypeAudio} % 128) \{
+628         pthread\_mutex\_lock(cs->\hyperlink{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}{queue\_mutex});
+629         \textcolor{keywordtype}{int} ret = \hyperlink{codec_8c_a170dd2e497101775eea8695dbda58f9e}{jbuf\_write}(cs->\hyperlink{struct___c_s_session_a7567f0c621b65df3ff9e6f46164ac1c0}{j\_buf}, msg);
+630         pthread\_mutex\_unlock(cs->\hyperlink{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}{queue\_mutex});
+631 
+632         \textcolor{keywordflow}{if} (ret == -1) \{
+633             \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg}(NULL, msg);
+634         \}
+635     \}
+636     \textcolor{comment}{/* Video */}
+637     \textcolor{keywordflow}{else} \{
+638         uint8\_t *packet = msg->data;
+639         uint32\_t packet\_size = msg->length;
+640 
+641         \textcolor{keywordflow}{if} (packet\_size < \hyperlink{codec_8c_a1fd042bb49704e3c68dea14ff6956b33}{VIDEOFRAME\_HEADER\_SIZE})
+642             \textcolor{keywordflow}{goto} \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end};
+643 
+644         uint8\_t diff = packet[0] - cs->\hyperlink{struct___c_s_session_affc5ab5608c4d2dea8513fdc2b2cd6e6}{frameid\_in};
+645 
+646         \textcolor{keywordflow}{if} (diff != 0) \{
+647             \textcolor{keywordflow}{if} (diff < 225) \{ \textcolor{comment}{/* New frame */}
+648                 \textcolor{comment}{/* Flush last frames' data and get ready for this frame */}
+649                 Payload *p = malloc(\textcolor{keyword}{sizeof}(Payload) + cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size});
+650 
+651                 \textcolor{keywordflow}{if} (p) \{
+652                     pthread\_mutex\_lock(cs->\hyperlink{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}{queue\_mutex});
+653 
+654                     \textcolor{keywordflow}{if} (\hyperlink{codec_8c_ab27fdbd54a41e787c4a98b119d181b13}{buffer\_full}(cs->\hyperlink{struct___c_s_session_abb525d3cf1486064b35b5821a0646c86}{vbuf\_raw})) \{
+655                         \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Dropped video frame"});
+656                         Payload *tp;
+657                         \hyperlink{codec_8c_aa27710dac4f829dad6d007cf01bdf55f}{buffer\_read}(cs->\hyperlink{struct___c_s_session_abb525d3cf1486064b35b5821a0646c86}{vbuf\_raw}, &tp);
+658                         free(tp);
+659                     \} \textcolor{keywordflow}{else} \{
+660                         p->size = cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size};
+661                         memcpy(p->data, cs->\hyperlink{struct___c_s_session_aa4046ccf60d85f4f486ae0b24e3347f5}{frame\_buf}, cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size});
+662                     \}
+663 
+664                     \hyperlink{codec_8c_a5990d0123726b7f12cebdae0984475b4}{buffer\_write}(cs->\hyperlink{struct___c_s_session_abb525d3cf1486064b35b5821a0646c86}{vbuf\_raw}, p);
+665                     pthread\_mutex\_unlock(cs->\hyperlink{struct___c_s_session_aa1e20c410f3ec23066afb256fa3d1254}{queue\_mutex});
+666                 \} \textcolor{keywordflow}{else} \{
+667                     \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Allocation failed! Program might misbehave!"});
+668                     \textcolor{keywordflow}{goto} \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end};
+669                 \}
+670 
+671                 cs->\hyperlink{struct___c_s_session_ab3eadf01045769905278f1908af23558}{last\_timestamp} = msg->header->timestamp;
+672                 cs->\hyperlink{struct___c_s_session_affc5ab5608c4d2dea8513fdc2b2cd6e6}{frameid\_in} = packet[0];
+673                 memset(cs->\hyperlink{struct___c_s_session_aa4046ccf60d85f4f486ae0b24e3347f5}{frame\_buf}, 0, cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size});
+674                 cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size} = 0;
+675 
+676             \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{/* Old frame; drop */}
+677                 \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Old packet: %u"}, packet[0]);
+678                 \textcolor{keywordflow}{goto} \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end};
+679             \}
+680         \}
+681 
+682         uint8\_t piece\_number = packet[1];
+683 
+684         uint32\_t length\_before\_piece = ((piece\_number - 1) * cs->
+      \hyperlink{struct___c_s_session_af3563a0a96eb120a68e82d3135b6c49b}{video\_frame\_piece\_size});
+685         uint32\_t framebuf\_new\_length = length\_before\_piece + (packet\_size - 
+      \hyperlink{codec_8c_a1fd042bb49704e3c68dea14ff6956b33}{VIDEOFRAME\_HEADER\_SIZE});
+686 
+687         \textcolor{keywordflow}{if} (framebuf\_new\_length > cs->\hyperlink{struct___c_s_session_a4de5a61c775468baabb35e2fcfaaa3a2}{max\_video\_frame\_size}) \{
+688             \textcolor{keywordflow}{goto} \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end};
+689         \}
+690 
+691         \textcolor{comment}{/* Otherwise it's part of the frame so just process */}
+692         \textcolor{comment}{/* LOGGER\_DEBUG("Video Packet: %u %u", packet[0], packet[1]); */}
+693 
+694         memcpy(cs->\hyperlink{struct___c_s_session_aa4046ccf60d85f4f486ae0b24e3347f5}{frame\_buf} + length\_before\_piece,
+695                packet + \hyperlink{codec_8c_a1fd042bb49704e3c68dea14ff6956b33}{VIDEOFRAME\_HEADER\_SIZE},
+696                packet\_size - \hyperlink{codec_8c_a1fd042bb49704e3c68dea14ff6956b33}{VIDEOFRAME\_HEADER\_SIZE});
+697 
+698         \textcolor{keywordflow}{if} (framebuf\_new\_length > cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size}) \{
+699             cs->\hyperlink{struct___c_s_session_a0229abcfe4414f86dcf52c5ebf84311c}{frame\_size} = framebuf\_new\_length;
+700         \}
+701 
+702 \hyperlink{msi_8c_ae511d1f1e345bb77cd4120b39679f028a80b1a820e533d7cf0e1715319339e6d0}{end}:
+703         \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg}(NULL, msg);
+704     \}
+705 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+free\+\_\+msg@{rtp\+\_\+free\+\_\+msg}}
+\index{rtp\+\_\+free\+\_\+msg@{rtp\+\_\+free\+\_\+msg}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+free\+\_\+msg}]{\setlength{\rightskip}{0pt plus 5cm}void rtp\+\_\+free\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session, }
+\item[{{\bf R\+T\+P\+Message} $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}
+Dealloc msg. 
+
+Definition at line 446 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Message\+::ext\+\_\+header, \+\_\+\+R\+T\+P\+Session\+::ext\+\_\+header, \+\_\+\+R\+T\+P\+Message\+::header, and \+\_\+\+R\+T\+P\+Ext\+Header\+::table.
+
+
+
+Referenced by cs\+\_\+do(), jbuf\+\_\+clear(), msg\+\_\+parse(), queue\+\_\+message(), and rtp\+\_\+send\+\_\+msg().
+
+
+\begin{DoxyCode}
+447 \{
+448     \textcolor{keywordflow}{if} ( !session ) \{
+449         \textcolor{keywordflow}{if} ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} ) \{
+450             free ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table} );
+451             free ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} );
+452         \}
+453     \} \textcolor{keywordflow}{else} \{
+454         \textcolor{keywordflow}{if} ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} && session->\hyperlink{struct___r_t_p_session_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} != msg->
+      \hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} ) \{
+455             free ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}->\hyperlink{struct___r_t_p_ext_header_a05be6af94bcc30c135e4b6089bf9cfd9}{table} );
+456             free ( msg->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} );
+457         \}
+458     \}
+459 
+460     free ( msg->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header} );
+461     free ( msg );
+462 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+handle\+\_\+packet@{rtp\+\_\+handle\+\_\+packet}}
+\index{rtp\+\_\+handle\+\_\+packet@{rtp\+\_\+handle\+\_\+packet}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+handle\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int rtp\+\_\+handle\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc}
+Callback for networking core. 
+
+Definition at line 344 of file rtp.\+c.
+
+
+
+References check\+\_\+late\+\_\+message(), \+\_\+\+R\+T\+P\+Message\+::header, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, msg\+\_\+parse(), queue\+\_\+message(), \+\_\+\+R\+T\+P\+Session\+::rsequnum, \+\_\+\+R\+T\+P\+Header\+::sequnum, \+\_\+\+R\+T\+P\+Header\+::timestamp, and \+\_\+\+R\+T\+P\+Session\+::timestamp.
+
+
+
+Referenced by rtp\+\_\+new().
+
+
+\begin{DoxyCode}
+345 \{
+346     \hyperlink{struct___r_t_p_session}{RTPSession} *session = object;
+347     \hyperlink{struct___r_t_p_message}{RTPMessage} *msg;
+348 
+349     \textcolor{keywordflow}{if} ( !session || length < 13 ) \{ \textcolor{comment}{/* 12 is the minimum length for rtp + desc. byte */}
+350         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"No session or invalid length of received buffer!"});
+351         \textcolor{keywordflow}{return} -1;
+352     \}
+353 
+354     msg = \hyperlink{rtp_8c_a36611d00dbaab35e5b65630057930c2f}{msg\_parse} ( \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + 1, length - 1 );
+355 
+356     \textcolor{keywordflow}{if} ( !msg ) \{
+357         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Could not parse message!"});
+358         \textcolor{keywordflow}{return} -1;
+359     \}
+360 
+361     \textcolor{comment}{/* Check if message came in late */}
+362     \textcolor{keywordflow}{if} ( \hyperlink{rtp_8c_ae0abe437f26623dd117abd6074a45d9d}{check\_late\_message}(session, msg) < 0 ) \{ \textcolor{comment}{/* Not late */}
+363         session->\hyperlink{struct___r_t_p_session_a1bef56c38f8d3bc3ab5d381e11c29d0d}{rsequnum} = msg->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_afe208c7dec97b8f61e08094e61bf096e}{sequnum};
+364         session->\hyperlink{struct___r_t_p_session_ab20b0c7772544cf5d318507f34231fbe}{timestamp} = msg->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_ab20b0c7772544cf5d318507f34231fbe}{timestamp};
+365     \}
+366 
+367     \hyperlink{rtp_8c_a3bbb6216a42caaa8163fc61b8f78a801}{queue\_message}(session, msg);
+368 
+369     \textcolor{keywordflow}{return} 0;
+370 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a8e1f9ce4d45738658914f4ef7c3144bc}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+kill@{rtp\+\_\+kill}}
+\index{rtp\+\_\+kill@{rtp\+\_\+kill}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}void rtp\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session, }
+\item[{{\bf Messenger} $\ast$}]{messenger}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a8e1f9ce4d45738658914f4ef7c3144bc}
+Terminate the session. 
+
+Definition at line 514 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Session\+::csrc, \+\_\+\+R\+T\+P\+Session\+::dest, \+\_\+\+R\+T\+P\+Session\+::ext\+\_\+header, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, m\+\_\+callback\+\_\+rtp\+\_\+packet(), and \+\_\+\+R\+T\+P\+Session\+::prefix.
+
+
+
+Referenced by toxav\+\_\+kill(), toxav\+\_\+kill\+\_\+transmission(), and toxav\+\_\+prepare\+\_\+transmission().
+
+
+\begin{DoxyCode}
+515 \{
+516     \textcolor{keywordflow}{if} ( !session ) \textcolor{keywordflow}{return};
+517 
+518     \hyperlink{_messenger_8c_a536d47dbfa35fb02c78068e1d11a1d2a}{m\_callback\_rtp\_packet}(messenger, session->\hyperlink{struct___r_t_p_session_ae5163ff230abd4115d86194ad89467b5}{dest}, session->
+      \hyperlink{struct___r_t_p_session_acf4a7a7457f3d922d7118075fc1a300b}{prefix}, NULL, NULL);
+519 
+520     free ( session->\hyperlink{struct___r_t_p_session_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} );
+521     free ( session->\hyperlink{struct___r_t_p_session_a8bbd14e68a057e6de8ba3fa4c6afd4fa}{csrc} );
+522 
+523     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Terminated RTP session: %p"}, session);
+524 
+525     \textcolor{comment}{/* And finally free session */}
+526     free ( session );
+527 
+528 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a8e1f9ce4d45738658914f4ef7c3144bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a8e1f9ce4d45738658914f4ef7c3144bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_acda914088783d9822cdafdedf8fadd65}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+new@{rtp\+\_\+new}}
+\index{rtp\+\_\+new@{rtp\+\_\+new}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Session}$\ast$ rtp\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{int}]{payload\+\_\+type, }
+\item[{{\bf Messenger} $\ast$}]{messenger, }
+\item[{int}]{friend\+\_\+num}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_acda914088783d9822cdafdedf8fadd65}
+Must be called before calling any other rtp function. 
+
+Definition at line 464 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Session\+::cc, \+\_\+\+R\+T\+P\+Session\+::csrc, \+\_\+\+R\+T\+P\+Session\+::dest, \+\_\+\+R\+T\+P\+Session\+::ext\+\_\+header, \+\_\+\+R\+T\+P\+Session\+::extension, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, m\+\_\+callback\+\_\+rtp\+\_\+packet(), \+\_\+\+R\+T\+P\+Session\+::marker, \+\_\+\+R\+T\+P\+Session\+::padding, \+\_\+\+R\+T\+P\+Session\+::payload\+\_\+type, \+\_\+\+R\+T\+P\+Session\+::prefix, random\+\_\+int(), \+\_\+\+R\+T\+P\+Session\+::rsequnum, rtp\+\_\+handle\+\_\+packet(), R\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N, \+\_\+\+R\+T\+P\+Session\+::sequnum, \+\_\+\+R\+T\+P\+Session\+::ssrc, and \+\_\+\+R\+T\+P\+Session\+::version.
+
+
+
+Referenced by toxav\+\_\+prepare\+\_\+transmission().
+
+
+\begin{DoxyCode}
+465 \{
+466     \hyperlink{struct___r_t_p_session}{RTPSession} *retu = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct___r_t_p_session}{RTPSession}));
+467 
+468     \textcolor{keywordflow}{if} ( !retu ) \{
+469         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+470         \textcolor{keywordflow}{return} NULL;
+471     \}
+472 
+473     \textcolor{keywordflow}{if} ( -1 == \hyperlink{_messenger_8c_a536d47dbfa35fb02c78068e1d11a1d2a}{m\_callback\_rtp\_packet}(messenger, friend\_num, payload\_type, 
+      \hyperlink{rtp_8c_af21bf57a274e3ff7de54f331ab03fbbc}{rtp\_handle\_packet}, retu)) \{
+474         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Error setting custom register handler for rtp session"});
+475         free(retu);
+476         \textcolor{keywordflow}{return} NULL;
+477     \}
+478 
+479     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Registered packet handler: pt: %d; fid: %d"}, payload\_type, friend\_num);
+480 
+481     retu->\hyperlink{struct___r_t_p_session_ab22abc2906422da61885ac6c8e6a1a59}{version}   = \hyperlink{rtp_8h_a45dc32aa4b3075cfa01349a743c52d54}{RTP\_VERSION};   \textcolor{comment}{/* It's always 2 */}
+482     retu->\hyperlink{struct___r_t_p_session_a78a52d3de83ec4d91a7746456627089f}{padding}   = 0;             \textcolor{comment}{/* If some additional data is needed about the packet */}
+483     retu->\hyperlink{struct___r_t_p_session_a91c592cf70c61ba0788394767185be4c}{extension} = 0;           \textcolor{comment}{/* If extension to header is needed */}
+484     retu->\hyperlink{struct___r_t_p_session_a622e15900f3d90f1391cf9812d1a8078}{cc}        = 1;           \textcolor{comment}{/* Amount of contributors */}
+485     retu->\hyperlink{struct___r_t_p_session_a8bbd14e68a057e6de8ba3fa4c6afd4fa}{csrc}      = NULL;        \textcolor{comment}{/* Container */}
+486     retu->\hyperlink{struct___r_t_p_session_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc}      = \hyperlink{crypto__core_8c_a5f13cbe4c46d8801e2c7467068f87306}{random\_int}();
+487     retu->\hyperlink{struct___r_t_p_session_ae00c35797c92d6f67470b088dc2c1876}{marker}    = 0;
+488     retu->\hyperlink{struct___r_t_p_session_a9cdef377149cce5efd90b1e60596573a}{payload\_type} = payload\_type % 128;
+489 
+490     retu->\hyperlink{struct___r_t_p_session_ae5163ff230abd4115d86194ad89467b5}{dest} = friend\_num;
+491 
+492     retu->\hyperlink{struct___r_t_p_session_a1bef56c38f8d3bc3ab5d381e11c29d0d}{rsequnum} = retu->\hyperlink{struct___r_t_p_session_afe208c7dec97b8f61e08094e61bf096e}{sequnum} = 0;
+493 
+494     retu->\hyperlink{struct___r_t_p_session_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} = NULL; \textcolor{comment}{/* When needed allocate */}
+495 
+496 
+497     \textcolor{keywordflow}{if} ( !(retu->\hyperlink{struct___r_t_p_session_a8bbd14e68a057e6de8ba3fa4c6afd4fa}{csrc} = calloc(1, \textcolor{keyword}{sizeof} (uint32\_t))) ) \{
+498         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+499         free(retu);
+500         \textcolor{keywordflow}{return} NULL;
+501     \}
+502 
+503     retu->\hyperlink{struct___r_t_p_session_a8bbd14e68a057e6de8ba3fa4c6afd4fa}{csrc}[0] = retu->\hyperlink{struct___r_t_p_session_a7728cdfcf33cc14c0d7ba2dcdcbcdf2e}{ssrc}; \textcolor{comment}{/* Set my ssrc to the list receive */}
+504 
+505     \textcolor{comment}{/* Also set payload type as prefix */}
+506     retu->\hyperlink{struct___r_t_p_session_acf4a7a7457f3d922d7118075fc1a300b}{prefix} = payload\_type;
+507 
+508     \textcolor{comment}{/*}
+509 \textcolor{comment}{     *}
+510 \textcolor{comment}{     */}
+511     \textcolor{keywordflow}{return} retu;
+512 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_acda914088783d9822cdafdedf8fadd65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_acda914088783d9822cdafdedf8fadd65_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a260a2df3b1d5071548a248619342c45c}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+new\+\_\+message@{rtp\+\_\+new\+\_\+message}}
+\index{rtp\+\_\+new\+\_\+message@{rtp\+\_\+new\+\_\+message}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+new\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Message}$\ast$ rtp\+\_\+new\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a260a2df3b1d5071548a248619342c45c}
+Allocate message and store data there 
+
+Definition at line 375 of file rtp.\+c.
+
+
+
+References add\+\_\+ext\+\_\+header(), add\+\_\+header(), build\+\_\+header(), \+\_\+\+R\+T\+P\+Message\+::data, \+\_\+\+R\+T\+P\+Message\+::ext\+\_\+header, \+\_\+\+R\+T\+P\+Session\+::ext\+\_\+header, \+\_\+\+R\+T\+P\+Message\+::header, \+\_\+\+R\+T\+P\+Header\+::length, \+\_\+\+R\+T\+P\+Ext\+Header\+::length, \+\_\+\+R\+T\+P\+Message\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, \+\_\+\+R\+T\+P\+Message\+::next, \+\_\+\+R\+T\+P\+Session\+::prefix, and size\+\_\+32.
+
+
+
+Referenced by rtp\+\_\+send\+\_\+msg().
+
+
+\begin{DoxyCode}
+376 \{
+377     \textcolor{keywordflow}{if} ( !session ) \{
+378         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"No session!"});
+379         \textcolor{keywordflow}{return} NULL;
+380     \}
+381 
+382     uint8\_t *from\_pos;
+383     \hyperlink{struct___r_t_p_message}{RTPMessage} *retu = calloc(1, \textcolor{keyword}{sizeof} (\hyperlink{struct___r_t_p_message}{RTPMessage}));
+384 
+385     \textcolor{keywordflow}{if} ( !retu ) \{
+386         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Alloc failed! Program might misbehave!"});
+387         \textcolor{keywordflow}{return} NULL;
+388     \}
+389 
+390     \textcolor{comment}{/* Sets header values and copies the extension header in retu */}
+391     retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header} = \hyperlink{rtp_8c_a34983523df83bed8f00380ffc692b5b5}{build\_header} ( session ); \textcolor{comment}{/* It allocates memory and all */}
+392     retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} = session->\hyperlink{struct___r_t_p_session_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header};
+393 
+394 
+395     uint32\_t total\_length = length + retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}->\hyperlink{struct___r_t_p_header_aebb70c2aab3407a9f05334c47131a43b}{length} + 1;
+396 
+397     retu->\hyperlink{struct___r_t_p_message_a89f8083b50c7cef74e96797bb74f8757}{data}[0] = session->\hyperlink{struct___r_t_p_session_acf4a7a7457f3d922d7118075fc1a300b}{prefix};
+398 
+399     \textcolor{keywordflow}{if} ( retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header} ) \{
+400         total\_length += ( 4 \textcolor{comment}{/* Minimum ext header len */} + retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}->
+      \hyperlink{struct___r_t_p_ext_header_a1892eba2086d12ac2b09005aeb09ea3b}{length} * \hyperlink{rtp_8c_a5fc1e31d8a7a38d5cd4c33fb418fd75c}{size\_32} );
+401 
+402         from\_pos = \hyperlink{rtp_8c_a8128ae518e257a243ee8e91e13716561}{add\_header} ( retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}, retu->\hyperlink{struct___r_t_p_message_a89f8083b50c7cef74e96797bb74f8757}{data} + 1 );
+403         from\_pos = \hyperlink{rtp_8c_a8d9087c24d6e8baa293e787799dfdc40}{add\_ext\_header} ( retu->\hyperlink{struct___r_t_p_message_aa0a69d899b1bee283ae1490f53bcd073}{ext\_header}, from\_pos + 1 );
+404     \} \textcolor{keywordflow}{else} \{
+405         from\_pos = \hyperlink{rtp_8c_a8128ae518e257a243ee8e91e13716561}{add\_header} ( retu->\hyperlink{struct___r_t_p_message_afa0aee0d9eab5781c753943ec6a37584}{header}, retu->\hyperlink{struct___r_t_p_message_a89f8083b50c7cef74e96797bb74f8757}{data} + 1 );
+406     \}
+407 
+408     \textcolor{comment}{/*}
+409 \textcolor{comment}{     * Parses the extension header into the message}
+410 \textcolor{comment}{     * Of course if any}
+411 \textcolor{comment}{     */}
+412 
+413     \textcolor{comment}{/* Appends data on to retu->data */}
+414     memcpy ( from\_pos, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length );
+415 
+416     retu->\hyperlink{struct___r_t_p_message_aebb70c2aab3407a9f05334c47131a43b}{length} = total\_length;
+417 
+418     retu->\hyperlink{struct___r_t_p_message_af02d4bf6724c59e5df90bacdfc8a8499}{next} = NULL;
+419 
+420     \textcolor{keywordflow}{return} retu;
+421 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a260a2df3b1d5071548a248619342c45c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a260a2df3b1d5071548a248619342c45c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rtp_8c_a061d9b8e8abbcfb87d365bf65297e3f3}{\index{rtp.\+c@{rtp.\+c}!rtp\+\_\+send\+\_\+msg@{rtp\+\_\+send\+\_\+msg}}
+\index{rtp\+\_\+send\+\_\+msg@{rtp\+\_\+send\+\_\+msg}!rtp.\+c@{rtp.\+c}}
+\subsubsection[{rtp\+\_\+send\+\_\+msg}]{\setlength{\rightskip}{0pt plus 5cm}int rtp\+\_\+send\+\_\+msg (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Session} $\ast$}]{session, }
+\item[{{\bf Messenger} $\ast$}]{messenger, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{rtp_8c_a061d9b8e8abbcfb87d365bf65297e3f3}
+Sends msg to \hyperlink{struct___r_t_p_session_ae5163ff230abd4115d86194ad89467b5}{\+\_\+\+R\+T\+P\+Session\+::dest} 
+
+Definition at line 425 of file rtp.\+c.
+
+
+
+References \+\_\+\+R\+T\+P\+Message\+::data, \+\_\+\+R\+T\+P\+Session\+::dest, \+\_\+\+R\+T\+P\+Message\+::length, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, M\+A\+X\+\_\+\+S\+E\+Q\+U\+\_\+\+N\+U\+M, rtp\+\_\+\+Error\+Sending, rtp\+\_\+free\+\_\+msg(), rtp\+\_\+new\+\_\+message(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), and \+\_\+\+R\+T\+P\+Session\+::sequnum.
+
+
+
+Referenced by toxav\+\_\+send\+\_\+rtp\+\_\+payload().
+
+
+\begin{DoxyCode}
+426 \{
+427     \hyperlink{struct___r_t_p_message}{RTPMessage} *msg = \hyperlink{rtp_8c_a260a2df3b1d5071548a248619342c45c}{rtp\_new\_message} (session, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+428 
+429     \textcolor{keywordflow}{if} ( !msg ) \textcolor{keywordflow}{return} -1;
+430 
+431     \textcolor{keywordtype}{int} ret = \hyperlink{_messenger_8c_a2ebb5527b47fb87384093c4aa3c384c0}{send\_custom\_lossy\_packet}(messenger, session->
+      \hyperlink{struct___r_t_p_session_ae5163ff230abd4115d86194ad89467b5}{dest}, msg->\hyperlink{struct___r_t_p_message_a89f8083b50c7cef74e96797bb74f8757}{data}, msg->\hyperlink{struct___r_t_p_message_aebb70c2aab3407a9f05334c47131a43b}{length});
+432 
+433     \textcolor{keywordflow}{if} ( 0 !=  ret) \{
+434         \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"Failed to send full packet (len: %d)! error: %i"}, length, ret);
+435         \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg} ( session, msg );
+436         \textcolor{keywordflow}{return} \hyperlink{rtp_8h_a56286b35c8585dd1525c8efca234e6dfa6db3c1377fbdf6fcedfeb8c1b2fc8b11}{rtp\_ErrorSending};
+437     \}
+438 
+439     \textcolor{comment}{/* Set sequ number */}
+440     session->\hyperlink{struct___r_t_p_session_afe208c7dec97b8f61e08094e61bf096e}{sequnum} = session->\hyperlink{struct___r_t_p_session_afe208c7dec97b8f61e08094e61bf096e}{sequnum} >= \hyperlink{rtp_8h_a6589e5f4f8f3704233241df1982867a7}{MAX\_SEQU\_NUM} ? 0 : session->
+      \hyperlink{struct___r_t_p_session_afe208c7dec97b8f61e08094e61bf096e}{sequnum} + 1;
+441     \hyperlink{rtp_8c_a19cbf4e4c2831f2e162e7580bb7d5c7b}{rtp\_free\_msg} ( session, msg );
+442 
+443     \textcolor{keywordflow}{return} 0;
+444 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a061d9b8e8abbcfb87d365bf65297e3f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d46/rtp_8c_a061d9b8e8abbcfb87d365bf65297e3f3_icgraph}
+\end{center}
+\end{figure}
+
+

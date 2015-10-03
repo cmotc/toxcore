@@ -1,0 +1,1319 @@
+\hypertarget{toxav_2group_8c}{\section{toxav/group.c File Reference}
+\label{toxav_2group_8c}\index{toxav/group.\+c@{toxav/group.\+c}}
+}
+{\ttfamily \#include \char`\"{}group.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/logger.\+h\char`\"{}}\\*
+Include dependency graph for group.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d11/toxav_2group_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_group___audio___packet}{Group\+\_\+\+Audio\+\_\+\+Packet}
+\item 
+struct \hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer}
+\item 
+struct \hyperlink{struct_group___a_v}{Group\+\_\+\+A\+V}
+\item 
+struct \hyperlink{struct_group___peer___a_v}{Group\+\_\+\+Peer\+\_\+\+A\+V}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{toxav_2group_8c_afb019d08dcbbcfc269813ec3e865e9ad}{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E}~6
+\item 
+\#define \hyperlink{toxav_2group_8c_a1fe18f9a85afa6d94ff634179e6d0718}{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer} $\ast$ \hyperlink{toxav_2group_8c_a45154386c23834ec7a8807572cb7f189}{create\+\_\+queue} (unsigned int capacity)
+\item 
+static void \hyperlink{toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b}{clear\+\_\+queue} (\hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer} $\ast$q)
+\item 
+static void \hyperlink{toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348}{terminate\+\_\+queue} (\hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer} $\ast$q)
+\item 
+static int \hyperlink{toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b}{queue} (\hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer} $\ast$q, \hyperlink{struct_group___audio___packet}{Group\+\_\+\+Audio\+\_\+\+Packet} $\ast$pk)
+\item 
+static \hyperlink{struct_group___audio___packet}{Group\+\_\+\+Audio\+\_\+\+Packet} $\ast$ \hyperlink{toxav_2group_8c_a4682adad6ec02296075091c23a0e7837}{dequeue} (\hyperlink{struct_group___jitter_buffer}{Group\+\_\+\+Jitter\+Buffer} $\ast$q, int $\ast$success)
+\item 
+static void \hyperlink{toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2}{kill\+\_\+group\+\_\+av} (\hyperlink{struct_group___a_v}{Group\+\_\+\+A\+V} $\ast$group\+\_\+av)
+\item 
+static int \hyperlink{toxav_2group_8c_a6f6806047fdc1625e259d269ae850ac0}{recreate\+\_\+encoder} (\hyperlink{struct_group___a_v}{Group\+\_\+\+A\+V} $\ast$group\+\_\+av)
+\item 
+static \hyperlink{struct_group___a_v}{Group\+\_\+\+A\+V} $\ast$ \hyperlink{toxav_2group_8c_a4de99e6cc84e548a5e5dae28e82940fb}{new\+\_\+group\+\_\+av} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$audio\+\_\+callback)(\hyperlink{struct_messenger}{Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$), void $\ast$userdata)
+\item 
+static void \hyperlink{toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f}{group\+\_\+av\+\_\+peer\+\_\+new} (void $\ast$object, int groupnumber, int friendgroupnumber)
+\item 
+static void \hyperlink{toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c}{group\+\_\+av\+\_\+peer\+\_\+delete} (void $\ast$object, int groupnumber, int friendgroupnumber, void $\ast$peer\+\_\+object)
+\item 
+static void \hyperlink{toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab}{group\+\_\+av\+\_\+groupchat\+\_\+delete} (void $\ast$object, int groupnumber)
+\item 
+static int \hyperlink{toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8}{decode\+\_\+audio\+\_\+packet} (\hyperlink{struct_group___a_v}{Group\+\_\+\+A\+V} $\ast$group\+\_\+av, \hyperlink{struct_group___peer___a_v}{Group\+\_\+\+Peer\+\_\+\+A\+V} $\ast$peer\+\_\+av, int groupnumber, int friendgroupnumber)
+\item 
+static int \hyperlink{toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d}{handle\+\_\+group\+\_\+audio\+\_\+packet} (void $\ast$object, int groupnumber, int friendgroupnumber, void $\ast$peer\+\_\+object, const uint8\+\_\+t $\ast$packet, uint16\+\_\+t length)
+\item 
+static int \hyperlink{toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0}{groupchat\+\_\+enable\+\_\+av} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, void($\ast$audio\+\_\+callback)(\hyperlink{struct_messenger}{Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$), void $\ast$userdata)
+\item 
+int \hyperlink{toxav_2group_8c_a0cf061415a40de14b1dca48921a6f687}{add\+\_\+av\+\_\+groupchat} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, void($\ast$audio\+\_\+callback)(\hyperlink{struct_messenger}{Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$), void $\ast$userdata)
+\item 
+int \hyperlink{toxav_2group_8c_a3bb53f02b23ac60cb1e76d3717a4e2e5}{join\+\_\+av\+\_\+groupchat} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int32\+\_\+t friendnumber, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length, void($\ast$audio\+\_\+callback)(\hyperlink{struct_messenger}{Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$), void $\ast$userdata)
+\item 
+static int \hyperlink{toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82}{send\+\_\+audio\+\_\+packet} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, uint8\+\_\+t $\ast$packet, uint16\+\_\+t length)
+\item 
+int \hyperlink{toxav_2group_8c_abed2d235751a4282d79ff38abc3bf228}{group\+\_\+send\+\_\+audio} (\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$g\+\_\+c, int groupnumber, const int16\+\_\+t $\ast$pcm, unsigned int samples, uint8\+\_\+t channels, unsigned int sample\+\_\+rate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{toxav_2group_8c_a1fe18f9a85afa6d94ff634179e6d0718}{\index{toxav/group.\+c@{toxav/group.\+c}!G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S@{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S}}
+\index{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S@{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S~4}}\label{toxav_2group_8c_a1fe18f9a85afa6d94ff634179e6d0718}
+
+
+Definition at line 30 of file group.\+c.
+
+
+
+Referenced by queue().
+
+\hypertarget{toxav_2group_8c_afb019d08dcbbcfc269813ec3e865e9ad}{\index{toxav/group.\+c@{toxav/group.\+c}!G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E}}
+\index{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E@{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E~6}}\label{toxav_2group_8c_afb019d08dcbbcfc269813ec3e865e9ad}
+groupav.\+h
+
+Copyright (C) 2014 Tox project All Rights Reserved.
+
+This file is part of Tox.
+
+Tox is free software\+: you can redistribute it and/or modify it under the terms of the G\+N\+U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+Tox is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+U\+T A\+N\+Y W\+A\+R\+R\+A\+N\+T\+Y; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+T\+Y or F\+I\+T\+N\+E\+S\+S F\+O\+R A P\+A\+R\+T\+I\+C\+U\+L\+A\+R P\+U\+R\+P\+O\+S\+E. See the G\+N\+U General Public License for more details.
+
+You should have received a copy of the G\+N\+U General Public License along with Tox. If not, see \href{http://www.gnu.org/licenses/}{\tt http\+://www.\+gnu.\+org/licenses/}. 
+
+Definition at line 29 of file group.\+c.
+
+
+
+Referenced by group\+\_\+av\+\_\+peer\+\_\+new().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{toxav_2group_8c_a0cf061415a40de14b1dca48921a6f687}{\index{toxav/group.\+c@{toxav/group.\+c}!add\+\_\+av\+\_\+groupchat@{add\+\_\+av\+\_\+groupchat}}
+\index{add\+\_\+av\+\_\+groupchat@{add\+\_\+av\+\_\+groupchat}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{add\+\_\+av\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+av\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$)}]{audio\+\_\+callback, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxav_2group_8c_a0cf061415a40de14b1dca48921a6f687}
+
+
+Definition at line 432 of file group.\+c.
+
+
+
+References add\+\_\+groupchat(), del\+\_\+groupchat(), groupchat\+\_\+enable\+\_\+av(), and G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V.
+
+
+
+Referenced by toxav\+\_\+add\+\_\+av\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+434 \{
+435     \textcolor{keywordtype}{int} groupnumber = \hyperlink{toxcore_2group_8c_a4fa9eb1ad43b7b9026a861bd2b894461}{add\_groupchat}(g\_c, \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}{GROUPCHAT\_TYPE\_AV});
+436 
+437     \textcolor{keywordflow}{if} (groupnumber == -1) \{
+438         \textcolor{keywordflow}{return} -1;
+439     \}
+440 
+441     \textcolor{keywordflow}{if} (\hyperlink{toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0}{groupchat\_enable\_av}(g\_c, groupnumber, audio\_callback, userdata) == -1) \{
+442         \hyperlink{toxcore_2group_8c_a526817b20616bdf13250e1020d2a1808}{del\_groupchat}(g\_c, groupnumber);
+443         \textcolor{keywordflow}{return} -1;
+444     \}
+445 
+446     \textcolor{keywordflow}{return} groupnumber;
+447 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a0cf061415a40de14b1dca48921a6f687_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{db/d46/toxav_2group_8c_a0cf061415a40de14b1dca48921a6f687_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b}{\index{toxav/group.\+c@{toxav/group.\+c}!clear\+\_\+queue@{clear\+\_\+queue}}
+\index{clear\+\_\+queue@{clear\+\_\+queue}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{clear\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}static void clear\+\_\+queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Jitter\+Buffer} $\ast$}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b}
+
+
+Definition at line 69 of file group.\+c.
+
+
+
+References Group\+\_\+\+Jitter\+Buffer\+::bottom, Group\+\_\+\+Jitter\+Buffer\+::queue, Group\+\_\+\+Jitter\+Buffer\+::size, and Group\+\_\+\+Jitter\+Buffer\+::top.
+
+
+
+Referenced by queue(), and terminate\+\_\+queue().
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordflow}{for} (; q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} != q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top}; ++q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) \{
+72         \textcolor{keywordflow}{if} (q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} % q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size}]) \{
+73             free(q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} % q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size}]);
+74             q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} % q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size}] = NULL;
+75         \}
+76     \}
+77 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a45154386c23834ec7a8807572cb7f189}{\index{toxav/group.\+c@{toxav/group.\+c}!create\+\_\+queue@{create\+\_\+queue}}
+\index{create\+\_\+queue@{create\+\_\+queue}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{create\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Group\+\_\+\+Jitter\+Buffer}$\ast$ create\+\_\+queue (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{capacity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a45154386c23834ec7a8807572cb7f189}
+
+
+Definition at line 47 of file group.\+c.
+
+
+
+References Group\+\_\+\+Jitter\+Buffer\+::capacity, Group\+\_\+\+Jitter\+Buffer\+::queue, and Group\+\_\+\+Jitter\+Buffer\+::size.
+
+
+
+Referenced by group\+\_\+av\+\_\+peer\+\_\+new().
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size = 1;
+50 
+51     \textcolor{keywordflow}{while} (size <= capacity) \{
+52         size *= 2;
+53     \}
+54 
+55     \hyperlink{struct_group___jitter_buffer}{Group\_JitterBuffer} *q;
+56 
+57     \textcolor{keywordflow}{if} ( !(q = calloc(\textcolor{keyword}{sizeof}(\hyperlink{struct_group___jitter_buffer}{Group\_JitterBuffer}), 1)) ) \textcolor{keywordflow}{return} NULL;
+58 
+59     \textcolor{keywordflow}{if} (!(q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue} = calloc(\textcolor{keyword}{sizeof}(\hyperlink{struct_group___audio___packet}{Group\_Audio\_Packet} *), size))) \{
+60         free(q);
+61         \textcolor{keywordflow}{return} NULL;
+62     \}
+63 
+64     q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size} = size;
+65     q->\hyperlink{struct_group___jitter_buffer_a391c992c66c3e5540265a85ec2b9216a}{capacity} = capacity;
+66     \textcolor{keywordflow}{return} q;
+67 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a45154386c23834ec7a8807572cb7f189_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8}{\index{toxav/group.\+c@{toxav/group.\+c}!decode\+\_\+audio\+\_\+packet@{decode\+\_\+audio\+\_\+packet}}
+\index{decode\+\_\+audio\+\_\+packet@{decode\+\_\+audio\+\_\+packet}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{decode\+\_\+audio\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}static int decode\+\_\+audio\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+A\+V} $\ast$}]{group\+\_\+av, }
+\item[{{\bf Group\+\_\+\+Peer\+\_\+\+A\+V} $\ast$}]{peer\+\_\+av, }
+\item[{int}]{groupnumber, }
+\item[{int}]{friendgroupnumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8}
+
+
+Definition at line 271 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+data, Group\+\_\+\+Peer\+\_\+\+A\+V\+::audio\+\_\+decoder, Group\+\_\+\+Peer\+\_\+\+A\+V\+::buffer, Group\+\_\+\+Audio\+\_\+\+Packet\+::data, Group\+\_\+\+Peer\+\_\+\+A\+V\+::decoder\+\_\+channels, dequeue(), Group\+\_\+\+A\+V\+::g\+\_\+c, Group\+\_\+\+Peer\+\_\+\+A\+V\+::last\+\_\+packet\+\_\+samples, Group\+\_\+\+Audio\+\_\+\+Packet\+::length, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, Group\+\_\+\+Chats\+::m, and Group\+\_\+\+A\+V\+::userdata.
+
+
+
+Referenced by handle\+\_\+group\+\_\+audio\+\_\+packet().
+
+
+\begin{DoxyCode}
+272 \{
+273     \textcolor{keywordflow}{if} (!group\_av || !peer\_av)
+274         \textcolor{keywordflow}{return} -1;
+275 
+276     \textcolor{keywordtype}{int} success;
+277     \hyperlink{struct_group___audio___packet}{Group\_Audio\_Packet} *pk = \hyperlink{toxav_2group_8c_a4682adad6ec02296075091c23a0e7837}{dequeue}(peer\_av->\hyperlink{struct_group___peer___a_v_a6552b703c2e3958d1e030416f2893b27}{buffer}, &success);
+278 
+279     \textcolor{keywordflow}{if} (success == 0)
+280         \textcolor{keywordflow}{return} -1;
+281 
+282     int16\_t *out\_audio = NULL;
+283     \textcolor{keywordtype}{int} out\_audio\_samples = 0;
+284 
+285     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sample\_rate = 48000;
+286 
+287     \textcolor{keywordflow}{if} (success == 1) \{
+288         \textcolor{keywordtype}{int} channels = opus\_packet\_get\_nb\_channels(pk->\hyperlink{struct_group___audio___packet_a5c239a1bb87b52b0f1d6d68c4749cd2a}{data});
+289 
+290         \textcolor{keywordflow}{if} (channels == OPUS\_INVALID\_PACKET) \{
+291             free(pk);
+292             \textcolor{keywordflow}{return} -1;
+293         \}
+294 
+295         \textcolor{keywordflow}{if} (channels != 1 && channels != 2) \{
+296             free(pk);
+297             \textcolor{keywordflow}{return} -1;
+298         \}
+299 
+300         \textcolor{keywordflow}{if} (channels != peer\_av->\hyperlink{struct_group___peer___a_v_afe1ef0788c8c4a05e136d1b00245138e}{decoder\_channels}) \{
+301             \textcolor{keywordflow}{if} (peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder}) \{
+302                 opus\_decoder\_destroy(peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder});
+303                 peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder} = NULL;
+304             \}
+305 
+306             \textcolor{keywordtype}{int} rc;
+307             peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder} = opus\_decoder\_create(sample\_rate, channels, &rc);
+308 
+309             \textcolor{keywordflow}{if} ( rc != OPUS\_OK ) \{
+310                 \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Error while starting audio decoder: %s"}, opus\_strerror(rc));
+311                 free(pk);
+312                 \textcolor{keywordflow}{return} -1;
+313             \}
+314 
+315             peer\_av->\hyperlink{struct_group___peer___a_v_afe1ef0788c8c4a05e136d1b00245138e}{decoder\_channels} = channels;
+316         \}
+317 
+318         \textcolor{keywordtype}{int} num\_samples = opus\_decoder\_get\_nb\_samples(peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder}, pk->
+      \hyperlink{struct_group___audio___packet_a5c239a1bb87b52b0f1d6d68c4749cd2a}{data}, pk->\hyperlink{struct_group___audio___packet_a1892eba2086d12ac2b09005aeb09ea3b}{length});
+319 
+320         out\_audio = malloc(num\_samples * peer\_av->\hyperlink{struct_group___peer___a_v_afe1ef0788c8c4a05e136d1b00245138e}{decoder\_channels} * \textcolor{keyword}{sizeof}(int16\_t));
+321 
+322         \textcolor{keywordflow}{if} (!out\_audio) \{
+323             free(pk);
+324             \textcolor{keywordflow}{return} -1;
+325         \}
+326 
+327         out\_audio\_samples = opus\_decode(peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder}, pk->
+      \hyperlink{struct_group___audio___packet_a5c239a1bb87b52b0f1d6d68c4749cd2a}{data}, pk->\hyperlink{struct_group___audio___packet_a1892eba2086d12ac2b09005aeb09ea3b}{length}, out\_audio, num\_samples, 0);
+328         free(pk);
+329 
+330         \textcolor{keywordflow}{if} (out\_audio\_samples <= 0)
+331             \textcolor{keywordflow}{return} -1;
+332 
+333         peer\_av->\hyperlink{struct_group___peer___a_v_af679faefa170266e24bc2af9b5a0161e}{last\_packet\_samples} = out\_audio\_samples;
+334     \} \textcolor{keywordflow}{else} \{
+335         \textcolor{keywordflow}{if} (!peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder})
+336             \textcolor{keywordflow}{return} -1;
+337 
+338         \textcolor{keywordflow}{if} (!peer\_av->\hyperlink{struct_group___peer___a_v_af679faefa170266e24bc2af9b5a0161e}{last\_packet\_samples})
+339             \textcolor{keywordflow}{return} -1;
+340 
+341         out\_audio = malloc(peer\_av->\hyperlink{struct_group___peer___a_v_af679faefa170266e24bc2af9b5a0161e}{last\_packet\_samples} * peer\_av->
+      \hyperlink{struct_group___peer___a_v_afe1ef0788c8c4a05e136d1b00245138e}{decoder\_channels} * \textcolor{keyword}{sizeof}(int16\_t));
+342 
+343         \textcolor{keywordflow}{if} (!out\_audio) \{
+344             free(pk);
+345             \textcolor{keywordflow}{return} -1;
+346         \}
+347 
+348         out\_audio\_samples = opus\_decode(peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder}, NULL, 0, out\_audio, peer\_av->
+      \hyperlink{struct_group___peer___a_v_af679faefa170266e24bc2af9b5a0161e}{last\_packet\_samples}, 1);
+349 
+350         \textcolor{keywordflow}{if} (out\_audio\_samples <= 0)
+351             \textcolor{keywordflow}{return} -1;
+352 
+353     \}
+354 
+355     \textcolor{keywordflow}{if} (out\_audio) \{
+356 
+357         \textcolor{keywordflow}{if} (group\_av->\hyperlink{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}{audio\_data})
+358             group\_av->\hyperlink{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}{audio\_data}(group\_av->\hyperlink{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}{g\_c}->\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, groupnumber, friendgroupnumber, out\_audio,
+       out\_audio\_samples,
+359                                  peer\_av->\hyperlink{struct_group___peer___a_v_afe1ef0788c8c4a05e136d1b00245138e}{decoder\_channels}, sample\_rate, group\_av->
+      \hyperlink{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}{userdata});
+360 
+361         free(out\_audio);
+362         \textcolor{keywordflow}{return} 0;
+363     \}
+364 
+365     \textcolor{keywordflow}{return} -1;
+366 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{db/d46/toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a4682adad6ec02296075091c23a0e7837}{\index{toxav/group.\+c@{toxav/group.\+c}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{dequeue}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Group\+\_\+\+Audio\+\_\+\+Packet}$\ast$ dequeue (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Jitter\+Buffer} $\ast$}]{q, }
+\item[{int $\ast$}]{success}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a4682adad6ec02296075091c23a0e7837}
+
+
+Definition at line 125 of file group.\+c.
+
+
+
+References Group\+\_\+\+Jitter\+Buffer\+::bottom, Group\+\_\+\+Jitter\+Buffer\+::capacity, num, Group\+\_\+\+Jitter\+Buffer\+::queue, Group\+\_\+\+Jitter\+Buffer\+::size, and Group\+\_\+\+Jitter\+Buffer\+::top.
+
+
+
+Referenced by decode\+\_\+audio\+\_\+packet().
+
+
+\begin{DoxyCode}
+126 \{
+127     \textcolor{keywordflow}{if} (q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top} == q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) \{
+128         *success = 0;
+129         \textcolor{keywordflow}{return} NULL;
+130     \}
+131 
+132     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} % q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size};
+133 
+134     \textcolor{keywordflow}{if} (q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[num]) \{
+135         \hyperlink{struct_group___audio___packet}{Group\_Audio\_Packet} *ret = q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}];
+136         q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}] = NULL;
+137         ++q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom};
+138         *success = 1;
+139         \textcolor{keywordflow}{return} ret;
+140     \}
+141 
+142     \textcolor{keywordflow}{if} ((uint32\_t)(q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top} - q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) > q->\hyperlink{struct_group___jitter_buffer_a391c992c66c3e5540265a85ec2b9216a}{capacity}) \{
+143         ++q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom};
+144         *success = 2;
+145         \textcolor{keywordflow}{return} NULL;
+146     \}
+147 
+148     *success = 0;
+149     \textcolor{keywordflow}{return} NULL;
+150 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a4682adad6ec02296075091c23a0e7837_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab}{\index{toxav/group.\+c@{toxav/group.\+c}!group\+\_\+av\+\_\+groupchat\+\_\+delete@{group\+\_\+av\+\_\+groupchat\+\_\+delete}}
+\index{group\+\_\+av\+\_\+groupchat\+\_\+delete@{group\+\_\+av\+\_\+groupchat\+\_\+delete}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{group\+\_\+av\+\_\+groupchat\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}static void group\+\_\+av\+\_\+groupchat\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab}
+
+
+Definition at line 265 of file group.\+c.
+
+
+
+References kill\+\_\+group\+\_\+av().
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+266 \{
+267     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object})
+268         \hyperlink{toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2}{kill\_group\_av}(\textcolor{keywordtype}{object});
+269 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{db/d46/toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c}{\index{toxav/group.\+c@{toxav/group.\+c}!group\+\_\+av\+\_\+peer\+\_\+delete@{group\+\_\+av\+\_\+peer\+\_\+delete}}
+\index{group\+\_\+av\+\_\+peer\+\_\+delete@{group\+\_\+av\+\_\+peer\+\_\+delete}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{group\+\_\+av\+\_\+peer\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}static void group\+\_\+av\+\_\+peer\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{groupnumber, }
+\item[{int}]{friendgroupnumber, }
+\item[{void $\ast$}]{peer\+\_\+object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c}
+
+
+Definition at line 251 of file group.\+c.
+
+
+
+References Group\+\_\+\+Peer\+\_\+\+A\+V\+::audio\+\_\+decoder, Group\+\_\+\+Peer\+\_\+\+A\+V\+::buffer, and terminate\+\_\+queue().
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+252 \{
+253     \hyperlink{struct_group___peer___a_v}{Group\_Peer\_AV} *peer\_av = peer\_object;
+254 
+255     \textcolor{keywordflow}{if} (!peer\_av)
+256         \textcolor{keywordflow}{return};
+257 
+258     \textcolor{keywordflow}{if} (peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder})
+259         opus\_decoder\_destroy(peer\_av->\hyperlink{struct_group___peer___a_v_a3b9ee5ac4c354a3e31a8acf7aa1a1b6c}{audio\_decoder});
+260 
+261     \hyperlink{toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348}{terminate\_queue}(peer\_av->\hyperlink{struct_group___peer___a_v_a6552b703c2e3958d1e030416f2893b27}{buffer});
+262     free(peer\_object);
+263 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f}{\index{toxav/group.\+c@{toxav/group.\+c}!group\+\_\+av\+\_\+peer\+\_\+new@{group\+\_\+av\+\_\+peer\+\_\+new}}
+\index{group\+\_\+av\+\_\+peer\+\_\+new@{group\+\_\+av\+\_\+peer\+\_\+new}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{group\+\_\+av\+\_\+peer\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}static void group\+\_\+av\+\_\+peer\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{groupnumber, }
+\item[{int}]{friendgroupnumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f}
+
+
+Definition at line 239 of file group.\+c.
+
+
+
+References Group\+\_\+\+Peer\+\_\+\+A\+V\+::buffer, create\+\_\+queue(), Group\+\_\+\+A\+V\+::g\+\_\+c, G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+S\+I\+Z\+E, and group\+\_\+peer\+\_\+set\+\_\+object().
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+240 \{
+241     \hyperlink{struct_group___a_v}{Group\_AV} *group\_av = object;
+242     \hyperlink{struct_group___peer___a_v}{Group\_Peer\_AV} *peer\_av = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_group___peer___a_v}{Group\_Peer\_AV}));
+243 
+244     \textcolor{keywordflow}{if} (!peer\_av)
+245         \textcolor{keywordflow}{return};
+246 
+247     peer\_av->\hyperlink{struct_group___peer___a_v_a6552b703c2e3958d1e030416f2893b27}{buffer} = \hyperlink{toxav_2group_8c_a45154386c23834ec7a8807572cb7f189}{create\_queue}(\hyperlink{toxav_2group_8c_afb019d08dcbbcfc269813ec3e865e9ad}{GROUP\_JBUF\_SIZE});
+248     \hyperlink{toxcore_2group_8c_a450e79abe59f479d322c59b4e7be0184}{group\_peer\_set\_object}(group\_av->\hyperlink{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}{g\_c}, groupnumber, friendgroupnumber, peer\_av);
+249 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_abed2d235751a4282d79ff38abc3bf228}{\index{toxav/group.\+c@{toxav/group.\+c}!group\+\_\+send\+\_\+audio@{group\+\_\+send\+\_\+audio}}
+\index{group\+\_\+send\+\_\+audio@{group\+\_\+send\+\_\+audio}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{group\+\_\+send\+\_\+audio}]{\setlength{\rightskip}{0pt plus 5cm}int group\+\_\+send\+\_\+audio (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{const int16\+\_\+t $\ast$}]{pcm, }
+\item[{unsigned int}]{samples, }
+\item[{uint8\+\_\+t}]{channels, }
+\item[{unsigned int}]{sample\+\_\+rate}
+\end{DoxyParamCaption}
+)}}\label{toxav_2group_8c_abed2d235751a4282d79ff38abc3bf228}
+
+
+Definition at line 502 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+bitrate, Group\+\_\+\+A\+V\+::audio\+\_\+channels, Group\+\_\+\+A\+V\+::audio\+\_\+encoder, Group\+\_\+\+A\+V\+::audio\+\_\+sample\+\_\+rate, group\+\_\+get\+\_\+object(), recreate\+\_\+encoder(), and send\+\_\+audio\+\_\+packet().
+
+
+
+Referenced by toxav\+\_\+group\+\_\+send\+\_\+audio().
+
+
+\begin{DoxyCode}
+504 \{
+505     \hyperlink{struct_group___a_v}{Group\_AV} *group\_av = \hyperlink{toxcore_2group_8c_ad3649b12ed32b2b37f6443e8dfcfb34f}{group\_get\_object}(g\_c, groupnumber);
+506 
+507     \textcolor{keywordflow}{if} (!group\_av)
+508         \textcolor{keywordflow}{return} -1;
+509 
+510     \textcolor{keywordflow}{if} (channels != 1 && channels != 2)
+511         \textcolor{keywordflow}{return} -1;
+512 
+513     \textcolor{keywordflow}{if} (sample\_rate != 8000 && sample\_rate != 12000 && sample\_rate != 16000 && sample\_rate != 24000 && 
+      sample\_rate != 48000)
+514         \textcolor{keywordflow}{return} -1;
+515 
+516     \textcolor{keywordflow}{if} (!group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} || group\_av->\hyperlink{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}{audio\_channels} != channels || 
+      group\_av->\hyperlink{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}{audio\_sample\_rate} != sample\_rate) \{
+517         group\_av->\hyperlink{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}{audio\_channels} = channels;
+518         group\_av->\hyperlink{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}{audio\_sample\_rate} = sample\_rate;
+519 
+520         \textcolor{keywordflow}{if} (channels == 1) \{
+521             group\_av->\hyperlink{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}{audio\_bitrate} = 32000; \textcolor{comment}{//TODO: add way of adjusting bitrate}
+522         \} \textcolor{keywordflow}{else} \{
+523             group\_av->\hyperlink{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}{audio\_bitrate} = 64000; \textcolor{comment}{//TODO: add way of adjusting bitrate}
+524         \}
+525 
+526         \textcolor{keywordflow}{if} (\hyperlink{toxav_2group_8c_a6f6806047fdc1625e259d269ae850ac0}{recreate\_encoder}(group\_av) == -1)
+527             \textcolor{keywordflow}{return} -1;
+528     \}
+529 
+530     uint8\_t encoded[1024];
+531     int32\_t size = opus\_encode(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder}, pcm, samples, encoded, \textcolor{keyword}{sizeof}(encoded)
+      );
+532 
+533     \textcolor{keywordflow}{if} (size <= 0)
+534         \textcolor{keywordflow}{return} -1;
+535 
+536     \textcolor{keywordflow}{return} \hyperlink{toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82}{send\_audio\_packet}(g\_c, groupnumber, encoded, size);
+537 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_abed2d235751a4282d79ff38abc3bf228_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{db/d46/toxav_2group_8c_abed2d235751a4282d79ff38abc3bf228_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0}{\index{toxav/group.\+c@{toxav/group.\+c}!groupchat\+\_\+enable\+\_\+av@{groupchat\+\_\+enable\+\_\+av}}
+\index{groupchat\+\_\+enable\+\_\+av@{groupchat\+\_\+enable\+\_\+av}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{groupchat\+\_\+enable\+\_\+av}]{\setlength{\rightskip}{0pt plus 5cm}static int groupchat\+\_\+enable\+\_\+av (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{void($\ast$)({\bf Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$)}]{audio\+\_\+callback, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0}
+
+
+Definition at line 404 of file group.\+c.
+
+
+
+References callback\+\_\+groupchat\+\_\+delete(), callback\+\_\+groupchat\+\_\+peer\+\_\+delete(), callback\+\_\+groupchat\+\_\+peer\+\_\+new(), G\+R\+O\+U\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D, group\+\_\+av\+\_\+groupchat\+\_\+delete(), group\+\_\+av\+\_\+peer\+\_\+delete(), group\+\_\+av\+\_\+peer\+\_\+new(), group\+\_\+lossy\+\_\+packet\+\_\+registerhandler(), group\+\_\+set\+\_\+object(), handle\+\_\+group\+\_\+audio\+\_\+packet(), kill\+\_\+group\+\_\+av(), and new\+\_\+group\+\_\+av().
+
+
+
+Referenced by add\+\_\+av\+\_\+groupchat(), and join\+\_\+av\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+406 \{
+407     \textcolor{keywordflow}{if} (groupnumber == -1)
+408         \textcolor{keywordflow}{return} -1;
+409 
+410     \hyperlink{struct_group___a_v}{Group\_AV} *group\_av = \hyperlink{toxav_2group_8c_a4de99e6cc84e548a5e5dae28e82940fb}{new\_group\_av}(g\_c, audio\_callback, userdata);
+411 
+412     \textcolor{keywordflow}{if} (group\_av == NULL)
+413         \textcolor{keywordflow}{return} -1;
+414 
+415     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_add35f9833270b223b9120733e8c161b6}{group\_set\_object}(g\_c, groupnumber, group\_av) == -1
+416             || \hyperlink{toxcore_2group_8c_ac5a08e9cc9e4615a8702b642885b70b2}{callback\_groupchat\_peer\_new}(g\_c, groupnumber, 
+      \hyperlink{toxav_2group_8c_a20ee9ad2437bab6788db23a2968cd86f}{group\_av\_peer\_new}) == -1
+417             || \hyperlink{toxcore_2group_8c_a52cfb119bc0747a9b4d4fdd845ce44a0}{callback\_groupchat\_peer\_delete}(g\_c, groupnumber, 
+      \hyperlink{toxav_2group_8c_ab699e21ed42c00132d0d2772b2afa56c}{group\_av\_peer\_delete}) == -1
+418             || \hyperlink{toxcore_2group_8c_a3d26dd5b26565b3050268f7dc86f648c}{callback\_groupchat\_delete}(g\_c, groupnumber, 
+      \hyperlink{toxav_2group_8c_acd7a116b2bfdcdec0f8ae8036d4409ab}{group\_av\_groupchat\_delete}) == -1) \{
+419         \hyperlink{toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2}{kill\_group\_av}(group\_av);
+420         \textcolor{keywordflow}{return} -1;
+421     \}
+422 
+423     \hyperlink{toxcore_2group_8c_aab3c37b13310ec0d9df5f3209c6fc5ac}{group\_lossy\_packet\_registerhandler}(g\_c, 
+      \hyperlink{toxav_2group_8h_a7c164ef840072ecaa203347bbdfe111c}{GROUP\_AUDIO\_PACKET\_ID}, &\hyperlink{toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d}{handle\_group\_audio\_packet});
+424     \textcolor{keywordflow}{return} 0;
+425 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d}{\index{toxav/group.\+c@{toxav/group.\+c}!handle\+\_\+group\+\_\+audio\+\_\+packet@{handle\+\_\+group\+\_\+audio\+\_\+packet}}
+\index{handle\+\_\+group\+\_\+audio\+\_\+packet@{handle\+\_\+group\+\_\+audio\+\_\+packet}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{handle\+\_\+group\+\_\+audio\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}static int handle\+\_\+group\+\_\+audio\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{groupnumber, }
+\item[{int}]{friendgroupnumber, }
+\item[{void $\ast$}]{peer\+\_\+object, }
+\item[{const uint8\+\_\+t $\ast$}]{packet, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d}
+
+
+Definition at line 368 of file group.\+c.
+
+
+
+References Group\+\_\+\+Peer\+\_\+\+A\+V\+::buffer, Group\+\_\+\+Audio\+\_\+\+Packet\+::data, decode\+\_\+audio\+\_\+packet(), Group\+\_\+\+Audio\+\_\+\+Packet\+::length, queue(), and Group\+\_\+\+Audio\+\_\+\+Packet\+::sequnum.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+370 \{
+371     \textcolor{keywordflow}{if} (!peer\_object || !\textcolor{keywordtype}{object} || length <= \textcolor{keyword}{sizeof}(uint16\_t)) \{
+372         \textcolor{keywordflow}{return} -1;
+373     \}
+374 
+375     \hyperlink{struct_group___peer___a_v}{Group\_Peer\_AV} *peer\_av = peer\_object;
+376 
+377     \hyperlink{struct_group___audio___packet}{Group\_Audio\_Packet} *pk = calloc(1, \textcolor{keyword}{sizeof}(
+      \hyperlink{struct_group___audio___packet}{Group\_Audio\_Packet}) + (length - \textcolor{keyword}{sizeof}(uint16\_t)));
+378 
+379     \textcolor{keywordflow}{if} (!pk) \{
+380         \textcolor{keywordflow}{return} -1;
+381     \}
+382 
+383     uint16\_t sequnum;
+384     memcpy(&sequnum, packet, \textcolor{keyword}{sizeof}(sequnum));
+385     pk->\hyperlink{struct_group___audio___packet_afe208c7dec97b8f61e08094e61bf096e}{sequnum} = ntohs(sequnum);
+386     pk->\hyperlink{struct_group___audio___packet_a1892eba2086d12ac2b09005aeb09ea3b}{length} = length - \textcolor{keyword}{sizeof}(uint16\_t);
+387     memcpy(pk->\hyperlink{struct_group___audio___packet_a5c239a1bb87b52b0f1d6d68c4749cd2a}{data}, packet + \textcolor{keyword}{sizeof}(uint16\_t), length - \textcolor{keyword}{sizeof}(uint16\_t));
+388 
+389     \textcolor{keywordflow}{if} (\hyperlink{toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b}{queue}(peer\_av->\hyperlink{struct_group___peer___a_v_a6552b703c2e3958d1e030416f2893b27}{buffer}, pk) == -1) \{
+390         free(pk);
+391         \textcolor{keywordflow}{return} -1;
+392     \}
+393 
+394     \textcolor{keywordflow}{while} (\hyperlink{toxav_2group_8c_a9156785c1b3cbd3de5a526d2ada8dca8}{decode\_audio\_packet}(\textcolor{keywordtype}{object}, peer\_av, groupnumber, friendgroupnumber) == 0);
+395 
+396     \textcolor{keywordflow}{return} 0;
+397 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a6b0b3f3f3a9c37f15f4db299b6316e7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a3bb53f02b23ac60cb1e76d3717a4e2e5}{\index{toxav/group.\+c@{toxav/group.\+c}!join\+\_\+av\+\_\+groupchat@{join\+\_\+av\+\_\+groupchat}}
+\index{join\+\_\+av\+\_\+groupchat@{join\+\_\+av\+\_\+groupchat}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{join\+\_\+av\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int join\+\_\+av\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int32\+\_\+t}]{friendnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void($\ast$)({\bf Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$)}]{audio\+\_\+callback, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxav_2group_8c_a3bb53f02b23ac60cb1e76d3717a4e2e5}
+
+
+Definition at line 454 of file group.\+c.
+
+
+
+References del\+\_\+groupchat(), groupchat\+\_\+enable\+\_\+av(), G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+V, and join\+\_\+groupchat().
+
+
+
+Referenced by toxav\+\_\+join\+\_\+av\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+457 \{
+458     \textcolor{keywordtype}{int} groupnumber = \hyperlink{toxcore_2group_8c_a6f097de58345cf9500d0413198c583fc}{join\_groupchat}(g\_c, friendnumber, 
+      \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635a6489614c636c3eb69600d636a5a0cd68}{GROUPCHAT\_TYPE\_AV}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+459 
+460     \textcolor{keywordflow}{if} (groupnumber == -1) \{
+461         \textcolor{keywordflow}{return} -1;
+462     \}
+463 
+464     \textcolor{keywordflow}{if} (\hyperlink{toxav_2group_8c_ab6f2cb7fef697bde984bf67a3036e4d0}{groupchat\_enable\_av}(g\_c, groupnumber, audio\_callback, userdata) == -1) \{
+465         \hyperlink{toxcore_2group_8c_a526817b20616bdf13250e1020d2a1808}{del\_groupchat}(g\_c, groupnumber);
+466         \textcolor{keywordflow}{return} -1;
+467     \}
+468 
+469     \textcolor{keywordflow}{return} groupnumber;
+470 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a3bb53f02b23ac60cb1e76d3717a4e2e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{db/d46/toxav_2group_8c_a3bb53f02b23ac60cb1e76d3717a4e2e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2}{\index{toxav/group.\+c@{toxav/group.\+c}!kill\+\_\+group\+\_\+av@{kill\+\_\+group\+\_\+av}}
+\index{kill\+\_\+group\+\_\+av@{kill\+\_\+group\+\_\+av}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{kill\+\_\+group\+\_\+av}]{\setlength{\rightskip}{0pt plus 5cm}static void kill\+\_\+group\+\_\+av (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+A\+V} $\ast$}]{group\+\_\+av}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2}
+
+
+Definition at line 173 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+encoder.
+
+
+
+Referenced by group\+\_\+av\+\_\+groupchat\+\_\+delete(), and groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+174 \{
+175     \textcolor{keywordflow}{if} (group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder}) \{
+176         opus\_encoder\_destroy(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder});
+177     \}
+178 
+179     free(group\_av);
+180 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_afd5524a4c18bdd6237ee9e6d51ee28b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a4de99e6cc84e548a5e5dae28e82940fb}{\index{toxav/group.\+c@{toxav/group.\+c}!new\+\_\+group\+\_\+av@{new\+\_\+group\+\_\+av}}
+\index{new\+\_\+group\+\_\+av@{new\+\_\+group\+\_\+av}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{new\+\_\+group\+\_\+av}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Group\+\_\+\+A\+V}$\ast$ new\+\_\+group\+\_\+av (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{void($\ast$)({\bf Messenger} $\ast$, int, int, const int16\+\_\+t $\ast$, unsigned int, uint8\+\_\+t, unsigned int, void $\ast$)}]{audio\+\_\+callback, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a4de99e6cc84e548a5e5dae28e82940fb}
+
+
+Definition at line 220 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+data, Group\+\_\+\+A\+V\+::g\+\_\+c, and Group\+\_\+\+A\+V\+::userdata.
+
+
+
+Referenced by groupchat\+\_\+enable\+\_\+av().
+
+
+\begin{DoxyCode}
+222 \{
+223     \textcolor{keywordflow}{if} (!g\_c)
+224         \textcolor{keywordflow}{return} NULL;
+225 
+226     \hyperlink{struct_group___a_v}{Group\_AV} *group\_av = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_group___a_v}{Group\_AV}));
+227 
+228     \textcolor{keywordflow}{if} (!group\_av)
+229         \textcolor{keywordflow}{return} NULL;
+230 
+231     group\_av->\hyperlink{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}{g\_c} = g\_c;
+232 
+233     group\_av->\hyperlink{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}{audio\_data} = audio\_callback;
+234     group\_av->\hyperlink{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}{userdata} = userdata;
+235 
+236     \textcolor{keywordflow}{return} group\_av;
+237 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a4de99e6cc84e548a5e5dae28e82940fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b}{\index{toxav/group.\+c@{toxav/group.\+c}!queue@{queue}}
+\index{queue@{queue}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}static int queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Jitter\+Buffer} $\ast$}]{q, }
+\item[{{\bf Group\+\_\+\+Audio\+\_\+\+Packet} $\ast$}]{pk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b}
+
+
+Definition at line 90 of file group.\+c.
+
+
+
+References Group\+\_\+\+Jitter\+Buffer\+::bottom, Group\+\_\+\+Jitter\+Buffer\+::capacity, clear\+\_\+queue(), G\+R\+O\+U\+P\+\_\+\+J\+B\+U\+F\+\_\+\+D\+E\+A\+D\+\_\+\+S\+E\+C\+O\+N\+D\+S, is\+\_\+timeout(), Group\+\_\+\+Jitter\+Buffer\+::last\+\_\+queued\+\_\+time, num, Group\+\_\+\+Jitter\+Buffer\+::queue, Group\+\_\+\+Audio\+\_\+\+Packet\+::sequnum, Group\+\_\+\+Jitter\+Buffer\+::size, Group\+\_\+\+Jitter\+Buffer\+::top, and unix\+\_\+time().
+
+
+
+Referenced by handle\+\_\+group\+\_\+audio\+\_\+packet().
+
+
+\begin{DoxyCode}
+91 \{
+92     uint16\_t sequnum = pk->\hyperlink{struct_group___audio___packet_afe208c7dec97b8f61e08094e61bf096e}{sequnum};
+93 
+94     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = sequnum % q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size};
+95 
+96     \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(q->\hyperlink{struct_group___jitter_buffer_abec0d4ef82ac14ce49e34eff86392f02}{last\_queued\_time}, 
+      \hyperlink{toxav_2group_8c_a1fe18f9a85afa6d94ff634179e6d0718}{GROUP\_JBUF\_DEAD\_SECONDS})) \{
+97         \textcolor{keywordflow}{if} ((uint32\_t)(sequnum - q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) > (1 << 15)) \{
+98             \textcolor{comment}{/* Drop old packet. */}
+99             \textcolor{keywordflow}{return} -1;
+100         \}
+101     \}
+102 
+103     \textcolor{keywordflow}{if} ((uint32\_t)(sequnum - q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) > q->\hyperlink{struct_group___jitter_buffer_ab2c6b258f02add8fdf4cfc7c371dd772}{size}) \{
+104         \hyperlink{toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b}{clear\_queue}(q);
+105         q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom} = sequnum - q->\hyperlink{struct_group___jitter_buffer_a391c992c66c3e5540265a85ec2b9216a}{capacity};
+106         q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}] = pk;
+107         q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top} = sequnum + 1;
+108         q->\hyperlink{struct_group___jitter_buffer_abec0d4ef82ac14ce49e34eff86392f02}{last\_queued\_time} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+109         \textcolor{keywordflow}{return} 0;
+110     \}
+111 
+112     \textcolor{keywordflow}{if} (q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[num])
+113         \textcolor{keywordflow}{return} -1;
+114 
+115     q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue}[\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}] = pk;
+116 
+117     \textcolor{keywordflow}{if} ((sequnum - q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}) >= (q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top} - q->\hyperlink{struct_group___jitter_buffer_a12c8099ac87952580dd090215e02728c}{bottom}))
+118         q->\hyperlink{struct_group___jitter_buffer_a0c235a6df98714bb18538fc0afc5bad1}{top} = sequnum + 1;
+119 
+120     q->\hyperlink{struct_group___jitter_buffer_abec0d4ef82ac14ce49e34eff86392f02}{last\_queued\_time} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+121     \textcolor{keywordflow}{return} 0;
+122 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{db/d46/toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a68a463d4df27fc6aa526a57e4bfc889b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a6f6806047fdc1625e259d269ae850ac0}{\index{toxav/group.\+c@{toxav/group.\+c}!recreate\+\_\+encoder@{recreate\+\_\+encoder}}
+\index{recreate\+\_\+encoder@{recreate\+\_\+encoder}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{recreate\+\_\+encoder}]{\setlength{\rightskip}{0pt plus 5cm}static int recreate\+\_\+encoder (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+A\+V} $\ast$}]{group\+\_\+av}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a6f6806047fdc1625e259d269ae850ac0}
+
+
+Definition at line 182 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+bitrate, Group\+\_\+\+A\+V\+::audio\+\_\+channels, Group\+\_\+\+A\+V\+::audio\+\_\+encoder, Group\+\_\+\+A\+V\+::audio\+\_\+sample\+\_\+rate, and L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio().
+
+
+\begin{DoxyCode}
+183 \{
+184     \textcolor{keywordflow}{if} (group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder}) \{
+185         opus\_encoder\_destroy(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder});
+186         group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} = NULL;
+187     \}
+188 
+189     \textcolor{keywordtype}{int} rc = OPUS\_OK;
+190     group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} = opus\_encoder\_create(group\_av->
+      \hyperlink{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}{audio\_sample\_rate}, group\_av->\hyperlink{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}{audio\_channels},
+191                               OPUS\_APPLICATION\_AUDIO, &rc);
+192 
+193     \textcolor{keywordflow}{if} ( rc != OPUS\_OK ) \{
+194         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Error while starting audio encoder: %s"}, opus\_strerror(rc));
+195         group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} = NULL;
+196         \textcolor{keywordflow}{return} -1;
+197     \}
+198 
+199     rc = opus\_encoder\_ctl(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder}, OPUS\_SET\_BITRATE(group\_av->
+      \hyperlink{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}{audio\_bitrate}));
+200 
+201     \textcolor{keywordflow}{if} ( rc != OPUS\_OK ) \{
+202         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Error while setting encoder ctl: %s"}, opus\_strerror(rc));
+203         opus\_encoder\_destroy(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder});
+204         group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} = NULL;
+205         \textcolor{keywordflow}{return} -1;
+206     \}
+207 
+208     rc = opus\_encoder\_ctl(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder}, OPUS\_SET\_COMPLEXITY(10));
+209 
+210     \textcolor{keywordflow}{if} ( rc != OPUS\_OK ) \{
+211         \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Error while setting encoder ctl: %s"}, opus\_strerror(rc));
+212         opus\_encoder\_destroy(group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder});
+213         group\_av->\hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\_encoder} = NULL;
+214         \textcolor{keywordflow}{return} -1;
+215     \}
+216 
+217     \textcolor{keywordflow}{return} 0;
+218 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a6f6806047fdc1625e259d269ae850ac0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82}{\index{toxav/group.\+c@{toxav/group.\+c}!send\+\_\+audio\+\_\+packet@{send\+\_\+audio\+\_\+packet}}
+\index{send\+\_\+audio\+\_\+packet@{send\+\_\+audio\+\_\+packet}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{send\+\_\+audio\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}static int send\+\_\+audio\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Chats} $\ast$}]{g\+\_\+c, }
+\item[{int}]{groupnumber, }
+\item[{uint8\+\_\+t $\ast$}]{packet, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82}
+
+
+Definition at line 477 of file group.\+c.
+
+
+
+References Group\+\_\+\+A\+V\+::audio\+\_\+sequnum, G\+R\+O\+U\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D, group\+\_\+get\+\_\+object(), and send\+\_\+group\+\_\+lossy\+\_\+packet().
+
+
+
+Referenced by group\+\_\+send\+\_\+audio().
+
+
+\begin{DoxyCode}
+478 \{
+479     \textcolor{keywordflow}{if} (!length)
+480         \textcolor{keywordflow}{return} -1;
+481 
+482     \hyperlink{struct_group___a_v}{Group\_AV} *group\_av = \hyperlink{toxcore_2group_8c_ad3649b12ed32b2b37f6443e8dfcfb34f}{group\_get\_object}(g\_c, groupnumber);
+483     uint8\_t \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[1 + \textcolor{keyword}{sizeof}(uint16\_t) + length];
+484     \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] = \hyperlink{toxav_2group_8h_a7c164ef840072ecaa203347bbdfe111c}{GROUP\_AUDIO\_PACKET\_ID};
+485 
+486     uint16\_t sequnum = htons(group\_av->\hyperlink{struct_group___a_v_a4e6b863a96b5fadfc86cc2ef353c76db}{audio\_sequnum});
+487     memcpy(data + 1, &sequnum, \textcolor{keyword}{sizeof}(sequnum));
+488     memcpy(data + 1 + \textcolor{keyword}{sizeof}(sequnum), packet, length);
+489 
+490     \textcolor{keywordflow}{if} (\hyperlink{toxcore_2group_8c_a7e20618640c4b45fe7f863c87ec2dfda}{send\_group\_lossy\_packet}(g\_c, groupnumber, data, \textcolor{keyword}{sizeof}(data)) == -1)
+491         \textcolor{keywordflow}{return} -1;
+492 
+493     ++group\_av->\hyperlink{struct_group___a_v_a4e6b863a96b5fadfc86cc2ef353c76db}{audio\_sequnum};
+494     \textcolor{keywordflow}{return} 0;
+495 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_a8b24466efb3298dc9fef80bf18485b82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348}{\index{toxav/group.\+c@{toxav/group.\+c}!terminate\+\_\+queue@{terminate\+\_\+queue}}
+\index{terminate\+\_\+queue@{terminate\+\_\+queue}!toxav/group.\+c@{toxav/group.\+c}}
+\subsubsection[{terminate\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}static void terminate\+\_\+queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\+\_\+\+Jitter\+Buffer} $\ast$}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348}
+
+
+Definition at line 79 of file group.\+c.
+
+
+
+References clear\+\_\+queue(), and Group\+\_\+\+Jitter\+Buffer\+::queue.
+
+
+
+Referenced by group\+\_\+av\+\_\+peer\+\_\+delete().
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{if} (!q) \textcolor{keywordflow}{return};
+82 
+83     \hyperlink{toxav_2group_8c_a4244524c0f9d5fa66f1a52880068603b}{clear\_queue}(q);
+84     free(q->\hyperlink{struct_group___jitter_buffer_a9829940d971aa22eb04b318876afb018}{queue});
+85     free(q);
+86 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{db/d46/toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d46/toxav_2group_8c_aedc085ba3013d83910843ef09dc8e348_icgraph}
+\end{center}
+\end{figure}
+
+

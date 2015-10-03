@@ -1,0 +1,8 @@
+<map id="kill_group_av" name="kill_group_av">
+<area shape="rect" id="node2" href="$db/d46/toxav_2group_8c.html#acd7a116b2bfdcdec0f8ae8036d4409ab" title="group_av_groupchat\l_delete" alt="" coords="152,5,291,47"/>
+<area shape="rect" id="node3" href="$db/d46/toxav_2group_8c.html#ab6f2cb7fef697bde984bf67a3036e4d0" title="groupchat_enable_av" alt="" coords="339,42,484,69"/>
+<area shape="rect" id="node4" href="$d8/da5/toxav_2group_8h.html#a0cf061415a40de14b1dca48921a6f687" title="add_av_groupchat" alt="" coords="532,17,660,43"/>
+<area shape="rect" id="node6" href="$d8/da5/toxav_2group_8h.html#a3bb53f02b23ac60cb1e76d3717a4e2e5" title="join_av_groupchat" alt="" coords="533,67,659,94"/>
+<area shape="rect" id="node5" href="$d9/d82/toxav_8h.html#a71c8622e709969f80a862ee56da27184" title="toxav_add_av_groupchat" alt="" coords="708,17,875,43"/>
+<area shape="rect" id="node7" href="$d9/d82/toxav_8h.html#a02fd1017fbe8e974c2c0a39ee08067d7" title="toxav_join_av_groupchat" alt="" coords="708,67,875,94"/>
+</map>

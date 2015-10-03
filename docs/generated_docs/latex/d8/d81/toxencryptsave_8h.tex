@@ -1,0 +1,795 @@
+\hypertarget{toxencryptsave_8h}{\section{toxencryptsave/toxencryptsave.h File Reference}
+\label{toxencryptsave_8h}\index{toxencryptsave/toxencryptsave.\+h@{toxencryptsave/toxencryptsave.\+h}}
+}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+Include dependency graph for toxencryptsave.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{d0/d17/toxencryptsave_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d70/toxencryptsave_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{toxencryptsave_8h_af80a3c50ad465fbd07df3d5fc144aa1b}{T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D}
+\item 
+\#define \hyperlink{toxencryptsave_8h_a0ff111eed3881653e1a92c4336f9a9be}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H}~32
+\item 
+\#define \hyperlink{toxencryptsave_8h_a8e5511f90092895c32a350c1044650fc}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}~32
+\item 
+\#define \hyperlink{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H}~80
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} \hyperlink{toxencryptsave_8h_a6718ca39150d53f51d19b254dcecfee5}{Tox}
+\item 
+typedef enum \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} \hyperlink{toxencryptsave_8h_a5fc248bad6bdaf10bf50c2278f2d36db}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}
+\item 
+typedef enum \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} \hyperlink{toxencryptsave_8h_a069ba7a8bc7b780cdf9f76dc60d463f1}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}
+\item 
+typedef enum \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} \hyperlink{toxencryptsave_8h_ad9060f7dacafbc30390876e6a636624a}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} \{ \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4dae058427209fbdd590f57d80ace0f6f25}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K}, 
+\hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}, 
+\hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}
+ \}
+\item 
+enum \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} \{ \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba841f1caf7ea0468c95ea90032d0e1624}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}, 
+\hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}, 
+\hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95badc8bd3e03e69ed9c3f73271ea64e9fdd}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba23dbff54016afbd04ccba659c6691fe5}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}
+ \}
+\item 
+enum \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} \{ \\*
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80caff49cc81244a746332f6c96c9fb772b4}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}, 
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}, 
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H}, 
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T}, 
+\\*
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca9197ab4f494cc3a4bebcec1b109ad447}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca678e0501b028d0f8392bf867105b9a09}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{toxencryptsave_8h_ad912f1925318a0b7f6d034856d489162}{tox\+\_\+pass\+\_\+encrypt} (const uint8\+\_\+t $\ast$data, size\+\_\+t data\+\_\+len, const uint8\+\_\+t $\ast$passphrase, size\+\_\+t pplength, uint8\+\_\+t $\ast$out, \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_adb8d2c287f3f1c405f4f880ceb5e41e0}{tox\+\_\+pass\+\_\+decrypt} (const uint8\+\_\+t $\ast$data, size\+\_\+t length, const uint8\+\_\+t $\ast$passphrase, size\+\_\+t pplength, uint8\+\_\+t $\ast$out, \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_a9feb3bbe493cc28467d39b6b94ecbe26}{tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass} (const uint8\+\_\+t $\ast$passphrase, size\+\_\+t pplength, \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$out\+\_\+key, \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_a25fdc5eb341470112adecd7120d95da7}{tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt} (const uint8\+\_\+t $\ast$passphrase, size\+\_\+t pplength, const uint8\+\_\+t $\ast$\hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt}, \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$out\+\_\+key, \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_a40c4d2ac288ae7b88c93ca69ef79d623}{tox\+\_\+get\+\_\+salt} (const uint8\+\_\+t $\ast$data, uint8\+\_\+t $\ast$\hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt})
+\item 
+bool \hyperlink{toxencryptsave_8h_ae7dfa4a7d1660caff18a2384cfd7668f}{tox\+\_\+pass\+\_\+key\+\_\+encrypt} (const uint8\+\_\+t $\ast$data, size\+\_\+t data\+\_\+len, const \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$key, uint8\+\_\+t $\ast$out, \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_ab45a9cfd04ff66792ddd250185b355c1}{tox\+\_\+pass\+\_\+key\+\_\+decrypt} (const uint8\+\_\+t $\ast$data, size\+\_\+t length, const \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$key, uint8\+\_\+t $\ast$out, \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+bool \hyperlink{toxencryptsave_8h_ae2912763623a50bd548d7ce74431c7fe}{tox\+\_\+is\+\_\+data\+\_\+encrypted} (const uint8\+\_\+t $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{toxencryptsave_8h_af80a3c50ad465fbd07df3d5fc144aa1b}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D@{T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D}}
+\index{T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D@{T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+D\+E\+F\+I\+N\+E\+D}}\label{toxencryptsave_8h_af80a3c50ad465fbd07df3d5fc144aa1b}
+
+
+Definition at line 36 of file toxencryptsave.\+h.
+
+\hypertarget{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H~80}}\label{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}
+
+
+Definition at line 43 of file toxencryptsave.\+h.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+pass\+\_\+decrypt(), and tox\+\_\+pass\+\_\+key\+\_\+decrypt().
+
+\hypertarget{toxencryptsave_8h_a8e5511f90092895c32a350c1044650fc}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H~32}}\label{toxencryptsave_8h_a8e5511f90092895c32a350c1044650fc}
+
+
+Definition at line 42 of file toxencryptsave.\+h.
+
+\hypertarget{toxencryptsave_8h_a0ff111eed3881653e1a92c4336f9a9be}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+S\+A\+L\+T\+\_\+\+L\+E\+N\+G\+T\+H~32}}\label{toxencryptsave_8h_a0ff111eed3881653e1a92c4336f9a9be}
+
+
+Definition at line 41 of file toxencryptsave.\+h.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{toxencryptsave_8h_a6718ca39150d53f51d19b254dcecfee5}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!Tox@{Tox}}
+\index{Tox@{Tox}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{Tox}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Tox} {\bf Tox}}}\label{toxencryptsave_8h_a6718ca39150d53f51d19b254dcecfee5}
+
+
+Definition at line 37 of file toxencryptsave.\+h.
+
+\hypertarget{toxencryptsave_8h_ad9060f7dacafbc30390876e6a636624a}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}  {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}}}\label{toxencryptsave_8h_ad9060f7dacafbc30390876e6a636624a}
+\hypertarget{toxencryptsave_8h_a069ba7a8bc7b780cdf9f76dc60d463f1}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}  {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}}}\label{toxencryptsave_8h_a069ba7a8bc7b780cdf9f76dc60d463f1}
+\hypertarget{toxencryptsave_8h_a5fc248bad6bdaf10bf50c2278f2d36db}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}  {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}}}\label{toxencryptsave_8h_a5fc248bad6bdaf10bf50c2278f2d36db}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N}}}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80caff49cc81244a746332f6c96c9fb772b4}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80caff49cc81244a746332f6c96c9fb772b4}
+}]\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}
+}]Some input data, or maybe the output pointer, was null. \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}
+}]The input data was shorter than T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H bytes \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}
+}]The input data is missing the magic number (i.\+e. wasn't created by this module, or is corrupted) \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca9197ab4f494cc3a4bebcec1b109ad447}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca9197ab4f494cc3a4bebcec1b109ad447}
+}]The crypto lib was unable to derive a key from the given passphrase, which is usually a lack of memory issue. The functions accepting keys do not produce this error. \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca678e0501b028d0f8392bf867105b9a09}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}\label{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca678e0501b028d0f8392bf867105b9a09}
+}]The encrypted byte array could not be decrypted. Either the data was corrupt or the password/key was incorrect. \end{description}
+\end{Desc}
+
+
+Definition at line 104 of file toxencryptsave.\+h.
+
+
+\begin{DoxyCode}
+104                                 \{
+105     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80caff49cc81244a746332f6c96c9fb772b4}{TOX\_ERR\_DECRYPTION\_OK},
+109     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}{TOX\_ERR\_DECRYPTION\_NULL},
+113     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}{TOX\_ERR\_DECRYPTION\_INVALID\_LENGTH},
+118     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}{TOX\_ERR\_DECRYPTION\_BAD\_FORMAT},
+124     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca9197ab4f494cc3a4bebcec1b109ad447}{TOX\_ERR\_DECRYPTION\_KEY\_DERIVATION\_FAILED},
+129     \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca678e0501b028d0f8392bf867105b9a09}{TOX\_ERR\_DECRYPTION\_FAILED}
+130 \} \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80c}{TOX\_ERR\_DECRYPTION};
+\end{DoxyCode}
+\hypertarget{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N}}}\label{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba841f1caf7ea0468c95ea90032d0e1624}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K}\label{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba841f1caf7ea0468c95ea90032d0e1624}
+}]\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}\label{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}
+}]Some input data, or maybe the output pointer, was null. \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95badc8bd3e03e69ed9c3f73271ea64e9fdd}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}\label{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95badc8bd3e03e69ed9c3f73271ea64e9fdd}
+}]The crypto lib was unable to derive a key from the given passphrase, which is usually a lack of memory issue. The functions accepting keys do not produce this error. \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba23dbff54016afbd04ccba659c6691fe5}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}\label{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba23dbff54016afbd04ccba659c6691fe5}
+}]The encryption itself failed. \end{description}
+\end{Desc}
+
+
+Definition at line 86 of file toxencryptsave.\+h.
+
+
+\begin{DoxyCode}
+86                                 \{
+87     \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba841f1caf7ea0468c95ea90032d0e1624}{TOX\_ERR\_ENCRYPTION\_OK},
+91     \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}{TOX\_ERR\_ENCRYPTION\_NULL},
+97     \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95badc8bd3e03e69ed9c3f73271ea64e9fdd}{TOX\_ERR\_ENCRYPTION\_KEY\_DERIVATION\_FAILED},
+101     \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba23dbff54016afbd04ccba659c6691fe5}{TOX\_ERR\_ENCRYPTION\_FAILED}
+102 \} \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95b}{TOX\_ERR\_ENCRYPTION};
+\end{DoxyCode}
+\hypertarget{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N}}}\label{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4dae058427209fbdd590f57d80ace0f6f25}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K}\label{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4dae058427209fbdd590f57d80ace0f6f25}
+}]\index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L}\label{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}
+}]Some input data, or maybe the output pointer, was null. \index{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}!toxencryptsave.\+h@{toxencryptsave.\+h}}\index{toxencryptsave.\+h@{toxencryptsave.\+h}!T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D@{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}{T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D}\label{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}
+}]The crypto lib was unable to derive a key from the given passphrase, which is usually a lack of memory issue. The functions accepting keys do not produce this error. \end{description}
+\end{Desc}
+
+
+Definition at line 72 of file toxencryptsave.\+h.
+
+
+\begin{DoxyCode}
+72                                     \{
+73     \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4dae058427209fbdd590f57d80ace0f6f25}{TOX\_ERR\_KEY\_DERIVATION\_OK},
+77     \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}{TOX\_ERR\_KEY\_DERIVATION\_NULL},
+83     \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}{TOX\_ERR\_KEY\_DERIVATION\_FAILED}
+84 \} \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{TOX\_ERR\_KEY\_DERIVATION};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{toxencryptsave_8h_a9feb3bbe493cc28467d39b6b94ecbe26}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass@{tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass}}
+\index{tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass@{tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{passphrase, }
+\item[{size\+\_\+t}]{pplength, }
+\item[{{\bf T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$}]{out\+\_\+key, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_a9feb3bbe493cc28467d39b6b94ecbe26}
+
+
+Definition at line 85 of file toxencryptsave.\+c.
+
+
+
+References salt, and tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt().
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+pass\+\_\+encrypt().
+
+
+\begin{DoxyCode}
+87 \{
+88     uint8\_t \hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt}[crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES];
+89     randombytes(salt, \textcolor{keyword}{sizeof} salt);
+90     \textcolor{keywordflow}{return} \hyperlink{toxencryptsave_8c_a25fdc5eb341470112adecd7120d95da7}{tox\_derive\_key\_with\_salt}(passphrase, pplength, salt, out\_key, 
+      \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error});
+91 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_a9feb3bbe493cc28467d39b6b94ecbe26_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_a9feb3bbe493cc28467d39b6b94ecbe26_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_a25fdc5eb341470112adecd7120d95da7}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt@{tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt}}
+\index{tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt@{tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{passphrase, }
+\item[{size\+\_\+t}]{pplength, }
+\item[{const uint8\+\_\+t $\ast$}]{salt, }
+\item[{{\bf T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$}]{out\+\_\+key, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_a25fdc5eb341470112adecd7120d95da7}
+
+
+Definition at line 96 of file toxencryptsave.\+c.
+
+
+
+References crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S, T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+::key, T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+::salt, S\+E\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, and T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+O\+K.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass(), and tox\+\_\+pass\+\_\+decrypt().
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keywordflow}{if} (!\hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt} || !out\_key || (!passphrase && pplength != 0)) \{
+100         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}{TOX\_ERR\_KEY\_DERIVATION\_NULL});
+101         \textcolor{keywordflow}{return} 0;
+102     \}
+103 
+104     uint8\_t passkey[crypto\_hash\_sha256\_BYTES];
+105     crypto\_hash\_sha256(passkey, passphrase, pplength);
+106 
+107     uint8\_t key[\hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\_box\_KEYBYTES}];
+108 
+109     \textcolor{comment}{/* Derive a key from the password */}
+110     \textcolor{comment}{/* http://doc.libsodium.org/key\_derivation/README.html */}
+111     \textcolor{comment}{/* note that, according to the documentation, a generic pwhash interface will be created}
+112 \textcolor{comment}{     * once the pwhash competition (https://password-hashing.net/) is over */}
+113     \textcolor{keywordflow}{if} (crypto\_pwhash\_scryptsalsa208sha256(
+114                 key, \textcolor{keyword}{sizeof}(key), (\textcolor{keywordtype}{char} *)passkey, \textcolor{keyword}{sizeof}(passkey), \hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt},
+115                 crypto\_pwhash\_scryptsalsa208sha256\_OPSLIMIT\_INTERACTIVE * 2, \textcolor{comment}{/* slightly stronger */}
+116                 crypto\_pwhash\_scryptsalsa208sha256\_MEMLIMIT\_INTERACTIVE) != 0) \{
+117         \textcolor{comment}{/* out of memory most likely */}
+118         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}{TOX\_ERR\_KEY\_DERIVATION\_FAILED});
+119         \textcolor{keywordflow}{return} 0;
+120     \}
+121 
+122     sodium\_memzero(passkey, crypto\_hash\_sha256\_BYTES); \textcolor{comment}{/* wipe plaintext pw */}
+123     memcpy(out\_key->\hyperlink{struct_t_o_x___p_a_s_s___k_e_y_a6434f2e799e75beacc91c217bc797339}{salt}, \hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt}, crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES);
+124     memcpy(out\_key->\hyperlink{struct_t_o_x___p_a_s_s___k_e_y_aaa46672326ab451b679129167f39055e}{key}, key, \hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\_box\_KEYBYTES});
+125     \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4dae058427209fbdd590f57d80ace0f6f25}{TOX\_ERR\_KEY\_DERIVATION\_OK});
+126     \textcolor{keywordflow}{return} 1;
+127 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_a25fdc5eb341470112adecd7120d95da7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_a40c4d2ac288ae7b88c93ca69ef79d623}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+get\+\_\+salt@{tox\+\_\+get\+\_\+salt}}
+\index{tox\+\_\+get\+\_\+salt@{tox\+\_\+get\+\_\+salt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+get\+\_\+salt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+get\+\_\+salt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint8\+\_\+t $\ast$}]{salt}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_a40c4d2ac288ae7b88c93ca69ef79d623}
+
+
+Definition at line 64 of file toxencryptsave.\+c.
+
+
+
+References T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+L\+E\+N\+G\+T\+H, and T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{if} (memcmp(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \hyperlink{defines_8h_adc71aaa36bcc87bd40aaa4b5306fa17a}{TOX\_ENC\_SAVE\_MAGIC\_NUMBER}, 
+      \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH}) != 0)
+67         \textcolor{keywordflow}{return} 0;
+68 
+69     \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} += \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH};
+70     memcpy(\hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES);
+71     \textcolor{keywordflow}{return} 1;
+72 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d8/d81/toxencryptsave_8h_a40c4d2ac288ae7b88c93ca69ef79d623_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_ae2912763623a50bd548d7ce74431c7fe}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+is\+\_\+data\+\_\+encrypted@{tox\+\_\+is\+\_\+data\+\_\+encrypted}}
+\index{tox\+\_\+is\+\_\+data\+\_\+encrypted@{tox\+\_\+is\+\_\+data\+\_\+encrypted}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+is\+\_\+data\+\_\+encrypted}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+is\+\_\+data\+\_\+encrypted (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_ae2912763623a50bd548d7ce74431c7fe}
+
+
+Definition at line 290 of file toxencryptsave.\+c.
+
+
+
+References T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+L\+E\+N\+G\+T\+H, and T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+N\+U\+M\+B\+E\+R.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+291 \{
+292     \textcolor{keywordflow}{if} (memcmp(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \hyperlink{defines_8h_adc71aaa36bcc87bd40aaa4b5306fa17a}{TOX\_ENC\_SAVE\_MAGIC\_NUMBER}, 
+      \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH}) == 0)
+293         \textcolor{keywordflow}{return} 1;
+294     \textcolor{keywordflow}{else}
+295         \textcolor{keywordflow}{return} 0;
+296 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{d8/d81/toxencryptsave_8h_ae2912763623a50bd548d7ce74431c7fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_adb8d2c287f3f1c405f4f880ceb5e41e0}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+pass\+\_\+decrypt@{tox\+\_\+pass\+\_\+decrypt}}
+\index{tox\+\_\+pass\+\_\+decrypt@{tox\+\_\+pass\+\_\+decrypt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+pass\+\_\+decrypt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+pass\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{length, }
+\item[{const uint8\+\_\+t $\ast$}]{passphrase, }
+\item[{size\+\_\+t}]{pplength, }
+\item[{uint8\+\_\+t $\ast$}]{out, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_adb8d2c287f3f1c405f4f880ceb5e41e0}
+
+
+Definition at line 255 of file toxencryptsave.\+c.
+
+
+
+References salt, S\+E\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt(), T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+N\+U\+M\+B\+E\+R, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H, and tox\+\_\+pass\+\_\+key\+\_\+decrypt().
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+257 \{
+258     \textcolor{keywordflow}{if} (length <= \hyperlink{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}{TOX\_PASS\_ENCRYPTION\_EXTRA\_LENGTH}) \{
+259         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}{TOX\_ERR\_DECRYPTION\_INVALID\_LENGTH});
+260         \textcolor{keywordflow}{return} 0;
+261     \}
+262 
+263     \textcolor{keywordflow}{if} (!\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} || !passphrase || !out) \{
+264         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}{TOX\_ERR\_DECRYPTION\_NULL});
+265         \textcolor{keywordflow}{return} 0;
+266     \}
+267 
+268     \textcolor{keywordflow}{if} (memcmp(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \hyperlink{defines_8h_adc71aaa36bcc87bd40aaa4b5306fa17a}{TOX\_ENC\_SAVE\_MAGIC\_NUMBER}, 
+      \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH}) != 0) \{
+269         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}{TOX\_ERR\_DECRYPTION\_BAD\_FORMAT});
+270         \textcolor{keywordflow}{return} 0;
+271     \}
+272 
+273     uint8\_t \hyperlink{encryptsave__test_8c_afe7c1b38a4076f26998228dd4a3d097c}{salt}[crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES];
+274     memcpy(salt, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH}, 
+      crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES);
+275 
+276     \textcolor{comment}{/* derive the key */}
+277     \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{TOX\_PASS\_KEY} key;
+278 
+279     \textcolor{keywordflow}{if} (!\hyperlink{toxencryptsave_8c_a25fdc5eb341470112adecd7120d95da7}{tox\_derive\_key\_with\_salt}(passphrase, pplength, salt, &key, NULL)) \{
+280         \textcolor{comment}{/* out of memory most likely */}
+281         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca9197ab4f494cc3a4bebcec1b109ad447}{TOX\_ERR\_DECRYPTION\_KEY\_DERIVATION\_FAILED});
+282         \textcolor{keywordflow}{return} 0;
+283     \}
+284 
+285     \textcolor{keywordflow}{return} \hyperlink{toxencryptsave_8c_ab45a9cfd04ff66792ddd250185b355c1}{tox\_pass\_key\_decrypt}(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length, &key, out, 
+      \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error});
+286 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_adb8d2c287f3f1c405f4f880ceb5e41e0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{d8/d81/toxencryptsave_8h_adb8d2c287f3f1c405f4f880ceb5e41e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_ad912f1925318a0b7f6d034856d489162}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+pass\+\_\+encrypt@{tox\+\_\+pass\+\_\+encrypt}}
+\index{tox\+\_\+pass\+\_\+encrypt@{tox\+\_\+pass\+\_\+encrypt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+pass\+\_\+encrypt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+pass\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{data\+\_\+len, }
+\item[{const uint8\+\_\+t $\ast$}]{passphrase, }
+\item[{size\+\_\+t}]{pplength, }
+\item[{uint8\+\_\+t $\ast$}]{out, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_ad912f1925318a0b7f6d034856d489162}
+
+
+Definition at line 183 of file toxencryptsave.\+c.
+
+
+
+References S\+E\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, tox\+\_\+derive\+\_\+key\+\_\+from\+\_\+pass(), T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+K\+E\+Y\+\_\+\+D\+E\+R\+I\+V\+A\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, and tox\+\_\+pass\+\_\+key\+\_\+encrypt().
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+185 \{
+186     \hyperlink{struct_t_o_x___p_a_s_s___k_e_y}{TOX\_PASS\_KEY} key;
+187     \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4d}{TOX\_ERR\_KEY\_DERIVATION} \_error;
+188 
+189     \textcolor{keywordflow}{if} (!\hyperlink{toxencryptsave_8c_a9feb3bbe493cc28467d39b6b94ecbe26}{tox\_derive\_key\_from\_pass}(passphrase, pplength, &key, &\_error)) \{
+190         \textcolor{keywordflow}{if} (\_error == \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da4f3b6be9fe88cc77c1c24534e342226c}{TOX\_ERR\_KEY\_DERIVATION\_NULL}) \{
+191             \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}{TOX\_ERR\_ENCRYPTION\_NULL});
+192         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_error == \hyperlink{toxencryptsave_8h_ac6c399ec6d0bd5a9b6af9cba54739e4da33648fd0da886eef7cc5cbe8614e8e14}{TOX\_ERR\_KEY\_DERIVATION\_FAILED}) \{
+193             \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95badc8bd3e03e69ed9c3f73271ea64e9fdd}{TOX\_ERR\_ENCRYPTION\_KEY\_DERIVATION\_FAILED});
+194         \}
+195 
+196         \textcolor{keywordflow}{return} 0;
+197     \}
+198 
+199     \textcolor{keywordflow}{return} \hyperlink{toxencryptsave_8c_ae7dfa4a7d1660caff18a2384cfd7668f}{tox\_pass\_key\_encrypt}(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, data\_len, &key, out, 
+      \hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error});
+200 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_ad912f1925318a0b7f6d034856d489162_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{d8/d81/toxencryptsave_8h_ad912f1925318a0b7f6d034856d489162_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_ab45a9cfd04ff66792ddd250185b355c1}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+pass\+\_\+key\+\_\+decrypt@{tox\+\_\+pass\+\_\+key\+\_\+decrypt}}
+\index{tox\+\_\+pass\+\_\+key\+\_\+decrypt@{tox\+\_\+pass\+\_\+key\+\_\+decrypt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+pass\+\_\+key\+\_\+decrypt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+pass\+\_\+key\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$}]{key, }
+\item[{uint8\+\_\+t $\ast$}]{out, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_ab45a9cfd04ff66792ddd250185b355c1}
+
+
+Definition at line 209 of file toxencryptsave.\+c.
+
+
+
+References decrypt\+\_\+data\+\_\+symmetric(), T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+::key, nonce, S\+E\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+N\+U\+M\+B\+E\+R, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+B\+A\+D\+\_\+\+F\+O\+R\+M\+A\+T, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+D\+E\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K, and T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+E\+X\+T\+R\+A\+\_\+\+L\+E\+N\+G\+T\+H.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+pass\+\_\+decrypt().
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordflow}{if} (length <= \hyperlink{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}{TOX\_PASS\_ENCRYPTION\_EXTRA\_LENGTH}) \{
+213         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca5845a1b5a84dcb98a9a39e629cd5a50c}{TOX\_ERR\_DECRYPTION\_INVALID\_LENGTH});
+214         \textcolor{keywordflow}{return} 0;
+215     \}
+216 
+217     \textcolor{keywordflow}{if} (!\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} || !key || !out) \{
+218         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca6026883e79c6601ab558f32207393854}{TOX\_ERR\_DECRYPTION\_NULL});
+219         \textcolor{keywordflow}{return} 0;
+220     \}
+221 
+222     \textcolor{keywordflow}{if} (memcmp(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, \hyperlink{defines_8h_adc71aaa36bcc87bd40aaa4b5306fa17a}{TOX\_ENC\_SAVE\_MAGIC\_NUMBER}, 
+      \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH}) != 0) \{
+223         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80cad3d7fe5e434ea400158c1722a341d09b}{TOX\_ERR\_DECRYPTION\_BAD\_FORMAT});
+224         \textcolor{keywordflow}{return} 0;
+225     \}
+226 
+227     \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} += \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH};
+228     \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} += crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES; \textcolor{comment}{// salt only affects key derivation}
+229 
+230     \textcolor{keywordtype}{size\_t} decrypt\_length = length - \hyperlink{toxencryptsave_8h_a9ff85072665d7a2804a88835ac09867d}{TOX\_PASS\_ENCRYPTION\_EXTRA\_LENGTH};
+231 
+232     uint8\_t \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[crypto\_box\_NONCEBYTES];
+233     memcpy(nonce, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, crypto\_box\_NONCEBYTES);
+234     \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} += crypto\_box\_NONCEBYTES;
+235 
+236     \textcolor{comment}{/* decrypt the data */}
+237     \textcolor{keywordflow}{if} (\hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(key->\hyperlink{struct_t_o_x___p_a_s_s___k_e_y_aaa46672326ab451b679129167f39055e}{key}, nonce, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, decrypt\_length + 
+      crypto\_box\_MACBYTES, out)
+238             != decrypt\_length) \{
+239         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80ca678e0501b028d0f8392bf867105b9a09}{TOX\_ERR\_DECRYPTION\_FAILED});
+240         \textcolor{keywordflow}{return} 0;
+241     \}
+242 
+243     \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, \hyperlink{toxencryptsave_8h_af9237d8431dc939559b2660b2ac6f80caff49cc81244a746332f6c96c9fb772b4}{TOX\_ERR\_DECRYPTION\_OK});
+244     \textcolor{keywordflow}{return} 1;
+245 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_ab45a9cfd04ff66792ddd250185b355c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_ab45a9cfd04ff66792ddd250185b355c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxencryptsave_8h_ae7dfa4a7d1660caff18a2384cfd7668f}{\index{toxencryptsave.\+h@{toxencryptsave.\+h}!tox\+\_\+pass\+\_\+key\+\_\+encrypt@{tox\+\_\+pass\+\_\+key\+\_\+encrypt}}
+\index{tox\+\_\+pass\+\_\+key\+\_\+encrypt@{tox\+\_\+pass\+\_\+key\+\_\+encrypt}!toxencryptsave.\+h@{toxencryptsave.\+h}}
+\subsubsection[{tox\+\_\+pass\+\_\+key\+\_\+encrypt}]{\setlength{\rightskip}{0pt plus 5cm}bool tox\+\_\+pass\+\_\+key\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{data\+\_\+len, }
+\item[{const {\bf T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y} $\ast$}]{key, }
+\item[{uint8\+\_\+t $\ast$}]{out, }
+\item[{{\bf T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{toxencryptsave_8h_ae7dfa4a7d1660caff18a2384cfd7668f}
+
+
+Definition at line 137 of file toxencryptsave.\+c.
+
+
+
+References encrypt\+\_\+data\+\_\+symmetric(), T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+::key, nonce, random\+\_\+nonce(), T\+O\+X\+\_\+\+P\+A\+S\+S\+\_\+\+K\+E\+Y\+::salt, S\+E\+T\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+E\+N\+C\+\_\+\+S\+A\+V\+E\+\_\+\+M\+A\+G\+I\+C\+\_\+\+N\+U\+M\+B\+E\+R, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+N\+U\+L\+L, and T\+O\+X\+\_\+\+E\+R\+R\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+O\+K.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+pass\+\_\+encrypt().
+
+
+\begin{DoxyCode}
+139 \{
+140     \textcolor{keywordflow}{if} (data\_len == 0 || !\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} || !key || !out) \{
+141         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba3fb684f3c2563a3164511a4d9e3cfb6e}{TOX\_ERR\_ENCRYPTION\_NULL});
+142         \textcolor{keywordflow}{return} 0;
+143     \}
+144 
+145     \textcolor{comment}{/* the output data consists of, in order:}
+146 \textcolor{comment}{     * salt, nonce, mac, enc\_data}
+147 \textcolor{comment}{     * where the mac is automatically prepended by the encrypt()}
+148 \textcolor{comment}{     * the salt+nonce is called the prefix}
+149 \textcolor{comment}{     * I'm not sure what else I'm supposed to do with the salt and nonce, since we}
+150 \textcolor{comment}{     * need them to decrypt the data}
+151 \textcolor{comment}{     */}
+152 
+153     \textcolor{comment}{/* first add the magic number */}
+154     memcpy(out, \hyperlink{defines_8h_adc71aaa36bcc87bd40aaa4b5306fa17a}{TOX\_ENC\_SAVE\_MAGIC\_NUMBER}, 
+      \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH});
+155     out += \hyperlink{defines_8h_a2c7f940325f7a2272fd4bca3dbf59601}{TOX\_ENC\_SAVE\_MAGIC\_LENGTH};
+156 
+157     \textcolor{comment}{/* then add the rest prefix */}
+158     memcpy(out, key->\hyperlink{struct_t_o_x___p_a_s_s___k_e_y_a6434f2e799e75beacc91c217bc797339}{salt}, crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES);
+159     out += crypto\_pwhash\_scryptsalsa208sha256\_SALTBYTES;
+160 
+161     uint8\_t \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[crypto\_box\_NONCEBYTES];
+162     \hyperlink{crypto__core_8c_a15ef255ab026d4881a16b99148b05dd7}{random\_nonce}(nonce);
+163     memcpy(out, nonce, crypto\_box\_NONCEBYTES);
+164     out += crypto\_box\_NONCEBYTES;
+165 
+166     \textcolor{comment}{/* now encrypt */}
+167     \textcolor{keywordflow}{if} (\hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(key->\hyperlink{struct_t_o_x___p_a_s_s___k_e_y_aaa46672326ab451b679129167f39055e}{key}, nonce, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, data\_len, out)
+168             != data\_len + crypto\_box\_MACBYTES) \{
+169         \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, 
+      \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba23dbff54016afbd04ccba659c6691fe5}{TOX\_ERR\_ENCRYPTION\_FAILED});
+170         \textcolor{keywordflow}{return} 0;
+171     \}
+172 
+173     \hyperlink{toxencryptsave_8c_a0513b78b0993a4834ac065e3d1667dac}{SET\_ERROR\_PARAMETER}(\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error}, \hyperlink{toxencryptsave_8h_ae960705edfa51ec826e3662ab664c95ba841f1caf7ea0468c95ea90032d0e1624}{TOX\_ERR\_ENCRYPTION\_OK});
+174     \textcolor{keywordflow}{return} 1;
+175 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_ae7dfa4a7d1660caff18a2384cfd7668f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d81/toxencryptsave_8h_ae7dfa4a7d1660caff18a2384cfd7668f_icgraph}
+\end{center}
+\end{figure}
+
+

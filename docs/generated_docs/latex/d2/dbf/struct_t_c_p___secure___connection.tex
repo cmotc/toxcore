@@ -1,0 +1,269 @@
+\hypertarget{struct_t_c_p___secure___connection}{\section{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection Struct Reference}
+\label{struct_t_c_p___secure___connection}\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+}
+
+
+{\ttfamily \#include $<$T\+C\+P\+\_\+server.\+h$>$}
+
+
+
+Collaboration diagram for T\+C\+P\+\_\+\+Secure\+\_\+\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{d2/d11/struct_t_c_p___secure___connection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_ade818037fd6c985038ff29656089758d}{status}
+\item 
+\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{struct_t_c_p___secure___connection_a35b19d84fb632ca8ce5cab237f7089a5}{sock}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{recv\+\_\+nonce} \mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a9df0e00e8f493ed6cd1ff45e7da33c0d}{sent\+\_\+nonce} \mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a81ead9fac55a0cedc30a96253a2c5119}{shared\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a1d1e3047af3c935db36ae7b2360aaec7}{next\+\_\+packet\+\_\+length}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t \hyperlink{struct_t_c_p___secure___connection_ade818037fd6c985038ff29656089758d}{status}\\
+\>uint8\_t \hyperlink{struct_t_c_p___secure___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key} \mbox{[}crypto\_box\_PUBLICKEYBYTES\mbox{]}\\
+\>uint32\_t \hyperlink{struct_t_c_p___secure___connection_aafd95f8c7a99b9189ede7cdf0871ebe8}{index}\\
+\>uint8\_t \hyperlink{struct_t_c_p___secure___connection_acc644a8b29d76cc8fb3a5bdfcaa2bfe1}{other\_id}\\
+\} \hyperlink{struct_t_c_p___secure___connection_a9238a77824a37f8db533e2fbbf79c4a1}{connections} \mbox{[}\hyperlink{_t_c_p__server_8h_aad3362495a10d80b0edac21c8f896ae1}{NUM\_CLIENT\_CONNECTIONS}\mbox{]}\\
+
+\end{tabbing}\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___secure___connection_af7b6d103d243e4267b112f6efe1573e2}{last\+\_\+packet} \mbox{[}2+\hyperlink{_t_c_p__server_8h_a879456c3b8e2853f7044d764e9c180d4}{M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a78d503fe4c8d935701480b58a0461775}{last\+\_\+packet\+\_\+length}
+\item 
+uint16\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a80b55fa7d5b8e4c3de6b51c99d7670cc}{last\+\_\+packet\+\_\+sent}
+\item 
+\hyperlink{struct_t_c_p___priority___list}{T\+C\+P\+\_\+\+Priority\+\_\+\+List} $\ast$ \hyperlink{struct_t_c_p___secure___connection_a5e19017835c72dc03d9dfd9a93abeb3c}{priority\+\_\+queue\+\_\+start}
+\item 
+\hyperlink{struct_t_c_p___priority___list}{T\+C\+P\+\_\+\+Priority\+\_\+\+List} $\ast$ \hyperlink{struct_t_c_p___secure___connection_a049dfdaebf54337c3024e077370c62d7}{priority\+\_\+queue\+\_\+end}
+\item 
+uint64\+\_\+t \hyperlink{struct_t_c_p___secure___connection_ad1813f451cfaf8c9700e6329c5ea2f2b}{identifier}
+\item 
+uint64\+\_\+t \hyperlink{struct_t_c_p___secure___connection_a4049204f6c392628d31be6c39f03e031}{last\+\_\+pinged}
+\item 
+uint64\+\_\+t \hyperlink{struct_t_c_p___secure___connection_acec02fbdff648ca71a6d8e5a0d63d634}{ping\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 91 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_t_c_p___secure___connection_a9238a77824a37f8db533e2fbbf79c4a1}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!connections@{connections}}
+\index{connections@{connections}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{connections}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   connections\mbox{[}{\bf N\+U\+M\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}\mbox{]}}}\label{struct_t_c_p___secure___connection_a9238a77824a37f8db533e2fbbf79c4a1}
+
+
+Referenced by handle\+\_\+\+T\+C\+P\+\_\+packet(), handle\+\_\+\+T\+C\+P\+\_\+routing\+\_\+req(), and rm\+\_\+connection\+\_\+index().
+
+\hypertarget{struct_t_c_p___secure___connection_ad1813f451cfaf8c9700e6329c5ea2f2b}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!identifier@{identifier}}
+\index{identifier@{identifier}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{identifier}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t identifier}}\label{struct_t_c_p___secure___connection_ad1813f451cfaf8c9700e6329c5ea2f2b}
+
+
+Definition at line 111 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+accepted(), handle\+\_\+onion\+\_\+recv\+\_\+1(), and handle\+\_\+\+T\+C\+P\+\_\+packet().
+
+\hypertarget{struct_t_c_p___secure___connection_aafd95f8c7a99b9189ede7cdf0871ebe8}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!index@{index}}
+\index{index@{index}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t index}}\label{struct_t_c_p___secure___connection_aafd95f8c7a99b9189ede7cdf0871ebe8}
+
+
+Definition at line 102 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by handle\+\_\+\+T\+C\+P\+\_\+packet(), handle\+\_\+\+T\+C\+P\+\_\+routing\+\_\+req(), and rm\+\_\+connection\+\_\+index().
+
+\hypertarget{struct_t_c_p___secure___connection_af7b6d103d243e4267b112f6efe1573e2}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!last\+\_\+packet@{last\+\_\+packet}}
+\index{last\+\_\+packet@{last\+\_\+packet}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{last\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t last\+\_\+packet\mbox{[}2+{\bf M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}\mbox{]}}}\label{struct_t_c_p___secure___connection_af7b6d103d243e4267b112f6efe1573e2}
+
+
+Definition at line 105 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by send\+\_\+pending\+\_\+data\+\_\+nonpriority(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_a78d503fe4c8d935701480b58a0461775}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!last\+\_\+packet\+\_\+length@{last\+\_\+packet\+\_\+length}}
+\index{last\+\_\+packet\+\_\+length@{last\+\_\+packet\+\_\+length}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{last\+\_\+packet\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t last\+\_\+packet\+\_\+length}}\label{struct_t_c_p___secure___connection_a78d503fe4c8d935701480b58a0461775}
+
+
+Definition at line 106 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by send\+\_\+pending\+\_\+data\+\_\+nonpriority(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_a80b55fa7d5b8e4c3de6b51c99d7670cc}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!last\+\_\+packet\+\_\+sent@{last\+\_\+packet\+\_\+sent}}
+\index{last\+\_\+packet\+\_\+sent@{last\+\_\+packet\+\_\+sent}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{last\+\_\+packet\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t last\+\_\+packet\+\_\+sent}}\label{struct_t_c_p___secure___connection_a80b55fa7d5b8e4c3de6b51c99d7670cc}
+
+
+Definition at line 107 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by send\+\_\+pending\+\_\+data\+\_\+nonpriority(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_a4049204f6c392628d31be6c39f03e031}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!last\+\_\+pinged@{last\+\_\+pinged}}
+\index{last\+\_\+pinged@{last\+\_\+pinged}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{last\+\_\+pinged}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+pinged}}\label{struct_t_c_p___secure___connection_a4049204f6c392628d31be6c39f03e031}
+
+
+Definition at line 113 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+accepted(), and do\+\_\+\+T\+C\+P\+\_\+confirmed().
+
+\hypertarget{struct_t_c_p___secure___connection_a1d1e3047af3c935db36ae7b2360aaec7}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!next\+\_\+packet\+\_\+length@{next\+\_\+packet\+\_\+length}}
+\index{next\+\_\+packet\+\_\+length@{next\+\_\+packet\+\_\+length}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{next\+\_\+packet\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t next\+\_\+packet\+\_\+length}}\label{struct_t_c_p___secure___connection_a1d1e3047af3c935db36ae7b2360aaec7}
+
+
+Definition at line 98 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by accept\+\_\+connection(), do\+\_\+confirmed\+\_\+recv(), and do\+\_\+unconfirmed().
+
+\hypertarget{struct_t_c_p___secure___connection_acc644a8b29d76cc8fb3a5bdfcaa2bfe1}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!other\+\_\+id@{other\+\_\+id}}
+\index{other\+\_\+id@{other\+\_\+id}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{other\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t other\+\_\+id}}\label{struct_t_c_p___secure___connection_acc644a8b29d76cc8fb3a5bdfcaa2bfe1}
+
+
+Definition at line 103 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by handle\+\_\+\+T\+C\+P\+\_\+packet(), handle\+\_\+\+T\+C\+P\+\_\+routing\+\_\+req(), and rm\+\_\+connection\+\_\+index().
+
+\hypertarget{struct_t_c_p___secure___connection_acec02fbdff648ca71a6d8e5a0d63d634}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!ping\+\_\+id@{ping\+\_\+id}}
+\index{ping\+\_\+id@{ping\+\_\+id}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{ping\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t ping\+\_\+id}}\label{struct_t_c_p___secure___connection_acec02fbdff648ca71a6d8e5a0d63d634}
+
+
+Definition at line 114 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+accepted(), do\+\_\+\+T\+C\+P\+\_\+confirmed(), and handle\+\_\+\+T\+C\+P\+\_\+packet().
+
+\hypertarget{struct_t_c_p___secure___connection_a049dfdaebf54337c3024e077370c62d7}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!priority\+\_\+queue\+\_\+end@{priority\+\_\+queue\+\_\+end}}
+\index{priority\+\_\+queue\+\_\+end@{priority\+\_\+queue\+\_\+end}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{priority\+\_\+queue\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+\_\+\+Priority\+\_\+\+List} $\ast$ priority\+\_\+queue\+\_\+end}}\label{struct_t_c_p___secure___connection_a049dfdaebf54337c3024e077370c62d7}
+
+
+Definition at line 109 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+priority(), and send\+\_\+pending\+\_\+data().
+
+\hypertarget{struct_t_c_p___secure___connection_a5e19017835c72dc03d9dfd9a93abeb3c}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!priority\+\_\+queue\+\_\+start@{priority\+\_\+queue\+\_\+start}}
+\index{priority\+\_\+queue\+\_\+start@{priority\+\_\+queue\+\_\+start}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{priority\+\_\+queue\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+\_\+\+Priority\+\_\+\+List}$\ast$ priority\+\_\+queue\+\_\+start}}\label{struct_t_c_p___secure___connection_a5e19017835c72dc03d9dfd9a93abeb3c}
+
+
+Definition at line 109 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+priority(), and send\+\_\+pending\+\_\+data().
+
+\hypertarget{struct_t_c_p___secure___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!public\+\_\+key@{public\+\_\+key}}
+\index{public\+\_\+key@{public\+\_\+key}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p___secure___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}
+
+
+Definition at line 94 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by add\+\_\+accepted(), del\+\_\+accepted(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), handle\+\_\+\+T\+C\+P\+\_\+oob\+\_\+send(), and handle\+\_\+\+T\+C\+P\+\_\+routing\+\_\+req().
+
+\hypertarget{struct_t_c_p___secure___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!recv\+\_\+nonce@{recv\+\_\+nonce}}
+\index{recv\+\_\+nonce@{recv\+\_\+nonce}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{recv\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t recv\+\_\+nonce\mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p___secure___connection_aae0467706f97aa3ef23e5dc9c3c199d7}
+
+
+Definition at line 95 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by do\+\_\+confirmed\+\_\+recv(), do\+\_\+unconfirmed(), and handle\+\_\+\+T\+C\+P\+\_\+handshake().
+
+\hypertarget{struct_t_c_p___secure___connection_a9df0e00e8f493ed6cd1ff45e7da33c0d}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!sent\+\_\+nonce@{sent\+\_\+nonce}}
+\index{sent\+\_\+nonce@{sent\+\_\+nonce}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{sent\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t sent\+\_\+nonce\mbox{[}crypto\+\_\+box\+\_\+\+N\+O\+N\+C\+E\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p___secure___connection_a9df0e00e8f493ed6cd1ff45e7da33c0d}
+
+
+Definition at line 96 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by handle\+\_\+\+T\+C\+P\+\_\+handshake(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_a81ead9fac55a0cedc30a96253a2c5119}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!shared\+\_\+key@{shared\+\_\+key}}
+\index{shared\+\_\+key@{shared\+\_\+key}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{shared\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t shared\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p___secure___connection_a81ead9fac55a0cedc30a96253a2c5119}
+
+
+Definition at line 97 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by do\+\_\+confirmed\+\_\+recv(), do\+\_\+unconfirmed(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_a35b19d84fb632ca8ce5cab237f7089a5}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!sock@{sock}}
+\index{sock@{sock}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sock\+\_\+t} sock}}\label{struct_t_c_p___secure___connection_a35b19d84fb632ca8ce5cab237f7089a5}
+
+
+Definition at line 93 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by accept\+\_\+connection(), do\+\_\+confirmed\+\_\+recv(), do\+\_\+unconfirmed(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), kill\+\_\+accepted(), kill\+\_\+\+T\+C\+P\+\_\+connection(), read\+\_\+connection\+\_\+handshake(), send\+\_\+pending\+\_\+data(), send\+\_\+pending\+\_\+data\+\_\+nonpriority(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+\hypertarget{struct_t_c_p___secure___connection_ade818037fd6c985038ff29656089758d}{\index{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}!status@{status}}
+\index{status@{status}!T\+C\+P\+\_\+\+Secure\+\_\+\+Connection@{T\+C\+P\+\_\+\+Secure\+\_\+\+Connection}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_t_c_p___secure___connection_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 92 of file T\+C\+P\+\_\+server.\+h.
+
+
+
+Referenced by accept\+\_\+connection(), add\+\_\+accepted(), del\+\_\+accepted(), do\+\_\+incoming(), do\+\_\+\+T\+C\+P\+\_\+confirmed(), do\+\_\+unconfirmed(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), handle\+\_\+\+T\+C\+P\+\_\+packet(), handle\+\_\+\+T\+C\+P\+\_\+routing\+\_\+req(), and rm\+\_\+connection\+\_\+index().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{_t_c_p__server_8h}{T\+C\+P\+\_\+server.\+h}\end{DoxyCompactItemize}

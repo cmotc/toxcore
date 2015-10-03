@@ -1,0 +1,277 @@
+\hypertarget{tox__shell_8c}{\section{testing/tox\+\_\+shell.c File Reference}
+\label{tox__shell_8c}\index{testing/tox\+\_\+shell.\+c@{testing/tox\+\_\+shell.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/tox.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$pty.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+Include dependency graph for tox\+\_\+shell.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d19/tox__shell_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tox__shell_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tox__shell_8c_a61256aeab299b47ada9659cb790e8634}{print\+\_\+online} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t friendnumber, \hyperlink{tox_8h_ab13b9741ea8c99016819171a0b869dbb}{T\+O\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N} status, void $\ast$userdata)
+\item 
+void \hyperlink{tox__shell_8c_ae80b2c3ddaac42b1d9d95536c53d220e}{print\+\_\+message} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t friendnumber, \hyperlink{tox_8h_a362037c83fd908cecc44cb58ddd57fe0}{T\+O\+X\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E} type, const uint8\+\_\+t $\ast$string, size\+\_\+t length, void $\ast$userdata)
+\item 
+int \hyperlink{tox__shell_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{tox__shell_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{tox__shell_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 46 of file tox\+\_\+shell.\+c.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{tox__shell_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}!main@{main}}
+\index{main@{main}!tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{tox__shell_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 64 of file tox\+\_\+shell.\+c.
+
+
+
+References c\+\_\+sleep, cmdline\+\_\+parsefor\+\_\+ipv46(), hex\+\_\+string\+\_\+to\+\_\+bin(), i, num, port, print\+\_\+message(), print\+\_\+online(), printf(), T\+O\+X\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+S\+I\+Z\+E, tox\+\_\+bootstrap(), tox\+\_\+callback\+\_\+friend\+\_\+connection\+\_\+status(), tox\+\_\+callback\+\_\+friend\+\_\+message(), tox\+\_\+friend\+\_\+add(), tox\+\_\+friend\+\_\+get\+\_\+connection\+\_\+status(), tox\+\_\+friend\+\_\+send\+\_\+message(), tox\+\_\+iterate(), T\+O\+X\+\_\+\+M\+A\+X\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+T\+H, T\+O\+X\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+R\+M\+A\+L, tox\+\_\+new(), tox\+\_\+self\+\_\+get\+\_\+address(), and tox\+\_\+self\+\_\+get\+\_\+connection\+\_\+status().
+
+
+\begin{DoxyCode}
+65 \{
+66     uint8\_t ipv6enabled = 1; \textcolor{comment}{/* x */}
+67     \textcolor{keywordtype}{int} argvoffset = \hyperlink{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{cmdline\_parsefor\_ipv46}(argc, argv, &ipv6enabled);
+68 
+69     \textcolor{keywordflow}{if} (argvoffset < 0)
+70         exit(1);
+71 
+72     \textcolor{comment}{/* with optional --ipvx, now it can be 1-4 arguments... */}
+73     \textcolor{keywordflow}{if} ((argc != argvoffset + 2) && (argc != argvoffset + 4)) \{
+74         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Usage: %s [--ipv4|--ipv6] ip port public\_key (of the DHT bootstrap node)\(\backslash\)n"}, argv[0])
+      ;
+75         exit(0);
+76     \}
+77 
+78     \textcolor{keywordtype}{int} *master = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+79     \textcolor{keywordtype}{int} ret = forkpty(master, NULL, NULL, NULL);
+80 
+81     \textcolor{keywordflow}{if} (ret == -1) \{
+82         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"fork failed\(\backslash\)n"});
+83         \textcolor{keywordflow}{return} 1;
+84     \}
+85 
+86     \textcolor{keywordflow}{if} (ret == 0) \{
+87         execl(\textcolor{stringliteral}{"/bin/sh"}, \textcolor{stringliteral}{"sh"}, NULL);
+88         \textcolor{keywordflow}{return} 0;
+89     \}
+90 
+91     \textcolor{keywordtype}{int} flags = fcntl(*master, F\_GETFL, 0);
+92     \textcolor{keywordtype}{int} r = fcntl(*master, F\_SETFL, flags | O\_NONBLOCK);
+93 
+94     \textcolor{keywordflow}{if} (r < 0) \{
+95         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"error setting flags\(\backslash\)n"});
+96     \}
+97 
+98     \hyperlink{struct_messenger}{Tox} *tox = \hyperlink{tox_8c_aa0e6afccd06a766b84a0633e259f9165}{tox\_new}(0, 0);
+99     \hyperlink{tox_8c_aa7d891aaf1f15ee03f55b66227744157}{tox\_callback\_friend\_connection\_status}(tox, 
+      \hyperlink{tox__shell_8c_a61256aeab299b47ada9659cb790e8634}{print\_online}, NULL);
+100     \hyperlink{tox_8c_a31635691f5ee3ee6ee061215d18087ae}{tox\_callback\_friend\_message}(tox, \hyperlink{tox__shell_8c_ae80b2c3ddaac42b1d9d95536c53d220e}{print\_message}, master);
+101 
+102 
+103     uint16\_t \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = atoi(argv[argvoffset + 2]);
+104     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *binary\_string = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(argv[argvoffset + 3]);
+105     \textcolor{keywordtype}{int} res = \hyperlink{tox_8c_ae7e49c1e9e6c3a0f9e55bfcb78044c1e}{tox\_bootstrap}(tox, argv[argvoffset + 1], port, binary\_string, 0);
+106     free(binary\_string);
+107 
+108     \textcolor{keywordflow}{if} (!res) \{
+109         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Failed to convert \(\backslash\)"%s\(\backslash\)" into an IP address. Exiting...\(\backslash\)n"}, argv[argvoffset + 1]);
+110         exit(1);
+111     \}
+112 
+113     uint8\_t address[\hyperlink{tox_8h_a3a8d42ad8b2803ba6d69e88aac567113}{TOX\_ADDRESS\_SIZE}];
+114     \hyperlink{tox_8c_ab52d4512e58c7ff8f62121beff5c0a49}{tox\_self\_get\_address}(tox, address);
+115     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+116 
+117     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox_8h_a3a8d42ad8b2803ba6d69e88aac567113}{TOX\_ADDRESS\_SIZE}; i++) \{
+118         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%02X"}, address[i]);
+119     \}
+120 
+121     \textcolor{keywordtype}{char} temp\_id[128];
+122     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nEnter the address of the other id you want to sync with (38 bytes HEX format):\(\backslash\)n"});
+123 
+124     \textcolor{keywordflow}{if} (scanf(\textcolor{stringliteral}{"%s"}, temp\_id) != 1) \{
+125         \textcolor{keywordflow}{return} 1;
+126     \}
+127 
+128     uint8\_t *bin\_id = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(temp\_id);
+129     uint32\_t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = \hyperlink{tox_8c_aa921c439baad10c03f8d93fda753b0b8}{tox\_friend\_add}(tox, bin\_id, (uint8\_t *)\textcolor{stringliteral}{"Install Gentoo"}, \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"
+      Install Gentoo"}), 0);
+130     free(bin\_id);
+131 
+132     \textcolor{keywordflow}{if} (num == UINT32\_MAX) \{
+133         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nSomething went wrong when adding friend.\(\backslash\)n"});
+134         \textcolor{keywordflow}{return} 1;
+135     \}
+136 
+137     uint8\_t notconnected = 1;
+138 
+139     \textcolor{keywordflow}{while} (1) \{
+140         \textcolor{keywordflow}{if} (\hyperlink{tox_8c_a737d5d61ce41d26205b7e4a6edd7bc94}{tox\_self\_get\_connection\_status}(tox) && notconnected) \{
+141             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nDHT connected.\(\backslash\)n"});
+142             notconnected = 0;
+143         \}
+144 
+145         \textcolor{keywordflow}{while} (\hyperlink{tox_8c_a21c61f8efb52a75bac6cb7858071d00a}{tox\_friend\_get\_connection\_status}(tox, num, 0)) \{
+146             uint8\_t buf[\hyperlink{tox_8h_afb512af96e7d1ae1dddee985119cb80c}{TOX\_MAX\_MESSAGE\_LENGTH}];
+147             ret = read(*master, buf, \textcolor{keyword}{sizeof}(buf));
+148 
+149             \textcolor{keywordflow}{if} (ret <= 0)
+150                 \textcolor{keywordflow}{break};
+151 
+152             \hyperlink{tox_8c_a89cd6aedba9fca87bd66a9713dc6b503}{tox\_friend\_send\_message}(tox, num, 
+      \hyperlink{tox_8h_a362037c83fd908cecc44cb58ddd57fe0ae777df37c1fda74ab34a3559f7a9bb4f}{TOX\_MESSAGE\_TYPE\_NORMAL}, buf, ret, 0);
+153         \}
+154 
+155         \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(tox);
+156         \hyperlink{tox__shell_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(1);
+157     \}
+158 
+159     \textcolor{keywordflow}{return} 0;
+160 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/db1/tox__shell_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__shell_8c_ae80b2c3ddaac42b1d9d95536c53d220e}{\index{tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}!print\+\_\+message@{print\+\_\+message}}
+\index{print\+\_\+message@{print\+\_\+message}!tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}}
+\subsubsection[{print\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{{\bf T\+O\+X\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+T\+Y\+P\+E}}]{type, }
+\item[{const uint8\+\_\+t $\ast$}]{string, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__shell_8c_ae80b2c3ddaac42b1d9d95536c53d220e}
+
+
+Definition at line 56 of file tox\+\_\+shell.\+c.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordtype}{int} master = *((\textcolor{keywordtype}{int} *)userdata);
+60     write(master, \textcolor{keywordtype}{string}, length);
+61     write(master, \textcolor{stringliteral}{"\(\backslash\)n"}, 1);
+62 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{d7/db1/tox__shell_8c_ae80b2c3ddaac42b1d9d95536c53d220e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__shell_8c_a61256aeab299b47ada9659cb790e8634}{\index{tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}!print\+\_\+online@{print\+\_\+online}}
+\index{print\+\_\+online@{print\+\_\+online}!tox\+\_\+shell.\+c@{tox\+\_\+shell.\+c}}
+\subsubsection[{print\+\_\+online}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+online (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{{\bf T\+O\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}}]{status, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__shell_8c_a61256aeab299b47ada9659cb790e8634}
+
+
+Definition at line 48 of file tox\+\_\+shell.\+c.
+
+
+
+References printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{if} (status)
+51         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nOther went online.\(\backslash\)n"});
+52     \textcolor{keywordflow}{else}
+53         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nOther went offline.\(\backslash\)n"});
+54 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d7/db1/tox__shell_8c_a61256aeab299b47ada9659cb790e8634_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d7/db1/tox__shell_8c_a61256aeab299b47ada9659cb790e8634_icgraph}
+\end{center}
+\end{figure}
+
+

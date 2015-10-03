@@ -1,0 +1,308 @@
+\hypertarget{struct_onion___friend}{\section{Onion\+\_\+\+Friend Struct Reference}
+\label{struct_onion___friend}\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+}
+
+
+{\ttfamily \#include $<$onion\+\_\+client.\+h$>$}
+
+
+
+Collaboration diagram for Onion\+\_\+\+Friend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{d2/da0/struct_onion___friend__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_ade818037fd6c985038ff29656089758d}{status}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_a6e539a068fed61fab47b62f467c1d208}{is\+\_\+online}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_a1b66769a2b6f8e5c7306ffcfb7ac0956}{know\+\_\+dht\+\_\+public\+\_\+key}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_a996dcaefa2a5954a199e2beb584c1feb}{real\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\hyperlink{struct_onion___node}{Onion\+\_\+\+Node} \hyperlink{struct_onion___friend_a6797ac2f59ba5ef59a8a70cd6515ca25}{clients\+\_\+list} \mbox{[}\hyperlink{onion__client_8h_ab1de7815e06277ced6779ba201b0b716}{M\+A\+X\+\_\+\+O\+N\+I\+O\+N\+\_\+\+C\+L\+I\+E\+N\+T\+S}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_afc342de3f1533c0adfd762a6fd0d20ab}{temp\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_a6de303feb7b7892cc6a38228554b3e78}{temp\+\_\+secret\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+S\+E\+C\+R\+E\+T\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint64\+\_\+t \hyperlink{struct_onion___friend_ac83f72b06d86503ee29943ccbe7f1a7a}{last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent}
+\item 
+uint64\+\_\+t \hyperlink{struct_onion___friend_a412168e37e1bdf5545f814c9c487aaeb}{last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent}
+\item 
+uint64\+\_\+t \hyperlink{struct_onion___friend_afeea50a96c079a530de60cf6389ec1bd}{last\+\_\+noreplay}
+\item 
+uint64\+\_\+t \hyperlink{struct_onion___friend_a7418e248decb1dc63d1e1c8960092c33}{last\+\_\+seen}
+\item 
+\hyperlink{struct_last___pinged}{Last\+\_\+\+Pinged} \hyperlink{struct_onion___friend_a27015cced65360814a59652b662ef143}{last\+\_\+pinged} \mbox{[}\hyperlink{onion__client_8h_a95b6f5386cd87cd64fcee1c2b7ee2a31}{M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+P\+I\+N\+G\+E\+D\+\_\+\+N\+O\+D\+E\+S}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___friend_a6e0a5214a3dffa151dd52dc4c230145b}{last\+\_\+pinged\+\_\+index}
+\item 
+int($\ast$ \hyperlink{struct_onion___friend_a62001c45ecd44d4c6321ca2358f4df5f}{tcp\+\_\+relay\+\_\+node\+\_\+callback} )(void $\ast$object, uint32\+\_\+t number, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+void $\ast$ \hyperlink{struct_onion___friend_a0da74cebd5ec2859b1de5db74c0dc528}{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object}
+\item 
+uint32\+\_\+t \hyperlink{struct_onion___friend_ab673fb84fe578fb5e7848f9f04c093cf}{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number}
+\item 
+void($\ast$ \hyperlink{struct_onion___friend_ab0f780a41ece58bf84d8460e71cbdbb3}{dht\+\_\+pk\+\_\+callback} )(void $\ast$data, int32\+\_\+t number, const uint8\+\_\+t $\ast$\hyperlink{struct_onion___friend_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\+\_\+public\+\_\+key})
+\item 
+void $\ast$ \hyperlink{struct_onion___friend_ab5d618d73b8d83fb07209433e7b448ee}{dht\+\_\+pk\+\_\+callback\+\_\+object}
+\item 
+uint32\+\_\+t \hyperlink{struct_onion___friend_ab0413da421baacf312141b8ae3ec7762}{dht\+\_\+pk\+\_\+callback\+\_\+number}
+\item 
+uint32\+\_\+t \hyperlink{struct_onion___friend_a9b6e91b90249c9b72d98611ba5ed7176}{run\+\_\+count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 90 of file onion\+\_\+client.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_onion___friend_a6797ac2f59ba5ef59a8a70cd6515ca25}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!clients\+\_\+list@{clients\+\_\+list}}
+\index{clients\+\_\+list@{clients\+\_\+list}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{clients\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Onion\+\_\+\+Node} clients\+\_\+list\mbox{[}{\bf M\+A\+X\+\_\+\+O\+N\+I\+O\+N\+\_\+\+C\+L\+I\+E\+N\+T\+S}\mbox{]}}}\label{struct_onion___friend_a6797ac2f59ba5ef59a8a70cd6515ca25}
+
+
+Definition at line 98 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+add\+\_\+to\+\_\+list(), client\+\_\+ping\+\_\+nodes(), do\+\_\+friend(), and send\+\_\+onion\+\_\+data().
+
+\hypertarget{struct_onion___friend_ab0f780a41ece58bf84d8460e71cbdbb3}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!dht\+\_\+pk\+\_\+callback@{dht\+\_\+pk\+\_\+callback}}
+\index{dht\+\_\+pk\+\_\+callback@{dht\+\_\+pk\+\_\+callback}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{dht\+\_\+pk\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ dht\+\_\+pk\+\_\+callback)(void $\ast$data, int32\+\_\+t number, const uint8\+\_\+t $\ast${\bf dht\+\_\+public\+\_\+key})}}\label{struct_onion___friend_ab0f780a41ece58bf84d8460e71cbdbb3}
+
+
+Definition at line 116 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and onion\+\_\+dht\+\_\+pk\+\_\+callback().
+
+\hypertarget{struct_onion___friend_ab0413da421baacf312141b8ae3ec7762}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!dht\+\_\+pk\+\_\+callback\+\_\+number@{dht\+\_\+pk\+\_\+callback\+\_\+number}}
+\index{dht\+\_\+pk\+\_\+callback\+\_\+number@{dht\+\_\+pk\+\_\+callback\+\_\+number}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{dht\+\_\+pk\+\_\+callback\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dht\+\_\+pk\+\_\+callback\+\_\+number}}\label{struct_onion___friend_ab0413da421baacf312141b8ae3ec7762}
+
+
+Definition at line 118 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and onion\+\_\+dht\+\_\+pk\+\_\+callback().
+
+\hypertarget{struct_onion___friend_ab5d618d73b8d83fb07209433e7b448ee}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!dht\+\_\+pk\+\_\+callback\+\_\+object@{dht\+\_\+pk\+\_\+callback\+\_\+object}}
+\index{dht\+\_\+pk\+\_\+callback\+\_\+object@{dht\+\_\+pk\+\_\+callback\+\_\+object}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{dht\+\_\+pk\+\_\+callback\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ dht\+\_\+pk\+\_\+callback\+\_\+object}}\label{struct_onion___friend_ab5d618d73b8d83fb07209433e7b448ee}
+
+
+Definition at line 117 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and onion\+\_\+dht\+\_\+pk\+\_\+callback().
+
+\hypertarget{struct_onion___friend_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!dht\+\_\+public\+\_\+key@{dht\+\_\+public\+\_\+key}}
+\index{dht\+\_\+public\+\_\+key@{dht\+\_\+public\+\_\+key}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{dht\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dht\+\_\+public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___friend_ab2ecaa07625ad0ed5e07d3a1f0dcc939}
+
+
+Definition at line 95 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), onion\+\_\+getfriend\+\_\+\+D\+H\+T\+\_\+pubkey(), onion\+\_\+set\+\_\+friend\+\_\+\+D\+H\+T\+\_\+pubkey(), and send\+\_\+dht\+\_\+dhtpk().
+
+\hypertarget{struct_onion___friend_a6e539a068fed61fab47b62f467c1d208}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!is\+\_\+online@{is\+\_\+online}}
+\index{is\+\_\+online@{is\+\_\+online}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{is\+\_\+online}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t is\+\_\+online}}\label{struct_onion___friend_a6e539a068fed61fab47b62f467c1d208}
+
+
+Definition at line 92 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by do\+\_\+friend(), and onion\+\_\+set\+\_\+friend\+\_\+online().
+
+\hypertarget{struct_onion___friend_a1b66769a2b6f8e5c7306ffcfb7ac0956}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!know\+\_\+dht\+\_\+public\+\_\+key@{know\+\_\+dht\+\_\+public\+\_\+key}}
+\index{know\+\_\+dht\+\_\+public\+\_\+key@{know\+\_\+dht\+\_\+public\+\_\+key}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{know\+\_\+dht\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t know\+\_\+dht\+\_\+public\+\_\+key}}\label{struct_onion___friend_a1b66769a2b6f8e5c7306ffcfb7ac0956}
+
+
+Definition at line 94 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by onion\+\_\+getfriend\+\_\+\+D\+H\+T\+\_\+pubkey(), onion\+\_\+set\+\_\+friend\+\_\+\+D\+H\+T\+\_\+pubkey(), and send\+\_\+dht\+\_\+dhtpk().
+
+\hypertarget{struct_onion___friend_a412168e37e1bdf5545f814c9c487aaeb}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent@{last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent}}
+\index{last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent@{last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+dht\+\_\+pk\+\_\+dht\+\_\+sent}}\label{struct_onion___friend_a412168e37e1bdf5545f814c9c487aaeb}
+
+
+Definition at line 103 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by do\+\_\+friend().
+
+\hypertarget{struct_onion___friend_ac83f72b06d86503ee29943ccbe7f1a7a}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent@{last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent}}
+\index{last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent@{last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+dht\+\_\+pk\+\_\+onion\+\_\+sent}}\label{struct_onion___friend_ac83f72b06d86503ee29943ccbe7f1a7a}
+
+
+Definition at line 102 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by do\+\_\+friend().
+
+\hypertarget{struct_onion___friend_afeea50a96c079a530de60cf6389ec1bd}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+noreplay@{last\+\_\+noreplay}}
+\index{last\+\_\+noreplay@{last\+\_\+noreplay}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+noreplay}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+noreplay}}\label{struct_onion___friend_afeea50a96c079a530de60cf6389ec1bd}
+
+
+Definition at line 105 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and onion\+\_\+set\+\_\+friend\+\_\+online().
+
+\hypertarget{struct_onion___friend_a27015cced65360814a59652b662ef143}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+pinged@{last\+\_\+pinged}}
+\index{last\+\_\+pinged@{last\+\_\+pinged}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+pinged}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Last\+\_\+\+Pinged} last\+\_\+pinged\mbox{[}{\bf M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+P\+I\+N\+G\+E\+D\+\_\+\+N\+O\+D\+E\+S}\mbox{]}}}\label{struct_onion___friend_a27015cced65360814a59652b662ef143}
+
+
+Definition at line 109 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+ping\+\_\+nodes().
+
+\hypertarget{struct_onion___friend_a6e0a5214a3dffa151dd52dc4c230145b}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+pinged\+\_\+index@{last\+\_\+pinged\+\_\+index}}
+\index{last\+\_\+pinged\+\_\+index@{last\+\_\+pinged\+\_\+index}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+pinged\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t last\+\_\+pinged\+\_\+index}}\label{struct_onion___friend_a6e0a5214a3dffa151dd52dc4c230145b}
+
+
+Definition at line 110 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+ping\+\_\+nodes().
+
+\hypertarget{struct_onion___friend_a7418e248decb1dc63d1e1c8960092c33}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!last\+\_\+seen@{last\+\_\+seen}}
+\index{last\+\_\+seen@{last\+\_\+seen}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{last\+\_\+seen}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+seen}}\label{struct_onion___friend_a7418e248decb1dc63d1e1c8960092c33}
+
+
+Definition at line 107 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), onion\+\_\+set\+\_\+friend\+\_\+\+D\+H\+T\+\_\+pubkey(), and onion\+\_\+set\+\_\+friend\+\_\+online().
+
+\hypertarget{struct_onion___friend_a996dcaefa2a5954a199e2beb584c1feb}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!real\+\_\+public\+\_\+key@{real\+\_\+public\+\_\+key}}
+\index{real\+\_\+public\+\_\+key@{real\+\_\+public\+\_\+key}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{real\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t real\+\_\+public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___friend_a996dcaefa2a5954a199e2beb584c1feb}
+
+
+Definition at line 96 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+add\+\_\+to\+\_\+list(), client\+\_\+ping\+\_\+nodes(), client\+\_\+send\+\_\+announce\+\_\+request(), onion\+\_\+addfriend(), onion\+\_\+friend\+\_\+num(), send\+\_\+dht\+\_\+dhtpk(), and send\+\_\+onion\+\_\+data().
+
+\hypertarget{struct_onion___friend_a9b6e91b90249c9b72d98611ba5ed7176}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!run\+\_\+count@{run\+\_\+count}}
+\index{run\+\_\+count@{run\+\_\+count}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{run\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t run\+\_\+count}}\label{struct_onion___friend_a9b6e91b90249c9b72d98611ba5ed7176}
+
+
+Definition at line 120 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by do\+\_\+friend(), and onion\+\_\+set\+\_\+friend\+\_\+online().
+
+\hypertarget{struct_onion___friend_ade818037fd6c985038ff29656089758d}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!status@{status}}
+\index{status@{status}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_onion___friend_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 91 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by do\+\_\+friend(), handle\+\_\+announce\+\_\+response(), onion\+\_\+addfriend(), onion\+\_\+delfriend(), onion\+\_\+friend\+\_\+num(), onion\+\_\+getfriend\+\_\+\+D\+H\+T\+\_\+pubkey(), and onion\+\_\+set\+\_\+friend\+\_\+\+D\+H\+T\+\_\+pubkey().
+
+\hypertarget{struct_onion___friend_a62001c45ecd44d4c6321ca2358f4df5f}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!tcp\+\_\+relay\+\_\+node\+\_\+callback@{tcp\+\_\+relay\+\_\+node\+\_\+callback}}
+\index{tcp\+\_\+relay\+\_\+node\+\_\+callback@{tcp\+\_\+relay\+\_\+node\+\_\+callback}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{tcp\+\_\+relay\+\_\+node\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ tcp\+\_\+relay\+\_\+node\+\_\+callback)(void $\ast$object, uint32\+\_\+t number, {\bf I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)}}\label{struct_onion___friend_a62001c45ecd44d4c6321ca2358f4df5f}
+
+
+Definition at line 112 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and recv\+\_\+tcp\+\_\+relay\+\_\+handler().
+
+\hypertarget{struct_onion___friend_ab673fb84fe578fb5e7848f9f04c093cf}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number@{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number}}
+\index{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number@{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+number}}\label{struct_onion___friend_ab673fb84fe578fb5e7848f9f04c093cf}
+
+
+Definition at line 114 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and recv\+\_\+tcp\+\_\+relay\+\_\+handler().
+
+\hypertarget{struct_onion___friend_a0da74cebd5ec2859b1de5db74c0dc528}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object@{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object}}
+\index{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object@{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ tcp\+\_\+relay\+\_\+node\+\_\+callback\+\_\+object}}\label{struct_onion___friend_a0da74cebd5ec2859b1de5db74c0dc528}
+
+
+Definition at line 113 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by handle\+\_\+dhtpk\+\_\+announce(), and recv\+\_\+tcp\+\_\+relay\+\_\+handler().
+
+\hypertarget{struct_onion___friend_afc342de3f1533c0adfd762a6fd0d20ab}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!temp\+\_\+public\+\_\+key@{temp\+\_\+public\+\_\+key}}
+\index{temp\+\_\+public\+\_\+key@{temp\+\_\+public\+\_\+key}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{temp\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t temp\+\_\+public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___friend_afc342de3f1533c0adfd762a6fd0d20ab}
+
+
+Definition at line 99 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+send\+\_\+announce\+\_\+request(), and onion\+\_\+addfriend().
+
+\hypertarget{struct_onion___friend_a6de303feb7b7892cc6a38228554b3e78}{\index{Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}!temp\+\_\+secret\+\_\+key@{temp\+\_\+secret\+\_\+key}}
+\index{temp\+\_\+secret\+\_\+key@{temp\+\_\+secret\+\_\+key}!Onion\+\_\+\+Friend@{Onion\+\_\+\+Friend}}
+\subsubsection[{temp\+\_\+secret\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t temp\+\_\+secret\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+S\+E\+C\+R\+E\+T\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___friend_a6de303feb7b7892cc6a38228554b3e78}
+
+
+Definition at line 100 of file onion\+\_\+client.\+h.
+
+
+
+Referenced by client\+\_\+send\+\_\+announce\+\_\+request(), handle\+\_\+announce\+\_\+response(), and onion\+\_\+addfriend().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{onion__client_8h}{onion\+\_\+client.\+h}\end{DoxyCompactItemize}

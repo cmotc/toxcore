@@ -1,0 +1,18 @@
+<map id="toxcore/friend_requests.c" name="toxcore/friend_requests.c">
+<area shape="rect" id="node2" href="$d5/d24/friend__requests_8h.html" title="friend_requests.h" alt="" coords="725,80,848,107"/>
+<area shape="rect" id="node33" href="$d8/d3c/util_8h.html" title="util.h" alt="" coords="1127,304,1177,331"/>
+<area shape="rect" id="node3" href="$d0/d08/friend__connection_8h.html" title="friend_connection.h" alt="" coords="706,155,841,181"/>
+<area shape="rect" id="node4" href="$de/d42/net__crypto_8h.html" title="net_crypto.h" alt="" coords="818,304,913,331"/>
+<area shape="rect" id="node5" href="$df/dad/_d_h_t_8h.html" title="DHT.h" alt="" coords="791,677,852,704"/>
+<area shape="rect" id="node24" href="$dd/db4/_l_a_n__discovery_8h.html" title="LAN_discovery.h" alt="" coords="712,379,835,405"/>
+<area shape="rect" id="node31" href="$d9/d26/onion__client_8h.html" title="onion_client.h" alt="" coords="627,229,730,256"/>
+<area shape="rect" id="node25" href="$da/d39/_t_c_p__connection_8h.html" title="TCP_connection.h" alt="" coords="909,379,1040,405"/>
+<area shape="rect" id="node6" href="$dd/d3e/crypto__core_8h.html" title="crypto_core.h" alt="" coords="907,752,1008,779"/>
+<area shape="rect" id="node7" href="$d9/d94/network_8h.html" title="network.h" alt="" coords="691,827,770,853"/>
+<area shape="rect" id="node23" href="$dd/dec/ping__array_8h.html" title="ping_array.h" alt="" coords="684,752,777,779"/>
+<area shape="rect" id="node26" href="$d0/df3/_t_c_p__client_8h.html" title="TCP_client.h" alt="" coords="961,453,1060,480"/>
+<area shape="rect" id="node27" href="$d6/d03/_t_c_p__server_8h.html" title="TCP_server.h" alt="" coords="1049,528,1151,555"/>
+<area shape="rect" id="node28" href="$d3/db9/onion_8h.html" title="onion.h" alt="" coords="909,603,973,629"/>
+<area shape="rect" id="node29" href="$da/d23/list_8h.html" title="list.h" alt="" coords="1139,827,1189,853"/>
+<area shape="rect" id="node32" href="$d7/dfd/onion__announce_8h.html" title="onion_announce.h" alt="" coords="657,453,783,480"/>
+</map>

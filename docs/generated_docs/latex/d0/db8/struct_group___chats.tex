@@ -1,0 +1,243 @@
+\hypertarget{struct_group___chats}{\section{Group\+\_\+\+Chats Struct Reference}
+\label{struct_group___chats}\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+}
+
+
+{\ttfamily \#include $<$group.\+h$>$}
+
+
+
+Collaboration diagram for Group\+\_\+\+Chats\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d3a/struct_group___chats__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_messenger}{Messenger} $\ast$ \hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}
+\item 
+\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$ \hyperlink{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}{fr\+\_\+c}
+\item 
+\hyperlink{struct_group__c}{Group\+\_\+c} $\ast$ \hyperlink{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{chats}
+\item 
+uint32\+\_\+t \hyperlink{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{num\+\_\+chats}
+\item 
+void($\ast$ \hyperlink{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}{invite\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}{invite\+\_\+callback\+\_\+userdata}
+\item 
+void($\ast$ \hyperlink{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}{message\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}{message\+\_\+callback\+\_\+userdata}
+\item 
+void($\ast$ \hyperlink{struct_group___chats_a61996fdab7da709944de726b88872d61}{action\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}{action\+\_\+callback\+\_\+userdata}
+\item 
+void($\ast$ \hyperlink{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}{peer\+\_\+namelistchange} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, uint8\+\_\+t, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}{group\+\_\+namelistchange\+\_\+userdata}
+\item 
+void($\ast$ \hyperlink{struct_group___chats_a3a2940882c161941fd7f3274064bd594}{title\+\_\+callback} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$)
+\item 
+void $\ast$ \hyperlink{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}{title\+\_\+callback\+\_\+userdata}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int($\ast$ \hyperlink{struct_group___chats_acbfbbdaa6d4201766377ac50de985ae9}{function} )(void $\ast$, int, int, void \\
+\>\>$\ast$, const uint8\_t $\ast$, uint16\_t)\\
+\} \hyperlink{struct_group___chats_a3630aa7993bdd216d40637826a92649f}{lossy\_packethandlers} \mbox{[}256\mbox{]}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 112 of file group.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_group___chats_a61996fdab7da709944de726b88872d61}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!action\+\_\+callback@{action\+\_\+callback}}
+\index{action\+\_\+callback@{action\+\_\+callback}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{action\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ action\+\_\+callback)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}}\label{struct_group___chats_a61996fdab7da709944de726b88872d61}
+
+
+Definition at line 123 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+action(), and handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!action\+\_\+callback\+\_\+userdata@{action\+\_\+callback\+\_\+userdata}}
+\index{action\+\_\+callback\+\_\+userdata@{action\+\_\+callback\+\_\+userdata}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{action\+\_\+callback\+\_\+userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ action\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_ab8194101242ca87c3ee0fd11f7717569}
+
+
+Definition at line 124 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+action(), and handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!chats@{chats}}
+\index{chats@{chats}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{chats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\+\_\+c}$\ast$ chats}}\label{struct_group___chats_a2a89a032b3d68d95f8cbecf4ecec9e74}
+
+
+Definition at line 116 of file group.\+h.
+
+
+
+Referenced by add\+\_\+groupchat(), copy\+\_\+chatlist(), count\+\_\+chatlist(), create\+\_\+group\+\_\+chat(), get\+\_\+group\+\_\+c(), get\+\_\+group\+\_\+num(), groupnumber\+\_\+not\+\_\+valid(), join\+\_\+groupchat(), realloc\+\_\+groupchats(), and wipe\+\_\+group\+\_\+chat().
+
+\hypertarget{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!fr\+\_\+c@{fr\+\_\+c}}
+\index{fr\+\_\+c@{fr\+\_\+c}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{fr\+\_\+c}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Friend\+\_\+\+Connections}$\ast$ fr\+\_\+c}}\label{struct_group___chats_ae26eb43a606fff20fe70209d051c40f9}
+
+
+Definition at line 114 of file group.\+h.
+
+
+
+Referenced by add\+\_\+conn\+\_\+to\+\_\+groupchat(), connect\+\_\+to\+\_\+closest(), del\+\_\+groupchat(), delpeer(), handle\+\_\+direct\+\_\+packet(), handle\+\_\+friend\+\_\+invite\+\_\+packet(), handle\+\_\+packet\+\_\+online(), new\+\_\+groupchats(), remove\+\_\+close\+\_\+conn(), send\+\_\+lossy\+\_\+all\+\_\+close(), send\+\_\+message\+\_\+all\+\_\+close(), send\+\_\+peer\+\_\+kill(), send\+\_\+peer\+\_\+query(), send\+\_\+peers(), and set\+\_\+conns\+\_\+type\+\_\+close().
+
+\hypertarget{struct_group___chats_acbfbbdaa6d4201766377ac50de985ae9}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!function@{function}}
+\index{function@{function}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ function)(void $\ast$, int, int, void $\ast$, const uint8\+\_\+t $\ast$, uint16\+\_\+t)}}\label{struct_group___chats_acbfbbdaa6d4201766377ac50de985ae9}
+
+
+Definition at line 131 of file group.\+h.
+
+
+
+Referenced by group\+\_\+lossy\+\_\+packet\+\_\+registerhandler(), and handle\+\_\+lossy().
+
+\hypertarget{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!group\+\_\+namelistchange\+\_\+userdata@{group\+\_\+namelistchange\+\_\+userdata}}
+\index{group\+\_\+namelistchange\+\_\+userdata@{group\+\_\+namelistchange\+\_\+userdata}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{group\+\_\+namelistchange\+\_\+userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ group\+\_\+namelistchange\+\_\+userdata}}\label{struct_group___chats_a4c6b98ab07da7e69ecb7ae245f765984}
+
+
+Definition at line 126 of file group.\+h.
+
+
+
+Referenced by addpeer(), delpeer(), g\+\_\+callback\+\_\+group\+\_\+namelistchange(), and setnick().
+
+\hypertarget{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!invite\+\_\+callback@{invite\+\_\+callback}}
+\index{invite\+\_\+callback@{invite\+\_\+callback}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{invite\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ invite\+\_\+callback)({\bf Messenger} $\ast${\bf m}, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}}\label{struct_group___chats_a4ff3e6778b94fb9425a4b36572a0bf8b}
+
+
+Definition at line 119 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+invite(), and handle\+\_\+friend\+\_\+invite\+\_\+packet().
+
+\hypertarget{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!invite\+\_\+callback\+\_\+userdata@{invite\+\_\+callback\+\_\+userdata}}
+\index{invite\+\_\+callback\+\_\+userdata@{invite\+\_\+callback\+\_\+userdata}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{invite\+\_\+callback\+\_\+userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ invite\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a4a640f20c34159b06875274fedf9dc69}
+
+
+Definition at line 120 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+invite(), and handle\+\_\+friend\+\_\+invite\+\_\+packet().
+
+\hypertarget{struct_group___chats_a3630aa7993bdd216d40637826a92649f}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!lossy\+\_\+packethandlers@{lossy\+\_\+packethandlers}}
+\index{lossy\+\_\+packethandlers@{lossy\+\_\+packethandlers}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{lossy\+\_\+packethandlers}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   lossy\+\_\+packethandlers\mbox{[}256\mbox{]}}}\label{struct_group___chats_a3630aa7993bdd216d40637826a92649f}
+
+
+Referenced by group\+\_\+lossy\+\_\+packet\+\_\+registerhandler(), and handle\+\_\+lossy().
+
+\hypertarget{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!m@{m}}
+\index{m@{m}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Messenger}$\ast$ m}}\label{struct_group___chats_aea6eb6c7c30a659f1b0dee83eaf03ea2}
+
+
+Definition at line 113 of file group.\+h.
+
+
+
+Referenced by add\+\_\+conn\+\_\+to\+\_\+groupchat(), add\+\_\+groupchat(), addpeer(), decode\+\_\+audio\+\_\+packet(), delpeer(), handle\+\_\+message\+\_\+packet\+\_\+group(), handle\+\_\+send\+\_\+peers(), invite\+\_\+friend(), join\+\_\+groupchat(), kill\+\_\+groupchats(), new\+\_\+groupchats(), send\+\_\+name\+\_\+all\+\_\+groups(), setnick(), and settitle().
+
+\hypertarget{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!message\+\_\+callback@{message\+\_\+callback}}
+\index{message\+\_\+callback@{message\+\_\+callback}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{message\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ message\+\_\+callback)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}}\label{struct_group___chats_a0f49e6a148c90647f5280d35d0f7a9d0}
+
+
+Definition at line 121 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+message(), and handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!message\+\_\+callback\+\_\+userdata@{message\+\_\+callback\+\_\+userdata}}
+\index{message\+\_\+callback\+\_\+userdata@{message\+\_\+callback\+\_\+userdata}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{message\+\_\+callback\+\_\+userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ message\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a593c4aa670d5dc3d9fcd842fb8d5a6fe}
+
+
+Definition at line 122 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+message(), and handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!num\+\_\+chats@{num\+\_\+chats}}
+\index{num\+\_\+chats@{num\+\_\+chats}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{num\+\_\+chats}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t num\+\_\+chats}}\label{struct_group___chats_af6dc2bcdf8d71e0faaa6601befa94d9b}
+
+
+Definition at line 117 of file group.\+h.
+
+
+
+Referenced by copy\+\_\+chatlist(), count\+\_\+chatlist(), create\+\_\+group\+\_\+chat(), do\+\_\+groupchats(), get\+\_\+group\+\_\+num(), groupnumber\+\_\+not\+\_\+valid(), kill\+\_\+groupchats(), send\+\_\+name\+\_\+all\+\_\+groups(), set\+\_\+conns\+\_\+status\+\_\+groups(), and wipe\+\_\+group\+\_\+chat().
+
+\hypertarget{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!peer\+\_\+namelistchange@{peer\+\_\+namelistchange}}
+\index{peer\+\_\+namelistchange@{peer\+\_\+namelistchange}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{peer\+\_\+namelistchange}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ peer\+\_\+namelistchange)({\bf Messenger} $\ast${\bf m}, int, int, uint8\+\_\+t, void $\ast$)}}\label{struct_group___chats_a3f11f69cf6d4e6d1ed57b5306b097baf}
+
+
+Definition at line 125 of file group.\+h.
+
+
+
+Referenced by addpeer(), delpeer(), g\+\_\+callback\+\_\+group\+\_\+namelistchange(), and setnick().
+
+\hypertarget{struct_group___chats_a3a2940882c161941fd7f3274064bd594}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!title\+\_\+callback@{title\+\_\+callback}}
+\index{title\+\_\+callback@{title\+\_\+callback}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{title\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ title\+\_\+callback)({\bf Messenger} $\ast${\bf m}, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$)}}\label{struct_group___chats_a3a2940882c161941fd7f3274064bd594}
+
+
+Definition at line 127 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+title(), and settitle().
+
+\hypertarget{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}{\index{Group\+\_\+\+Chats@{Group\+\_\+\+Chats}!title\+\_\+callback\+\_\+userdata@{title\+\_\+callback\+\_\+userdata}}
+\index{title\+\_\+callback\+\_\+userdata@{title\+\_\+callback\+\_\+userdata}!Group\+\_\+\+Chats@{Group\+\_\+\+Chats}}
+\subsubsection[{title\+\_\+callback\+\_\+userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ title\+\_\+callback\+\_\+userdata}}\label{struct_group___chats_a75c386ae84b59f8f38e02cd0f841ba8b}
+
+
+Definition at line 128 of file group.\+h.
+
+
+
+Referenced by g\+\_\+callback\+\_\+group\+\_\+title(), and settitle().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{toxcore_2group_8h}{group.\+h}\end{DoxyCompactItemize}

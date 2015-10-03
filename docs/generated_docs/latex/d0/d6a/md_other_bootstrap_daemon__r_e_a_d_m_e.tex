@@ -1,0 +1,97 @@
+\#\+Instructions
+
+
+\begin{DoxyItemize}
+\item \href{#systemd}{\tt For `systemd` users}
+\begin{DoxyItemize}
+\item \href{#systemd-troubleshooting}{\tt Troubleshooting} ~\newline
+
+\end{DoxyItemize}
+\item \href{#initd}{\tt For `init.d` users}
+\begin{DoxyItemize}
+\item \href{#initd-troubleshooting}{\tt Troubleshooting}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+These instructions are primarily tested on Debian Linux, Wheezy for init.\+d and Jessie for systemd, but they should work on other P\+O\+S\+I\+X-\/compliant systems too.
+
+\label{_systemd}%
+ \subsection*{For {\ttfamily systemd} users\+:}
+
+For security reasons we run the daemon under its own user.
+
+Create a new user by executing the following\+: ```sh sudo useradd --home-\/dir /var/lib/tox-\/bootstrapd --create-\/home --system --shell /sbin/nologin --comment \char`\"{}\+Account to run Tox's D\+H\+T bootstrap daemon\char`\"{} --user-\/group tox-\/bootstrapd ```
+
+Restrict access to home directory\+: ```sh sudo chmod 700 /var/lib/tox-\/bootstrapd ```
+
+Copy {\ttfamily tox-\/bootstrapd.\+conf} file to where {\ttfamily Exec\+Start=} from {\ttfamily tox-\/bootstrapd.\+service} points to. By default it's {\ttfamily /etc/tox-\/bootstrapd.conf}. ```sh sudo cp tox-\/bootstrapd.\+conf /etc/tox-\/bootstrapd.conf ```
+
+Go over everything in the copied {\ttfamily tox-\/bootstrapd.\+conf} file. Set options you want and add actual working nodes to the {\ttfamily bootstrap\+\_\+nodes} list, instead of the example ones, if you want your node to connect to the Tox network. Make sure {\ttfamily pid\+\_\+file\+\_\+path} matches {\ttfamily P\+I\+D\+File=} from {\ttfamily tox-\/bootstrapd.\+service}.
+
+Copy {\ttfamily tox-\/bootstrapd.\+service} to {\ttfamily /etc/systemd/system/}\+: ```sh sudo cp tox-\/bootstrapd.\+service /etc/systemd/system/ ```
+
+You must uncomment the next line in tox-\/bootstrapd.\+service, if you want to use port number $<$ 1024 \begin{DoxyVerb}#CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+\end{DoxyVerb}
+
+
+and, possibly, install {\ttfamily libcap2-\/bin} or {\ttfamily libcap2} package, depending of your distribution.
+
+Reload systemd units definitions, enable service for automatic start (if needed), start it and verify it's running\+: ```sh sudo systemctl daemon-\/reload sudo systemctl enable tox-\/bootstrapd.\+service sudo systemctl start tox-\/bootstrapd.\+service sudo systemctl status tox-\/bootstrapd.\+service ```
+
+Get your public key and check that the daemon initialized correctly\+: ```sh sudo grep \char`\"{}tox-\/bootstrapd\char`\"{} /var/log/syslog ```
+
+\label{_systemd-troubleshooting}%
+ \subsubsection*{Troubleshooting\+:}
+
+
+\begin{DoxyItemize}
+\item Check daemon's status\+: ```sh sudo systemctl status tox-\/bootstrapd.\+service ```
+\item Check the log for errors\+: ```sh sudo grep \char`\"{}tox-\/bootstrapd\char`\"{} /var/log/syslog \section*{or}
+\end{DoxyItemize}
+
+sudo journalctl --pager-\/end \section*{or}
+
+sudo journalctl -\/f \+\_\+\+S\+Y\+S\+T\+E\+M\+D\+\_\+\+U\+N\+I\+T=tox-\/bootstrapd.\+service ```
+
+
+\begin{DoxyItemize}
+\item Make sure tox-\/bootstrapd user has write permission for keys and pid files.
+\item Make sure tox-\/bootstrapd has read permission for the config file.
+\item Make sure tox-\/bootstrapd location matches its path in tox-\/bootstrapd.\+service file.
+\end{DoxyItemize}
+
+\label{_initd}%
+ \subsection*{For {\ttfamily init.\+d} users}
+
+For security reasons we run the daemon under its own user.
+
+Create a new user by executing the following\+: ```sh sudo useradd --home-\/dir /var/lib/tox-\/bootstrapd --create-\/home --system --shell /sbin/nologin --comment \char`\"{}\+Account to run Tox's D\+H\+T bootstrap daemon\char`\"{} --user-\/group tox-\/bootstrapd ```
+
+Restrict access to home directory\+: ```sh sudo chmod 700 /var/lib/tox-\/bootstrapd ```
+
+Copy {\ttfamily tox-\/bootstrapd.\+conf} file to where {\ttfamily C\+F\+G\+F\+I\+L\+E} variable from {\ttfamily tox-\/bootstrapd.\+sh} points to. By default it's {\ttfamily /etc/tox-\/bootstrapd.conf}. ```sh sudo cp tox-\/bootstrapd.\+conf /etc/tox-\/bootstrapd.conf ```
+
+Go over everything in the copied {\ttfamily tox-\/bootstrapd.\+conf} file. Set options you want and add actual working nodes to the {\ttfamily bootstrap\+\_\+nodes} list, instead of the example ones, if you want your node to connect to the Tox network. Make sure {\ttfamily pid\+\_\+file\+\_\+path} matches {\ttfamily P\+I\+D\+F\+I\+L\+E} from {\ttfamily tox-\/bootstrapd.\+sh}.
+
+Look at the variable declarations in the beginning of {\ttfamily tox-\/bootstrapd.\+sh} init script to see if you need to change anything for it to work on your system. The default values must be fine for most users and we assume that you use those next.
+
+Copy {\ttfamily tox-\/bootstrapd.\+sh} init script to {\ttfamily /etc/init.d/tox-\/bootstrapd} (note the disappearance of \char`\"{}.\+sh\char`\"{} ending)\+: ```sh sudo cp tox-\/bootstrapd.\+sh /etc/init.d/tox-\/bootstrapd ```
+
+Set permissions for the init system to run the script\+: ```sh sudo chmod 755 /etc/init.d/tox-\/bootstrapd ```
+
+Make the init system aware of the script, start the daemon and verify it's running\+: ```sh sudo update-\/rc.\+d tox-\/bootstrapd defaults sudo service tox-\/bootstrapd start sudo service tox-\/bootstrapd status ```
+
+Get your public key and check that the daemon initialized correctly\+: ```sh sudo grep \char`\"{}tox-\/bootstrapd\char`\"{} /var/log/syslog ```
+
+\label{_initd-troubleshooting}%
+ \subsubsection*{Troubleshooting\+:}
+
+
+\begin{DoxyItemize}
+\item Check daemon's status\+: ```sh sudo service tox-\/bootstrapd status ```
+\item Check the log for errors\+: ```sh sudo grep \char`\"{}tox-\/bootstrapd\char`\"{} /var/log/syslog ```
+\item Check that variables in the beginning of {\ttfamily /etc/init.d/tox-\/bootstrapd} are valid.
+\item Make sure tox-\/bootstrapd user has write permission for keys and pid files.
+\item Make sure tox-\/bootstrapd has read permission for the config file.
+\item Make sure tox-\/bootstrapd location matches its path in the {\ttfamily /etc/init.d/tox-\/bootstrapd} init script. 
+\end{DoxyItemize}

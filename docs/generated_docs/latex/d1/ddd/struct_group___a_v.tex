@@ -1,0 +1,135 @@
+\hypertarget{struct_group___a_v}{\section{Group\+\_\+\+A\+V Struct Reference}
+\label{struct_group___a_v}\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+}
+
+
+Collaboration diagram for Group\+\_\+\+A\+V\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/da7/struct_group___a_v__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_group___chats}{Group\+\_\+\+Chats} $\ast$ \hyperlink{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}{g\+\_\+c}
+\item 
+Opus\+Encoder $\ast$ \hyperlink{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{audio\+\_\+encoder}
+\item 
+unsigned int \hyperlink{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}{audio\+\_\+channels}
+\item 
+unsigned int \hyperlink{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}{audio\+\_\+sample\+\_\+rate}
+\item 
+unsigned int \hyperlink{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}{audio\+\_\+bitrate}
+\item 
+uint16\+\_\+t \hyperlink{struct_group___a_v_a4e6b863a96b5fadfc86cc2ef353c76db}{audio\+\_\+sequnum}
+\item 
+void($\ast$ \hyperlink{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}{audio\+\_\+data} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int groupnumber, int peernumber, const int16\+\_\+t $\ast$pcm, unsigned int samples, uint8\+\_\+t channels, unsigned int sample\+\_\+rate, void $\ast$\hyperlink{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}{userdata})
+\item 
+void $\ast$ \hyperlink{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}{userdata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 152 of file group.\+c.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+bitrate@{audio\+\_\+bitrate}}
+\index{audio\+\_\+bitrate@{audio\+\_\+bitrate}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+bitrate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int audio\+\_\+bitrate}}\label{struct_group___a_v_a1e39921527f07befd08d913c63b397a9}
+
+
+Definition at line 156 of file group.\+c.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio(), and recreate\+\_\+encoder().
+
+\hypertarget{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+channels@{audio\+\_\+channels}}
+\index{audio\+\_\+channels@{audio\+\_\+channels}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+channels}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int audio\+\_\+channels}}\label{struct_group___a_v_a7b6aa0a517a158485dccd6ce0a916e0e}
+
+
+Definition at line 156 of file group.\+c.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio(), and recreate\+\_\+encoder().
+
+\hypertarget{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+data@{audio\+\_\+data}}
+\index{audio\+\_\+data@{audio\+\_\+data}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ audio\+\_\+data)({\bf Messenger} $\ast${\bf m}, int groupnumber, int peernumber, const int16\+\_\+t $\ast$pcm, unsigned int samples, uint8\+\_\+t channels, unsigned int sample\+\_\+rate, void $\ast${\bf userdata})}}\label{struct_group___a_v_a2ae2d081bbdd51062bcb82ea4a55eec5}
+
+
+Definition at line 160 of file group.\+c.
+
+
+
+Referenced by decode\+\_\+audio\+\_\+packet(), and new\+\_\+group\+\_\+av().
+
+\hypertarget{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+encoder@{audio\+\_\+encoder}}
+\index{audio\+\_\+encoder@{audio\+\_\+encoder}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+encoder}]{\setlength{\rightskip}{0pt plus 5cm}Opus\+Encoder$\ast$ audio\+\_\+encoder}}\label{struct_group___a_v_a8c1fa3d73f3426ba5cac83857c390ebc}
+
+
+Definition at line 154 of file group.\+c.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio(), kill\+\_\+group\+\_\+av(), and recreate\+\_\+encoder().
+
+\hypertarget{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+sample\+\_\+rate@{audio\+\_\+sample\+\_\+rate}}
+\index{audio\+\_\+sample\+\_\+rate@{audio\+\_\+sample\+\_\+rate}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+sample\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int audio\+\_\+sample\+\_\+rate}}\label{struct_group___a_v_a0562d75f5e3bb5cce19ab1eae44fdaac}
+
+
+Definition at line 156 of file group.\+c.
+
+
+
+Referenced by group\+\_\+send\+\_\+audio(), and recreate\+\_\+encoder().
+
+\hypertarget{struct_group___a_v_a4e6b863a96b5fadfc86cc2ef353c76db}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!audio\+\_\+sequnum@{audio\+\_\+sequnum}}
+\index{audio\+\_\+sequnum@{audio\+\_\+sequnum}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{audio\+\_\+sequnum}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t audio\+\_\+sequnum}}\label{struct_group___a_v_a4e6b863a96b5fadfc86cc2ef353c76db}
+
+
+Definition at line 158 of file group.\+c.
+
+
+
+Referenced by send\+\_\+audio\+\_\+packet().
+
+\hypertarget{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!g\+\_\+c@{g\+\_\+c}}
+\index{g\+\_\+c@{g\+\_\+c}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{g\+\_\+c}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\+\_\+\+Chats}$\ast$ g\+\_\+c}}\label{struct_group___a_v_a0220ceb497e4d7ffcbd301959cbfaf26}
+
+
+Definition at line 153 of file group.\+c.
+
+
+
+Referenced by decode\+\_\+audio\+\_\+packet(), group\+\_\+av\+\_\+peer\+\_\+new(), and new\+\_\+group\+\_\+av().
+
+\hypertarget{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}{\index{Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}!userdata@{userdata}}
+\index{userdata@{userdata}!Group\+\_\+\+A\+V@{Group\+\_\+\+A\+V}}
+\subsubsection[{userdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ userdata}}\label{struct_group___a_v_afd0ffb02780e738d4c0a10ab833b7834}
+
+
+Definition at line 162 of file group.\+c.
+
+
+
+Referenced by decode\+\_\+audio\+\_\+packet(), and new\+\_\+group\+\_\+av().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxav/\hyperlink{toxav_2group_8c}{group.\+c}\end{DoxyCompactItemize}

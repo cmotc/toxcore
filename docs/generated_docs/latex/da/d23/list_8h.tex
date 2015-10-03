@@ -1,0 +1,411 @@
+\hypertarget{list_8h}{\section{toxcore/list.h File Reference}
+\label{list_8h}\index{toxcore/list.\+h@{toxcore/list.\+h}}
+}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for list.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{d0/deb/list_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d73/list_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{list_8h_a7b07772cffb6af34e279f424dca08895}{bs\+\_\+list\+\_\+init} (\hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list, uint32\+\_\+t element\+\_\+size, uint32\+\_\+t initial\+\_\+capacity)
+\item 
+void \hyperlink{list_8h_a20f4503183113923cd946fc04bf8f2b4}{bs\+\_\+list\+\_\+free} (\hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list)
+\item 
+int \hyperlink{list_8h_aa2ee2cbbc130c7c976f2c69bda129bd1}{bs\+\_\+list\+\_\+find} (const \hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list, const uint8\+\_\+t $\ast$data)
+\item 
+int \hyperlink{list_8h_ace05755dd126bff18700a17d6f8edd28}{bs\+\_\+list\+\_\+add} (\hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list, const uint8\+\_\+t $\ast$data, int id)
+\item 
+int \hyperlink{list_8h_a365995457101cc16f8c6b25ead07fb6f}{bs\+\_\+list\+\_\+remove} (\hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list, const uint8\+\_\+t $\ast$data, int id)
+\item 
+int \hyperlink{list_8h_afeda2a6221e746f07877dbdf854831dc}{bs\+\_\+list\+\_\+trim} (\hyperlink{struct_b_s___l_i_s_t}{B\+S\+\_\+\+L\+I\+S\+T} $\ast$list)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{list_8h_ace05755dd126bff18700a17d6f8edd28}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+add@{bs\+\_\+list\+\_\+add}}
+\index{bs\+\_\+list\+\_\+add@{bs\+\_\+list\+\_\+add}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int bs\+\_\+list\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{list_8h_ace05755dd126bff18700a17d6f8edd28}
+
+
+Definition at line 177 of file list.\+c.
+
+
+
+References B\+S\+\_\+\+L\+I\+S\+T\+::capacity, B\+S\+\_\+\+L\+I\+S\+T\+::data, B\+S\+\_\+\+L\+I\+S\+T\+::element\+\_\+size, find(), i, B\+S\+\_\+\+L\+I\+S\+T\+::ids, B\+S\+\_\+\+L\+I\+S\+T\+::n, and resize().
+
+
+
+Referenced by add\+\_\+accepted(), crypto\+\_\+connection\+\_\+add\+\_\+source(), and set\+\_\+direct\+\_\+ip\+\_\+port().
+
+
+\begin{DoxyCode}
+178 \{
+179     \textcolor{comment}{//find where the new element should be inserted}
+180     \textcolor{comment}{//see: return value of find()}
+181     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = \hyperlink{list_8c_ae2aaa4149a770ed6e47a58af78fc6600}{find}(list, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+182 
+183     \textcolor{keywordflow}{if} (i >= 0) \{
+184         \textcolor{comment}{//already in list}
+185         \textcolor{keywordflow}{return} 0;
+186     \}
+187 
+188     i = ~i;
+189 
+190     \textcolor{comment}{//increase the size of the arrays if needed}
+191     \textcolor{keywordflow}{if} (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} == list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity}) \{
+192         \textcolor{comment}{// 1.5 * n + 1}
+193         \textcolor{keyword}{const} uint32\_t new\_capacity = list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} + list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} / 2 + 1;
+194 
+195         \textcolor{keywordflow}{if} (!\hyperlink{list_8c_a7c246868ee5a3542509cdf90379c5bb2}{resize}(list, new\_capacity)) \{
+196             \textcolor{keywordflow}{return} 0;
+197         \}
+198 
+199         list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} = new\_capacity;
+200     \}
+201 
+202     \textcolor{comment}{//insert data to element array}
+203     memmove(list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} + (i + 1) * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size}, list->
+      \hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} + i * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size},
+204             (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} - i) * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size});
+205     memcpy(list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} + i * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, list->
+      \hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size});
+206 
+207     \textcolor{comment}{//insert id to id array}
+208     memmove(&list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[i + 1], &list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[i], (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} - i) * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+209     list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = id;
+210 
+211     \textcolor{comment}{//increase n}
+212     list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n}++;
+213 
+214     \textcolor{keywordflow}{return} 1;
+215 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{da/d23/list_8h_ace05755dd126bff18700a17d6f8edd28_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_ace05755dd126bff18700a17d6f8edd28_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8h_aa2ee2cbbc130c7c976f2c69bda129bd1}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+find@{bs\+\_\+list\+\_\+find}}
+\index{bs\+\_\+list\+\_\+find@{bs\+\_\+list\+\_\+find}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+find}]{\setlength{\rightskip}{0pt plus 5cm}int bs\+\_\+list\+\_\+find (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list, }
+\item[{const uint8\+\_\+t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{list_8h_aa2ee2cbbc130c7c976f2c69bda129bd1}
+
+
+Definition at line 165 of file list.\+c.
+
+
+
+References find(), and B\+S\+\_\+\+L\+I\+S\+T\+::ids.
+
+
+
+Referenced by crypto\+\_\+id\+\_\+ip\+\_\+port(), and get\+\_\+\+T\+C\+P\+\_\+connection\+\_\+index().
+
+
+\begin{DoxyCode}
+166 \{
+167     \textcolor{keywordtype}{int} r = \hyperlink{list_8c_ae2aaa4149a770ed6e47a58af78fc6600}{find}(list, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+168 
+169     \textcolor{comment}{//return only -1 and positive values}
+170     \textcolor{keywordflow}{if} (r < 0) \{
+171         \textcolor{keywordflow}{return} -1;
+172     \}
+173 
+174     \textcolor{keywordflow}{return} list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[r];
+175 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{da/d23/list_8h_aa2ee2cbbc130c7c976f2c69bda129bd1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_aa2ee2cbbc130c7c976f2c69bda129bd1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8h_a20f4503183113923cd946fc04bf8f2b4}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+free@{bs\+\_\+list\+\_\+free}}
+\index{bs\+\_\+list\+\_\+free@{bs\+\_\+list\+\_\+free}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void bs\+\_\+list\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{list_8h_a20f4503183113923cd946fc04bf8f2b4}
+
+
+Definition at line 158 of file list.\+c.
+
+
+
+References B\+S\+\_\+\+L\+I\+S\+T\+::data, and B\+S\+\_\+\+L\+I\+S\+T\+::ids.
+
+
+
+Referenced by kill\+\_\+net\+\_\+crypto(), and kill\+\_\+\+T\+C\+P\+\_\+server().
+
+
+\begin{DoxyCode}
+159 \{
+160     \textcolor{comment}{//free both arrays}
+161     free(list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data});
+162     free(list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids});
+163 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a20f4503183113923cd946fc04bf8f2b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8h_a7b07772cffb6af34e279f424dca08895}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+init@{bs\+\_\+list\+\_\+init}}
+\index{bs\+\_\+list\+\_\+init@{bs\+\_\+list\+\_\+init}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int bs\+\_\+list\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{element\+\_\+size, }
+\item[{uint32\+\_\+t}]{initial\+\_\+capacity}
+\end{DoxyParamCaption}
+)}}\label{list_8h_a7b07772cffb6af34e279f424dca08895}
+
+
+Definition at line 138 of file list.\+c.
+
+
+
+References B\+S\+\_\+\+L\+I\+S\+T\+::capacity, B\+S\+\_\+\+L\+I\+S\+T\+::data, B\+S\+\_\+\+L\+I\+S\+T\+::element\+\_\+size, B\+S\+\_\+\+L\+I\+S\+T\+::ids, B\+S\+\_\+\+L\+I\+S\+T\+::n, and resize().
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto(), and new\+\_\+\+T\+C\+P\+\_\+server().
+
+
+\begin{DoxyCode}
+139 \{
+140     \textcolor{comment}{//set initial values}
+141     list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} = 0;
+142     list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size} = element\_size;
+143     list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} = 0;
+144     list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} = NULL;
+145     list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids} = NULL;
+146 
+147     \textcolor{keywordflow}{if} (initial\_capacity != 0) \{
+148         \textcolor{keywordflow}{if} (!\hyperlink{list_8c_a7c246868ee5a3542509cdf90379c5bb2}{resize}(list, initial\_capacity)) \{
+149             \textcolor{keywordflow}{return} 0;
+150         \}
+151     \}
+152 
+153     list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} = initial\_capacity;
+154 
+155     \textcolor{keywordflow}{return} 1;
+156 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{da/d23/list_8h_a7b07772cffb6af34e279f424dca08895_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a7b07772cffb6af34e279f424dca08895_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8h_a365995457101cc16f8c6b25ead07fb6f}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+remove@{bs\+\_\+list\+\_\+remove}}
+\index{bs\+\_\+list\+\_\+remove@{bs\+\_\+list\+\_\+remove}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+remove}]{\setlength{\rightskip}{0pt plus 5cm}int bs\+\_\+list\+\_\+remove (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{list_8h_a365995457101cc16f8c6b25ead07fb6f}
+
+
+Definition at line 217 of file list.\+c.
+
+
+
+References B\+S\+\_\+\+L\+I\+S\+T\+::capacity, B\+S\+\_\+\+L\+I\+S\+T\+::data, B\+S\+\_\+\+L\+I\+S\+T\+::element\+\_\+size, find(), i, B\+S\+\_\+\+L\+I\+S\+T\+::ids, B\+S\+\_\+\+L\+I\+S\+T\+::n, and resize().
+
+
+
+Referenced by crypto\+\_\+connection\+\_\+add\+\_\+source(), crypto\+\_\+kill(), del\+\_\+accepted(), and set\+\_\+direct\+\_\+ip\+\_\+port().
+
+
+\begin{DoxyCode}
+218 \{
+219     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = \hyperlink{list_8c_ae2aaa4149a770ed6e47a58af78fc6600}{find}(list, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+220 
+221     \textcolor{keywordflow}{if} (i < 0) \{
+222         \textcolor{keywordflow}{return} 0;
+223     \}
+224 
+225     \textcolor{keywordflow}{if} (list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[i] != \textcolor{keywordtype}{id}) \{
+226         \textcolor{comment}{//this should never happen}
+227         \textcolor{keywordflow}{return} 0;
+228     \}
+229 
+230     \textcolor{comment}{//decrease the size of the arrays if needed}
+231     \textcolor{keywordflow}{if} (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} < list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} / 2) \{
+232         \textcolor{keyword}{const} uint32\_t new\_capacity = list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} / 2;
+233 
+234         \textcolor{keywordflow}{if} (\hyperlink{list_8c_a7c246868ee5a3542509cdf90379c5bb2}{resize}(list, new\_capacity)) \{
+235             list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} = new\_capacity;
+236         \}
+237     \}
+238 
+239     list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n}--;
+240 
+241     memmove(list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} + i * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size}, list->\hyperlink{struct_b_s___l_i_s_t_abe222f6d3581e7920dcad5306cc906a8}{data} + (i + 1) * list->
+      \hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size},
+242             (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} - i) * list->\hyperlink{struct_b_s___l_i_s_t_a4ff545e181548785b8e257d2a8ac857a}{element\_size});
+243     memmove(&list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[i], &list->\hyperlink{struct_b_s___l_i_s_t_a6081d5fc46a8899b4beb60b0df7dd190}{ids}[i + 1], (list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n} - i) * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+244 
+245     \textcolor{keywordflow}{return} 1;
+246 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{da/d23/list_8h_a365995457101cc16f8c6b25ead07fb6f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d23/list_8h_a365995457101cc16f8c6b25ead07fb6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8h_afeda2a6221e746f07877dbdf854831dc}{\index{list.\+h@{list.\+h}!bs\+\_\+list\+\_\+trim@{bs\+\_\+list\+\_\+trim}}
+\index{bs\+\_\+list\+\_\+trim@{bs\+\_\+list\+\_\+trim}!list.\+h@{list.\+h}}
+\subsubsection[{bs\+\_\+list\+\_\+trim}]{\setlength{\rightskip}{0pt plus 5cm}int bs\+\_\+list\+\_\+trim (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+S\+\_\+\+L\+I\+S\+T} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{list_8h_afeda2a6221e746f07877dbdf854831dc}
+
+
+Definition at line 248 of file list.\+c.
+
+
+
+References B\+S\+\_\+\+L\+I\+S\+T\+::capacity, B\+S\+\_\+\+L\+I\+S\+T\+::n, and resize().
+
+
+\begin{DoxyCode}
+249 \{
+250     \textcolor{keywordflow}{if} (!\hyperlink{list_8c_a7c246868ee5a3542509cdf90379c5bb2}{resize}(list, list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n})) \{
+251         \textcolor{keywordflow}{return} 0;
+252     \}
+253 
+254     list->\hyperlink{struct_b_s___l_i_s_t_a391c992c66c3e5540265a85ec2b9216a}{capacity} = list->\hyperlink{struct_b_s___l_i_s_t_a3d8a9527a2ee4a7ebf59175650142e75}{n};
+255     \textcolor{keywordflow}{return} 1;
+256 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{da/d23/list_8h_afeda2a6221e746f07877dbdf854831dc_cgraph}
+\end{center}
+\end{figure}
+
+

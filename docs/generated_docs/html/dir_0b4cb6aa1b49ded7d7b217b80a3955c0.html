@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -47,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,27 +61,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,6 +75,11 @@ $(document).ready(function(){initNavTree('dir_0b4cb6aa1b49ded7d7b217b80a3955c0.h
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html">toxcore</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">toxcore Directory Reference</div>  </div>
@@ -106,118 +90,114 @@ Directory dependency graph for toxcore:</div>
 <div class="dyncontent">
 <div class="center"><img src="dir_0b4cb6aa1b49ded7d7b217b80a3955c0_dep.png" border="0" usemap="#dir__0b4cb6aa1b49ded7d7b217b80a3955c0__dep" alt="toxcore"/></div>
 <map name="dir__0b4cb6aa1b49ded7d7b217b80a3955c0__dep" id="dir__0b4cb6aa1b49ded7d7b217b80a3955c0__dep">
-<area shape="rect" id="node1" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html" title="toxcore" alt="" coords="5,5,77,53"/></map>
+<area shape="rect" id="node1" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html" title="toxcore" alt="" coords="25,5,97,53"/><area shape="rect" id="node2" href="dir_0b3821fc14d65dba752bbbbbb5fc7f50.html" title="toxencryptsave" alt="" coords="5,101,116,149"/><area shape="rect" id="edge2-headlabel" href="dir_000005_000007.html" title="1" alt="" coords="56,75,64,90"/><area shape="rect" id="edge1-headlabel" href="dir_000007_000005.html" title="1" alt="" coords="57,65,65,80"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:assoc_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>assoc.c</b> <a href="assoc_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d9d/assoc_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d9d/assoc_8c.html">assoc.c</a> <a href="d4/d9d/assoc_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:assoc_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>assoc.h</b> <a href="assoc_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:da/d7d/assoc_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/d7d/assoc_8h.html">assoc.h</a> <a href="da/d7d/assoc_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:crypto__core_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>crypto_core.c</b> <a href="crypto__core_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:dc/d85/crypto__core_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dc/d85/crypto__core_8c.html">crypto_core.c</a> <a href="dc/d85/crypto__core_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:crypto__core_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>crypto_core.h</b> <a href="crypto__core_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:dd/d3e/crypto__core_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dd/d3e/crypto__core_8h.html">crypto_core.h</a> <a href="dd/d3e/crypto__core_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_d_h_t_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>DHT.c</b> <a href="_d_h_t_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:dc/dc1/_d_h_t_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dc/dc1/_d_h_t_8c.html">DHT.c</a> <a href="dc/dc1/_d_h_t_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_d_h_t_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>DHT.h</b> <a href="_d_h_t_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:df/dad/_d_h_t_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/dad/_d_h_t_8h.html">DHT.h</a> <a href="df/dad/_d_h_t_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:friend__connection_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>friend_connection.c</b> <a href="friend__connection_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d2/db1/friend__connection_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d2/db1/friend__connection_8c.html">friend_connection.c</a> <a href="d2/db1/friend__connection_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:friend__connection_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>friend_connection.h</b> <a href="friend__connection_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d0/d08/friend__connection_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d0/d08/friend__connection_8h.html">friend_connection.h</a> <a href="d0/d08/friend__connection_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:friend__requests_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>friend_requests.c</b> <a href="friend__requests_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d6/da4/friend__requests_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/da4/friend__requests_8c.html">friend_requests.c</a> <a href="d6/da4/friend__requests_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:friend__requests_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>friend_requests.h</b> <a href="friend__requests_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d5/d24/friend__requests_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d5/d24/friend__requests_8h.html">friend_requests.h</a> <a href="d5/d24/friend__requests_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:toxcore_2group_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>group.c</b> <a href="toxcore_2group_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:df/de9/toxcore_2group_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/de9/toxcore_2group_8c.html">group.c</a> <a href="df/de9/toxcore_2group_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:toxcore_2group_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>group.h</b> <a href="toxcore_2group_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:dd/de4/toxcore_2group_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dd/de4/toxcore_2group_8h.html">group.h</a> <a href="dd/de4/toxcore_2group_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_l_a_n__discovery_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>LAN_discovery.c</b> <a href="_l_a_n__discovery_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d1/de5/_l_a_n__discovery_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d1/de5/_l_a_n__discovery_8c.html">LAN_discovery.c</a> <a href="d1/de5/_l_a_n__discovery_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_l_a_n__discovery_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>LAN_discovery.h</b> <a href="_l_a_n__discovery_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:dd/db4/_l_a_n__discovery_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dd/db4/_l_a_n__discovery_8h.html">LAN_discovery.h</a> <a href="dd/db4/_l_a_n__discovery_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:list_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>list.c</b> <a href="list_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d7/d40/list_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d7/d40/list_8c.html">list.c</a> <a href="d7/d40/list_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:list_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>list.h</b> <a href="list_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:da/d23/list_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/d23/list_8h.html">list.h</a> <a href="da/d23/list_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:logger_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>logger.c</b> <a href="logger_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d1/d22/logger_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d1/d22/logger_8c.html">logger.c</a> <a href="d1/d22/logger_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:logger_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>logger.h</b> <a href="logger_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d1/d8c/logger_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d1/d8c/logger_8h.html">logger.h</a> <a href="d1/d8c/logger_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:toxcore_2_makefile_8inc"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>Makefile.inc</b> <a href="toxcore_2_makefile_8inc_source.html">[code]</a></td></tr>
+<tr class="memitem:d3/dc1/toxcore_2_makefile_8inc"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/dc1/toxcore_2_makefile_8inc.html">Makefile.inc</a> <a href="d3/dc1/toxcore_2_makefile_8inc_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_messenger_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>Messenger.c</b> <a href="_messenger_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d8/d8d/_messenger_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d8/d8d/_messenger_8c.html">Messenger.c</a> <a href="d8/d8d/_messenger_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_messenger_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>Messenger.h</b> <a href="_messenger_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d30/_messenger_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d30/_messenger_8h.html">Messenger.h</a> <a href="d4/d30/_messenger_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:misc__tools_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>misc_tools.h</b> <a href="misc__tools_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d1/da7/misc__tools_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d1/da7/misc__tools_8h.html">misc_tools.h</a> <a href="d1/da7/misc__tools_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:net__crypto_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>net_crypto.c</b> <a href="net__crypto_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d8/dc6/net__crypto_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d8/dc6/net__crypto_8c.html">net_crypto.c</a> <a href="d8/dc6/net__crypto_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:net__crypto_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>net_crypto.h</b> <a href="net__crypto_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:de/d42/net__crypto_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="de/d42/net__crypto_8h.html">net_crypto.h</a> <a href="de/d42/net__crypto_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:network_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>network.c</b> <a href="network_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d6/d6e/network_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/d6e/network_8c.html">network.c</a> <a href="d6/d6e/network_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:network_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>network.h</b> <a href="network_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d9/d94/network_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d9/d94/network_8h.html">network.h</a> <a href="d9/d94/network_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion.c</b> <a href="onion_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d18/onion_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d18/onion_8c.html">onion.c</a> <a href="d4/d18/onion_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion.h</b> <a href="onion_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d3/db9/onion_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/db9/onion_8h.html">onion.h</a> <a href="d3/db9/onion_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion__announce_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion_announce.c</b> <a href="onion__announce_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:df/d75/onion__announce_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/d75/onion__announce_8c.html">onion_announce.c</a> <a href="df/d75/onion__announce_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion__announce_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion_announce.h</b> <a href="onion__announce_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d7/dfd/onion__announce_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d7/dfd/onion__announce_8h.html">onion_announce.h</a> <a href="d7/dfd/onion__announce_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion__client_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion_client.c</b> <a href="onion__client_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:db/d79/onion__client_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db/d79/onion__client_8c.html">onion_client.c</a> <a href="db/d79/onion__client_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:onion__client_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>onion_client.h</b> <a href="onion__client_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d9/d26/onion__client_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d9/d26/onion__client_8h.html">onion_client.h</a> <a href="d9/d26/onion__client_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ping_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>ping.c</b> <a href="ping_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d9/d54/ping_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d9/d54/ping_8c.html">ping.c</a> <a href="d9/d54/ping_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ping_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>ping.h</b> <a href="ping_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d6/d2b/ping_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/d2b/ping_8h.html">ping.h</a> <a href="d6/d2b/ping_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ping__array_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>ping_array.c</b> <a href="ping__array_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:df/d02/ping__array_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="df/d02/ping__array_8c.html">ping_array.c</a> <a href="df/d02/ping__array_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ping__array_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>ping_array.h</b> <a href="ping__array_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:dd/dec/ping__array_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dd/dec/ping__array_8h.html">ping_array.h</a> <a href="dd/dec/ping__array_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__client_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_client.c</b> <a href="_t_c_p__client_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:da/da1/_t_c_p__client_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/da1/_t_c_p__client_8c.html">TCP_client.c</a> <a href="da/da1/_t_c_p__client_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__client_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_client.h</b> <a href="_t_c_p__client_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d0/df3/_t_c_p__client_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d0/df3/_t_c_p__client_8h.html">TCP_client.h</a> <a href="d0/df3/_t_c_p__client_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__connection_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_connection.c</b> <a href="_t_c_p__connection_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d5/d26/_t_c_p__connection_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d5/d26/_t_c_p__connection_8c.html">TCP_connection.c</a> <a href="d5/d26/_t_c_p__connection_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__connection_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_connection.h</b> <a href="_t_c_p__connection_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:da/d39/_t_c_p__connection_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/d39/_t_c_p__connection_8h.html">TCP_connection.h</a> <a href="da/d39/_t_c_p__connection_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__server_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_server.c</b> <a href="_t_c_p__server_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d40/_t_c_p__server_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d40/_t_c_p__server_8c.html">TCP_server.c</a> <a href="d4/d40/_t_c_p__server_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_t_c_p__server_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>TCP_server.h</b> <a href="_t_c_p__server_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d6/d03/_t_c_p__server_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d6/d03/_t_c_p__server_8h.html">TCP_server.h</a> <a href="d6/d03/_t_c_p__server_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox.c</b> <a href="tox_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:d3/d69/tox_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/d69/tox_8c.html">tox.c</a> <a href="d3/d69/tox_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox.h</b> <a href="tox_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:da/d8f/tox_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="da/d8f/tox_8h.html">tox.h</a> <a href="da/d8f/tox_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox__old_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox_old.h</b> <a href="tox__old_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d4/d71/tox__old_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d4/d71/tox__old_8h.html">tox_old.h</a> <a href="d4/d71/tox__old_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:tox__old__code_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>tox_old_code.h</b> <a href="tox__old__code_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d3/d8f/tox__old__code_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d3/d8f/tox__old__code_8h.html">tox_old_code.h</a> <a href="d3/d8f/tox__old__code_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:util_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>util.c</b> <a href="util_8c_source.html">[code]</a></td></tr>
+<tr class="memitem:de/df1/util_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="de/df1/util_8c.html">util.c</a> <a href="de/df1/util_8c_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:util_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><b>util.h</b> <a href="util_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:d8/d3c/util_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="d8/d3c/util_8h.html">util.h</a> <a href="d8/d3c/util_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_0b4cb6aa1b49ded7d7b217b80a3955c0.html">toxcore</a></li>
-    <li class="footer">Generated on Mon Sep 14 2015 09:00:35 for libtoxcore by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Oct 2 2015 23:41:34 for libtoxcore by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
 </body>
 </html>

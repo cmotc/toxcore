@@ -1,0 +1,11 @@
+<map id="kill_tcp_relay_connection" name="kill_tcp_relay_connection">
+<area shape="rect" id="node2" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="266,17,377,43"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="254,122,389,149"/>
+<area shape="rect" id="node6" href="$da/da1/_t_c_p__client_8c.html#a437ba55ccf24fb881acf298f3e225a63" title="kill_TCP_connection" alt="" coords="250,71,393,98"/>
+<area shape="rect" id="node9" href="$d5/d26/_t_c_p__connection_8c.html#a8143d81d0cb65f668ecbd79884ef78e5" title="rm_tcp_connection_from_conn" alt="" coords="221,173,421,199"/>
+<area shape="rect" id="node10" href="$d5/d26/_t_c_p__connection_8c.html#add1161d338a19eca0bb42f242b543036" title="wipe_tcp_connection" alt="" coords="249,223,393,250"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="481,5,624,47"/>
+<area shape="rect" id="node5" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="469,195,636,236"/>
+<area shape="rect" id="node7" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="516,71,589,98"/>
+<area shape="rect" id="node8" href="$da/da1/_t_c_p__client_8c.html#aaf4385f749c6f9c21f4f4ac17b31a77b" title="wipe_priority_list" alt="" coords="493,122,612,149"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="handle_send_initial" name="handle_send_initial">
+<area shape="rect" id="node2" href="$d4/d18/onion_8c.html#aa1c4b4ce8c4a67cd1590892ee6ed57c7" title="change_symmetric_key" alt="" coords="188,32,348,59"/>
+<area shape="rect" id="node6" href="$dc/d85/crypto__core_8c.html#a824b257fcff74b9d17c5247223fbed29" title="decrypt_data_symmetric" alt="" coords="185,83,351,109"/>
+<area shape="rect" id="node7" href="$dc/dc1/_d_h_t_8c.html#a6cd4aa89d7bfcf6805c5ce6b273d9e9e" title="get_shared_key" alt="" coords="211,133,325,160"/>
+<area shape="rect" id="node9" href="$d4/d18/onion_8c.html#a112ff3dd6d8a1e104516eb4b465fc2fa" title="onion_send_1" alt="" coords="217,311,319,337"/>
+<area shape="rect" id="node3" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="440,83,523,109"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="626,83,705,109"/>
+<area shape="rect" id="node5" href="$dc/d85/crypto__core_8c.html#a89b4a1a4a7d8bfabdf0e1b60f074e531" title="new_symmetric_key" alt="" coords="410,32,553,59"/>
+<area shape="rect" id="node8" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="411,184,551,211"/>
+<area shape="rect" id="node10" href="$d4/d18/onion_8c.html#a5134cc15375a918b584e3c408e038331" title="ipport_unpack" alt="" coords="430,235,533,261"/>
+<area shape="rect" id="node13" href="$d4/d18/onion_8c.html#ae9d8dde9317c06fe493658b8145de853" title="ipport_pack" alt="" coords="437,285,526,312"/>
+<area shape="rect" id="node16" href="$dc/d85/crypto__core_8c.html#a8b1033efb47c625779d11be7d8eb9e24" title="new_nonce" alt="" coords="437,336,525,363"/>
+<area shape="rect" id="node18" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="399,387,564,413"/>
+<area shape="rect" id="node19" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="437,437,526,464"/>
+<area shape="rect" id="node11" href="$d4/d18/onion_8c.html#a0687fad9fd17ea53d6b84a6cfc7e0d78" title="ip_unpack" alt="" coords="625,235,706,261"/>
+<area shape="rect" id="node12" href="$dc/dc1/_d_h_t_8c.html#a74120ec4fc551572bff2a08436854c97" title="to_host_family" alt="" coords="767,235,873,261"/>
+<area shape="rect" id="node14" href="$d4/d18/onion_8c.html#a6b9b6abcbb6fde502e7822236a978118" title="ip_pack" alt="" coords="632,285,699,312"/>
+<area shape="rect" id="node15" href="$dc/dc1/_d_h_t_8c.html#ae7f65a76f9c4b0093f45fc1777238459" title="to_net_family" alt="" coords="770,285,870,312"/>
+<area shape="rect" id="node17" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="612,336,719,363"/>
+</map>

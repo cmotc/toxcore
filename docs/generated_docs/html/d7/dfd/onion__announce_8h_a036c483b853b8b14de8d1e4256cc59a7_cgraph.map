@@ -1,0 +1,5 @@
+<map id="create_data_request" name="create_data_request">
+<area shape="rect" id="node2" href="$dc/d85/crypto__core_8c.html#a014149333522d211490304255e139ec3" title="encrypt_data" alt="" coords="193,31,291,57"/>
+<area shape="rect" id="node3" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="339,5,504,32"/>
+<area shape="rect" id="node4" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="351,56,491,83"/>
+</map>

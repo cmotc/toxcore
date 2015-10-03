@@ -1,0 +1,15 @@
+Every function that can fail takes a function-\/specific error code pointer that can be used to diagnose problems with the Tox state or the function arguments. The error code pointer can be N\+U\+L\+L, which does not influence the function's behaviour, but can be done if the reason for failure is irrelevant to the client.
+
+The exception to this rule are simple allocation functions whose only failure mode is allocation failure. They return N\+U\+L\+L in that case, and do not set an error code.
+
+Every error code type has an O\+K value to which functions will set their error code value on success. Clients can keep their error code uninitialised before passing it to a function. The library guarantees that after returning, the value pointed to by the error code pointer has been initialised.
+
+Functions with pointer parameters often have a N\+U\+L\+L error code, meaning they could not perform any operation, because one of the required parameters was N\+U\+L\+L. Some functions operate correctly or are defined as effectless on N\+U\+L\+L.
+
+Some functions additionally return a value outside their return type domain, or a bool containing true on success and false on failure.
+
+All functions that take a Tox instance pointer will cause undefined behaviour when passed a N\+U\+L\+L Tox pointer.
+
+All integer values are expected in host byte order.
+
+Functions with parameters with enum types cause unspecified behaviour if the enumeration value is outside the valid range of the type. If possible, the function will try to use a sane default, but there will be no error code, and one possible action for the function to take is to have no effect. 

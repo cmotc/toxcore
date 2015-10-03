@@ -1,0 +1,426 @@
+\hypertarget{struct_friend}{\section{Friend Struct Reference}
+\label{struct_friend}\index{Friend@{Friend}}
+}
+
+
+{\ttfamily \#include $<$Messenger.\+h$>$}
+
+
+
+Collaboration diagram for Friend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{db/d78/struct_friend__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_ab42b4c90d81ac99b968c3edd1e21d706}{real\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+int \hyperlink{struct_friend_aed1c0bb5aeba492059252d0084c8ae9b}{friendcon\+\_\+id}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend_a1cea2470caaf4282313efe944e95bf35}{friendrequest\+\_\+lastsent}
+\item 
+uint32\+\_\+t \hyperlink{struct_friend_a671d1f4ab926cb9dc297c3f2743560d4}{friendrequest\+\_\+timeout}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_ade818037fd6c985038ff29656089758d}{status}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_ae1a1264e17ce4eedae67c283a09236e6}{info} \mbox{[}\hyperlink{friend__requests_8h_a89b7e8b76560d3513fd3b054de738553}{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_a11b8cc6595eea79e65c978209278e683}{name} \mbox{[}\hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_friend_a3573d7a906b26e9999cd74f2c4066601}{name\+\_\+length}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_acc966be04e3e27e15dfd493c3e9cff89}{name\+\_\+sent}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_a8f12612ac1191135a1a5b1cbcbc82852}{statusmessage} \mbox{[}\hyperlink{_messenger_8h_a0d1a4b91dd43b4cb07dfefab7fc6bee1}{M\+A\+X\+\_\+\+S\+T\+A\+T\+U\+S\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_friend_a43fe9dde52dc12e90933150eca91c0c3}{statusmessage\+\_\+length}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_ad39189cd22b356c314e4d980b55db259}{statusmessage\+\_\+sent}
+\item 
+\hyperlink{_messenger_8h_aa55a7166581c83a07f49f9392447986c}{U\+S\+E\+R\+S\+T\+A\+T\+U\+S} \hyperlink{struct_friend_adde524f5a15465585cbc2543cd0b2710}{userstatus}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_af7c74fd36acb972c3a8641fb0781e37e}{userstatus\+\_\+sent}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_a68e945edd5a63c22371edf481c788d88}{user\+\_\+istyping}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_a8d9e9aef86444e0cde8ec0314f60907e}{user\+\_\+istyping\+\_\+sent}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_a4eb96aff01799d54246cc48854a47175}{is\+\_\+typing}
+\item 
+uint16\+\_\+t \hyperlink{struct_friend_ac0ae002db55ef8f8366de10ec005b65a}{info\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{struct_friend_aa4420a99dd00b4884b23150e4226b2ea}{message\+\_\+id}
+\item 
+uint32\+\_\+t \hyperlink{struct_friend_a0fae9801a4789a368f90125119e31f3f}{friendrequest\+\_\+nospam}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend_a8f99c48eb6b3ea472806495135ab6792}{last\+\_\+seen\+\_\+time}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend_ac213b32e59c2e4a64923c453b100c4e4}{last\+\_\+connection\+\_\+udp\+\_\+tcp}
+\item 
+struct \hyperlink{struct_file___transfers}{File\+\_\+\+Transfers} \hyperlink{struct_friend_a51d0849a59878ad9e4b67123a1c87037}{file\+\_\+sending} \mbox{[}\hyperlink{_messenger_8h_a5e5c08c689138cd56d6c1a16d3eea793}{M\+A\+X\+\_\+\+C\+O\+N\+C\+U\+R\+R\+E\+N\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+I\+P\+E\+S}\mbox{]}
+\item 
+unsigned int \hyperlink{struct_friend_ac4dcaccdfc6f354a321622e84b27b856}{num\+\_\+sending\+\_\+files}
+\item 
+struct \hyperlink{struct_file___transfers}{File\+\_\+\+Transfers} \hyperlink{struct_friend_ab14e1c3452717012d0bbb0dad068e9f6}{file\+\_\+receiving} \mbox{[}\hyperlink{_messenger_8h_a5e5c08c689138cd56d6c1a16d3eea793}{M\+A\+X\+\_\+\+C\+O\+N\+C\+U\+R\+R\+E\+N\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+I\+P\+E\+S}\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int($\ast$ \hyperlink{struct_friend_a726a4dcb820b33fd434494d56f532867}{function} )(\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint32\_t \\
+\>\>friendnumber, const uint8\_t \\
+\>\>$\ast$data, uint16\_t len, void \\
+\>\>$\ast$\hyperlink{struct_friend_a077376d12464f945e2414d5499c79b3f}{object})\\
+\>void $\ast$ \hyperlink{struct_friend_a077376d12464f945e2414d5499c79b3f}{object}\\
+\} \hyperlink{struct_friend_af8c513c69f17fc044615b18ec03f9911}{lossy\_rtp\_packethandlers} \mbox{[}\hyperlink{_messenger_8h_a9e9b181fad5abaed171e4b4481490d1e}{PACKET\_LOSSY\_AV\_RESERVED}\mbox{]}\\
+
+\end{tabbing}\item 
+struct \hyperlink{struct_receipts}{Receipts} $\ast$ \hyperlink{struct_friend_a49fea7d214384bfdb887ce868fef0e93}{receipts\+\_\+start}
+\item 
+struct \hyperlink{struct_receipts}{Receipts} $\ast$ \hyperlink{struct_friend_ad4ff64ea096ee2af6b53f8d9f7901776}{receipts\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 173 of file Messenger.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_friend_ab14e1c3452717012d0bbb0dad068e9f6}{\index{Friend@{Friend}!file\+\_\+receiving@{file\+\_\+receiving}}
+\index{file\+\_\+receiving@{file\+\_\+receiving}!Friend@{Friend}}
+\subsubsection[{file\+\_\+receiving}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf File\+\_\+\+Transfers} file\+\_\+receiving\mbox{[}{\bf M\+A\+X\+\_\+\+C\+O\+N\+C\+U\+R\+R\+E\+N\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+I\+P\+E\+S}\mbox{]}}}\label{struct_friend_ab14e1c3452717012d0bbb0dad068e9f6}
+
+
+Definition at line 199 of file Messenger.\+h.
+
+
+
+Referenced by break\+\_\+files(), file\+\_\+control(), file\+\_\+dataremaining(), file\+\_\+get\+\_\+id(), file\+\_\+seek(), handle\+\_\+filecontrol(), and handle\+\_\+packet().
+
+\hypertarget{struct_friend_a51d0849a59878ad9e4b67123a1c87037}{\index{Friend@{Friend}!file\+\_\+sending@{file\+\_\+sending}}
+\index{file\+\_\+sending@{file\+\_\+sending}!Friend@{Friend}}
+\subsubsection[{file\+\_\+sending}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf File\+\_\+\+Transfers} file\+\_\+sending\mbox{[}{\bf M\+A\+X\+\_\+\+C\+O\+N\+C\+U\+R\+R\+E\+N\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+I\+P\+E\+S}\mbox{]}}}\label{struct_friend_a51d0849a59878ad9e4b67123a1c87037}
+
+
+Definition at line 197 of file Messenger.\+h.
+
+
+
+Referenced by break\+\_\+files(), do\+\_\+reqchunk\+\_\+filecb(), file\+\_\+control(), file\+\_\+data(), file\+\_\+dataremaining(), file\+\_\+get\+\_\+id(), file\+\_\+seek(), handle\+\_\+filecontrol(), and new\+\_\+filesender().
+
+\hypertarget{struct_friend_aed1c0bb5aeba492059252d0084c8ae9b}{\index{Friend@{Friend}!friendcon\+\_\+id@{friendcon\+\_\+id}}
+\index{friendcon\+\_\+id@{friendcon\+\_\+id}!Friend@{Friend}}
+\subsubsection[{friendcon\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int friendcon\+\_\+id}}\label{struct_friend_aed1c0bb5aeba492059252d0084c8ae9b}
+
+
+Definition at line 175 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), do\+\_\+reqchunk\+\_\+filecb(), file\+\_\+data(), friend\+\_\+received\+\_\+packet(), getfriendcon\+\_\+id(), init\+\_\+new\+\_\+friend(), m\+\_\+delfriend(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), m\+\_\+send\+\_\+message\+\_\+generic(), send\+\_\+custom\+\_\+lossless\+\_\+packet(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), send\+\_\+file\+\_\+data\+\_\+packet(), send\+\_\+online\+\_\+packet(), and write\+\_\+cryptpacket\+\_\+id().
+
+\hypertarget{struct_friend_a1cea2470caaf4282313efe944e95bf35}{\index{Friend@{Friend}!friendrequest\+\_\+lastsent@{friendrequest\+\_\+lastsent}}
+\index{friendrequest\+\_\+lastsent@{friendrequest\+\_\+lastsent}!Friend@{Friend}}
+\subsubsection[{friendrequest\+\_\+lastsent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t friendrequest\+\_\+lastsent}}\label{struct_friend_a1cea2470caaf4282313efe944e95bf35}
+
+
+Definition at line 177 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+request\+\_\+timed\+\_\+out(), do\+\_\+friends(), and init\+\_\+new\+\_\+friend().
+
+\hypertarget{struct_friend_a0fae9801a4789a368f90125119e31f3f}{\index{Friend@{Friend}!friendrequest\+\_\+nospam@{friendrequest\+\_\+nospam}}
+\index{friendrequest\+\_\+nospam@{friendrequest\+\_\+nospam}!Friend@{Friend}}
+\subsubsection[{friendrequest\+\_\+nospam}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t friendrequest\+\_\+nospam}}\label{struct_friend_a0fae9801a4789a368f90125119e31f3f}
+
+
+Definition at line 194 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), friends\+\_\+list\+\_\+save(), and m\+\_\+addfriend().
+
+\hypertarget{struct_friend_a671d1f4ab926cb9dc297c3f2743560d4}{\index{Friend@{Friend}!friendrequest\+\_\+timeout@{friendrequest\+\_\+timeout}}
+\index{friendrequest\+\_\+timeout@{friendrequest\+\_\+timeout}!Friend@{Friend}}
+\subsubsection[{friendrequest\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t friendrequest\+\_\+timeout}}\label{struct_friend_a671d1f4ab926cb9dc297c3f2743560d4}
+
+
+Definition at line 178 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+request\+\_\+timed\+\_\+out(), and m\+\_\+addfriend().
+
+\hypertarget{struct_friend_a726a4dcb820b33fd434494d56f532867}{\index{Friend@{Friend}!function@{function}}
+\index{function@{function}!Friend@{Friend}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ function)({\bf Messenger} $\ast${\bf m}, uint32\+\_\+t friendnumber, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len, void $\ast${\bf object})}}\label{struct_friend_a726a4dcb820b33fd434494d56f532867}
+
+
+Definition at line 202 of file Messenger.\+h.
+
+
+
+Referenced by handle\+\_\+custom\+\_\+lossy\+\_\+packet(), and m\+\_\+callback\+\_\+rtp\+\_\+packet().
+
+\hypertarget{struct_friend_ae1a1264e17ce4eedae67c283a09236e6}{\index{Friend@{Friend}!info@{info}}
+\index{info@{info}!Friend@{Friend}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t info\mbox{[}{\bf M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}\mbox{]}}}\label{struct_friend_ae1a1264e17ce4eedae67c283a09236e6}
+
+
+Definition at line 180 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), friends\+\_\+list\+\_\+save(), and m\+\_\+addfriend().
+
+\hypertarget{struct_friend_ac0ae002db55ef8f8366de10ec005b65a}{\index{Friend@{Friend}!info\+\_\+size@{info\+\_\+size}}
+\index{info\+\_\+size@{info\+\_\+size}!Friend@{Friend}}
+\subsubsection[{info\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t info\+\_\+size}}\label{struct_friend_ac0ae002db55ef8f8366de10ec005b65a}
+
+
+Definition at line 192 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), friends\+\_\+list\+\_\+save(), and m\+\_\+addfriend().
+
+\hypertarget{struct_friend_a4eb96aff01799d54246cc48854a47175}{\index{Friend@{Friend}!is\+\_\+typing@{is\+\_\+typing}}
+\index{is\+\_\+typing@{is\+\_\+typing}!Friend@{Friend}}
+\subsubsection[{is\+\_\+typing}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t is\+\_\+typing}}\label{struct_friend_a4eb96aff01799d54246cc48854a47175}
+
+
+Definition at line 191 of file Messenger.\+h.
+
+
+
+Referenced by init\+\_\+new\+\_\+friend(), m\+\_\+get\+\_\+istyping(), and set\+\_\+friend\+\_\+typing().
+
+\hypertarget{struct_friend_ac213b32e59c2e4a64923c453b100c4e4}{\index{Friend@{Friend}!last\+\_\+connection\+\_\+udp\+\_\+tcp@{last\+\_\+connection\+\_\+udp\+\_\+tcp}}
+\index{last\+\_\+connection\+\_\+udp\+\_\+tcp@{last\+\_\+connection\+\_\+udp\+\_\+tcp}!Friend@{Friend}}
+\subsubsection[{last\+\_\+connection\+\_\+udp\+\_\+tcp}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t last\+\_\+connection\+\_\+udp\+\_\+tcp}}\label{struct_friend_ac213b32e59c2e4a64923c453b100c4e4}
+
+
+Definition at line 196 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+tcp\+\_\+udp().
+
+\hypertarget{struct_friend_a8f99c48eb6b3ea472806495135ab6792}{\index{Friend@{Friend}!last\+\_\+seen\+\_\+time@{last\+\_\+seen\+\_\+time}}
+\index{last\+\_\+seen\+\_\+time@{last\+\_\+seen\+\_\+time}!Friend@{Friend}}
+\subsubsection[{last\+\_\+seen\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+seen\+\_\+time}}\label{struct_friend_a8f99c48eb6b3ea472806495135ab6792}
+
+
+Definition at line 195 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), friends\+\_\+list\+\_\+load(), friends\+\_\+list\+\_\+save(), and m\+\_\+get\+\_\+last\+\_\+online().
+
+\hypertarget{struct_friend_af8c513c69f17fc044615b18ec03f9911}{\index{Friend@{Friend}!lossy\+\_\+rtp\+\_\+packethandlers@{lossy\+\_\+rtp\+\_\+packethandlers}}
+\index{lossy\+\_\+rtp\+\_\+packethandlers@{lossy\+\_\+rtp\+\_\+packethandlers}!Friend@{Friend}}
+\subsubsection[{lossy\+\_\+rtp\+\_\+packethandlers}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   lossy\+\_\+rtp\+\_\+packethandlers\mbox{[}{\bf P\+A\+C\+K\+E\+T\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+A\+V\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D}\mbox{]}}}\label{struct_friend_af8c513c69f17fc044615b18ec03f9911}
+
+
+Referenced by handle\+\_\+custom\+\_\+lossy\+\_\+packet(), and m\+\_\+callback\+\_\+rtp\+\_\+packet().
+
+\hypertarget{struct_friend_aa4420a99dd00b4884b23150e4226b2ea}{\index{Friend@{Friend}!message\+\_\+id@{message\+\_\+id}}
+\index{message\+\_\+id@{message\+\_\+id}!Friend@{Friend}}
+\subsubsection[{message\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t message\+\_\+id}}\label{struct_friend_aa4420a99dd00b4884b23150e4226b2ea}
+
+
+Definition at line 193 of file Messenger.\+h.
+
+
+
+Referenced by init\+\_\+new\+\_\+friend(), and m\+\_\+send\+\_\+message\+\_\+generic().
+
+\hypertarget{struct_friend_a11b8cc6595eea79e65c978209278e683}{\index{Friend@{Friend}!name@{name}}
+\index{name@{name}!Friend@{Friend}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t name\mbox{[}{\bf M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}}}\label{struct_friend_a11b8cc6595eea79e65c978209278e683}
+
+
+Definition at line 181 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+messenger(), friends\+\_\+list\+\_\+save(), getname(), handle\+\_\+packet(), setfriendname(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{struct_friend_a3573d7a906b26e9999cd74f2c4066601}{\index{Friend@{Friend}!name\+\_\+length@{name\+\_\+length}}
+\index{name\+\_\+length@{name\+\_\+length}!Friend@{Friend}}
+\subsubsection[{name\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t name\+\_\+length}}\label{struct_friend_a3573d7a906b26e9999cd74f2c4066601}
+
+
+Definition at line 182 of file Messenger.\+h.
+
+
+
+Referenced by friends\+\_\+list\+\_\+save(), getname(), handle\+\_\+packet(), m\+\_\+get\+\_\+name\+\_\+size(), setfriendname(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{struct_friend_acc966be04e3e27e15dfd493c3e9cff89}{\index{Friend@{Friend}!name\+\_\+sent@{name\+\_\+sent}}
+\index{name\+\_\+sent@{name\+\_\+sent}!Friend@{Friend}}
+\subsubsection[{name\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t name\+\_\+sent}}\label{struct_friend_acc966be04e3e27e15dfd493c3e9cff89}
+
+
+Definition at line 183 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+connectionstatus(), do\+\_\+friends(), and setname().
+
+\hypertarget{struct_friend_ac4dcaccdfc6f354a321622e84b27b856}{\index{Friend@{Friend}!num\+\_\+sending\+\_\+files@{num\+\_\+sending\+\_\+files}}
+\index{num\+\_\+sending\+\_\+files@{num\+\_\+sending\+\_\+files}!Friend@{Friend}}
+\subsubsection[{num\+\_\+sending\+\_\+files}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int num\+\_\+sending\+\_\+files}}\label{struct_friend_ac4dcaccdfc6f354a321622e84b27b856}
+
+
+Definition at line 198 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+reqchunk\+\_\+filecb(), file\+\_\+control(), handle\+\_\+filecontrol(), and new\+\_\+filesender().
+
+\hypertarget{struct_friend_a077376d12464f945e2414d5499c79b3f}{\index{Friend@{Friend}!object@{object}}
+\index{object@{object}!Friend@{Friend}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ object}}\label{struct_friend_a077376d12464f945e2414d5499c79b3f}
+
+
+Definition at line 203 of file Messenger.\+h.
+
+
+
+Referenced by handle\+\_\+custom\+\_\+lossy\+\_\+packet(), and m\+\_\+callback\+\_\+rtp\+\_\+packet().
+
+\hypertarget{struct_friend_ab42b4c90d81ac99b968c3edd1e21d706}{\index{Friend@{Friend}!real\+\_\+pk@{real\+\_\+pk}}
+\index{real\+\_\+pk@{real\+\_\+pk}!Friend@{Friend}}
+\subsubsection[{real\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t real\+\_\+pk\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_friend_ab42b4c90d81ac99b968c3edd1e21d706}
+
+
+Definition at line 174 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+messenger(), friends\+\_\+list\+\_\+save(), get\+\_\+real\+\_\+pk(), getfriend\+\_\+id(), init\+\_\+new\+\_\+friend(), and m\+\_\+delfriend().
+
+\hypertarget{struct_friend_ad4ff64ea096ee2af6b53f8d9f7901776}{\index{Friend@{Friend}!receipts\+\_\+end@{receipts\+\_\+end}}
+\index{receipts\+\_\+end@{receipts\+\_\+end}!Friend@{Friend}}
+\subsubsection[{receipts\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Receipts}$\ast$ receipts\+\_\+end}}\label{struct_friend_ad4ff64ea096ee2af6b53f8d9f7901776}
+
+
+Definition at line 207 of file Messenger.\+h.
+
+
+
+Referenced by add\+\_\+receipt(), clear\+\_\+receipts(), and do\+\_\+receipts().
+
+\hypertarget{struct_friend_a49fea7d214384bfdb887ce868fef0e93}{\index{Friend@{Friend}!receipts\+\_\+start@{receipts\+\_\+start}}
+\index{receipts\+\_\+start@{receipts\+\_\+start}!Friend@{Friend}}
+\subsubsection[{receipts\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Receipts}$\ast$ receipts\+\_\+start}}\label{struct_friend_a49fea7d214384bfdb887ce868fef0e93}
+
+
+Definition at line 206 of file Messenger.\+h.
+
+
+
+Referenced by add\+\_\+receipt(), clear\+\_\+receipts(), and do\+\_\+receipts().
+
+\hypertarget{struct_friend_ade818037fd6c985038ff29656089758d}{\index{Friend@{Friend}!status@{status}}
+\index{status@{status}!Friend@{Friend}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_friend_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 179 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+connectionstatus(), copy\+\_\+friendlist(), count\+\_\+friendlist(), do\+\_\+friends(), file\+\_\+control(), file\+\_\+data(), file\+\_\+get\+\_\+id(), file\+\_\+seek(), friend\+\_\+not\+\_\+valid(), friends\+\_\+list\+\_\+save(), getfriend\+\_\+id(), handle\+\_\+packet(), handle\+\_\+status(), init\+\_\+new\+\_\+friend(), m\+\_\+addfriend(), m\+\_\+delfriend(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), m\+\_\+send\+\_\+message\+\_\+generic(), send\+\_\+custom\+\_\+lossless\+\_\+packet(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), set\+\_\+friend\+\_\+status(), and write\+\_\+cryptpacket\+\_\+id().
+
+\hypertarget{struct_friend_a8f12612ac1191135a1a5b1cbcbc82852}{\index{Friend@{Friend}!statusmessage@{statusmessage}}
+\index{statusmessage@{statusmessage}!Friend@{Friend}}
+\subsubsection[{statusmessage}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t statusmessage\mbox{[}{\bf M\+A\+X\+\_\+\+S\+T\+A\+T\+U\+S\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}}}\label{struct_friend_a8f12612ac1191135a1a5b1cbcbc82852}
+
+
+Definition at line 184 of file Messenger.\+h.
+
+
+
+Referenced by friends\+\_\+list\+\_\+save(), m\+\_\+copy\+\_\+statusmessage(), and set\+\_\+friend\+\_\+statusmessage().
+
+\hypertarget{struct_friend_a43fe9dde52dc12e90933150eca91c0c3}{\index{Friend@{Friend}!statusmessage\+\_\+length@{statusmessage\+\_\+length}}
+\index{statusmessage\+\_\+length@{statusmessage\+\_\+length}!Friend@{Friend}}
+\subsubsection[{statusmessage\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t statusmessage\+\_\+length}}\label{struct_friend_a43fe9dde52dc12e90933150eca91c0c3}
+
+
+Definition at line 185 of file Messenger.\+h.
+
+
+
+Referenced by friends\+\_\+list\+\_\+save(), init\+\_\+new\+\_\+friend(), m\+\_\+copy\+\_\+statusmessage(), m\+\_\+get\+\_\+statusmessage\+\_\+size(), and set\+\_\+friend\+\_\+statusmessage().
+
+\hypertarget{struct_friend_ad39189cd22b356c314e4d980b55db259}{\index{Friend@{Friend}!statusmessage\+\_\+sent@{statusmessage\+\_\+sent}}
+\index{statusmessage\+\_\+sent@{statusmessage\+\_\+sent}!Friend@{Friend}}
+\subsubsection[{statusmessage\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t statusmessage\+\_\+sent}}\label{struct_friend_ad39189cd22b356c314e4d980b55db259}
+
+
+Definition at line 186 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+connectionstatus(), do\+\_\+friends(), and m\+\_\+set\+\_\+statusmessage().
+
+\hypertarget{struct_friend_a68e945edd5a63c22371edf481c788d88}{\index{Friend@{Friend}!user\+\_\+istyping@{user\+\_\+istyping}}
+\index{user\+\_\+istyping@{user\+\_\+istyping}!Friend@{Friend}}
+\subsubsection[{user\+\_\+istyping}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t user\+\_\+istyping}}\label{struct_friend_a68e945edd5a63c22371edf481c788d88}
+
+
+Definition at line 189 of file Messenger.\+h.
+
+
+
+Referenced by do\+\_\+friends(), and m\+\_\+set\+\_\+usertyping().
+
+\hypertarget{struct_friend_a8d9e9aef86444e0cde8ec0314f60907e}{\index{Friend@{Friend}!user\+\_\+istyping\+\_\+sent@{user\+\_\+istyping\+\_\+sent}}
+\index{user\+\_\+istyping\+\_\+sent@{user\+\_\+istyping\+\_\+sent}!Friend@{Friend}}
+\subsubsection[{user\+\_\+istyping\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t user\+\_\+istyping\+\_\+sent}}\label{struct_friend_a8d9e9aef86444e0cde8ec0314f60907e}
+
+
+Definition at line 190 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+connectionstatus(), do\+\_\+friends(), and m\+\_\+set\+\_\+usertyping().
+
+\hypertarget{struct_friend_adde524f5a15465585cbc2543cd0b2710}{\index{Friend@{Friend}!userstatus@{userstatus}}
+\index{userstatus@{userstatus}!Friend@{Friend}}
+\subsubsection[{userstatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\+S\+E\+R\+S\+T\+A\+T\+U\+S} userstatus}}\label{struct_friend_adde524f5a15465585cbc2543cd0b2710}
+
+
+Definition at line 187 of file Messenger.\+h.
+
+
+
+Referenced by friends\+\_\+list\+\_\+save(), init\+\_\+new\+\_\+friend(), m\+\_\+get\+\_\+userstatus(), and set\+\_\+friend\+\_\+userstatus().
+
+\hypertarget{struct_friend_af7c74fd36acb972c3a8641fb0781e37e}{\index{Friend@{Friend}!userstatus\+\_\+sent@{userstatus\+\_\+sent}}
+\index{userstatus\+\_\+sent@{userstatus\+\_\+sent}!Friend@{Friend}}
+\subsubsection[{userstatus\+\_\+sent}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t userstatus\+\_\+sent}}\label{struct_friend_af7c74fd36acb972c3a8641fb0781e37e}
+
+
+Definition at line 188 of file Messenger.\+h.
+
+
+
+Referenced by check\+\_\+friend\+\_\+connectionstatus(), do\+\_\+friends(), and m\+\_\+set\+\_\+userstatus().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{_messenger_8h}{Messenger.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,1516 @@
+\hypertarget{toxav__basic__test_8c}{\section{auto\+\_\+tests/toxav\+\_\+basic\+\_\+test.c File Reference}
+\label{toxav__basic__test_8c}\index{auto\+\_\+tests/toxav\+\_\+basic\+\_\+test.\+c@{auto\+\_\+tests/toxav\+\_\+basic\+\_\+test.\+c}}
+}
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$check.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$vpx/vpx\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../toxcore/tox.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/logger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/crypto\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxav/toxav.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for toxav\+\_\+basic\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dbe/toxav__basic__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___party}{\+\_\+\+Party}
+\item 
+struct \hyperlink{struct___status}{\+\_\+\+Status}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P}(Alice\+Call\+Type, Bob\+Call\+Type)
+\item 
+\#define \hyperlink{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E}()
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6}{\+\_\+\+Call\+Status} \hyperlink{toxav__basic__test_8c_a377e0aa60b93038e3e9bc14c57b3d87a}{Call\+Status}
+\item 
+typedef struct \hyperlink{struct___party}{\+\_\+\+Party} \hyperlink{toxav__basic__test_8c_a6b3eabc1984dea93c1fe4b44079315f2}{Party}
+\item 
+typedef struct \hyperlink{struct___status}{\+\_\+\+Status} \hyperlink{toxav__basic__test_8c_a69532229a45f24a72a5d446da8db420f}{Status}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6}{\+\_\+\+Call\+Status} \{ \\*
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}, 
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{In\+Call}, 
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}, 
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}, 
+\\*
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected}, 
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled}, 
+\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{Timed\+Out}, 
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}, 
+\\*
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{In\+Call}, 
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}, 
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}, 
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected}, 
+\\*
+\hyperlink{toxav__many__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32}{accept\+\_\+friend\+\_\+request} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$data, size\+\_\+t length, void $\ast$userdata)
+\item 
+void \hyperlink{toxav__basic__test_8c_ab21fecc3b7e74f6d4e24c9e1c5368cc0}{callback\+\_\+recv\+\_\+invite} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a5105d1da4295a83e54df5efc9c55b920}{callback\+\_\+recv\+\_\+ringing} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448}{callback\+\_\+call\+\_\+started} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e}{callback\+\_\+call\+\_\+canceled} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb}{callback\+\_\+call\+\_\+rejected} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c}{callback\+\_\+call\+\_\+ended} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0}{callback\+\_\+peer\+\_\+cs\+\_\+change} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e}{callback\+\_\+self\+\_\+cs\+\_\+change} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f}{callback\+\_\+requ\+\_\+timeout} (void $\ast$av, int32\+\_\+t call\+\_\+index, void $\ast$\+\_\+arg)
+\item 
+void \hyperlink{toxav__basic__test_8c_ac9cd0506da132499a7d6e97225222d3b}{callback\+\_\+audio} (void $\ast$agent, int32\+\_\+t call\+\_\+idx, const int16\+\_\+t $\ast$P\+C\+M, uint16\+\_\+t size, void $\ast$data)
+\item 
+void \hyperlink{toxav__basic__test_8c_ae41144550a5d9e58f9d5f7168829c972}{callback\+\_\+video} (void $\ast$agent, int32\+\_\+t call\+\_\+idx, const vpx\+\_\+image\+\_\+t $\ast$img, void $\ast$data)
+\item 
+void \hyperlink{toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720}{register\+\_\+callbacks} (\hyperlink{toxav_8h_abdf4715f7de98af6ebe4c599cad42908}{Tox\+Av} $\ast$av, void $\ast$data)
+\item 
+\hyperlink{toxav__basic__test_8c_aa1d0def2e9aa37d5cb681d81baa07667}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+\+A\+V\+\_\+flows)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T Suite $\ast$ \hyperlink{toxav__basic__test_8c_ad7ac55b5ffe8ce8db9d56bb6eeadd9ad}{tox\+\_\+suite} (void)
+\item 
+int \hyperlink{toxav__basic__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{toxav_8h_ae30c65d2804a20349b0ea2ae240b209e}{Tox\+Av\+C\+Settings} \hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 27 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P@{C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P}}
+\index{C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P@{C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P(
+\begin{DoxyParamCaption}
+\item[{}]{Alice\+Call\+Type, }
+\item[{}]{Bob\+Call\+Type}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \textcolor{keywordtype}{int} step = 0, running = 1; \textcolor{keywordflow}{while} (running) \{\hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{\(\backslash\)}
+\hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{    tox\_iterate}(\hyperlink{toxav__many__test_8c_a7ff1f76195b55c73f549975552ba17ce}{bootstrap\_node}); \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Alice); 
+      \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Bob); \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{\(\backslash\)}
+\hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{    toxav\_do}(\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}); \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{toxav\_do}(
+      \hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}); \(\backslash\)
+    switch ( step ) \{\(\backslash\)
+        case 0: \textcolor{comment}{/* Alice */}  \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Alice is calling...\(\backslash\)n"});\hyperlink{toxav_8c_a4fde8db9bc925b8b5c4b974d8935daac}{\(\backslash\)}
+\hyperlink{toxav_8c_a4fde8db9bc925b8b5c4b974d8935daac}{            toxav\_call}(\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, 0, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}, 10); step++; \textcolor{keywordflow}{break}
+      ;\(\backslash\)
+        case 1: \textcolor{comment}{/* Bob */} \textcolor{keywordflow}{if} (\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == 
+      \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}) \{ \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Bob answers...\(\backslash\)n"});\(\backslash\)
+            cur\_time = time(NULL); \hyperlink{toxav_8c_a71ea4cbf449462254bc5982b810dfe20}{toxav\_answer}(\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, \hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}); step++; \} \textcolor{keywordflow}{break}; \(\backslash\)
+        case 2: \textcolor{comment}{/* Rtp transmission */} \(\backslash\)
+            if (\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{InCall} && 
+      \hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{InCall})
+\end{DoxyCode}
+
+
+Definition at line 233 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E@{T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E}}
+\index{T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E@{T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{break};\(\backslash\)
+case 3: \textcolor{comment}{/* Wait for Both to have status ended */}\(\backslash\)
+if (\hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended} && 
+      \hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control}.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}) running = 0; break; \} 
+      \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(20); \} \} \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}("\(\backslash\)n");
+\end{DoxyCode}
+
+
+Definition at line 246 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{toxav__basic__test_8c_a377e0aa60b93038e3e9bc14c57b3d87a}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Call\+Status@{Call\+Status}}
+\index{Call\+Status@{Call\+Status}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{Call\+Status}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf \+\_\+\+Call\+Status}  {\bf Call\+Status}}}\label{toxav__basic__test_8c_a377e0aa60b93038e3e9bc14c57b3d87a}
+\hypertarget{toxav__basic__test_8c_a6b3eabc1984dea93c1fe4b44079315f2}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Party@{Party}}
+\index{Party@{Party}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{Party}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+Party}  {\bf Party}}}\label{toxav__basic__test_8c_a6b3eabc1984dea93c1fe4b44079315f2}
+\hypertarget{toxav__basic__test_8c_a69532229a45f24a72a5d446da8db420f}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Status@{Status}}
+\index{Status@{Status}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+Status}  {\bf Status}}}\label{toxav__basic__test_8c_a69532229a45f24a72a5d446da8db420f}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!\+\_\+\+Call\+Status@{\+\_\+\+Call\+Status}}
+\index{\+\_\+\+Call\+Status@{\+\_\+\+Call\+Status}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{\+\_\+\+Call\+Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \+\_\+\+Call\+Status}}}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{none@{none}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!none@{none}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}
+}]\index{In\+Call@{In\+Call}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!In\+Call@{In\+Call}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{In\+Call}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}
+}]\index{Ringing@{Ringing}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Ringing@{Ringing}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}
+}]\index{Ended@{Ended}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Ended@{Ended}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}
+}]\index{Rejected@{Rejected}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Rejected@{Rejected}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}
+}]\index{Canceled@{Canceled}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Canceled@{Canceled}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}
+}]\index{Timed\+Out@{Timed\+Out}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Timed\+Out@{Timed\+Out}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{Timed\+Out}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}
+}]\index{none@{none}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!none@{none}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}
+}]\index{In\+Call@{In\+Call}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!In\+Call@{In\+Call}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{In\+Call}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}
+}]\index{Ringing@{Ringing}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Ringing@{Ringing}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}
+}]\index{Ended@{Ended}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Ended@{Ended}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}
+}]\index{Rejected@{Rejected}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Rejected@{Rejected}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}
+}]\index{Canceled@{Canceled}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!Canceled@{Canceled}}\item[{\em 
+\hypertarget{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled}\label{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 32 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+\begin{DoxyCode}
+32                          \{
+33     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none},
+34     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{InCall},
+35     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing},
+36     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended},
+37     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected},
+38     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled},
+39     \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{TimedOut}
+40 
+41 \} \hyperlink{toxav__basic__test_8c_a377e0aa60b93038e3e9bc14c57b3d87a}{CallStatus};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!accept\+\_\+friend\+\_\+request@{accept\+\_\+friend\+\_\+request}}
+\index{accept\+\_\+friend\+\_\+request@{accept\+\_\+friend\+\_\+request}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{accept\+\_\+friend\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}void accept\+\_\+friend\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{m, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32}
+
+
+Definition at line 58 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References tox\+\_\+friend\+\_\+add\+\_\+norequest().
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordflow}{if} (length == 7 && memcmp(\textcolor{stringliteral}{"gentoo"}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, 7) == 0) \{
+61         \hyperlink{tox_8c_ad499c853b628d04dd0f3c6ef5a14ebe4}{tox\_friend\_add\_norequest}(m, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, 0);
+62     \}
+63 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{d6/d19/toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_ac9cd0506da132499a7d6e97225222d3b}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+audio@{callback\+\_\+audio}}
+\index{callback\+\_\+audio@{callback\+\_\+audio}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+audio}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+audio (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{agent, }
+\item[{int32\+\_\+t}]{call\+\_\+idx, }
+\item[{const int16\+\_\+t $\ast$}]{P\+C\+M, }
+\item[{uint16\+\_\+t}]{size, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_ac9cd0506da132499a7d6e97225222d3b}
+
+
+Definition at line 206 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+207 \{\}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_ac9cd0506da132499a7d6e97225222d3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+call\+\_\+canceled@{callback\+\_\+call\+\_\+canceled}}
+\index{callback\+\_\+call\+\_\+canceled@{callback\+\_\+call\+\_\+canceled}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+call\+\_\+canceled}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+call\+\_\+canceled (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e}
+
+
+Definition at line 106 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, Canceled, printf(), and \+\_\+\+Party\+::status.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+107 \{
+108     \hyperlink{struct___status}{Status} *cast = \_arg;
+109 
+110     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+111         \textcolor{comment}{// ...}
+112     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+113         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf} ( \textcolor{stringliteral}{"Call Canceled for Bob!\(\backslash\)n"} );
+114         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled};
+115     \}
+116 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{d6/d19/toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+call\+\_\+ended@{callback\+\_\+call\+\_\+ended}}
+\index{callback\+\_\+call\+\_\+ended@{callback\+\_\+call\+\_\+ended}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+call\+\_\+ended}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+call\+\_\+ended (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c}
+
+
+Definition at line 131 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, Ended, printf(), and \+\_\+\+Party\+::status.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+132 \{
+133     \hyperlink{struct___status}{Status} *cast = \_arg;
+134 
+135     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+136         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf} ( \textcolor{stringliteral}{"Call ended for Alice!\(\backslash\)n"} );
+137         cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended};
+138     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+139         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf} ( \textcolor{stringliteral}{"Call ended for Bob!\(\backslash\)n"} );
+140         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended};
+141     \}
+142 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{d6/d19/toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+call\+\_\+rejected@{callback\+\_\+call\+\_\+rejected}}
+\index{callback\+\_\+call\+\_\+rejected@{callback\+\_\+call\+\_\+rejected}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+call\+\_\+rejected}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+call\+\_\+rejected (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb}
+
+
+Definition at line 117 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, printf(), Rejected, and \+\_\+\+Party\+::status.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+118 \{
+119     \hyperlink{struct___status}{Status} *cast = \_arg;
+120 
+121     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf} ( \textcolor{stringliteral}{"Call rejected by Bob!\(\backslash\)n"}
+122              \textcolor{stringliteral}{"Call ended for Alice!\(\backslash\)n"} );
+123 
+124     \textcolor{comment}{/* If Bob rejects, call is ended for alice and she sends ending */}
+125     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+126         cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected};
+127     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+128         \textcolor{comment}{//... ignor}
+129     \}
+130 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{d6/d19/toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+call\+\_\+started@{callback\+\_\+call\+\_\+started}}
+\index{callback\+\_\+call\+\_\+started@{callback\+\_\+call\+\_\+started}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+call\+\_\+started}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+call\+\_\+started (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448}
+
+
+Definition at line 92 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, In\+Call, printf(), \+\_\+\+Party\+::status, and toxav\+\_\+prepare\+\_\+transmission().
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+93 \{
+94     \hyperlink{struct___status}{Status} *cast = \_arg;
+95 
+96     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+97         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Call started on Alices side...\(\backslash\)n"});
+98         cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{InCall};
+99         \hyperlink{toxav_8c_a9f2a69dda0bfe14d2a2bcf2497967f31}{toxav\_prepare\_transmission}(av, call\_index, 1);
+100     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+101         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Call started on Bob side...\(\backslash\)n"});
+102         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6af07e4de3d57e5acb1cf98f4438715586}{InCall};
+103         \hyperlink{toxav_8c_a9f2a69dda0bfe14d2a2bcf2497967f31}{toxav\_prepare\_transmission}(av, call\_index, 1);
+104     \}
+105 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+peer\+\_\+cs\+\_\+change@{callback\+\_\+peer\+\_\+cs\+\_\+change}}
+\index{callback\+\_\+peer\+\_\+cs\+\_\+change@{callback\+\_\+peer\+\_\+cs\+\_\+change}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+peer\+\_\+cs\+\_\+change}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+peer\+\_\+cs\+\_\+change (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0}
+
+
+Definition at line 144 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+bitrate, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+channels, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+frame\+\_\+duration, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+sample\+\_\+rate, \+\_\+\+Tox\+Av\+C\+Settings\+::call\+\_\+type, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+height, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+width, printf(), toxav\+\_\+get\+\_\+peer\+\_\+csettings(), and \+\_\+\+Tox\+Av\+C\+Settings\+::video\+\_\+bitrate.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+145 \{
+146     \hyperlink{struct___tox_av_c_settings}{ToxAvCSettings} csettings;
+147     \hyperlink{toxav_8c_aaa65fd5f05a94ed9abf63c42f5e10ed4}{toxav\_get\_peer\_csettings}(av, call\_index, 0, &csettings);
+148 
+149     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Peer changing settings to: \(\backslash\)n"}
+150            \textcolor{stringliteral}{"Type: %u \(\backslash\)n"}
+151            \textcolor{stringliteral}{"Video bitrate: %u \(\backslash\)n"}
+152            \textcolor{stringliteral}{"Video height: %u \(\backslash\)n"}
+153            \textcolor{stringliteral}{"Video width: %u \(\backslash\)n"}
+154            \textcolor{stringliteral}{"Audio bitrate: %u \(\backslash\)n"}
+155            \textcolor{stringliteral}{"Audio framedur: %u \(\backslash\)n"}
+156            \textcolor{stringliteral}{"Audio sample rate: %u \(\backslash\)n"}
+157            \textcolor{stringliteral}{"Audio channels: %u \(\backslash\)n"},
+158            csettings.\hyperlink{struct___tox_av_c_settings_af8142c751283bdc9d14609ab3009b920}{call\_type},
+159            csettings.\hyperlink{struct___tox_av_c_settings_af0eac99d4181795e8a595d244e745192}{video\_bitrate},
+160            csettings.\hyperlink{struct___tox_av_c_settings_a4fef4b2fa1a8ae8446314ad0af4ce698}{max\_video\_height},
+161            csettings.\hyperlink{struct___tox_av_c_settings_ab81ecded1f7c46e120c8f2afa7b2c5cc}{max\_video\_width},
+162            csettings.\hyperlink{struct___tox_av_c_settings_a5d9a8b59b2eb1eef8dbdcb032bf1dd01}{audio\_bitrate},
+163            csettings.\hyperlink{struct___tox_av_c_settings_a61b592233f5a65705eb2600d38e365cd}{audio\_frame\_duration},
+164            csettings.\hyperlink{struct___tox_av_c_settings_a66da4482e934a2700e07a39fa0838559}{audio\_sample\_rate},
+165            csettings.\hyperlink{struct___tox_av_c_settings_a1b04e9669a2929f425e867440b6d826d}{audio\_channels}
+166           );
+167 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_ab21fecc3b7e74f6d4e24c9e1c5368cc0}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+recv\+\_\+invite@{callback\+\_\+recv\+\_\+invite}}
+\index{callback\+\_\+recv\+\_\+invite@{callback\+\_\+recv\+\_\+invite}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+recv\+\_\+invite}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+recv\+\_\+invite (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_ab21fecc3b7e74f6d4e24c9e1c5368cc0}
+
+
+Definition at line 67 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, \+\_\+\+Party\+::call\+\_\+index, Ringing, and \+\_\+\+Party\+::status.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+68 \{
+69     \hyperlink{struct___status}{Status} *cast = \_arg;
+70 
+71     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+72         \textcolor{comment}{// ...}
+73     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+74         \textcolor{comment}{/* Bob always receives invite */}
+75         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing};
+76         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index} = call\_index;
+77     \}
+78 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_ab21fecc3b7e74f6d4e24c9e1c5368cc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a5105d1da4295a83e54df5efc9c55b920}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+recv\+\_\+ringing@{callback\+\_\+recv\+\_\+ringing}}
+\index{callback\+\_\+recv\+\_\+ringing@{callback\+\_\+recv\+\_\+ringing}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+recv\+\_\+ringing}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+recv\+\_\+ringing (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a5105d1da4295a83e54df5efc9c55b920}
+
+
+Definition at line 79 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, Ringing, and \+\_\+\+Party\+::status.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+80 \{
+81     \hyperlink{struct___status}{Status} *cast = \_arg;
+82 
+83     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+84         \textcolor{comment}{/* Alice always sends invite */}
+85         cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing};
+86     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+87         \textcolor{comment}{// ...}
+88     \}
+89 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a5105d1da4295a83e54df5efc9c55b920_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+requ\+\_\+timeout@{callback\+\_\+requ\+\_\+timeout}}
+\index{callback\+\_\+requ\+\_\+timeout@{callback\+\_\+requ\+\_\+timeout}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+requ\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+requ\+\_\+timeout (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f}
+
+
+Definition at line 194 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Status\+::\+Alice, \+\_\+\+Party\+::av, \+\_\+\+Status\+::\+Bob, printf(), \+\_\+\+Party\+::status, and Timed\+Out.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+195 \{
+196     \hyperlink{struct___status}{Status} *cast = \_arg;
+197     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Call timed-out!\(\backslash\)n"});
+198 
+199     \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+200         cast->\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{TimedOut};
+201     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} == av) \{
+202         cast->\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} = \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{TimedOut};
+203     \}
+204 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d6/d19/toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+self\+\_\+cs\+\_\+change@{callback\+\_\+self\+\_\+cs\+\_\+change}}
+\index{callback\+\_\+self\+\_\+cs\+\_\+change@{callback\+\_\+self\+\_\+cs\+\_\+change}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+self\+\_\+cs\+\_\+change}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+self\+\_\+cs\+\_\+change (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{av, }
+\item[{int32\+\_\+t}]{call\+\_\+index, }
+\item[{void $\ast$}]{\+\_\+arg}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e}
+
+
+Definition at line 169 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+bitrate, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+channels, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+frame\+\_\+duration, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+sample\+\_\+rate, \+\_\+\+Tox\+Av\+C\+Settings\+::call\+\_\+type, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+height, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+width, printf(), toxav\+\_\+get\+\_\+peer\+\_\+csettings(), and \+\_\+\+Tox\+Av\+C\+Settings\+::video\+\_\+bitrate.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+170 \{
+171     \hyperlink{struct___tox_av_c_settings}{ToxAvCSettings} csettings;
+172     \hyperlink{toxav_8c_aaa65fd5f05a94ed9abf63c42f5e10ed4}{toxav\_get\_peer\_csettings}(av, call\_index, 0, &csettings);
+173 
+174     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Changed settings to: \(\backslash\)n"}
+175            \textcolor{stringliteral}{"Type: %u \(\backslash\)n"}
+176            \textcolor{stringliteral}{"Video bitrate: %u \(\backslash\)n"}
+177            \textcolor{stringliteral}{"Video height: %u \(\backslash\)n"}
+178            \textcolor{stringliteral}{"Video width: %u \(\backslash\)n"}
+179            \textcolor{stringliteral}{"Audio bitrate: %u \(\backslash\)n"}
+180            \textcolor{stringliteral}{"Audio framedur: %u \(\backslash\)n"}
+181            \textcolor{stringliteral}{"Audio sample rate: %u \(\backslash\)n"}
+182            \textcolor{stringliteral}{"Audio channels: %u \(\backslash\)n"},
+183            csettings.\hyperlink{struct___tox_av_c_settings_af8142c751283bdc9d14609ab3009b920}{call\_type},
+184            csettings.\hyperlink{struct___tox_av_c_settings_af0eac99d4181795e8a595d244e745192}{video\_bitrate},
+185            csettings.\hyperlink{struct___tox_av_c_settings_a4fef4b2fa1a8ae8446314ad0af4ce698}{max\_video\_height},
+186            csettings.\hyperlink{struct___tox_av_c_settings_ab81ecded1f7c46e120c8f2afa7b2c5cc}{max\_video\_width},
+187            csettings.\hyperlink{struct___tox_av_c_settings_a5d9a8b59b2eb1eef8dbdcb032bf1dd01}{audio\_bitrate},
+188            csettings.\hyperlink{struct___tox_av_c_settings_a61b592233f5a65705eb2600d38e365cd}{audio\_frame\_duration},
+189            csettings.\hyperlink{struct___tox_av_c_settings_a66da4482e934a2700e07a39fa0838559}{audio\_sample\_rate},
+190            csettings.\hyperlink{struct___tox_av_c_settings_a1b04e9669a2929f425e867440b6d826d}{audio\_channels}
+191           );
+192 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_ae41144550a5d9e58f9d5f7168829c972}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!callback\+\_\+video@{callback\+\_\+video}}
+\index{callback\+\_\+video@{callback\+\_\+video}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{callback\+\_\+video}]{\setlength{\rightskip}{0pt plus 5cm}void callback\+\_\+video (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{agent, }
+\item[{int32\+\_\+t}]{call\+\_\+idx, }
+\item[{const vpx\+\_\+image\+\_\+t $\ast$}]{img, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_ae41144550a5d9e58f9d5f7168829c972}
+
+
+Definition at line 209 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+Referenced by register\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+210 \{\}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_ae41144550a5d9e58f9d5f7168829c972_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 627 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References tox\+\_\+suite().
+
+
+\begin{DoxyCode}
+628 \{
+629     Suite *tox = \hyperlink{toxav__basic__test_8c_ad7ac55b5ffe8ce8db9d56bb6eeadd9ad}{tox\_suite}();
+630     SRunner *test\_runner = srunner\_create(tox);
+631 
+632     setbuf(stdout, NULL);
+633 
+634     srunner\_run\_all(test\_runner, CK\_NORMAL);
+635     \textcolor{keywordtype}{int} number\_failed = srunner\_ntests\_failed(test\_runner);
+636 
+637     srunner\_free(test\_runner);
+638 
+639     \textcolor{keywordflow}{return} number\_failed;
+640 
+641 \textcolor{comment}{//     return test\_AV\_flows();}
+642 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d6/d19/toxav__basic__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!register\+\_\+callbacks@{register\+\_\+callbacks}}
+\index{register\+\_\+callbacks@{register\+\_\+callbacks}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{register\+\_\+callbacks}]{\setlength{\rightskip}{0pt plus 5cm}void register\+\_\+callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox\+Av} $\ast$}]{av, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720}
+
+
+Definition at line 212 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References av\+\_\+\+On\+Cancel, av\+\_\+\+On\+End, av\+\_\+\+On\+Invite, av\+\_\+\+On\+Peer\+C\+S\+Change, av\+\_\+\+On\+Reject, av\+\_\+\+On\+Request\+Timeout, av\+\_\+\+On\+Ringing, av\+\_\+\+On\+Self\+C\+S\+Change, av\+\_\+\+On\+Start, callback\+\_\+audio(), callback\+\_\+call\+\_\+canceled(), callback\+\_\+call\+\_\+ended(), callback\+\_\+call\+\_\+rejected(), callback\+\_\+call\+\_\+started(), callback\+\_\+peer\+\_\+cs\+\_\+change(), callback\+\_\+recv\+\_\+invite(), callback\+\_\+recv\+\_\+ringing(), callback\+\_\+requ\+\_\+timeout(), callback\+\_\+self\+\_\+cs\+\_\+change(), callback\+\_\+video(), toxav\+\_\+register\+\_\+audio\+\_\+callback(), toxav\+\_\+register\+\_\+callstate\+\_\+callback(), and toxav\+\_\+register\+\_\+video\+\_\+callback().
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+213 \{
+214     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a2a5cee1a2c214e77eb5297bdd1a60448}{callback\_call\_started}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a92f50c5456de3eeda14193a5e884c0cf}{av\_OnStart}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+215     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_aad77aaccc31a1ce58b91a3ceea903c7e}{callback\_call\_canceled}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a90582ee9420545269b5b082ef00dcf17}{av\_OnCancel}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+216     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a9791fa3f6379df3f3f155079733c7abb}{callback\_call\_rejected}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a2166f20d690ab2717954b4f155a693b3}{av\_OnReject}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+217     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_ac837278acd5095f044b6401f41f6657c}{callback\_call\_ended}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a78762093a6530b1636bb445b31ef4994}{av\_OnEnd}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+218     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_ab21fecc3b7e74f6d4e24c9e1c5368cc0}{callback\_recv\_invite}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a3d3db933fe8452e1d52c11a9080211f2}{av\_OnInvite}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+219     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a5105d1da4295a83e54df5efc9c55b920}{callback\_recv\_ringing}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1af275e43f84fc5ec6fb751a07b8dad5f2}{av\_OnRinging}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+220     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a1754cee499ca46c2950d1fdb84ec6a3f}{callback\_requ\_timeout}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1a4f0fe7847414377341319aba0dec7c3d}{av\_OnRequestTimeout}, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+221     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a177ecca315a4b526c126e35ab95747a0}{callback\_peer\_cs\_change}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1aa9f918c4f8f6d8fb840ff01099f5ed11}{av\_OnPeerCSChange}, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+222     \hyperlink{toxav_8c_a9abb9d72d8ce906d4bfc5b472b617017}{toxav\_register\_callstate\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_a55f0a400c65d34ae3c2bd5cad03eb96e}{callback\_self\_cs\_change}, \hyperlink{toxav_8h_a67e2b4baef8db67a8e1d00618ad0f9a1abfd99096ef5bfa21f2e98c0e20f3b7bb}{av\_OnSelfCSChange}, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+223     \hyperlink{toxav_8c_a61dbbb75f2337c5c7c77acd83fffe639}{toxav\_register\_audio\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_ac9cd0506da132499a7d6e97225222d3b}{callback\_audio}, NULL);
+224     \hyperlink{toxav_8c_a22179185a68fe2a2f126b2c328670f73}{toxav\_register\_video\_callback}(av, 
+      \hyperlink{toxav__basic__test_8c_ae41144550a5d9e58f9d5f7168829c972}{callback\_video}, NULL);
+225 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d19/toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d6/d19/toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_aa1d0def2e9aa37d5cb681d81baa07667}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+\+A\+V\+\_\+flows}]{}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_aa1d0def2e9aa37d5cb681d81baa07667}
+
+
+Definition at line 250 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References accept\+\_\+friend\+\_\+request(), \+\_\+\+Status\+::\+Alice, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+bitrate, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+frame\+\_\+duration, \+\_\+\+Tox\+Av\+C\+Settings\+::audio\+\_\+sample\+\_\+rate, \+\_\+\+Party\+::av, av\+\_\+\+Default\+Settings, \+\_\+\+Status\+::\+Bob, bootstrap\+\_\+node, c\+\_\+sleep, C\+A\+L\+L\+\_\+\+A\+N\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+O\+O\+P, \+\_\+\+Party\+::call\+\_\+index, Canceled, ck\+\_\+assert\+\_\+msg(), Ended, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+height, \+\_\+\+Tox\+Av\+C\+Settings\+::max\+\_\+video\+\_\+width, none, off, printf(), register\+\_\+callbacks(), Rejected, Ringing, R\+T\+P\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+Z\+E, \+\_\+\+Party\+::status, status\+\_\+control, T\+E\+R\+M\+I\+N\+A\+T\+E\+\_\+\+S\+C\+O\+P\+E, Timed\+Out, T\+O\+X\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+S\+I\+Z\+E, tox\+\_\+callback\+\_\+friend\+\_\+request(), tox\+\_\+friend\+\_\+add(), tox\+\_\+friend\+\_\+get\+\_\+connection\+\_\+status(), tox\+\_\+iterate(), tox\+\_\+kill(), tox\+\_\+new(), tox\+\_\+self\+\_\+get\+\_\+address(), tox\+\_\+self\+\_\+get\+\_\+connection\+\_\+status(), toxav\+\_\+call(), toxav\+\_\+cancel(), toxav\+\_\+change\+\_\+settings(), toxav\+\_\+do(), toxav\+\_\+hangup(), toxav\+\_\+kill(), toxav\+\_\+kill\+\_\+transmission(), toxav\+\_\+new(), toxav\+\_\+prepare\+\_\+audio\+\_\+frame(), toxav\+\_\+reject(), and toxav\+\_\+send\+\_\+audio().
+
+
+\begin{DoxyCode}
+251 \{
+252     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} cur\_time = time(NULL);
+253     \hyperlink{struct_messenger}{Tox} *\hyperlink{toxav__many__test_8c_a7ff1f76195b55c73f549975552ba17ce}{bootstrap\_node} = \hyperlink{tox_8c_aa0e6afccd06a766b84a0633e259f9165}{tox\_new}(0, 0);
+254     \hyperlink{struct_messenger}{Tox} *Alice = \hyperlink{tox_8c_aa0e6afccd06a766b84a0633e259f9165}{tox\_new}(0, 0);
+255     \hyperlink{struct_messenger}{Tox} *Bob = \hyperlink{tox_8c_aa0e6afccd06a766b84a0633e259f9165}{tox\_new}(0, 0);
+256 
+257     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(bootstrap\_node || Alice || Bob, \textcolor{stringliteral}{"Failed to create 3 tox instances"});
+258 
+259     uint32\_t to\_compare = 974536;
+260     \hyperlink{tox_8c_a2cf9a901fd5db3b6635a3ece389cc349}{tox\_callback\_friend\_request}(Alice, 
+      \hyperlink{toxav__basic__test_8c_a23435c36683784fe0b913e77c8445c32}{accept\_friend\_request}, &to\_compare);
+261     uint8\_t address[\hyperlink{tox_8h_a3a8d42ad8b2803ba6d69e88aac567113}{TOX\_ADDRESS\_SIZE}];
+262     \hyperlink{tox_8c_ab52d4512e58c7ff8f62121beff5c0a49}{tox\_self\_get\_address}(Alice, address);
+263     uint32\_t test = \hyperlink{tox_8c_aa921c439baad10c03f8d93fda753b0b8}{tox\_friend\_add}(Bob, address, (uint8\_t *)\textcolor{stringliteral}{"gentoo"}, 7, 0);
+264 
+265     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(test == 0, \textcolor{stringliteral}{"Failed to add friend error code: %i"}, test);
+266 
+267     uint8\_t \hyperlink{toxav__many__test_8c_a2765e58b2af2f95eff3a9cc58d3457cd}{off} = 1;
+268 
+269     \textcolor{keywordflow}{while} (1) \{
+270         \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(bootstrap\_node);
+271         \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Alice);
+272         \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Bob);
+273 
+274         \textcolor{keywordflow}{if} (\hyperlink{tox_8c_a737d5d61ce41d26205b7e4a6edd7bc94}{tox\_self\_get\_connection\_status}(bootstrap\_node) && 
+      \hyperlink{tox_8c_a737d5d61ce41d26205b7e4a6edd7bc94}{tox\_self\_get\_connection\_status}(Alice)
+275                 && \hyperlink{tox_8c_a737d5d61ce41d26205b7e4a6edd7bc94}{tox\_self\_get\_connection\_status}(Bob)
+276                 && off) \{
+277             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Toxes are online, took %llu seconds\(\backslash\)n"}, time(NULL) - cur\_time);
+278             off = 0;
+279         \}
+280 
+281         \textcolor{keywordflow}{if} (\hyperlink{tox_8c_a21c61f8efb52a75bac6cb7858071d00a}{tox\_friend\_get\_connection\_status}(Alice, 0, 0) && 
+      \hyperlink{tox_8c_a21c61f8efb52a75bac6cb7858071d00a}{tox\_friend\_get\_connection\_status}(Bob, 0, 0))
+282             \textcolor{keywordflow}{break};
+283 
+284         \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(20);
+285     \}
+286 
+287     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"All set after %llu seconds! Starting call...\(\backslash\)n"}, time(NULL) - cur\_time);
+288 
+289     \hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps} = \hyperlink{toxav_8c_aff13faf6b338ca682c4c206b9fdde7fc}{av\_DefaultSettings};
+290     \hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}.\hyperlink{struct___tox_av_c_settings_a4fef4b2fa1a8ae8446314ad0af4ce698}{max\_video\_height} = \hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}.
+      \hyperlink{struct___tox_av_c_settings_ab81ecded1f7c46e120c8f2afa7b2c5cc}{max\_video\_width} = 128;
+291 
+292     \hyperlink{struct___status}{Status} \hyperlink{toxav__many__test_8c_ae61f0924cc4a13b15aefa21cd060ba36}{status\_control} = \{
+293         \{\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}, \hyperlink{toxav_8c_ab5565a6110643c428b28b2c79fb47b08}{toxav\_new}(Alice, 1), NULL, -1\},
+294         \{\hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6ab7e4e0120a041dbe6528b050c04269e0}{none}, \hyperlink{toxav_8c_ab5565a6110643c428b28b2c79fb47b08}{toxav\_new}(Bob, 1), NULL, -1\},
+295     \};
+296 
+297     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av} || status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, \textcolor{stringliteral}{"Failed to create 2 toxav instances"});
+298 
+299 
+300     \hyperlink{toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720}{register\_callbacks}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &status\_control);
+301     \hyperlink{toxav__basic__test_8c_a20d31a781f2f50db76459101b62c5720}{register\_callbacks}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &status\_control);
+302 
+303     \textcolor{keyword}{const} \textcolor{keywordtype}{int} frame\_size = (\hyperlink{toxav_8c_aff13faf6b338ca682c4c206b9fdde7fc}{av\_DefaultSettings}.
+      \hyperlink{struct___tox_av_c_settings_a66da4482e934a2700e07a39fa0838559}{audio\_sample\_rate} * \hyperlink{toxav_8c_aff13faf6b338ca682c4c206b9fdde7fc}{av\_DefaultSettings}.
+      \hyperlink{struct___tox_av_c_settings_a61b592233f5a65705eb2600d38e365cd}{audio\_frame\_duration} / 1000);
+304     int16\_t sample\_payload[frame\_size];
+305     randombytes((uint8\_t *)sample\_payload, \textcolor{keyword}{sizeof}(int16\_t) * frame\_size);
+306 
+307     uint8\_t prepared\_payload[\hyperlink{toxav_8h_a57ff20300c9a028d848ed26652b8d62e}{RTP\_PAYLOAD\_SIZE}];
+308     \textcolor{keywordtype}{int} payload\_size;
+309 
+310     vpx\_image\_t *sample\_image = vpx\_img\_alloc(NULL, VPX\_IMG\_FMT\_I420, 128, 128, 1);
+311 
+312     memcpy(sample\_image->planes[VPX\_PLANE\_Y], sample\_payload, 10);
+313     memcpy(sample\_image->planes[VPX\_PLANE\_U], sample\_payload, 10);
+314     memcpy(sample\_image->planes[VPX\_PLANE\_V], sample\_payload, 10);
+315 
+316 
+317     \textcolor{comment}{/*************************************************************************************************}
+318 \textcolor{comment}{     * Successful flows (when call starts)}
+319 \textcolor{comment}{     */}
+320 
+321     \textcolor{comment}{/*}
+322 \textcolor{comment}{     * Call with audio only on both sides. Alice calls Bob.}
+323 \textcolor{comment}{     */}
+324 
+325 
+326     \hyperlink{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{CALL\_AND\_START\_LOOP}(TypeAudio, TypeAudio) \{
+327         \textcolor{comment}{/* Both send */}
+328         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload,
+329                        1000, sample\_payload, frame\_size);
+330 
+331         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+332             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+333         \}
+334 
+335         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+336 
+337         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, 1000,
+338                        sample\_payload, frame\_size);
+339 
+340         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+341             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+342         \}
+343 
+344         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+345 
+346         \textcolor{keywordflow}{if} (time(NULL) - cur\_time > 10) \{ \textcolor{comment}{/* Transmit for 10 seconds */}
+347             step++; \textcolor{comment}{/* This terminates the loop */}
+348             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+349             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+350 
+351             \textcolor{comment}{/* Call over Alice hangs up */}
+352             \hyperlink{toxav_8c_a225958005e20091600e798e9827a5639}{toxav\_hangup}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+353         \}
+354     \}
+355     \hyperlink{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{TERMINATE\_SCOPE}()
+356 
+357 
+358     \textcolor{comment}{/*}
+359 \textcolor{comment}{     * Call with audio on both sides and video on one side. Alice calls Bob.}
+360 \textcolor{comment}{     */}
+361     \hyperlink{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{CALL\_AND\_START\_LOOP}(TypeAudio, TypeVideo) \{
+362         \textcolor{comment}{/* Both send */}
+363         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload,
+364                        1000, sample\_payload, frame\_size);
+365 
+366         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+367             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+368         \}
+369 
+370         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+371 
+372         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, 1000,
+373                        sample\_payload, frame\_size);
+374 
+375         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+376             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+377         \}
+378 
+379         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+380 
+381 \textcolor{comment}{//         toxav\_send\_video(status\_control.Bob.av, status\_control.Bob.call\_index, sample\_image);}
+382 
+383         \textcolor{keywordflow}{if} (time(NULL) - cur\_time > 10) \{ \textcolor{comment}{/* Transmit for 10 seconds */}
+384             step++; \textcolor{comment}{/* This terminates the loop */}
+385             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+386             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+387 
+388             \textcolor{comment}{/* Call over Alice hangs up */}
+389             \hyperlink{toxav_8c_a225958005e20091600e798e9827a5639}{toxav\_hangup}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+390         \}
+391     \}
+392     \hyperlink{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{TERMINATE\_SCOPE}()
+393 
+394 
+395     \textcolor{comment}{/*}
+396 \textcolor{comment}{     * Call with audio and video on both sides. Alice calls Bob.}
+397 \textcolor{comment}{     */}
+398     \hyperlink{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{CALL\_AND\_START\_LOOP}(TypeVideo, TypeVideo) \{
+399         \textcolor{comment}{/* Both send */}
+400 
+401         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload,
+402                        1000, sample\_payload, frame\_size);
+403 
+404         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+405             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+406         \}
+407 
+408         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+409 
+410         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, 1000,
+411                        sample\_payload, frame\_size);
+412 
+413         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+414             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+415         \}
+416 
+417         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+418 
+419 \textcolor{comment}{//         toxav\_send\_video(status\_control.Alice.av, status\_control.Alice.call\_index, sample\_image);}
+420 \textcolor{comment}{//         toxav\_send\_video(status\_control.Bob.av, status\_control.Bob.call\_index, sample\_image);}
+421 
+422 
+423         \textcolor{keywordflow}{if} (time(NULL) - cur\_time > 10) \{ \textcolor{comment}{/* Transmit for 10 seconds */}
+424             step++; \textcolor{comment}{/* This terminates the loop */}
+425             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+426             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+427 
+428             \textcolor{comment}{/* Call over Alice hangs up */}
+429             \hyperlink{toxav_8c_a225958005e20091600e798e9827a5639}{toxav\_hangup}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+430         \}
+431     \}
+432     \hyperlink{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{TERMINATE\_SCOPE}()
+433 
+434 
+435     uint64\_t times\_they\_are\_a\_changin = time(NULL);
+436     \textcolor{comment}{/* Media change */}
+437     \hyperlink{toxav__basic__test_8c_a868c44cdd0663077568503ff0bae8c0f}{CALL\_AND\_START\_LOOP}(TypeAudio, TypeAudio) \{
+438         \textcolor{comment}{/* Both send */}
+439         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload,
+440                        1000, sample\_payload, frame\_size);
+441 
+442         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+443             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+444         \}
+445 
+446         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+447 
+448         payload\_size = \hyperlink{toxav_8c_a64caf285a2ad7cadf24263e0f8f7a507}{toxav\_prepare\_audio\_frame}(status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, 1000,
+449                        sample\_payload, frame\_size);
+450 
+451         \textcolor{keywordflow}{if} ( payload\_size < 0 ) \{
+452             \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg} ( 0, \textcolor{stringliteral}{"Failed to encode payload"} );
+453         \}
+454 
+455         \hyperlink{toxav_8c_abd49d9a595a87814f54eeaa17d7ad833}{toxav\_send\_audio}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, prepared\_payload, payload\_size);
+456 
+457         \textcolor{comment}{/* Wait 2 seconds and change transmission type */}
+458         \textcolor{keywordflow}{if} (time(NULL) - times\_they\_are\_a\_changin > 2) \{
+459             times\_they\_are\_a\_changin = time(NULL);
+460             \hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}.\hyperlink{struct___tox_av_c_settings_a5d9a8b59b2eb1eef8dbdcb032bf1dd01}{audio\_bitrate} ++;
+461             \hyperlink{toxav_8c_a2ad323fd957032a11b1fadd4668f41ee}{toxav\_change\_settings}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps});
+462         \}
+463 
+464         \textcolor{keywordflow}{if} (time(NULL) - cur\_time > 10) \{ \textcolor{comment}{/* Transmit for 10 seconds */}
+465             step++; \textcolor{comment}{/* This terminates the loop */}
+466             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+467             \hyperlink{toxav_8c_aeef2a0ed5e716e7449d3f1c6053e31af}{toxav\_kill\_transmission}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.
+      \hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+468 
+469             \textcolor{comment}{/* Call over Alice hangs up */}
+470             \hyperlink{toxav_8c_a225958005e20091600e798e9827a5639}{toxav\_hangup}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index});
+471         \}
+472     \}
+473     \hyperlink{toxav__basic__test_8c_a52b005b13915cfadd4b2e37786da7c8d}{TERMINATE\_SCOPE}()
+474 
+475 
+476     \textcolor{comment}{/*************************************************************************************************}
+477 \textcolor{comment}{     * Other flows}
+478 \textcolor{comment}{     */}
+479 
+480     \textcolor{comment}{/*}
+481 \textcolor{comment}{     * Call and reject}
+482 \textcolor{comment}{     */}
+483     \{
+484         \textcolor{keywordtype}{int} step = 0;
+485         \textcolor{keywordtype}{int} running = 1;
+486 
+487         \textcolor{keywordflow}{while} (running) \{
+488             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(bootstrap\_node);
+489             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Alice);
+490             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Bob);
+491 
+492             \textcolor{keywordflow}{switch} ( step ) \{
+493                 \textcolor{keywordflow}{case} 0: \textcolor{comment}{/* Alice */}
+494                     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Alice is calling...\(\backslash\)n"});
+495                     \hyperlink{toxav_8c_a4fde8db9bc925b8b5c4b974d8935daac}{toxav\_call}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, 0, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}, 10);
+496                     step++;
+497                     \textcolor{keywordflow}{break};
+498 
+499                 \textcolor{keywordflow}{case} 1: \textcolor{comment}{/* Bob */}
+500                     \textcolor{keywordflow}{if} (status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}) \{
+501                         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Bob rejects...\(\backslash\)n"});
+502                         \hyperlink{toxav_8c_ad783f1a19a2765ff6924723193d05d07}{toxav\_reject}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, \textcolor{stringliteral}{"Who likes D's anyway?"});
+503                         step++;
+504                     \}
+505 
+506                     \textcolor{keywordflow}{break};
+507 
+508                 \textcolor{keywordflow}{case} 2:  \textcolor{comment}{/* Wait for Both to have status ended */}
+509                     \textcolor{keywordflow}{if} (status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a0b8669a891bca473fbe571e416c92c9c}{Rejected} && status\_control.
+      \hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a48497c08b7fcb0cec9e41a99b40d93a1}{Ended}) running = 0;
+510 
+511                     \textcolor{keywordflow}{break};
+512             \}
+513 
+514             \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(20);
+515         \}
+516 
+517         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)n"});
+518     \}
+519 
+520 
+521     \textcolor{comment}{/*}
+522 \textcolor{comment}{     * Call and cancel}
+523 \textcolor{comment}{     */}
+524     \{
+525         \textcolor{keywordtype}{int} step = 0;
+526         \textcolor{keywordtype}{int} running = 1;
+527 
+528         \textcolor{keywordflow}{while} (running) \{
+529             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(bootstrap\_node);
+530             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Alice);
+531             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Bob);
+532 
+533             \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{toxav\_do}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+534             \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{toxav\_do}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+535 
+536 
+537             \textcolor{keywordflow}{switch} ( step ) \{
+538                 \textcolor{keywordflow}{case} 0: \textcolor{comment}{/* Alice */}
+539                     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Alice is calling...\(\backslash\)n"});
+540                     \hyperlink{toxav_8c_a4fde8db9bc925b8b5c4b974d8935daac}{toxav\_call}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, 0, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}, 10);
+541                     step++;
+542                     \textcolor{keywordflow}{break};
+543 
+544 
+545                 \textcolor{keywordflow}{case} 1: \textcolor{comment}{/* Alice again */}
+546                     \textcolor{keywordflow}{if} (status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a9765b0c9beeacbbcfa8902594c67f12b}{Ringing}) \{
+547                         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Alice cancels...\(\backslash\)n"});
+548                         \hyperlink{toxav_8c_ae0d14b853f586b2e07d2d0ef62efc4eb}{toxav\_cancel}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, 0, \textcolor{stringliteral}{"Who likes D's anyway?"});
+549                         step++;
+550                     \}
+551 
+552                     \textcolor{keywordflow}{break};
+553 
+554                 \textcolor{keywordflow}{case} 2:  \textcolor{comment}{/* Wait for Both to have status ended */}
+555                     \textcolor{keywordflow}{if} (status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924}{Canceled}) running = 0;
+556 
+557                     \textcolor{keywordflow}{break};
+558             \}
+559 
+560             \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(20);
+561         \}
+562 
+563         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)n"});
+564     \}
+565 
+566     \textcolor{comment}{/*}
+567 \textcolor{comment}{     * Timeout}
+568 \textcolor{comment}{     */}
+569     \{
+570         \textcolor{keywordtype}{int} step = 0;
+571         \textcolor{keywordtype}{int} running = 1;
+572 
+573         \textcolor{keywordflow}{while} (running) \{
+574             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(bootstrap\_node);
+575             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Alice);
+576             \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(Bob);
+577 
+578             \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{toxav\_do}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+579             \hyperlink{toxav_8c_a78b4ac618a3683f06432c06594846121}{toxav\_do}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+580 
+581             \textcolor{keywordflow}{switch} ( step ) \{
+582                 \textcolor{keywordflow}{case} 0:
+583                     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Alice is calling...\(\backslash\)n"});
+584                     \hyperlink{toxav_8c_a4fde8db9bc925b8b5c4b974d8935daac}{toxav\_call}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av}, &status\_control.
+      \hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a80d8424fa1a3824067bbf99be2b3b0c4}{call\_index}, 0, &\hyperlink{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{muhcaps}, 10);
+585                     step++;
+586                     \textcolor{keywordflow}{break};
+587 
+588                 \textcolor{keywordflow}{case} 1:
+589                     \textcolor{keywordflow}{if} (status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_a722fcd2c2e22cc6de0a53383e5871290}{status} == \hyperlink{toxav__basic__test_8c_a2da3ed682e12326d279ce4085f1280f6a8cf58d23d6a737283e9320666348c363}{TimedOut}) running = 0;
+590 
+591                     \textcolor{keywordflow}{break};
+592             \}
+593 
+594             \hyperlink{toxav__basic__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(20);
+595         \}
+596 
+597         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)n"});
+598     \}
+599 
+600     vpx\_img\_free(sample\_image);
+601     \hyperlink{toxav__many__test_8c_a0f34a13f40f6dcb27fc8ea7541f7770f}{toxav\_kill}(status\_control.\hyperlink{struct___status_a0fd20957e107227630b542b146c276d4}{Alice}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+602     \hyperlink{toxav__many__test_8c_a0f34a13f40f6dcb27fc8ea7541f7770f}{toxav\_kill}(status\_control.\hyperlink{struct___status_a78cf423939bd332fd6e5ddae67134e01}{Bob}.\hyperlink{struct___party_abcfe1d5431cfdb232964a0a3380f4e7e}{av});
+603     \hyperlink{toxav__many__test_8c_af2393a0da85871ba0cefc23497cb19fa}{tox\_kill}(bootstrap\_node);
+604     \hyperlink{toxav__many__test_8c_af2393a0da85871ba0cefc23497cb19fa}{tox\_kill}(Alice);
+605     \hyperlink{toxav__many__test_8c_af2393a0da85871ba0cefc23497cb19fa}{tox\_kill}(Bob);
+606 
+607     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Calls ended!\(\backslash\)n"});
+608 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d6/d19/toxav__basic__test_8c_aa1d0def2e9aa37d5cb681d81baa07667_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{toxav__basic__test_8c_ad7ac55b5ffe8ce8db9d56bb6eeadd9ad}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!tox\+\_\+suite@{tox\+\_\+suite}}
+\index{tox\+\_\+suite@{tox\+\_\+suite}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{tox\+\_\+suite}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T Suite$\ast$ tox\+\_\+suite (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{toxav__basic__test_8c_ad7ac55b5ffe8ce8db9d56bb6eeadd9ad}
+
+
+Definition at line 619 of file toxav\+\_\+basic\+\_\+test.\+c.
+
+
+
+References D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E\+\_\+\+S\+L\+O\+W.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+620 \{
+621     Suite *s = suite\_create(\textcolor{stringliteral}{"ToxAV"});
+622 
+623     \hyperlink{helpers_8h_a04d7721023739a366a0baae1b1a32b50}{DEFTESTCASE\_SLOW}(AV\_flows, 200);
+624 
+625     \textcolor{keywordflow}{return} s;
+626 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d6/d19/toxav__basic__test_8c_ad7ac55b5ffe8ce8db9d56bb6eeadd9ad_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}{\index{toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}!muhcaps@{muhcaps}}
+\index{muhcaps@{muhcaps}!toxav\+\_\+basic\+\_\+test.\+c@{toxav\+\_\+basic\+\_\+test.\+c}}
+\subsubsection[{muhcaps}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tox\+Av\+C\+Settings} muhcaps\hspace{0.3cm}{\ttfamily [static]}}}\label{toxav__basic__test_8c_a9a04b640fede3b7f6ea91fbdc82d1e20}
+
+
+Definition at line 56 of file toxav\+\_\+basic\+\_\+test.\+c.
+

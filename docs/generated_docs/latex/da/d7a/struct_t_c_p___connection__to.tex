@@ -1,0 +1,119 @@
+\hypertarget{struct_t_c_p___connection__to}{\section{T\+C\+P\+\_\+\+Connection\+\_\+to Struct Reference}
+\label{struct_t_c_p___connection__to}\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+}
+
+
+{\ttfamily \#include $<$T\+C\+P\+\_\+connection.\+h$>$}
+
+
+
+Collaboration diagram for T\+C\+P\+\_\+\+Connection\+\_\+to\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{d8/d40/struct_t_c_p___connection__to__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection}\\
+\>unsigned int \hyperlink{struct_t_c_p___connection__to_aeed08ea57af6f7be240e2bf66162389f}{status}\\
+\>unsigned int \hyperlink{struct_t_c_p___connection__to_ababc90484b0c796e004410411e723f5e}{connection\_id}\\
+\} \hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections} \mbox{[}\hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}\mbox{]}\\
+
+\end{tabbing}\item 
+int \hyperlink{struct_t_c_p___connection__to_a7441ef0865bcb3db9b8064dd7375c1ea}{id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 54 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_t_c_p___connection__to_ababc90484b0c796e004410411e723f5e}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!connection\+\_\+id@{connection\+\_\+id}}
+\index{connection\+\_\+id@{connection\+\_\+id}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{connection\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int connection\+\_\+id}}\label{struct_t_c_p___connection__to_ababc90484b0c796e004410411e723f5e}
+
+
+Definition at line 61 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), and set\+\_\+tcp\+\_\+connection\+\_\+status().
+
+\hypertarget{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!connections@{connections}}
+\index{connections@{connections}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{connections}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   connections\mbox{[}{\bf M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}\mbox{]}}}\label{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+status(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), and tcp\+\_\+connection\+\_\+in\+\_\+conn().
+
+\hypertarget{struct_t_c_p___connection__to_a7441ef0865bcb3db9b8064dd7375c1ea}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!id@{id}}
+\index{id@{id}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int id}}\label{struct_t_c_p___connection__to_a7441ef0865bcb3db9b8064dd7375c1ea}
+
+
+Definition at line 64 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by new\+\_\+tcp\+\_\+connection\+\_\+to(), and tcp\+\_\+data\+\_\+callback().
+
+\hypertarget{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!public\+\_\+key@{public\+\_\+key}}
+\index{public\+\_\+key@{public\+\_\+key}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}
+
+
+Definition at line 56 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), find\+\_\+tcp\+\_\+connection\+\_\+to(), new\+\_\+tcp\+\_\+connection\+\_\+to(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), and tcp\+\_\+relay\+\_\+on\+\_\+online().
+
+\hypertarget{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!status@{status}}
+\index{status@{status}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 55 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), connections\+\_\+number\+\_\+not\+\_\+valid(), create\+\_\+connection(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), new\+\_\+tcp\+\_\+connection\+\_\+to(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+status(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), tcp\+\_\+status\+\_\+callback(), and wipe\+\_\+connection().
+
+\hypertarget{struct_t_c_p___connection__to_aeed08ea57af6f7be240e2bf66162389f}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!status@{status}}
+\index{status@{status}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int status}}\label{struct_t_c_p___connection__to_aeed08ea57af6f7be240e2bf66162389f}
+
+
+Definition at line 60 of file T\+C\+P\+\_\+connection.\+h.
+
+\hypertarget{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{\index{T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}!tcp\+\_\+connection@{tcp\+\_\+connection}}
+\index{tcp\+\_\+connection@{tcp\+\_\+connection}!T\+C\+P\+\_\+\+Connection\+\_\+to@{T\+C\+P\+\_\+\+Connection\+\_\+to}}
+\subsubsection[{tcp\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tcp\+\_\+connection}}\label{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}
+
+
+Definition at line 59 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+status(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), and tcp\+\_\+connection\+\_\+in\+\_\+conn().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{_t_c_p__connection_8h}{T\+C\+P\+\_\+connection.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,1075 @@
+\hypertarget{_t_c_p__client_8h}{\section{toxcore/\+T\+C\+P\+\_\+client.h File Reference}
+\label{_t_c_p__client_8h}\index{toxcore/\+T\+C\+P\+\_\+client.\+h@{toxcore/\+T\+C\+P\+\_\+client.\+h}}
+}
+{\ttfamily \#include \char`\"{}crypto\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+C\+P\+\_\+server.\+h\char`\"{}}\\*
+Include dependency graph for T\+C\+P\+\_\+client.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd6/_t_c_p__client_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dfe/_t_c_p__client_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_c_p___proxy___info}{T\+C\+P\+\_\+\+Proxy\+\_\+\+Info}
+\item 
+struct \hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_t_c_p__client_8h_a635ecd17e7464eb39a48fbab171ddeb6}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}~10
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215f}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E} \{ \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa1363fcd35acf73fb657e6ad4276a390a}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P}, 
+\hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa6b5dc5d756064d1b8619a5b18d0a9c2d}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5}
+ \}
+\item 
+enum \{ \\*
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18aec917285e6a0c8705ee78d80a5189ddf}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}, 
+\\*
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}, 
+\hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$ \hyperlink{_t_c_p__client_8h_aedb0d5c54ac7754bb342517247ac632d}{new\+\_\+\+T\+C\+P\+\_\+connection} (\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$self\+\_\+public\+\_\+key, const uint8\+\_\+t $\ast$self\+\_\+secret\+\_\+key, \hyperlink{struct_t_c_p___proxy___info}{T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$proxy\+\_\+info)
+\item 
+void \hyperlink{_t_c_p__client_8h_a3333858c51935f9f546cf923b07ed845}{do\+\_\+\+T\+C\+P\+\_\+connection} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$T\+C\+P\+\_\+connection)
+\item 
+void \hyperlink{_t_c_p__client_8h_a437ba55ccf24fb881acf298f3e225a63}{kill\+\_\+\+T\+C\+P\+\_\+connection} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$T\+C\+P\+\_\+connection)
+\item 
+int \hyperlink{_t_c_p__client_8h_a236ad67f85cc718a03fda2da3ade0787}{send\+\_\+onion\+\_\+request} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+void \hyperlink{_t_c_p__client_8h_ac71909171dbe8b0bdd4b349a9995634f}{onion\+\_\+response\+\_\+handler} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, int($\ast$onion\+\_\+callback)(void $\ast$object, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\item 
+int \hyperlink{_t_c_p__client_8h_a0dc7de6475c22a0a31722bbf7ebb8dc5}{send\+\_\+routing\+\_\+request} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+void \hyperlink{_t_c_p__client_8h_ac795068d9a0ba7b00db3db7bb5e217a7}{routing\+\_\+response\+\_\+handler} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, int($\ast$\hyperlink{_t_c_p__test_8c_aabbbe757608283acb298ba44b3b01706}{response\+\_\+callback})(void $\ast$object, uint8\+\_\+t connection\+\_\+id, const uint8\+\_\+t $\ast$public\+\_\+key), void $\ast$object)
+\item 
+void \hyperlink{_t_c_p__client_8h_a263bc470c2cc015cbb0f975ab5632eb8}{routing\+\_\+status\+\_\+handler} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, int($\ast$\hyperlink{_t_c_p__test_8c_ae4f12b6805a17277d33e73ac030d7aca}{status\+\_\+callback})(void $\ast$object, uint32\+\_\+t number, uint8\+\_\+t connection\+\_\+id, uint8\+\_\+t status), void $\ast$object)
+\item 
+int \hyperlink{_t_c_p__client_8h_af83d9fac2256a46428ad95bf337c05b7}{send\+\_\+disconnect\+\_\+request} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, uint8\+\_\+t con\+\_\+id)
+\item 
+int \hyperlink{_t_c_p__client_8h_a52921fadd1366f32c75e66d9c4340ed2}{set\+\_\+tcp\+\_\+connection\+\_\+number} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, uint8\+\_\+t con\+\_\+id, uint32\+\_\+t number)
+\item 
+int \hyperlink{_t_c_p__client_8h_aea842652030d00bd8302e3c0201f95b9}{send\+\_\+data} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, uint8\+\_\+t con\+\_\+id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+void \hyperlink{_t_c_p__client_8h_ab913946e478e2ead06cb9eccb7b7249b}{routing\+\_\+data\+\_\+handler} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, int($\ast$\hyperlink{_t_c_p__test_8c_a36ed22ce4a6bec3fb113a4eaf29df5e1}{data\+\_\+callback})(void $\ast$object, uint32\+\_\+t number, uint8\+\_\+t connection\+\_\+id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\item 
+int \hyperlink{_t_c_p__client_8h_a7818a314434c2bb01c3ea406744f076b}{send\+\_\+oob\+\_\+packet} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+void \hyperlink{_t_c_p__client_8h_a34d78d05e93ac72b24092da391b05aa8}{oob\+\_\+data\+\_\+handler} (\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$con, int($\ast$\hyperlink{_t_c_p__test_8c_a7a0dc2152e401dc318c450f172b3c124}{oob\+\_\+data\+\_\+callback})(void $\ast$object, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_t_c_p__client_8h_a635ecd17e7464eb39a48fbab171ddeb6}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T~10}}\label{_t_c_p__client_8h_a635ecd17e7464eb39a48fbab171ddeb6}
+
+
+Definition at line 30 of file T\+C\+P\+\_\+client.\+h.
+
+
+
+Referenced by new\+\_\+\+T\+C\+P\+\_\+connection().
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18aec917285e6a0c8705ee78d80a5189ddf}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+N\+O\+\_\+\+S\+T\+A\+T\+U\+S}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18aec917285e6a0c8705ee78d80a5189ddf}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}
+}]\index{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D@{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}\label{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 43 of file T\+C\+P\+\_\+client.\+h.
+
+
+\begin{DoxyCode}
+43      \{
+44     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18aec917285e6a0c8705ee78d80a5189ddf}{TCP\_CLIENT\_NO\_STATUS},
+45     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}{TCP\_CLIENT\_PROXY\_HTTP\_CONNECTING},
+46     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}{TCP\_CLIENT\_PROXY\_SOCKS5\_CONNECTING},
+47     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}{TCP\_CLIENT\_PROXY\_SOCKS5\_UNCONFIRMED},
+48     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{TCP\_CLIENT\_CONNECTING},
+49     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}{TCP\_CLIENT\_UNCONFIRMED},
+50     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}{TCP\_CLIENT\_CONFIRMED},
+51     \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED},
+52 \};
+\end{DoxyCode}
+\hypertarget{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215f}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E}}
+\index{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+T\+Y\+P\+E}}}\label{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E}\label{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}
+}]\index{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa1363fcd35acf73fb657e6ad4276a390a}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P}\label{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa1363fcd35acf73fb657e6ad4276a390a}
+}]\index{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5@{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5}}\item[{\em 
+\hypertarget{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa6b5dc5d756064d1b8619a5b18d0a9c2d}{T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5}\label{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa6b5dc5d756064d1b8619a5b18d0a9c2d}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 32 of file T\+C\+P\+\_\+client.\+h.
+
+
+\begin{DoxyCode}
+32              \{
+33     \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{TCP\_PROXY\_NONE},
+34     \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa1363fcd35acf73fb657e6ad4276a390a}{TCP\_PROXY\_HTTP},
+35     \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa6b5dc5d756064d1b8619a5b18d0a9c2d}{TCP\_PROXY\_SOCKS5}
+36 \} \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215f}{TCP\_PROXY\_TYPE};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{_t_c_p__client_8h_a3333858c51935f9f546cf923b07ed845}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!do\+\_\+\+T\+C\+P\+\_\+connection@{do\+\_\+\+T\+C\+P\+\_\+connection}}
+\index{do\+\_\+\+T\+C\+P\+\_\+connection@{do\+\_\+\+T\+C\+P\+\_\+connection}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{do\+\_\+\+T\+C\+P\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+\+T\+C\+P\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{T\+C\+P\+\_\+connection}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a3333858c51935f9f546cf923b07ed845}
+
+
+Definition at line 870 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References make-\/funny-\/savefile\+::data, do\+\_\+confirmed\+\_\+\+T\+C\+P(), generate\+\_\+handshake(), handle\+\_\+handshake(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::kill\+\_\+at, proxy\+\_\+http\+\_\+read\+\_\+connection\+\_\+response(), proxy\+\_\+socks5\+\_\+generate\+\_\+connection\+\_\+request(), proxy\+\_\+socks5\+\_\+read\+\_\+connection\+\_\+response(), read\+\_\+\+T\+C\+P\+\_\+packet(), send\+\_\+pending\+\_\+data(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::sock, socks5\+\_\+read\+\_\+handshake\+\_\+response(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D, T\+C\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+I\+Z\+E, unix\+\_\+time(), and unix\+\_\+time\+\_\+update().
+
+
+
+Referenced by do\+\_\+tcp\+\_\+conns(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+871 \{
+872     \hyperlink{util_8c_a849af10dd491723cf3abdef599846897}{unix\_time\_update}();
+873 
+874     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED}) \{
+875         \textcolor{keywordflow}{return};
+876     \}
+877 
+878     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}{TCP\_CLIENT\_PROXY\_HTTP\_CONNECTING}) \{
+879         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a878656cc36ac482c8063082d0d86850f}{send\_pending\_data}(TCP\_connection) == 0) \{
+880             \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__client_8c_a39080f686c09274aa55d7b352fcadd56}{proxy\_http\_read\_connection\_response}(TCP\_connection
+      );
+881 
+882             \textcolor{keywordflow}{if} (ret == -1) \{
+883                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = 0;
+884                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED};
+885             \}
+886 
+887             \textcolor{keywordflow}{if} (ret == 1) \{
+888                 \hyperlink{_t_c_p__client_8c_aec632a758fda6b73153ec16180750366}{generate\_handshake}(TCP\_connection);
+889                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{TCP\_CLIENT\_CONNECTING};
+890             \}
+891         \}
+892     \}
+893 
+894     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}{TCP\_CLIENT\_PROXY\_SOCKS5\_CONNECTING}
+      ) \{
+895         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a878656cc36ac482c8063082d0d86850f}{send\_pending\_data}(TCP\_connection) == 0) \{
+896             \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__client_8c_ada9457c0effffd236ca9c4a004ee8942}{socks5\_read\_handshake\_response}(TCP\_connection);
+897 
+898             \textcolor{keywordflow}{if} (ret == -1) \{
+899                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = 0;
+900                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED};
+901             \}
+902 
+903             \textcolor{keywordflow}{if} (ret == 1) \{
+904                 \hyperlink{_t_c_p__client_8c_a07b625ae786316d0942152868af0226b}{proxy\_socks5\_generate\_connection\_request}(
+      TCP\_connection);
+905                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = 
+      \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}{TCP\_CLIENT\_PROXY\_SOCKS5\_UNCONFIRMED};
+906             \}
+907         \}
+908     \}
+909 
+910     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a998aec1006122df9892c2ffc4f94c6cb}{TCP\_CLIENT\_PROXY\_SOCKS5\_UNCONFIRMED}
+      ) \{
+911         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a878656cc36ac482c8063082d0d86850f}{send\_pending\_data}(TCP\_connection) == 0) \{
+912             \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__client_8c_a258117084993caf09bd2d1c04425d7f0}{proxy\_socks5\_read\_connection\_response}(
+      TCP\_connection);
+913 
+914             \textcolor{keywordflow}{if} (ret == -1) \{
+915                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = 0;
+916                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED};
+917             \}
+918 
+919             \textcolor{keywordflow}{if} (ret == 1) \{
+920                 \hyperlink{_t_c_p__client_8c_aec632a758fda6b73153ec16180750366}{generate\_handshake}(TCP\_connection);
+921                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{TCP\_CLIENT\_CONNECTING};
+922             \}
+923         \}
+924     \}
+925 
+926     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{TCP\_CLIENT\_CONNECTING}) \{
+927         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a878656cc36ac482c8063082d0d86850f}{send\_pending\_data}(TCP\_connection) == 0) \{
+928             TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}{TCP\_CLIENT\_UNCONFIRMED};
+929         \}
+930     \}
+931 
+932     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a1d498784503bcb95d53252e4fee9ef31}{TCP\_CLIENT\_UNCONFIRMED}) \{
+933         uint8\_t \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[\hyperlink{_t_c_p__server_8h_a88a61b02e465cd8c05fbae1def1066f2}{TCP\_SERVER\_HANDSHAKE\_SIZE}];
+934         \textcolor{keywordtype}{int} len = \hyperlink{_t_c_p__server_8c_a88eda37b476d8dcfdba94899e740dd9e}{read\_TCP\_packet}(TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, data, \textcolor{keyword}{sizeof}(data));
+935 
+936         \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(data) == len) \{
+937             \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a4f324d76d4f1f967dab83e064d09c58a}{handle\_handshake}(TCP\_connection, data) == 0) \{
+938                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = ~0;
+939                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}{TCP\_CLIENT\_CONFIRMED};
+940             \} \textcolor{keywordflow}{else} \{
+941                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = 0;
+942                 TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED};
+943             \}
+944         \}
+945     \}
+946 
+947     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a5751b9ce4d04cb2496f4eeec142ddaf1}{TCP\_CLIENT\_CONFIRMED}) \{
+948         \hyperlink{_t_c_p__client_8c_a8fef95bc96c35d09a2705f79d7e08a5a}{do\_confirmed\_TCP}(TCP\_connection);
+949     \}
+950 
+951     \textcolor{keywordflow}{if} (TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} <= \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}()) \{
+952         TCP\_connection->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a066a0f8bc9d1c9b8e46e6eba719e703c}{TCP\_CLIENT\_DISCONNECTED};
+953     \}
+954 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a3333858c51935f9f546cf923b07ed845_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a3333858c51935f9f546cf923b07ed845_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a437ba55ccf24fb881acf298f3e225a63}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!kill\+\_\+\+T\+C\+P\+\_\+connection@{kill\+\_\+\+T\+C\+P\+\_\+connection}}
+\index{kill\+\_\+\+T\+C\+P\+\_\+connection@{kill\+\_\+\+T\+C\+P\+\_\+connection}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{kill\+\_\+\+T\+C\+P\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+\+T\+C\+P\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{T\+C\+P\+\_\+connection}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a437ba55ccf24fb881acf298f3e225a63}
+
+
+Definition at line 958 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References kill\+\_\+sock(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::sock, and wipe\+\_\+priority\+\_\+list().
+
+
+
+Referenced by kill\+\_\+tcp\+\_\+connections(), kill\+\_\+tcp\+\_\+relay\+\_\+connection(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+959 \{
+960     \textcolor{keywordflow}{if} (TCP\_connection == NULL)
+961         \textcolor{keywordflow}{return};
+962 
+963     \hyperlink{_t_c_p__client_8c_aaf4385f749c6f9c21f4f4ac17b31a77b}{wipe\_priority\_list}(TCP\_connection);
+964     \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(TCP\_connection->\hyperlink{struct_t_c_p___client___connection_a35b19d84fb632ca8ce5cab237f7089a5}{sock});
+965     memset(TCP\_connection, 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_t_c_p___client___connection}{TCP\_Client\_Connection}));
+966     free(TCP\_connection);
+967 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d0/df3/_t_c_p__client_8h_a437ba55ccf24fb881acf298f3e225a63_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a437ba55ccf24fb881acf298f3e225a63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_aedb0d5c54ac7754bb342517247ac632d}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!new\+\_\+\+T\+C\+P\+\_\+connection@{new\+\_\+\+T\+C\+P\+\_\+connection}}
+\index{new\+\_\+\+T\+C\+P\+\_\+connection@{new\+\_\+\+T\+C\+P\+\_\+connection}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{new\+\_\+\+T\+C\+P\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection}$\ast$ new\+\_\+\+T\+C\+P\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{self\+\_\+public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{self\+\_\+secret\+\_\+key, }
+\item[{{\bf T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$}]{proxy\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_aedb0d5c54ac7754bb342517247ac632d}
+
+
+Definition at line 611 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References connect\+\_\+sock\+\_\+to(), encrypt\+\_\+precompute(), I\+P\+::family, generate\+\_\+handshake(), I\+P\+\_\+\+Port\+::ip, T\+C\+P\+\_\+\+Proxy\+\_\+\+Info\+::ip\+\_\+port, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::ip\+\_\+port, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::kill\+\_\+at, kill\+\_\+sock(), networking\+\_\+at\+\_\+startup(), proxy\+\_\+http\+\_\+generate\+\_\+connection\+\_\+request(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::proxy\+\_\+info, proxy\+\_\+socks5\+\_\+generate\+\_\+handshake(), T\+C\+P\+\_\+\+Proxy\+\_\+\+Info\+::proxy\+\_\+type, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::public\+\_\+key, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::self\+\_\+public\+\_\+key, set\+\_\+socket\+\_\+nonblock(), set\+\_\+socket\+\_\+nosigpipe(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::shared\+\_\+key, sock, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::sock, sock\+\_\+valid(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T, T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+T\+T\+P, T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+N\+O\+N\+E, T\+C\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+S\+O\+C\+K\+S5, and unix\+\_\+time().
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+instance(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+
+\begin{DoxyCode}
+613 \{
+614     \textcolor{keywordflow}{if} (\hyperlink{network_8c_ad953dedd6d25d03cf441960dd1e1fed1}{networking\_at\_startup}() != 0) \{
+615         \textcolor{keywordflow}{return} NULL;
+616     \}
+617 
+618     \textcolor{keywordflow}{if} (ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET && ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET6)
+619         \textcolor{keywordflow}{return} NULL;
+620 
+621     uint8\_t family = ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+622 
+623     \hyperlink{struct_t_c_p___proxy___info}{TCP\_Proxy\_Info} default\_proxyinfo;
+624 
+625     \textcolor{keywordflow}{if} (proxy\_info == NULL) \{
+626         default\_proxyinfo.\hyperlink{struct_t_c_p___proxy___info_a23a098bd0536ae2000e1944e353b7d8b}{proxy\_type} = \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{TCP\_PROXY\_NONE};
+627         proxy\_info = &default\_proxyinfo;
+628     \}
+629 
+630     \textcolor{keywordflow}{if} (proxy\_info->\hyperlink{struct_t_c_p___proxy___info_a23a098bd0536ae2000e1944e353b7d8b}{proxy\_type} != \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{TCP\_PROXY\_NONE}) \{
+631         family = proxy\_info->\hyperlink{struct_t_c_p___proxy___info_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+632     \}
+633 
+634     \hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\_t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock} = \hyperlink{namespacesocket}{socket}(family, SOCK\_STREAM, IPPROTO\_TCP);
+635 
+636     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a84c3240a3325cbdaaa8a206c96980cd1}{sock\_valid}(sock)) \{
+637         \textcolor{keywordflow}{return} NULL;
+638     \}
+639 
+640     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a379153c027c17d7c71797cb0e3ea41a3}{set\_socket\_nosigpipe}(sock)) \{
+641         \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(sock);
+642         \textcolor{keywordflow}{return} 0;
+643     \}
+644 
+645     \textcolor{keywordflow}{if} (!(\hyperlink{network_8c_a6a50bb1345f2d5192fe1ec23ac7a1da9}{set\_socket\_nonblock}(sock) && \hyperlink{_t_c_p__client_8c_a60b303142f843cad13249065ddeefb17}{connect\_sock\_to}(sock, ip\_port, 
+      proxy\_info))) \{
+646         \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(sock);
+647         \textcolor{keywordflow}{return} NULL;
+648     \}
+649 
+650     \hyperlink{struct_t_c_p___client___connection}{TCP\_Client\_Connection} *temp = calloc(\textcolor{keyword}{sizeof}(
+      \hyperlink{struct_t_c_p___client___connection}{TCP\_Client\_Connection}), 1);
+651 
+652     \textcolor{keywordflow}{if} (temp == NULL) \{
+653         \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(sock);
+654         \textcolor{keywordflow}{return} NULL;
+655     \}
+656 
+657     temp->\hyperlink{struct_t_c_p___client___connection_a35b19d84fb632ca8ce5cab237f7089a5}{sock} = \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock};
+658     memcpy(temp->\hyperlink{struct_t_c_p___client___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+659     memcpy(temp->\hyperlink{struct_t_c_p___client___connection_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, self\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+660     \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(temp->\hyperlink{struct_t_c_p___client___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, self\_secret\_key, temp->
+      \hyperlink{struct_t_c_p___client___connection_a81ead9fac55a0cedc30a96253a2c5119}{shared\_key});
+661     temp->\hyperlink{struct_t_c_p___client___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ip\_port;
+662     temp->\hyperlink{struct_t_c_p___client___connection_aa737023350cf47e63993e3b4dc9a7472}{proxy\_info} = *proxy\_info;
+663 
+664     \textcolor{keywordflow}{switch} (proxy\_info->\hyperlink{struct_t_c_p___proxy___info_a23a098bd0536ae2000e1944e353b7d8b}{proxy\_type}) \{
+665         \textcolor{keywordflow}{case} \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa1363fcd35acf73fb657e6ad4276a390a}{TCP\_PROXY\_HTTP}:
+666             temp->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acbb2a0d8636aaaf83994cc2fee5cc12a}{TCP\_CLIENT\_PROXY\_HTTP\_CONNECTING};
+667             \hyperlink{_t_c_p__client_8c_a3000ce77c7c25ee8a08da815cbd0c7cb}{proxy\_http\_generate\_connection\_request}(temp);
+668             \textcolor{keywordflow}{break};
+669 
+670         \textcolor{keywordflow}{case} \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa6b5dc5d756064d1b8619a5b18d0a9c2d}{TCP\_PROXY\_SOCKS5}:
+671             temp->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18acdc6053e3ea63e538d6515ff9a4b02ce}{TCP\_CLIENT\_PROXY\_SOCKS5\_CONNECTING};
+672             \hyperlink{_t_c_p__client_8c_a76c75a8969ec140e5799744179ba8048}{proxy\_socks5\_generate\_handshake}(temp);
+673             \textcolor{keywordflow}{break};
+674 
+675         \textcolor{keywordflow}{case} \hyperlink{_t_c_p__client_8h_ae3f1e841d616cab3ff982b5560aa215fa03246331c1cd872e9461ec9cd79f1f7c}{TCP\_PROXY\_NONE}:
+676             temp->\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__client_8h_ae4d5251432e1a9e6803c0240cc492e18a9430d92af78e28f5ac054a303886c124}{TCP\_CLIENT\_CONNECTING};
+677 
+678             \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_aec632a758fda6b73153ec16180750366}{generate\_handshake}(temp) == -1) \{
+679                 \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(sock);
+680                 free(temp);
+681                 \textcolor{keywordflow}{return} NULL;
+682             \}
+683 
+684             \textcolor{keywordflow}{break};
+685     \}
+686 
+687     temp->\hyperlink{struct_t_c_p___client___connection_a2da98b8c0615e4e5fe47dd5f3bdebfab}{kill\_at} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}() + \hyperlink{_t_c_p__client_8h_a635ecd17e7464eb39a48fbab171ddeb6}{TCP\_CONNECTION\_TIMEOUT};
+688 
+689     \textcolor{keywordflow}{return} temp;
+690 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_aedb0d5c54ac7754bb342517247ac632d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_aedb0d5c54ac7754bb342517247ac632d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_ac71909171dbe8b0bdd4b349a9995634f}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!onion\+\_\+response\+\_\+handler@{onion\+\_\+response\+\_\+handler}}
+\index{onion\+\_\+response\+\_\+handler@{onion\+\_\+response\+\_\+handler}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{onion\+\_\+response\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void onion\+\_\+response\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{int($\ast$)(void $\ast$object, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{onion\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_ac71909171dbe8b0bdd4b349a9995634f}
+
+
+Definition at line 602 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::onion\+\_\+callback, and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::onion\+\_\+callback\+\_\+object.
+
+
+
+Referenced by tcp\+\_\+relay\+\_\+set\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+604 \{
+605     con->\hyperlink{struct_t_c_p___client___connection_ab6dd4883cc217ef4c036cb404f036a47}{onion\_callback} = onion\_callback;
+606     con->\hyperlink{struct_t_c_p___client___connection_a975f7347f9eee77bcd1eb36b5e913021}{onion\_callback\_object} = object;
+607 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_ac71909171dbe8b0bdd4b349a9995634f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a34d78d05e93ac72b24092da391b05aa8}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!oob\+\_\+data\+\_\+handler@{oob\+\_\+data\+\_\+handler}}
+\index{oob\+\_\+data\+\_\+handler@{oob\+\_\+data\+\_\+handler}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{oob\+\_\+data\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void oob\+\_\+data\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{int($\ast$)(void $\ast$object, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{oob\+\_\+data\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a34d78d05e93ac72b24092da391b05aa8}
+
+
+Definition at line 515 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::oob\+\_\+data\+\_\+callback, oob\+\_\+data\+\_\+callback(), and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::oob\+\_\+data\+\_\+callback\+\_\+object.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+relay\+\_\+set\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+517 \{
+518     con->\hyperlink{struct_t_c_p___client___connection_a3f8394ec4439b5730e80f10d6951b845}{oob\_data\_callback} = \hyperlink{_t_c_p__test_8c_a7a0dc2152e401dc318c450f172b3c124}{oob\_data\_callback};
+519     con->\hyperlink{struct_t_c_p___client___connection_a3bd56ba2917797a0eea802a7192ef031}{oob\_data\_callback\_object} = object;
+520 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{d0/df3/_t_c_p__client_8h_a34d78d05e93ac72b24092da391b05aa8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a34d78d05e93ac72b24092da391b05aa8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_ab913946e478e2ead06cb9eccb7b7249b}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!routing\+\_\+data\+\_\+handler@{routing\+\_\+data\+\_\+handler}}
+\index{routing\+\_\+data\+\_\+handler@{routing\+\_\+data\+\_\+handler}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{routing\+\_\+data\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void routing\+\_\+data\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{int($\ast$)(void $\ast$object, uint32\+\_\+t number, uint8\+\_\+t connection\+\_\+id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{data\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_ab913946e478e2ead06cb9eccb7b7249b}
+
+
+Definition at line 508 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::data\+\_\+callback, data\+\_\+callback(), and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::data\+\_\+callback\+\_\+object.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+relay\+\_\+set\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+510 \{
+511     con->\hyperlink{struct_t_c_p___client___connection_a2da80454e9a05921b2c6616ffb021eec}{data\_callback} = \hyperlink{_t_c_p__test_8c_a36ed22ce4a6bec3fb113a4eaf29df5e1}{data\_callback};
+512     con->\hyperlink{struct_t_c_p___client___connection_a9135a1782241a1b2d5e9bcedef0c29a5}{data\_callback\_object} = object;
+513 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{d0/df3/_t_c_p__client_8h_ab913946e478e2ead06cb9eccb7b7249b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_ab913946e478e2ead06cb9eccb7b7249b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_ac795068d9a0ba7b00db3db7bb5e217a7}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!routing\+\_\+response\+\_\+handler@{routing\+\_\+response\+\_\+handler}}
+\index{routing\+\_\+response\+\_\+handler@{routing\+\_\+response\+\_\+handler}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{routing\+\_\+response\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void routing\+\_\+response\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{int($\ast$)(void $\ast$object, uint8\+\_\+t connection\+\_\+id, const uint8\+\_\+t $\ast$public\+\_\+key)}]{response\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_ac795068d9a0ba7b00db3db7bb5e217a7}
+
+
+Definition at line 434 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::response\+\_\+callback, response\+\_\+callback(), and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::response\+\_\+callback\+\_\+object.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+relay\+\_\+set\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+436 \{
+437     con->\hyperlink{struct_t_c_p___client___connection_ab32747bc59a98c0c7127293859eccb85}{response\_callback} = \hyperlink{_t_c_p__test_8c_aabbbe757608283acb298ba44b3b01706}{response\_callback};
+438     con->\hyperlink{struct_t_c_p___client___connection_a60ca473249fab46aefe6f89158bd5a52}{response\_callback\_object} = object;
+439 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_ac795068d9a0ba7b00db3db7bb5e217a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_ac795068d9a0ba7b00db3db7bb5e217a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a263bc470c2cc015cbb0f975ab5632eb8}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!routing\+\_\+status\+\_\+handler@{routing\+\_\+status\+\_\+handler}}
+\index{routing\+\_\+status\+\_\+handler@{routing\+\_\+status\+\_\+handler}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{routing\+\_\+status\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void routing\+\_\+status\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{int($\ast$)(void $\ast$object, uint32\+\_\+t number, uint8\+\_\+t connection\+\_\+id, uint8\+\_\+t status)}]{status\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a263bc470c2cc015cbb0f975ab5632eb8}
+
+
+Definition at line 441 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status\+\_\+callback, status\+\_\+callback(), and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status\+\_\+callback\+\_\+object.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+relay\+\_\+set\+\_\+callbacks().
+
+
+\begin{DoxyCode}
+443 \{
+444     con->\hyperlink{struct_t_c_p___client___connection_a8c56af2094f8d2846998b395dbcaef18}{status\_callback} = \hyperlink{_t_c_p__test_8c_ae4f12b6805a17277d33e73ac030d7aca}{status\_callback};
+445     con->\hyperlink{struct_t_c_p___client___connection_a73f125475af5ebdac27d2c2a9060039b}{status\_callback\_object} = object;
+446 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d0/df3/_t_c_p__client_8h_a263bc470c2cc015cbb0f975ab5632eb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a263bc470c2cc015cbb0f975ab5632eb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_aea842652030d00bd8302e3c0201f95b9}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!send\+\_\+data@{send\+\_\+data}}
+\index{send\+\_\+data@{send\+\_\+data}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{send\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{uint8\+\_\+t}]{con\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_aea842652030d00bd8302e3c0201f95b9}
+
+
+Definition at line 455 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::connections, N\+U\+M\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, N\+U\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+O\+R\+T\+S, send\+\_\+ping\+\_\+request(), send\+\_\+ping\+\_\+response(), T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status, and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+
+Referenced by send\+\_\+packet\+\_\+tcp\+\_\+connection(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+456 \{
+457     \textcolor{keywordflow}{if} (con\_id >= \hyperlink{_t_c_p__server_8h_aad3362495a10d80b0edac21c8f896ae1}{NUM\_CLIENT\_CONNECTIONS})
+458         \textcolor{keywordflow}{return} -1;
+459 
+460     \textcolor{keywordflow}{if} (con->\hyperlink{struct_t_c_p___client___connection_a5b7b7af3e8287597e380502eb776cd7a}{connections}[con\_id].\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} != 2)
+461         \textcolor{keywordflow}{return} -1;
+462 
+463     \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a8e1ca90aa8db34a58b3b38cfcb1bb9de}{send\_ping\_response}(con) == 0 || \hyperlink{_t_c_p__client_8c_a5aad81831c1333b763c9fd5eaf41603f}{send\_ping\_request}(con) == 0)
+464         \textcolor{keywordflow}{return} 0;
+465 
+466     uint8\_t packet[1 + length];
+467     packet[0] = con\_id + \hyperlink{_t_c_p__server_8h_a41d07eb7b13b1998b771080dfaef6b7b}{NUM\_RESERVED\_PORTS};
+468     memcpy(packet + 1, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+469     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__client_8c_ab959397449cc23b5811168e4395bdaea}{write\_packet\_TCP\_secure\_connection}(con, packet, \textcolor{keyword}{sizeof}(packet)
+      , 0);
+470 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_aea842652030d00bd8302e3c0201f95b9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_aea842652030d00bd8302e3c0201f95b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_af83d9fac2256a46428ad95bf337c05b7}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!send\+\_\+disconnect\+\_\+request@{send\+\_\+disconnect\+\_\+request}}
+\index{send\+\_\+disconnect\+\_\+request@{send\+\_\+disconnect\+\_\+request}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{send\+\_\+disconnect\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+disconnect\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{uint8\+\_\+t}]{con\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_af83d9fac2256a46428ad95bf337c05b7}
+
+
+Definition at line 580 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::connections, N\+U\+M\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, N\+U\+M\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+O\+R\+T\+S, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::number, send\+\_\+disconnect\+\_\+notification(), and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status.
+
+
+
+Referenced by kill\+\_\+tcp\+\_\+connection\+\_\+to(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+581 \{
+582     \textcolor{keywordflow}{if} (con\_id >= \hyperlink{_t_c_p__server_8h_aad3362495a10d80b0edac21c8f896ae1}{NUM\_CLIENT\_CONNECTIONS})
+583         \textcolor{keywordflow}{return} -1;
+584 
+585     con->\hyperlink{struct_t_c_p___client___connection_a5b7b7af3e8287597e380502eb776cd7a}{connections}[con\_id].\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} = 0;
+586     con->\hyperlink{struct_t_c_p___client___connection_a5b7b7af3e8287597e380502eb776cd7a}{connections}[con\_id].\hyperlink{struct_t_c_p___client___connection_ad50c630d233a71112a7df136970caefc}{number} = 0;
+587     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__client_8c_abe305661e19883349d213c74c44ff93f}{send\_disconnect\_notification}(con, con\_id + 
+      \hyperlink{_t_c_p__server_8h_a41d07eb7b13b1998b771080dfaef6b7b}{NUM\_RESERVED\_PORTS});
+588 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_af83d9fac2256a46428ad95bf337c05b7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_af83d9fac2256a46428ad95bf337c05b7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a236ad67f85cc718a03fda2da3ade0787}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!send\+\_\+onion\+\_\+request@{send\+\_\+onion\+\_\+request}}
+\index{send\+\_\+onion\+\_\+request@{send\+\_\+onion\+\_\+request}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{send\+\_\+onion\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+onion\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a236ad67f85cc718a03fda2da3ade0787}
+
+
+Definition at line 594 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+T, and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+
+Referenced by tcp\+\_\+send\+\_\+onion\+\_\+request().
+
+
+\begin{DoxyCode}
+595 \{
+596     uint8\_t packet[1 + length];
+597     packet[0] = \hyperlink{_t_c_p__server_8h_a879315f1b7234dad07a45d63a6d0aed5}{TCP\_PACKET\_ONION\_REQUEST};
+598     memcpy(packet + 1, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+599     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__client_8c_ab959397449cc23b5811168e4395bdaea}{write\_packet\_TCP\_secure\_connection}(con, packet, \textcolor{keyword}{sizeof}(packet)
+      , 0);
+600 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a236ad67f85cc718a03fda2da3ade0787_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a236ad67f85cc718a03fda2da3ade0787_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a7818a314434c2bb01c3ea406744f076b}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!send\+\_\+oob\+\_\+packet@{send\+\_\+oob\+\_\+packet}}
+\index{send\+\_\+oob\+\_\+packet@{send\+\_\+oob\+\_\+packet}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{send\+\_\+oob\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+oob\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a7818a314434c2bb01c3ea406744f076b}
+
+
+Definition at line 476 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+M\+A\+X\+\_\+\+O\+O\+B\+\_\+\+D\+A\+T\+A\+\_\+\+L\+E\+N\+G\+T\+H, T\+C\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+O\+B\+\_\+\+S\+E\+N\+D, and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+
+Referenced by send\+\_\+packet\+\_\+tcp\+\_\+connection(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+send\+\_\+oob\+\_\+packet().
+
+
+\begin{DoxyCode}
+477 \{
+478     \textcolor{keywordflow}{if} (length == 0 || length > \hyperlink{_t_c_p__server_8h_a9f050748925b02db21564fa5f6c78e4e}{TCP\_MAX\_OOB\_DATA\_LENGTH})
+479         \textcolor{keywordflow}{return} -1;
+480 
+481     uint8\_t packet[1 + crypto\_box\_PUBLICKEYBYTES + length];
+482     packet[0] = \hyperlink{_t_c_p__server_8h_a5961d2c3587485c79194c5479a8b0973}{TCP\_PACKET\_OOB\_SEND};
+483     memcpy(packet + 1, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+484     memcpy(packet + 1 + crypto\_box\_PUBLICKEYBYTES, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+485     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__client_8c_ab959397449cc23b5811168e4395bdaea}{write\_packet\_TCP\_secure\_connection}(con, packet, \textcolor{keyword}{sizeof}(packet)
+      , 0);
+486 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a7818a314434c2bb01c3ea406744f076b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a7818a314434c2bb01c3ea406744f076b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a0dc7de6475c22a0a31722bbf7ebb8dc5}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!send\+\_\+routing\+\_\+request@{send\+\_\+routing\+\_\+request}}
+\index{send\+\_\+routing\+\_\+request@{send\+\_\+routing\+\_\+request}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{send\+\_\+routing\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+routing\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a0dc7de6475c22a0a31722bbf7ebb8dc5}
+
+
+Definition at line 426 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+R\+O\+U\+T\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T, and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+
+Referenced by send\+\_\+tcp\+\_\+relay\+\_\+routing\+\_\+request(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+427 \{
+428     uint8\_t packet[1 + crypto\_box\_PUBLICKEYBYTES];
+429     packet[0] = \hyperlink{_t_c_p__server_8h_a808af5b9484311a39abb96dac1ecd426}{TCP\_PACKET\_ROUTING\_REQUEST};
+430     memcpy(packet + 1, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+431     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__client_8c_ab959397449cc23b5811168e4395bdaea}{write\_packet\_TCP\_secure\_connection}(con, packet, \textcolor{keyword}{sizeof}(packet)
+      , 1);
+432 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a0dc7de6475c22a0a31722bbf7ebb8dc5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a0dc7de6475c22a0a31722bbf7ebb8dc5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__client_8h_a52921fadd1366f32c75e66d9c4340ed2}{\index{T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}!set\+\_\+tcp\+\_\+connection\+\_\+number@{set\+\_\+tcp\+\_\+connection\+\_\+number}}
+\index{set\+\_\+tcp\+\_\+connection\+\_\+number@{set\+\_\+tcp\+\_\+connection\+\_\+number}!T\+C\+P\+\_\+client.\+h@{T\+C\+P\+\_\+client.\+h}}
+\subsubsection[{set\+\_\+tcp\+\_\+connection\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+tcp\+\_\+connection\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$}]{con, }
+\item[{uint8\+\_\+t}]{con\+\_\+id, }
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__client_8h_a52921fadd1366f32c75e66d9c4340ed2}
+
+
+Definition at line 496 of file T\+C\+P\+\_\+client.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::connections, N\+U\+M\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::number, and T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::status.
+
+
+
+Referenced by response\+\_\+callback(), and tcp\+\_\+response\+\_\+callback().
+
+
+\begin{DoxyCode}
+497 \{
+498     \textcolor{keywordflow}{if} (con\_id >= \hyperlink{_t_c_p__server_8h_aad3362495a10d80b0edac21c8f896ae1}{NUM\_CLIENT\_CONNECTIONS})
+499         \textcolor{keywordflow}{return} -1;
+500 
+501     \textcolor{keywordflow}{if} (con->\hyperlink{struct_t_c_p___client___connection_a5b7b7af3e8287597e380502eb776cd7a}{connections}[con\_id].\hyperlink{struct_t_c_p___client___connection_ade818037fd6c985038ff29656089758d}{status} == 0)
+502         \textcolor{keywordflow}{return} -1;
+503 
+504     con->\hyperlink{struct_t_c_p___client___connection_a5b7b7af3e8287597e380502eb776cd7a}{connections}[con\_id].\hyperlink{struct_t_c_p___client___connection_ad50c630d233a71112a7df136970caefc}{number} = number;
+505     \textcolor{keywordflow}{return} 0;
+506 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/_t_c_p__client_8h_a52921fadd1366f32c75e66d9c4340ed2_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,83 @@
+\hypertarget{struct___tox_av}{\section{\+\_\+\+Tox\+Av Struct Reference}
+\label{struct___tox_av}\index{\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}}
+}
+
+
+Collaboration diagram for \+\_\+\+Tox\+Av\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d45/struct___tox_av__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_messenger}{Messenger} $\ast$ \hyperlink{struct___tox_av_a48342badc24a04d2310ca16ff4a3711b}{messenger}
+\item 
+\hyperlink{msi_8h_adc69aa9b8f2f21b2b54e542cc9bb4329}{M\+S\+I\+Session} $\ast$ \hyperlink{struct___tox_av_a85e3d7dd2ab722ee5ba0cd4b72bc7d60}{msi\+\_\+session}
+\item 
+\hyperlink{toxav_8c_aec40f142d19ca255ccdf4097b03ef51e}{Tox\+Av\+Call} $\ast$ \hyperlink{struct___tox_av_abe854f89ac28ebd5112d1639d531b128}{calls}
+\item 
+uint32\+\_\+t \hyperlink{struct___tox_av_a7d6cf32eb812384ebd4074c588c17499}{max\+\_\+calls}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 74 of file toxav.\+c.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct___tox_av_abe854f89ac28ebd5112d1639d531b128}{\index{\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}!calls@{calls}}
+\index{calls@{calls}!\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}}
+\subsubsection[{calls}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tox\+Av\+Call}$\ast$ calls}}\label{struct___tox_av_abe854f89ac28ebd5112d1639d531b128}
+Main msi session 
+
+Definition at line 77 of file toxav.\+c.
+
+
+
+Referenced by toxav\+\_\+capability\+\_\+supported(), toxav\+\_\+do(), toxav\+\_\+do\+\_\+interval(), toxav\+\_\+get\+\_\+active\+\_\+count(), toxav\+\_\+kill(), toxav\+\_\+kill\+\_\+transmission(), toxav\+\_\+new(), toxav\+\_\+prepare\+\_\+audio\+\_\+frame(), toxav\+\_\+prepare\+\_\+transmission(), toxav\+\_\+prepare\+\_\+video\+\_\+frame(), toxav\+\_\+send\+\_\+audio(), and toxav\+\_\+send\+\_\+video().
+
+\hypertarget{struct___tox_av_a7d6cf32eb812384ebd4074c588c17499}{\index{\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}!max\+\_\+calls@{max\+\_\+calls}}
+\index{max\+\_\+calls@{max\+\_\+calls}!\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}}
+\subsubsection[{max\+\_\+calls}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t max\+\_\+calls}}\label{struct___tox_av_a7d6cf32eb812384ebd4074c588c17499}
+Per-\/call params 
+
+Definition at line 78 of file toxav.\+c.
+
+
+
+Referenced by toxav\+\_\+do(), toxav\+\_\+do\+\_\+interval(), toxav\+\_\+get\+\_\+active\+\_\+count(), toxav\+\_\+kill(), and toxav\+\_\+new().
+
+\hypertarget{struct___tox_av_a48342badc24a04d2310ca16ff4a3711b}{\index{\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}!messenger@{messenger}}
+\index{messenger@{messenger}!\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}}
+\subsubsection[{messenger}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Messenger}$\ast$ messenger}}\label{struct___tox_av_a48342badc24a04d2310ca16ff4a3711b}
+
+
+Definition at line 75 of file toxav.\+c.
+
+
+
+Referenced by toxav\+\_\+get\+\_\+tox(), toxav\+\_\+kill\+\_\+transmission(), toxav\+\_\+new(), toxav\+\_\+prepare\+\_\+transmission(), and toxav\+\_\+send\+\_\+rtp\+\_\+payload().
+
+\hypertarget{struct___tox_av_a85e3d7dd2ab722ee5ba0cd4b72bc7d60}{\index{\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}!msi\+\_\+session@{msi\+\_\+session}}
+\index{msi\+\_\+session@{msi\+\_\+session}!\+\_\+\+Tox\+Av@{\+\_\+\+Tox\+Av}}
+\subsubsection[{msi\+\_\+session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+I\+Session}$\ast$ msi\+\_\+session}}\label{struct___tox_av_a85e3d7dd2ab722ee5ba0cd4b72bc7d60}
+
+
+Definition at line 76 of file toxav.\+c.
+
+
+
+Referenced by toxav\+\_\+answer(), toxav\+\_\+call(), toxav\+\_\+cancel(), toxav\+\_\+change\+\_\+settings(), toxav\+\_\+do(), toxav\+\_\+get\+\_\+call\+\_\+state(), toxav\+\_\+get\+\_\+peer\+\_\+csettings(), toxav\+\_\+get\+\_\+peer\+\_\+id(), toxav\+\_\+hangup(), toxav\+\_\+kill(), toxav\+\_\+kill\+\_\+transmission(), toxav\+\_\+new(), toxav\+\_\+prepare\+\_\+audio\+\_\+frame(), toxav\+\_\+prepare\+\_\+transmission(), toxav\+\_\+prepare\+\_\+video\+\_\+frame(), toxav\+\_\+register\+\_\+callstate\+\_\+callback(), toxav\+\_\+reject(), toxav\+\_\+send\+\_\+audio(), toxav\+\_\+send\+\_\+video(), and toxav\+\_\+stop\+\_\+call().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxav/\hyperlink{toxav_8c}{toxav.\+c}\end{DoxyCompactItemize}

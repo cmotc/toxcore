@@ -1,0 +1,904 @@
+\hypertarget{crypto__core_8h}{\section{toxcore/crypto\+\_\+core.h File Reference}
+\label{crypto__core_8h}\index{toxcore/crypto\+\_\+core.\+h@{toxcore/crypto\+\_\+core.\+h}}
+}
+{\ttfamily \#include \char`\"{}network.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sodium.\+h$>$}\\*
+Include dependency graph for crypto\+\_\+core.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d11/crypto__core_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d81/crypto__core_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}~(crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S)
+\item 
+\#define \hyperlink{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E}~1024
+\item 
+\#define \hyperlink{crypto__core_8h_ae5cf60e6c6a34326d0d7ac15df18ba25}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q}~32  /$\ast$ \hyperlink{struct_friend}{Friend} request crypto packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{crypto__core_8h_a703b04f256fec46afbcc98b86c86d5a7}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G}~48  /$\ast$ \hyperlink{struct_hardening}{Hardening} crypto packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{crypto__core_8h_a9c7c84cef4b149dce556b4c78e33dd6b}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K}~156
+\item 
+\#define \hyperlink{crypto__core_8h_accd0074d1bd9133de6460d75b10b1e21}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G}~254 /$\ast$ \hyperlink{struct_n_a_t}{N\+A\+T} ping crypto packet I\+D. $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{crypto__core_8h_a45ba09cd560b3be51f6cb7a3859f31b3}{public\+\_\+key\+\_\+cmp} (const uint8\+\_\+t $\ast$pk1, const uint8\+\_\+t $\ast$pk2)
+\item 
+uint32\+\_\+t \hyperlink{crypto__core_8h_a5f13cbe4c46d8801e2c7467068f87306}{random\+\_\+int} (void)
+\item 
+uint64\+\_\+t \hyperlink{crypto__core_8h_a1ce51b34ab2247e750b9c2a25121eb9e}{random\+\_\+64b} (void)
+\item 
+int \hyperlink{crypto__core_8h_ab4a996d3466879a493cc6496acb6cd7e}{public\+\_\+key\+\_\+valid} (const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+int \hyperlink{crypto__core_8h_a014149333522d211490304255e139ec3}{encrypt\+\_\+data} (const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$secret\+\_\+key, const uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce}, const uint8\+\_\+t $\ast$plain, uint32\+\_\+t length, uint8\+\_\+t $\ast$encrypted)
+\item 
+int \hyperlink{crypto__core_8h_ab0aff79180f3852c24ad8f6fd88caf18}{decrypt\+\_\+data} (const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$secret\+\_\+key, const uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce}, const uint8\+\_\+t $\ast$encrypted, uint32\+\_\+t length, uint8\+\_\+t $\ast$plain)
+\item 
+void \hyperlink{crypto__core_8h_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\+\_\+precompute} (const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$secret\+\_\+key, uint8\+\_\+t $\ast$enc\+\_\+key)
+\item 
+int \hyperlink{crypto__core_8h_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\+\_\+data\+\_\+symmetric} (const uint8\+\_\+t $\ast$secret\+\_\+key, const uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce}, const uint8\+\_\+t $\ast$plain, uint32\+\_\+t length, uint8\+\_\+t $\ast$encrypted)
+\item 
+int \hyperlink{crypto__core_8h_a824b257fcff74b9d17c5247223fbed29}{decrypt\+\_\+data\+\_\+symmetric} (const uint8\+\_\+t $\ast$secret\+\_\+key, const uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce}, const uint8\+\_\+t $\ast$encrypted, uint32\+\_\+t length, uint8\+\_\+t $\ast$plain)
+\item 
+void \hyperlink{crypto__core_8h_ab953f1e92b8a9a193f69f02323b9c980}{increment\+\_\+nonce} (uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce})
+\item 
+void \hyperlink{crypto__core_8h_a07e9b83f1240aacaa124f60e4f11b031}{increment\+\_\+nonce\+\_\+number} (uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce}, uint32\+\_\+t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num})
+\item 
+void \hyperlink{crypto__core_8h_a15ef255ab026d4881a16b99148b05dd7}{random\+\_\+nonce} (uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce})
+\item 
+void \hyperlink{crypto__core_8h_a89b4a1a4a7d8bfabdf0e1b60f074e531}{new\+\_\+symmetric\+\_\+key} (uint8\+\_\+t $\ast$key)
+\item 
+void \hyperlink{crypto__core_8h_a8b1033efb47c625779d11be7d8eb9e24}{new\+\_\+nonce} (uint8\+\_\+t $\ast$\hyperlink{onion__test_8c_af73a4a6ff6a4878d8eae4ec38ffeaac2}{nonce})
+\item 
+int \hyperlink{crypto__core_8h_a73129647dfd9e436ae6abc908daa4c21}{create\+\_\+request} (const uint8\+\_\+t $\ast$send\+\_\+public\+\_\+key, const uint8\+\_\+t $\ast$send\+\_\+secret\+\_\+key, uint8\+\_\+t $\ast$packet, const uint8\+\_\+t $\ast$recv\+\_\+public\+\_\+key, const uint8\+\_\+t $\ast$data, uint32\+\_\+t length, uint8\+\_\+t request\+\_\+id)
+\item 
+int \hyperlink{crypto__core_8h_a58ee334ab33d4a0283067145d3160a57}{handle\+\_\+request} (const uint8\+\_\+t $\ast$self\+\_\+public\+\_\+key, const uint8\+\_\+t $\ast$self\+\_\+secret\+\_\+key, uint8\+\_\+t $\ast$public\+\_\+key, uint8\+\_\+t $\ast$data, uint8\+\_\+t $\ast$request\+\_\+id, const uint8\+\_\+t $\ast$packet, uint16\+\_\+t length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S@{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}}
+\index{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S@{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S~(crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S)}}\label{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}
+
+
+Definition at line 42 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by generate\+\_\+ping\+\_\+id(), new\+\_\+symmetric\+\_\+key(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+derive\+\_\+key\+\_\+with\+\_\+salt().
+
+\hypertarget{crypto__core_8h_a9c7c84cef4b149dce556b4c78e33dd6b}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+H\+T\+P\+K~156}}\label{crypto__core_8h_a9c7c84cef4b149dce556b4c78e33dd6b}
+
+
+Definition at line 126 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by kill\+\_\+onion\+\_\+client(), new\+\_\+onion\+\_\+client(), and send\+\_\+dht\+\_\+dhtpk().
+
+\hypertarget{crypto__core_8h_ae5cf60e6c6a34326d0d7ac15df18ba25}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q~32  /$\ast$ {\bf Friend} request crypto packet I\+D. $\ast$/}}\label{crypto__core_8h_ae5cf60e6c6a34326d0d7ac15df18ba25}
+
+
+Definition at line 124 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by send\+\_\+friend\+\_\+request\+\_\+packet(), and set\+\_\+friend\+\_\+request\+\_\+callback().
+
+\hypertarget{crypto__core_8h_a703b04f256fec46afbcc98b86c86d5a7}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+A\+R\+D\+E\+N\+I\+N\+G~48  /$\ast$ {\bf Hardening} crypto packet I\+D. $\ast$/}}\label{crypto__core_8h_a703b04f256fec46afbcc98b86c86d5a7}
+
+
+Definition at line 125 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by kill\+\_\+\+D\+H\+T(), new\+\_\+\+D\+H\+T(), send\+\_\+hardening\+\_\+getnode\+\_\+res(), and send\+\_\+hardening\+\_\+req().
+
+\hypertarget{crypto__core_8h_accd0074d1bd9133de6460d75b10b1e21}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+A\+T\+\_\+\+P\+I\+N\+G~254 /$\ast$ {\bf N\+A\+T} ping crypto packet I\+D. $\ast$/}}\label{crypto__core_8h_accd0074d1bd9133de6460d75b10b1e21}
+
+
+Definition at line 127 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by kill\+\_\+\+D\+H\+T(), new\+\_\+\+D\+H\+T(), and send\+\_\+\+N\+A\+Tping().
+
+\hypertarget{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E~1024}}\label{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}
+
+
+Definition at line 122 of file crypto\+\_\+core.\+h.
+
+
+
+Referenced by create\+\_\+request(), cryptopacket\+\_\+handle(), handle\+\_\+request(), send\+\_\+dht\+\_\+dhtpk(), send\+\_\+hardening\+\_\+getnode\+\_\+res(), send\+\_\+hardening\+\_\+req(), and send\+\_\+\+N\+A\+Tping().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{crypto__core_8h_a73129647dfd9e436ae6abc908daa4c21}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!create\+\_\+request@{create\+\_\+request}}
+\index{create\+\_\+request@{create\+\_\+request}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{create\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int create\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{send\+\_\+public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{send\+\_\+secret\+\_\+key, }
+\item[{uint8\+\_\+t $\ast$}]{packet, }
+\item[{const uint8\+\_\+t $\ast$}]{recv\+\_\+public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t}]{request\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a73129647dfd9e436ae6abc908daa4c21}
+
+
+Definition at line 203 of file crypto\+\_\+core.\+c.
+
+
+
+References encrypt\+\_\+data(), M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O, new\+\_\+nonce(), and nonce.
+
+
+
+Referenced by send\+\_\+dht\+\_\+dhtpk(), send\+\_\+hardening\+\_\+getnode\+\_\+res(), send\+\_\+hardening\+\_\+req(), and send\+\_\+\+N\+A\+Tping().
+
+
+\begin{DoxyCode}
+205 \{
+206     \textcolor{keywordflow}{if} (\hyperlink{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{MAX\_CRYPTO\_REQUEST\_SIZE} < length + 1 + crypto\_box\_PUBLICKEYBYTES * 2 + 
+      crypto\_box\_NONCEBYTES + 1 +
+207             crypto\_box\_MACBYTES)
+208         \textcolor{keywordflow}{return} -1;
+209 
+210     uint8\_t \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[crypto\_box\_NONCEBYTES];
+211     uint8\_t temp[\hyperlink{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{MAX\_CRYPTO\_REQUEST\_SIZE}];
+212     memcpy(temp + 1, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+213     temp[0] = request\_id;
+214     \hyperlink{crypto__core_8c_a8b1033efb47c625779d11be7d8eb9e24}{new\_nonce}(nonce);
+215     \textcolor{keywordtype}{int} len = \hyperlink{crypto__core_8c_a014149333522d211490304255e139ec3}{encrypt\_data}(recv\_public\_key, send\_secret\_key, nonce, temp, length + 1,
+216                            1 + crypto\_box\_PUBLICKEYBYTES * 2 + crypto\_box\_NONCEBYTES + packet);
+217 
+218     \textcolor{keywordflow}{if} (len == -1)
+219         \textcolor{keywordflow}{return} -1;
+220 
+221     packet[0] = \hyperlink{network_8h_aebd9a38e63bac9807d0c2c1cfed68a15}{NET\_PACKET\_CRYPTO};
+222     memcpy(packet + 1, recv\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+223     memcpy(packet + 1 + crypto\_box\_PUBLICKEYBYTES, send\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+224     memcpy(packet + 1 + crypto\_box\_PUBLICKEYBYTES * 2, nonce, crypto\_box\_NONCEBYTES);
+225 
+226     \textcolor{keywordflow}{return} len + 1 + crypto\_box\_PUBLICKEYBYTES * 2 + crypto\_box\_NONCEBYTES;
+227 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a73129647dfd9e436ae6abc908daa4c21_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a73129647dfd9e436ae6abc908daa4c21_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_ab0aff79180f3852c24ad8f6fd88caf18}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!decrypt\+\_\+data@{decrypt\+\_\+data}}
+\index{decrypt\+\_\+data@{decrypt\+\_\+data}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{decrypt\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}int decrypt\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{nonce, }
+\item[{const uint8\+\_\+t $\ast$}]{encrypted, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t $\ast$}]{plain}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_ab0aff79180f3852c24ad8f6fd88caf18}
+
+
+Definition at line 131 of file crypto\+\_\+core.\+c.
+
+
+
+References decrypt\+\_\+data\+\_\+symmetric(), and encrypt\+\_\+precompute().
+
+
+
+Referenced by handle\+\_\+announce\+\_\+response(), handle\+\_\+crypto\+\_\+handshake(), handle\+\_\+data\+\_\+response(), handle\+\_\+dht\+\_\+dhtpk(), handle\+\_\+request(), handle\+\_\+test\+\_\+3(), handle\+\_\+test\+\_\+4(), new\+\_\+\+T\+C\+P\+\_\+con(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+133 \{
+134     uint8\_t k[crypto\_box\_BEFORENMBYTES];
+135     \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, secret\_key, k);
+136     \textcolor{keywordflow}{return} \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, encrypted, length, plain);
+137 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{dd/d3e/crypto__core_8h_ab0aff79180f3852c24ad8f6fd88caf18_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_ab0aff79180f3852c24ad8f6fd88caf18_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a824b257fcff74b9d17c5247223fbed29}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!decrypt\+\_\+data\+\_\+symmetric@{decrypt\+\_\+data\+\_\+symmetric}}
+\index{decrypt\+\_\+data\+\_\+symmetric@{decrypt\+\_\+data\+\_\+symmetric}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{decrypt\+\_\+data\+\_\+symmetric}]{\setlength{\rightskip}{0pt plus 5cm}int decrypt\+\_\+data\+\_\+symmetric (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{nonce, }
+\item[{const uint8\+\_\+t $\ast$}]{encrypted, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t $\ast$}]{plain}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a824b257fcff74b9d17c5247223fbed29}
+
+
+Definition at line 104 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by decrypt\+\_\+data(), handle\+\_\+announce\+\_\+request(), handle\+\_\+cookie\+\_\+request(), handle\+\_\+cookie\+\_\+response(), handle\+\_\+data\+\_\+packet(), handle\+\_\+getnodes(), handle\+\_\+handshake(), handle\+\_\+ping\+\_\+request(), handle\+\_\+ping\+\_\+response(), handle\+\_\+recv\+\_\+1(), handle\+\_\+recv\+\_\+2(), handle\+\_\+recv\+\_\+3(), handle\+\_\+send\+\_\+1(), handle\+\_\+send\+\_\+2(), handle\+\_\+send\+\_\+initial(), handle\+\_\+sendnodes\+\_\+core(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), open\+\_\+cookie(), read\+\_\+packet\+\_\+sec\+\_\+\+T\+C\+P(), read\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+decrypt\+\_\+dns3\+\_\+\+T\+X\+T(), and tox\+\_\+pass\+\_\+key\+\_\+decrypt().
+
+
+\begin{DoxyCode}
+106 \{
+107     \textcolor{keywordflow}{if} (length <= crypto\_box\_BOXZEROBYTES)
+108         \textcolor{keywordflow}{return} -1;
+109 
+110     uint8\_t temp\_plain[length + crypto\_box\_ZEROBYTES];
+111     uint8\_t temp\_encrypted[length + crypto\_box\_BOXZEROBYTES];
+112 
+113     memset(temp\_encrypted, 0, crypto\_box\_BOXZEROBYTES);
+114     memcpy(temp\_encrypted + crypto\_box\_BOXZEROBYTES, encrypted, length); \textcolor{comment}{// Pad the message with 16 0
+       bytes.}
+115 
+116     \textcolor{keywordflow}{if} (crypto\_box\_open\_afternm(temp\_plain, temp\_encrypted, length + crypto\_box\_BOXZEROBYTES, 
+      \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, secret\_key) != 0)
+117         \textcolor{keywordflow}{return} -1;
+118 
+119     memcpy(plain, temp\_plain + crypto\_box\_ZEROBYTES, length - crypto\_box\_MACBYTES);
+120     \textcolor{keywordflow}{return} length - crypto\_box\_MACBYTES;
+121 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d3e/crypto__core_8h_a824b257fcff74b9d17c5247223fbed29_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a014149333522d211490304255e139ec3}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!encrypt\+\_\+data@{encrypt\+\_\+data}}
+\index{encrypt\+\_\+data@{encrypt\+\_\+data}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{encrypt\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}int encrypt\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{nonce, }
+\item[{const uint8\+\_\+t $\ast$}]{plain, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t $\ast$}]{encrypted}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a014149333522d211490304255e139ec3}
+
+
+Definition at line 123 of file crypto\+\_\+core.\+c.
+
+
+
+References encrypt\+\_\+data\+\_\+symmetric(), and encrypt\+\_\+precompute().
+
+
+
+Referenced by create\+\_\+announce\+\_\+request(), create\+\_\+crypto\+\_\+handshake(), create\+\_\+data\+\_\+request(), create\+\_\+request(), new\+\_\+\+T\+C\+P\+\_\+con(), send\+\_\+dht\+\_\+dhtpk(), send\+\_\+onion\+\_\+data(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+125 \{
+126     uint8\_t k[crypto\_box\_BEFORENMBYTES];
+127     \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, secret\_key, k);
+128     \textcolor{keywordflow}{return} \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, plain, length, encrypted);
+129 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{dd/d3e/crypto__core_8h_a014149333522d211490304255e139ec3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a014149333522d211490304255e139ec3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a81efc0a4a6e0efe372651e26e342a6e5}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!encrypt\+\_\+data\+\_\+symmetric@{encrypt\+\_\+data\+\_\+symmetric}}
+\index{encrypt\+\_\+data\+\_\+symmetric@{encrypt\+\_\+data\+\_\+symmetric}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{encrypt\+\_\+data\+\_\+symmetric}]{\setlength{\rightskip}{0pt plus 5cm}int encrypt\+\_\+data\+\_\+symmetric (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{nonce, }
+\item[{const uint8\+\_\+t $\ast$}]{plain, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t $\ast$}]{encrypted}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a81efc0a4a6e0efe372651e26e342a6e5}
+
+
+Definition at line 84 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by create\+\_\+cookie(), create\+\_\+cookie\+\_\+request(), create\+\_\+cookie\+\_\+response(), create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), encrypt\+\_\+data(), generate\+\_\+handshake(), getnodes(), handle\+\_\+announce\+\_\+request(), handle\+\_\+send\+\_\+1(), handle\+\_\+send\+\_\+2(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), onion\+\_\+send\+\_\+1(), send\+\_\+data\+\_\+packet(), send\+\_\+ping\+\_\+request(), send\+\_\+ping\+\_\+response(), sendnodes\+\_\+ipv6(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+generate\+\_\+dns3\+\_\+string(), tox\+\_\+pass\+\_\+key\+\_\+encrypt(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+\begin{DoxyCode}
+86 \{
+87     \textcolor{keywordflow}{if} (length == 0)
+88         \textcolor{keywordflow}{return} -1;
+89 
+90     uint8\_t temp\_plain[length + crypto\_box\_ZEROBYTES];
+91     uint8\_t temp\_encrypted[length + crypto\_box\_MACBYTES + crypto\_box\_BOXZEROBYTES];
+92 
+93     memset(temp\_plain, 0, crypto\_box\_ZEROBYTES);
+94     memcpy(temp\_plain + crypto\_box\_ZEROBYTES, plain, length); \textcolor{comment}{// Pad the message with 32 0 bytes.}
+95 
+96     \textcolor{keywordflow}{if} (crypto\_box\_afternm(temp\_encrypted, temp\_plain, length + crypto\_box\_ZEROBYTES, 
+      \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, secret\_key) != 0)
+97         \textcolor{keywordflow}{return} -1;
+98 
+99     \textcolor{comment}{/* Unpad the encrypted message. */}
+100     memcpy(encrypted, temp\_encrypted + crypto\_box\_BOXZEROBYTES, length + crypto\_box\_MACBYTES);
+101     \textcolor{keywordflow}{return} length + crypto\_box\_MACBYTES;
+102 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d3e/crypto__core_8h_a81efc0a4a6e0efe372651e26e342a6e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a0d8eaef49981c5dc3ada078866b42f6d}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!encrypt\+\_\+precompute@{encrypt\+\_\+precompute}}
+\index{encrypt\+\_\+precompute@{encrypt\+\_\+precompute}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{encrypt\+\_\+precompute}]{\setlength{\rightskip}{0pt plus 5cm}void encrypt\+\_\+precompute (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{uint8\+\_\+t $\ast$}]{enc\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a0d8eaef49981c5dc3ada078866b42f6d}
+
+
+Definition at line 79 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), create\+\_\+onion\+\_\+path(), decrypt\+\_\+data(), dns\+\_\+new\+\_\+temp\+\_\+keys(), encrypt\+\_\+data(), get\+\_\+shared\+\_\+key(), handle\+\_\+handshake(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), handle\+\_\+packet\+\_\+connection(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), new\+\_\+\+T\+C\+P\+\_\+con(), new\+\_\+\+T\+C\+P\+\_\+connection(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+80 \{
+81     crypto\_box\_beforenm(enc\_key, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, secret\_key);
+82 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d3e/crypto__core_8h_a0d8eaef49981c5dc3ada078866b42f6d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a58ee334ab33d4a0283067145d3160a57}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!handle\+\_\+request@{handle\+\_\+request}}
+\index{handle\+\_\+request@{handle\+\_\+request}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{handle\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int handle\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{self\+\_\+public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{self\+\_\+secret\+\_\+key, }
+\item[{uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint8\+\_\+t $\ast$}]{request\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{packet, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a58ee334ab33d4a0283067145d3160a57}
+
+
+Definition at line 235 of file crypto\+\_\+core.\+c.
+
+
+
+References decrypt\+\_\+data(), M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+S\+I\+Z\+E, and nonce.
+
+
+
+Referenced by cryptopacket\+\_\+handle().
+
+
+\begin{DoxyCode}
+237 \{
+238     \textcolor{keywordflow}{if} (length <= crypto\_box\_PUBLICKEYBYTES * 2 + crypto\_box\_NONCEBYTES + 1 + crypto\_box\_MACBYTES ||
+239             length > \hyperlink{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{MAX\_CRYPTO\_REQUEST\_SIZE})
+240         \textcolor{keywordflow}{return} -1;
+241 
+242     \textcolor{keywordflow}{if} (memcmp(packet + 1, self\_public\_key, crypto\_box\_PUBLICKEYBYTES) != 0)
+243         \textcolor{keywordflow}{return} -1;
+244 
+245     memcpy(\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, packet + 1 + crypto\_box\_PUBLICKEYBYTES, crypto\_box\_PUBLICKEYBYTES);
+246     uint8\_t \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[crypto\_box\_NONCEBYTES];
+247     uint8\_t temp[\hyperlink{crypto__core_8h_a2c79bc4b1111d42efd5fa7600398afcc}{MAX\_CRYPTO\_REQUEST\_SIZE}];
+248     memcpy(nonce, packet + 1 + crypto\_box\_PUBLICKEYBYTES * 2, crypto\_box\_NONCEBYTES);
+249     \textcolor{keywordtype}{int} len1 = \hyperlink{crypto__core_8c_ab0aff79180f3852c24ad8f6fd88caf18}{decrypt\_data}(\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, self\_secret\_key, nonce,
+250                             packet + 1 + crypto\_box\_PUBLICKEYBYTES * 2 + crypto\_box\_NONCEBYTES,
+251                             length - (crypto\_box\_PUBLICKEYBYTES * 2 + crypto\_box\_NONCEBYTES + 1), temp);
+252 
+253     \textcolor{keywordflow}{if} (len1 == -1 || len1 == 0)
+254         \textcolor{keywordflow}{return} -1;
+255 
+256     request\_id[0] = temp[0];
+257     --len1;
+258     memcpy(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, temp + 1, len1);
+259     \textcolor{keywordflow}{return} len1;
+260 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a58ee334ab33d4a0283067145d3160a57_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a58ee334ab33d4a0283067145d3160a57_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_ab953f1e92b8a9a193f69f02323b9c980}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!increment\+\_\+nonce@{increment\+\_\+nonce}}
+\index{increment\+\_\+nonce@{increment\+\_\+nonce}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{increment\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}void increment\+\_\+nonce (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{nonce}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_ab953f1e92b8a9a193f69f02323b9c980}
+
+
+Definition at line 141 of file crypto\+\_\+core.\+c.
+
+
+
+References i.
+
+
+
+Referenced by read\+\_\+packet\+\_\+sec\+\_\+\+T\+C\+P(), read\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection(), send\+\_\+data\+\_\+packet(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and write\+\_\+packet\+\_\+\+T\+C\+P\+\_\+secure\+\_\+connection().
+
+
+\begin{DoxyCode}
+142 \{
+143     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+144 
+145     \textcolor{keywordflow}{for} (i = crypto\_box\_NONCEBYTES; i != 0; --\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+146         ++\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[i - 1];
+147 
+148         \textcolor{keywordflow}{if} (\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[i - 1] != 0)
+149             \textcolor{keywordflow}{break};
+150     \}
+151 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_ab953f1e92b8a9a193f69f02323b9c980_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a07e9b83f1240aacaa124f60e4f11b031}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!increment\+\_\+nonce\+\_\+number@{increment\+\_\+nonce\+\_\+number}}
+\index{increment\+\_\+nonce\+\_\+number@{increment\+\_\+nonce\+\_\+number}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{increment\+\_\+nonce\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}void increment\+\_\+nonce\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{nonce, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a07e9b83f1240aacaa124f60e4f11b031}
+
+
+Definition at line 153 of file crypto\+\_\+core.\+c.
+
+
+
+References i.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet().
+
+
+\begin{DoxyCode}
+154 \{
+155     uint32\_t num1, num2;
+156     memcpy(&num1, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce} + (crypto\_box\_NONCEBYTES - \textcolor{keyword}{sizeof}(num1)), \textcolor{keyword}{sizeof}(num1));
+157     num1 = ntohl(num1);
+158     num2 = \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} + num1;
+159 
+160     \textcolor{keywordflow}{if} (num2 < num1) \{
+161         uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+162 
+163         \textcolor{keywordflow}{for} (i = crypto\_box\_NONCEBYTES - \textcolor{keyword}{sizeof}(num1); i != 0; --\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+164             ++\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[i - 1];
+165 
+166             \textcolor{keywordflow}{if} (\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}[i - 1] != 0)
+167                 \textcolor{keywordflow}{break};
+168         \}
+169     \}
+170 
+171     num2 = htonl(num2);
+172     memcpy(\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce} + (crypto\_box\_NONCEBYTES - \textcolor{keyword}{sizeof}(num2)), &num2, \textcolor{keyword}{sizeof}(num2));
+173 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a07e9b83f1240aacaa124f60e4f11b031_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a8b1033efb47c625779d11be7d8eb9e24}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!new\+\_\+nonce@{new\+\_\+nonce}}
+\index{new\+\_\+nonce@{new\+\_\+nonce}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{new\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}void new\+\_\+nonce (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{nonce}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a8b1033efb47c625779d11be7d8eb9e24}
+
+
+Definition at line 188 of file crypto\+\_\+core.\+c.
+
+
+
+References random\+\_\+nonce().
+
+
+
+Referenced by create\+\_\+cookie(), create\+\_\+cookie\+\_\+request(), create\+\_\+cookie\+\_\+response(), create\+\_\+crypto\+\_\+handshake(), create\+\_\+request(), generate\+\_\+handshake(), getnodes(), handle\+\_\+send\+\_\+1(), handle\+\_\+send\+\_\+2(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), new\+\_\+\+T\+C\+P\+\_\+con(), onion\+\_\+send\+\_\+1(), send\+\_\+dht\+\_\+dhtpk(), send\+\_\+ping\+\_\+request(), send\+\_\+ping\+\_\+response(), sendnodes\+\_\+ipv6(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+189 \{
+190     \hyperlink{crypto__core_8c_a15ef255ab026d4881a16b99148b05dd7}{random\_nonce}(\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce});
+191 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{dd/d3e/crypto__core_8h_a8b1033efb47c625779d11be7d8eb9e24_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a8b1033efb47c625779d11be7d8eb9e24_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a89b4a1a4a7d8bfabdf0e1b60f074e531}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!new\+\_\+symmetric\+\_\+key@{new\+\_\+symmetric\+\_\+key}}
+\index{new\+\_\+symmetric\+\_\+key@{new\+\_\+symmetric\+\_\+key}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{new\+\_\+symmetric\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}void new\+\_\+symmetric\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a89b4a1a4a7d8bfabdf0e1b60f074e531}
+
+
+Definition at line 182 of file crypto\+\_\+core.\+c.
+
+
+
+References crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S.
+
+
+
+Referenced by add\+\_\+groupchat(), change\+\_\+symmetric\+\_\+key(), new\+\_\+\+D\+H\+T(), new\+\_\+net\+\_\+crypto(), new\+\_\+onion(), new\+\_\+onion\+\_\+announce(), new\+\_\+onion\+\_\+client(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+file\+\_\+send().
+
+
+\begin{DoxyCode}
+183 \{
+184     randombytes(key, \hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\_box\_KEYBYTES});
+185 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a89b4a1a4a7d8bfabdf0e1b60f074e531_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a45ba09cd560b3be51f6cb7a3859f31b3}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!public\+\_\+key\+\_\+cmp@{public\+\_\+key\+\_\+cmp}}
+\index{public\+\_\+key\+\_\+cmp@{public\+\_\+key\+\_\+cmp}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{public\+\_\+key\+\_\+cmp}]{\setlength{\rightskip}{0pt plus 5cm}int public\+\_\+key\+\_\+cmp (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{pk1, }
+\item[{const uint8\+\_\+t $\ast$}]{pk2}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a45ba09cd560b3be51f6cb7a3859f31b3}
+
+
+Definition at line 39 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by handle\+\_\+crypto\+\_\+handshake(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), and handle\+\_\+packet\+\_\+connection().
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} crypto\_verify\_32(pk1, pk2);
+42 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a45ba09cd560b3be51f6cb7a3859f31b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_ab4a996d3466879a493cc6496acb6cd7e}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!public\+\_\+key\+\_\+valid@{public\+\_\+key\+\_\+valid}}
+\index{public\+\_\+key\+\_\+valid@{public\+\_\+key\+\_\+valid}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{public\+\_\+key\+\_\+valid}]{\setlength{\rightskip}{0pt plus 5cm}int public\+\_\+key\+\_\+valid (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_ab4a996d3466879a493cc6496acb6cd7e}
+
+
+Definition at line 66 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by m\+\_\+addfriend(), and m\+\_\+addfriend\+\_\+norequest().
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[31] >= 128) \textcolor{comment}{/* Last bit of key is always zero. */}
+69         \textcolor{keywordflow}{return} 0;
+70 
+71     \textcolor{keywordflow}{return} 1;
+72 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_ab4a996d3466879a493cc6496acb6cd7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a1ce51b34ab2247e750b9c2a25121eb9e}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!random\+\_\+64b@{random\+\_\+64b}}
+\index{random\+\_\+64b@{random\+\_\+64b}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{random\+\_\+64b}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t random\+\_\+64b (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a1ce51b34ab2247e750b9c2a25121eb9e}
+
+
+Definition at line 53 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by D\+H\+T\+\_\+addfriend(), do\+\_\+confirmed\+\_\+\+T\+C\+P(), do\+\_\+\+T\+C\+P\+\_\+confirmed(), handle\+\_\+\+N\+A\+Tping(), new\+\_\+crypto\+\_\+connection(), and ping\+\_\+array\+\_\+add().
+
+
+\begin{DoxyCode}
+54 \{
+55     uint64\_t randnum;
+56     randombytes((uint8\_t *)&randnum, \textcolor{keyword}{sizeof}(randnum));
+57     \textcolor{keywordflow}{return} randnum;
+58 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a1ce51b34ab2247e750b9c2a25121eb9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a5f13cbe4c46d8801e2c7467068f87306}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!random\+\_\+int@{random\+\_\+int}}
+\index{random\+\_\+int@{random\+\_\+int}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{random\+\_\+int}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t random\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a5f13cbe4c46d8801e2c7467068f87306}
+
+
+Definition at line 46 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by dns\+\_\+new\+\_\+temp\+\_\+keys(), logger\+\_\+new(), new\+\_\+messenger(), rtp\+\_\+new(), and t\+\_\+randomstr().
+
+
+\begin{DoxyCode}
+47 \{
+48     uint32\_t randnum;
+49     randombytes((uint8\_t *)&randnum , \textcolor{keyword}{sizeof}(randnum));
+50     \textcolor{keywordflow}{return} randnum;
+51 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a5f13cbe4c46d8801e2c7467068f87306_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__core_8h_a15ef255ab026d4881a16b99148b05dd7}{\index{crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}!random\+\_\+nonce@{random\+\_\+nonce}}
+\index{random\+\_\+nonce@{random\+\_\+nonce}!crypto\+\_\+core.\+h@{crypto\+\_\+core.\+h}}
+\subsubsection[{random\+\_\+nonce}]{\setlength{\rightskip}{0pt plus 5cm}void random\+\_\+nonce (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{nonce}
+\end{DoxyParamCaption}
+)}}\label{crypto__core_8h_a15ef255ab026d4881a16b99148b05dd7}
+
+
+Definition at line 176 of file crypto\+\_\+core.\+c.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), create\+\_\+announce\+\_\+request(), create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), generate\+\_\+handshake(), handle\+\_\+announce\+\_\+request(), handle\+\_\+\+T\+C\+P\+\_\+handshake(), new\+\_\+crypto\+\_\+connection(), new\+\_\+nonce(), new\+\_\+\+T\+C\+P\+\_\+con(), send\+\_\+onion\+\_\+data(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+pass\+\_\+key\+\_\+encrypt().
+
+
+\begin{DoxyCode}
+177 \{
+178     randombytes(\hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, crypto\_box\_NONCEBYTES);
+179 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3e/crypto__core_8h_a15ef255ab026d4881a16b99148b05dd7_icgraph}
+\end{center}
+\end{figure}
+
+

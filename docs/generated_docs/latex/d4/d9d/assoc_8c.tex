@@ -1,0 +1,2190 @@
+\hypertarget{assoc_8c}{\section{toxcore/assoc.c File Reference}
+\label{assoc_8c}\index{toxcore/assoc.\+c@{toxcore/assoc.\+c}}
+}
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}D\+H\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}assoc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ping.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}L\+A\+N\+\_\+discovery.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+Include dependency graph for assoc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df3/assoc_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_client__entry}{Client\+\_\+entry}
+\item 
+struct \hyperlink{structcandidates__bucket}{candidates\+\_\+bucket}
+\item 
+struct \hyperlink{struct_assoc}{Assoc}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T}~5
+\item 
+\#define \hyperlink{assoc_8c_a1899251b38a7a195f127d3d2d9d387e2}{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E}~101
+\item 
+\#define \hyperlink{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}~1800
+\item 
+\#define \hyperlink{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}~600
+\item 
+\#define \hyperlink{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}~(64 -\/ \hyperlink{assoc_8h_ab4aa21ae6dcbba80ec61b62f980725fe}{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+B\+I\+T\+S})
+\item 
+\#define \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K}~((1 $<$$<$ \hyperlink{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}) -\/ 1)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint16\+\_\+t \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\+\_\+t}
+\item 
+typedef uint32\+\_\+t \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t}
+\item 
+typedef uint16\+\_\+t \hyperlink{assoc_8c_a77b78cab6ade424cb494ae2061973b8b}{usecnt\+\_\+t}
+\item 
+typedef \\*
+\hyperlink{assoc_8h_a4a7c48edbc47a30c9fa8c6fb0fe23817}{Assoc\+\_\+distance\+\_\+relative\+\_\+callback} \hyperlink{assoc_8c_a31770727f94dbd0cbebe47ec9105a934}{dist\+\_\+rel\+\_\+cb}
+\item 
+typedef \\*
+\hyperlink{assoc_8h_a0bac0791c4a8eac62f9f39c783da3b91}{Assoc\+\_\+distance\+\_\+absolute\+\_\+callback} \hyperlink{assoc_8c_a76329106b8b725d0fb716fc6a75fc5f9}{dist\+\_\+abs\+\_\+cb}
+\item 
+typedef struct \hyperlink{struct_client__entry}{Client\+\_\+entry} \hyperlink{assoc_8c_a16cf259fd45593fad0d68b6be20edeab}{Client\+\_\+entry}
+\item 
+typedef struct \hyperlink{structcandidates__bucket}{candidates\+\_\+bucket} \hyperlink{assoc_8c_a2428362d504ddf8ac5c87eb5d8c9adbe}{candidates\+\_\+bucket}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t \hyperlink{assoc_8c_af9b9ca1f09c12f5ba91e06bf254e09f6}{id\+\_\+distance} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, void $\ast$callback\+\_\+data, const uint8\+\_\+t $\ast$id\+\_\+ref, const uint8\+\_\+t $\ast$id\+\_\+test)
+\item 
+static int \hyperlink{assoc_8c_afe8472c27f16e873da0fa3a6995c1197}{dist\+\_\+index\+\_\+comp} (const void $\ast$a, const void $\ast$b)
+\item 
+static \hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$ \hyperlink{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}{dist\+\_\+index\+\_\+entry} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, uint64\+\_\+t dist\+\_\+ind)
+\item 
+static uint8\+\_\+t $\ast$ \hyperlink{assoc_8c_aebc74fa92cb369834babcadf8b73483a}{dist\+\_\+index\+\_\+id} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, uint64\+\_\+t dist\+\_\+ind)
+\item 
+static void \hyperlink{assoc_8c_a9419b231b388fff46f176830c4b9a52f}{dist\+\_\+index\+\_\+bubble} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, uint64\+\_\+t $\ast$dist\+\_\+list, size\+\_\+t \hyperlink{onion__test_8c_a49c185b8248f424bbab4359e461ae734}{first}, size\+\_\+t \hyperlink{onion__test_8c_ab2133dedc5ff8edd0101195aaa5e101c}{last}, uint8\+\_\+t $\ast$id, void $\ast$custom\+\_\+data, \hyperlink{assoc_8h_a4a7c48edbc47a30c9fa8c6fb0fe23817}{Assoc\+\_\+distance\+\_\+relative\+\_\+callback} dist\+\_\+rel\+\_\+func)
+\item 
+static \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} \hyperlink{assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95}{id\+\_\+hash} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, const uint8\+\_\+t $\ast$id)
+\item 
+static \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} \hyperlink{assoc_8c_a2237a67d354721e3155bcb4701e386ac}{hash\+\_\+collide} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} hash)
+\item 
+static \hyperlink{struct_i_p_p_ts_png}{I\+P\+P\+Ts\+Png} $\ast$ \hyperlink{assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9}{entry\+\_\+assoc} (\hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$cl\+\_\+entry, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipp)
+\item 
+static \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ \hyperlink{assoc_8c_a521780b30ac0601ccb6b133d6f901bcd}{entry\+\_\+heard\+\_\+get} (\hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$entry, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipp)
+\item 
+static int \hyperlink{assoc_8c_a512ebb77cd46109c11a1052a76bf0a66}{entry\+\_\+heard\+\_\+store} (\hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$entry, const \hyperlink{struct_i_p_p_ts}{I\+P\+P\+Ts} $\ast$ippts)
+\item 
+static int \hyperlink{assoc_8c_ad78d05a8a1915614699da4704cd5641b}{assoc\+\_\+id\+\_\+closest} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, void $\ast$callback\+\_\+data, const uint8\+\_\+t $\ast$client\+\_\+id, const uint8\+\_\+t $\ast$client\+\_\+id1, const uint8\+\_\+t $\ast$client\+\_\+id2)
+\item 
+static \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\+\_\+t} \hyperlink{assoc_8c_a02a00b2c4be43884c00d659524ce8081}{id\+\_\+bucket} (const uint8\+\_\+t $\ast$id, uint8\+\_\+t bits)
+\item 
+static \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\+\_\+t} \hyperlink{assoc_8c_ace6056317cff40310ec4041c9675e093}{candidates\+\_\+id\+\_\+bucket} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, const uint8\+\_\+t $\ast$id)
+\item 
+static uint8\+\_\+t \hyperlink{assoc_8c_a7d1789e9568f82369268469130cff891}{candidates\+\_\+search} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, const uint8\+\_\+t $\ast$id, \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} hash, \hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$$\ast$entryptr)
+\item 
+static void \hyperlink{assoc_8c_a12f651ee082f440e6efcff809958e005}{candidates\+\_\+update\+\_\+assoc} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{struct_client__entry}{Client\+\_\+entry} $\ast$entry, uint8\+\_\+t used, const \hyperlink{struct_i_p_p_ts}{I\+P\+P\+Ts} $\ast$ippts\+\_\+send, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipp\+\_\+recv)
+\item 
+static uint8\+\_\+t \hyperlink{assoc_8c_a0097ca62f259f8333289a89a7234a0a0}{candidates\+\_\+create\+\_\+internal} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} const hash, const uint8\+\_\+t $\ast$id, uint8\+\_\+t seen, uint8\+\_\+t used, \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\+\_\+t} $\ast$bucketptr, size\+\_\+t $\ast$posptr)
+\item 
+static uint8\+\_\+t \hyperlink{assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531}{candidates\+\_\+create\+\_\+new} (const \hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} hash, const uint8\+\_\+t $\ast$id, uint8\+\_\+t used, const \hyperlink{struct_i_p_p_ts}{I\+P\+P\+Ts} $\ast$ippts\+\_\+send, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipp\+\_\+recv)
+\item 
+static void \hyperlink{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{client\+\_\+id\+\_\+self\+\_\+update} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc)
+\item 
+uint8\+\_\+t \hyperlink{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}{Assoc\+\_\+add\+\_\+entry} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, const uint8\+\_\+t $\ast$id, const \hyperlink{struct_i_p_p_ts}{I\+P\+P\+Ts} $\ast$ippts\+\_\+send, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipp\+\_\+recv, uint8\+\_\+t used)
+\item 
+uint8\+\_\+t \hyperlink{assoc_8c_a256dcbfb2174603496ffa30efef90ad2}{Assoc\+\_\+get\+\_\+close\+\_\+entries} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{struct_assoc__close__entries}{Assoc\+\_\+close\+\_\+entries} $\ast$state)
+\item 
+static uint8\+\_\+t \hyperlink{assoc_8c_a30d998cac1d5cf6eecd4e295411da518}{odd\+\_\+min9\+\_\+is\+\_\+prime} (size\+\_\+t value)
+\item 
+static size\+\_\+t \hyperlink{assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743}{prime\+\_\+upto\+\_\+min9} (size\+\_\+t limit)
+\item 
+\hyperlink{struct_assoc}{Assoc} $\ast$ \hyperlink{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}{new\+\_\+\+Assoc} (size\+\_\+t bits, size\+\_\+t entries, const uint8\+\_\+t $\ast$public\+\_\+id)
+\item 
+\hyperlink{struct_assoc}{Assoc} $\ast$ \hyperlink{assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c}{new\+\_\+\+Assoc\+\_\+default} (const uint8\+\_\+t $\ast$public\+\_\+id)
+\item 
+void \hyperlink{assoc_8c_aaacc714a2e69af23caf8d9b5f95651a3}{Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, const uint8\+\_\+t $\ast$id)
+\item 
+void \hyperlink{assoc_8c_a36aff33785fb0db2565cf4cb5b080327}{do\+\_\+\+Assoc} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc, \hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht)
+\item 
+void \hyperlink{assoc_8c_a26d82e35d047181d0e883a4b91373793}{kill\+\_\+\+Assoc} (\hyperlink{struct_assoc}{Assoc} $\ast$assoc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}{\index{assoc.\+c@{assoc.\+c}!C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T@{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T@{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T~600}}\label{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}
+
+
+Definition at line 47 of file assoc.\+c.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+internal(), do\+\_\+\+Assoc(), and entry\+\_\+heard\+\_\+store().
+
+\hypertarget{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}{\index{assoc.\+c@{assoc.\+c}!C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T@{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T@{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T~1800}}\label{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}
+
+
+Definition at line 46 of file assoc.\+c.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+internal(), and do\+\_\+\+Assoc().
+
+\hypertarget{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}{\index{assoc.\+c@{assoc.\+c}!D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}}
+\index{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S~(64 -\/ {\bf D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+B\+I\+T\+S})}}\label{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}
+
+
+Definition at line 50 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries().
+
+\hypertarget{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{\index{assoc.\+c@{assoc.\+c}!D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K}}
+\index{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K~((1 $<$$<$ {\bf D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S}) -\/ 1)}}\label{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}
+
+
+Definition at line 51 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries(), and dist\+\_\+index\+\_\+entry().
+
+\hypertarget{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}{\index{assoc.\+c@{assoc.\+c}!H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T@{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T}}
+\index{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T@{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T~5}}\label{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}
+
+
+Definition at line 40 of file assoc.\+c.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+internal(), candidates\+\_\+search(), and client\+\_\+id\+\_\+self\+\_\+update().
+
+\hypertarget{assoc_8c_a1899251b38a7a195f127d3d2d9d387e2}{\index{assoc.\+c@{assoc.\+c}!H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E@{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E}}
+\index{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E@{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E~101}}\label{assoc_8c_a1899251b38a7a195f127d3d2d9d387e2}
+
+
+Definition at line 43 of file assoc.\+c.
+
+
+
+Referenced by hash\+\_\+collide(), and new\+\_\+\+Assoc().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{assoc_8c_a870a9554cd560a551b3bb8229c684325}{\index{assoc.\+c@{assoc.\+c}!bucket\+\_\+t@{bucket\+\_\+t}}
+\index{bucket\+\_\+t@{bucket\+\_\+t}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{bucket\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\+\_\+t {\bf bucket\+\_\+t}}}\label{assoc_8c_a870a9554cd560a551b3bb8229c684325}
+
+
+Definition at line 54 of file assoc.\+c.
+
+\hypertarget{assoc_8c_a2428362d504ddf8ac5c87eb5d8c9adbe}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+bucket@{candidates\+\_\+bucket}}
+\index{candidates\+\_\+bucket@{candidates\+\_\+bucket}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf candidates\+\_\+bucket}  {\bf candidates\+\_\+bucket}}}\label{assoc_8c_a2428362d504ddf8ac5c87eb5d8c9adbe}
+\hypertarget{assoc_8c_a16cf259fd45593fad0d68b6be20edeab}{\index{assoc.\+c@{assoc.\+c}!Client\+\_\+entry@{Client\+\_\+entry}}
+\index{Client\+\_\+entry@{Client\+\_\+entry}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{Client\+\_\+entry}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Client\+\_\+entry}  {\bf Client\+\_\+entry}}}\label{assoc_8c_a16cf259fd45593fad0d68b6be20edeab}
+\hypertarget{assoc_8c_a76329106b8b725d0fb716fc6a75fc5f9}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+abs\+\_\+cb@{dist\+\_\+abs\+\_\+cb}}
+\index{dist\+\_\+abs\+\_\+cb@{dist\+\_\+abs\+\_\+cb}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+abs\+\_\+cb}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Assoc\+\_\+distance\+\_\+absolute\+\_\+callback} {\bf dist\+\_\+abs\+\_\+cb}}}\label{assoc_8c_a76329106b8b725d0fb716fc6a75fc5f9}
+
+
+Definition at line 60 of file assoc.\+c.
+
+\hypertarget{assoc_8c_a31770727f94dbd0cbebe47ec9105a934}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+rel\+\_\+cb@{dist\+\_\+rel\+\_\+cb}}
+\index{dist\+\_\+rel\+\_\+cb@{dist\+\_\+rel\+\_\+cb}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+rel\+\_\+cb}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Assoc\+\_\+distance\+\_\+relative\+\_\+callback} {\bf dist\+\_\+rel\+\_\+cb}}}\label{assoc_8c_a31770727f94dbd0cbebe47ec9105a934}
+
+
+Definition at line 59 of file assoc.\+c.
+
+\hypertarget{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{\index{assoc.\+c@{assoc.\+c}!hash\+\_\+t@{hash\+\_\+t}}
+\index{hash\+\_\+t@{hash\+\_\+t}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{hash\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf hash\+\_\+t}}}\label{assoc_8c_ac2d400520225f5a2aabf44895add81dc}
+
+
+Definition at line 55 of file assoc.\+c.
+
+\hypertarget{assoc_8c_a77b78cab6ade424cb494ae2061973b8b}{\index{assoc.\+c@{assoc.\+c}!usecnt\+\_\+t@{usecnt\+\_\+t}}
+\index{usecnt\+\_\+t@{usecnt\+\_\+t}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{usecnt\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\+\_\+t {\bf usecnt\+\_\+t}}}\label{assoc_8c_a77b78cab6ade424cb494ae2061973b8b}
+
+
+Definition at line 56 of file assoc.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}{\index{assoc.\+c@{assoc.\+c}!Assoc\+\_\+add\+\_\+entry@{Assoc\+\_\+add\+\_\+entry}}
+\index{Assoc\+\_\+add\+\_\+entry@{Assoc\+\_\+add\+\_\+entry}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{Assoc\+\_\+add\+\_\+entry}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Assoc\+\_\+add\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{const uint8\+\_\+t $\ast$}]{id, }
+\item[{const {\bf I\+P\+P\+Ts} $\ast$}]{ippts\+\_\+send, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipp\+\_\+recv, }
+\item[{uint8\+\_\+t}]{used}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}
+
+
+Definition at line 552 of file assoc.\+c.
+
+
+
+References candidates\+\_\+create\+\_\+new(), candidates\+\_\+search(), candidates\+\_\+update\+\_\+assoc(), client\+\_\+id\+\_\+self\+\_\+update(), id\+\_\+equal(), id\+\_\+hash(), I\+P\+P\+Ts\+::ip\+\_\+port, ipport\+\_\+isset(), Assoc\+::self\+\_\+client\+\_\+id, and Assoc\+::self\+\_\+hash.
+
+
+
+Referenced by addto\+\_\+lists(), returnedip\+\_\+ports(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+553 \{
+554     \textcolor{keywordflow}{if} (!assoc || !\textcolor{keywordtype}{id} || !ippts\_send)
+555         \textcolor{keywordflow}{return} 0;
+556 
+557     \textcolor{keywordflow}{if} (!assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash}) \{
+558         \hyperlink{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{client\_id\_self\_update}(assoc);
+559 
+560         \textcolor{keywordflow}{if} (!assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash})
+561             \textcolor{keywordflow}{return} 0;
+562     \}
+563 
+564     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(&ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}))
+565         \textcolor{keywordflow}{return} 0;
+566 
+567     \textcolor{keywordflow}{if} (ipp\_recv && !\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(ipp\_recv))
+568         ipp\_recv = NULL;
+569 
+570     \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\_t} hash = \hyperlink{assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95}{id\_hash}(assoc, \textcolor{keywordtype}{id});
+571 
+572     \textcolor{keywordflow}{if} (hash == assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash})
+573         \textcolor{keywordflow}{if} (\hyperlink{util_8c_ada3d44b4f530d3c8c9cb69b732be94b1}{id\_equal}(\textcolor{keywordtype}{id}, assoc->\hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id}))
+574             \textcolor{keywordflow}{return} 0;
+575 
+576     \textcolor{comment}{/* if it's new:}
+577 \textcolor{comment}{     * callback, if there's desire, add to clients, else to candidates}
+578 \textcolor{comment}{     *}
+579 \textcolor{comment}{     * if it's "old":}
+580 \textcolor{comment}{     *    if it's client: refresh}
+581 \textcolor{comment}{     *    if it's candidate:}
+582 \textcolor{comment}{     *       if !ipp\_recv, refresh}
+583 \textcolor{comment}{     *       if ipp\_recv: callback, if there's desire, move to candidates}
+584 \textcolor{comment}{     */}
+585     \hyperlink{struct_client__entry}{Client\_entry} *cnd\_entry;
+586 
+587     \textcolor{keywordflow}{if} (!\hyperlink{assoc_8c_a7d1789e9568f82369268469130cff891}{candidates\_search}(assoc, \textcolor{keywordtype}{id}, hash, &cnd\_entry)) \{
+588         \textcolor{keywordflow}{if} (\hyperlink{assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531}{candidates\_create\_new}(assoc, hash, \textcolor{keywordtype}{id}, used, ippts\_send, ipp\_recv))
+589             \textcolor{keywordflow}{return} 1;
+590         \textcolor{keywordflow}{else}
+591             \textcolor{keywordflow}{return} 0;
+592     \} \textcolor{keywordflow}{else} \{
+593         \hyperlink{assoc_8c_a12f651ee082f440e6efcff809958e005}{candidates\_update\_assoc}(assoc, cnd\_entry, used, ippts\_send, ipp\_recv);
+594         \textcolor{keywordflow}{return} 2;
+595     \}
+596 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa0230ae0304fd8540a5bce578d242f30_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa0230ae0304fd8540a5bce578d242f30_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a256dcbfb2174603496ffa30efef90ad2}{\index{assoc.\+c@{assoc.\+c}!Assoc\+\_\+get\+\_\+close\+\_\+entries@{Assoc\+\_\+get\+\_\+close\+\_\+entries}}
+\index{Assoc\+\_\+get\+\_\+close\+\_\+entries@{Assoc\+\_\+get\+\_\+close\+\_\+entries}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{Assoc\+\_\+get\+\_\+close\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Assoc\+\_\+get\+\_\+close\+\_\+entries (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf Assoc\+\_\+close\+\_\+entries} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_a256dcbfb2174603496ffa30efef90ad2}
+
+
+Definition at line 602 of file assoc.\+c.
+
+
+
+References Client\+\_\+data\+::assoc4, Client\+\_\+data\+::assoc6, assoc\+\_\+id\+\_\+closest(), B\+A\+D\+\_\+\+N\+O\+D\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T, Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+count, Assoc\+::candidates\+\_\+bucket\+\_\+size, Client\+\_\+entry\+::client, client\+\_\+id\+\_\+self\+\_\+update(), Assoc\+\_\+close\+\_\+entries\+::count\+\_\+good, Assoc\+\_\+close\+\_\+entries\+::custom\+\_\+data, dist\+\_\+index\+\_\+bubble(), dist\+\_\+index\+\_\+comp(), dist\+\_\+index\+\_\+entry(), Assoc\+\_\+close\+\_\+entries\+::distance\+\_\+absolute\+\_\+func, D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+I\+T\+S, D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K, Assoc\+\_\+close\+\_\+entries\+::distance\+\_\+relative\+\_\+func, Assoc\+\_\+close\+\_\+entries\+::flags, Client\+\_\+entry\+::hash, i, id\+\_\+distance(), I\+P\+\_\+\+Port\+::ip, I\+P\+P\+Ts\+Png\+::ip\+\_\+port, ipport\+\_\+isset(), is\+\_\+timeout(), L\+A\+N\+\_\+ip(), L\+A\+N\+Ok, candidates\+\_\+bucket\+::list, Proto\+I\+Pv4, Proto\+I\+Pv6, Client\+\_\+data\+::public\+\_\+key, Assoc\+\_\+close\+\_\+entries\+::result, Client\+\_\+entry\+::seen\+\_\+at, Assoc\+::self\+\_\+hash, I\+P\+P\+Ts\+Png\+::timestamp, and Assoc\+\_\+close\+\_\+entries\+::wanted\+\_\+id.
+
+
+
+Referenced by D\+H\+T\+\_\+addfriend(), get\+\_\+close\+\_\+nodes(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+603 \{
+604     \textcolor{keywordflow}{if} (!assoc || !state || !state->\hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id} || !state->\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result})
+605         \textcolor{keywordflow}{return} 0;
+606 
+607     \textcolor{keywordflow}{if} (!assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash}) \{
+608         \hyperlink{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{client\_id\_self\_update}(assoc);
+609 
+610         \textcolor{keywordflow}{if} (!assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash})
+611             \textcolor{keywordflow}{return} 0;
+612     \}
+613 
+614     \textcolor{keywordflow}{if} (!state->\hyperlink{struct_assoc__close__entries_ada046356cf0fe3d4a2c18ac174d5eb0e}{distance\_relative\_func})
+615         state->\hyperlink{struct_assoc__close__entries_ada046356cf0fe3d4a2c18ac174d5eb0e}{distance\_relative\_func} = \hyperlink{assoc_8c_ad78d05a8a1915614699da4704cd5641b}{assoc\_id\_closest};
+616 
+617     \textcolor{keywordflow}{if} (!state->\hyperlink{struct_assoc__close__entries_aedd1522117fb10fb74c7054f25f2d282}{distance\_absolute\_func})
+618         state->\hyperlink{struct_assoc__close__entries_aedd1522117fb10fb74c7054f25f2d282}{distance\_absolute\_func} = \hyperlink{assoc_8c_af9b9ca1f09c12f5ba91e06bf254e09f6}{id\_distance};
+619 
+620     \textcolor{keywordtype}{size\_t} dist\_list\_len = assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count} * assoc->
+      \hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+621     uint64\_t dist\_list[dist\_list\_len];
+622     memset(dist\_list, ~0, dist\_list\_len * \textcolor{keyword}{sizeof}(dist\_list[0]));
+623     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} b;
+624     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+625 
+626     \textcolor{keywordflow}{for} (b = 0; b < assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}; b++) \{
+627         \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[b];
+628 
+629         \textcolor{keywordflow}{for} (i = 0; i < assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}; i++) \{
+630             \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}];
+631 
+632             \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash}) \{
+633                 \textcolor{keywordflow}{if} (state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca8f72d319431bcfbaf2fb152a649d090c}{ProtoIPv4}) \{
+634                     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(&entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.
+      \hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}))
+635                         \textcolor{keywordflow}{continue};
+636 
+637                     \textcolor{keywordflow}{if} (!(state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca8f8f3b5e55e2761eed576314ae2afaf6}{LANOk}))
+638                         \textcolor{keywordflow}{if} (!\hyperlink{_l_a_n__discovery_8c_a2d80a53390598eb8ededbc63f4e9c152}{LAN\_ip}(entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.
+      \hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}))
+639                             \textcolor{keywordflow}{continue};
+640                 \}
+641 
+642                 \textcolor{keywordflow}{if} (state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca1e654e12e0aea9fe657086a3c3ed9eca}{ProtoIPv6}) \{
+643                     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(&entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6}.
+      \hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}))
+644                         \textcolor{keywordflow}{continue};
+645 
+646                     \textcolor{keywordflow}{if} (!(state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca8f8f3b5e55e2761eed576314ae2afaf6}{LANOk}))
+647                         \textcolor{keywordflow}{if} (!\hyperlink{_l_a_n__discovery_8c_a2d80a53390598eb8ededbc63f4e9c152}{LAN\_ip}(entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6}.
+      \hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}))
+648                             \textcolor{keywordflow}{continue};
+649                 \}
+650 
+651                 uint64\_t dist = state->\hyperlink{struct_assoc__close__entries_aedd1522117fb10fb74c7054f25f2d282}{distance\_absolute\_func}(assoc, state->
+      \hyperlink{struct_assoc__close__entries_a89491b1d291e113f86c1d33a3c1ec66b}{custom\_data}, state->\hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id}, entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.
+      \hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key});
+652                 uint32\_t index = b * assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size} + 
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+653                 dist\_list[index] = (dist << \hyperlink{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}{DISTANCE\_INDEX\_INDEX\_BITS}) | index;
+654             \}
+655         \}
+656     \}
+657 
+658     qsort(dist\_list, dist\_list\_len, \textcolor{keyword}{sizeof}(dist\_list[0]), \hyperlink{assoc_8c_afe8472c27f16e873da0fa3a6995c1197}{dist\_index\_comp});
+659 
+660     \textcolor{comment}{/* ok, ok, it's not *perfectly* sorted, because we used an absolute distance}
+661 \textcolor{comment}{     * go over the result and see if we need to "smoothen things out"}
+662 \textcolor{comment}{     * because those should be only very few and short streaks, the worst regularly}
+663 \textcolor{comment}{     * used sorting function aka bubble sort is used */}
+664     uint64\_t dist\_prev = ~0;
+665     \textcolor{keywordtype}{size\_t} ind\_prev = ~0, ind\_curr;
+666     \textcolor{keywordtype}{size\_t} len = 1;
+667 
+668     \textcolor{keywordflow}{for} (ind\_curr = 0; ind\_curr < dist\_list\_len; ind\_curr++) \{
+669         \textcolor{comment}{/* sorted increasingly, so an invalid entry marks the end */}
+670         \textcolor{keywordflow}{if} ((dist\_list[ind\_curr] & \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{DISTANCE\_INDEX\_INDEX\_MASK}) == 
+      DISTANCE\_INDEX\_INDEX\_MASK)
+671             \textcolor{keywordflow}{break};
+672 
+673         uint64\_t dist\_curr = dist\_list[ind\_curr] >> \hyperlink{assoc_8c_a2e1d880acaeb435b8dc3c55206545aeb}{DISTANCE\_INDEX\_INDEX\_BITS};
+674 
+675         \textcolor{keywordflow}{if} (dist\_prev == dist\_curr)
+676             len++;
+677         \textcolor{keywordflow}{else} \{
+678             \textcolor{keywordflow}{if} (len > 1)
+679                 \hyperlink{assoc_8c_a9419b231b388fff46f176830c4b9a52f}{dist\_index\_bubble}(assoc, dist\_list, ind\_prev, ind\_curr - 1, state->
+      \hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id}, state->\hyperlink{struct_assoc__close__entries_a89491b1d291e113f86c1d33a3c1ec66b}{custom\_data},
+680                                   state->\hyperlink{struct_assoc__close__entries_ada046356cf0fe3d4a2c18ac174d5eb0e}{distance\_relative\_func});
+681 
+682             dist\_prev = dist\_curr;
+683             ind\_prev = ind\_curr;
+684             len = 1;
+685         \}
+686     \}
+687 
+688     \textcolor{keywordflow}{if} (len > 1)
+689         \hyperlink{assoc_8c_a9419b231b388fff46f176830c4b9a52f}{dist\_index\_bubble}(assoc, dist\_list, ind\_prev, ind\_curr - 1, state->
+      \hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id}, state->\hyperlink{struct_assoc__close__entries_a89491b1d291e113f86c1d33a3c1ec66b}{custom\_data},
+690                           state->\hyperlink{struct_assoc__close__entries_ada046356cf0fe3d4a2c18ac174d5eb0e}{distance\_relative\_func});
+691 
+692     \textcolor{comment}{/* ok, now dist\_list is a strictly ascending sorted list of nodes}
+693 \textcolor{comment}{     * a) extract CLOSE\_QUOTA\_USED clients, not timed out}
+694 \textcolor{comment}{     * b) extract (1 - QUOTA) (better!) clients & candidates, not timed out}
+695 \textcolor{comment}{     * c) save candidates which would be better, if contact can be established */}
+696     \textcolor{keywordtype}{size\_t} client\_quota\_good = 0, pos = 0;
+697     \textcolor{keywordtype}{size\_t} client\_quota\_max = state->\hyperlink{struct_assoc__close__entries_a086e0ce002c9491e4b99956740bb53d4}{count\_good};
+698 
+699     ssize\_t taken\_last = - 1;
+700 
+701     \textcolor{keywordflow}{for} (i = 0; (i < dist\_list\_len) && (pos < state->count); i++) \{
+702         \textcolor{comment}{/* sorted increasingly, so an invalid entry marks the end */}
+703         \textcolor{keywordflow}{if} ((dist\_list[i] & DISTANCE\_INDEX\_INDEX\_MASK) == 
+      \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{DISTANCE\_INDEX\_INDEX\_MASK})
+704             \textcolor{keywordflow}{break};
+705 
+706         \hyperlink{struct_client__entry}{Client\_entry} *entry = \hyperlink{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}{dist\_index\_entry}(assoc, dist\_list[i]);
+707 
+708         \textcolor{keywordflow}{if} (entry && entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash}) \{
+709             \textcolor{keywordflow}{if} (client\_quota\_good >= client\_quota\_max) \{
+710                 state->\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result}[pos++] = &entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client};
+711                 taken\_last = \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+712             \} \textcolor{keywordflow}{else} \{
+713                 \textcolor{keywordflow}{if} (state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & (\hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca8f72d319431bcfbaf2fb152a649d090c}{ProtoIPv4} | \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca1e654e12e0aea9fe657086a3c3ed9eca}{ProtoIPv6})) \{
+714                     \textcolor{keywordflow}{if} ((state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca8f72d319431bcfbaf2fb152a649d090c}{ProtoIPv4}) && \hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->
+      \hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp}, \hyperlink{_d_h_t_8h_a2c542fd03a43f340d1fb281afe54453f}{BAD\_NODE\_TIMEOUT}))
+715                         \textcolor{keywordflow}{continue};
+716 
+717                     \textcolor{keywordflow}{if} ((state->\hyperlink{struct_assoc__close__entries_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & \hyperlink{assoc_8h_a7b447edde2593107a52acfee89281d2ca1e654e12e0aea9fe657086a3c3ed9eca}{ProtoIPv6}) && \hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->
+      \hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6}.\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp}, \hyperlink{_d_h_t_8h_a2c542fd03a43f340d1fb281afe54453f}{BAD\_NODE\_TIMEOUT}))
+718                         \textcolor{keywordflow}{continue};
+719                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at}, 
+      \hyperlink{_d_h_t_8h_a2c542fd03a43f340d1fb281afe54453f}{BAD\_NODE\_TIMEOUT}))
+720                     \textcolor{keywordflow}{continue};
+721 
+722                 state->\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result}[pos++] = &entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client};
+723                 client\_quota\_good++;
+724                 taken\_last = \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+725             \}
+726         \}
+727     \}
+728 
+729     \textcolor{comment}{/* if we had not enough valid entries the list might still not be filled.}
+730 \textcolor{comment}{     *}
+731 \textcolor{comment}{     * start again from last taken client, but leave out any requirement}
+732 \textcolor{comment}{     */}
+733     \textcolor{keywordflow}{if} (pos < state->count) \{
+734         \textcolor{keywordflow}{for} (i = taken\_last + 1; (i < dist\_list\_len) && (pos < state->count); i++) \{
+735             \textcolor{comment}{/* sorted increasingly, so an invalid entry marks the end */}
+736             \textcolor{keywordflow}{if} ((dist\_list[i] & DISTANCE\_INDEX\_INDEX\_MASK) == 
+      \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{DISTANCE\_INDEX\_INDEX\_MASK})
+737                 \textcolor{keywordflow}{break};
+738 
+739             \hyperlink{struct_client__entry}{Client\_entry} *entry = \hyperlink{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}{dist\_index\_entry}(assoc, dist\_list[i]);
+740 
+741             \textcolor{keywordflow}{if} (entry && entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash})
+742                 state->\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result}[pos++] = &entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client};
+743         \}
+744     \}
+745 
+746     \textcolor{keywordflow}{return} pos;
+747 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a256dcbfb2174603496ffa30efef90ad2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a256dcbfb2174603496ffa30efef90ad2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_ad78d05a8a1915614699da4704cd5641b}{\index{assoc.\+c@{assoc.\+c}!assoc\+\_\+id\+\_\+closest@{assoc\+\_\+id\+\_\+closest}}
+\index{assoc\+\_\+id\+\_\+closest@{assoc\+\_\+id\+\_\+closest}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{assoc\+\_\+id\+\_\+closest}]{\setlength{\rightskip}{0pt plus 5cm}static int assoc\+\_\+id\+\_\+closest (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{void $\ast$}]{callback\+\_\+data, }
+\item[{const uint8\+\_\+t $\ast$}]{client\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{client\+\_\+id1, }
+\item[{const uint8\+\_\+t $\ast$}]{client\+\_\+id2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_ad78d05a8a1915614699da4704cd5641b}
+
+
+Definition at line 318 of file assoc.\+c.
+
+
+
+References id\+\_\+closest().
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries().
+
+
+\begin{DoxyCode}
+320 \{
+321     \textcolor{keywordflow}{return} \hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(client\_id, client\_id1, client\_id2);
+322 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{d4/d9d/assoc_8c_ad78d05a8a1915614699da4704cd5641b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ad78d05a8a1915614699da4704cd5641b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_aaacc714a2e69af23caf8d9b5f95651a3}{\index{assoc.\+c@{assoc.\+c}!Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed@{Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed}}
+\index{Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed@{Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed}]{\setlength{\rightskip}{0pt plus 5cm}void Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{const uint8\+\_\+t $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_aaacc714a2e69af23caf8d9b5f95651a3}
+
+
+Definition at line 872 of file assoc.\+c.
+
+
+
+References client\+\_\+id\+\_\+self\+\_\+update(), id\+\_\+copy(), Assoc\+::self\+\_\+client\+\_\+id, and Assoc\+::self\+\_\+hash.
+
+
+\begin{DoxyCode}
+873 \{
+874     \textcolor{keywordflow}{if} (assoc && \textcolor{keywordtype}{id}) \{
+875         assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash} = 0;
+876         \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(assoc->\hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id}, \textcolor{keywordtype}{id});
+877         \hyperlink{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{client\_id\_self\_update}(assoc);
+878     \}
+879 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aaacc714a2e69af23caf8d9b5f95651a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a0097ca62f259f8333289a89a7234a0a0}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+create\+\_\+internal@{candidates\+\_\+create\+\_\+internal}}
+\index{candidates\+\_\+create\+\_\+internal@{candidates\+\_\+create\+\_\+internal}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+create\+\_\+internal}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t candidates\+\_\+create\+\_\+internal (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf hash\+\_\+t} const}]{hash, }
+\item[{const uint8\+\_\+t $\ast$}]{id, }
+\item[{uint8\+\_\+t}]{seen, }
+\item[{uint8\+\_\+t}]{used, }
+\item[{{\bf bucket\+\_\+t} $\ast$}]{bucketptr, }
+\item[{size\+\_\+t $\ast$}]{posptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a0097ca62f259f8333289a89a7234a0a0}
+
+
+Definition at line 401 of file assoc.\+c.
+
+
+
+References B\+A\+D, B\+A\+D\+\_\+\+N\+O\+D\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T, Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+size, C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T, candidates\+\_\+id\+\_\+bucket(), C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T, Client\+\_\+entry\+::hash, hash\+\_\+collide(), H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T, Client\+\_\+entry\+::heard\+\_\+at, i, is\+\_\+timeout(), candidates\+\_\+bucket\+::list, Client\+\_\+entry\+::seen\+\_\+at, S\+E\+E\+N\+B\+\_\+\+H\+E\+A\+R\+D\+G, S\+E\+E\+N\+G, U\+S\+E\+D, and Client\+\_\+entry\+::used\+\_\+at.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+new().
+
+
+\begin{DoxyCode}
+403 \{
+404     \textcolor{keywordflow}{if} (!assoc || !\textcolor{keywordtype}{id} || !bucketptr ||  !posptr)
+405         \textcolor{keywordflow}{return} 0;
+406 
+407     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} bucket = \hyperlink{assoc_8c_ace6056317cff40310ec4041c9675e093}{candidates\_id\_bucket}(assoc, \textcolor{keywordtype}{id});
+408     \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[bucket];
+409 
+410     \textcolor{keywordtype}{size\_t} coll, pos = hash % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}, check;
+411     \textcolor{keywordtype}{size\_t} pos\_check[6];
+412 
+413     memset(pos\_check, 0, \textcolor{keyword}{sizeof}(pos\_check));
+414 
+415     \textcolor{keywordflow}{for} (coll = 0; coll < \hyperlink{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}{HASH\_COLLIDE\_COUNT}; pos = 
+      \hyperlink{assoc_8c_a2237a67d354721e3155bcb4701e386ac}{hash\_collide}(assoc, pos) , coll++) \{
+416         \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[pos];
+417 
+418         \textcolor{comment}{/* unset */}
+419         \textcolor{keywordflow}{if} (!entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash}) \{
+420             *bucketptr = bucket;
+421             *posptr = pos;
+422 
+423             \textcolor{keywordflow}{return} 1;
+424         \}
+425 
+426         \textcolor{comment}{/* 0. bad}
+427 \textcolor{comment}{         * 1. seen bad, heard good}
+428 \textcolor{comment}{         * 2. seen good}
+429 \textcolor{comment}{         * 3. used */}
+430         \textcolor{comment}{// enumerated lists are superior to magic numbers}
+431         \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_aa4c583563fdc794eea3b70dcf92870f4}{used\_at}, \hyperlink{_d_h_t_8h_a2c542fd03a43f340d1fb281afe54453f}{BAD\_NODE\_TIMEOUT}))
+432             check = \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08da1e780c62cb3fd2edcac39f739bbe6f6c}{USED};
+433         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at}, 
+      \hyperlink{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}{CANDIDATES\_SEEN\_TIMEOUT}))
+434             check = \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08dae87e1b5519c2bb23c5afac1d33653a99}{SEENG};
+435         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at}, 
+      \hyperlink{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}{CANDIDATES\_HEARD\_TIMEOUT}))
+436             check = \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08da296386fa8bc99fecd6d132a945cc7cee}{SEENB\_HEARDG};
+437         \textcolor{keywordflow}{else}
+438             check = \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08dafe29bdbfb6e2165eec29bf28af429856}{BAD};
+439 
+440         \textcolor{keywordflow}{if} (!pos\_check[check])
+441             pos\_check[check] = pos + 1;
+442     \}
+443 
+444     \textcolor{comment}{/* used > seen > heard > bad */}
+445     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, pos\_max = used ? \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08da1e780c62cb3fd2edcac39f739bbe6f6c}{USED} : (seen ? \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08dae87e1b5519c2bb23c5afac1d33653a99}{SEENG} : \hyperlink{assoc_8h_ac1c014189853c6794e82c63012baa08da296386fa8bc99fecd6d132a945cc7cee}{SEENB\_HEARDG});
+446 
+447     \textcolor{keywordflow}{for} (i = 0; i < pos\_max; i++)
+448         \textcolor{keywordflow}{if} (pos\_check[i]) \{
+449             *bucketptr = bucket;
+450             *posptr = pos\_check[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] - 1;
+451 
+452             \textcolor{keywordflow}{return} 1;
+453         \}
+454 
+455     \textcolor{keywordflow}{return} 0;
+456 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a0097ca62f259f8333289a89a7234a0a0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a0097ca62f259f8333289a89a7234a0a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+create\+\_\+new@{candidates\+\_\+create\+\_\+new}}
+\index{candidates\+\_\+create\+\_\+new@{candidates\+\_\+create\+\_\+new}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+create\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t candidates\+\_\+create\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf hash\+\_\+t}}]{hash, }
+\item[{const uint8\+\_\+t $\ast$}]{id, }
+\item[{uint8\+\_\+t}]{used, }
+\item[{const {\bf I\+P\+P\+Ts} $\ast$}]{ippts\+\_\+send, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipp\+\_\+recv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531}
+
+
+Definition at line 458 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, candidates\+\_\+create\+\_\+internal(), Client\+\_\+entry\+::client, entry\+\_\+assoc(), entry\+\_\+heard\+\_\+get(), I\+P\+::family, Client\+\_\+entry\+::hash, Client\+\_\+entry\+::heard\+\_\+at, Client\+\_\+entry\+::heard\+\_\+family, id\+\_\+copy(), I\+P\+\_\+\+Port\+::ip, I\+P\+P\+Ts\+::ip\+\_\+port, I\+P\+P\+Ts\+Png\+::ip\+\_\+port, ipport\+\_\+isset(), candidates\+\_\+bucket\+::list, Client\+\_\+data\+::public\+\_\+key, I\+P\+P\+Ts\+Png\+::ret\+\_\+ip\+\_\+port, I\+P\+P\+Ts\+Png\+::ret\+\_\+timestamp, Client\+\_\+entry\+::seen\+\_\+at, Client\+\_\+entry\+::seen\+\_\+family, I\+P\+P\+Ts\+::timestamp, I\+P\+P\+Ts\+Png\+::timestamp, unix\+\_\+time(), and Client\+\_\+entry\+::used\+\_\+at.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry().
+
+
+\begin{DoxyCode}
+460 \{
+461     \textcolor{keywordflow}{if} (!assoc || !\textcolor{keywordtype}{id} || !ippts\_send)
+462         \textcolor{keywordflow}{return} 0;
+463 
+464     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} bucket;
+465     \textcolor{keywordtype}{size\_t} pos;
+466 
+467     \textcolor{keywordflow}{if} (!\hyperlink{assoc_8c_a0097ca62f259f8333289a89a7234a0a0}{candidates\_create\_internal}(assoc, hash, \textcolor{keywordtype}{id}, ipp\_recv != NULL, used, &
+      bucket, &pos))
+468         \textcolor{keywordflow}{return} 0;
+469 
+470     \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[bucket];
+471     \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[pos];
+472     memset(entry, 0, \textcolor{keyword}{sizeof}(*entry));
+473     \hyperlink{struct_i_p_p_ts_png}{IPPTsPng} *ipptsp = \hyperlink{assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9}{entry\_assoc}(entry, &ippts\_send->
+      \hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+474 
+475     \textcolor{keywordflow}{if} (!ipptsp)
+476         \textcolor{keywordflow}{return} 0;
+477 
+478     entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash} = hash;
+479     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, \textcolor{keywordtype}{id});
+480 
+481     \textcolor{keywordflow}{if} (used)
+482         entry->\hyperlink{struct_client__entry_aa4c583563fdc794eea3b70dcf92870f4}{used\_at} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+483 
+484     \textcolor{keywordflow}{if} (ipp\_recv && !\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(ipp\_recv))
+485         ipp\_recv = NULL;
+486 
+487     \textcolor{keywordflow}{if} (ipp\_recv) \{
+488         entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at} = ippts\_send->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+489         entry->\hyperlink{struct_client__entry_ac06f60c25b78ef1fce357680b1e5701f}{seen\_family} = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+490 
+491         ipptsp->\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port};
+492         ipptsp->\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = ippts\_send->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+493         ipptsp->\hyperlink{struct_i_p_p_ts_png_a28f2dcc657352ee4855d05ed42e4a4af}{ret\_ip\_port} = *ipp\_recv;
+494         ipptsp->\hyperlink{struct_i_p_p_ts_png_a5a40b83400feebb632862f593ad5e4a7}{ret\_timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+495     \} \textcolor{keywordflow}{else} \{
+496         \hyperlink{struct_i_p___port}{IP\_Port} *heard = \hyperlink{assoc_8c_a521780b30ac0601ccb6b133d6f901bcd}{entry\_heard\_get}(entry, &ippts\_send->
+      \hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+497 
+498         \textcolor{keywordflow}{if} (heard) \{
+499             entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at} = ippts\_send->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+500             entry->\hyperlink{struct_client__entry_a1b6b0c24ebf14b86b051d63bd47ffb27}{heard\_family} = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.
+      \hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+501 
+502             *heard = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port};
+503         \}
+504     \}
+505 
+506     \textcolor{keywordflow}{return} 1;
+507 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa745e9c0a5448ce04ab65c5156b4a531_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_ace6056317cff40310ec4041c9675e093}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+id\+\_\+bucket@{candidates\+\_\+id\+\_\+bucket}}
+\index{candidates\+\_\+id\+\_\+bucket@{candidates\+\_\+id\+\_\+bucket}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+id\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bucket\+\_\+t} candidates\+\_\+id\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{const uint8\+\_\+t $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_ace6056317cff40310ec4041c9675e093}
+
+
+Definition at line 344 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates\+\_\+bucket\+\_\+bits, and id\+\_\+bucket().
+
+
+
+Referenced by candidates\+\_\+create\+\_\+internal(), candidates\+\_\+search(), and client\+\_\+id\+\_\+self\+\_\+update().
+
+
+\begin{DoxyCode}
+345 \{
+346     \textcolor{keywordflow}{return} \hyperlink{assoc_8c_a02a00b2c4be43884c00d659524ce8081}{id\_bucket}(\textcolor{keywordtype}{id}, assoc->\hyperlink{struct_assoc_ab4153986e9b7dd71547967436299a424}{candidates\_bucket\_bits});
+347 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{d4/d9d/assoc_8c_ace6056317cff40310ec4041c9675e093_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ace6056317cff40310ec4041c9675e093_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a7d1789e9568f82369268469130cff891}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+search@{candidates\+\_\+search}}
+\index{candidates\+\_\+search@{candidates\+\_\+search}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+search}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t candidates\+\_\+search (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{const uint8\+\_\+t $\ast$}]{id, }
+\item[{{\bf hash\+\_\+t}}]{hash, }
+\item[{{\bf Client\+\_\+entry} $\ast$$\ast$}]{entryptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a7d1789e9568f82369268469130cff891}
+
+
+Definition at line 349 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+size, candidates\+\_\+id\+\_\+bucket(), Client\+\_\+entry\+::client, Client\+\_\+entry\+::hash, hash\+\_\+collide(), H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T, id\+\_\+equal(), candidates\+\_\+bucket\+::list, and Client\+\_\+data\+::public\+\_\+key.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry().
+
+
+\begin{DoxyCode}
+350 \{
+351     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} bucket = \hyperlink{assoc_8c_ace6056317cff40310ec4041c9675e093}{candidates\_id\_bucket}(assoc, \textcolor{keywordtype}{id});
+352     \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[bucket];
+353     \textcolor{keywordtype}{size\_t} coll, pos = hash % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+354 
+355     \textcolor{keywordflow}{for} (coll = 0; coll < \hyperlink{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}{HASH\_COLLIDE\_COUNT}; pos = 
+      \hyperlink{assoc_8c_a2237a67d354721e3155bcb4701e386ac}{hash\_collide}(assoc, pos) , coll++) \{
+356         \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[pos];
+357 
+358         \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash} == hash)
+359             \textcolor{keywordflow}{if} (\hyperlink{util_8c_ada3d44b4f530d3c8c9cb69b732be94b1}{id\_equal}(entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, \textcolor{keywordtype}{id})) \{
+360                 *entryptr = entry;
+361                 \textcolor{keywordflow}{return} 1;
+362             \}
+363     \}
+364 
+365     *entryptr = NULL;
+366     \textcolor{keywordflow}{return} 0;
+367 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a7d1789e9568f82369268469130cff891_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a7d1789e9568f82369268469130cff891_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a12f651ee082f440e6efcff809958e005}{\index{assoc.\+c@{assoc.\+c}!candidates\+\_\+update\+\_\+assoc@{candidates\+\_\+update\+\_\+assoc}}
+\index{candidates\+\_\+update\+\_\+assoc@{candidates\+\_\+update\+\_\+assoc}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{candidates\+\_\+update\+\_\+assoc}]{\setlength{\rightskip}{0pt plus 5cm}static void candidates\+\_\+update\+\_\+assoc (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf Client\+\_\+entry} $\ast$}]{entry, }
+\item[{uint8\+\_\+t}]{used, }
+\item[{const {\bf I\+P\+P\+Ts} $\ast$}]{ippts\+\_\+send, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipp\+\_\+recv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a12f651ee082f440e6efcff809958e005}
+
+
+Definition at line 369 of file assoc.\+c.
+
+
+
+References entry\+\_\+assoc(), entry\+\_\+heard\+\_\+store(), I\+P\+::family, I\+P\+\_\+\+Port\+::ip, I\+P\+P\+Ts\+::ip\+\_\+port, I\+P\+P\+Ts\+Png\+::ip\+\_\+port, I\+P\+P\+Ts\+Png\+::ret\+\_\+ip\+\_\+port, I\+P\+P\+Ts\+Png\+::ret\+\_\+timestamp, Client\+\_\+entry\+::seen\+\_\+at, Client\+\_\+entry\+::seen\+\_\+family, I\+P\+P\+Ts\+::timestamp, I\+P\+P\+Ts\+Png\+::timestamp, unix\+\_\+time(), and Client\+\_\+entry\+::used\+\_\+at.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry().
+
+
+\begin{DoxyCode}
+371 \{
+372     \textcolor{keywordflow}{if} (!assoc || !entry || !ippts\_send)
+373         \textcolor{keywordflow}{return};
+374 
+375     \hyperlink{struct_i_p_p_ts_png}{IPPTsPng} *ipptsp = \hyperlink{assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9}{entry\_assoc}(entry, &ippts\_send->
+      \hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+376 
+377     \textcolor{keywordflow}{if} (!ipptsp)
+378         \textcolor{keywordflow}{return};
+379 
+380     \textcolor{keywordflow}{if} (used)
+381         entry->\hyperlink{struct_client__entry_aa4c583563fdc794eea3b70dcf92870f4}{used\_at} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+382 
+383     \textcolor{comment}{/* do NOT do anything related to wanted, that's handled outside,}
+384 \textcolor{comment}{     * just update the assoc (in the most sensible way)}
+385 \textcolor{comment}{     */}
+386     \textcolor{keywordflow}{if} (ipp\_recv) \{
+387         ipptsp->\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port};
+388         ipptsp->\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = ippts\_send->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+389         ipptsp->\hyperlink{struct_i_p_p_ts_png_a28f2dcc657352ee4855d05ed42e4a4af}{ret\_ip\_port} = *ipp\_recv;
+390         ipptsp->\hyperlink{struct_i_p_p_ts_png_a5a40b83400feebb632862f593ad5e4a7}{ret\_timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+391 
+392         entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+393         entry->\hyperlink{struct_client__entry_ac06f60c25b78ef1fce357680b1e5701f}{seen\_family} = ippts\_send->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+394 
+395         \textcolor{keywordflow}{return};
+396     \}
+397 
+398     \hyperlink{assoc_8c_a512ebb77cd46109c11a1052a76bf0a66}{entry\_heard\_store}(entry, ippts\_send);
+399 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a12f651ee082f440e6efcff809958e005_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a12f651ee082f440e6efcff809958e005_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{\index{assoc.\+c@{assoc.\+c}!client\+\_\+id\+\_\+self\+\_\+update@{client\+\_\+id\+\_\+self\+\_\+update}}
+\index{client\+\_\+id\+\_\+self\+\_\+update@{client\+\_\+id\+\_\+self\+\_\+update}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{client\+\_\+id\+\_\+self\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}static void client\+\_\+id\+\_\+self\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}
+
+
+Definition at line 511 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+size, candidates\+\_\+id\+\_\+bucket(), Client\+\_\+entry\+::client, Client\+\_\+entry\+::hash, hash\+\_\+collide(), H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+C\+O\+U\+N\+T, i, id\+\_\+equal(), id\+\_\+hash(), candidates\+\_\+bucket\+::list, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, Client\+\_\+data\+::public\+\_\+key, Assoc\+::self\+\_\+client\+\_\+id, and Assoc\+::self\+\_\+hash.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+get\+\_\+close\+\_\+entries(), Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed(), and new\+\_\+\+Assoc().
+
+
+\begin{DoxyCode}
+512 \{
+513     \textcolor{keywordflow}{if} (assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash})
+514         \textcolor{keywordflow}{return};
+515 
+516     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, sum = 0;
+517 
+518     \textcolor{keywordflow}{for} (i = 0; i < crypto\_box\_PUBLICKEYBYTES; i++)
+519         sum |= assoc->\hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id}[i];
+520 
+521     if (!sum)
+522         \textcolor{keywordflow}{return};
+523 
+524     assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash} = \hyperlink{assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95}{id\_hash}(assoc, assoc->\hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id});
+525 
+526     \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"id is now set, purging cache of self-references"});
+527 
+528     \textcolor{comment}{/* if we already added some (or loaded some) entries,}
+529 \textcolor{comment}{     * look and remove if we find a match}
+530 \textcolor{comment}{     */}
+531     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} b\_id = \hyperlink{assoc_8c_ace6056317cff40310ec4041c9675e093}{candidates\_id\_bucket}(assoc, assoc->
+      \hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id});
+532     \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[b\_id];
+533     \textcolor{keywordtype}{size\_t} pos = assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash} % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+534 
+535     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{assoc_8c_a0aeffbafedd7a87d9d827d9c25f34eea}{HASH\_COLLIDE\_COUNT}; pos = \hyperlink{assoc_8c_a2237a67d354721e3155bcb4701e386ac}{hash\_collide}(assoc, pos), i++) 
+      \{
+536         \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[pos];
+537 
+538         \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash} == assoc->\hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\_hash})
+539             \textcolor{keywordflow}{if} (\hyperlink{util_8c_ada3d44b4f530d3c8c9cb69b732be94b1}{id\_equal}(entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, assoc->
+      \hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id}))
+540                 entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash} = 0;
+541     \}
+542 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a9419b231b388fff46f176830c4b9a52f}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+index\+\_\+bubble@{dist\+\_\+index\+\_\+bubble}}
+\index{dist\+\_\+index\+\_\+bubble@{dist\+\_\+index\+\_\+bubble}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+index\+\_\+bubble}]{\setlength{\rightskip}{0pt plus 5cm}static void dist\+\_\+index\+\_\+bubble (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{uint64\+\_\+t $\ast$}]{dist\+\_\+list, }
+\item[{size\+\_\+t}]{first, }
+\item[{size\+\_\+t}]{last, }
+\item[{uint8\+\_\+t $\ast$}]{id, }
+\item[{void $\ast$}]{custom\+\_\+data, }
+\item[{{\bf Assoc\+\_\+distance\+\_\+relative\+\_\+callback}}]{dist\+\_\+rel\+\_\+func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a9419b231b388fff46f176830c4b9a52f}
+
+
+Definition at line 172 of file assoc.\+c.
+
+
+
+References dist\+\_\+index\+\_\+id(), i, last, and swap.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries().
+
+
+\begin{DoxyCode}
+174 \{
+175     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, k;
+176 
+177     \textcolor{keywordflow}{for} (i = \hyperlink{onion__test_8c_a49c185b8248f424bbab4359e461ae734}{first}; i <= \hyperlink{onion__test_8c_ab2133dedc5ff8edd0101195aaa5e101c}{last}; i++) \{
+178         uint8\_t *id1 = \hyperlink{assoc_8c_aebc74fa92cb369834babcadf8b73483a}{dist\_index\_id}(assoc, dist\_list[i]);
+179 
+180         \textcolor{keywordflow}{for} (k = i + 1; k <= \hyperlink{onion__test_8c_ab2133dedc5ff8edd0101195aaa5e101c}{last}; k++) \{
+181             uint8\_t *id2 = \hyperlink{assoc_8c_aebc74fa92cb369834babcadf8b73483a}{dist\_index\_id}(assoc, dist\_list[k]);
+182 
+183             \textcolor{keywordflow}{if} (id1 && id2)
+184                 \textcolor{keywordflow}{if} (dist\_rel\_func(assoc, custom\_data, \textcolor{keywordtype}{id}, id1, id2) == 2) \{
+185                     uint64\_t \hyperlink{dht__test_8c_a369180e5e0a23addbc2a6a9e24fee590}{swap} = dist\_list[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}];
+186                     dist\_list[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = dist\_list[k];
+187                     dist\_list[k] = \hyperlink{dht__test_8c_a369180e5e0a23addbc2a6a9e24fee590}{swap};
+188                 \}
+189         \}
+190     \}
+191 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a9419b231b388fff46f176830c4b9a52f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a9419b231b388fff46f176830c4b9a52f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_afe8472c27f16e873da0fa3a6995c1197}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+index\+\_\+comp@{dist\+\_\+index\+\_\+comp}}
+\index{dist\+\_\+index\+\_\+comp@{dist\+\_\+index\+\_\+comp}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+index\+\_\+comp}]{\setlength{\rightskip}{0pt plus 5cm}static int dist\+\_\+index\+\_\+comp (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_afe8472c27f16e873da0fa3a6995c1197}
+
+
+Definition at line 124 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries().
+
+
+\begin{DoxyCode}
+125 \{
+126     \textcolor{keyword}{const} uint64\_t *\_a = a;
+127     \textcolor{keyword}{const} uint64\_t *\_b = b;
+128 
+129     \textcolor{keywordflow}{if} (*\_a < *\_b)
+130         \textcolor{keywordflow}{return} -1;
+131 
+132     \textcolor{keywordflow}{if} (*\_a > *\_b)
+133         \textcolor{keywordflow}{return} 1;
+134 
+135     \textcolor{keywordflow}{return} 0;
+136 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_afe8472c27f16e873da0fa3a6995c1197_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+index\+\_\+entry@{dist\+\_\+index\+\_\+entry}}
+\index{dist\+\_\+index\+\_\+entry@{dist\+\_\+index\+\_\+entry}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+index\+\_\+entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Client\+\_\+entry}$\ast$ dist\+\_\+index\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{uint64\+\_\+t}]{dist\+\_\+ind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}
+
+
+Definition at line 139 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+count, Assoc\+::candidates\+\_\+bucket\+\_\+size, D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+M\+A\+S\+K, Client\+\_\+entry\+::hash, and candidates\+\_\+bucket\+::list.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries(), and dist\+\_\+index\+\_\+id().
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordflow}{if} ((dist\_ind & \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{DISTANCE\_INDEX\_INDEX\_MASK}) == DISTANCE\_INDEX\_INDEX\_MASK)
+142         \textcolor{keywordflow}{return} NULL;
+143 
+144     \textcolor{keywordtype}{size\_t} total = assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count} * assoc->
+      \hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+145     uint32\_t index = dist\_ind & \hyperlink{assoc_8c_a8d6efce995b5d21adfd794b9c8bfde10}{DISTANCE\_INDEX\_INDEX\_MASK};
+146 
+147     \textcolor{keywordflow}{if} (index < total) \{
+148         \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} b\_id = index / assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+149         \hyperlink{structcandidates__bucket}{candidates\_bucket} *cnd\_bckt = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[b\_id];
+150         \textcolor{keywordtype}{size\_t} b\_ix = index % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+151         \hyperlink{struct_client__entry}{Client\_entry} *entry = &cnd\_bckt->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[b\_ix];
+152 
+153         \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash})
+154             \textcolor{keywordflow}{return} entry;
+155     \}
+156 
+157     \textcolor{keywordflow}{return} NULL;
+158 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_aebc74fa92cb369834babcadf8b73483a}{\index{assoc.\+c@{assoc.\+c}!dist\+\_\+index\+\_\+id@{dist\+\_\+index\+\_\+id}}
+\index{dist\+\_\+index\+\_\+id@{dist\+\_\+index\+\_\+id}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{dist\+\_\+index\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t$\ast$ dist\+\_\+index\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{uint64\+\_\+t}]{dist\+\_\+ind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_aebc74fa92cb369834babcadf8b73483a}
+
+
+Definition at line 161 of file assoc.\+c.
+
+
+
+References Client\+\_\+entry\+::client, dist\+\_\+index\+\_\+entry(), and Client\+\_\+data\+::public\+\_\+key.
+
+
+
+Referenced by dist\+\_\+index\+\_\+bubble().
+
+
+\begin{DoxyCode}
+162 \{
+163     \hyperlink{struct_client__entry}{Client\_entry} *entry = \hyperlink{assoc_8c_a07e9e64cd1b39d0dc9259d998e52f1ab}{dist\_index\_entry}(assoc, dist\_ind);
+164 
+165     \textcolor{keywordflow}{if} (entry)
+166         \textcolor{keywordflow}{return} entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key};
+167 
+168     \textcolor{keywordflow}{return} NULL;
+169 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{d4/d9d/assoc_8c_aebc74fa92cb369834babcadf8b73483a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_aebc74fa92cb369834babcadf8b73483a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a36aff33785fb0db2565cf4cb5b080327}{\index{assoc.\+c@{assoc.\+c}!do\+\_\+\+Assoc@{do\+\_\+\+Assoc}}
+\index{do\+\_\+\+Assoc@{do\+\_\+\+Assoc}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{do\+\_\+\+Assoc}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+\+Assoc (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf D\+H\+T} $\ast$}]{dht}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_a36aff33785fb0db2565cf4cb5b080327}
+
+
+Definition at line 886 of file assoc.\+c.
+
+
+
+References A\+S\+S\+O\+C\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+R\+E\+F\+R\+E\+S\+H, Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+count, Assoc\+::candidates\+\_\+bucket\+\_\+size, C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T, C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+S\+E\+E\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T, Client\+\_\+entry\+::client, D\+H\+T\+\_\+getnodes(), for(), Client\+\_\+entry\+::getnodes, Assoc\+::getnodes, Client\+\_\+entry\+::hash, Client\+\_\+entry\+::heard\+\_\+at, i, I\+P\+\_\+\+Port\+::ip, ip\+\_\+ntoa(), I\+P\+P\+Ts\+Png\+::ip\+\_\+port, is\+\_\+timeout(), candidates\+\_\+bucket\+::list, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+S\+C\+O\+P\+E, m, I\+P\+\_\+\+Port\+::port, Client\+\_\+data\+::public\+\_\+key, Client\+\_\+entry\+::seen\+\_\+at, and unix\+\_\+time().
+
+
+
+Referenced by do\+\_\+\+D\+H\+T().
+
+
+\begin{DoxyCode}
+887 \{
+888     \textcolor{keywordflow}{if} (\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(assoc->\hyperlink{struct_assoc_aec732782691c39a31d8c579a79a8fed2}{getnodes}, \hyperlink{assoc_8h_a60f209fd553fa95d0f6973b367b9b60c}{ASSOC\_BUCKET\_REFRESH})) \{
+889         assoc->\hyperlink{struct_assoc_aec732782691c39a31d8c579a79a8fed2}{getnodes} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+890 
+891         \textcolor{keywordtype}{size\_t} candidate = (rand() % assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}) + assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count};
+892 
+893         \textcolor{comment}{/* in that bucket or the buckets closest to it:}
+894 \textcolor{comment}{         * find the best heard candidate}
+895 \textcolor{comment}{         * find the best seen candidate}
+896 \textcolor{comment}{         * send getnode() requests to both */}
+897         uint8\_t *target\_id = NULL;
+898         \hyperlink{struct_client__entry}{Client\_entry} *heard = NULL, *seen = NULL;
+899         \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, k, \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m};
+900 
+901         \hyperlink{toxav__many__test_8c_a8799beff27c0e5459ef50f9ca1efe92c}{for} (i = 1; i < assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}; i++) \{
+902             \textcolor{keywordflow}{if} (i % 2)
+903                 k = - (i >> 1);
+904             \textcolor{keywordflow}{else}
+905                 k = i >> 1;
+906 
+907             \textcolor{keywordtype}{size\_t} bckt = (candidate + k) % assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count};
+908 
+909             \hyperlink{toxav__many__test_8c_a8799beff27c0e5459ef50f9ca1efe92c}{for} (\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = 0; \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} < assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}; 
+      \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}++)
+910                 \textcolor{keywordflow}{if} (assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[bckt].\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}].\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash}) \{
+911                     \hyperlink{struct_client__entry}{Client\_entry} *entry = &assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}[bckt].
+      \hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}];
+912 
+913                     \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_aec732782691c39a31d8c579a79a8fed2}{getnodes}, 
+      \hyperlink{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}{CANDIDATES\_SEEN\_TIMEOUT}))
+914                         \textcolor{keywordflow}{continue};
+915 
+916                     \textcolor{keywordflow}{if} (!target\_id)
+917                         target\_id = entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key};
+918 
+919                     \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at}) \{
+920                         \textcolor{keywordflow}{if} (!seen)
+921                             \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_ab632ae1b8a283a06d6cb3881c377c6cd}{seen\_at}, 
+      \hyperlink{assoc_8c_a9bb69b73619cccc40c0aa09c227f2bce}{CANDIDATES\_SEEN\_TIMEOUT}))
+922                                 seen = entry;
+923                     \}
+924 
+925                     \textcolor{keywordflow}{if} (entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at}) \{
+926                         \textcolor{keywordflow}{if} (!heard)
+927                             \textcolor{keywordflow}{if} (!\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at}, 
+      \hyperlink{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}{CANDIDATES\_HEARD\_TIMEOUT}))
+928                                 heard = entry;
+929                     \}
+930 
+931                     \textcolor{keywordflow}{if} (seen && heard)
+932                         \textcolor{keywordflow}{break};
+933                 \}
+934 
+935             \textcolor{keywordflow}{if} (seen && heard)
+936                 \textcolor{keywordflow}{break};
+937         \}
+938 
+939         \textcolor{keywordflow}{if} (seen) \{
+940             \hyperlink{struct_i_p_p_ts_png}{IPPTsPng} *ippts = seen->seen\_family == AF\_INET ? &seen->client.assoc4 : &seen->client.
+      assoc6;
+941 
+942             \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"[%u] => S[%s...] %s:%u"}, (uint32\_t)(candidate % assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}),
+943                          idpart2str(seen->client.public\_key, 8), \hyperlink{network_8c_af71f49c78ce7b76ccf08785c6ec08706}{ip\_ntoa}(&ippts->
+      \hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}), htons(ippts->\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}));
+944 
+945             \hyperlink{_d_h_t_8c_a769ef744f969e1b4c55547cb74abee59}{DHT\_getnodes}(dht, &ippts->\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}, seen->client.public\_key, target\_id);
+946             seen->getnodes = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+947         \}
+948 
+949         \textcolor{keywordflow}{if} (heard && (heard != seen)) \{
+950             \hyperlink{struct_i_p___port}{IP\_Port} *ipp = heard->heard\_family == AF\_INET ? &heard->assoc\_heard4 : &heard->
+      assoc\_heard6;
+951 
+952             \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"[%u] => H[%s...] %s:%u"}, (uint32\_t)(candidate % assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}),
+953                          idpart2str(heard->client.public\_key, 8), \hyperlink{network_8c_af71f49c78ce7b76ccf08785c6ec08706}{ip\_ntoa}(&ipp->
+      \hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}), htons(ipp->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}));
+954 
+955             \hyperlink{_d_h_t_8c_a769ef744f969e1b4c55547cb74abee59}{DHT\_getnodes}(dht, ipp, heard->client.public\_key, target\_id);
+956             heard->getnodes = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+957         \}
+958 
+959         \hyperlink{logger_8h_a3c9976e3ba8401ba5a2117ee6297c669}{LOGGER\_SCOPE} (
+960 
+961             \textcolor{keywordflow}{if} ( !heard && !seen )
+962             \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"[%u] => no nodes to talk to??"}, (uint32\_t)(candidate % assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}));
+963         );
+964     \}
+965 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a36aff33785fb0db2565cf4cb5b080327_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a36aff33785fb0db2565cf4cb5b080327_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9}{\index{assoc.\+c@{assoc.\+c}!entry\+\_\+assoc@{entry\+\_\+assoc}}
+\index{entry\+\_\+assoc@{entry\+\_\+assoc}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{entry\+\_\+assoc}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\+P\+P\+Ts\+Png}$\ast$ entry\+\_\+assoc (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+\_\+entry} $\ast$}]{cl\+\_\+entry, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9}
+
+
+Definition at line 244 of file assoc.\+c.
+
+
+
+References Client\+\_\+data\+::assoc4, Client\+\_\+data\+::assoc6, Client\+\_\+entry\+::client, I\+P\+::family, and I\+P\+\_\+\+Port\+::ip.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+new(), and candidates\+\_\+update\+\_\+assoc().
+
+
+\begin{DoxyCode}
+245 \{
+246     \textcolor{keywordflow}{if} (!cl\_entry)
+247         \textcolor{keywordflow}{return} NULL;
+248 
+249     \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)
+250         \textcolor{keywordflow}{return} &cl\_entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4};
+251 
+252     \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)
+253         \textcolor{keywordflow}{return} &cl\_entry->\hyperlink{struct_client__entry_a114cded03654e9d27771e24fa1712e39}{client}.\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6};
+254 
+255     \textcolor{keywordflow}{return} NULL;
+256 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_afb9b36d2d6bd5c3f463a14bbbfc5dca9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a521780b30ac0601ccb6b133d6f901bcd}{\index{assoc.\+c@{assoc.\+c}!entry\+\_\+heard\+\_\+get@{entry\+\_\+heard\+\_\+get}}
+\index{entry\+\_\+heard\+\_\+get@{entry\+\_\+heard\+\_\+get}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{entry\+\_\+heard\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\+P\+\_\+\+Port}$\ast$ entry\+\_\+heard\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+\_\+entry} $\ast$}]{entry, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a521780b30ac0601ccb6b133d6f901bcd}
+
+
+Definition at line 259 of file assoc.\+c.
+
+
+
+References Client\+\_\+entry\+::assoc\+\_\+heard4, Client\+\_\+entry\+::assoc\+\_\+heard6, I\+P\+::family, and I\+P\+\_\+\+Port\+::ip.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+new().
+
+
+\begin{DoxyCode}
+260 \{
+261     \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)
+262         \textcolor{keywordflow}{return} &entry->\hyperlink{struct_client__entry_a85c7d2390e7cf32bb433484f958205f1}{assoc\_heard4};
+263     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)
+264         \textcolor{keywordflow}{return} &entry->\hyperlink{struct_client__entry_ae6c8f7476cc280c4f1ef1ea4799e728e}{assoc\_heard6};
+265     \textcolor{keywordflow}{else}
+266         \textcolor{keywordflow}{return} NULL;
+267 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a521780b30ac0601ccb6b133d6f901bcd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a512ebb77cd46109c11a1052a76bf0a66}{\index{assoc.\+c@{assoc.\+c}!entry\+\_\+heard\+\_\+store@{entry\+\_\+heard\+\_\+store}}
+\index{entry\+\_\+heard\+\_\+store@{entry\+\_\+heard\+\_\+store}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{entry\+\_\+heard\+\_\+store}]{\setlength{\rightskip}{0pt plus 5cm}static int entry\+\_\+heard\+\_\+store (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+\_\+entry} $\ast$}]{entry, }
+\item[{const {\bf I\+P\+P\+Ts} $\ast$}]{ippts}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a512ebb77cd46109c11a1052a76bf0a66}
+
+
+Definition at line 274 of file assoc.\+c.
+
+
+
+References Client\+\_\+entry\+::assoc\+\_\+heard4, Client\+\_\+entry\+::assoc\+\_\+heard6, C\+A\+N\+D\+I\+D\+A\+T\+E\+S\+\_\+\+H\+E\+A\+R\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T, I\+P\+::family, Client\+\_\+entry\+::heard\+\_\+at, Client\+\_\+entry\+::heard\+\_\+family, I\+P\+\_\+\+Port\+::ip, I\+P\+P\+Ts\+::ip\+\_\+port, ipport\+\_\+equal(), ipport\+\_\+isset(), is\+\_\+timeout(), L\+A\+N\+\_\+ip(), and I\+P\+P\+Ts\+::timestamp.
+
+
+
+Referenced by candidates\+\_\+update\+\_\+assoc().
+
+
+\begin{DoxyCode}
+275 \{
+276     \textcolor{keywordflow}{if} (!entry || !ippts)
+277         \textcolor{keywordflow}{return} 0;
+278 
+279     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(&ippts->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}))
+280         \textcolor{keywordflow}{return} 0;
+281 
+282     \hyperlink{struct_i_p___port}{IP\_Port}  *heard;
+283     \textcolor{keyword}{const} \hyperlink{struct_i_p___port}{IP\_Port}  *ipp = &ippts->\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port};
+284 
+285     \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)
+286         heard = &entry->\hyperlink{struct_client__entry_a85c7d2390e7cf32bb433484f958205f1}{assoc\_heard4};
+287     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)
+288         heard = &entry->\hyperlink{struct_client__entry_ae6c8f7476cc280c4f1ef1ea4799e728e}{assoc\_heard6};
+289     \textcolor{keywordflow}{else}
+290         \textcolor{keywordflow}{return} 0;
+291 
+292     \textcolor{keywordflow}{if} (\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(ipp, heard))
+293         \textcolor{keywordflow}{return} 0;
+294 
+295     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a8436367218afb29bcf1b5fecd071648e}{ipport\_isset}(heard)) \{
+296         *heard = *ipp;
+297         entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at} = ippts->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+298         entry->\hyperlink{struct_client__entry_a1b6b0c24ebf14b86b051d63bd47ffb27}{heard\_family} = ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+299         \textcolor{keywordflow}{return} 1;
+300     \}
+301 
+302     \textcolor{comment}{/* don't destroy a good address with a crappy one}
+303 \textcolor{comment}{     * (unless we're very timed out) */}
+304     uint8\_t LAN\_ipp = \hyperlink{_l_a_n__discovery_8c_a2d80a53390598eb8ededbc63f4e9c152}{LAN\_ip}(ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}) == 0;
+305     uint8\_t LAN\_entry = \hyperlink{_l_a_n__discovery_8c_a2d80a53390598eb8ededbc63f4e9c152}{LAN\_ip}(heard->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}) == 0;
+306 
+307     \textcolor{keywordflow}{if} (LAN\_ipp && !LAN\_entry && !\hyperlink{util_8c_ab643c84141e04b54ba650c50165ba288}{is\_timeout}(entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at}, 
+      \hyperlink{assoc_8c_ace4ac45ae9f3a8310f57d6ddbdf051ee}{CANDIDATES\_HEARD\_TIMEOUT}))
+308         \textcolor{keywordflow}{return} 0;
+309 
+310     *heard = *ipp;
+311     entry->\hyperlink{struct_client__entry_a0886ba8c555aa6352f2dbf0606636f13}{heard\_at} = ippts->\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp};
+312     entry->\hyperlink{struct_client__entry_a1b6b0c24ebf14b86b051d63bd47ffb27}{heard\_family} = ipp->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+313 
+314     \textcolor{keywordflow}{return} 1;
+315 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a512ebb77cd46109c11a1052a76bf0a66_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a512ebb77cd46109c11a1052a76bf0a66_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a2237a67d354721e3155bcb4701e386ac}{\index{assoc.\+c@{assoc.\+c}!hash\+\_\+collide@{hash\+\_\+collide}}
+\index{hash\+\_\+collide@{hash\+\_\+collide}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{hash\+\_\+collide}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf hash\+\_\+t} hash\+\_\+collide (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{{\bf hash\+\_\+t}}]{hash}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a2237a67d354721e3155bcb4701e386ac}
+
+
+Definition at line 216 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates\+\_\+bucket\+\_\+size, and H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E.
+
+
+
+Referenced by candidates\+\_\+create\+\_\+internal(), candidates\+\_\+search(), and client\+\_\+id\+\_\+self\+\_\+update().
+
+
+\begin{DoxyCode}
+217 \{
+218     uint64\_t hash64 = hash % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+219     hash64 = (hash64 * \hyperlink{assoc_8c_a1899251b38a7a195f127d3d2d9d387e2}{HASH\_COLLIDE\_PRIME}) % assoc->
+      \hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size};
+220 
+221     \hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\_t} retval = hash64;
+222 
+223     \textcolor{comment}{/* this should never happen when CANDIDATES\_TO\_KEEP is prime and hash not a multiple}
+224 \textcolor{comment}{     * (id\_hash() checks for a multiple and returns a different hash in that case)}
+225 \textcolor{comment}{     *}
+226 \textcolor{comment}{     * ( 1 .. (prime - 1) is a group over multiplication and every number has its inverse}
+227 \textcolor{comment}{     *   in the group, so no multiplication should ever end on zero as long neither}
+228 \textcolor{comment}{     *   of the two factors was zero-equivalent )}
+229 \textcolor{comment}{     *}
+230 \textcolor{comment}{     * BUT: because the usage of the word "never" invokes Murphy's law, catch it */}
+231     if (!retval) \{
+232 \textcolor{preprocessor}{#ifdef DEBUG}
+233         fprintf(stderr, \textcolor{stringliteral}{"assoc::hash\_collide: hash %u, bucket size %u => %u!"}, hash, (uint)assoc->
+      \hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size},
+234                 retval);
+235         assert(retval != 0);
+236 \textcolor{preprocessor}{#endif}
+237         retval = 1;
+238     \}
+239 
+240     \textcolor{keywordflow}{return} retval;
+241 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a2237a67d354721e3155bcb4701e386ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a02a00b2c4be43884c00d659524ce8081}{\index{assoc.\+c@{assoc.\+c}!id\+\_\+bucket@{id\+\_\+bucket}}
+\index{id\+\_\+bucket@{id\+\_\+bucket}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{id\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bucket\+\_\+t} id\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{id, }
+\item[{uint8\+\_\+t}]{bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a02a00b2c4be43884c00d659524ce8081}
+
+
+Definition at line 324 of file assoc.\+c.
+
+
+
+Referenced by candidates\+\_\+id\+\_\+bucket().
+
+
+\begin{DoxyCode}
+325 \{
+326     \textcolor{comment}{/* return the first "bits" bits of id */}
+327     \hyperlink{assoc_8c_a870a9554cd560a551b3bb8229c684325}{bucket\_t} retval = 0;
+328 
+329     uint8\_t pos = 0;
+330 
+331     \textcolor{keywordflow}{while} (bits > 8) \{
+332         retval = (retval << 8) | \textcolor{keywordtype}{id}[pos++];
+333         bits -= 8;
+334     \}
+335 
+336     \textcolor{keywordflow}{return} (retval << bits) | (\textcolor{keywordtype}{id}[pos] >> (8 - bits));
+337 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a02a00b2c4be43884c00d659524ce8081_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_af9b9ca1f09c12f5ba91e06bf254e09f6}{\index{assoc.\+c@{assoc.\+c}!id\+\_\+distance@{id\+\_\+distance}}
+\index{id\+\_\+distance@{id\+\_\+distance}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{id\+\_\+distance}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t id\+\_\+distance (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{void $\ast$}]{callback\+\_\+data, }
+\item[{const uint8\+\_\+t $\ast$}]{id\+\_\+ref, }
+\item[{const uint8\+\_\+t $\ast$}]{id\+\_\+test}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_af9b9ca1f09c12f5ba91e06bf254e09f6}
+
+
+Definition at line 106 of file assoc.\+c.
+
+
+
+References D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+B\+I\+T\+S.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries().
+
+
+\begin{DoxyCode}
+107 \{
+108     \textcolor{comment}{/* with BIG\_ENDIAN, this would be a one-liner... */}
+109     uint64\_t retval = 0;
+110 
+111     uint8\_t pos = 0, bits = \hyperlink{assoc_8h_ab4aa21ae6dcbba80ec61b62f980725fe}{DISTANCE\_INDEX\_DISTANCE\_BITS};
+112 
+113     \textcolor{keywordflow}{while} (bits > 8) \{
+114         uint8\_t distance = abs((int8\_t)id\_ref[pos] ^ (int8\_t)id\_test[pos]);
+115         retval = (retval << 8) | distance;
+116         bits -= 8;
+117         pos++;
+118     \}
+119 
+120     \textcolor{keywordflow}{return} (retval << bits) | ((id\_ref[pos] ^ id\_test[pos]) >> (8 - bits));
+121 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_af9b9ca1f09c12f5ba91e06bf254e09f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95}{\index{assoc.\+c@{assoc.\+c}!id\+\_\+hash@{id\+\_\+hash}}
+\index{id\+\_\+hash@{id\+\_\+hash}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{id\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf hash\+\_\+t} id\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf Assoc} $\ast$}]{assoc, }
+\item[{const uint8\+\_\+t $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95}
+
+
+Definition at line 199 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates\+\_\+bucket\+\_\+size, and i.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry(), and client\+\_\+id\+\_\+self\+\_\+update().
+
+
+\begin{DoxyCode}
+200 \{
+201     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, res = 0x19a64e82;
+202 
+203     \textcolor{keywordflow}{for} (i = 0; i < crypto\_box\_PUBLICKEYBYTES; i++)
+204         res = ((res << 1) ^ \textcolor{keywordtype}{id}[i]) + (res >> 31);
+205 
+206     \textcolor{comment}{/* can't have zero as hash, a) marks an unused spot,}
+207 \textcolor{comment}{     * b) collision function is multiplicative */}
+208     \textcolor{keywordflow}{if} (!(res % assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}))
+209         res++;
+210 
+211     \textcolor{keywordflow}{return} res;
+212 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a89ad0cf0f7d7c45e00c8bbdd66b56e95_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a26d82e35d047181d0e883a4b91373793}{\index{assoc.\+c@{assoc.\+c}!kill\+\_\+\+Assoc@{kill\+\_\+\+Assoc}}
+\index{kill\+\_\+\+Assoc@{kill\+\_\+\+Assoc}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{kill\+\_\+\+Assoc}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+\+Assoc (
+\begin{DoxyParamCaption}
+\item[{{\bf Assoc} $\ast$}]{assoc}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_a26d82e35d047181d0e883a4b91373793}
+
+
+Definition at line 968 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, and candidates\+\_\+bucket\+::list.
+
+
+
+Referenced by kill\+\_\+\+D\+H\+T(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+969 \{
+970     \textcolor{keywordflow}{if} (assoc) \{
+971         free(assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list});
+972         free(assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates});
+973         free(assoc);
+974     \}
+975 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a26d82e35d047181d0e883a4b91373793_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}{\index{assoc.\+c@{assoc.\+c}!new\+\_\+\+Assoc@{new\+\_\+\+Assoc}}
+\index{new\+\_\+\+Assoc@{new\+\_\+\+Assoc}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{new\+\_\+\+Assoc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Assoc}$\ast$ new\+\_\+\+Assoc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{bits, }
+\item[{size\+\_\+t}]{entries, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}
+
+
+Definition at line 779 of file assoc.\+c.
+
+
+
+References Assoc\+::candidates, Assoc\+::candidates\+\_\+bucket\+\_\+bits, Assoc\+::candidates\+\_\+bucket\+\_\+count, Assoc\+::candidates\+\_\+bucket\+\_\+size, client\+\_\+id\+\_\+self\+\_\+update(), Assoc\+::getnodes, Client\+\_\+entry\+::hash, H\+A\+S\+H\+\_\+\+C\+O\+L\+L\+I\+D\+E\+\_\+\+P\+R\+I\+M\+E, id\+\_\+copy(), candidates\+\_\+bucket\+::list, L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, prime\+\_\+upto\+\_\+min9(), Assoc\+::self\+\_\+client\+\_\+id, and unix\+\_\+time().
+
+
+
+Referenced by new\+\_\+\+Assoc\+\_\+default(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+780 \{
+781     \textcolor{keywordflow}{if} (!public\_id)
+782         \textcolor{keywordflow}{return} NULL;
+783 
+784     \hyperlink{struct_assoc}{Assoc} *assoc = calloc(1, \textcolor{keyword}{sizeof}(*assoc));
+785 
+786     \textcolor{keywordflow}{if} (!assoc)
+787         \textcolor{keywordflow}{return} NULL;
+788 
+789     \textcolor{comment}{/*}
+790 \textcolor{comment}{     * bits must be in [ 2 .. 15 ]}
+791 \textcolor{comment}{     * entries must be a prime}
+792 \textcolor{comment}{     */}
+793     \textcolor{keywordflow}{if} (bits < 2)
+794         bits = 2;
+795     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (bits > 15)
+796         bits = 15;
+797 
+798     assoc->\hyperlink{struct_assoc_ab4153986e9b7dd71547967436299a424}{candidates\_bucket\_bits} = bits;
+799     assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count} = 1U << bits;
+800 
+801     \textcolor{keywordflow}{if} (entries < 25) \{
+802         \textcolor{keywordflow}{if} (entries <= 6)
+803             entries = 5;
+804         \textcolor{keywordflow}{else} \{
+805             entries = entries - (1 - (entries % 2)); \textcolor{comment}{/* even => odd */}
+806 
+807             \textcolor{comment}{/* 7..23: all odds but 9&15 are prime */}
+808             \textcolor{keywordflow}{if} (!(entries % 3)) \textcolor{comment}{/* 9, 15 */}
+809                 entries -= 2;   \textcolor{comment}{/* 7, 13 */}
+810         \}
+811     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (entries > ((1 << 17) - 1)) \textcolor{comment}{/* 130k+ */}
+812         entries = (1 << 17) - 1;
+813     \textcolor{keywordflow}{else} \{
+814         \textcolor{comment}{/* 9+: test and find a prime less or equal */}
+815         \textcolor{keywordtype}{size\_t} entries\_test = \hyperlink{assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743}{prime\_upto\_min9}(entries);
+816 
+817         \textcolor{keywordflow}{if} (entries\_test == \hyperlink{assoc_8c_a1899251b38a7a195f127d3d2d9d387e2}{HASH\_COLLIDE\_PRIME}) \textcolor{comment}{/* disallowed */}
+818             entries\_test = \hyperlink{assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743}{prime\_upto\_min9}(entries\_test - 1);
+819 
+820         \textcolor{keywordflow}{if} (entries\_test != entries) \{
+821 
+822             \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"trimmed %i to %i.\(\backslash\)n"}, (\textcolor{keywordtype}{int})entries, (\textcolor{keywordtype}{int})entries\_test);
+823             entries = (size\_t)entries\_test;
+824         \}
+825     \}
+826 
+827     assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size} = entries;
+828 
+829     \textcolor{comment}{/* allocation: preferably few blobs */}
+830     \textcolor{keywordtype}{size\_t} bckt, cix;
+831     \hyperlink{struct_client__entry}{Client\_entry} *clients = malloc(\textcolor{keyword}{sizeof}(*clients) * assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count} * assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size});
+832 
+833     \textcolor{keywordflow}{if} (!clients) \{
+834         free(assoc);
+835         \textcolor{keywordflow}{return} NULL;
+836     \}
+837 
+838     \hyperlink{structcandidates__bucket}{candidates\_bucket} *lists = malloc(\textcolor{keyword}{sizeof}(*lists) * assoc->
+      \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count});
+839 
+840     \textcolor{keywordflow}{if} (!lists) \{
+841         free(assoc);
+842         free(clients);
+843         \textcolor{keywordflow}{return} NULL;
+844     \}
+845 
+846     \textcolor{keywordflow}{for} (bckt = 0; bckt < assoc->\hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\_bucket\_count}; bckt++) \{
+847         \hyperlink{structcandidates__bucket}{candidates\_bucket} *list = &lists[bckt];
+848 
+849         list->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list} = &clients[bckt * assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}];
+850 
+851         \textcolor{keywordflow}{for} (cix = 0; cix < assoc->\hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\_bucket\_size}; cix++)
+852             list->\hyperlink{structcandidates__bucket_a515f2b5e53003e623b334ab90c4280e0}{list}[cix].\hyperlink{struct_client__entry_a35aa0f6864b81ef3de3d4d46ef823a0c}{hash} = 0;
+853     \}
+854 
+855     assoc->\hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates} = lists;
+856     assoc->\hyperlink{struct_assoc_aec732782691c39a31d8c579a79a8fed2}{getnodes} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+857 
+858     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(assoc->\hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\_client\_id}, public\_id);
+859     \hyperlink{assoc_8c_aa8781ddcd6a9240db73c39a2ff844d12}{client\_id\_self\_update}(assoc);
+860 
+861     \textcolor{keywordflow}{return} assoc;
+862 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c}{\index{assoc.\+c@{assoc.\+c}!new\+\_\+\+Assoc\+\_\+default@{new\+\_\+\+Assoc\+\_\+default}}
+\index{new\+\_\+\+Assoc\+\_\+default@{new\+\_\+\+Assoc\+\_\+default}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{new\+\_\+\+Assoc\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Assoc}$\ast$ new\+\_\+\+Assoc\+\_\+default (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c}
+
+
+Definition at line 864 of file assoc.\+c.
+
+
+
+References new\+\_\+\+Assoc().
+
+
+
+Referenced by new\+\_\+\+D\+H\+T(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+865 \{
+866     \textcolor{comment}{/* original 8, 251 averages to ~32k entries... probably the whole DHT :D}
+867 \textcolor{comment}{     * 320 entries is fine, hopefully */}
+868     \textcolor{keywordflow}{return} \hyperlink{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}{new\_Assoc}(6, 15, public\_id);
+869 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a30d998cac1d5cf6eecd4e295411da518}{\index{assoc.\+c@{assoc.\+c}!odd\+\_\+min9\+\_\+is\+\_\+prime@{odd\+\_\+min9\+\_\+is\+\_\+prime}}
+\index{odd\+\_\+min9\+\_\+is\+\_\+prime@{odd\+\_\+min9\+\_\+is\+\_\+prime}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{odd\+\_\+min9\+\_\+is\+\_\+prime}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t odd\+\_\+min9\+\_\+is\+\_\+prime (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a30d998cac1d5cf6eecd4e295411da518}
+
+
+Definition at line 753 of file assoc.\+c.
+
+
+
+References i.
+
+
+
+Referenced by prime\+\_\+upto\+\_\+min9().
+
+
+\begin{DoxyCode}
+754 \{
+755     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = 3;
+756 
+757     \textcolor{keywordflow}{while} (i * i <= value) \{
+758         \textcolor{keywordflow}{if} (!(value % i))
+759             \textcolor{keywordflow}{return} 0;
+760 
+761         i += 2;
+762     \}
+763 
+764     \textcolor{keywordflow}{return} 1;
+765 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a30d998cac1d5cf6eecd4e295411da518_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743}{\index{assoc.\+c@{assoc.\+c}!prime\+\_\+upto\+\_\+min9@{prime\+\_\+upto\+\_\+min9}}
+\index{prime\+\_\+upto\+\_\+min9@{prime\+\_\+upto\+\_\+min9}!assoc.\+c@{assoc.\+c}}
+\subsubsection[{prime\+\_\+upto\+\_\+min9}]{\setlength{\rightskip}{0pt plus 5cm}static size\+\_\+t prime\+\_\+upto\+\_\+min9 (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743}
+
+
+Definition at line 767 of file assoc.\+c.
+
+
+
+References odd\+\_\+min9\+\_\+is\+\_\+prime().
+
+
+
+Referenced by new\+\_\+\+Assoc().
+
+
+\begin{DoxyCode}
+768 \{
+769     \textcolor{comment}{/* even => odd */}
+770     limit = limit - (1 - (limit % 2));
+771 
+772     \textcolor{keywordflow}{while} (!\hyperlink{assoc_8c_a30d998cac1d5cf6eecd4e295411da518}{odd\_min9\_is\_prime}(limit))
+773         limit -= 2;
+774 
+775     \textcolor{keywordflow}{return} limit;
+776 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d4/d9d/assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/assoc_8c_a03b6b225cc18ca1fbabbc77e5248a743_icgraph}
+\end{center}
+\end{figure}
+
+

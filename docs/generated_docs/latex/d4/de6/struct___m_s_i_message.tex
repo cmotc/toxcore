@@ -1,0 +1,99 @@
+\hypertarget{struct___m_s_i_message}{\section{\+\_\+\+M\+S\+I\+Message Struct Reference}
+\label{struct___m_s_i_message}\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+M\+S\+I\+Header\+Request \hyperlink{struct___m_s_i_message_a43928947ba3f33772bdeee09fd89557a}{request}
+\item 
+M\+S\+I\+Header\+Response \hyperlink{struct___m_s_i_message_a03f0f34008bf8be095af614ca99ea53f}{response}
+\item 
+M\+S\+I\+Header\+Reason \hyperlink{struct___m_s_i_message_aec4373dacf43cd56b5e67d2b04b63f5a}{reason}
+\item 
+M\+S\+I\+Header\+Call\+Id \hyperlink{struct___m_s_i_message_a0cb3f797b633561175096933c2eb003e}{callid}
+\item 
+M\+S\+I\+Header\+C\+Settings \hyperlink{struct___m_s_i_message_a4b09316f11dc8e9fe3b3357a6d48db56}{csettings}
+\item 
+int \hyperlink{struct___m_s_i_message_af43a034662e9bcac38e3bf4c9c150c19}{friend\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 99 of file msi.\+c.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct___m_s_i_message_a0cb3f797b633561175096933c2eb003e}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!callid@{callid}}
+\index{callid@{callid}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{callid}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+I\+Header\+Call\+Id callid}}\label{struct___m_s_i_message_a0cb3f797b633561175096933c2eb003e}
+
+
+Definition at line 104 of file msi.\+c.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+invite(), msi\+\_\+handle\+\_\+packet(), msi\+\_\+msg\+\_\+set\+\_\+callid(), parse\+\_\+raw\+\_\+data(), and parse\+\_\+send().
+
+\hypertarget{struct___m_s_i_message_a4b09316f11dc8e9fe3b3357a6d48db56}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!csettings@{csettings}}
+\index{csettings@{csettings}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{csettings}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+I\+Header\+C\+Settings csettings}}\label{struct___m_s_i_message_a4b09316f11dc8e9fe3b3357a6d48db56}
+
+
+Definition at line 105 of file msi.\+c.
+
+
+
+Referenced by flush\+\_\+peer\+\_\+csettings(), handle\+\_\+recv\+\_\+invite(), msi\+\_\+msg\+\_\+get\+\_\+csettings(), msi\+\_\+msg\+\_\+set\+\_\+csettings(), parse\+\_\+raw\+\_\+data(), and parse\+\_\+send().
+
+\hypertarget{struct___m_s_i_message_af43a034662e9bcac38e3bf4c9c150c19}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!friend\+\_\+id@{friend\+\_\+id}}
+\index{friend\+\_\+id@{friend\+\_\+id}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{friend\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+id}}\label{struct___m_s_i_message_af43a034662e9bcac38e3bf4c9c150c19}
+
+
+Definition at line 107 of file msi.\+c.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+end(), handle\+\_\+recv\+\_\+invite(), handle\+\_\+recv\+\_\+reject(), handle\+\_\+recv\+\_\+start(), handle\+\_\+recv\+\_\+starting(), and msi\+\_\+handle\+\_\+packet().
+
+\hypertarget{struct___m_s_i_message_aec4373dacf43cd56b5e67d2b04b63f5a}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!reason@{reason}}
+\index{reason@{reason}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{reason}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+I\+Header\+Reason reason}}\label{struct___m_s_i_message_aec4373dacf43cd56b5e67d2b04b63f5a}
+
+
+Definition at line 103 of file msi.\+c.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+error(), msi\+\_\+msg\+\_\+set\+\_\+reason(), parse\+\_\+raw\+\_\+data(), and parse\+\_\+send().
+
+\hypertarget{struct___m_s_i_message_a43928947ba3f33772bdeee09fd89557a}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!request@{request}}
+\index{request@{request}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+I\+Header\+Request request}}\label{struct___m_s_i_message_a43928947ba3f33772bdeee09fd89557a}
+
+
+Definition at line 101 of file msi.\+c.
+
+
+
+Referenced by msi\+\_\+handle\+\_\+packet(), msi\+\_\+new\+\_\+message(), parse\+\_\+raw\+\_\+data(), and parse\+\_\+send().
+
+\hypertarget{struct___m_s_i_message_a03f0f34008bf8be095af614ca99ea53f}{\index{\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}!response@{response}}
+\index{response@{response}!\+\_\+\+M\+S\+I\+Message@{\+\_\+\+M\+S\+I\+Message}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+I\+Header\+Response response}}\label{struct___m_s_i_message_a03f0f34008bf8be095af614ca99ea53f}
+
+
+Definition at line 102 of file msi.\+c.
+
+
+
+Referenced by msi\+\_\+handle\+\_\+packet(), msi\+\_\+new\+\_\+message(), parse\+\_\+raw\+\_\+data(), and parse\+\_\+send().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxav/\hyperlink{msi_8c}{msi.\+c}\end{DoxyCompactItemize}

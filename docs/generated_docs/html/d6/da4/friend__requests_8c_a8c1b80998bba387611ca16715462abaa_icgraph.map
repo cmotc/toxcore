@@ -1,0 +1,16 @@
+<map id="set_nospam" name="set_nospam">
+<area shape="rect" id="node2" href="$d8/d8d/_messenger_8c.html#a122e94907e1063fdff78f54ee4b0852b" title="messenger_load_state\l_callback" alt="" coords="147,49,300,90"/>
+<area shape="rect" id="node13" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="165,115,282,141"/>
+<area shape="rect" id="node15" href="$da/d8f/tox_8h.html#a04bb4d9a44c5a793f73f62039b7d5d97" title="tox_self_set_nospam" alt="" coords="150,165,297,192"/>
+<area shape="rect" id="node3" href="$d4/d30/_messenger_8h.html#a4871cd41d2a53b07ee4b2467a844e17e" title="messenger_load" alt="" coords="348,56,465,83"/>
+<area shape="rect" id="node4" href="$d8/dda/messenger__test_8c.html#a9c4405dc5f0fb39abca715cf5fe62007" title="START_TEST" alt="" coords="513,5,620,32"/>
+<area shape="rect" id="node5" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="541,56,592,83"/>
+<area shape="rect" id="node6" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="531,107,602,133"/>
+<area shape="rect" id="node7" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="668,31,775,57"/>
+<area shape="rect" id="node8" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="689,81,753,108"/>
+<area shape="rect" id="node10" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="682,132,761,159"/>
+<area shape="rect" id="node12" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="696,183,747,209"/>
+<area shape="rect" id="node9" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="823,81,873,108"/>
+<area shape="rect" id="node11" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="823,132,873,159"/>
+<area shape="rect" id="node14" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="381,157,432,184"/>
+</map>

@@ -1,0 +1,194 @@
+\hypertarget{strkey_8c}{\section{other/fun/strkey.c File Reference}
+\label{strkey_8c}\index{other/fun/strkey.\+c@{other/fun/strkey.\+c}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$sodium.\+h$>$}\\*
+Include dependency graph for strkey.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{d5/df1/strkey_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{strkey_8c_a1693667808582c5cf4c02251558daac4}{P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17}{print\+\_\+key} (unsigned char $\ast$key)
+\item 
+int \hyperlink{strkey_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{strkey_8c_a1693667808582c5cf4c02251558daac4}{\index{strkey.\+c@{strkey.\+c}!P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T@{P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T}}
+\index{P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T@{P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T}!strkey.\+c@{strkey.\+c}}
+\subsubsection[{P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+T\+R\+I\+E\+S\+\_\+\+C\+O\+U\+N\+T}}\label{strkey_8c_a1693667808582c5cf4c02251558daac4}
+
+
+Definition at line 44 of file strkey.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{strkey_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{strkey.\+c@{strkey.\+c}!main@{main}}
+\index{main@{main}!strkey.\+c@{strkey.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{strkey_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 58 of file strkey.\+c.
+
+
+
+References i, print\+\_\+key(), and make-\/funny-\/savefile\+::public\+\_\+key.
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[crypto\_box\_PUBLICKEYBYTES]; \textcolor{comment}{// null terminator}
+61     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} secret\_key[crypto\_box\_SECRETKEYBYTES];
+62     \textcolor{keywordtype}{int} offset = 0;
+63     \textcolor{keywordtype}{size\_t} len;
+64     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} desired\_bin[crypto\_box\_PUBLICKEYBYTES]; \textcolor{comment}{// null terminator}
+65 
+66     \textcolor{keywordflow}{if} (argc == 3) \{
+67         offset = atoi(argv[1]);
+68         \textcolor{keywordtype}{char} *desired\_hex = argv[2];
+69         len = strlen(desired\_hex);
+70         \textcolor{keywordflow}{if} (len % 2 != 0) \{
+71             fprintf(stderr, \textcolor{stringliteral}{"Desired key should have an even number of letters\(\backslash\)n"});
+72             exit(1);
+73         \}
+74         \textcolor{keywordtype}{size\_t} block\_length = (offset < 0 ? 0 : offset) + len/2;
+75         \textcolor{keywordflow}{if} (block\_length > crypto\_box\_PUBLICKEYBYTES) \{
+76             fprintf(stderr, \textcolor{stringliteral}{"The given key with the given offset exceed public key's length\(\backslash\)n"});
+77             exit(1);
+78         \}
+79 
+80         \textcolor{comment}{// convert hex to bin}
+81         \textcolor{keywordtype}{char} *pos = desired\_hex;
+82         \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+83         \textcolor{keywordflow}{for} (i = 0; i < len; pos += 2) \{
+84             sscanf(pos, \textcolor{stringliteral}{"%2hhx"}, &desired\_bin[i]);
+85             ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+86         \}
+87     \} \textcolor{keywordflow}{else} \{
+88         fprintf(stdout, \textcolor{stringliteral}{"Usage: executable <byte offset> <desired hex string with even number of letters>\(\backslash\)n
+      "});
+89         exit(1);
+90     \}
+91 
+92     len /= 2;
+93 
+94 \textcolor{preprocessor}{#ifdef PRINT\_TRIES\_COUNT}
+95     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tries = 0;
+96 \textcolor{preprocessor}{#endif}
+97 
+98     \textcolor{keywordflow}{if} (offset < 0) \{
+99         \textcolor{keywordtype}{int} found = 0;
+100         \textcolor{keywordflow}{do} \{
+101 \textcolor{preprocessor}{#ifdef PRINT\_TRIES\_COUNT}
+102             tries ++;
+103 \textcolor{preprocessor}{#endif}
+104             crypto\_box\_keypair(public\_key, secret\_key);
+105             \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+106             \textcolor{keywordflow}{for} (i = 0; i <= crypto\_box\_PUBLICKEYBYTES - len; i ++) \{
+107                 \textcolor{keywordflow}{if} (memcmp(public\_key + i, desired\_bin, len) == 0) \{
+108                     found = 1;
+109                     \textcolor{keywordflow}{break};
+110                 \}
+111             \}
+112         \} \textcolor{keywordflow}{while} (!found);
+113     \} \textcolor{keywordflow}{else} \{
+114         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *p = public\_key + offset;
+115 
+116         \textcolor{keywordflow}{do} \{
+117 \textcolor{preprocessor}{#ifdef PRINT\_TRIES\_COUNT}
+118         tries ++;
+119 \textcolor{preprocessor}{#endif}
+120             crypto\_box\_keypair(public\_key, secret\_key);
+121         \} \textcolor{keywordflow}{while} (memcmp(p, desired\_bin, len) != 0);
+122     \}
+123 
+124     fprintf(stdout, \textcolor{stringliteral}{"Public key:  "});
+125     \hyperlink{strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17}{print\_key}(public\_key);
+126     fprintf(stdout, \textcolor{stringliteral}{"\(\backslash\)n"});
+127 
+128     fprintf(stdout, \textcolor{stringliteral}{"Private key: "});
+129     \hyperlink{strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17}{print\_key}(secret\_key);
+130     fprintf(stdout, \textcolor{stringliteral}{"\(\backslash\)n"});
+131 
+132 \textcolor{preprocessor}{#ifdef PRINT\_TRIES\_COUNT}
+133     fprintf(stdout, \textcolor{stringliteral}{"Found the key pair on %llu try.\(\backslash\)n"}, tries);
+134 \textcolor{preprocessor}{#endif}
+135 
+136     \textcolor{keywordflow}{return} 0;
+137 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d7/d7e/strkey_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17}{\index{strkey.\+c@{strkey.\+c}!print\+\_\+key@{print\+\_\+key}}
+\index{print\+\_\+key@{print\+\_\+key}!strkey.\+c@{strkey.\+c}}
+\subsubsection[{print\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17}
+
+
+Definition at line 46 of file strkey.\+c.
+
+
+
+References i.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+49     \textcolor{keywordflow}{for} (i = 0; i < crypto\_box\_PUBLICKEYBYTES; i++) \{
+50         \textcolor{keywordflow}{if} (key[i] < 16) \{
+51             fprintf(stdout, \textcolor{stringliteral}{"0"});
+52         \}
+53 
+54         fprintf(stdout, \textcolor{stringliteral}{"%hhX"}, key[i]);
+55     \}
+56 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d7/d7e/strkey_8c_ae89bce159ea9496bbbfa28fb42c15f17_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,8 @@
+<map id="routeone_tofriend" name="routeone_tofriend">
+<area shape="rect" id="node2" href="$dc/dc1/_d_h_t_8c.html#a6cbd0f66d63003cc0def913dc7a4254b" title="friend_number" alt="" coords="176,5,280,32"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#ac56c677f4bc8bf8311370ee105ae7cbb" title="ip_isset" alt="" coords="195,56,261,83"/>
+<area shape="rect" id="node5" href="$de/df1/util_8c.html#ab643c84141e04b54ba650c50165ba288" title="is_timeout" alt="" coords="187,107,269,133"/>
+<area shape="rect" id="node7" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="183,157,273,184"/>
+<area shape="rect" id="node3" href="$de/df1/util_8c.html#ada3d44b4f530d3c8c9cb69b732be94b1" title="id_equal" alt="" coords="332,5,403,32"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="328,107,407,133"/>
+</map>

@@ -1,0 +1,204 @@
+\hypertarget{struct_onion___path}{\section{Onion\+\_\+\+Path Struct Reference}
+\label{struct_onion___path}\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+}
+
+
+{\ttfamily \#include $<$onion.\+h$>$}
+
+
+
+Collaboration diagram for Onion\+\_\+\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d2/d03/struct_onion___path__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_ac38c2cdd308cce10c53e276cb664c644}{shared\+\_\+key1} \mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_a677ff69e40fecc070cfe5ebe1f4ecb71}{shared\+\_\+key2} \mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_ab9b6dd504522fbbb77500ab7e5d27121}{shared\+\_\+key3} \mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_a203561e286f807c2f057fc6bce17e2d8}{public\+\_\+key1} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_adb351a6df6a87dbb748077bd8081270d}{public\+\_\+key2} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_a0fa442ed05e4279ea8bcb1d039724f2b}{public\+\_\+key3} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_onion___path_ad7670c0a1a9d05b2a807a9c1a7950b79}{ip\+\_\+port1}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_a38f4e3f7780648cf74f808d7942113d8}{node\+\_\+public\+\_\+key1} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_onion___path_adcf789584e4efc296bc6f915d3e2e9f9}{ip\+\_\+port2}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_adc5a9730c2f43085e83ece3257af154a}{node\+\_\+public\+\_\+key2} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_onion___path_aef20a4d17084ae724f2e496f8f7a106a}{ip\+\_\+port3}
+\item 
+uint8\+\_\+t \hyperlink{struct_onion___path_a4725b29fc0349714fa0ab0938844cf19}{node\+\_\+public\+\_\+key3} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint32\+\_\+t \hyperlink{struct_onion___path_a6d69f3ea5100411c3599020055b8b78c}{path\+\_\+num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 58 of file onion.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_onion___path_ad7670c0a1a9d05b2a807a9c1a7950b79}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!ip\+\_\+port1@{ip\+\_\+port1}}
+\index{ip\+\_\+port1@{ip\+\_\+port1}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{ip\+\_\+port1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} ip\+\_\+port1}}\label{struct_onion___path_ad7670c0a1a9d05b2a807a9c1a7950b79}
+
+
+Definition at line 67 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+path(), is\+\_\+path\+\_\+used(), onion\+\_\+path\+\_\+to\+\_\+nodes(), send\+\_\+announce\+\_\+request(), send\+\_\+data\+\_\+request(), send\+\_\+onion\+\_\+packet(), and send\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+udp().
+
+\hypertarget{struct_onion___path_adcf789584e4efc296bc6f915d3e2e9f9}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!ip\+\_\+port2@{ip\+\_\+port2}}
+\index{ip\+\_\+port2@{ip\+\_\+port2}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{ip\+\_\+port2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} ip\+\_\+port2}}\label{struct_onion___path_adcf789584e4efc296bc6f915d3e2e9f9}
+
+
+Definition at line 70 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), create\+\_\+onion\+\_\+path(), and onion\+\_\+path\+\_\+to\+\_\+nodes().
+
+\hypertarget{struct_onion___path_aef20a4d17084ae724f2e496f8f7a106a}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!ip\+\_\+port3@{ip\+\_\+port3}}
+\index{ip\+\_\+port3@{ip\+\_\+port3}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{ip\+\_\+port3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} ip\+\_\+port3}}\label{struct_onion___path_aef20a4d17084ae724f2e496f8f7a106a}
+
+
+Definition at line 73 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), create\+\_\+onion\+\_\+path(), and onion\+\_\+path\+\_\+to\+\_\+nodes().
+
+\hypertarget{struct_onion___path_a38f4e3f7780648cf74f808d7942113d8}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!node\+\_\+public\+\_\+key1@{node\+\_\+public\+\_\+key1}}
+\index{node\+\_\+public\+\_\+key1@{node\+\_\+public\+\_\+key1}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{node\+\_\+public\+\_\+key1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t node\+\_\+public\+\_\+key1\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_a38f4e3f7780648cf74f808d7942113d8}
+
+
+Definition at line 68 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+path(), and onion\+\_\+path\+\_\+to\+\_\+nodes().
+
+\hypertarget{struct_onion___path_adc5a9730c2f43085e83ece3257af154a}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!node\+\_\+public\+\_\+key2@{node\+\_\+public\+\_\+key2}}
+\index{node\+\_\+public\+\_\+key2@{node\+\_\+public\+\_\+key2}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{node\+\_\+public\+\_\+key2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t node\+\_\+public\+\_\+key2\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_adc5a9730c2f43085e83ece3257af154a}
+
+
+Definition at line 71 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+path(), and onion\+\_\+path\+\_\+to\+\_\+nodes().
+
+\hypertarget{struct_onion___path_a4725b29fc0349714fa0ab0938844cf19}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!node\+\_\+public\+\_\+key3@{node\+\_\+public\+\_\+key3}}
+\index{node\+\_\+public\+\_\+key3@{node\+\_\+public\+\_\+key3}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{node\+\_\+public\+\_\+key3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t node\+\_\+public\+\_\+key3\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_a4725b29fc0349714fa0ab0938844cf19}
+
+
+Definition at line 74 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+path(), and onion\+\_\+path\+\_\+to\+\_\+nodes().
+
+\hypertarget{struct_onion___path_a6d69f3ea5100411c3599020055b8b78c}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!path\+\_\+num@{path\+\_\+num}}
+\index{path\+\_\+num@{path\+\_\+num}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{path\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t path\+\_\+num}}\label{struct_onion___path_a6d69f3ea5100411c3599020055b8b78c}
+
+
+Definition at line 76 of file onion.\+h.
+
+
+
+Referenced by client\+\_\+send\+\_\+announce\+\_\+request(), path\+\_\+exists(), random\+\_\+path(), and set\+\_\+path\+\_\+timeouts().
+
+\hypertarget{struct_onion___path_a203561e286f807c2f057fc6bce17e2d8}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!public\+\_\+key1@{public\+\_\+key1}}
+\index{public\+\_\+key1@{public\+\_\+key1}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{public\+\_\+key1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key1\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_a203561e286f807c2f057fc6bce17e2d8}
+
+
+Definition at line 63 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), and create\+\_\+onion\+\_\+path().
+
+\hypertarget{struct_onion___path_adb351a6df6a87dbb748077bd8081270d}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!public\+\_\+key2@{public\+\_\+key2}}
+\index{public\+\_\+key2@{public\+\_\+key2}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{public\+\_\+key2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key2\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_adb351a6df6a87dbb748077bd8081270d}
+
+
+Definition at line 64 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), and create\+\_\+onion\+\_\+path().
+
+\hypertarget{struct_onion___path_a0fa442ed05e4279ea8bcb1d039724f2b}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!public\+\_\+key3@{public\+\_\+key3}}
+\index{public\+\_\+key3@{public\+\_\+key3}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{public\+\_\+key3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t public\+\_\+key3\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_a0fa442ed05e4279ea8bcb1d039724f2b}
+
+
+Definition at line 65 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), and create\+\_\+onion\+\_\+path().
+
+\hypertarget{struct_onion___path_ac38c2cdd308cce10c53e276cb664c644}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!shared\+\_\+key1@{shared\+\_\+key1}}
+\index{shared\+\_\+key1@{shared\+\_\+key1}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{shared\+\_\+key1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t shared\+\_\+key1\mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_ac38c2cdd308cce10c53e276cb664c644}
+
+
+Definition at line 59 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), and create\+\_\+onion\+\_\+path().
+
+\hypertarget{struct_onion___path_a677ff69e40fecc070cfe5ebe1f4ecb71}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!shared\+\_\+key2@{shared\+\_\+key2}}
+\index{shared\+\_\+key2@{shared\+\_\+key2}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{shared\+\_\+key2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t shared\+\_\+key2\mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_a677ff69e40fecc070cfe5ebe1f4ecb71}
+
+
+Definition at line 60 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), and create\+\_\+onion\+\_\+path().
+
+\hypertarget{struct_onion___path_ab9b6dd504522fbbb77500ab7e5d27121}{\index{Onion\+\_\+\+Path@{Onion\+\_\+\+Path}!shared\+\_\+key3@{shared\+\_\+key3}}
+\index{shared\+\_\+key3@{shared\+\_\+key3}!Onion\+\_\+\+Path@{Onion\+\_\+\+Path}}
+\subsubsection[{shared\+\_\+key3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t shared\+\_\+key3\mbox{[}crypto\+\_\+box\+\_\+\+B\+E\+F\+O\+R\+E\+N\+M\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_onion___path_ab9b6dd504522fbbb77500ab7e5d27121}
+
+
+Definition at line 61 of file onion.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), and create\+\_\+onion\+\_\+path().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{onion_8h}{onion.\+h}\end{DoxyCompactItemize}

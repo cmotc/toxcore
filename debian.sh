@@ -4,9 +4,10 @@ cd toxcore
 make clean
 git pull kytvi2p master
 git pull upstream master
-push
+git push origin master
 rm "../$DEBFOLDERNAME.orig.tar.xz"
 tar cf - ./ | xz -zf - > "../$DEBFOLDERNAME.orig.tar.xz"
 cp -R ./ "../$DEBFOLDERNAME"
 cd "../$DEBFOLDERNAME"
-debuild
+dpkg-source --commit
+debuild >> ../log

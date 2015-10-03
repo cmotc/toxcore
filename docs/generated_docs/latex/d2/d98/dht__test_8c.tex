@@ -1,0 +1,1081 @@
+\hypertarget{dht__test_8c}{\section{auto\+\_\+tests/dht\+\_\+test.c File Reference}
+\label{dht__test_8c}\index{auto\+\_\+tests/dht\+\_\+test.\+c@{auto\+\_\+tests/dht\+\_\+test.\+c}}
+}
+{\ttfamily \#include $<$sys/param.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../toxcore/tox.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+D\+H\+T.\+c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\\*
+Include dependency graph for dht\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d74/dht__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dht__test_8c_a369180e5e0a23addbc2a6a9e24fee590}{swap}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, \hyperlink{n_tox_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\+\_\+bad} (\hyperlink{struct_i_p_p_ts_png}{I\+P\+P\+Ts\+Png} $\ast$ipptp)
+\item 
+void \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\+\_\+possible\+\_\+bad} (\hyperlink{struct_i_p_p_ts_png}{I\+P\+P\+Ts\+Png} $\ast$ipptp)
+\item 
+void \hyperlink{dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f}{mark\+\_\+good} (\hyperlink{struct_i_p_p_ts_png}{I\+P\+P\+Ts\+Png} $\ast$ipptp)
+\item 
+void \hyperlink{dht__test_8c_a895947d232a843232c414b2c5d048c81}{mark\+\_\+all\+\_\+good} (\hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, uint8\+\_\+t ipv6)
+\item 
+uint8\+\_\+t \hyperlink{dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef}{is\+\_\+furthest} (const uint8\+\_\+t $\ast$comp\+\_\+client\+\_\+id, \hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+int \hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\+\_\+in\+\_\+list} (\hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+void \hyperlink{dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0}{test\+\_\+addto\+\_\+lists\+\_\+update} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht, \hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ip\+\_\+port)
+\item 
+void \hyperlink{dht__test_8c_a37f262581ef29d155056c14b2fa0ced1}{test\+\_\+addto\+\_\+lists\+\_\+bad} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht, \hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ip\+\_\+port)
+\item 
+void \hyperlink{dht__test_8c_a62e2c67aa707a1ea005159db3bc59e36}{test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht, \hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ip\+\_\+port, const uint8\+\_\+t $\ast$comp\+\_\+client\+\_\+id)
+\item 
+void \hyperlink{dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716}{test\+\_\+addto\+\_\+lists\+\_\+good} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht, \hyperlink{struct_client__data}{Client\+\_\+data} $\ast$list, uint32\+\_\+t length, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ip\+\_\+port, const uint8\+\_\+t $\ast$comp\+\_\+client\+\_\+id)
+\item 
+void \hyperlink{dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03}{test\+\_\+addto\+\_\+lists} (\hyperlink{struct_i_p}{I\+P} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip})
+\item 
+\hyperlink{dht__test_8c_a1d9c8c274c7bcbb86b2c757ad3d3c0bd}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+addto\+\_\+lists\+\_\+ipv4)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{dht__test_8c_a7d3dc185306d8f9cc40dab825d165569}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+addto\+\_\+lists\+\_\+ipv6)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T Suite $\ast$ \hyperlink{dht__test_8c_a1e4b9d1ce8bd25aa1975130985a0ff6a}{dht\+\_\+suite} (void)
+\item 
+int \hyperlink{dht__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{dht__test_8c_a369180e5e0a23addbc2a6a9e24fee590}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!swap@{swap}}
+\index{swap@{swap}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}\#define swap(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{{\bf y}}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a369180e5e0a23addbc2a6a9e24fee590}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \(\backslash\)
+   \{ \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} swap\_temp[\textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) == \textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) ? (signed)\textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) : -1]; \(\backslash\)
+     memcpy(swap\_temp,&\hyperlink{n_tox_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y},\textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})); \(\backslash\)
+     memcpy(&\hyperlink{n_tox_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y},&\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},       \textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})); \(\backslash\)
+     memcpy(&\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},swap\_temp,\textcolor{keyword}{sizeof}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})); \(\backslash\)
+    \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+Definition at line 13 of file dht\+\_\+test.\+c.
+
+
+
+Referenced by dist\+\_\+index\+\_\+bubble().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!client\+\_\+in\+\_\+list@{client\+\_\+in\+\_\+list}}
+\index{client\+\_\+in\+\_\+list@{client\+\_\+in\+\_\+list}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{client\+\_\+in\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}int client\+\_\+in\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}
+
+
+Definition at line 70 of file dht\+\_\+test.\+c.
+
+
+
+References i, and id\+\_\+equal().
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists\+\_\+bad(), test\+\_\+addto\+\_\+lists\+\_\+good(), test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad(), and test\+\_\+addto\+\_\+lists\+\_\+update().
+
+
+\begin{DoxyCode}
+71 \{
+72     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+73 
+74     \textcolor{keywordflow}{for} (i = 0; i < (int)length; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+75         \textcolor{keywordflow}{if} (\hyperlink{util_8c_ada3d44b4f530d3c8c9cb69b732be94b1}{id\_equal}(\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, list[i].\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}))
+76             \textcolor{keywordflow}{return} i;
+77 
+78     \textcolor{keywordflow}{return} -1;
+79 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d2/d98/dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a1e4b9d1ce8bd25aa1975130985a0ff6a}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!dht\+\_\+suite@{dht\+\_\+suite}}
+\index{dht\+\_\+suite@{dht\+\_\+suite}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{dht\+\_\+suite}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T Suite$\ast$ dht\+\_\+suite (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a1e4b9d1ce8bd25aa1975130985a0ff6a}
+
+
+Definition at line 367 of file dht\+\_\+test.\+c.
+
+
+
+References D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+368 \{
+369     Suite *s = suite\_create(\textcolor{stringliteral}{"DHT"});
+370 
+371     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(addto\_lists\_ipv4);
+372     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(addto\_lists\_ipv6);
+373     \textcolor{keywordflow}{return} s;
+374 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d2/d98/dht__test_8c_a1e4b9d1ce8bd25aa1975130985a0ff6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!is\+\_\+furthest@{is\+\_\+furthest}}
+\index{is\+\_\+furthest@{is\+\_\+furthest}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{is\+\_\+furthest}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t is\+\_\+furthest (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{comp\+\_\+client\+\_\+id, }
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef}
+
+
+Definition at line 59 of file dht\+\_\+test.\+c.
+
+
+
+References i, and id\+\_\+closest().
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists\+\_\+good().
+
+
+\begin{DoxyCode}
+60 \{
+61     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+62 
+63     \textcolor{keywordflow}{for} (i = 0; i < length; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+64         \textcolor{keywordflow}{if} (\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, list[i].
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}) == 1)
+65             \textcolor{keywordflow}{return} 0;
+66 
+67     \textcolor{keywordflow}{return} 1;
+68 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{d2/d98/dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 376 of file dht\+\_\+test.\+c.
+
+
+
+References dht\+\_\+suite().
+
+
+\begin{DoxyCode}
+377 \{
+378     srand((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}) time(NULL));
+379 
+380     Suite *dht = \hyperlink{dht__test_8c_a1e4b9d1ce8bd25aa1975130985a0ff6a}{dht\_suite}();
+381     SRunner *test\_runner = srunner\_create(dht);
+382 
+383     \textcolor{keywordtype}{int} number\_failed = 0;
+384     srunner\_run\_all(test\_runner, CK\_NORMAL);
+385     number\_failed = srunner\_ntests\_failed(test\_runner);
+386 
+387     srunner\_free(test\_runner);
+388 
+389     \textcolor{keywordflow}{return} number\_failed;
+390 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d2/d98/dht__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a895947d232a843232c414b2c5d048c81}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!mark\+\_\+all\+\_\+good@{mark\+\_\+all\+\_\+good}}
+\index{mark\+\_\+all\+\_\+good@{mark\+\_\+all\+\_\+good}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{mark\+\_\+all\+\_\+good}]{\setlength{\rightskip}{0pt plus 5cm}void mark\+\_\+all\+\_\+good (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint8\+\_\+t}]{ipv6}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a895947d232a843232c414b2c5d048c81}
+
+
+Definition at line 45 of file dht\+\_\+test.\+c.
+
+
+
+References i, and mark\+\_\+good().
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists\+\_\+bad(), test\+\_\+addto\+\_\+lists\+\_\+good(), and test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad().
+
+
+\begin{DoxyCode}
+46 \{
+47     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+48 
+49     \textcolor{keywordflow}{for} (i = 0; i < length; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+50         \textcolor{keywordflow}{if} (ipv6)
+51             \hyperlink{dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f}{mark\_good}(&list[i].assoc6);
+52         \textcolor{keywordflow}{else}
+53             \hyperlink{dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f}{mark\_good}(&list[i].assoc4);
+54     \}
+55 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a895947d232a843232c414b2c5d048c81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a895947d232a843232c414b2c5d048c81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!mark\+\_\+bad@{mark\+\_\+bad}}
+\index{mark\+\_\+bad@{mark\+\_\+bad}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{mark\+\_\+bad}]{\setlength{\rightskip}{0pt plus 5cm}void mark\+\_\+bad (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+P\+Ts\+Png} $\ast$}]{ipptp}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}
+
+
+Definition at line 21 of file dht\+\_\+test.\+c.
+
+
+
+References B\+A\+D\+\_\+\+N\+O\+D\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T, I\+P\+P\+Ts\+Png\+::hardening, Hardening\+::routes\+\_\+requests\+\_\+ok, Hardening\+::send\+\_\+nodes\+\_\+ok, Hardening\+::testing\+\_\+requests, I\+P\+P\+Ts\+Png\+::timestamp, and unix\+\_\+time().
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists\+\_\+bad().
+
+
+\begin{DoxyCode}
+22 \{
+23     ipptp->\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}() - 2 * \hyperlink{_d_h_t_8h_a2c542fd03a43f340d1fb281afe54453f}{BAD\_NODE\_TIMEOUT};
+24     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a3bc4c156861571ceca55275d95f6221b}{routes\_requests\_ok} = 0;
+25     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a11158e002f3685f4044a759680636c08}{send\_nodes\_ok} = 0;
+26     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a48c7621d77e824da8df2c8a7caa79d25}{testing\_requests} = 0;
+27 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{d2/d98/dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!mark\+\_\+good@{mark\+\_\+good}}
+\index{mark\+\_\+good@{mark\+\_\+good}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{mark\+\_\+good}]{\setlength{\rightskip}{0pt plus 5cm}void mark\+\_\+good (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+P\+Ts\+Png} $\ast$}]{ipptp}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f}
+
+
+Definition at line 37 of file dht\+\_\+test.\+c.
+
+
+
+References I\+P\+P\+Ts\+Png\+::hardening, H\+A\+R\+D\+E\+N\+I\+N\+G\+\_\+\+A\+L\+L\+\_\+\+O\+K, Hardening\+::routes\+\_\+requests\+\_\+ok, Hardening\+::send\+\_\+nodes\+\_\+ok, Hardening\+::testing\+\_\+requests, I\+P\+P\+Ts\+Png\+::timestamp, and unix\+\_\+time().
+
+
+
+Referenced by mark\+\_\+all\+\_\+good().
+
+
+\begin{DoxyCode}
+38 \{
+39     ipptp->\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+40     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a3bc4c156861571ceca55275d95f6221b}{routes\_requests\_ok} = (
+      \hyperlink{_d_h_t_8c_a26075b69d14a1c08617bdb49aaf22ade}{HARDENING\_ALL\_OK} >> 0) & 1;
+41     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a11158e002f3685f4044a759680636c08}{send\_nodes\_ok} = (\hyperlink{_d_h_t_8c_a26075b69d14a1c08617bdb49aaf22ade}{HARDENING\_ALL\_OK} >> 1) & 1;
+42     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a48c7621d77e824da8df2c8a7caa79d25}{testing\_requests} = (
+      \hyperlink{_d_h_t_8c_a26075b69d14a1c08617bdb49aaf22ade}{HARDENING\_ALL\_OK} >> 2) & 1;
+43 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d2/d98/dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_ad577cc8dca2a417ddacb49d90f71fe1f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!mark\+\_\+possible\+\_\+bad@{mark\+\_\+possible\+\_\+bad}}
+\index{mark\+\_\+possible\+\_\+bad@{mark\+\_\+possible\+\_\+bad}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{mark\+\_\+possible\+\_\+bad}]{\setlength{\rightskip}{0pt plus 5cm}void mark\+\_\+possible\+\_\+bad (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+P\+Ts\+Png} $\ast$}]{ipptp}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}
+
+
+Definition at line 29 of file dht\+\_\+test.\+c.
+
+
+
+References I\+P\+P\+Ts\+Png\+::hardening, Hardening\+::routes\+\_\+requests\+\_\+ok, Hardening\+::send\+\_\+nodes\+\_\+ok, Hardening\+::testing\+\_\+requests, I\+P\+P\+Ts\+Png\+::timestamp, and unix\+\_\+time().
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad().
+
+
+\begin{DoxyCode}
+30 \{
+31     ipptp->\hyperlink{struct_i_p_p_ts_png_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+32     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a3bc4c156861571ceca55275d95f6221b}{routes\_requests\_ok} = 0;
+33     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a11158e002f3685f4044a759680636c08}{send\_nodes\_ok} = 0;
+34     ipptp->\hyperlink{struct_i_p_p_ts_png_a247a5bc6669d45b7241b58223ce8fd1d}{hardening}.\hyperlink{struct_hardening_a48c7621d77e824da8df2c8a7caa79d25}{testing\_requests} = 0;
+35 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{d2/d98/dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a1d9c8c274c7bcbb86b2c757ad3d3c0bd}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+addto\+\_\+lists\+\_\+ipv4}]{}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a1d9c8c274c7bcbb86b2c757ad3d3c0bd}
+
+
+Definition at line 349 of file dht\+\_\+test.\+c.
+
+
+
+References ip, ip\+\_\+init(), and test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+350 \{
+351     \hyperlink{struct_i_p}{IP} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip};
+352     \hyperlink{network_8c_a6aa0dce9c25e370af93bf4a14f79c709}{ip\_init}(&ip, 0);
+353     \hyperlink{dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03}{test\_addto\_lists}(ip);
+354 
+355 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a1d9c8c274c7bcbb86b2c757ad3d3c0bd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a7d3dc185306d8f9cc40dab825d165569}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+addto\+\_\+lists\+\_\+ipv6}]{}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a7d3dc185306d8f9cc40dab825d165569}
+
+
+Definition at line 358 of file dht\+\_\+test.\+c.
+
+
+
+References ip, ip\+\_\+init(), and test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+359 \{
+360     \hyperlink{struct_i_p}{IP} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip};
+361     \hyperlink{network_8c_a6aa0dce9c25e370af93bf4a14f79c709}{ip\_init}(&ip, 1);
+362     \hyperlink{dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03}{test\_addto\_lists}(ip);
+363 
+364 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a7d3dc185306d8f9cc40dab825d165569_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!test\+\_\+addto\+\_\+lists@{test\+\_\+addto\+\_\+lists}}
+\index{test\+\_\+addto\+\_\+lists@{test\+\_\+addto\+\_\+lists}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+addto\+\_\+lists}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+addto\+\_\+lists (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P}}]{ip}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03}
+
+
+Definition at line 285 of file dht\+\_\+test.\+c.
+
+
+
+References addto\+\_\+lists(), ck\+\_\+assert\+\_\+msg(), D\+H\+T\+\_\+\+Friend\+::client\+\_\+list, D\+H\+T\+::close\+\_\+clientlist, D\+H\+T\+::friends\+\_\+list, i, ip, I\+P\+\_\+\+Port\+::ip, kill\+\_\+\+D\+H\+T(), kill\+\_\+networking(), L\+C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+L\+I\+E\+N\+T\+S, new\+\_\+\+D\+H\+T(), new\+\_\+networking(), D\+H\+T\+::num\+\_\+friends, I\+P\+\_\+\+Port\+::port, make-\/funny-\/savefile\+::public\+\_\+key, D\+H\+T\+\_\+\+Friend\+::public\+\_\+key, D\+H\+T\+::self\+\_\+public\+\_\+key, test\+\_\+addto\+\_\+lists\+\_\+bad(), test\+\_\+addto\+\_\+lists\+\_\+good(), test\+\_\+addto\+\_\+lists\+\_\+update(), and T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+286 \{
+287     \hyperlink{struct_networking___core}{Networking\_Core} *net = \hyperlink{network_8c_a0c272a560dd4b2c18c6546a91656c1b5}{new\_networking}(ip, 
+      \hyperlink{network_8h_a8b04a22d2b5effdb46dda741f490951e}{TOX\_PORT\_DEFAULT});
+288     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(net != 0, \textcolor{stringliteral}{"Failed to create Networking\_Core"});
+289 
+290     \hyperlink{struct_d_h_t}{DHT} *dht = \hyperlink{_d_h_t_8c_adad04fa897751b06948a172044bf1c58}{new\_DHT}(net);
+291     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(dht != 0, \textcolor{stringliteral}{"Failed to create DHT"});
+292 
+293     \hyperlink{struct_i_p___port}{IP\_Port} ip\_port = \{ .\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip} = \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip}, .port = \hyperlink{network_8h_a8b04a22d2b5effdb46dda741f490951e}{TOX\_PORT\_DEFAULT} \};
+294     uint8\_t \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[crypto\_box\_PUBLICKEYBYTES];
+295     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, used;
+296 
+297     \textcolor{comment}{// check lists filling}
+298     \textcolor{keywordflow}{for} (i = 0; i < MAX(\hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}); ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+299         randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+300         used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, ip\_port, public\_key);
+301         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used == dht->\hyperlink{struct_d_h_t_a8ee1f2d7e543bce350c591a8eaac0cf8}{num\_friends} + 1, \textcolor{stringliteral}{"Wrong number of added clients
+       with existing ip\_port"});
+302     \}
+303 
+304     \textcolor{keywordflow}{for} (i = 0; i < MAX(\hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}); ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+305         ip\_port.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+306         used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, ip\_port, public\_key);
+307         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used == dht->\hyperlink{struct_d_h_t_a8ee1f2d7e543bce350c591a8eaac0cf8}{num\_friends} + 1, \textcolor{stringliteral}{"Wrong number of added clients
+       with existing public\_key"});
+308     \}
+309 
+310     \textcolor{keywordflow}{for} (i = 0; i < MAX(\hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}); ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+311         ip\_port.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+312         randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+313         used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, ip\_port, public\_key);
+314         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+315     \}
+316 
+317     \textcolor{comment}{/*check: Current behavior if there are two clients with the same id is}
+318 \textcolor{comment}{     * to replace the first ip by the second. */}
+319     \hyperlink{dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0}{test\_addto\_lists\_update}(dht, dht->\hyperlink{struct_d_h_t_a00ef35d5b0e7a791ef08a30b3bacbf9d}{close\_clientlist}, 
+      \hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, &ip\_port);
+320 
+321     \textcolor{keywordflow}{for} (i = 0; i < dht->\hyperlink{struct_d_h_t_a8ee1f2d7e543bce350c591a8eaac0cf8}{num\_friends}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+322         \hyperlink{dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0}{test\_addto\_lists\_update}(dht, dht->\hyperlink{struct_d_h_t_ae97c6b057d770e7c4f3905cbe33b188b}{friends\_list}[i].
+      \hyperlink{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}{client\_list}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}, &ip\_port);
+323 
+324     \textcolor{comment}{// check "bad" entries}
+325     \hyperlink{dht__test_8c_a37f262581ef29d155056c14b2fa0ced1}{test\_addto\_lists\_bad}(dht, dht->\hyperlink{struct_d_h_t_a00ef35d5b0e7a791ef08a30b3bacbf9d}{close\_clientlist}, 
+      \hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, &ip\_port);
+326 
+327     \textcolor{keywordflow}{for} (i = 0; i < dht->\hyperlink{struct_d_h_t_a8ee1f2d7e543bce350c591a8eaac0cf8}{num\_friends}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+328         \hyperlink{dht__test_8c_a37f262581ef29d155056c14b2fa0ced1}{test\_addto\_lists\_bad}(dht, dht->\hyperlink{struct_d_h_t_ae97c6b057d770e7c4f3905cbe33b188b}{friends\_list}[i].
+      \hyperlink{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}{client\_list}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}, &ip\_port);
+329 
+330     \textcolor{comment}{// check "possibly bad" entries}
+331     \textcolor{comment}{/*}
+332 \textcolor{comment}{    test\_addto\_lists\_possible\_bad(dht, dht->close\_clientlist, LCLIENT\_LIST, &ip\_port,
+       dht->self\_public\_key);}
+333 \textcolor{comment}{}
+334 \textcolor{comment}{    for (i = 0; i < dht->num\_friends; ++i)}
+335 \textcolor{comment}{        test\_addto\_lists\_possible\_bad(dht, dht->friends\_list[i].client\_list, MAX\_FRIEND\_CLIENTS, &ip\_port,}
+336 \textcolor{comment}{                                      dht->friends\_list[i].public\_key);}
+337 \textcolor{comment}{    */}
+338     \textcolor{comment}{// check "good" entries}
+339     \hyperlink{dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716}{test\_addto\_lists\_good}(dht, dht->\hyperlink{struct_d_h_t_a00ef35d5b0e7a791ef08a30b3bacbf9d}{close\_clientlist}, 
+      \hyperlink{_d_h_t_8h_a3058f857a8316099e20c95fb07adc7c1}{LCLIENT\_LIST}, &ip\_port, dht->\hyperlink{struct_d_h_t_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key});
+340 
+341     \textcolor{keywordflow}{for} (i = 0; i < dht->\hyperlink{struct_d_h_t_a8ee1f2d7e543bce350c591a8eaac0cf8}{num\_friends}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+342         \hyperlink{dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716}{test\_addto\_lists\_good}(dht, dht->\hyperlink{struct_d_h_t_ae97c6b057d770e7c4f3905cbe33b188b}{friends\_list}[i].
+      \hyperlink{struct_d_h_t___friend_a49ef2b640a834a77b6e123355a4fea47}{client\_list}, \hyperlink{_d_h_t_8h_ad50d158518277ca4d19cbe364f3e958c}{MAX\_FRIEND\_CLIENTS}, &ip\_port,
+343                               dht->\hyperlink{struct_d_h_t_ae97c6b057d770e7c4f3905cbe33b188b}{friends\_list}[i].\hyperlink{struct_d_h_t___friend_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key});
+344 
+345     \hyperlink{_d_h_t_8c_a816851e4f0f454c52b93d65544a2b2bb}{kill\_DHT}(dht);
+346     \hyperlink{network_8c_a8a36a1ed29a0d5dfe1f0095823039627}{kill\_networking}(net);
+347 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d2/d98/dht__test_8c_aa4b7c82b70f87539daa26f6935d06a03_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a37f262581ef29d155056c14b2fa0ced1}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!test\+\_\+addto\+\_\+lists\+\_\+bad@{test\+\_\+addto\+\_\+lists\+\_\+bad}}
+\index{test\+\_\+addto\+\_\+lists\+\_\+bad@{test\+\_\+addto\+\_\+lists\+\_\+bad}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+addto\+\_\+lists\+\_\+bad}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+addto\+\_\+lists\+\_\+bad (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht, }
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{{\bf I\+P\+\_\+\+Port} $\ast$}]{ip\+\_\+port}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a37f262581ef29d155056c14b2fa0ced1}
+
+
+Definition at line 149 of file dht\+\_\+test.\+c.
+
+
+
+References addto\+\_\+lists(), ck\+\_\+assert\+\_\+msg(), client\+\_\+in\+\_\+list(), I\+P\+::family, id\+\_\+copy(), I\+P\+\_\+\+Port\+::ip, mark\+\_\+all\+\_\+good(), mark\+\_\+bad(), I\+P\+\_\+\+Port\+::port, and make-\/funny-\/savefile\+::public\+\_\+key.
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+153 \{
+154     \textcolor{comment}{// check "bad" clients replacement}
+155     \textcolor{keywordtype}{int} used, test1, test2, test3;
+156     uint8\_t \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[crypto\_box\_PUBLICKEYBYTES], test\_id1[crypto\_box\_PUBLICKEYBYTES], test\_id2[
+      crypto\_box\_PUBLICKEYBYTES], test\_id3[crypto\_box\_PUBLICKEYBYTES];
+157     uint8\_t ipv6 = ip\_port->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6 ? 1 : 0;
+158 
+159     randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+160     \hyperlink{dht__test_8c_a895947d232a843232c414b2c5d048c81}{mark\_all\_good}(list, length, ipv6);
+161 
+162     test1 = rand() % (length / 3);
+163     test2 = rand() % (length / 3) + length / 3;
+164     test3 = rand() % (length / 3) + 2 * length / 3;
+165     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(!(test1 == test2 || test1 == test3 || test2 == test3), \textcolor{stringliteral}{"Wrong test indices
+       are chosen"});
+166 
+167     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id1, list[test1].public\_key);
+168     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id2, list[test2].public\_key);
+169     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id3, list[test3].public\_key);
+170 
+171     \textcolor{comment}{// mark nodes as "bad"}
+172     \textcolor{keywordflow}{if} (ipv6) \{
+173         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test1].assoc6);
+174         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test2].assoc6);
+175         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test3].assoc6);
+176     \} \textcolor{keywordflow}{else} \{
+177         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test1].assoc4);
+178         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test2].assoc4);
+179         \hyperlink{dht__test_8c_a087ee30b711a6e24da6ca1bbfae0ad0f}{mark\_bad}(&list[test3].assoc4);
+180     \}
+181 
+182     ip\_port->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+183     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, *ip\_port, public\_key);
+184     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+185 
+186     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, public\_key) >= 0, \textcolor{stringliteral}{"Client id is
+       not in the list"});
+187     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id2) >= 0, \textcolor{stringliteral}{"Wrong bad client
+       removed"});
+188     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id3) >= 0, \textcolor{stringliteral}{"Wrong bad client
+       removed"});
+189 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a37f262581ef29d155056c14b2fa0ced1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a37f262581ef29d155056c14b2fa0ced1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!test\+\_\+addto\+\_\+lists\+\_\+good@{test\+\_\+addto\+\_\+lists\+\_\+good}}
+\index{test\+\_\+addto\+\_\+lists\+\_\+good@{test\+\_\+addto\+\_\+lists\+\_\+good}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+addto\+\_\+lists\+\_\+good}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+addto\+\_\+lists\+\_\+good (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht, }
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{{\bf I\+P\+\_\+\+Port} $\ast$}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{comp\+\_\+client\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716}
+
+
+Definition at line 255 of file dht\+\_\+test.\+c.
+
+
+
+References addto\+\_\+lists(), ck\+\_\+assert\+\_\+msg(), client\+\_\+in\+\_\+list(), I\+P\+::family, I\+P\+\_\+\+Port\+::ip, is\+\_\+furthest(), mark\+\_\+all\+\_\+good(), I\+P\+\_\+\+Port\+::port, and make-\/funny-\/savefile\+::public\+\_\+key.
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+260 \{
+261     uint8\_t \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[crypto\_box\_PUBLICKEYBYTES];
+262     uint8\_t ipv6 = ip\_port->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6 ? 1 : 0;
+263 
+264     \hyperlink{dht__test_8c_a895947d232a843232c414b2c5d048c81}{mark\_all\_good}(list, length, ipv6);
+265 
+266     \textcolor{comment}{// check "good" client id replacement}
+267     \textcolor{keywordflow}{do} \{
+268         randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+269     \} \textcolor{keywordflow}{while} (\hyperlink{dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef}{is\_furthest}(comp\_client\_id, list, length, public\_key));
+270 
+271     ip\_port->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+272     \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, *ip\_port, public\_key);
+273     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, public\_key) >= 0, \textcolor{stringliteral}{"Good client id
+       is not in the list"});
+274 
+275     \textcolor{comment}{// check "good" client id skip}
+276     \textcolor{keywordflow}{do} \{
+277         randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+278     \} \textcolor{keywordflow}{while} (!\hyperlink{dht__test_8c_a5c88d7abe9fccf7d3d3d28efc2408fef}{is\_furthest}(comp\_client\_id, list, length, public\_key));
+279 
+280     ip\_port->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+281     \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, *ip\_port, public\_key);
+282     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, public\_key) == -1, \textcolor{stringliteral}{"Good client
+       id is in the list"});
+283 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a26ee6a8d6a8a726b6a03bdacfa1f3716_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a62e2c67aa707a1ea005159db3bc59e36}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad@{test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad}}
+\index{test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad@{test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+addto\+\_\+lists\+\_\+possible\+\_\+bad (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht, }
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{{\bf I\+P\+\_\+\+Port} $\ast$}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{comp\+\_\+client\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a62e2c67aa707a1ea005159db3bc59e36}
+
+
+Definition at line 191 of file dht\+\_\+test.\+c.
+
+
+
+References addto\+\_\+lists(), ck\+\_\+assert\+\_\+msg(), client\+\_\+in\+\_\+list(), I\+P\+::family, id\+\_\+closest(), id\+\_\+copy(), I\+P\+\_\+\+Port\+::ip, mark\+\_\+all\+\_\+good(), mark\+\_\+possible\+\_\+bad(), I\+P\+\_\+\+Port\+::port, and make-\/funny-\/savefile\+::public\+\_\+key.
+
+
+\begin{DoxyCode}
+196 \{
+197     \textcolor{comment}{// check "possibly bad" clients replacement}
+198     \textcolor{keywordtype}{int} used, test1, test2, test3;
+199     uint8\_t \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[crypto\_box\_PUBLICKEYBYTES], test\_id1[crypto\_box\_PUBLICKEYBYTES], test\_id2[
+      crypto\_box\_PUBLICKEYBYTES], test\_id3[crypto\_box\_PUBLICKEYBYTES];
+200     uint8\_t ipv6 = ip\_port->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6 ? 1 : 0;
+201 
+202     randombytes(public\_key, \textcolor{keyword}{sizeof}(public\_key));
+203     \hyperlink{dht__test_8c_a895947d232a843232c414b2c5d048c81}{mark\_all\_good}(list, length, ipv6);
+204 
+205     test1 = rand() % (length / 3);
+206     test2 = rand() % (length / 3) + length / 3;
+207     test3 = rand() % (length / 3) + 2 * length / 3;
+208     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(!(test1 == test2 || test1 == test3 || test2 == test3), \textcolor{stringliteral}{"Wrong test indices
+       are chosen"});
+209 
+210     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id1, list[test1].public\_key);
+211     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id2, list[test2].public\_key);
+212     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}((uint8\_t *)&test\_id3, list[test3].public\_key);
+213 
+214     \textcolor{comment}{// mark nodes as "possibly bad"}
+215     \textcolor{keywordflow}{if} (ipv6) \{
+216         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test1].assoc6);
+217         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test2].assoc6);
+218         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test3].assoc6);
+219     \} \textcolor{keywordflow}{else} \{
+220         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test1].assoc4);
+221         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test2].assoc4);
+222         \hyperlink{dht__test_8c_a1c1621e9f71f5560abf4ef4130e1dc40}{mark\_possible\_bad}(&list[test3].assoc4);
+223     \}
+224 
+225     ip\_port->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} += 1;
+226     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, *ip\_port, public\_key);
+227     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+228 
+229     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, public\_key) >= 0, \textcolor{stringliteral}{"Client id is
+       not in the list"});
+230 
+231     \textcolor{keywordtype}{int} inlist\_id1 = \hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id1) >= 0;
+232     \textcolor{keywordtype}{int} inlist\_id2 = \hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id2) >= 0;
+233     \textcolor{keywordtype}{int} inlist\_id3 = \hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id3) >= 0;
+234 
+235     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(inlist\_id1 + inlist\_id2 + inlist\_id3 == 2, \textcolor{stringliteral}{"Wrong client removed"});
+236 
+237     \textcolor{keywordflow}{if} (!inlist\_id1) \{
+238         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id2, test\_id1) == 1,
+239                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+240         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id3, test\_id1) == 1,
+241                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+242     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!inlist\_id2) \{
+243         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id1, test\_id2) == 1,
+244                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+245         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id3, test\_id2) == 1,
+246                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+247     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!inlist\_id3) \{
+248         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id1, test\_id3) == 1,
+249                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+250         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{_d_h_t_8c_a903a5bc580826fe447adb841b7782333}{id\_closest}(comp\_client\_id, test\_id2, test\_id3) == 1,
+251                       \textcolor{stringliteral}{"Id has been removed but is closer to than another one"});
+252     \}
+253 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a62e2c67aa707a1ea005159db3bc59e36_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0}{\index{dht\+\_\+test.\+c@{dht\+\_\+test.\+c}!test\+\_\+addto\+\_\+lists\+\_\+update@{test\+\_\+addto\+\_\+lists\+\_\+update}}
+\index{test\+\_\+addto\+\_\+lists\+\_\+update@{test\+\_\+addto\+\_\+lists\+\_\+update}!dht\+\_\+test.\+c@{dht\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+addto\+\_\+lists\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+addto\+\_\+lists\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht, }
+\item[{{\bf Client\+\_\+data} $\ast$}]{list, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{{\bf I\+P\+\_\+\+Port} $\ast$}]{ip\+\_\+port}
+\end{DoxyParamCaption}
+)}}\label{dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0}
+
+
+Definition at line 81 of file dht\+\_\+test.\+c.
+
+
+
+References addto\+\_\+lists(), Client\+\_\+data\+::assoc4, Client\+\_\+data\+::assoc6, ck\+\_\+assert\+\_\+msg(), client\+\_\+in\+\_\+list(), I\+P\+::family, id\+\_\+copy(), I\+P\+\_\+\+Port\+::ip, I\+P\+P\+Ts\+Png\+::ip\+\_\+port, ipport\+\_\+copy(), ipport\+\_\+equal(), I\+P\+\_\+\+Port\+::port, make-\/funny-\/savefile\+::public\+\_\+key, and T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T.
+
+
+
+Referenced by test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordtype}{int} used, test, test1, test2, found;
+87     \hyperlink{struct_i_p___port}{IP\_Port} test\_ipp;
+88     uint8\_t test\_id[crypto\_box\_PUBLICKEYBYTES];
+89     uint8\_t ipv6 = ip\_port->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6 ? 1 : 0;
+90 
+91     \textcolor{comment}{// check id update for existing ip\_port}
+92     test = rand() % length;
+93     \hyperlink{network_8c_a98c8d0713b35c97e9861cd7e59c40890}{ipport\_copy}(&test\_ipp, ipv6 ? &list[test].assoc6.ip\_port : &list[test].
+      \hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+94 
+95     randombytes(test\_id, \textcolor{keyword}{sizeof}(test\_id));
+96     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, test\_ipp, test\_id);
+97     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+98     \textcolor{comment}{// it is possible to have ip\_port duplicates in the list, so ip\_port @ found not always equal to
+       ip\_port @ test}
+99     found = \hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id);
+100     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(found >= 0, \textcolor{stringliteral}{"Client id is not in the list"});
+101     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(&test\_ipp, ipv6 ? &list[found].assoc6.ip\_port : &
+      list[found].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}),
+102                   \textcolor{stringliteral}{"Client IP\_Port is incorrect"});
+103 
+104     \textcolor{comment}{// check ip\_port update for existing id}
+105     test = rand() % length;
+106     test\_ipp.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = rand() % \hyperlink{network_8h_a8b04a22d2b5effdb46dda741f490951e}{TOX\_PORT\_DEFAULT};
+107     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(test\_id, list[test].\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+108 
+109     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, test\_ipp, test\_id);
+110     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+111     \textcolor{comment}{// it is not possible to have id duplicates in the list, so id @ found must be equal id @ test}
+112     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id) == test, \textcolor{stringliteral}{"Client id is
+       not in the list"});
+113     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(&test\_ipp, ipv6 ? &list[test].assoc6.ip\_port : &
+      list[test].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}),
+114                   \textcolor{stringliteral}{"Client IP\_Port is incorrect"});
+115 
+116     \textcolor{comment}{// check ip\_port update for existing id and ip\_port (... port ... id ...)}
+117     test1 = rand() % (length / 2);
+118     test2 = rand() % (length / 2) + length / 2;
+119 
+120     \hyperlink{network_8c_a98c8d0713b35c97e9861cd7e59c40890}{ipport\_copy}(&test\_ipp, ipv6 ? &list[test1].assoc6.ip\_port : &list[test1].
+      \hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+121     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(test\_id, list[test2].\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+122 
+123     \textcolor{keywordflow}{if} (ipv6) list[test2].\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = -1;
+124     \textcolor{keywordflow}{else} list[test2].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = -1;
+125 
+126     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, test\_ipp, test\_id);
+127     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+128     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id) == test2, \textcolor{stringliteral}{"Client id is
+       not in the list"});
+129     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(&test\_ipp, ipv6 ? &list[test2].assoc6.ip\_port : &
+      list[test2].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}),
+130                   \textcolor{stringliteral}{"Client IP\_Port is incorrect"});
+131 
+132     \textcolor{comment}{// check ip\_port update for existing id and ip\_port (... id ... port ...)}
+133     test1 = rand() % (length / 2);
+134     test2 = rand() % (length / 2) + length / 2;
+135 
+136     \hyperlink{network_8c_a98c8d0713b35c97e9861cd7e59c40890}{ipport\_copy}(&test\_ipp, ipv6 ? &list[test2].assoc6.ip\_port : &list[test2].
+      \hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port});
+137     \hyperlink{util_8c_aa30049b8c1d82c280d6d872feea3353b}{id\_copy}(test\_id, list[test1].\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+138 
+139     \textcolor{keywordflow}{if} (ipv6) list[test1].\hyperlink{struct_client__data_a87d394929a2604f6f785fec949fac618}{assoc6}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = -1;
+140     \textcolor{keywordflow}{else} list[test1].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = -1;
+141 
+142     used = \hyperlink{_d_h_t_8c_a9d898065db0fd4adf26fdb7f80e6d7ac}{addto\_lists}(dht, test\_ipp, test\_id);
+143     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(used >= 1, \textcolor{stringliteral}{"Wrong number of added clients"});
+144     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{dht__test_8c_a33396cc25facbf33eefd6fa95fe1e8e5}{client\_in\_list}(list, length, test\_id) == test1, \textcolor{stringliteral}{"Client id is
+       not in the list"});
+145     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(&test\_ipp, ipv6 ? &list[test1].assoc6.ip\_port : &
+      list[test1].\hyperlink{struct_client__data_ac9843379cbcd02bdfa5c180a1474a6c5}{assoc4}.\hyperlink{struct_i_p_p_ts_png_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}),
+146                   \textcolor{stringliteral}{"Client IP\_Port is incorrect"});
+147 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d98/dht__test_8c_a90ce4d5060f1998109da42a4e83c22c0_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,26 @@
+<map id="send_temp_packet" name="send_temp_packet">
+<area shape="rect" id="node2" href="$db/d11/irc__syncbot_8c.html#ae8ecaef140b786a2720eadbb85918e81" title="current_time_monotonic" alt="" coords="185,5,347,32"/>
+<area shape="rect" id="node3" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="641,56,795,83"/>
+<area shape="rect" id="node5" href="$d8/dc6/net__crypto_8c.html#a94d4c99b16cb7bd2dd61f9a7a8caf94a" title="send_packet_to" alt="" coords="209,157,323,184"/>
+<area shape="rect" id="node4" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="865,42,1003,83"/>
+<area shape="rect" id="node6" href="$d8/dc6/net__crypto_8c.html#afb5c59e6df7f38fe0bdf9e0f6c459869" title="crypto_connection_status" alt="" coords="405,157,575,184"/>
+<area shape="rect" id="node12" href="$d5/d26/_t_c_p__connection_8c.html#a455e955e01d34ff3db0b22b8f6d49d98" title="send_packet_tcp_connection" alt="" coords="395,249,585,276"/>
+<area shape="rect" id="node25" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="445,300,535,327"/>
+<area shape="rect" id="node7" href="$d5/d26/_t_c_p__connection_8c.html#ae843b0b4c8041f08bf9c18f68cae8a61" title="tcp_connection_to_online\l_tcp_relays" alt="" coords="633,107,803,149"/>
+<area shape="rect" id="node11" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="679,173,757,200"/>
+<area shape="rect" id="node8" href="$d5/d26/_t_c_p__connection_8c.html#a95c3e01ee87339f2dc2e87646f464b51" title="get_connection" alt="" coords="879,173,989,200"/>
+<area shape="rect" id="node10" href="$d5/d26/_t_c_p__connection_8c.html#a255916e82a74ad6c617216af786ec335" title="online_tcp_connection\l_from_conn" alt="" coords="859,107,1009,149"/>
+<area shape="rect" id="node9" href="$d5/d26/_t_c_p__connection_8c.html#aafa7b2a7f56b8f6bb0c1e44b9aec7262" title="connections_number\l_not_valid" alt="" coords="1082,166,1225,207"/>
+<area shape="rect" id="node13" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="651,275,785,301"/>
+<area shape="rect" id="node15" href="$da/da1/_t_c_p__client_8c.html#aea842652030d00bd8302e3c0201f95b9" title="send_data" alt="" coords="677,333,759,360"/>
+<area shape="rect" id="node24" href="$da/da1/_t_c_p__client_8c.html#a7818a314434c2bb01c3ea406744f076b" title="send_oob_packet" alt="" coords="656,409,780,436"/>
+<area shape="rect" id="node14" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="851,225,1017,266"/>
+<area shape="rect" id="node16" href="$da/da1/_t_c_p__client_8c.html#a8e1ca90aa8db34a58b3b38cfcb1bb9de" title="send_ping_response" alt="" coords="863,291,1005,317"/>
+<area shape="rect" id="node17" href="$da/da1/_t_c_p__client_8c.html#ab959397449cc23b5811168e4395bdaea" title="write_packet_TCP_secure\l_connection" alt="" coords="1065,359,1241,401"/>
+<area shape="rect" id="node23" href="$da/da1/_t_c_p__client_8c.html#a5aad81831c1333b763c9fd5eaf41603f" title="send_ping_request" alt="" coords="869,392,999,419"/>
+<area shape="rect" id="node18" href="$da/da1/_t_c_p__client_8c.html#a878656cc36ac482c8063082d0d86850f" title="send_pending_data" alt="" coords="1305,291,1439,317"/>
+<area shape="rect" id="node20" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="1289,341,1455,368"/>
+<area shape="rect" id="node21" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="1311,392,1433,419"/>
+<area shape="rect" id="node22" href="$da/da1/_t_c_p__client_8c.html#a87e67ddfe8fdabe9f2d32080097c3970" title="add_priority" alt="" coords="1327,443,1417,469"/>
+<area shape="rect" id="node19" href="$da/da1/_t_c_p__client_8c.html#a531708d11982cfb4c8d31ac915c25386" title="send_pending_data_nonpriority" alt="" coords="1503,291,1704,317"/>
+</map>

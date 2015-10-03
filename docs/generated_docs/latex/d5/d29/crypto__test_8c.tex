@@ -1,0 +1,649 @@
+\hypertarget{crypto__test_8c}{\section{auto\+\_\+tests/crypto\+\_\+test.c File Reference}
+\label{crypto__test_8c}\index{auto\+\_\+tests/crypto\+\_\+test.\+c@{auto\+\_\+tests/crypto\+\_\+test.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/net\+\_\+crypto.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$check.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\\*
+Include dependency graph for crypto\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d02/crypto__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\+\_\+bytes} (uint8\+\_\+t $\ast$b, size\+\_\+t blen)
+\item 
+\hyperlink{crypto__test_8c_a59fac6cc629724d16d205f7c33fd7130}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+known)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{crypto__test_8c_ab85fd17b57460590b062226f3e03ebae}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+fast\+\_\+known)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{crypto__test_8c_aa1b597ad717cadc8055562e3045ae5b2}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+endtoend)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{crypto__test_8c_a8b28a7929771921063993dc1a9a132c5}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+large\+\_\+data)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{crypto__test_8c_a9df6105279af90d110ed3b6ccf4c7f65}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+large\+\_\+data\+\_\+symmetric)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T Suite $\ast$ \hyperlink{crypto__test_8c_a2889ef80abe0c25efe174bb7c5bb3570}{crypto\+\_\+suite} (void)
+\item 
+int \hyperlink{crypto__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}{alicesk} \mbox{[}32\mbox{]}
+\item 
+unsigned char \hyperlink{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}{bobpk} \mbox{[}32\mbox{]}
+\item 
+unsigned char \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce} \mbox{[}24\mbox{]}
+\item 
+unsigned char \hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\+\_\+m} \mbox{[}131\mbox{]}
+\item 
+unsigned char \hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\+\_\+c} \mbox{[}147\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{crypto__test_8c_a2889ef80abe0c25efe174bb7c5bb3570}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!crypto\+\_\+suite@{crypto\+\_\+suite}}
+\index{crypto\+\_\+suite@{crypto\+\_\+suite}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{crypto\+\_\+suite}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T Suite$\ast$ crypto\+\_\+suite (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_a2889ef80abe0c25efe174bb7c5bb3570}
+
+
+Definition at line 275 of file crypto\+\_\+test.\+c.
+
+
+
+References D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E, and D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E\+\_\+\+S\+L\+O\+W.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+276 \{
+277     Suite *s = suite\_create(\textcolor{stringliteral}{"Crypto"});
+278 
+279     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(known);
+280     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(fast\_known);
+281     \hyperlink{helpers_8h_a04d7721023739a366a0baae1b1a32b50}{DEFTESTCASE\_SLOW}(endtoend, 15); \textcolor{comment}{/* waiting up to 15 seconds */}
+282     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(large\_data);
+283     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(large\_data\_symmetric);
+284 
+285     \textcolor{keywordflow}{return} s;
+286 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d5/d29/crypto__test_8c_a2889ef80abe0c25efe174bb7c5bb3570_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 288 of file crypto\+\_\+test.\+c.
+
+
+
+References crypto\+\_\+suite().
+
+
+\begin{DoxyCode}
+289 \{
+290     srand((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}) time(NULL));
+291 
+292     Suite *crypto = \hyperlink{crypto__test_8c_a2889ef80abe0c25efe174bb7c5bb3570}{crypto\_suite}();
+293     SRunner *test\_runner = srunner\_create(crypto);
+294     \textcolor{keywordtype}{int} number\_failed = 0;
+295 
+296     srunner\_run\_all(test\_runner, CK\_NORMAL);
+297     number\_failed = srunner\_ntests\_failed(test\_runner);
+298 
+299     srunner\_free(test\_runner);
+300 
+301     \textcolor{keywordflow}{return} number\_failed;
+302 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d5/d29/crypto__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!rand\+\_\+bytes@{rand\+\_\+bytes}}
+\index{rand\+\_\+bytes@{rand\+\_\+bytes}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{rand\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}void rand\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{b, }
+\item[{size\+\_\+t}]{blen}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}
+
+
+Definition at line 15 of file crypto\+\_\+test.\+c.
+
+
+
+References i.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+18 
+19     \textcolor{keywordflow}{for} (i = 0; i < blen; i++) \{
+20         b[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = rand();
+21     \}
+22 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d5/d29/crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_a59fac6cc629724d16d205f7c33fd7130}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+known}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_a59fac6cc629724d16d205f7c33fd7130}
+
+
+Definition at line 88 of file crypto\+\_\+test.\+c.
+
+
+
+References alicesk, bobpk, ck\+\_\+assert\+\_\+msg(), decrypt\+\_\+data(), encrypt\+\_\+data(), m, nonce, test\+\_\+c, and test\+\_\+m.
+
+
+\begin{DoxyCode}
+89 \{
+90     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c[147];
+91     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}[131];
+92     \textcolor{keywordtype}{int} clen, mlen;
+93 
+94     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(c) == \textcolor{keyword}{sizeof}(m) + crypto\_box\_MACBYTES * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}),
+95                   \textcolor{stringliteral}{"cyphertext should be crypto\_box\_MACBYTES bytes longer than plaintext"});
+96     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}) == \textcolor{keyword}{sizeof}(c), \textcolor{stringliteral}{"sanity check failed"});
+97     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}) == \textcolor{keyword}{sizeof}(m), \textcolor{stringliteral}{"sanity check failed"});
+98 
+99     clen = \hyperlink{crypto__core_8c_a014149333522d211490304255e139ec3}{encrypt\_data}(\hyperlink{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}{bobpk}, \hyperlink{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}{alicesk}, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, 
+      \hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}, \textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), c);
+100 
+101     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(\hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}, c, \textcolor{keyword}{sizeof}(c)) == 0, \textcolor{stringliteral}{"cyphertext doesn't match test
+       vector"});
+102     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(clen == \textcolor{keyword}{sizeof}(c) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), \textcolor{stringliteral}{"wrong ciphertext length"});
+103 
+104     mlen = \hyperlink{crypto__core_8c_ab0aff79180f3852c24ad8f6fd88caf18}{decrypt\_data}(\hyperlink{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}{bobpk}, \hyperlink{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}{alicesk}, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, 
+      \hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}, \textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), m);
+105 
+106     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(\hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}, m, \textcolor{keyword}{sizeof}(m)) == 0, \textcolor{stringliteral}{"decrypted text doesn't match test
+       vector"});
+107     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(mlen == \textcolor{keyword}{sizeof}(m) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), \textcolor{stringliteral}{"wrong plaintext length"});
+108 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d29/crypto__test_8c_a59fac6cc629724d16d205f7c33fd7130_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_ab85fd17b57460590b062226f3e03ebae}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+fast\+\_\+known}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_ab85fd17b57460590b062226f3e03ebae}
+
+
+Definition at line 111 of file crypto\+\_\+test.\+c.
+
+
+
+References alicesk, bobpk, ck\+\_\+assert\+\_\+msg(), decrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+precompute(), m, nonce, test\+\_\+c, and test\+\_\+m.
+
+
+\begin{DoxyCode}
+112 \{
+113     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} k[crypto\_box\_BEFORENMBYTES];
+114     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c[147];
+115     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}[131];
+116     \textcolor{keywordtype}{int} clen, mlen;
+117 
+118     \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(\hyperlink{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}{bobpk}, \hyperlink{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}{alicesk}, k);
+119 
+120     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(c) == \textcolor{keyword}{sizeof}(m) + crypto\_box\_MACBYTES * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}),
+121                   \textcolor{stringliteral}{"cyphertext should be crypto\_box\_MACBYTES bytes longer than plaintext"});
+122     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}) == \textcolor{keyword}{sizeof}(c), \textcolor{stringliteral}{"sanity check failed"});
+123     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(\textcolor{keyword}{sizeof}(\hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}) == \textcolor{keyword}{sizeof}(m), \textcolor{stringliteral}{"sanity check failed"});
+124 
+125     clen = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, \hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}, \textcolor{keyword}{sizeof}(
+      \hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), c);
+126 
+127     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(\hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}, c, \textcolor{keyword}{sizeof}(c)) == 0, \textcolor{stringliteral}{"cyphertext doesn't match test
+       vector"});
+128     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(clen == \textcolor{keyword}{sizeof}(c) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), \textcolor{stringliteral}{"wrong ciphertext length"});
+129 
+130     mlen = \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k, \hyperlink{crypto__test_8c_a7932c523f7065073a396e571319201ce}{nonce}, \hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}, \textcolor{keyword}{sizeof}(
+      \hyperlink{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{test\_c}) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), m);
+131 
+132     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(\hyperlink{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{test\_m}, m, \textcolor{keyword}{sizeof}(m)) == 0, \textcolor{stringliteral}{"decrypted text doesn't match test
+       vector"});
+133     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(mlen == \textcolor{keyword}{sizeof}(m) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}), \textcolor{stringliteral}{"wrong plaintext length"});
+134 
+135 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d5/d29/crypto__test_8c_ab85fd17b57460590b062226f3e03ebae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_aa1b597ad717cadc8055562e3045ae5b2}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+endtoend}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_aa1b597ad717cadc8055562e3045ae5b2}
+
+
+Definition at line 138 of file crypto\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), decrypt\+\_\+data(), decrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+data(), encrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+precompute(), m, and rand\+\_\+bytes().
+
+
+\begin{DoxyCode}
+139 \{
+140     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pk1[crypto\_box\_PUBLICKEYBYTES];
+141     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} sk1[crypto\_box\_SECRETKEYBYTES];
+142     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pk2[crypto\_box\_PUBLICKEYBYTES];
+143     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} sk2[crypto\_box\_SECRETKEYBYTES];
+144     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} k1[crypto\_box\_BEFORENMBYTES];
+145     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} k2[crypto\_box\_BEFORENMBYTES];
+146 
+147     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} n[crypto\_box\_NONCEBYTES];
+148 
+149     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}[500];
+150     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c1[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}) + crypto\_box\_MACBYTES];
+151     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c2[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}) + crypto\_box\_MACBYTES];
+152     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c3[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}) + crypto\_box\_MACBYTES];
+153     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c4[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}) + crypto\_box\_MACBYTES];
+154     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m1[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})];
+155     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m2[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})];
+156     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m3[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})];
+157     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m4[\textcolor{keyword}{sizeof}(\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})];
+158 
+159     \textcolor{keywordtype}{int} mlen;
+160     \textcolor{keywordtype}{int} c1len, c2len, c3len, c4len;
+161     \textcolor{keywordtype}{int} m1len, m2len, m3len, m4len;
+162 
+163     \textcolor{keywordtype}{int} testno;
+164 
+165     \textcolor{comment}{// Test 100 random messages and keypairs}
+166     \textcolor{keywordflow}{for} (testno = 0; testno < 100; testno++) \{
+167         \textcolor{comment}{//Generate random message (random length from 100 to 500)}
+168         mlen = (rand() % 400) + 100;
+169         \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(m, mlen);
+170         \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(n, crypto\_box\_NONCEBYTES);
+171 
+172         \textcolor{comment}{//Generate keypairs}
+173         crypto\_box\_keypair(pk1, sk1);
+174         crypto\_box\_keypair(pk2, sk2);
+175 
+176         \textcolor{comment}{//Precompute shared keys}
+177         \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(pk2, sk1, k1);
+178         \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(pk1, sk2, k2);
+179 
+180         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(k1, k2, crypto\_box\_BEFORENMBYTES) == 0, \textcolor{stringliteral}{"encrypt\_precompute: bad"}
+      );
+181 
+182         \textcolor{comment}{//Encrypt all four ways}
+183         c1len = \hyperlink{crypto__core_8c_a014149333522d211490304255e139ec3}{encrypt\_data}(pk2, sk1, n, m, mlen, c1);
+184         c2len = \hyperlink{crypto__core_8c_a014149333522d211490304255e139ec3}{encrypt\_data}(pk1, sk2, n, m, mlen, c2);
+185         c3len = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k1, n, m, mlen, c3);
+186         c4len = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k2, n, m, mlen, c4);
+187 
+188         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(c1len == c2len && c1len == c3len && c1len == c4len, \textcolor{stringliteral}{"cyphertext lengths
+       differ"});
+189         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(c1len == mlen + (\textcolor{keywordtype}{int})crypto\_box\_MACBYTES, \textcolor{stringliteral}{"wrong cyphertext length"});
+190         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(c1, c2, c1len) == 0 && memcmp(c1, c3, c1len) == 0
+191                       && memcmp(c1, c4, c1len) == 0, \textcolor{stringliteral}{"crypertexts differ"});
+192 
+193         \textcolor{comment}{//Decrypt all four ways}
+194         m1len = \hyperlink{crypto__core_8c_ab0aff79180f3852c24ad8f6fd88caf18}{decrypt\_data}(pk2, sk1, n, c1, c1len, m1);
+195         m2len = \hyperlink{crypto__core_8c_ab0aff79180f3852c24ad8f6fd88caf18}{decrypt\_data}(pk1, sk2, n, c1, c1len, m2);
+196         m3len = \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k1, n, c1, c1len, m3);
+197         m4len = \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k2, n, c1, c1len, m4);
+198 
+199         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(m1len == m2len && m1len == m3len && m1len == m4len, \textcolor{stringliteral}{"decrypted text
+       lengths differ"});
+200         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(m1len == mlen, \textcolor{stringliteral}{"wrong decrypted text length"});
+201         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(m1, m2, mlen) == 0 && memcmp(m1, m3, mlen) == 0
+202                       && memcmp(m1, m4, mlen) == 0, \textcolor{stringliteral}{"decrypted texts differ"});
+203         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(m1, m, mlen) == 0, \textcolor{stringliteral}{"wrong decrypted text"});
+204     \}
+205 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d29/crypto__test_8c_aa1b597ad717cadc8055562e3045ae5b2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_a8b28a7929771921063993dc1a9a132c5}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+large\+\_\+data}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_a8b28a7929771921063993dc1a9a132c5}
+
+
+Definition at line 208 of file crypto\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), decrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+data\+\_\+symmetric(), M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E, and rand\+\_\+bytes().
+
+
+\begin{DoxyCode}
+209 \{
+210     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} k[crypto\_box\_BEFORENMBYTES];
+211 
+212     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} n[crypto\_box\_NONCEBYTES];
+213 
+214     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m1[\hyperlink{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{MAX\_CRYPTO\_PACKET\_SIZE} - crypto\_box\_MACBYTES];
+215     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c1[\textcolor{keyword}{sizeof}(m1) + crypto\_box\_MACBYTES];
+216     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m1prime[\textcolor{keyword}{sizeof}(m1)];
+217 
+218     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m2[\hyperlink{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{MAX\_CRYPTO\_PACKET\_SIZE}];
+219     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c2[\textcolor{keyword}{sizeof}(m2) + crypto\_box\_MACBYTES];
+220 
+221     \textcolor{keywordtype}{int} c1len, c2len;
+222     \textcolor{keywordtype}{int} m1plen;
+223 
+224     \textcolor{comment}{//Generate random messages}
+225     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(m1, \textcolor{keyword}{sizeof}(m1));
+226     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(m2, \textcolor{keyword}{sizeof}(m2));
+227     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(n, crypto\_box\_NONCEBYTES);
+228 
+229     \textcolor{comment}{//Generate key}
+230     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(k, crypto\_box\_BEFORENMBYTES);
+231 
+232     c1len = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k, n, m1, \textcolor{keyword}{sizeof}(m1), c1);
+233     c2len = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k, n, m2, \textcolor{keyword}{sizeof}(m2), c2);
+234 
+235     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(c1len == \textcolor{keyword}{sizeof}(m1) + crypto\_box\_MACBYTES, \textcolor{stringliteral}{"could not encrypt"});
+236     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(c2len == \textcolor{keyword}{sizeof}(m2) + crypto\_box\_MACBYTES, \textcolor{stringliteral}{"could not encrypt"});
+237 
+238     m1plen = \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k, n, c1, c1len, m1prime);
+239 
+240     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(m1plen == \textcolor{keyword}{sizeof}(m1), \textcolor{stringliteral}{"decrypted text lengths differ"});
+241     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(m1prime, m1, \textcolor{keyword}{sizeof}(m1)) == 0, \textcolor{stringliteral}{"decrypted texts differ"});
+242 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d5/d29/crypto__test_8c_a8b28a7929771921063993dc1a9a132c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{crypto__test_8c_a9df6105279af90d110ed3b6ccf4c7f65}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+large\+\_\+data\+\_\+symmetric}]{}
+\end{DoxyParamCaption}
+)}}\label{crypto__test_8c_a9df6105279af90d110ed3b6ccf4c7f65}
+
+
+Definition at line 245 of file crypto\+\_\+test.\+c.
+
+
+
+References ck\+\_\+assert\+\_\+msg(), crypto\+\_\+box\+\_\+\+K\+E\+Y\+B\+Y\+T\+E\+S, decrypt\+\_\+data\+\_\+symmetric(), encrypt\+\_\+data\+\_\+symmetric(), new\+\_\+symmetric\+\_\+key(), and rand\+\_\+bytes().
+
+
+\begin{DoxyCode}
+246 \{
+247     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} k[\hyperlink{crypto__core_8h_aade7cd33abc5668970c55ed009ab00c8}{crypto\_box\_KEYBYTES}];
+248 
+249     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} n[crypto\_box\_NONCEBYTES];
+250 
+251     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m1[16 * 16 * 16];
+252     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c1[\textcolor{keyword}{sizeof}(m1) + crypto\_box\_MACBYTES];
+253     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m1prime[\textcolor{keyword}{sizeof}(m1)];
+254 
+255     \textcolor{keywordtype}{int} c1len;
+256     \textcolor{keywordtype}{int} m1plen;
+257 
+258     \textcolor{comment}{//Generate random messages}
+259     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(m1, \textcolor{keyword}{sizeof}(m1));
+260     \hyperlink{crypto__test_8c_ae6fd3fc61ca10efb1c9021bd6617b77e}{rand\_bytes}(n, crypto\_box\_NONCEBYTES);
+261 
+262     \textcolor{comment}{//Generate key}
+263     \hyperlink{crypto__core_8c_a89b4a1a4a7d8bfabdf0e1b60f074e531}{new\_symmetric\_key}(k);
+264 
+265     c1len = \hyperlink{crypto__core_8c_a81efc0a4a6e0efe372651e26e342a6e5}{encrypt\_data\_symmetric}(k, n, m1, \textcolor{keyword}{sizeof}(m1), c1);
+266     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(c1len == \textcolor{keyword}{sizeof}(m1) + crypto\_box\_MACBYTES, \textcolor{stringliteral}{"could not encrypt data"});
+267 
+268     m1plen = \hyperlink{crypto__core_8c_a824b257fcff74b9d17c5247223fbed29}{decrypt\_data\_symmetric}(k, n, c1, c1len, m1prime);
+269 
+270     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(m1plen == \textcolor{keyword}{sizeof}(m1), \textcolor{stringliteral}{"decrypted text lengths differ"});
+271     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(memcmp(m1prime, m1, \textcolor{keyword}{sizeof}(m1)) == 0, \textcolor{stringliteral}{"decrypted texts differ"});
+272 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d5/d29/crypto__test_8c_a9df6105279af90d110ed3b6ccf4c7f65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!alicesk@{alicesk}}
+\index{alicesk@{alicesk}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{alicesk}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char alicesk\mbox{[}32\mbox{]}}}\label{crypto__test_8c_a318696a879e2e1a6ea923bf1ccedded2}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0x77, 0x07, 0x6d, 0x0a, 0x73, 0x18, 0xa5, 0x7d,
+    0x3c, 0x16, 0xc1, 0x72, 0x51, 0xb2, 0x66, 0x45,
+    0xdf, 0x4c, 0x2f, 0x87, 0xeb, 0xc0, 0x99, 0x2a,
+    0xb1, 0x77, 0xfb, 0xa5, 0x1d, 0xb9, 0x2c, 0x2a
+\}
+\end{DoxyCode}
+
+
+Definition at line 26 of file crypto\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!bobpk@{bobpk}}
+\index{bobpk@{bobpk}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{bobpk}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char bobpk\mbox{[}32\mbox{]}}}\label{crypto__test_8c_a5475b8ead75f8c68d2c51643d753f976}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0xde, 0x9e, 0xdb, 0x7d, 0x7b, 0x7d, 0xc1, 0xb4,
+    0xd3, 0x5b, 0x61, 0xc2, 0xec, 0xe4, 0x35, 0x37,
+    0x3f, 0x83, 0x43, 0xc8, 0x5b, 0x78, 0x67, 0x4d,
+    0xad, 0xfc, 0x7e, 0x14, 0x6f, 0x88, 0x2b, 0x4f
+\}
+\end{DoxyCode}
+
+
+Definition at line 33 of file crypto\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{crypto__test_8c_a7932c523f7065073a396e571319201ce}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!nonce@{nonce}}
+\index{nonce@{nonce}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{nonce}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char nonce\mbox{[}24\mbox{]}}}\label{crypto__test_8c_a7932c523f7065073a396e571319201ce}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0x69, 0x69, 0x6e, 0xe9, 0x55, 0xb6, 0x2b, 0x73,
+    0xcd, 0x62, 0xbd, 0xa8, 0x75, 0xfc, 0x73, 0xd6,
+    0x82, 0x19, 0xe0, 0x03, 0x6b, 0x7a, 0x0b, 0x37
+\}
+\end{DoxyCode}
+
+
+Definition at line 40 of file crypto\+\_\+test.\+c.
+
+
+
+Referenced by create\+\_\+cookie\+\_\+request(), create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), create\+\_\+request(), getnodes(), handle\+\_\+announce\+\_\+request(), handle\+\_\+data\+\_\+packet(), handle\+\_\+request(), send\+\_\+dht\+\_\+dhtpk(), send\+\_\+onion\+\_\+data(), sendnodes\+\_\+ipv6(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tox\+\_\+decrypt\+\_\+dns3\+\_\+\+T\+X\+T(), tox\+\_\+generate\+\_\+dns3\+\_\+string(), tox\+\_\+pass\+\_\+key\+\_\+decrypt(), and tox\+\_\+pass\+\_\+key\+\_\+encrypt().
+
+\hypertarget{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!test\+\_\+c@{test\+\_\+c}}
+\index{test\+\_\+c@{test\+\_\+c}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+c}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char test\+\_\+c\mbox{[}147\mbox{]}}}\label{crypto__test_8c_a946e412f0ed9f2e393bb5666958f7ee8}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0xf3, 0xff, 0xc7, 0x70, 0x3f, 0x94, 0x00, 0xe5,
+    0x2a, 0x7d, 0xfb, 0x4b, 0x3d, 0x33, 0x05, 0xd9,
+    0x8e, 0x99, 0x3b, 0x9f, 0x48, 0x68, 0x12, 0x73,
+    0xc2, 0x96, 0x50, 0xba, 0x32, 0xfc, 0x76, 0xce,
+    0x48, 0x33, 0x2e, 0xa7, 0x16, 0x4d, 0x96, 0xa4,
+    0x47, 0x6f, 0xb8, 0xc5, 0x31, 0xa1, 0x18, 0x6a,
+    0xc0, 0xdf, 0xc1, 0x7c, 0x98, 0xdc, 0xe8, 0x7b,
+    0x4d, 0xa7, 0xf0, 0x11, 0xec, 0x48, 0xc9, 0x72,
+    0x71, 0xd2, 0xc2, 0x0f, 0x9b, 0x92, 0x8f, 0xe2,
+    0x27, 0x0d, 0x6f, 0xb8, 0x63, 0xd5, 0x17, 0x38,
+    0xb4, 0x8e, 0xee, 0xe3, 0x14, 0xa7, 0xcc, 0x8a,
+    0xb9, 0x32, 0x16, 0x45, 0x48, 0xe5, 0x26, 0xae,
+    0x90, 0x22, 0x43, 0x68, 0x51, 0x7a, 0xcf, 0xea,
+    0xbd, 0x6b, 0xb3, 0x73, 0x2b, 0xc0, 0xe9, 0xda,
+    0x99, 0x83, 0x2b, 0x61, 0xca, 0x01, 0xb6, 0xde,
+    0x56, 0x24, 0x4a, 0x9e, 0x88, 0xd5, 0xf9, 0xb3,
+    0x79, 0x73, 0xf6, 0x22, 0xa4, 0x3d, 0x14, 0xa6,
+    0x59, 0x9b, 0x1f, 0x65, 0x4c, 0xb4, 0x5a, 0x74,
+    0xe3, 0x55, 0xa5
+\}
+\end{DoxyCode}
+
+
+Definition at line 66 of file crypto\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}{\index{crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}!test\+\_\+m@{test\+\_\+m}}
+\index{test\+\_\+m@{test\+\_\+m}!crypto\+\_\+test.\+c@{crypto\+\_\+test.\+c}}
+\subsubsection[{test\+\_\+m}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char test\+\_\+m\mbox{[}131\mbox{]}}}\label{crypto__test_8c_a5622089f7a4d2ce0260764fb07be649b}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0xbe, 0x07, 0x5f, 0xc5, 0x3c, 0x81, 0xf2, 0xd5,
+    0xcf, 0x14, 0x13, 0x16, 0xeb, 0xeb, 0x0c, 0x7b,
+    0x52, 0x28, 0xc5, 0x2a, 0x4c, 0x62, 0xcb, 0xd4,
+    0x4b, 0x66, 0x84, 0x9b, 0x64, 0x24, 0x4f, 0xfc,
+    0xe5, 0xec, 0xba, 0xaf, 0x33, 0xbd, 0x75, 0x1a,
+    0x1a, 0xc7, 0x28, 0xd4, 0x5e, 0x6c, 0x61, 0x29,
+    0x6c, 0xdc, 0x3c, 0x01, 0x23, 0x35, 0x61, 0xf4,
+    0x1d, 0xb6, 0x6c, 0xce, 0x31, 0x4a, 0xdb, 0x31,
+    0x0e, 0x3b, 0xe8, 0x25, 0x0c, 0x46, 0xf0, 0x6d,
+    0xce, 0xea, 0x3a, 0x7f, 0xa1, 0x34, 0x80, 0x57,
+    0xe2, 0xf6, 0x55, 0x6a, 0xd6, 0xb1, 0x31, 0x8a,
+    0x02, 0x4a, 0x83, 0x8f, 0x21, 0xaf, 0x1f, 0xde,
+    0x04, 0x89, 0x77, 0xeb, 0x48, 0xf5, 0x9f, 0xfd,
+    0x49, 0x24, 0xca, 0x1c, 0x60, 0x90, 0x2e, 0x52,
+    0xf0, 0xa0, 0x89, 0xbc, 0x76, 0x89, 0x70, 0x40,
+    0xe0, 0x82, 0xf9, 0x37, 0x76, 0x38, 0x48, 0x64,
+    0x5e, 0x07, 0x05
+\}
+\end{DoxyCode}
+
+
+Definition at line 46 of file crypto\+\_\+test.\+c.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+

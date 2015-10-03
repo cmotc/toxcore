@@ -1,0 +1,351 @@
+\hypertarget{_messenger__test_8c}{\section{testing/\+Messenger\+\_\+test.c File Reference}
+\label{_messenger__test_8c}\index{testing/\+Messenger\+\_\+test.\+c@{testing/\+Messenger\+\_\+test.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/\+Messenger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+Include dependency graph for Messenger\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d6f/_messenger__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_messenger__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{_messenger__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+R\+T}~33445
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68}{print\+\_\+message} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint32\+\_\+t friendnumber, unsigned int type, const uint8\+\_\+t $\ast$string, size\+\_\+t length, void $\ast$userdata)
+\item 
+void \hyperlink{_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562}{print\+\_\+request} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$data, size\+\_\+t length, void $\ast$userdata)
+\item 
+int \hyperlink{_messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_messenger}{Messenger} $\ast$ \hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_messenger__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{_messenger__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 54 of file Messenger\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{_messenger__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!P\+O\+R\+T@{P\+O\+R\+T}}
+\index{P\+O\+R\+T@{P\+O\+R\+T}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T~33445}}\label{_messenger__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}
+
+
+Definition at line 55 of file Messenger\+\_\+test.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 97 of file Messenger\+\_\+test.\+c.
+
+
+
+References c\+\_\+sleep, cmdline\+\_\+parsefor\+\_\+ipv46(), Messenger\+::dht, D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), do\+\_\+messenger(), F\+R\+I\+E\+N\+D\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+S\+I\+Z\+E, getaddress(), getname(), hex\+\_\+string\+\_\+to\+\_\+bin(), i, Messenger\+\_\+\+Options\+::ipv6enabled, kill\+\_\+messenger(), m\+\_\+addfriend(), m\+\_\+callback\+\_\+friendmessage(), m\+\_\+callback\+\_\+friendrequest(), m\+\_\+send\+\_\+message\+\_\+generic(), M\+E\+S\+S\+A\+G\+E\+\_\+\+N\+O\+R\+M\+A\+L, messenger\+\_\+load(), messenger\+\_\+save(), messenger\+\_\+size(), new\+\_\+messenger(), num, port, print\+\_\+message(), print\+\_\+request(), printf(), setname(), and T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T.
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{comment}{/* let user override default by cmdline */}
+100     uint8\_t ipv6enabled = \hyperlink{network_8h_a5cba5a89816e720fa45984ad44859726}{TOX\_ENABLE\_IPV6\_DEFAULT}; \textcolor{comment}{/* x */}
+101     \textcolor{keywordtype}{int} argvoffset = \hyperlink{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{cmdline\_parsefor\_ipv46}(argc, argv, &ipv6enabled);
+102 
+103     \textcolor{keywordflow}{if} (argvoffset < 0)
+104         exit(1);
+105 
+106     \textcolor{comment}{/* with optional --ipvx, now it can be 1-4 arguments... */}
+107     \textcolor{keywordflow}{if} ((argc != argvoffset + 2) && (argc != argvoffset + 4)) \{
+108         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Usage: %s [--ipv4|--ipv6] ip port public\_key (of the DHT bootstrap node)\(\backslash\)n"}, argv[0])
+      ;
+109         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"or\(\backslash\)n"});
+110         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"       %s [--ipv4|--ipv6] Save.bak (to read Save.bak as state file)\(\backslash\)n"}, argv[0]);
+111         exit(0);
+112     \}
+113 
+114     \hyperlink{struct_messenger___options}{Messenger\_Options} options = \{0\};
+115     options.\hyperlink{struct_messenger___options_abf85a84f394474115b9f45f037ad3378}{ipv6enabled} = ipv6enabled;
+116     \hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = \hyperlink{_messenger_8c_af015ea2e74c58196e0564719a6c6a112}{new\_messenger}(&options, 0);
+117 
+118     \textcolor{keywordflow}{if} ( !\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} ) \{
+119         fputs(\textcolor{stringliteral}{"Failed to allocate messenger datastructure\(\backslash\)n"}, stderr);
+120         exit(0);
+121     \}
+122 
+123     \textcolor{keywordflow}{if} (argc == argvoffset + 4) \{
+124         uint16\_t \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = htons(atoi(argv[argvoffset + 2]));
+125         uint8\_t *bootstrap\_key = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(argv[argvoffset + 3]);
+126         \textcolor{keywordtype}{int} res = \hyperlink{_d_h_t_8c_af342c78837dbed569d4a75a0516455fc}{DHT\_bootstrap\_from\_address}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, argv[argvoffset + 1],
+127                                              ipv6enabled, port, bootstrap\_key);
+128         free(bootstrap\_key);
+129 
+130         \textcolor{keywordflow}{if} (!res) \{
+131             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Failed to convert \(\backslash\)"%s\(\backslash\)" into an IP address. Exiting...\(\backslash\)n"}, argv[argvoffset + 1])
+      ;
+132             exit(1);
+133         \}
+134     \} \textcolor{keywordflow}{else} \{
+135         FILE *file = fopen(argv[argvoffset + 1], \textcolor{stringliteral}{"rb"});
+136 
+137         \textcolor{keywordflow}{if} ( file == NULL ) \{
+138             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Failed to open \(\backslash\)"%s\(\backslash\)" - does it exist?\(\backslash\)n"}, argv[argvoffset + 1]);
+139             \textcolor{keywordflow}{return} 1;
+140         \}
+141 
+142         \textcolor{keywordtype}{int} read;
+143         uint8\_t buffer[128000];
+144         read = fread(buffer, 1, 128000, file);
+145         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Messenger loaded: %i\(\backslash\)n"}, \hyperlink{_messenger_8c_a4871cd41d2a53b07ee4b2467a844e17e}{messenger\_load}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, buffer, read));
+146         fclose(file);
+147 
+148     \}
+149 
+150     \hyperlink{_messenger_8c_ac913636e02281cae396b1b7494cd760a}{m\_callback\_friendrequest}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562}{print\_request}, NULL);
+151     \hyperlink{_messenger_8c_a5bf6f3f6a919d32a34dbd8150f26ec1e}{m\_callback\_friendmessage}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68}{print\_message}, NULL);
+152 
+153     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"OUR ID: "});
+154     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+155     uint8\_t address[\hyperlink{_messenger_8h_a22c0e97a4b45902742a86bba24cc5d5d}{FRIEND\_ADDRESS\_SIZE}];
+156     \hyperlink{_messenger_8c_a50d7f1102c25158f02b2943dcfe253c8}{getaddress}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, address);
+157 
+158     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_messenger_8h_a22c0e97a4b45902742a86bba24cc5d5d}{FRIEND\_ADDRESS\_SIZE}; i++) \{
+159         \textcolor{keywordflow}{if} (address[i] < 16)
+160             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"0"});
+161 
+162         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%hhX"}, address[i]);
+163     \}
+164 
+165     \hyperlink{_messenger_8c_a74824e98cf3b2607cb8624d46cd2e227}{setname}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, (uint8\_t *)\textcolor{stringliteral}{"Anon"}, 5);
+166 
+167     \textcolor{keywordtype}{char} temp\_hex\_id[128];
+168     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nEnter the address of the friend you wish to add (38 bytes HEX format):\(\backslash\)n"});
+169 
+170     \textcolor{keywordflow}{if} (!fgets(temp\_hex\_id, \textcolor{keyword}{sizeof}(temp\_hex\_id), stdin))
+171         exit(0);
+172 
+173     \textcolor{keywordflow}{if} ((strlen(temp\_hex\_id) > 0) && (temp\_hex\_id[strlen(temp\_hex\_id) - 1] == \textcolor{charliteral}{'\(\backslash\)n'}))
+174         temp\_hex\_id[strlen(temp\_hex\_id) - 1] = \textcolor{charliteral}{'\(\backslash\)0'};
+175 
+176 
+177     uint8\_t *bin\_id = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(temp\_hex\_id);
+178     \textcolor{keywordtype}{int} \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = \hyperlink{_messenger_8c_ac77431b1ab0b12af003657e11057bd9c}{m\_addfriend}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, bin\_id, (uint8\_t *)\textcolor{stringliteral}{"Install Gentoo"}, \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"Install Gentoo"}));
+179     free(bin\_id);
+180 
+181     perror(\textcolor{stringliteral}{"Initialization"});
+182 
+183     \textcolor{keywordflow}{while} (1) \{
+184         uint8\_t name[128];
+185         \hyperlink{_messenger_8c_a59c33c3a3b0e1dd9f86267f59c380bee}{getname}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, num, name);
+186         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%s\(\backslash\)n"}, name);
+187 
+188         \hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, num, \hyperlink{_messenger_8h_ac36f475ca5b446f4fde4c9b90bec77c8a3b0309750c8c5bf0ad071cf382f10c67}{MESSAGE\_NORMAL}, (uint8\_t *)\textcolor{stringliteral}{"
+      Test"}, 5, 0);
+189         \hyperlink{_messenger_8c_ae0686caa878183a98920aeb7486afcb6}{do\_messenger}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+190         \hyperlink{_messenger__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(30);
+191         FILE *file = fopen(\textcolor{stringliteral}{"Save.bak"}, \textcolor{stringliteral}{"wb"});
+192 
+193         \textcolor{keywordflow}{if} ( file == NULL ) \{
+194             \textcolor{keywordflow}{return} 1;
+195         \}
+196 
+197         uint8\_t *buffer = malloc(\hyperlink{_messenger_8c_a4ae119dad636f15f1a5d628a13b107d8}{messenger\_size}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}));
+198         \hyperlink{_messenger_8c_af0dfac679b1b57a0036f6511e12fe777}{messenger\_save}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, buffer);
+199         \textcolor{keywordtype}{size\_t} write\_result = fwrite(buffer, 1, \hyperlink{_messenger_8c_a4ae119dad636f15f1a5d628a13b107d8}{messenger\_size}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}), file);
+200 
+201         \textcolor{keywordflow}{if} (write\_result < \hyperlink{_messenger_8c_a4ae119dad636f15f1a5d628a13b107d8}{messenger\_size}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m})) \{
+202             \textcolor{keywordflow}{return} 1;
+203         \}
+204 
+205         free(buffer);
+206         fclose(file);
+207     \}
+208 
+209     \hyperlink{_messenger_8c_a771c65c3057d870b0653c2fdf0a12fb7}{kill\_messenger}(\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+210 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/de9/_messenger__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!print\+\_\+message@{print\+\_\+message}}
+\index{print\+\_\+message@{print\+\_\+message}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{print\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{unsigned int}]{type, }
+\item[{const uint8\+\_\+t $\ast$}]{string, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68}
+
+
+Definition at line 59 of file Messenger\+\_\+test.\+c.
+
+
+
+References m\+\_\+send\+\_\+message\+\_\+generic(), and printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+61 \{
+62     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Message with length %lu received from %u: %s \(\backslash\)n"}, length, friendnumber, \textcolor{keywordtype}{string});
+63     \hyperlink{_messenger_8c_a23c8b52187d4ab113cce5497a19ac997}{m\_send\_message\_generic}(m, friendnumber, type, (uint8\_t *)\textcolor{stringliteral}{"Test1"}, 6, 0);
+64 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/de9/_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{db/de9/_messenger__test_8c_a7a4fea32f3eb3f26cf343c951bbfae68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!print\+\_\+request@{print\+\_\+request}}
+\index{print\+\_\+request@{print\+\_\+request}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{print\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562}
+
+
+Definition at line 70 of file Messenger\+\_\+test.\+c.
+
+
+
+References m\+\_\+addfriend\+\_\+norequest(), and printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+71 \{
+72     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Friend request received from: \(\backslash\)n"});
+73     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"ClientID: "});
+74     uint32\_t j;
+75 
+76     \textcolor{keywordflow}{for} (j = 0; j < 32; j++) \{
+77         \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[j] < 16)
+78             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"0"});
+79 
+80         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%hhX"}, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}[j]);
+81     \}
+82 
+83     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nOf length: %lu with data: %s \(\backslash\)n"}, length, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data});
+84 
+85     \textcolor{keywordflow}{if} (length != \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"Install Gentoo"})) \{
+86         \textcolor{keywordflow}{return};
+87     \}
+88 
+89     \textcolor{keywordflow}{if} (memcmp(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} , \textcolor{stringliteral}{"Install Gentoo"}, \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"Install Gentoo"})) == 0 )
+90         \textcolor{comment}{//if the request contained the message of peace the person is obviously a friend so we add him.}
+91     \{
+92         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Friend request accepted.\(\backslash\)n"});
+93         \hyperlink{_messenger_8c_a2f7aa06733a25e8c0edc8f31a22a78dc}{m\_addfriend\_norequest}(m, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+94     \}
+95 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/de9/_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{db/de9/_messenger__test_8c_a38c8dd7be210f3e938afa8e6eb4cd562_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{\index{Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}!m@{m}}
+\index{m@{m}!Messenger\+\_\+test.\+c@{Messenger\+\_\+test.\+c}}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Messenger}$\ast$ m\hspace{0.3cm}{\ttfamily [static]}}}\label{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}
+
+
+Definition at line 68 of file Messenger\+\_\+test.\+c.
+

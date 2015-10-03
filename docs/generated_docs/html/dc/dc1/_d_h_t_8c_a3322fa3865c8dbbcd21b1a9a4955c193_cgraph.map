@@ -1,0 +1,10 @@
+<map id="send_hardening_getnode_req" name="send_hardening_getnode_req">
+<area shape="rect" id="node2" href="$dc/dc1/_d_h_t_8c.html#a6461cdeec360ffa10fa03beb6af29aaf" title="send_hardening_req" alt="" coords="244,107,383,133"/>
+<area shape="rect" id="node3" href="$dc/d85/crypto__core_8c.html#a73129647dfd9e436ae6abc908daa4c21" title="create_request" alt="" coords="431,81,539,108"/>
+<area shape="rect" id="node9" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="440,132,529,159"/>
+<area shape="rect" id="node4" href="$dc/d85/crypto__core_8c.html#a014149333522d211490304255e139ec3" title="encrypt_data" alt="" coords="587,56,684,83"/>
+<area shape="rect" id="node7" href="$dc/d85/crypto__core_8c.html#a8b1033efb47c625779d11be7d8eb9e24" title="new_nonce" alt="" coords="591,107,679,133"/>
+<area shape="rect" id="node5" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="732,5,897,32"/>
+<area shape="rect" id="node6" href="$dc/d85/crypto__core_8c.html#a0d8eaef49981c5dc3ada078866b42f6d" title="encrypt_precompute" alt="" coords="745,56,885,83"/>
+<area shape="rect" id="node8" href="$dc/d85/crypto__core_8c.html#a15ef255ab026d4881a16b99148b05dd7" title="random_nonce" alt="" coords="761,107,868,133"/>
+</map>

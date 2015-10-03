@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['receipts',['Receipts',['../struct_receipts.html',1,'']]]
+  ['receipts',['Receipts',['../d4/dcc/struct_receipts.html',1,'']]]
 ];

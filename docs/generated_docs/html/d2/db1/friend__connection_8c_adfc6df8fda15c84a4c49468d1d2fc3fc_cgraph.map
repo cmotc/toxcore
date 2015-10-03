@@ -1,0 +1,11 @@
+<map id="LANdiscovery" name="LANdiscovery">
+<area shape="rect" id="node2" href="$d1/de5/_l_a_n__discovery_8c.html#a929a14971d13e5aad2661e834e406391" title="send_LANdiscovery" alt="" coords="157,107,296,133"/>
+<area shape="rect" id="node10" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="187,157,266,184"/>
+<area shape="rect" id="node3" href="$de/df1/util_8c.html#aa30049b8c1d82c280d6d872feea3353b" title="id_copy" alt="" coords="371,5,438,32"/>
+<area shape="rect" id="node4" href="$d1/de5/_l_a_n__discovery_8c.html#a1fc7e8d37a627f59ac5afa2c7b204568" title="send_broadcasts" alt="" coords="344,56,465,83"/>
+<area shape="rect" id="node6" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="540,107,629,133"/>
+<area shape="rect" id="node7" href="$d1/de5/_l_a_n__discovery_8c.html#a9fa84b6ea98e56c412f2c45673c180cc" title="broadcast_ip" alt="" coords="357,157,453,184"/>
+<area shape="rect" id="node9" href="$d6/d6e/network_8c.html#ac56c677f4bc8bf8311370ee105ae7cbb" title="ip_isset" alt="" coords="371,208,438,235"/>
+<area shape="rect" id="node5" href="$d1/de5/_l_a_n__discovery_8c.html#a32a9c5eecb426198ce85d4f5d9abb3b9" title="fetch_broadcast_info" alt="" coords="513,56,656,83"/>
+<area shape="rect" id="node8" href="$d6/d6e/network_8c.html#a2bfd1efbce5b035b10c879a7e85c08df" title="ip_reset" alt="" coords="551,157,619,184"/>
+</map>

@@ -1,0 +1,152 @@
+\hypertarget{cracker_8c}{\section{other/fun/cracker.c File Reference}
+\label{cracker_8c}\index{other/fun/cracker.\+c@{other/fun/cracker.\+c}}
+}
+{\ttfamily \#include \char`\"{}../../testing/misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$crypto\+\_\+scalarmult\+\_\+curve25519.\+h$>$}\\*
+{\ttfamily \#include $<$randombytes.\+h$>$}\\*
+Include dependency graph for cracker.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/cracker_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4}{print\+\_\+key} (uint8\+\_\+t $\ast$client\+\_\+id)
+\item 
+int \hyperlink{cracker_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{cracker_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{cracker.\+c@{cracker.\+c}!main@{main}}
+\index{main@{main}!cracker.\+c@{cracker.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{cracker_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 32 of file cracker.\+c.
+
+
+
+References hex\+\_\+string\+\_\+to\+\_\+bin(), i, print\+\_\+key(), and printf().
+
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{if} (argc < 2) \{
+35         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"usage: ./cracker public\_key(or beginning of one in hex format)\(\backslash\)n"});
+36         \textcolor{keywordflow}{return} 0;
+37     \}
+38 
+39     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_tries = 0;
+40 
+41     uint32\_t len = strlen(argv[1]) / 2;
+42     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *key = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(argv[1]);
+43     uint8\_t pub\_key[32], priv\_key[32], c\_key[32];
+44 
+45     \textcolor{keywordflow}{if} (len > 32)
+46         len = 32;
+47 
+48     memcpy(c\_key, key, len);
+49     free(key);
+50     randombytes(priv\_key, 32);
+51 
+52     \textcolor{keywordflow}{while} (1) \{
+53         crypto\_scalarmult\_curve25519\_base(pub\_key, priv\_key);
+54         uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+55 
+56         \textcolor{keywordflow}{if} (memcmp(c\_key, pub\_key, len) == 0)
+57             \textcolor{keywordflow}{break};
+58 
+59         \textcolor{keywordflow}{for} (i = 32; i != 0; --\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+60             priv\_key[i - 1] += 1;
+61 
+62             \textcolor{keywordflow}{if} (priv\_key[i - 1] != 0)
+63                 \textcolor{keywordflow}{break};
+64         \}
+65 
+66         ++num\_tries;
+67     \}
+68 
+69     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Public key:\(\backslash\)n"});
+70     \hyperlink{cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4}{print\_key}(pub\_key);
+71     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nPrivate key:\(\backslash\)n"});
+72     \hyperlink{cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4}{print\_key}(priv\_key);
+73     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)n %llu keys tried\(\backslash\)n"}, num\_tries);
+74     \textcolor{keywordflow}{return} 0;
+75 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{d2/ded/cracker_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4}{\index{cracker.\+c@{cracker.\+c}!print\+\_\+key@{print\+\_\+key}}
+\index{print\+\_\+key@{print\+\_\+key}!cracker.\+c@{cracker.\+c}}
+\subsubsection[{print\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{client\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4}
+
+
+Definition at line 22 of file cracker.\+c.
+
+
+
+References printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+23 \{
+24     uint32\_t j;
+25 
+26     \textcolor{keywordflow}{for} (j = 0; j < 32; j++) \{
+27         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%02hhX"}, client\_id[j]);
+28     \}
+29 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d2/ded/cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d2/ded/cracker_8c_a14a914c4c59254fbf8bb01c96e24f2f4_icgraph}
+\end{center}
+\end{figure}
+
+

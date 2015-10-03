@@ -1,0 +1,1556 @@
+\hypertarget{_t_c_p__connection_8h}{\section{toxcore/\+T\+C\+P\+\_\+connection.h File Reference}
+\label{_t_c_p__connection_8h}\index{toxcore/\+T\+C\+P\+\_\+connection.\+h@{toxcore/\+T\+C\+P\+\_\+connection.\+h}}
+}
+{\ttfamily \#include \char`\"{}T\+C\+P\+\_\+client.\+h\char`\"{}}\\*
+Include dependency graph for T\+C\+P\+\_\+connection.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d55/_t_c_p__connection_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d01/_t_c_p__connection_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_c_p___connection__to}{T\+C\+P\+\_\+\+Connection\+\_\+to}
+\item 
+struct \hyperlink{struct_t_c_p__con}{T\+C\+P\+\_\+con}
+\item 
+struct \hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_ac0d2accad7ab0ed0ededf15e127d6f56}{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E}~0
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D}~1
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}~2
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G}~3
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_affacad255b45e30644ec8d14158c9246}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}~0
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a02a1b8bb2ba492d94965efa057f8efcf}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D}~1
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E}~2
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~6
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a4de3db7de09d5d11588b0ef2b50ec639}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T}~(\hyperlink{_t_c_p__client_8h_a635ecd17e7464eb39a48fbab171ddeb6}{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T})
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a56e5080b902e3fd06f9c0bfa74af34c5}{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~(\hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S} / 2)
+\item 
+\#define \hyperlink{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}{N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~\hyperlink{_t_c_p__connection_8h_a56e5080b902e3fd06f9c0bfa74af34c5}{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_t_c_p__connection_8h_a455e955e01d34ff3db0b22b8f6d49d98}{send\+\_\+packet\+\_\+tcp\+\_\+connection} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number, const uint8\+\_\+t $\ast$packet, uint16\+\_\+t length)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a84992bb55c148bb9f7a1b442d255865f}{get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c)
+\item 
+int \hyperlink{_t_c_p__connection_8h_afb1a507e5f1af925b01666f1b9b4960a}{tcp\+\_\+send\+\_\+onion\+\_\+request} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, unsigned int tcp\+\_\+connections\+\_\+number, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a4ee7de722248f32b3bfedb25bdb59994}{set\+\_\+tcp\+\_\+onion\+\_\+status} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, \+\_\+\+Bool status)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a5effabd83d700cccf9bcc51174f041f1}{tcp\+\_\+send\+\_\+oob\+\_\+packet} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, unsigned int tcp\+\_\+connections\+\_\+number, const uint8\+\_\+t $\ast$public\+\_\+key, const uint8\+\_\+t $\ast$packet, uint16\+\_\+t length)
+\item 
+void \hyperlink{_t_c_p__connection_8h_afdea860d77b12c79ee24c3ade58d4ac6}{set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int($\ast$\hyperlink{_t_c_p__connection_8c_a3a74ceace0b841b9a50fa0fc8ed57613}{tcp\+\_\+data\+\_\+callback})(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\item 
+void \hyperlink{_t_c_p__connection_8h_a9c229dba32e28baa8cd90ae74429d803}{set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int($\ast$\hyperlink{_t_c_p__connection_8c_ace5ecc2f60ab4dad731e31147ea788e9}{tcp\+\_\+onion\+\_\+callback})(void $\ast$object, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\item 
+void \hyperlink{_t_c_p__connection_8h_a13df5ebd6110288f192070b8c1c28328}{set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int($\ast$\hyperlink{_t_c_p__connection_8c_a0639171aa059dd205b410f7ed01faaed}{tcp\+\_\+oob\+\_\+callback})(void $\ast$object, const uint8\+\_\+t $\ast$public\+\_\+key, unsigned int tcp\+\_\+connections\+\_\+number, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a22c797c7e0ef3ad66e171f05b1cb52bd}{new\+\_\+tcp\+\_\+connection\+\_\+to} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, const uint8\+\_\+t $\ast$public\+\_\+key, int id)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a2369688a49bef46cb2029b3bb680e11d}{kill\+\_\+tcp\+\_\+connection\+\_\+to} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a0c7079221df3e2f827e6ec1aaac597e6}{set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number, \+\_\+\+Bool status)
+\item 
+unsigned int \hyperlink{_t_c_p__connection_8h_ae843b0b4c8041f08bf9c18f68cae8a61}{tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number)
+\item 
+int \hyperlink{_t_c_p__connection_8h_af7a3111a46b9cb6947452393a2cbea31}{add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number, unsigned int tcp\+\_\+connections\+\_\+number)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a26901882c0b134822660515493683132}{add\+\_\+tcp\+\_\+relay\+\_\+connection} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, int connections\+\_\+number, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$relay\+\_\+pk)
+\item 
+int \hyperlink{_t_c_p__connection_8h_a5ee1dbaa28ff59e0f452eda3c97418e3}{add\+\_\+tcp\+\_\+relay\+\_\+global} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$relay\+\_\+pk)
+\item 
+unsigned int \hyperlink{_t_c_p__connection_8h_ac2e62c717ccebd2379e32ca9b330812c}{tcp\+\_\+copy\+\_\+connected\+\_\+relays} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c, \hyperlink{struct_node__format}{Node\+\_\+format} $\ast$tcp\+\_\+relays, uint16\+\_\+t max\+\_\+num)
+\item 
+\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$ \hyperlink{_t_c_p__connection_8h_a3526d187a2a8f91d672f0bde2dff4633}{new\+\_\+tcp\+\_\+connections} (const uint8\+\_\+t $\ast$secret\+\_\+key, \hyperlink{struct_t_c_p___proxy___info}{T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$proxy\+\_\+info)
+\item 
+void \hyperlink{_t_c_p__connection_8h_a30c1a9c57a8d07cc2327c0505d6619a4}{do\+\_\+tcp\+\_\+connections} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c)
+\item 
+void \hyperlink{_t_c_p__connection_8h_a6938788005ebe33a896755ac2b9f501a}{kill\+\_\+tcp\+\_\+connections} (\hyperlink{struct_t_c_p___connections}{T\+C\+P\+\_\+\+Connections} $\ast$tcp\+\_\+c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~6}}\label{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}
+
+
+Definition at line 42 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), do\+\_\+friend\+\_\+connections(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+status(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), and tcp\+\_\+connection\+\_\+in\+\_\+conn().
+
+\hypertarget{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~{\bf R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}}\label{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}
+
+
+Definition at line 52 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by set\+\_\+tcp\+\_\+onion\+\_\+status(), and tcp\+\_\+relay\+\_\+on\+\_\+online().
+
+\hypertarget{_t_c_p__connection_8h_a56e5080b902e3fd06f9c0bfa74af34c5}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~({\bf M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S} / 2)}}\label{_t_c_p__connection_8h_a56e5080b902e3fd06f9c0bfa74af34c5}
+
+
+Definition at line 49 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+connection(), and kill\+\_\+nonused\+\_\+tcp().
+
+\hypertarget{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D~2}}\label{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}
+
+
+Definition at line 33 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), do\+\_\+tcp\+\_\+conns(), get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number(), kill\+\_\+nonused\+\_\+tcp(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), set\+\_\+tcp\+\_\+onion\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+copy\+\_\+connected\+\_\+relays(), tcp\+\_\+relay\+\_\+on\+\_\+online(), tcp\+\_\+send\+\_\+onion\+\_\+request(), and tcp\+\_\+send\+\_\+oob\+\_\+packet().
+
+\hypertarget{_t_c_p__connection_8h_ac0d2accad7ab0ed0ededf15e127d6f56}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+N\+E~0}}\label{_t_c_p__connection_8h_ac0d2accad7ab0ed0ededf15e127d6f56}
+
+
+Definition at line 29 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by connections\+\_\+number\+\_\+not\+\_\+valid(), create\+\_\+connection(), create\+\_\+tcp\+\_\+connection(), tcp\+\_\+connections\+\_\+number\+\_\+not\+\_\+valid(), wipe\+\_\+connection(), and wipe\+\_\+tcp\+\_\+connection().
+
+\hypertarget{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G~3}}\label{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}
+
+
+Definition at line 36 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), do\+\_\+tcp\+\_\+conns(), find\+\_\+tcp\+\_\+connection\+\_\+relay(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), send\+\_\+tcp\+\_\+relay\+\_\+routing\+\_\+request(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), set\+\_\+tcp\+\_\+onion\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+status\+\_\+callback(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D~1}}\label{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}
+
+
+Definition at line 30 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+instance(), do\+\_\+tcp\+\_\+conns(), new\+\_\+tcp\+\_\+connection\+\_\+to(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{_t_c_p__connection_8h_a4de3db7de09d5d11588b0ef2b50ec639}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T~({\bf T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T})}}\label{_t_c_p__connection_8h_a4de3db7de09d5d11588b0ef2b50ec639}
+
+
+Definition at line 45 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+tcp\+\_\+conns(), and kill\+\_\+nonused\+\_\+tcp().
+
+\hypertarget{_t_c_p__connection_8h_affacad255b45e30644ec8d14158c9246}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E~0}}\label{_t_c_p__connection_8h_affacad255b45e30644ec8d14158c9246}
+
+
+Definition at line 38 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), rm\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), and sleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E~2}}\label{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}
+
+
+Definition at line 40 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by kill\+\_\+tcp\+\_\+connection\+\_\+to(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), and tcp\+\_\+status\+\_\+callback().
+
+\hypertarget{_t_c_p__connection_8h_a02a1b8bb2ba492d94965efa057f8efcf}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D}}
+\index{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D@{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D~1}}\label{_t_c_p__connection_8h_a02a1b8bb2ba492d94965efa057f8efcf}
+
+
+Definition at line 39 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by send\+\_\+packet\+\_\+tcp\+\_\+connection(), tcp\+\_\+response\+\_\+callback(), and tcp\+\_\+status\+\_\+callback().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_t_c_p__connection_8h_af7a3111a46b9cb6947452393a2cbea31}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection@{add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection}}
+\index{add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection@{add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number, }
+\item[{unsigned int}]{tcp\+\_\+connections\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_af7a3111a46b9cb6947452393a2cbea31}
+
+
+Definition at line 1064 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), T\+C\+P\+\_\+con\+::connected\+\_\+time, get\+\_\+connection(), get\+\_\+tcp\+\_\+connection(), T\+C\+P\+\_\+\+Connection\+\_\+to\+::public\+\_\+key, send\+\_\+tcp\+\_\+relay\+\_\+routing\+\_\+request(), T\+C\+P\+\_\+\+Connection\+\_\+to\+::status, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G, unix\+\_\+time(), and T\+C\+P\+\_\+con\+::unsleep.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+connection(), and crypto\+\_\+connection\+\_\+add\+\_\+source().
+
+
+\begin{DoxyCode}
+1065 \{
+1066     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+1067 
+1068     \textcolor{keywordflow}{if} (!con\_to)
+1069         \textcolor{keywordflow}{return} -1;
+1070 
+1071     \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_connections\_number);
+1072 
+1073     \textcolor{keywordflow}{if} (!tcp\_con)
+1074         \textcolor{keywordflow}{return} -1;
+1075 
+1076     \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING} && tcp\_con->
+      \hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING}) \{
+1077         tcp\_con->\hyperlink{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}{unsleep} = 1;
+1078     \}
+1079 
+1080     \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_a00d2fc46939eaff0106abe890760bee0}{add\_tcp\_connection\_to\_conn}(con\_to, tcp\_connections\_number) == -1)
+1081         \textcolor{keywordflow}{return} -1;
+1082 
+1083     \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED}) \{
+1084         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_a739c051ae50acb8bb1d84ff30ea96432}{send\_tcp\_relay\_routing\_request}(tcp\_c, tcp\_connections\_number, 
+      con\_to->\hyperlink{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}) == 0) \{
+1085             tcp\_con->\hyperlink{struct_t_c_p__con_ae8be4bcb970c4f212e92c8f1598a1c41}{connected\_time} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+1086         \}
+1087     \}
+1088 
+1089     \textcolor{keywordflow}{return} 0;
+1090 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_af7a3111a46b9cb6947452393a2cbea31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_af7a3111a46b9cb6947452393a2cbea31_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a26901882c0b134822660515493683132}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!add\+\_\+tcp\+\_\+relay\+\_\+connection@{add\+\_\+tcp\+\_\+relay\+\_\+connection}}
+\index{add\+\_\+tcp\+\_\+relay\+\_\+connection@{add\+\_\+tcp\+\_\+relay\+\_\+connection}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{add\+\_\+tcp\+\_\+relay\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+tcp\+\_\+relay\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{relay\+\_\+pk}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a26901882c0b134822660515493683132}
+
+
+Definition at line 1099 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+conn(), add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), add\+\_\+tcp\+\_\+relay\+\_\+instance(), find\+\_\+tcp\+\_\+connection\+\_\+relay(), get\+\_\+connection(), get\+\_\+tcp\+\_\+connection(), online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn(), and R\+E\+C\+O\+M\+M\+E\+N\+D\+E\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+peer(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1100 \{
+1101     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+1102 
+1103     \textcolor{keywordflow}{if} (!con\_to)
+1104         \textcolor{keywordflow}{return} -1;
+1105 
+1106     \textcolor{keywordtype}{int} tcp\_connections\_number = \hyperlink{_t_c_p__connection_8c_a6146372f26967550f1260e7f72589fa4}{find\_tcp\_connection\_relay}(tcp\_c, relay\_pk);
+1107 
+1108     \textcolor{keywordflow}{if} (tcp\_connections\_number != -1) \{
+1109         \textcolor{keywordflow}{return} \hyperlink{_t_c_p__connection_8c_af7a3111a46b9cb6947452393a2cbea31}{add\_tcp\_number\_relay\_connection}(tcp\_c, connections\_number, 
+      tcp\_connections\_number);
+1110     \} \textcolor{keywordflow}{else} \{
+1111         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_a255916e82a74ad6c617216af786ec335}{online\_tcp\_connection\_from\_conn}(con\_to) >= 
+      \hyperlink{_t_c_p__connection_8h_a56e5080b902e3fd06f9c0bfa74af34c5}{RECOMMENDED\_FRIEND\_TCP\_CONNECTIONS}) \{
+1112             \textcolor{keywordflow}{return} -1;
+1113         \}
+1114 
+1115         \textcolor{keywordtype}{int} tcp\_connections\_number = \hyperlink{_t_c_p__connection_8c_af221264f649b29407becf0e4ca352cbd}{add\_tcp\_relay\_instance}(tcp\_c, ip\_port, relay\_pk)
+      ;
+1116 
+1117         \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_connections\_number);
+1118 
+1119         \textcolor{keywordflow}{if} (!tcp\_con)
+1120             \textcolor{keywordflow}{return} -1;
+1121 
+1122         \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_a00d2fc46939eaff0106abe890760bee0}{add\_tcp\_connection\_to\_conn}(con\_to, tcp\_connections\_number) == -1) \{
+1123             \textcolor{keywordflow}{return} -1;
+1124         \}
+1125 
+1126         \textcolor{keywordflow}{return} 0;
+1127     \}
+1128 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a26901882c0b134822660515493683132_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a26901882c0b134822660515493683132_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a5ee1dbaa28ff59e0f452eda3c97418e3}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!add\+\_\+tcp\+\_\+relay\+\_\+global@{add\+\_\+tcp\+\_\+relay\+\_\+global}}
+\index{add\+\_\+tcp\+\_\+relay\+\_\+global@{add\+\_\+tcp\+\_\+relay\+\_\+global}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{add\+\_\+tcp\+\_\+relay\+\_\+global}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+tcp\+\_\+relay\+\_\+global (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{relay\+\_\+pk}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a5ee1dbaa28ff59e0f452eda3c97418e3}
+
+
+Definition at line 1046 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay\+\_\+instance(), and find\+\_\+tcp\+\_\+connection\+\_\+relay().
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1047 \{
+1048     \textcolor{keywordtype}{int} tcp\_connections\_number = \hyperlink{_t_c_p__connection_8c_a6146372f26967550f1260e7f72589fa4}{find\_tcp\_connection\_relay}(tcp\_c, relay\_pk);
+1049 
+1050     \textcolor{keywordflow}{if} (tcp\_connections\_number != -1)
+1051         \textcolor{keywordflow}{return} -1;
+1052 
+1053     \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_af221264f649b29407becf0e4ca352cbd}{add\_tcp\_relay\_instance}(tcp\_c, ip\_port, relay\_pk) == -1)
+1054         \textcolor{keywordflow}{return} -1;
+1055 
+1056     \textcolor{keywordflow}{return} 0;
+1057 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a5ee1dbaa28ff59e0f452eda3c97418e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a5ee1dbaa28ff59e0f452eda3c97418e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a30c1a9c57a8d07cc2327c0505d6619a4}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!do\+\_\+tcp\+\_\+connections@{do\+\_\+tcp\+\_\+connections}}
+\index{do\+\_\+tcp\+\_\+connections@{do\+\_\+tcp\+\_\+connections}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{do\+\_\+tcp\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+tcp\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a30c1a9c57a8d07cc2327c0505d6619a4}
+
+
+Definition at line 1346 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References do\+\_\+tcp\+\_\+conns(), and kill\+\_\+nonused\+\_\+tcp().
+
+
+
+Referenced by do\+\_\+tcp(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1347 \{
+1348     \hyperlink{_t_c_p__connection_8c_a6377f0f3d60ba706c5b014a9439696b7}{do\_tcp\_conns}(tcp\_c);
+1349     \hyperlink{_t_c_p__connection_8c_a49dd47efa4f43cd5ba37a4836c6e55ff}{kill\_nonused\_tcp}(tcp\_c);
+1350 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a30c1a9c57a8d07cc2327c0505d6619a4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a30c1a9c57a8d07cc2327c0505d6619a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a84992bb55c148bb9f7a1b442d255865f}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number@{get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number}}
+\index{get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number@{get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a84992bb55c148bb9f7a1b442d255865f}
+
+
+Definition at line 285 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References i, T\+C\+P\+\_\+con\+::onion, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections, and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections\+\_\+length.
+
+
+
+Referenced by do\+\_\+onion\+\_\+client(), and get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number().
+
+
+\begin{DoxyCode}
+286 \{
+287     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, r = rand();
+288 
+289     \textcolor{keywordflow}{for} (i = 0; i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+290         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = ((i + r) % tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length});
+291 
+292         \textcolor{keywordflow}{if} (tcp\_c->\hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections}[index].\hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion} && tcp\_c->
+      \hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections}[index].\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED}) \{
+293             \textcolor{keywordflow}{return} index;
+294         \}
+295     \}
+296 
+297     \textcolor{keywordflow}{return} -1;
+298 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a84992bb55c148bb9f7a1b442d255865f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a2369688a49bef46cb2029b3bb680e11d}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!kill\+\_\+tcp\+\_\+connection\+\_\+to@{kill\+\_\+tcp\+\_\+connection\+\_\+to}}
+\index{kill\+\_\+tcp\+\_\+connection\+\_\+to@{kill\+\_\+tcp\+\_\+connection\+\_\+to}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{kill\+\_\+tcp\+\_\+connection\+\_\+to}]{\setlength{\rightskip}{0pt plus 5cm}int kill\+\_\+tcp\+\_\+connection\+\_\+to (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a2369688a49bef46cb2029b3bb680e11d}
+
+
+Definition at line 455 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, T\+C\+P\+\_\+\+Connection\+\_\+to\+::connection\+\_\+id, T\+C\+P\+\_\+\+Connection\+\_\+to\+::connections, get\+\_\+connection(), get\+\_\+tcp\+\_\+connection(), i, T\+C\+P\+\_\+con\+::lock\+\_\+count, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, send\+\_\+disconnect\+\_\+request(), T\+C\+P\+\_\+con\+::sleep\+\_\+count, T\+C\+P\+\_\+\+Connection\+\_\+to\+::status, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G, T\+C\+P\+\_\+\+Connection\+\_\+to\+::tcp\+\_\+connection, T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E, and wipe\+\_\+connection().
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), crypto\+\_\+kill(), new\+\_\+crypto\+\_\+connection(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+456 \{
+457     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+458 
+459     \textcolor{keywordflow}{if} (!con\_to)
+460         \textcolor{keywordflow}{return} -1;
+461 
+462     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+463 
+464     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+465         \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection}) \{
+466             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tcp\_connections\_number = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection} - 1;
+467             \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_connections\_number);
+468 
+469             \textcolor{keywordflow}{if} (!tcp\_con)
+470                 \textcolor{keywordflow}{continue};
+471 
+472             \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED}) \{
+473                 \hyperlink{_t_c_p__client_8c_af83d9fac2256a46428ad95bf337c05b7}{send\_disconnect\_request}(tcp\_con->
+      \hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}, con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_ababc90484b0c796e004410411e723f5e}{connection\_id});
+474             \}
+475 
+476             \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} == 
+      \hyperlink{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}{TCP\_CONNECTIONS\_STATUS\_ONLINE}) \{
+477                 --tcp\_con->\hyperlink{struct_t_c_p__con_af2d7f68891e20ea9070cfc2d412867e1}{lock\_count};
+478 
+479                 \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING}) \{
+480                     --tcp\_con->\hyperlink{struct_t_c_p__con_aa67ab512ed25830e7b9ea3c7069a9555}{sleep\_count};
+481                 \}
+482             \}
+483         \}
+484     \}
+485 
+486     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__connection_8c_a10a5b3ddc6f1bfa7785301f33c369695}{wipe\_connection}(tcp\_c, connections\_number);
+487 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a2369688a49bef46cb2029b3bb680e11d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a2369688a49bef46cb2029b3bb680e11d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a6938788005ebe33a896755ac2b9f501a}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!kill\+\_\+tcp\+\_\+connections@{kill\+\_\+tcp\+\_\+connections}}
+\index{kill\+\_\+tcp\+\_\+connections@{kill\+\_\+tcp\+\_\+connections}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{kill\+\_\+tcp\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+tcp\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a6938788005ebe33a896755ac2b9f501a}
+
+
+Definition at line 1352 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, T\+C\+P\+\_\+\+Connections\+::connections, i, kill\+\_\+\+T\+C\+P\+\_\+connection(), T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections, and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections\+\_\+length.
+
+
+
+Referenced by kill\+\_\+net\+\_\+crypto(), new\+\_\+net\+\_\+crypto(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1353 \{
+1354     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+1355 
+1356     \textcolor{keywordflow}{for} (i = 0; i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+1357         \hyperlink{_t_c_p__client_8c_a437ba55ccf24fb881acf298f3e225a63}{kill\_TCP\_connection}(tcp\_c->\hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections}[i].
+      \hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection});
+1358     \}
+1359 
+1360     free(tcp\_c->\hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections});
+1361     free(tcp\_c->\hyperlink{struct_t_c_p___connections_a191cfbdd509a2705455744965ccfd724}{connections});
+1362     free(tcp\_c);
+1363 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a6938788005ebe33a896755ac2b9f501a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a6938788005ebe33a896755ac2b9f501a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a22c797c7e0ef3ad66e171f05b1cb52bd}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!new\+\_\+tcp\+\_\+connection\+\_\+to@{new\+\_\+tcp\+\_\+connection\+\_\+to}}
+\index{new\+\_\+tcp\+\_\+connection\+\_\+to@{new\+\_\+tcp\+\_\+connection\+\_\+to}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{new\+\_\+tcp\+\_\+connection\+\_\+to}]{\setlength{\rightskip}{0pt plus 5cm}int new\+\_\+tcp\+\_\+connection\+\_\+to (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a22c797c7e0ef3ad66e171f05b1cb52bd}
+
+
+Definition at line 433 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connections\+::connections, create\+\_\+connection(), find\+\_\+tcp\+\_\+connection\+\_\+to(), T\+C\+P\+\_\+\+Connection\+\_\+to\+::id, T\+C\+P\+\_\+\+Connection\+\_\+to\+::public\+\_\+key, T\+C\+P\+\_\+\+Connection\+\_\+to\+::status, and T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), new\+\_\+crypto\+\_\+connection(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+434 \{
+435     \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__connection_8c_adc455181d7c862328a677fb5394885c6}{find\_tcp\_connection\_to}(tcp\_c, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}) != -1)
+436         \textcolor{keywordflow}{return} -1;
+437 
+438     \textcolor{keywordtype}{int} connections\_number = \hyperlink{_t_c_p__connection_8c_a62b7fc88f48b373ae0b957244fe9db8e}{create\_connection}(tcp\_c);
+439 
+440     \textcolor{keywordflow}{if} (connections\_number == -1)
+441         \textcolor{keywordflow}{return} -1;
+442 
+443     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = &tcp\_c->\hyperlink{struct_t_c_p___connections_a191cfbdd509a2705455744965ccfd724}{connections}[connections\_number];
+444 
+445     con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}{TCP\_CONN\_VALID};
+446     memcpy(con\_to->\hyperlink{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+447     con\_to->\hyperlink{struct_t_c_p___connection__to_a7441ef0865bcb3db9b8064dd7375c1ea}{id} = id;
+448 
+449     \textcolor{keywordflow}{return} connections\_number;
+450 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a22c797c7e0ef3ad66e171f05b1cb52bd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a22c797c7e0ef3ad66e171f05b1cb52bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a3526d187a2a8f91d672f0bde2dff4633}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!new\+\_\+tcp\+\_\+connections@{new\+\_\+tcp\+\_\+connections}}
+\index{new\+\_\+tcp\+\_\+connections@{new\+\_\+tcp\+\_\+connections}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{new\+\_\+tcp\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+\_\+\+Connections}$\ast$ new\+\_\+tcp\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{secret\+\_\+key, }
+\item[{{\bf T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$}]{proxy\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a3526d187a2a8f91d672f0bde2dff4633}
+
+
+Definition at line 1251 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connections\+::proxy\+\_\+info, T\+C\+P\+\_\+\+Connections\+::self\+\_\+public\+\_\+key, and T\+C\+P\+\_\+\+Connections\+::self\+\_\+secret\+\_\+key.
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1252 \{
+1253     \textcolor{keywordflow}{if} (secret\_key == NULL)
+1254         \textcolor{keywordflow}{return} NULL;
+1255 
+1256     \hyperlink{struct_t_c_p___connections}{TCP\_Connections} *temp = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_t_c_p___connections}{TCP\_Connections}));
+1257 
+1258     \textcolor{keywordflow}{if} (temp == NULL)
+1259         \textcolor{keywordflow}{return} NULL;
+1260 
+1261     memcpy(temp->\hyperlink{struct_t_c_p___connections_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, secret\_key, crypto\_box\_SECRETKEYBYTES);
+1262     crypto\_scalarmult\_curve25519\_base(temp->\hyperlink{struct_t_c_p___connections_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, temp->
+      \hyperlink{struct_t_c_p___connections_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key});
+1263     temp->\hyperlink{struct_t_c_p___connections_aa737023350cf47e63993e3b4dc9a7472}{proxy\_info} = *proxy\_info;
+1264 
+1265     \textcolor{keywordflow}{return} temp;
+1266 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a3526d187a2a8f91d672f0bde2dff4633_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a455e955e01d34ff3db0b22b8f6d49d98}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!send\+\_\+packet\+\_\+tcp\+\_\+connection@{send\+\_\+packet\+\_\+tcp\+\_\+connection}}
+\index{send\+\_\+packet\+\_\+tcp\+\_\+connection@{send\+\_\+packet\+\_\+tcp\+\_\+connection}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{send\+\_\+packet\+\_\+tcp\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+packet\+\_\+tcp\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number, }
+\item[{const uint8\+\_\+t $\ast$}]{packet, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a455e955e01d34ff3db0b22b8f6d49d98}
+
+
+Definition at line 203 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, T\+C\+P\+\_\+\+Connection\+\_\+to\+::connection\+\_\+id, T\+C\+P\+\_\+\+Connection\+\_\+to\+::connections, get\+\_\+connection(), get\+\_\+tcp\+\_\+connection(), i, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, T\+C\+P\+\_\+\+Connection\+\_\+to\+::public\+\_\+key, send\+\_\+data(), send\+\_\+oob\+\_\+packet(), T\+C\+P\+\_\+\+Connection\+\_\+to\+::status, T\+C\+P\+\_\+\+Connection\+\_\+to\+::tcp\+\_\+connection, T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E, and T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D.
+
+
+
+Referenced by send\+\_\+packet\+\_\+to(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tcp\+\_\+handle\+\_\+cookie\+\_\+request().
+
+
+\begin{DoxyCode}
+204 \{
+205     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+206 
+207     \textcolor{keywordflow}{if} (!con\_to) \{
+208         \textcolor{keywordflow}{return} -1;
+209     \}
+210 
+211     \textcolor{comment}{//TODO: detect and kill bad relays.}
+212     \textcolor{comment}{//TODO: thread safety?}
+213     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+214     \textcolor{keywordtype}{int} ret = -1;
+215 
+216     \_Bool limit\_reached = 0;
+217 
+218     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+219         uint32\_t tcp\_con\_num = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection};
+220         uint8\_t status = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status};
+221         uint8\_t connection\_id = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_ababc90484b0c796e004410411e723f5e}{connection\_id};
+222 
+223         \textcolor{keywordflow}{if} (tcp\_con\_num && status == \hyperlink{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}{TCP\_CONNECTIONS\_STATUS\_ONLINE}) \{
+224             tcp\_con\_num -= 1;
+225             \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_con\_num);
+226 
+227             \textcolor{keywordflow}{if} (!tcp\_con) \{
+228                 \textcolor{keywordflow}{continue};
+229             \}
+230 
+231             ret = \hyperlink{_t_c_p__client_8c_aea842652030d00bd8302e3c0201f95b9}{send\_data}(tcp\_con->\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}, connection\_id, packet, length);
+232 
+233             \textcolor{keywordflow}{if} (ret == 0) \{
+234                 limit\_reached = 1;
+235             \}
+236 
+237             \textcolor{keywordflow}{if} (ret == 1) \{
+238                 \textcolor{keywordflow}{break};
+239             \}
+240         \}
+241     \}
+242 
+243     \textcolor{keywordflow}{if} (ret == 1) \{
+244         \textcolor{keywordflow}{return} 0;
+245     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!limit\_reached) \{
+246         ret = 0;
+247 
+248         \textcolor{comment}{/* Send oob packets to all relays tied to the connection. */}
+249         \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+250             uint32\_t tcp\_con\_num = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].
+      \hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection};
+251             uint8\_t status = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status};
+252 
+253             \textcolor{keywordflow}{if} (tcp\_con\_num && status == \hyperlink{_t_c_p__connection_8h_a02a1b8bb2ba492d94965efa057f8efcf}{TCP\_CONNECTIONS\_STATUS\_REGISTERED}
+      ) \{
+254                 tcp\_con\_num -= 1;
+255                 \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_con\_num);
+256 
+257                 \textcolor{keywordflow}{if} (!tcp\_con) \{
+258                     \textcolor{keywordflow}{continue};
+259                 \}
+260 
+261                 \textcolor{keywordflow}{if} (\hyperlink{_t_c_p__client_8c_a7818a314434c2bb01c3ea406744f076b}{send\_oob\_packet}(tcp\_con->\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}, con\_to->
+      \hyperlink{struct_t_c_p___connection__to_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, packet, length) == 1) \{
+262                     ret += 1;
+263                 \}
+264             \}
+265         \}
+266 
+267         \textcolor{keywordflow}{if} (ret >= 1) \{
+268             \textcolor{keywordflow}{return} 0;
+269         \} \textcolor{keywordflow}{else} \{
+270             \textcolor{keywordflow}{return} -1;
+271         \}
+272     \} \textcolor{keywordflow}{else} \{
+273         \textcolor{keywordflow}{return} -1;
+274     \}
+275 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a455e955e01d34ff3db0b22b8f6d49d98_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a455e955e01d34ff3db0b22b8f6d49d98_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a9c229dba32e28baa8cd90ae74429d803}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}}
+\index{set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int($\ast$)(void $\ast$object, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{tcp\+\_\+onion\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a9c229dba32e28baa8cd90ae74429d803}
+
+
+Definition at line 366 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+onion\+\_\+callback, tcp\+\_\+onion\+\_\+callback(), and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+onion\+\_\+callback\+\_\+object.
+
+
+
+Referenced by kill\+\_\+onion\+\_\+client(), and new\+\_\+onion\+\_\+client().
+
+
+\begin{DoxyCode}
+368 \{
+369     tcp\_c->\hyperlink{struct_t_c_p___connections_ad92f3faa26e9b50df859c26416692b01}{tcp\_onion\_callback} = \hyperlink{_t_c_p__connection_8c_ace5ecc2f60ab4dad731e31147ea788e9}{tcp\_onion\_callback};
+370     tcp\_c->\hyperlink{struct_t_c_p___connections_a16e85b0c2c930afee6a25f7229c7116e}{tcp\_onion\_callback\_object} = object;
+371 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{da/d39/_t_c_p__connection_8h_a9c229dba32e28baa8cd90ae74429d803_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a9c229dba32e28baa8cd90ae74429d803_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a13df5ebd6110288f192070b8c1c28328}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}}
+\index{set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int($\ast$)(void $\ast$object, const uint8\+\_\+t $\ast$public\+\_\+key, unsigned int tcp\+\_\+connections\+\_\+number, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{tcp\+\_\+oob\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a13df5ebd6110288f192070b8c1c28328}
+
+
+Definition at line 357 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+oob\+\_\+callback, tcp\+\_\+oob\+\_\+callback(), and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+oob\+\_\+callback\+\_\+object.
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+359 \{
+360     tcp\_c->\hyperlink{struct_t_c_p___connections_a758941f7bcf27ba64ae59503bef4ee06}{tcp\_oob\_callback} = \hyperlink{_t_c_p__connection_8c_a0639171aa059dd205b410f7ed01faaed}{tcp\_oob\_callback};
+361     tcp\_c->\hyperlink{struct_t_c_p___connections_aa008021141b9c1d9861a06d12b495f55}{tcp\_oob\_callback\_object} = object;
+362 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a13df5ebd6110288f192070b8c1c28328_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a13df5ebd6110288f192070b8c1c28328_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_afdea860d77b12c79ee24c3ade58d4ac6}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}}
+\index{set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback@{set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int($\ast$)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{tcp\+\_\+data\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_afdea860d77b12c79ee24c3ade58d4ac6}
+
+
+Definition at line 348 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+data\+\_\+callback, tcp\+\_\+data\+\_\+callback(), and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+data\+\_\+callback\+\_\+object.
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+350 \{
+351     tcp\_c->\hyperlink{struct_t_c_p___connections_a925f83cd475679a15e0510ad5b02a581}{tcp\_data\_callback} = \hyperlink{_t_c_p__connection_8c_a3a74ceace0b841b9a50fa0fc8ed57613}{tcp\_data\_callback};
+352     tcp\_c->\hyperlink{struct_t_c_p___connections_a7374235c800f886578e032a878618568}{tcp\_data\_callback\_object} = object;
+353 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_afdea860d77b12c79ee24c3ade58d4ac6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_afdea860d77b12c79ee24c3ade58d4ac6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a0c7079221df3e2f827e6ec1aaac597e6}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status@{set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status}}
+\index{set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status@{set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number, }
+\item[{\+\_\+\+Bool}]{status}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a0c7079221df3e2f827e6ec1aaac597e6}
+
+
+Definition at line 499 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+\+Connection\+\_\+to\+::connections, get\+\_\+connection(), get\+\_\+tcp\+\_\+connection(), i, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, T\+C\+P\+\_\+con\+::sleep\+\_\+count, T\+C\+P\+\_\+\+Connection\+\_\+to\+::status, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+V\+A\+L\+I\+D, T\+C\+P\+\_\+\+Connection\+\_\+to\+::tcp\+\_\+connection, T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+N\+L\+I\+N\+E, and T\+C\+P\+\_\+con\+::unsleep.
+
+
+
+Referenced by do\+\_\+tcp().
+
+
+\begin{DoxyCode}
+500 \{
+501     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+502 
+503     \textcolor{keywordflow}{if} (!con\_to)
+504         \textcolor{keywordflow}{return} -1;
+505 
+506     \textcolor{keywordflow}{if} (status) \{
+507         \textcolor{comment}{/* Conection is unsleeping. */}
+508         \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING})
+509             \textcolor{keywordflow}{return} -1;
+510 
+511         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+512 
+513         \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+514             \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection}) \{
+515                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tcp\_connections\_number = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection} - 1;
+516                 \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, 
+      tcp\_connections\_number);
+517 
+518                 \textcolor{keywordflow}{if} (!tcp\_con)
+519                     \textcolor{keywordflow}{continue};
+520 
+521                 \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING}) \{
+522                     tcp\_con->\hyperlink{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}{unsleep} = 1;
+523                 \}
+524             \}
+525         \}
+526 
+527         con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}{TCP\_CONN\_VALID};
+528         \textcolor{keywordflow}{return} 0;
+529     \} \textcolor{keywordflow}{else} \{
+530         \textcolor{comment}{/* Conection is going to sleep. */}
+531         \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{_t_c_p__connection_8h_a447ebcd3dc85521248588470cb8d5c2c}{TCP\_CONN\_VALID})
+532             \textcolor{keywordflow}{return} -1;
+533 
+534         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+535 
+536         \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+537             \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection}) \{
+538                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tcp\_connections\_number = con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_t_c_p___connection__to_a36999f2346dd09dd7c3135fe135404ae}{tcp\_connection} - 1;
+539                 \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, 
+      tcp\_connections\_number);
+540 
+541                 \textcolor{keywordflow}{if} (!tcp\_con)
+542                     \textcolor{keywordflow}{continue};
+543 
+544                 \textcolor{keywordflow}{if} (con\_to->\hyperlink{struct_t_c_p___connection__to_a18a4dcc3680af788c1caa33edf6d893f}{connections}[i].\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} == 
+      \hyperlink{_t_c_p__connection_8h_a2cf312d6bf16e319e47793e92a5a68e7}{TCP\_CONNECTIONS\_STATUS\_ONLINE}) \{
+545                     ++tcp\_con->\hyperlink{struct_t_c_p__con_aa67ab512ed25830e7b9ea3c7069a9555}{sleep\_count};
+546                 \}
+547             \}
+548         \}
+549 
+550         con\_to->\hyperlink{struct_t_c_p___connection__to_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING};
+551         \textcolor{keywordflow}{return} 0;
+552     \}
+553 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a0c7079221df3e2f827e6ec1aaac597e6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a0c7079221df3e2f827e6ec1aaac597e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a4ee7de722248f32b3bfedb25bdb59994}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!set\+\_\+tcp\+\_\+onion\+\_\+status@{set\+\_\+tcp\+\_\+onion\+\_\+status}}
+\index{set\+\_\+tcp\+\_\+onion\+\_\+status@{set\+\_\+tcp\+\_\+onion\+\_\+status}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{set\+\_\+tcp\+\_\+onion\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+tcp\+\_\+onion\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{\+\_\+\+Bool}]{status}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a4ee7de722248f32b3bfedb25bdb59994}
+
+
+Definition at line 1184 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References get\+\_\+tcp\+\_\+connection(), i, N\+U\+M\+\_\+\+O\+N\+I\+O\+N\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, T\+C\+P\+\_\+con\+::onion, T\+C\+P\+\_\+\+Connections\+::onion\+\_\+num\+\_\+conns, T\+C\+P\+\_\+\+Connections\+::onion\+\_\+status, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+S\+L\+E\+E\+P\+I\+N\+G, T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections\+\_\+length, and T\+C\+P\+\_\+con\+::unsleep.
+
+
+
+Referenced by do\+\_\+onion\+\_\+client().
+
+
+\begin{DoxyCode}
+1185 \{
+1186     \textcolor{keywordflow}{if} (tcp\_c->\hyperlink{struct_t_c_p___connections_a4eead70704aaec336687c7a248a22522}{onion\_status} == status)
+1187         \textcolor{keywordflow}{return} -1;
+1188 
+1189     \textcolor{keywordflow}{if} (status) \{
+1190         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+1191 
+1192         \textcolor{keywordflow}{for} (i = 0; i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+1193             \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, i);
+1194 
+1195             \textcolor{keywordflow}{if} (tcp\_con) \{
+1196                 \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED} && !tcp\_con->
+      \hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion}) \{
+1197                     ++tcp\_c->\hyperlink{struct_t_c_p___connections_a6e6576b39dc12d06b344fae03ba2d772}{onion\_num\_conns};
+1198                     tcp\_con->\hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion} = 1;
+1199                 \}
+1200             \}
+1201 
+1202             \textcolor{keywordflow}{if} (tcp\_c->\hyperlink{struct_t_c_p___connections_a6e6576b39dc12d06b344fae03ba2d772}{onion\_num\_conns} >= 
+      \hyperlink{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}{NUM\_ONION\_TCP\_CONNECTIONS})
+1203                 \textcolor{keywordflow}{break};
+1204         \}
+1205 
+1206         \textcolor{keywordflow}{if} (tcp\_c->\hyperlink{struct_t_c_p___connections_a6e6576b39dc12d06b344fae03ba2d772}{onion\_num\_conns} < \hyperlink{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}{NUM\_ONION\_TCP\_CONNECTIONS}) \{
+1207             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} wakeup = \hyperlink{_t_c_p__connection_8h_a51b7b74ad9613f50cf1efb2b52415133}{NUM\_ONION\_TCP\_CONNECTIONS} - tcp\_c->
+      \hyperlink{struct_t_c_p___connections_a6e6576b39dc12d06b344fae03ba2d772}{onion\_num\_conns};
+1208 
+1209             \textcolor{keywordflow}{for} (i = 0; i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+1210                 \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, i);
+1211 
+1212                 \textcolor{keywordflow}{if} (tcp\_con) \{
+1213                     \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_a8a15453f40fe42efeff04f566e6082b0}{TCP\_CONN\_SLEEPING}) \{
+1214                         tcp\_con->\hyperlink{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}{unsleep} = 1;
+1215                     \}
+1216                 \}
+1217 
+1218                 \textcolor{keywordflow}{if} (!wakeup)
+1219                     \textcolor{keywordflow}{break};
+1220             \}
+1221         \}
+1222 
+1223         tcp\_c->\hyperlink{struct_t_c_p___connections_a4eead70704aaec336687c7a248a22522}{onion\_status} = 1;
+1224     \} \textcolor{keywordflow}{else} \{
+1225         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+1226 
+1227         \textcolor{keywordflow}{for} (i = 0; i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+1228             \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, i);
+1229 
+1230             \textcolor{keywordflow}{if} (tcp\_con) \{
+1231                 \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion}) \{
+1232                     --tcp\_c->\hyperlink{struct_t_c_p___connections_a6e6576b39dc12d06b344fae03ba2d772}{onion\_num\_conns};
+1233                     tcp\_con->\hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion} = 0;
+1234                 \}
+1235             \}
+1236         \}
+1237 
+1238         tcp\_c->\hyperlink{struct_t_c_p___connections_a4eead70704aaec336687c7a248a22522}{onion\_status} = 0;
+1239     \}
+1240 
+1241     \textcolor{keywordflow}{return} 0;
+1242 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a4ee7de722248f32b3bfedb25bdb59994_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a4ee7de722248f32b3bfedb25bdb59994_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_ae843b0b4c8041f08bf9c18f68cae8a61}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays@{tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays}}
+\index{tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays@{tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{int}]{connections\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_ae843b0b4c8041f08bf9c18f68cae8a61}
+
+
+Definition at line 1133 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References get\+\_\+connection(), and online\+\_\+tcp\+\_\+connection\+\_\+from\+\_\+conn().
+
+
+
+Referenced by crypto\+\_\+connection\+\_\+status(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+1134 \{
+1135     \hyperlink{struct_t_c_p___connection__to}{TCP\_Connection\_to} *con\_to = \hyperlink{_t_c_p__connection_8c_a95c3e01ee87339f2dc2e87646f464b51}{get\_connection}(tcp\_c, connections\_number);
+1136 
+1137     \textcolor{keywordflow}{if} (!con\_to)
+1138         \textcolor{keywordflow}{return} 0;
+1139 
+1140     \textcolor{keywordflow}{return} \hyperlink{_t_c_p__connection_8c_a255916e82a74ad6c617216af786ec335}{online\_tcp\_connection\_from\_conn}(con\_to);
+1141 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_ae843b0b4c8041f08bf9c18f68cae8a61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_ae843b0b4c8041f08bf9c18f68cae8a61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_ac2e62c717ccebd2379e32ca9b330812c}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!tcp\+\_\+copy\+\_\+connected\+\_\+relays@{tcp\+\_\+copy\+\_\+connected\+\_\+relays}}
+\index{tcp\+\_\+copy\+\_\+connected\+\_\+relays@{tcp\+\_\+copy\+\_\+connected\+\_\+relays}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{tcp\+\_\+copy\+\_\+connected\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tcp\+\_\+copy\+\_\+connected\+\_\+relays (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{{\bf Node\+\_\+format} $\ast$}]{tcp\+\_\+relays, }
+\item[{uint16\+\_\+t}]{max\+\_\+num}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_ac2e62c717ccebd2379e32ca9b330812c}
+
+
+Definition at line 1149 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, I\+P\+::family, get\+\_\+tcp\+\_\+connection(), i, I\+P\+\_\+\+Port\+::ip, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::ip\+\_\+port, Node\+\_\+format\+::ip\+\_\+port, T\+C\+P\+\_\+\+Client\+\_\+\+Connection\+::public\+\_\+key, make-\/funny-\/savefile\+::public\+\_\+key, T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections\+\_\+length, T\+C\+P\+\_\+\+I\+N\+E\+T, and T\+C\+P\+\_\+\+I\+N\+E\+T6.
+
+
+
+Referenced by copy\+\_\+connected\+\_\+tcp\+\_\+relays().
+
+
+\begin{DoxyCode}
+1150 \{
+1151     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, copied = 0, r = rand();
+1152 
+1153     \textcolor{keywordflow}{for} (i = 0; (i < tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}) && (copied < max\_num); ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+1154         \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, (i + r) % tcp\_c->
+      \hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length});
+1155 
+1156         \textcolor{keywordflow}{if} (!tcp\_con) \{
+1157             \textcolor{keywordflow}{continue};
+1158         \}
+1159 
+1160         \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED}) \{
+1161             memcpy(tcp\_relays[copied].\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, tcp\_con->\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}->
+      \hyperlink{struct_t_c_p___client___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+1162             tcp\_relays[copied].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = tcp\_con->\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}->
+      \hyperlink{struct_t_c_p___client___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port};
+1163 
+1164             \textcolor{keywordflow}{if} (tcp\_relays[copied].ip\_port.ip.family == AF\_INET) \{
+1165                 tcp\_relays[copied].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = \hyperlink{network_8h_a38cdd2f189180d6790d5b181f55ca047}{TCP\_INET};
+1166             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tcp\_relays[copied].ip\_port.ip.family == AF\_INET6) \{
+1167                 tcp\_relays[copied].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = \hyperlink{network_8h_a7cd884776d628ca50049592d963c10cc}{TCP\_INET6};
+1168             \}
+1169 
+1170             ++copied;
+1171         \}
+1172     \}
+1173 
+1174     \textcolor{keywordflow}{return} copied;
+1175 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_ac2e62c717ccebd2379e32ca9b330812c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_ac2e62c717ccebd2379e32ca9b330812c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_afb1a507e5f1af925b01666f1b9b4960a}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!tcp\+\_\+send\+\_\+onion\+\_\+request@{tcp\+\_\+send\+\_\+onion\+\_\+request}}
+\index{tcp\+\_\+send\+\_\+onion\+\_\+request@{tcp\+\_\+send\+\_\+onion\+\_\+request}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{tcp\+\_\+send\+\_\+onion\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int tcp\+\_\+send\+\_\+onion\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{unsigned int}]{tcp\+\_\+connections\+\_\+number, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_afb1a507e5f1af925b01666f1b9b4960a}
+
+
+Definition at line 305 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, send\+\_\+onion\+\_\+request(), T\+C\+P\+\_\+con\+::status, T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections, and T\+C\+P\+\_\+\+Connections\+::tcp\+\_\+connections\+\_\+length.
+
+
+
+Referenced by send\+\_\+tcp\+\_\+onion\+\_\+request().
+
+
+\begin{DoxyCode}
+307 \{
+308     \textcolor{keywordflow}{if} (tcp\_connections\_number >= tcp\_c->\hyperlink{struct_t_c_p___connections_aa1780d3567bf0105a493ce227133f810}{tcp\_connections\_length}) \{
+309         \textcolor{keywordflow}{return} -1;
+310     \}
+311 
+312     \textcolor{keywordflow}{if} (tcp\_c->\hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections}[tcp\_connections\_number].\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} == 
+      \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED}) \{
+313         \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__client_8c_a236ad67f85cc718a03fda2da3ade0787}{send\_onion\_request}(tcp\_c->\hyperlink{struct_t_c_p___connections_a600688b27d874e40eab4680fb90fa58a}{tcp\_connections}[
+      tcp\_connections\_number].\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+314 
+315         \textcolor{keywordflow}{if} (ret == 1)
+316             \textcolor{keywordflow}{return} 0;
+317     \}
+318 
+319     \textcolor{keywordflow}{return} -1;
+320 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_afb1a507e5f1af925b01666f1b9b4960a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_afb1a507e5f1af925b01666f1b9b4960a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_t_c_p__connection_8h_a5effabd83d700cccf9bcc51174f041f1}{\index{T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}!tcp\+\_\+send\+\_\+oob\+\_\+packet@{tcp\+\_\+send\+\_\+oob\+\_\+packet}}
+\index{tcp\+\_\+send\+\_\+oob\+\_\+packet@{tcp\+\_\+send\+\_\+oob\+\_\+packet}!T\+C\+P\+\_\+connection.\+h@{T\+C\+P\+\_\+connection.\+h}}
+\subsubsection[{tcp\+\_\+send\+\_\+oob\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int tcp\+\_\+send\+\_\+oob\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+C\+P\+\_\+\+Connections} $\ast$}]{tcp\+\_\+c, }
+\item[{unsigned int}]{tcp\+\_\+connections\+\_\+number, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{packet, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{_t_c_p__connection_8h_a5effabd83d700cccf9bcc51174f041f1}
+
+
+Definition at line 327 of file T\+C\+P\+\_\+connection.\+c.
+
+
+
+References T\+C\+P\+\_\+con\+::connection, get\+\_\+tcp\+\_\+connection(), send\+\_\+oob\+\_\+packet(), T\+C\+P\+\_\+con\+::status, and T\+C\+P\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D.
+
+
+
+Referenced by tcp\+\_\+oob\+\_\+handle\+\_\+cookie\+\_\+request(), and tcp\+\_\+oobdata\+\_\+callback().
+
+
+\begin{DoxyCode}
+329 \{
+330     \hyperlink{struct_t_c_p__con}{TCP\_con} *tcp\_con = \hyperlink{_t_c_p__connection_8c_ab051b2158958b954824dbed361ec588a}{get\_tcp\_connection}(tcp\_c, tcp\_connections\_number);
+331 
+332     \textcolor{keywordflow}{if} (!tcp\_con)
+333         \textcolor{keywordflow}{return} -1;
+334 
+335     \textcolor{keywordflow}{if} (tcp\_con->\hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{_t_c_p__connection_8h_ad03f35be6e73069ff02e6147cac6ce53}{TCP\_CONN\_CONNECTED})
+336         \textcolor{keywordflow}{return} -1;
+337 
+338     \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__client_8c_a7818a314434c2bb01c3ea406744f076b}{send\_oob\_packet}(tcp\_con->\hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, packet, length);
+339 
+340     \textcolor{keywordflow}{if} (ret == 1)
+341         \textcolor{keywordflow}{return} 0;
+342 
+343     \textcolor{keywordflow}{return} -1;
+344 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a5effabd83d700cccf9bcc51174f041f1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d39/_t_c_p__connection_8h_a5effabd83d700cccf9bcc51174f041f1_icgraph}
+\end{center}
+\end{figure}
+
+

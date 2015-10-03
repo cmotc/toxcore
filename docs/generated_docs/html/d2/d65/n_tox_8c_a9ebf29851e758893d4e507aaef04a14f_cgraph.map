@@ -1,0 +1,12 @@
+<map id="print_groupmessage" name="print_groupmessage">
+<area shape="rect" id="node2" href="$d2/d65/n_tox_8c.html#a98bd143de92c21739c898410eab0ac1d" title="new_lines" alt="" coords="223,75,303,101"/>
+<area shape="rect" id="node8" href="$d4/d71/tox__old_8h.html#ac7824c28f01fcdd068fe26c6e8b06413" title="tox_group_peername" alt="" coords="192,127,335,153"/>
+<area shape="rect" id="node3" href="$d2/d65/n_tox_8c.html#ab52f6cff45dee7f6e3adf242b1fa03ba" title="new_lines_mark" alt="" coords="384,72,500,99"/>
+<area shape="rect" id="node4" href="$d2/d65/n_tox_8c.html#a940fcd70483beb81d4c45e58e8599d13" title="do_refresh" alt="" coords="555,60,637,87"/>
+<area shape="rect" id="node5" href="$d2/d65/n_tox_8c.html#a589df1ea39e70220cb713dba16cdb5ab" title="count_lines" alt="" coords="725,5,813,32"/>
+<area shape="rect" id="node6" href="$d2/d65/n_tox_8c.html#a8d3bd9e1823e8627c8ee5fcdf639cea8" title="wrap" alt="" coords="743,56,794,83"/>
+<area shape="rect" id="node7" href="$d2/d65/n_tox_8c.html#a63f4f6ed6f524ffbf7e0d096d8915700" title="wrap_bars" alt="" coords="727,107,810,133"/>
+<area shape="rect" id="node9" href="$df/de9/toxcore_2group_8c.html#aca385bea140e668374002b11db01d78d" title="group_peername" alt="" coords="383,129,501,156"/>
+<area shape="rect" id="node10" href="$df/de9/toxcore_2group_8c.html#a11d3240a6755f36864ed2b072e826483" title="get_group_c" alt="" coords="549,132,643,159"/>
+<area shape="rect" id="node11" href="$df/de9/toxcore_2group_8c.html#a4ffc6ae8485f94d9177baf65f777c72e" title="groupnumber_not_valid" alt="" coords="691,157,847,184"/>
+</map>

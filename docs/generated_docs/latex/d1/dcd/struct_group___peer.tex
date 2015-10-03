@@ -1,0 +1,168 @@
+\hypertarget{struct_group___peer}{\section{Group\+\_\+\+Peer Struct Reference}
+\label{struct_group___peer}\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+}
+
+
+{\ttfamily \#include $<$group.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_group___peer_ab42b4c90d81ac99b968c3edd1e21d706}{real\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_group___peer_a46affbcc202b25e96fd1f5238e9e97e0}{temp\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint64\+\_\+t \hyperlink{struct_group___peer_a03706feea89530a7ac78082fc79ed8fc}{last\+\_\+recv}
+\item 
+uint32\+\_\+t \hyperlink{struct_group___peer_a1a221b969812bb7c384b0eb23fb1012d}{last\+\_\+message\+\_\+number}
+\item 
+uint8\+\_\+t \hyperlink{struct_group___peer_ae7cf3fd18e321fab5a711e72622301b9}{nick} \mbox{[}\hyperlink{_messenger_8h_a0c397a708cec89c74029582574516b30}{M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_group___peer_aa316280abcd8913a502b56397dd13e23}{nick\+\_\+len}
+\item 
+uint16\+\_\+t \hyperlink{struct_group___peer_a264348ec1f724e05464ca97b7c432817}{peer\+\_\+number}
+\item 
+uint8\+\_\+t \hyperlink{struct_group___peer_acf8dd69bcbe4de0b5a2b78803925994d}{recv\+\_\+lossy} \mbox{[}\hyperlink{toxcore_2group_8h_a57c6265ee7c8d9829418dc7854749dad}{M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_group___peer_ae3d9bdf641a1085fcb1bde6ec076b37d}{bottom\+\_\+lossy\+\_\+number}
+\item 
+uint16\+\_\+t \hyperlink{struct_group___peer_a9af1180e5be1617fd013dee9ce29bf24}{top\+\_\+lossy\+\_\+number}
+\item 
+void $\ast$ \hyperlink{struct_group___peer_a077376d12464f945e2414d5499c79b3f}{object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 43 of file group.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_group___peer_ae3d9bdf641a1085fcb1bde6ec076b37d}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!bottom\+\_\+lossy\+\_\+number@{bottom\+\_\+lossy\+\_\+number}}
+\index{bottom\+\_\+lossy\+\_\+number@{bottom\+\_\+lossy\+\_\+number}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{bottom\+\_\+lossy\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t bottom\+\_\+lossy\+\_\+number}}\label{struct_group___peer_ae3d9bdf641a1085fcb1bde6ec076b37d}
+
+
+Definition at line 56 of file group.\+h.
+
+
+
+Referenced by lossy\+\_\+packet\+\_\+not\+\_\+received().
+
+\hypertarget{struct_group___peer_a1a221b969812bb7c384b0eb23fb1012d}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!last\+\_\+message\+\_\+number@{last\+\_\+message\+\_\+number}}
+\index{last\+\_\+message\+\_\+number@{last\+\_\+message\+\_\+number}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{last\+\_\+message\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t last\+\_\+message\+\_\+number}}\label{struct_group___peer_a1a221b969812bb7c384b0eb23fb1012d}
+
+
+Definition at line 48 of file group.\+h.
+
+
+
+Referenced by handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___peer_a03706feea89530a7ac78082fc79ed8fc}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!last\+\_\+recv@{last\+\_\+recv}}
+\index{last\+\_\+recv@{last\+\_\+recv}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{last\+\_\+recv}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t last\+\_\+recv}}\label{struct_group___peer_a03706feea89530a7ac78082fc79ed8fc}
+
+
+Definition at line 47 of file group.\+h.
+
+
+
+Referenced by addpeer(), groupchat\+\_\+clear\+\_\+timedout(), and handle\+\_\+message\+\_\+packet\+\_\+group().
+
+\hypertarget{struct_group___peer_ae7cf3fd18e321fab5a711e72622301b9}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!nick@{nick}}
+\index{nick@{nick}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{nick}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t nick\mbox{[}{\bf M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}}}\label{struct_group___peer_ae7cf3fd18e321fab5a711e72622301b9}
+
+
+Definition at line 50 of file group.\+h.
+
+
+
+Referenced by group\+\_\+peername(), send\+\_\+peers(), and setnick().
+
+\hypertarget{struct_group___peer_aa316280abcd8913a502b56397dd13e23}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!nick\+\_\+len@{nick\+\_\+len}}
+\index{nick\+\_\+len@{nick\+\_\+len}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{nick\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t nick\+\_\+len}}\label{struct_group___peer_aa316280abcd8913a502b56397dd13e23}
+
+
+Definition at line 51 of file group.\+h.
+
+
+
+Referenced by group\+\_\+peername(), send\+\_\+peers(), and setnick().
+
+\hypertarget{struct_group___peer_a077376d12464f945e2414d5499c79b3f}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!object@{object}}
+\index{object@{object}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ object}}\label{struct_group___peer_a077376d12464f945e2414d5499c79b3f}
+
+
+Definition at line 58 of file group.\+h.
+
+
+
+Referenced by del\+\_\+groupchat(), delpeer(), group\+\_\+peer\+\_\+get\+\_\+object(), group\+\_\+peer\+\_\+set\+\_\+object(), and handle\+\_\+lossy().
+
+\hypertarget{struct_group___peer_a264348ec1f724e05464ca97b7c432817}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!peer\+\_\+number@{peer\+\_\+number}}
+\index{peer\+\_\+number@{peer\+\_\+number}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{peer\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t peer\+\_\+number}}\label{struct_group___peer_a264348ec1f724e05464ca97b7c432817}
+
+
+Definition at line 53 of file group.\+h.
+
+
+
+Referenced by addpeer(), get\+\_\+peer\+\_\+index(), group\+\_\+peernumber\+\_\+is\+\_\+ours(), groupchat\+\_\+clear\+\_\+timedout(), and send\+\_\+peers().
+
+\hypertarget{struct_group___peer_ab42b4c90d81ac99b968c3edd1e21d706}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!real\+\_\+pk@{real\+\_\+pk}}
+\index{real\+\_\+pk@{real\+\_\+pk}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{real\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t real\+\_\+pk\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_group___peer_ab42b4c90d81ac99b968c3edd1e21d706}
+
+
+Definition at line 44 of file group.\+h.
+
+
+
+Referenced by addpeer(), connect\+\_\+to\+\_\+closest(), delpeer(), group\+\_\+peer\+\_\+pubkey(), peer\+\_\+in\+\_\+chat(), and send\+\_\+peers().
+
+\hypertarget{struct_group___peer_acf8dd69bcbe4de0b5a2b78803925994d}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!recv\+\_\+lossy@{recv\+\_\+lossy}}
+\index{recv\+\_\+lossy@{recv\+\_\+lossy}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{recv\+\_\+lossy}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t recv\+\_\+lossy\mbox{[}{\bf M\+A\+X\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+C\+O\+U\+N\+T}\mbox{]}}}\label{struct_group___peer_acf8dd69bcbe4de0b5a2b78803925994d}
+
+
+Definition at line 55 of file group.\+h.
+
+
+
+Referenced by lossy\+\_\+packet\+\_\+not\+\_\+received().
+
+\hypertarget{struct_group___peer_a46affbcc202b25e96fd1f5238e9e97e0}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!temp\+\_\+pk@{temp\+\_\+pk}}
+\index{temp\+\_\+pk@{temp\+\_\+pk}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{temp\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t temp\+\_\+pk\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_group___peer_a46affbcc202b25e96fd1f5238e9e97e0}
+
+
+Definition at line 45 of file group.\+h.
+
+
+
+Referenced by addpeer(), connect\+\_\+to\+\_\+closest(), and send\+\_\+peers().
+
+\hypertarget{struct_group___peer_a9af1180e5be1617fd013dee9ce29bf24}{\index{Group\+\_\+\+Peer@{Group\+\_\+\+Peer}!top\+\_\+lossy\+\_\+number@{top\+\_\+lossy\+\_\+number}}
+\index{top\+\_\+lossy\+\_\+number@{top\+\_\+lossy\+\_\+number}!Group\+\_\+\+Peer@{Group\+\_\+\+Peer}}
+\subsubsection[{top\+\_\+lossy\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t top\+\_\+lossy\+\_\+number}}\label{struct_group___peer_a9af1180e5be1617fd013dee9ce29bf24}
+
+
+Definition at line 56 of file group.\+h.
+
+
+
+Referenced by lossy\+\_\+packet\+\_\+not\+\_\+received().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{toxcore_2group_8h}{group.\+h}\end{DoxyCompactItemize}

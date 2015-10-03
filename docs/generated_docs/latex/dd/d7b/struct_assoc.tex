@@ -1,0 +1,122 @@
+\hypertarget{struct_assoc}{\section{Assoc Struct Reference}
+\label{struct_assoc}\index{Assoc@{Assoc}}
+}
+
+
+Collaboration diagram for Assoc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d4d/struct_assoc__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{assoc_8c_ac2d400520225f5a2aabf44895add81dc}{hash\+\_\+t} \hyperlink{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{self\+\_\+hash}
+\item 
+uint8\+\_\+t \hyperlink{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{self\+\_\+client\+\_\+id} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+size\+\_\+t \hyperlink{struct_assoc_ab4153986e9b7dd71547967436299a424}{candidates\+\_\+bucket\+\_\+bits}
+\item 
+size\+\_\+t \hyperlink{struct_assoc_a22dd0674eae131fab27462b931d4397c}{candidates\+\_\+bucket\+\_\+count}
+\item 
+size\+\_\+t \hyperlink{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{candidates\+\_\+bucket\+\_\+size}
+\item 
+\hyperlink{structcandidates__bucket}{candidates\+\_\+bucket} $\ast$ \hyperlink{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{candidates}
+\item 
+uint64\+\_\+t \hyperlink{struct_assoc_aec732782691c39a31d8c579a79a8fed2}{getnodes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 88 of file assoc.\+c.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}{\index{Assoc@{Assoc}!candidates@{candidates}}
+\index{candidates@{candidates}!Assoc@{Assoc}}
+\subsubsection[{candidates}]{\setlength{\rightskip}{0pt plus 5cm}{\bf candidates\+\_\+bucket}$\ast$ candidates}}\label{struct_assoc_a9d492ea4282a0aca2bcb32d987f58175}
+
+
+Definition at line 96 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries(), candidates\+\_\+create\+\_\+internal(), candidates\+\_\+create\+\_\+new(), candidates\+\_\+search(), client\+\_\+id\+\_\+self\+\_\+update(), dist\+\_\+index\+\_\+entry(), do\+\_\+\+Assoc(), kill\+\_\+\+Assoc(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_ab4153986e9b7dd71547967436299a424}{\index{Assoc@{Assoc}!candidates\+\_\+bucket\+\_\+bits@{candidates\+\_\+bucket\+\_\+bits}}
+\index{candidates\+\_\+bucket\+\_\+bits@{candidates\+\_\+bucket\+\_\+bits}!Assoc@{Assoc}}
+\subsubsection[{candidates\+\_\+bucket\+\_\+bits}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t candidates\+\_\+bucket\+\_\+bits}}\label{struct_assoc_ab4153986e9b7dd71547967436299a424}
+
+
+Definition at line 93 of file assoc.\+c.
+
+
+
+Referenced by candidates\+\_\+id\+\_\+bucket(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_a22dd0674eae131fab27462b931d4397c}{\index{Assoc@{Assoc}!candidates\+\_\+bucket\+\_\+count@{candidates\+\_\+bucket\+\_\+count}}
+\index{candidates\+\_\+bucket\+\_\+count@{candidates\+\_\+bucket\+\_\+count}!Assoc@{Assoc}}
+\subsubsection[{candidates\+\_\+bucket\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t candidates\+\_\+bucket\+\_\+count}}\label{struct_assoc_a22dd0674eae131fab27462b931d4397c}
+
+
+Definition at line 94 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries(), dist\+\_\+index\+\_\+entry(), do\+\_\+\+Assoc(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}{\index{Assoc@{Assoc}!candidates\+\_\+bucket\+\_\+size@{candidates\+\_\+bucket\+\_\+size}}
+\index{candidates\+\_\+bucket\+\_\+size@{candidates\+\_\+bucket\+\_\+size}!Assoc@{Assoc}}
+\subsubsection[{candidates\+\_\+bucket\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t candidates\+\_\+bucket\+\_\+size}}\label{struct_assoc_a9349f5b3095733f74b3704aa9766a05a}
+
+
+Definition at line 95 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+get\+\_\+close\+\_\+entries(), candidates\+\_\+create\+\_\+internal(), candidates\+\_\+search(), client\+\_\+id\+\_\+self\+\_\+update(), dist\+\_\+index\+\_\+entry(), do\+\_\+\+Assoc(), hash\+\_\+collide(), id\+\_\+hash(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_aec732782691c39a31d8c579a79a8fed2}{\index{Assoc@{Assoc}!getnodes@{getnodes}}
+\index{getnodes@{getnodes}!Assoc@{Assoc}}
+\subsubsection[{getnodes}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t getnodes}}\label{struct_assoc_aec732782691c39a31d8c579a79a8fed2}
+
+
+Definition at line 97 of file assoc.\+c.
+
+
+
+Referenced by do\+\_\+\+Assoc(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}{\index{Assoc@{Assoc}!self\+\_\+client\+\_\+id@{self\+\_\+client\+\_\+id}}
+\index{self\+\_\+client\+\_\+id@{self\+\_\+client\+\_\+id}!Assoc@{Assoc}}
+\subsubsection[{self\+\_\+client\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t self\+\_\+client\+\_\+id\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_assoc_a59ef97a1dbf10c89fb43f6fff2e65b39}
+
+
+Definition at line 90 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed(), client\+\_\+id\+\_\+self\+\_\+update(), and new\+\_\+\+Assoc().
+
+\hypertarget{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}{\index{Assoc@{Assoc}!self\+\_\+hash@{self\+\_\+hash}}
+\index{self\+\_\+hash@{self\+\_\+hash}!Assoc@{Assoc}}
+\subsubsection[{self\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hash\+\_\+t} self\+\_\+hash}}\label{struct_assoc_a6531d0c8e69576ae8c58a02914abaefe}
+
+
+Definition at line 89 of file assoc.\+c.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+get\+\_\+close\+\_\+entries(), Assoc\+\_\+self\+\_\+client\+\_\+id\+\_\+changed(), and client\+\_\+id\+\_\+self\+\_\+update().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{assoc_8c}{assoc.\+c}\end{DoxyCompactItemize}

@@ -1,0 +1,2381 @@
+\hypertarget{friend__connection_8c}{\section{toxcore/friend\+\_\+connection.c File Reference}
+\label{friend__connection_8c}\index{toxcore/friend\+\_\+connection.\+c@{toxcore/friend\+\_\+connection.\+c}}
+}
+{\ttfamily \#include \char`\"{}friend\+\_\+connection.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+Include dependency graph for friend\+\_\+connection.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dec/friend__connection_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \hyperlink{friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e}{friendconn\+\_\+id\+\_\+not\+\_\+valid} (const \hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+static int \hyperlink{friend__connection_8c_a7560121d48da253e4b63df88bfc47e55}{realloc\+\_\+friendconns} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, uint32\+\_\+t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num})
+\item 
+static int \hyperlink{friend__connection_8c_ad22b76facda79873a4cde9562c8cd663}{create\+\_\+friend\+\_\+conn} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c)
+\item 
+static int \hyperlink{friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080}{wipe\+\_\+friend\+\_\+conn} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+static \hyperlink{struct_friend___conn}{Friend\+\_\+\+Conn} $\ast$ \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\+\_\+conn} (const \hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+int \hyperlink{friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea}{getfriend\+\_\+conn\+\_\+id\+\_\+pk} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, const uint8\+\_\+t $\ast$real\+\_\+pk)
+\item 
+int \hyperlink{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{friend\+\_\+add\+\_\+tcp\+\_\+relay} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+static void \hyperlink{friend__connection_8c_a612a688a590b1836efec92949e3cbdff}{connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, unsigned int number)
+\item 
+static unsigned int \hyperlink{friend__connection_8c_a6e0e582317de001468faab8240bd2b5c}{send\+\_\+relays} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+static int \hyperlink{friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07}{tcp\+\_\+relay\+\_\+node\+\_\+callback} (void $\ast$object, uint32\+\_\+t number, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+static int \hyperlink{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}{friend\+\_\+new\+\_\+connection} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+static void \hyperlink{friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8}{dht\+\_\+ip\+\_\+callback} (void $\ast$object, int32\+\_\+t number, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port)
+\item 
+static void \hyperlink{friend__connection_8c_aa293768f213199a635ce0b4a94489cdf}{change\+\_\+dht\+\_\+pk} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, const uint8\+\_\+t $\ast$dht\+\_\+public\+\_\+key)
+\item 
+static int \hyperlink{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{handle\+\_\+status} (void $\ast$object, int number, uint8\+\_\+t status)
+\item 
+static void \hyperlink{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{dht\+\_\+pk\+\_\+callback} (void $\ast$object, int32\+\_\+t number, const uint8\+\_\+t $\ast$dht\+\_\+public\+\_\+key)
+\item 
+static int \hyperlink{friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904}{handle\+\_\+packet} (void $\ast$object, int number, uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+static int \hyperlink{friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d}{handle\+\_\+lossy\+\_\+packet} (void $\ast$object, int number, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+static int \hyperlink{friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c}{handle\+\_\+new\+\_\+connections} (void $\ast$object, \hyperlink{struct_new___connection}{New\+\_\+\+Connection} $\ast$n\+\_\+c)
+\item 
+static int \hyperlink{friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2}{send\+\_\+ping} (const \hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+int \hyperlink{friend__connection_8c_ae9fc0c8cb8838cd5d069e44911c23e63}{friend\+\_\+connection\+\_\+lock} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+unsigned int \hyperlink{friend__connection_8c_ae5c94f8543c84506c85faac6d2b3a9dd}{friend\+\_\+con\+\_\+connected} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+int \hyperlink{friend__connection_8c_a4605fa0bd8ff3f9bd217ee6dcadbfe5f}{get\+\_\+friendcon\+\_\+public\+\_\+keys} (uint8\+\_\+t $\ast$real\+\_\+pk, uint8\+\_\+t $\ast$dht\+\_\+temp\+\_\+pk, \hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+void \hyperlink{friend__connection_8c_a04fb221a2ac726ec3ca86be7b1e63238}{set\+\_\+dht\+\_\+temp\+\_\+pk} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, const uint8\+\_\+t $\ast$dht\+\_\+temp\+\_\+pk)
+\item 
+int \hyperlink{friend__connection_8c_a15c404d517b4a4fb3976f4d85bfbaef0}{friend\+\_\+connection\+\_\+callbacks} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, unsigned int index, int($\ast$\hyperlink{_t_c_p__test_8c_ae4f12b6805a17277d33e73ac030d7aca}{status\+\_\+callback})(void $\ast$object, int id, uint8\+\_\+t status), int($\ast$\hyperlink{_t_c_p__test_8c_a36ed22ce4a6bec3fb113a4eaf29df5e1}{data\+\_\+callback})(void $\ast$object, int id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length), int($\ast$lossy\+\_\+data\+\_\+callback)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object, int number)
+\item 
+int \hyperlink{friend__connection_8c_a8586e3dfb2047821c4214adf8d06a877}{friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+int \hyperlink{friend__connection_8c_a613a80a004fccd616de2a67d84a25d3c}{new\+\_\+friend\+\_\+connection} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, const uint8\+\_\+t $\ast$real\+\_\+public\+\_\+key)
+\item 
+int \hyperlink{friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a}{kill\+\_\+friend\+\_\+connection} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id)
+\item 
+void \hyperlink{friend__connection_8c_ab3249bbbafb0a8be7d181e3bc6f9563f}{set\+\_\+friend\+\_\+request\+\_\+callback} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int($\ast$fr\+\_\+request\+\_\+callback)(void $\ast$, const uint8\+\_\+t $\ast$, const uint8\+\_\+t $\ast$, uint16\+\_\+t), void $\ast$object)
+\item 
+int \hyperlink{friend__connection_8c_a2af492c22c086276ed147d0826839d25}{send\+\_\+friend\+\_\+request\+\_\+packet} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c, int friendcon\+\_\+id, uint32\+\_\+t nospam\+\_\+num, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$ \hyperlink{friend__connection_8c_a319bec2419cf5fc5525af4fae03b86ef}{new\+\_\+friend\+\_\+connections} (\hyperlink{struct_onion___client}{Onion\+\_\+\+Client} $\ast$onion\+\_\+c)
+\item 
+static void \hyperlink{friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc}{L\+A\+Ndiscovery} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c)
+\item 
+void \hyperlink{friend__connection_8c_aea88c3aa2deff558e9b13ed5229cbb6b}{do\+\_\+friend\+\_\+connections} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c)
+\item 
+void \hyperlink{friend__connection_8c_a2ef8cdbd93f21f11ff0333a9527c2c02}{kill\+\_\+friend\+\_\+connections} (\hyperlink{struct_friend___connections}{Friend\+\_\+\+Connections} $\ast$fr\+\_\+c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{friend__connection_8c_aa293768f213199a635ce0b4a94489cdf}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!change\+\_\+dht\+\_\+pk@{change\+\_\+dht\+\_\+pk}}
+\index{change\+\_\+dht\+\_\+pk@{change\+\_\+dht\+\_\+pk}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{change\+\_\+dht\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}static void change\+\_\+dht\+\_\+pk (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{dht\+\_\+public\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_aa293768f213199a635ce0b4a94489cdf}
+
+
+Definition at line 287 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::dht, D\+H\+T\+\_\+addfriend(), D\+H\+T\+\_\+delfriend(), dht\+\_\+ip\+\_\+callback(), Friend\+\_\+\+Conn\+::dht\+\_\+lock, Friend\+\_\+\+Conn\+::dht\+\_\+pk\+\_\+lastrecv, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, get\+\_\+conn(), printf(), and unix\+\_\+time().
+
+
+
+Referenced by dht\+\_\+pk\+\_\+callback(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+288 \{
+289     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+290 
+291     \textcolor{keywordflow}{if} (!friend\_con)
+292         \textcolor{keywordflow}{return};
+293 
+294     friend\_con->\hyperlink{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{dht\_pk\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+295 
+296     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) \{
+297         \textcolor{keywordflow}{if} (\hyperlink{_d_h_t_8c_a4e70f3fc186c6e459908307c935d00b2}{DHT\_delfriend}(fr\_c->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, friend\_con->
+      \hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) != 0) \{
+298             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"a. Could not delete dht peer. Please report this.\(\backslash\)n"});
+299             \textcolor{keywordflow}{return};
+300         \}
+301 
+302         friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock} = 0;
+303     \}
+304 
+305     \hyperlink{_d_h_t_8c_a1dac5e05fd07964cb4914c17afeb9d50}{DHT\_addfriend}(fr\_c->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, dht\_public\_key, \hyperlink{friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8}{dht\_ip\_callback}, fr\_c, 
+      friendcon\_id, &friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock});
+306     memcpy(friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, dht\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+307 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aa293768f213199a635ce0b4a94489cdf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aa293768f213199a635ce0b4a94489cdf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a612a688a590b1836efec92949e3cbdff}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays@{connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays}}
+\index{connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays@{connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}static void connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{unsigned int}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a612a688a590b1836efec92949e3cbdff}
+
+
+Definition at line 189 of file friend\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay\+\_\+peer(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, I\+P\+::family, F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S, get\+\_\+conn(), i, I\+P\+\_\+\+Port\+::ip, Node\+\_\+format\+::ip\+\_\+port, Friend\+\_\+\+Connections\+::net\+\_\+crypto, Node\+\_\+format\+::public\+\_\+key, Friend\+\_\+\+Conn\+::tcp\+\_\+relay\+\_\+counter, and Friend\+\_\+\+Conn\+::tcp\+\_\+relays.
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+190 \{
+191     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+192 
+193     \textcolor{keywordflow}{if} (!friend\_con)
+194         \textcolor{keywordflow}{return};
+195 
+196     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+197 
+198     \textcolor{keywordflow}{for} (i = 0; (i < \hyperlink{friend__connection_8h_aac882ca62f0b32b069ace03fa3f106c0}{FRIEND\_MAX\_STORED\_TCP\_RELAYS}) && (number != 0); ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+199         uint16\_t index = (friend\_con->\hyperlink{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{tcp\_relay\_counter} - (i + 1)) % 
+      \hyperlink{friend__connection_8h_aac882ca62f0b32b069ace03fa3f106c0}{FRIEND\_MAX\_STORED\_TCP\_RELAYS};
+200 
+201         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[index].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}) \{
+202             \textcolor{keywordflow}{if} (\hyperlink{net__crypto_8c_a4b9f3aef7b0d4c461294e24a21e64e71}{add\_tcp\_relay\_peer}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[index].
+      \hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port},
+203                                    friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[index].
+      \hyperlink{struct_node__format_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}) == 0) \{
+204                 --number;
+205             \}
+206         \}
+207     \}
+208 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a612a688a590b1836efec92949e3cbdff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a612a688a590b1836efec92949e3cbdff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ad22b76facda79873a4cde9562c8cd663}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!create\+\_\+friend\+\_\+conn@{create\+\_\+friend\+\_\+conn}}
+\index{create\+\_\+friend\+\_\+conn@{create\+\_\+friend\+\_\+conn}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{create\+\_\+friend\+\_\+conn}]{\setlength{\rightskip}{0pt plus 5cm}static int create\+\_\+friend\+\_\+conn (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_ad22b76facda79873a4cde9562c8cd663}
+
+
+Definition at line 76 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, i, Friend\+\_\+\+Connections\+::num\+\_\+cons, realloc\+\_\+friendconns(), and Friend\+\_\+\+Conn\+::status.
+
+
+
+Referenced by new\+\_\+friend\+\_\+connection().
+
+
+\begin{DoxyCode}
+77 \{
+78     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+79 
+80     \textcolor{keywordflow}{for} (i = 0; i < fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+81         \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[i].\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a93ea4a0b69b92435539e13a44bcc910b}{FRIENDCONN\_STATUS\_NONE})
+82             \textcolor{keywordflow}{return} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+83     \}
+84 
+85     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = -1;
+86 
+87     \textcolor{keywordflow}{if} (\hyperlink{friend__connection_8c_a7560121d48da253e4b63df88bfc47e55}{realloc\_friendconns}(fr\_c, fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons} + 1) == 0) \{
+88         \textcolor{keywordtype}{id} = fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons};
+89         ++fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons};
+90         memset(&(fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[\textcolor{keywordtype}{id}]), 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_friend___conn}{Friend\_Conn}));
+91     \}
+92 
+93     \textcolor{keywordflow}{return} id;
+94 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d2/db1/friend__connection_8c_ad22b76facda79873a4cde9562c8cd663_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ad22b76facda79873a4cde9562c8cd663_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!dht\+\_\+ip\+\_\+callback@{dht\+\_\+ip\+\_\+callback}}
+\index{dht\+\_\+ip\+\_\+callback@{dht\+\_\+ip\+\_\+callback}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{dht\+\_\+ip\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}static void dht\+\_\+ip\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int32\+\_\+t}]{number, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8}
+
+
+Definition at line 265 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port\+\_\+lastrecv, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, friend\+\_\+add\+\_\+tcp\+\_\+relay(), friend\+\_\+new\+\_\+connection(), get\+\_\+conn(), Friend\+\_\+\+Conn\+::hosting\+\_\+tcp\+\_\+relay, Friend\+\_\+\+Connections\+::net\+\_\+crypto, set\+\_\+direct\+\_\+ip\+\_\+port(), and unix\+\_\+time().
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk().
+
+
+\begin{DoxyCode}
+266 \{
+267     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+268     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+269 
+270     \textcolor{keywordflow}{if} (!friend\_con)
+271         \textcolor{keywordflow}{return};
+272 
+273     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} == -1) \{
+274         \hyperlink{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}{friend\_new\_connection}(fr\_c, number);
+275     \}
+276 
+277     \hyperlink{net__crypto_8c_a8ced4e168a95db5708bf4b3095cb4df6}{set\_direct\_ip\_port}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, ip\_port, 1);
+278     friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port} = ip\_port;
+279     friend\_con->\hyperlink{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{dht\_ip\_port\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+280 
+281     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{hosting\_tcp\_relay}) \{
+282         \hyperlink{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{friend\_add\_tcp\_relay}(fr\_c, number, ip\_port, friend\_con->
+      \hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk});
+283         friend\_con->\hyperlink{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{hosting\_tcp\_relay} = 0;
+284     \}
+285 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a6aa37bc6ee3246c06d37000677b205e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!dht\+\_\+pk\+\_\+callback@{dht\+\_\+pk\+\_\+callback}}
+\index{dht\+\_\+pk\+\_\+callback@{dht\+\_\+pk\+\_\+callback}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{dht\+\_\+pk\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}static void dht\+\_\+pk\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int32\+\_\+t}]{number, }
+\item[{const uint8\+\_\+t $\ast$}]{dht\+\_\+public\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}
+
+
+Definition at line 351 of file friend\+\_\+connection.\+c.
+
+
+
+References change\+\_\+dht\+\_\+pk(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, crypto\+\_\+kill(), Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, friend\+\_\+new\+\_\+connection(), get\+\_\+conn(), handle\+\_\+status(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, Friend\+\_\+\+Connections\+::onion\+\_\+c, Friend\+\_\+\+Conn\+::onion\+\_\+friendnum, and onion\+\_\+set\+\_\+friend\+\_\+\+D\+H\+T\+\_\+pubkey().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), handle\+\_\+new\+\_\+connections(), new\+\_\+friend\+\_\+connection(), and set\+\_\+dht\+\_\+temp\+\_\+pk().
+
+
+\begin{DoxyCode}
+352 \{
+353     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+354     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+355 
+356     \textcolor{keywordflow}{if} (!friend\_con)
+357         \textcolor{keywordflow}{return};
+358 
+359     \textcolor{keywordflow}{if} (memcmp(friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, dht\_public\_key, crypto\_box\_PUBLICKEYBYTES) == 0)
+360         \textcolor{keywordflow}{return};
+361 
+362     \hyperlink{friend__connection_8c_aa293768f213199a635ce0b4a94489cdf}{change\_dht\_pk}(fr\_c, number, dht\_public\_key);
+363 
+364     \textcolor{comment}{/* if pk changed, create a new connection.*/}
+365     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} != -1) \{
+366         \hyperlink{net__crypto_8c_a16c3a0008512675dad8eb00ff1822763}{crypto\_kill}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id});
+367         friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = -1;
+368         \hyperlink{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{handle\_status}(\textcolor{keywordtype}{object}, number, 0); \textcolor{comment}{/* Going offline. */}
+369     \}
+370 
+371     \hyperlink{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}{friend\_new\_connection}(fr\_c, number);
+372     \hyperlink{onion__client_8c_a1c5dc5e030ac14db475a4b45214f2a88}{onion\_set\_friend\_DHT\_pubkey}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, friend\_con->
+      \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum}, dht\_public\_key);
+373 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_aea88c3aa2deff558e9b13ed5229cbb6b}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!do\+\_\+friend\+\_\+connections@{do\+\_\+friend\+\_\+connections}}
+\index{do\+\_\+friend\+\_\+connections@{do\+\_\+friend\+\_\+connections}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{do\+\_\+friend\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+friend\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_aea88c3aa2deff558e9b13ed5229cbb6b}
+
+
+Definition at line 791 of file friend\+\_\+connection.\+c.
+
+
+
+References connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, crypto\+\_\+kill(), Friend\+\_\+\+Connections\+::dht, D\+H\+T\+\_\+delfriend(), Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port\+\_\+lastrecv, Friend\+\_\+\+Conn\+::dht\+\_\+lock, Friend\+\_\+\+Conn\+::dht\+\_\+pk\+\_\+lastrecv, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, I\+P\+::family, F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T, F\+R\+I\+E\+N\+D\+\_\+\+D\+H\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T, friend\+\_\+new\+\_\+connection(), F\+R\+I\+E\+N\+D\+\_\+\+P\+I\+N\+G\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, get\+\_\+conn(), handle\+\_\+status(), i, I\+P\+\_\+\+Port\+::ip, L\+A\+Ndiscovery(), M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S, Friend\+\_\+\+Connections\+::net\+\_\+crypto, Friend\+\_\+\+Connections\+::num\+\_\+cons, Friend\+\_\+\+Conn\+::ping\+\_\+lastrecv, Friend\+\_\+\+Conn\+::ping\+\_\+lastsent, send\+\_\+ping(), send\+\_\+relays(), set\+\_\+direct\+\_\+ip\+\_\+port(), S\+H\+A\+R\+E\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L, Friend\+\_\+\+Conn\+::share\+\_\+relays\+\_\+lastsent, Friend\+\_\+\+Conn\+::status, and unix\+\_\+time().
+
+
+
+Referenced by do\+\_\+messenger().
+
+
+\begin{DoxyCode}
+792 \{
+793     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+794     uint64\_t temp\_time = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+795 
+796     \textcolor{keywordflow}{for} (i = 0; i < fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+797         \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, i);
+798 
+799         \textcolor{keywordflow}{if} (friend\_con) \{
+800             \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a0ad1ac040d579509cc0a3f1df0ab38ad}{FRIENDCONN\_STATUS\_CONNECTING}) \{
+801                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{dht\_pk\_lastrecv} + 
+      \hyperlink{friend__connection_8h_a9961aac2a11e6d9ecdc2483f8816f9cd}{FRIEND\_DHT\_TIMEOUT} < temp\_time) \{
+802                     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) \{
+803                         \hyperlink{_d_h_t_8c_a4e70f3fc186c6e459908307c935d00b2}{DHT\_delfriend}(fr\_c->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, friend\_con->
+      \hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock});
+804                         friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock} = 0;
+805                     \}
+806                 \}
+807 
+808                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{dht\_ip\_port\_lastrecv} + 
+      \hyperlink{friend__connection_8h_a9961aac2a11e6d9ecdc2483f8816f9cd}{FRIEND\_DHT\_TIMEOUT} < temp\_time) \{
+809                     friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = 0;
+810                 \}
+811 
+812                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) \{
+813                     \textcolor{keywordflow}{if} (\hyperlink{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}{friend\_new\_connection}(fr\_c, i) == 0) \{
+814                         \hyperlink{net__crypto_8c_a8ced4e168a95db5708bf4b3095cb4df6}{set\_direct\_ip\_port}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port}, 0);
+815                         \hyperlink{friend__connection_8c_a612a688a590b1836efec92949e3cbdff}{connect\_to\_saved\_tcp\_relays}(fr\_c, i, (
+      \hyperlink{_t_c_p__connection_8h_a8ee1e3e61abfebc476a63a83ec2c05ee}{MAX\_FRIEND\_TCP\_CONNECTIONS} / 2)); \textcolor{comment}{/* Only fill it half up. */}
+816                     \}
+817                 \}
+818 
+819             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5ad8c8e0080a23ea8dc2a883e4321f0598}{FRIENDCONN\_STATUS\_CONNECTED}) 
+      \{
+820                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}{ping\_lastsent} + 
+      \hyperlink{friend__connection_8h_ab1dd8a59ba0bb89f6159e357b023789a}{FRIEND\_PING\_INTERVAL} < temp\_time) \{
+821                     \hyperlink{friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2}{send\_ping}(fr\_c, i);
+822                 \}
+823 
+824                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{share\_relays\_lastsent} + 
+      \hyperlink{friend__connection_8h_a19e48bdb6f18161c3306b82439e6ce62}{SHARE\_RELAYS\_INTERVAL} < temp\_time) \{
+825                     \hyperlink{friend__connection_8c_a6e0e582317de001468faab8240bd2b5c}{send\_relays}(fr\_c, i);
+826                 \}
+827 
+828                 \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5130c3c4a93050475770184608d61918}{ping\_lastrecv} + 
+      \hyperlink{friend__connection_8h_a392cf3bbef6af58c5cc3d8adca4bea70}{FRIEND\_CONNECTION\_TIMEOUT} < temp\_time) \{
+829                     \textcolor{comment}{/* If we stopped receiving ping packets, kill it. */}
+830                     \hyperlink{net__crypto_8c_a16c3a0008512675dad8eb00ff1822763}{crypto\_kill}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id});
+831                     friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = -1;
+832                     \hyperlink{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{handle\_status}(fr\_c, i, 0); \textcolor{comment}{/* Going offline. */}
+833                 \}
+834             \}
+835         \}
+836     \}
+837 
+838     \hyperlink{friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc}{LANdiscovery}(fr\_c);
+839 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aea88c3aa2deff558e9b13ed5229cbb6b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aea88c3aa2deff558e9b13ed5229cbb6b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+add\+\_\+tcp\+\_\+relay@{friend\+\_\+add\+\_\+tcp\+\_\+relay}}
+\index{friend\+\_\+add\+\_\+tcp\+\_\+relay@{friend\+\_\+add\+\_\+tcp\+\_\+relay}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+add\+\_\+tcp\+\_\+relay}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+add\+\_\+tcp\+\_\+relay (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}
+
+
+Definition at line 154 of file friend\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay\+\_\+peer(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, I\+P\+::family, F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S, get\+\_\+conn(), Friend\+\_\+\+Conn\+::hosting\+\_\+tcp\+\_\+relay, i, I\+P\+\_\+\+Port\+::ip, Node\+\_\+format\+::ip\+\_\+port, Local\+\_\+ip(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, Node\+\_\+format\+::public\+\_\+key, Friend\+\_\+\+Conn\+::tcp\+\_\+relay\+\_\+counter, and Friend\+\_\+\+Conn\+::tcp\+\_\+relays.
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), handle\+\_\+packet(), send\+\_\+relays(), and tcp\+\_\+relay\+\_\+node\+\_\+callback().
+
+
+\begin{DoxyCode}
+155 \{
+156     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+157 
+158     \textcolor{keywordflow}{if} (!friend\_con)
+159         \textcolor{keywordflow}{return} -1;
+160 
+161     \textcolor{comment}{/* Local ip and same pk means that they are hosting a TCP relay. */}
+162     \textcolor{keywordflow}{if} (\hyperlink{_l_a_n__discovery_8c_a56fb8ae3cd774c1b1d5670b9c4fb8959}{Local\_ip}(ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}) && memcmp(friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES) == 0) \{
+163         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != 0) \{
+164             ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip} = friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip};
+165         \} \textcolor{keywordflow}{else} \{
+166             friend\_con->\hyperlink{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{hosting\_tcp\_relay} = 0;
+167         \}
+168     \}
+169 
+170     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+171 
+172     uint16\_t index = friend\_con->\hyperlink{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{tcp\_relay\_counter} % 
+      \hyperlink{friend__connection_8h_aac882ca62f0b32b069ace03fa3f106c0}{FRIEND\_MAX\_STORED\_TCP\_RELAYS};
+173 
+174     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friend__connection_8h_aac882ca62f0b32b069ace03fa3f106c0}{FRIEND\_MAX\_STORED\_TCP\_RELAYS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+175         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[i].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != 0
+176                 && memcmp(friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[i].\hyperlink{struct_node__format_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES) == 0) \{
+177             memset(&friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[i], 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_node__format}{Node\_format}));
+178         \}
+179     \}
+180 
+181     friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[index].\hyperlink{struct_node__format_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ip\_port;
+182     memcpy(friend\_con->\hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\_relays}[index].\hyperlink{struct_node__format_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+183     ++friend\_con->\hyperlink{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{tcp\_relay\_counter};
+184 
+185     \textcolor{keywordflow}{return} \hyperlink{net__crypto_8c_a4b9f3aef7b0d4c461294e24a21e64e71}{add\_tcp\_relay\_peer}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, ip\_port, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+186 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ae5c94f8543c84506c85faac6d2b3a9dd}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+con\+\_\+connected@{friend\+\_\+con\+\_\+connected}}
+\index{friend\+\_\+con\+\_\+connected@{friend\+\_\+con\+\_\+connected}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+con\+\_\+connected}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int friend\+\_\+con\+\_\+connected (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_ae5c94f8543c84506c85faac6d2b3a9dd}
+
+
+Definition at line 561 of file friend\+\_\+connection.\+c.
+
+
+
+References get\+\_\+conn(), and Friend\+\_\+\+Conn\+::status.
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest(), init\+\_\+new\+\_\+friend(), and m\+\_\+delfriend().
+
+
+\begin{DoxyCode}
+562 \{
+563     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+564 
+565     \textcolor{keywordflow}{if} (!friend\_con)
+566         \textcolor{keywordflow}{return} 0;
+567 
+568     \textcolor{keywordflow}{return} friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status};
+569 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ae5c94f8543c84506c85faac6d2b3a9dd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ae5c94f8543c84506c85faac6d2b3a9dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a15c404d517b4a4fb3976f4d85bfbaef0}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+connection\+\_\+callbacks@{friend\+\_\+connection\+\_\+callbacks}}
+\index{friend\+\_\+connection\+\_\+callbacks@{friend\+\_\+connection\+\_\+callbacks}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+connection\+\_\+callbacks}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+connection\+\_\+callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{unsigned int}]{index, }
+\item[{int($\ast$)(void $\ast$object, int id, uint8\+\_\+t status)}]{status\+\_\+callback, }
+\item[{int($\ast$)(void $\ast$object, int id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{data\+\_\+callback, }
+\item[{int($\ast$)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{lossy\+\_\+data\+\_\+callback, }
+\item[{void $\ast$}]{object, }
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a15c404d517b4a4fb3976f4d85bfbaef0}
+
+
+Definition at line 605 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::callbacks, Friend\+\_\+\+Conn\+::data\+\_\+callback, data\+\_\+callback(), Friend\+\_\+\+Conn\+::data\+\_\+callback\+\_\+id, Friend\+\_\+\+Conn\+::data\+\_\+callback\+\_\+object, get\+\_\+conn(), Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback, Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback\+\_\+id, Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback\+\_\+object, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S, Friend\+\_\+\+Conn\+::status\+\_\+callback, status\+\_\+callback(), Friend\+\_\+\+Conn\+::status\+\_\+callback\+\_\+id, and Friend\+\_\+\+Conn\+::status\+\_\+callback\+\_\+object.
+
+
+
+Referenced by add\+\_\+conn\+\_\+to\+\_\+groupchat(), init\+\_\+new\+\_\+friend(), and m\+\_\+delfriend().
+
+
+\begin{DoxyCode}
+609 \{
+610     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+611 
+612     \textcolor{keywordflow}{if} (!friend\_con)
+613         \textcolor{keywordflow}{return} -1;
+614 
+615     \textcolor{keywordflow}{if} (index >= \hyperlink{friend__connection_8h_a28f384352cf0b5c144fdafb826701811}{MAX\_FRIEND\_CONNECTION\_CALLBACKS})
+616         \textcolor{keywordflow}{return} -1;
+617 
+618     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}{status\_callback} = 
+      \hyperlink{_t_c_p__test_8c_ae4f12b6805a17277d33e73ac030d7aca}{status\_callback};
+619     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}{data\_callback} = 
+      \hyperlink{_t_c_p__test_8c_a36ed22ce4a6bec3fb113a4eaf29df5e1}{data\_callback};
+620     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}{lossy\_data\_callback} = lossy\_data\_callback;
+621 
+622     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a73f125475af5ebdac27d2c2a9060039b}{status\_callback\_object} =
+623         friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a9135a1782241a1b2d5e9bcedef0c29a5}{data\_callback\_object} =
+624             friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a5a1c6eb314a3e3142dd5ae3d3868491b}{lossy\_data\_callback\_object} = 
+      object;
+625 
+626     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a374df80da5cf3057d7c3743afadb2596}{status\_callback\_id} =
+627         friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a51067e0002b1d9ac8e14377917289292}{data\_callback\_id} =
+628             friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[index].\hyperlink{struct_friend___conn_a5c67a04bbd12eda4d5fe29f10d082bec}{lossy\_data\_callback\_id} = number;
+629     \textcolor{keywordflow}{return} 0;
+630 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a15c404d517b4a4fb3976f4d85bfbaef0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a15c404d517b4a4fb3976f4d85bfbaef0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a8586e3dfb2047821c4214adf8d06a877}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id@{friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id}}
+\index{friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id@{friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a8586e3dfb2047821c4214adf8d06a877}
+
+
+Definition at line 637 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, and get\+\_\+conn().
+
+
+
+Referenced by do\+\_\+reqchunk\+\_\+filecb(), file\+\_\+data(), friend\+\_\+received\+\_\+packet(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), m\+\_\+send\+\_\+message\+\_\+generic(), send\+\_\+custom\+\_\+lossless\+\_\+packet(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), send\+\_\+file\+\_\+data\+\_\+packet(), send\+\_\+lossy\+\_\+group\+\_\+peer(), send\+\_\+offline\+\_\+packet(), send\+\_\+online\+\_\+packet(), send\+\_\+packet\+\_\+group\+\_\+peer(), send\+\_\+packet\+\_\+online(), and write\+\_\+cryptpacket\+\_\+id().
+
+
+\begin{DoxyCode}
+638 \{
+639     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+640 
+641     \textcolor{keywordflow}{if} (!friend\_con)
+642         \textcolor{keywordflow}{return} -1;
+643 
+644     \textcolor{keywordflow}{return} friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id};
+645 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a8586e3dfb2047821c4214adf8d06a877_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a8586e3dfb2047821c4214adf8d06a877_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ae9fc0c8cb8838cd5d069e44911c23e63}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+connection\+\_\+lock@{friend\+\_\+connection\+\_\+lock}}
+\index{friend\+\_\+connection\+\_\+lock@{friend\+\_\+connection\+\_\+lock}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+connection\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}int friend\+\_\+connection\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_ae9fc0c8cb8838cd5d069e44911c23e63}
+
+
+Definition at line 546 of file friend\+\_\+connection.\+c.
+
+
+
+References get\+\_\+conn(), and Friend\+\_\+\+Conn\+::lock\+\_\+count.
+
+
+
+Referenced by add\+\_\+conn\+\_\+to\+\_\+groupchat().
+
+
+\begin{DoxyCode}
+547 \{
+548     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+549 
+550     \textcolor{keywordflow}{if} (!friend\_con)
+551         \textcolor{keywordflow}{return} -1;
+552 
+553     ++friend\_con->\hyperlink{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\_count};
+554     \textcolor{keywordflow}{return} 0;
+555 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ae9fc0c8cb8838cd5d069e44911c23e63_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ae9fc0c8cb8838cd5d069e44911c23e63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friend\+\_\+new\+\_\+connection@{friend\+\_\+new\+\_\+connection}}
+\index{friend\+\_\+new\+\_\+connection@{friend\+\_\+new\+\_\+connection}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friend\+\_\+new\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}static int friend\+\_\+new\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5}
+
+
+Definition at line 493 of file friend\+\_\+connection.\+c.
+
+
+
+References connection\+\_\+data\+\_\+handler(), connection\+\_\+lossy\+\_\+data\+\_\+handler(), connection\+\_\+status\+\_\+handler(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, Friend\+\_\+\+Conn\+::dht\+\_\+lock, dht\+\_\+pk\+\_\+callback(), Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, get\+\_\+conn(), handle\+\_\+lossy\+\_\+packet(), handle\+\_\+packet(), handle\+\_\+status(), nc\+\_\+dht\+\_\+pk\+\_\+callback(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, new\+\_\+crypto\+\_\+connection(), and Friend\+\_\+\+Conn\+::real\+\_\+public\+\_\+key.
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), dht\+\_\+pk\+\_\+callback(), and do\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+494 \{
+495     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+496 
+497     \textcolor{keywordflow}{if} (!friend\_con)
+498         \textcolor{keywordflow}{return} -1;
+499 
+500     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} != -1) \{
+501         \textcolor{keywordflow}{return} -1;
+502     \}
+503 
+504     \textcolor{comment}{/* If dht\_temp\_pk does not contains a pk. */}
+505     \textcolor{keywordflow}{if} (!friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) \{
+506         \textcolor{keywordflow}{return} -1;
+507     \}
+508 
+509     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \hyperlink{net__crypto_8c_ae09413aa94644bc88bf73b88f48ef814}{new\_crypto\_connection}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\_public\_key}, friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk});
+510 
+511     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == -1)
+512         \textcolor{keywordflow}{return} -1;
+513 
+514     friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = id;
+515     \hyperlink{net__crypto_8c_af159dc9120b9cd0675a865eabec03a73}{connection\_status\_handler}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{handle\_status}, fr\_c, friendcon\_id);
+516     \hyperlink{net__crypto_8c_afdc8cda0f8580be3a59a4f315c042fb0}{connection\_data\_handler}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904}{handle\_packet}, fr\_c, friendcon\_id);
+517     \hyperlink{net__crypto_8c_a8a587a287b13cce4271a272c71c2b788}{connection\_lossy\_data\_handler}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d}{handle\_lossy\_packet}, fr\_c, friendcon\_id);
+518     \hyperlink{net__crypto_8c_a92ed6dc36b6e6996387b7542fc2580fa}{nc\_dht\_pk\_callback}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{dht\_pk\_callback}, fr\_c, friendcon\_id);
+519 
+520     \textcolor{keywordflow}{return} 0;
+521 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ac2af058fd8684e6abc7b136889f5f4e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!friendconn\+\_\+id\+\_\+not\+\_\+valid@{friendconn\+\_\+id\+\_\+not\+\_\+valid}}
+\index{friendconn\+\_\+id\+\_\+not\+\_\+valid@{friendconn\+\_\+id\+\_\+not\+\_\+valid}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{friendconn\+\_\+id\+\_\+not\+\_\+valid}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\+\_\+t friendconn\+\_\+id\+\_\+not\+\_\+valid (
+\begin{DoxyParamCaption}
+\item[{const {\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e}
+
+
+Definition at line 34 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, Friend\+\_\+\+Connections\+::num\+\_\+cons, and Friend\+\_\+\+Conn\+::status.
+
+
+
+Referenced by get\+\_\+conn(), and wipe\+\_\+friend\+\_\+conn().
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})friendcon\_id >= fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons})
+37         \textcolor{keywordflow}{return} 1;
+38 
+39     \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns} == NULL)
+40         \textcolor{keywordflow}{return} 1;
+41 
+42     \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[friendcon\_id].\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a93ea4a0b69b92435539e13a44bcc910b}{FRIENDCONN\_STATUS\_NONE})
+43         \textcolor{keywordflow}{return} 1;
+44 
+45     \textcolor{keywordflow}{return} 0;
+46 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!get\+\_\+conn@{get\+\_\+conn}}
+\index{get\+\_\+conn@{get\+\_\+conn}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{get\+\_\+conn}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Friend\+\_\+\+Conn}$\ast$ get\+\_\+conn (
+\begin{DoxyParamCaption}
+\item[{const {\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}
+
+
+Definition at line 122 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns, and friendconn\+\_\+id\+\_\+not\+\_\+valid().
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk(), connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), dht\+\_\+ip\+\_\+callback(), dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), friend\+\_\+con\+\_\+connected(), friend\+\_\+connection\+\_\+callbacks(), friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id(), friend\+\_\+connection\+\_\+lock(), friend\+\_\+new\+\_\+connection(), get\+\_\+friendcon\+\_\+public\+\_\+keys(), getfriend\+\_\+conn\+\_\+id\+\_\+pk(), handle\+\_\+lossy\+\_\+packet(), handle\+\_\+new\+\_\+connections(), handle\+\_\+packet(), handle\+\_\+status(), kill\+\_\+friend\+\_\+connection(), send\+\_\+friend\+\_\+request\+\_\+packet(), send\+\_\+ping(), send\+\_\+relays(), and tcp\+\_\+relay\+\_\+node\+\_\+callback().
+
+
+\begin{DoxyCode}
+123 \{
+124     \textcolor{keywordflow}{if} (\hyperlink{friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e}{friendconn\_id\_not\_valid}(fr\_c, friendcon\_id))
+125         \textcolor{keywordflow}{return} 0;
+126 
+127     \textcolor{keywordflow}{return} &fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[friendcon\_id];
+128 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d2/db1/friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d2/db1/friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a4605fa0bd8ff3f9bd217ee6dcadbfe5f}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!get\+\_\+friendcon\+\_\+public\+\_\+keys@{get\+\_\+friendcon\+\_\+public\+\_\+keys}}
+\index{get\+\_\+friendcon\+\_\+public\+\_\+keys@{get\+\_\+friendcon\+\_\+public\+\_\+keys}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{get\+\_\+friendcon\+\_\+public\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+friendcon\+\_\+public\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{real\+\_\+pk, }
+\item[{uint8\+\_\+t $\ast$}]{dht\+\_\+temp\+\_\+pk, }
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a4605fa0bd8ff3f9bd217ee6dcadbfe5f}
+
+
+Definition at line 576 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, get\+\_\+conn(), and Friend\+\_\+\+Conn\+::real\+\_\+public\+\_\+key.
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest(), handle\+\_\+friend\+\_\+invite\+\_\+packet(), and send\+\_\+lossy\+\_\+all\+\_\+close().
+
+
+\begin{DoxyCode}
+577 \{
+578     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+579 
+580     \textcolor{keywordflow}{if} (!friend\_con)
+581         \textcolor{keywordflow}{return} -1;
+582 
+583     \textcolor{keywordflow}{if} (real\_pk)
+584         memcpy(real\_pk, friend\_con->\hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\_public\_key}, crypto\_box\_PUBLICKEYBYTES);
+585 
+586     \textcolor{keywordflow}{if} (dht\_temp\_pk)
+587         memcpy(dht\_temp\_pk, friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, crypto\_box\_PUBLICKEYBYTES);
+588 
+589     \textcolor{keywordflow}{return} 0;
+590 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a4605fa0bd8ff3f9bd217ee6dcadbfe5f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a4605fa0bd8ff3f9bd217ee6dcadbfe5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!getfriend\+\_\+conn\+\_\+id\+\_\+pk@{getfriend\+\_\+conn\+\_\+id\+\_\+pk}}
+\index{getfriend\+\_\+conn\+\_\+id\+\_\+pk@{getfriend\+\_\+conn\+\_\+id\+\_\+pk}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{getfriend\+\_\+conn\+\_\+id\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}int getfriend\+\_\+conn\+\_\+id\+\_\+pk (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{const uint8\+\_\+t $\ast$}]{real\+\_\+pk}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea}
+
+
+Definition at line 133 of file friend\+\_\+connection.\+c.
+
+
+
+References get\+\_\+conn(), i, Friend\+\_\+\+Connections\+::num\+\_\+cons, and Friend\+\_\+\+Conn\+::real\+\_\+public\+\_\+key.
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest(), delpeer(), handle\+\_\+new\+\_\+connections(), and new\+\_\+friend\+\_\+connection().
+
+
+\begin{DoxyCode}
+134 \{
+135     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+136 
+137     \textcolor{keywordflow}{for} (i = 0; i < fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+138         \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, i);
+139 
+140         \textcolor{keywordflow}{if} (friend\_con) \{
+141             \textcolor{keywordflow}{if} (memcmp(friend\_con->\hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\_public\_key}, real\_pk, crypto\_box\_PUBLICKEYBYTES) == 0
+      )
+142                 \textcolor{keywordflow}{return} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+143         \}
+144     \}
+145 
+146     \textcolor{keywordflow}{return} -1;
+147 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!handle\+\_\+lossy\+\_\+packet@{handle\+\_\+lossy\+\_\+packet}}
+\index{handle\+\_\+lossy\+\_\+packet@{handle\+\_\+lossy\+\_\+packet}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{handle\+\_\+lossy\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}static int handle\+\_\+lossy\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{number, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d}
+
+
+Definition at line 426 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::callbacks, get\+\_\+conn(), i, Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback, Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback\+\_\+id, Friend\+\_\+\+Conn\+::lossy\+\_\+data\+\_\+callback\+\_\+object, and M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S.
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+427 \{
+428     \textcolor{keywordflow}{if} (length == 0)
+429         \textcolor{keywordflow}{return} -1;
+430 
+431     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+432     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+433 
+434     \textcolor{keywordflow}{if} (!friend\_con)
+435         \textcolor{keywordflow}{return} -1;
+436 
+437     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+438 
+439     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friend__connection_8h_a28f384352cf0b5c144fdafb826701811}{MAX\_FRIEND\_CONNECTION\_CALLBACKS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+440         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}{lossy\_data\_callback})
+441             friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}{lossy\_data\_callback}(friend\_con->
+      \hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a5a1c6eb314a3e3142dd5ae3d3868491b}{lossy\_data\_callback\_object},
+442                     friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a5c67a04bbd12eda4d5fe29f10d082bec}{lossy\_data\_callback\_id}, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+443 
+444         friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+445 
+446         \textcolor{keywordflow}{if} (!friend\_con)
+447             \textcolor{keywordflow}{return} -1;
+448     \}
+449 
+450     \textcolor{keywordflow}{return} 0;
+451 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!handle\+\_\+new\+\_\+connections@{handle\+\_\+new\+\_\+connections}}
+\index{handle\+\_\+new\+\_\+connections@{handle\+\_\+new\+\_\+connections}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{handle\+\_\+new\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}static int handle\+\_\+new\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{{\bf New\+\_\+\+Connection} $\ast$}]{n\+\_\+c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c}
+
+
+Definition at line 453 of file friend\+\_\+connection.\+c.
+
+
+
+References accept\+\_\+crypto\+\_\+connection(), change\+\_\+dht\+\_\+pk(), connection\+\_\+data\+\_\+handler(), connection\+\_\+lossy\+\_\+data\+\_\+handler(), connection\+\_\+status\+\_\+handler(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port, Friend\+\_\+\+Conn\+::dht\+\_\+ip\+\_\+port\+\_\+lastrecv, dht\+\_\+pk\+\_\+callback(), New\+\_\+\+Connection\+::dht\+\_\+public\+\_\+key, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, I\+P\+::family, get\+\_\+conn(), getfriend\+\_\+conn\+\_\+id\+\_\+pk(), handle\+\_\+lossy\+\_\+packet(), handle\+\_\+packet(), handle\+\_\+status(), I\+P\+\_\+\+Port\+::ip, nc\+\_\+dht\+\_\+pk\+\_\+callback(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, New\+\_\+\+Connection\+::public\+\_\+key, set\+\_\+direct\+\_\+ip\+\_\+port(), New\+\_\+\+Connection\+::source, and unix\+\_\+time().
+
+
+
+Referenced by new\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+454 \{
+455     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+456     \textcolor{keywordtype}{int} friendcon\_id = \hyperlink{friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea}{getfriend\_conn\_id\_pk}(fr\_c, n\_c->
+      \hyperlink{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key});
+457     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+458 
+459     \textcolor{keywordflow}{if} (friend\_con) \{
+460 
+461         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} != -1)
+462             \textcolor{keywordflow}{return} -1;
+463 
+464         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \hyperlink{net__crypto_8c_ab11f6e96035c3717a21b809d5373f96f}{accept\_crypto\_connection}(fr\_c->
+      \hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, n\_c);
+465 
+466         \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == -1) \{
+467             \textcolor{keywordflow}{return} -1;
+468         \}
+469 
+470         \hyperlink{net__crypto_8c_af159dc9120b9cd0675a865eabec03a73}{connection\_status\_handler}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{handle\_status}, fr\_c, friendcon\_id);
+471         \hyperlink{net__crypto_8c_afdc8cda0f8580be3a59a4f315c042fb0}{connection\_data\_handler}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904}{handle\_packet}, fr\_c, friendcon\_id);
+472         \hyperlink{net__crypto_8c_a8a587a287b13cce4271a272c71c2b788}{connection\_lossy\_data\_handler}(fr\_c->
+      \hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &\hyperlink{friend__connection_8c_aa2a42fa8ee3b4cf0bb4c03ac54673e1d}{handle\_lossy\_packet}, fr\_c, friendcon\_id);
+473         friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = id;
+474 
+475         \textcolor{keywordflow}{if} (n\_c->\hyperlink{struct_new___connection_afffde330c649378add9a507c9c151586}{source}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET && n\_c->\hyperlink{struct_new___connection_afffde330c649378add9a507c9c151586}{source}.
+      \hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET6) \{
+476             \hyperlink{net__crypto_8c_a8ced4e168a95db5708bf4b3095cb4df6}{set\_direct\_ip\_port}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port}, 0);
+477         \} \textcolor{keywordflow}{else} \{
+478             friend\_con->\hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\_ip\_port} = n\_c->\hyperlink{struct_new___connection_afffde330c649378add9a507c9c151586}{source};
+479             friend\_con->\hyperlink{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{dht\_ip\_port\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+480         \}
+481 
+482         \textcolor{keywordflow}{if} (memcmp(friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, n\_c->\hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, 
+      crypto\_box\_PUBLICKEYBYTES) != 0) \{
+483             \hyperlink{friend__connection_8c_aa293768f213199a635ce0b4a94489cdf}{change\_dht\_pk}(fr\_c, friendcon\_id, n\_c->\hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key});
+484         \}
+485 
+486         \hyperlink{net__crypto_8c_a92ed6dc36b6e6996387b7542fc2580fa}{nc\_dht\_pk\_callback}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, \textcolor{keywordtype}{id}, &
+      \hyperlink{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{dht\_pk\_callback}, fr\_c, friendcon\_id);
+487         \textcolor{keywordflow}{return} 0;
+488     \}
+489 
+490     \textcolor{keywordflow}{return} -1;
+491 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!handle\+\_\+packet@{handle\+\_\+packet}}
+\index{handle\+\_\+packet@{handle\+\_\+packet}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{handle\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}static int handle\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{number, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904}
+
+
+Definition at line 375 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::callbacks, Friend\+\_\+\+Conn\+::data\+\_\+callback, Friend\+\_\+\+Conn\+::data\+\_\+callback\+\_\+id, Friend\+\_\+\+Conn\+::data\+\_\+callback\+\_\+object, Friend\+\_\+\+Connections\+::fr\+\_\+request\+\_\+callback, Friend\+\_\+\+Connections\+::fr\+\_\+request\+\_\+object, friend\+\_\+add\+\_\+tcp\+\_\+relay(), get\+\_\+conn(), i, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S, M\+A\+X\+\_\+\+S\+H\+A\+R\+E\+D\+\_\+\+R\+E\+L\+A\+Y\+S, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+L\+I\+V\+E, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+S, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+S\+H\+A\+R\+E\+\_\+\+R\+E\+L\+A\+Y\+S, Friend\+\_\+\+Conn\+::ping\+\_\+lastrecv, make-\/funny-\/savefile\+::public\+\_\+key, Friend\+\_\+\+Conn\+::real\+\_\+public\+\_\+key, unix\+\_\+time(), and unpack\+\_\+nodes().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+376 \{
+377     \textcolor{keywordflow}{if} (length == 0)
+378         \textcolor{keywordflow}{return} -1;
+379 
+380     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+381     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+382 
+383     \textcolor{keywordflow}{if} (!friend\_con)
+384         \textcolor{keywordflow}{return} -1;
+385 
+386     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] == \hyperlink{friend__connection_8h_ac63465b658c6d3b4ac5c6a543cd0728a}{PACKET\_ID\_FRIEND\_REQUESTS}) \{
+387         \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}{fr\_request\_callback})
+388             fr\_c->\hyperlink{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}{fr\_request\_callback}(fr\_c->\hyperlink{struct_friend___connections_abd31f2a386ec582b378de4fc3f05ea6c}{fr\_request\_object}, 
+      friend\_con->\hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\_public\_key}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+389 
+390         \textcolor{keywordflow}{return} 0;
+391     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] == \hyperlink{friend__connection_8h_a8302037b6dec7ebbc22f4f2aab6d3d83}{PACKET\_ID\_ALIVE}) \{
+392         friend\_con->\hyperlink{struct_friend___conn_a5130c3c4a93050475770184608d61918}{ping\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+393         \textcolor{keywordflow}{return} 0;
+394     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] == \hyperlink{friend__connection_8h_a8fd0b06a9d90811816572d8ec96d1b8a}{PACKET\_ID\_SHARE\_RELAYS}) \{
+395         \hyperlink{struct_node__format}{Node\_format} nodes[\hyperlink{friend__connection_8h_aa8e1a5d456629869bec9ec62761f3df3}{MAX\_SHARED\_RELAYS}];
+396         \textcolor{keywordtype}{int} n;
+397 
+398         \textcolor{keywordflow}{if} ((n = \hyperlink{_d_h_t_8c_a45b33af842c0289c78c70f81e854ed62}{unpack\_nodes}(nodes, \hyperlink{friend__connection_8h_aa8e1a5d456629869bec9ec62761f3df3}{MAX\_SHARED\_RELAYS}, NULL, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data} + 1, length - 1, 1)) == -1)
+399             \textcolor{keywordflow}{return} -1;
+400 
+401         \textcolor{keywordtype}{int} j;
+402 
+403         \textcolor{keywordflow}{for} (j = 0; j < n; j++) \{
+404             \hyperlink{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{friend\_add\_tcp\_relay}(fr\_c, number, nodes[j].ip\_port, nodes[j].
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+405         \}
+406 
+407         \textcolor{keywordflow}{return} 0;
+408     \}
+409 
+410     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+411 
+412     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friend__connection_8h_a28f384352cf0b5c144fdafb826701811}{MAX\_FRIEND\_CONNECTION\_CALLBACKS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+413         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}{data\_callback})
+414             friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}{data\_callback}(friend\_con->
+      \hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a9135a1782241a1b2d5e9bcedef0c29a5}{data\_callback\_object},
+415                                                    friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].
+      \hyperlink{struct_friend___conn_a51067e0002b1d9ac8e14377917289292}{data\_callback\_id}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+416 
+417         friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+418 
+419         \textcolor{keywordflow}{if} (!friend\_con)
+420             \textcolor{keywordflow}{return} -1;
+421     \}
+422 
+423     \textcolor{keywordflow}{return} 0;
+424 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a5f8ad19d23bf2ff57659934d2c2eb904_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!handle\+\_\+status@{handle\+\_\+status}}
+\index{handle\+\_\+status@{handle\+\_\+status}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{handle\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}static int handle\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{int}]{number, }
+\item[{uint8\+\_\+t}]{status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f}
+
+
+Definition at line 309 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::callbacks, Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, Friend\+\_\+\+Conn\+::dht\+\_\+pk\+\_\+lastrecv, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, get\+\_\+conn(), Friend\+\_\+\+Conn\+::hosting\+\_\+tcp\+\_\+relay, i, M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S, Friend\+\_\+\+Connections\+::onion\+\_\+c, Friend\+\_\+\+Conn\+::onion\+\_\+friendnum, onion\+\_\+set\+\_\+friend\+\_\+online(), Friend\+\_\+\+Conn\+::ping\+\_\+lastrecv, Friend\+\_\+\+Conn\+::share\+\_\+relays\+\_\+lastsent, Friend\+\_\+\+Conn\+::status, Friend\+\_\+\+Conn\+::status\+\_\+callback, Friend\+\_\+\+Conn\+::status\+\_\+callback\+\_\+id, Friend\+\_\+\+Conn\+::status\+\_\+callback\+\_\+object, and unix\+\_\+time().
+
+
+
+Referenced by dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+310 \{
+311     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+312     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+313 
+314     \textcolor{keywordflow}{if} (!friend\_con)
+315         \textcolor{keywordflow}{return} -1;
+316 
+317     \_Bool call\_cb = 0;
+318 
+319     \textcolor{keywordflow}{if} (status) \{  \textcolor{comment}{/* Went online. */}
+320         call\_cb = 1;
+321         friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5ad8c8e0080a23ea8dc2a883e4321f0598}{FRIENDCONN\_STATUS\_CONNECTED};
+322         friend\_con->\hyperlink{struct_friend___conn_a5130c3c4a93050475770184608d61918}{ping\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+323         friend\_con->\hyperlink{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{share\_relays\_lastsent} = 0;
+324         \hyperlink{onion__client_8c_a8b91a1e598508b83e0408fc65316ae73}{onion\_set\_friend\_online}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, friend\_con->
+      \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum}, status);
+325     \} \textcolor{keywordflow}{else} \{  \textcolor{comment}{/* Went offline. */}
+326         \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a0ad1ac040d579509cc0a3f1df0ab38ad}{FRIENDCONN\_STATUS\_CONNECTING}) \{
+327             call\_cb = 1;
+328             friend\_con->\hyperlink{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{dht\_pk\_lastrecv} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+329             \hyperlink{onion__client_8c_a8b91a1e598508b83e0408fc65316ae73}{onion\_set\_friend\_online}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, friend\_con->
+      \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum}, status);
+330         \}
+331 
+332         friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a0ad1ac040d579509cc0a3f1df0ab38ad}{FRIENDCONN\_STATUS\_CONNECTING};
+333         friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = -1;
+334         friend\_con->\hyperlink{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{hosting\_tcp\_relay} = 0;
+335     \}
+336 
+337     \textcolor{keywordflow}{if} (call\_cb) \{
+338         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+339 
+340         \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friend__connection_8h_a28f384352cf0b5c144fdafb826701811}{MAX\_FRIEND\_CONNECTION\_CALLBACKS}; ++
+      \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+341             \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}{status\_callback})
+342                 friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}{status\_callback}(friend\_con->
+      \hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a73f125475af5ebdac27d2c2a9060039b}{status\_callback\_object},
+343                         friend\_con->\hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks}[i].\hyperlink{struct_friend___conn_a374df80da5cf3057d7c3743afadb2596}{status\_callback\_id}, status);
+344         \}
+345     \}
+346 
+347     \textcolor{keywordflow}{return} 0;
+348 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_abf73eaa3805a863ab454fb4afe0fb49f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!kill\+\_\+friend\+\_\+connection@{kill\+\_\+friend\+\_\+connection}}
+\index{kill\+\_\+friend\+\_\+connection@{kill\+\_\+friend\+\_\+connection}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{kill\+\_\+friend\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int kill\+\_\+friend\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a}
+
+
+Definition at line 690 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, crypto\+\_\+kill(), Friend\+\_\+\+Connections\+::dht, D\+H\+T\+\_\+delfriend(), Friend\+\_\+\+Conn\+::dht\+\_\+lock, Friend\+\_\+\+Conn\+::dht\+\_\+temp\+\_\+pk, get\+\_\+conn(), Friend\+\_\+\+Conn\+::lock\+\_\+count, Friend\+\_\+\+Connections\+::net\+\_\+crypto, Friend\+\_\+\+Connections\+::onion\+\_\+c, onion\+\_\+delfriend(), Friend\+\_\+\+Conn\+::onion\+\_\+friendnum, and wipe\+\_\+friend\+\_\+conn().
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest(), del\+\_\+groupchat(), handle\+\_\+direct\+\_\+packet(), handle\+\_\+packet\+\_\+online(), kill\+\_\+friend\+\_\+connections(), m\+\_\+delfriend(), and remove\+\_\+close\+\_\+conn().
+
+
+\begin{DoxyCode}
+691 \{
+692     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+693 
+694     \textcolor{keywordflow}{if} (!friend\_con)
+695         \textcolor{keywordflow}{return} -1;
+696 
+697     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\_count}) \{
+698         --friend\_con->\hyperlink{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\_count};
+699         \textcolor{keywordflow}{return} 0;
+700     \}
+701 
+702     \hyperlink{onion__client_8c_a986bc935dff33db8070c431fcd2363eb}{onion\_delfriend}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, friend\_con->
+      \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum});
+703     \hyperlink{net__crypto_8c_a16c3a0008512675dad8eb00ff1822763}{crypto\_kill}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id});
+704 
+705     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock}) \{
+706         \hyperlink{_d_h_t_8c_a4e70f3fc186c6e459908307c935d00b2}{DHT\_delfriend}(fr\_c->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht}, friend\_con->\hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\_temp\_pk}, friend\_con->
+      \hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\_lock});
+707     \}
+708 
+709     \textcolor{keywordflow}{return} \hyperlink{friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080}{wipe\_friend\_conn}(fr\_c, friendcon\_id);
+710 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a2ef8cdbd93f21f11ff0333a9527c2c02}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!kill\+\_\+friend\+\_\+connections@{kill\+\_\+friend\+\_\+connections}}
+\index{kill\+\_\+friend\+\_\+connections@{kill\+\_\+friend\+\_\+connections}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{kill\+\_\+friend\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+friend\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a2ef8cdbd93f21f11ff0333a9527c2c02}
+
+
+Definition at line 842 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::dht, i, kill\+\_\+friend\+\_\+connection(), L\+A\+Ndiscovery\+\_\+kill(), and Friend\+\_\+\+Connections\+::num\+\_\+cons.
+
+
+
+Referenced by kill\+\_\+messenger(), and new\+\_\+messenger().
+
+
+\begin{DoxyCode}
+843 \{
+844     \textcolor{keywordflow}{if} (!fr\_c)
+845         \textcolor{keywordflow}{return};
+846 
+847     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+848 
+849     \textcolor{keywordflow}{for} (i = 0; i < fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+850         \hyperlink{friend__connection_8c_a5f311791c0ec4ecd8fdf5359cf7fb95a}{kill\_friend\_connection}(fr\_c, i);
+851     \}
+852 
+853     \hyperlink{_l_a_n__discovery_8c_af2a395c13cd4dff580e3638f41ef02d0}{LANdiscovery\_kill}(fr\_c->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+854     free(fr\_c);
+855 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a2ef8cdbd93f21f11ff0333a9527c2c02_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a2ef8cdbd93f21f11ff0333a9527c2c02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!L\+A\+Ndiscovery@{L\+A\+Ndiscovery}}
+\index{L\+A\+Ndiscovery@{L\+A\+Ndiscovery}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{L\+A\+Ndiscovery}]{\setlength{\rightskip}{0pt plus 5cm}static void L\+A\+Ndiscovery (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc}
+
+
+Definition at line 782 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::dht, L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L, Friend\+\_\+\+Connections\+::last\+\_\+\+L\+A\+Ndiscovery, send\+\_\+\+L\+A\+Ndiscovery(), T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T, and unix\+\_\+time().
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+783 \{
+784     \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a4f77ba6531c78b4f6a2a46843d06cc26}{last\_LANdiscovery} + \hyperlink{_l_a_n__discovery_8h_a603390b71ba701f06b39520052b813c4}{LAN\_DISCOVERY\_INTERVAL} < 
+      \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}()) \{
+785         \hyperlink{_l_a_n__discovery_8c_a929a14971d13e5aad2661e834e406391}{send\_LANdiscovery}(htons(\hyperlink{network_8h_a8b04a22d2b5effdb46dda741f490951e}{TOX\_PORT\_DEFAULT}), fr\_c->
+      \hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+786         fr\_c->\hyperlink{struct_friend___connections_a4f77ba6531c78b4f6a2a46843d06cc26}{last\_LANdiscovery} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+787     \}
+788 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_adfc6df8fda15c84a4c49468d1d2fc3fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a613a80a004fccd616de2a67d84a25d3c}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!new\+\_\+friend\+\_\+connection@{new\+\_\+friend\+\_\+connection}}
+\index{new\+\_\+friend\+\_\+connection@{new\+\_\+friend\+\_\+connection}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{new\+\_\+friend\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int new\+\_\+friend\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{const uint8\+\_\+t $\ast$}]{real\+\_\+public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a613a80a004fccd616de2a67d84a25d3c}
+
+
+Definition at line 653 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns, create\+\_\+friend\+\_\+conn(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, dht\+\_\+pk\+\_\+callback(), F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+N\+G, getfriend\+\_\+conn\+\_\+id\+\_\+pk(), Friend\+\_\+\+Conn\+::lock\+\_\+count, onion\+\_\+addfriend(), Friend\+\_\+\+Connections\+::onion\+\_\+c, onion\+\_\+dht\+\_\+pk\+\_\+callback(), Friend\+\_\+\+Conn\+::onion\+\_\+friendnum, Friend\+\_\+\+Conn\+::real\+\_\+public\+\_\+key, recv\+\_\+tcp\+\_\+relay\+\_\+handler(), Friend\+\_\+\+Conn\+::status, and tcp\+\_\+relay\+\_\+node\+\_\+callback().
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest(), and init\+\_\+new\+\_\+friend().
+
+
+\begin{DoxyCode}
+654 \{
+655     \textcolor{keywordtype}{int} friendcon\_id = \hyperlink{friend__connection_8c_a97c5d86b2475e17f2cda62ad13df1bea}{getfriend\_conn\_id\_pk}(fr\_c, real\_public\_key);
+656 
+657     \textcolor{keywordflow}{if} (friendcon\_id != -1) \{
+658         ++fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[friendcon\_id].\hyperlink{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\_count};
+659         \textcolor{keywordflow}{return} friendcon\_id;
+660     \}
+661 
+662     friendcon\_id = \hyperlink{friend__connection_8c_ad22b76facda79873a4cde9562c8cd663}{create\_friend\_conn}(fr\_c);
+663 
+664     \textcolor{keywordflow}{if} (friendcon\_id == -1)
+665         \textcolor{keywordflow}{return} -1;
+666 
+667     int32\_t onion\_friendnum = \hyperlink{onion__client_8c_a4dd8a80061f115daba3ffb2a3f611b38}{onion\_addfriend}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, real\_public\_key);
+668 
+669     \textcolor{keywordflow}{if} (onion\_friendnum == -1)
+670         \textcolor{keywordflow}{return} -1;
+671 
+672     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = &fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[friendcon\_id];
+673 
+674     friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} = -1;
+675     friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a0ad1ac040d579509cc0a3f1df0ab38ad}{FRIENDCONN\_STATUS\_CONNECTING};
+676     memcpy(friend\_con->\hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\_public\_key}, real\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+677     friend\_con->\hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum} = onion\_friendnum;
+678 
+679     \hyperlink{onion__client_8c_a7bb680d62616d0dfbb6f7d2ff097107c}{recv\_tcp\_relay\_handler}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, onion\_friendnum, &
+      \hyperlink{friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07}{tcp\_relay\_node\_callback}, fr\_c, friendcon\_id);
+680     \hyperlink{onion__client_8c_a08895281211a01749ee466338fedbeec}{onion\_dht\_pk\_callback}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, onion\_friendnum, &
+      \hyperlink{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{dht\_pk\_callback}, fr\_c, friendcon\_id);
+681 
+682     \textcolor{keywordflow}{return} friendcon\_id;
+683 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a613a80a004fccd616de2a67d84a25d3c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a613a80a004fccd616de2a67d84a25d3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a319bec2419cf5fc5525af4fae03b86ef}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!new\+\_\+friend\+\_\+connections@{new\+\_\+friend\+\_\+connections}}
+\index{new\+\_\+friend\+\_\+connections@{new\+\_\+friend\+\_\+connections}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{new\+\_\+friend\+\_\+connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Friend\+\_\+\+Connections}$\ast$ new\+\_\+friend\+\_\+connections (
+\begin{DoxyParamCaption}
+\item[{{\bf Onion\+\_\+\+Client} $\ast$}]{onion\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a319bec2419cf5fc5525af4fae03b86ef}
+
+
+Definition at line 761 of file friend\+\_\+connection.\+c.
+
+
+
+References Onion\+\_\+\+Client\+::c, Friend\+\_\+\+Connections\+::dht, Onion\+\_\+\+Client\+::dht, handle\+\_\+new\+\_\+connections(), L\+A\+Ndiscovery\+\_\+init(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, new\+\_\+connection\+\_\+handler(), and Friend\+\_\+\+Connections\+::onion\+\_\+c.
+
+
+
+Referenced by new\+\_\+messenger().
+
+
+\begin{DoxyCode}
+762 \{
+763     \textcolor{keywordflow}{if} (!onion\_c)
+764         \textcolor{keywordflow}{return} NULL;
+765 
+766     \hyperlink{struct_friend___connections}{Friend\_Connections} *temp = calloc(1, \textcolor{keyword}{sizeof}(
+      \hyperlink{struct_friend___connections}{Friend\_Connections}));
+767 
+768     \textcolor{keywordflow}{if} (temp == NULL)
+769         \textcolor{keywordflow}{return} NULL;
+770 
+771     temp->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht} = onion\_c->\hyperlink{struct_onion___client_a8b3d6ce8745acc52695e252bdb1531b6}{dht};
+772     temp->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto} = onion\_c->\hyperlink{struct_onion___client_a0f5b9349eb586149cef9017eed2abdfe}{c};
+773     temp->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c} = onion\_c;
+774 
+775     \hyperlink{net__crypto_8c_adaa8cd47d0ede85ca13626e91d2e995d}{new\_connection\_handler}(temp->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, &
+      \hyperlink{friend__connection_8c_ad12421e11a4e0a8ca7223e0d715d2b0c}{handle\_new\_connections}, temp);
+776     \hyperlink{_l_a_n__discovery_8c_ab5177e8d5fc82b7c156f777f13649912}{LANdiscovery\_init}(temp->\hyperlink{struct_friend___connections_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+777 
+778     \textcolor{keywordflow}{return} temp;
+779 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a319bec2419cf5fc5525af4fae03b86ef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a319bec2419cf5fc5525af4fae03b86ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a7560121d48da253e4b63df88bfc47e55}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!realloc\+\_\+friendconns@{realloc\+\_\+friendconns}}
+\index{realloc\+\_\+friendconns@{realloc\+\_\+friendconns}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{realloc\+\_\+friendconns}]{\setlength{\rightskip}{0pt plus 5cm}static int realloc\+\_\+friendconns (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a7560121d48da253e4b63df88bfc47e55}
+
+
+Definition at line 54 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns.
+
+
+
+Referenced by create\+\_\+friend\+\_\+conn(), and wipe\+\_\+friend\+\_\+conn().
+
+
+\begin{DoxyCode}
+55 \{
+56     \textcolor{keywordflow}{if} (\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} == 0) \{
+57         free(fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns});
+58         fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns} = NULL;
+59         \textcolor{keywordflow}{return} 0;
+60     \}
+61 
+62     \hyperlink{struct_friend___conn}{Friend\_Conn} *newgroup\_cons = realloc(fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}, \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} * \textcolor{keyword}{sizeof}(
+      \hyperlink{struct_friend___conn}{Friend\_Conn}));
+63 
+64     \textcolor{keywordflow}{if} (newgroup\_cons == NULL)
+65         \textcolor{keywordflow}{return} -1;
+66 
+67     fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns} = newgroup\_cons;
+68     \textcolor{keywordflow}{return} 0;
+69 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a7560121d48da253e4b63df88bfc47e55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a2af492c22c086276ed147d0826839d25}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!send\+\_\+friend\+\_\+request\+\_\+packet@{send\+\_\+friend\+\_\+request\+\_\+packet}}
+\index{send\+\_\+friend\+\_\+request\+\_\+packet@{send\+\_\+friend\+\_\+request\+\_\+packet}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{send\+\_\+friend\+\_\+request\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+friend\+\_\+request\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{uint32\+\_\+t}]{nospam\+\_\+num, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a2af492c22c086276ed147d0826839d25}
+
+
+Definition at line 731 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q, F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D, get\+\_\+conn(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, num, Friend\+\_\+\+Connections\+::onion\+\_\+c, O\+N\+I\+O\+N\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E, Friend\+\_\+\+Conn\+::onion\+\_\+friendnum, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+S, send\+\_\+onion\+\_\+data(), Friend\+\_\+\+Conn\+::status, and write\+\_\+cryptpacket().
+
+
+
+Referenced by do\+\_\+friends().
+
+
+\begin{DoxyCode}
+733 \{
+734     \textcolor{keywordflow}{if} (1 + \textcolor{keyword}{sizeof}(nospam\_num) + length > \hyperlink{onion__client_8h_ac85db1e76117776faac7e5c454808bbd}{ONION\_CLIENT\_MAX\_DATA\_SIZE} || length ==
+       0)
+735         \textcolor{keywordflow}{return} -1;
+736 
+737     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+738 
+739     \textcolor{keywordflow}{if} (!friend\_con)
+740         \textcolor{keywordflow}{return} -1;
+741 
+742     uint8\_t packet[1 + \textcolor{keyword}{sizeof}(nospam\_num) + length];
+743     memcpy(packet + 1, &nospam\_num, \textcolor{keyword}{sizeof}(nospam\_num));
+744     memcpy(packet + 1 + \textcolor{keyword}{sizeof}(nospam\_num), \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+745 
+746     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5ad8c8e0080a23ea8dc2a883e4321f0598}{FRIENDCONN\_STATUS\_CONNECTED}) \{
+747         packet[0] = \hyperlink{friend__connection_8h_ac63465b658c6d3b4ac5c6a543cd0728a}{PACKET\_ID\_FRIEND\_REQUESTS};
+748         \textcolor{keywordflow}{return} \hyperlink{net__crypto_8c_ab17ccce6d503f75b7d98be214ebd7621}{write\_cryptpacket}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, packet, \textcolor{keyword}{sizeof}(packet), 0) != -1;
+749     \} \textcolor{keywordflow}{else} \{
+750         packet[0] = \hyperlink{crypto__core_8h_ae5cf60e6c6a34326d0d7ac15df18ba25}{CRYPTO\_PACKET\_FRIEND\_REQ};
+751         \textcolor{keywordtype}{int} \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = \hyperlink{onion__client_8c_aa1be42b5ea93bd068f47271831157927}{send\_onion\_data}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, friend\_con->
+      \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\_friendnum}, packet, \textcolor{keyword}{sizeof}(packet));
+752 
+753         \textcolor{keywordflow}{if} (num <= 0)
+754             \textcolor{keywordflow}{return} -1;
+755 
+756         \textcolor{keywordflow}{return} \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num};
+757     \}
+758 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a2af492c22c086276ed147d0826839d25_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a2af492c22c086276ed147d0826839d25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!send\+\_\+ping@{send\+\_\+ping}}
+\index{send\+\_\+ping@{send\+\_\+ping}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{send\+\_\+ping}]{\setlength{\rightskip}{0pt plus 5cm}static int send\+\_\+ping (
+\begin{DoxyParamCaption}
+\item[{const {\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2}
+
+
+Definition at line 523 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, get\+\_\+conn(), Friend\+\_\+\+Connections\+::net\+\_\+crypto, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+L\+I\+V\+E, Friend\+\_\+\+Conn\+::ping\+\_\+lastsent, unix\+\_\+time(), and write\+\_\+cryptpacket().
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+524 \{
+525     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+526 
+527     \textcolor{keywordflow}{if} (!friend\_con)
+528         \textcolor{keywordflow}{return} -1;
+529 
+530     uint8\_t ping = \hyperlink{friend__connection_8h_a8302037b6dec7ebbc22f4f2aab6d3d83}{PACKET\_ID\_ALIVE};
+531     int64\_t ret = \hyperlink{net__crypto_8c_ab17ccce6d503f75b7d98be214ebd7621}{write\_cryptpacket}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, &ping, \textcolor{keyword}{sizeof}(ping), 0);
+532 
+533     \textcolor{keywordflow}{if} (ret != -1) \{
+534         friend\_con->\hyperlink{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}{ping\_lastsent} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+535         \textcolor{keywordflow}{return} 0;
+536     \}
+537 
+538     \textcolor{keywordflow}{return} -1;
+539 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a8896f283aafad13adc5b68311cf24cd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a6e0e582317de001468faab8240bd2b5c}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!send\+\_\+relays@{send\+\_\+relays}}
+\index{send\+\_\+relays@{send\+\_\+relays}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{send\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned int send\+\_\+relays (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a6e0e582317de001468faab8240bd2b5c}
+
+
+Definition at line 210 of file friend\+\_\+connection.\+c.
+
+
+
+References copy\+\_\+connected\+\_\+tcp\+\_\+relays(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, make-\/funny-\/savefile\+::data, friend\+\_\+add\+\_\+tcp\+\_\+relay(), get\+\_\+conn(), i, M\+A\+X\+\_\+\+S\+H\+A\+R\+E\+D\+\_\+\+R\+E\+L\+A\+Y\+S, Friend\+\_\+\+Connections\+::net\+\_\+crypto, pack\+\_\+nodes(), P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+S\+H\+A\+R\+E\+\_\+\+R\+E\+L\+A\+Y\+S, make-\/funny-\/savefile\+::public\+\_\+key, Friend\+\_\+\+Conn\+::share\+\_\+relays\+\_\+lastsent, unix\+\_\+time(), and write\+\_\+cryptpacket().
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+211 \{
+212     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, friendcon\_id);
+213 
+214     \textcolor{keywordflow}{if} (!friend\_con)
+215         \textcolor{keywordflow}{return} 0;
+216 
+217     \hyperlink{struct_node__format}{Node\_format} nodes[\hyperlink{friend__connection_8h_aa8e1a5d456629869bec9ec62761f3df3}{MAX\_SHARED\_RELAYS}];
+218     uint8\_t \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[1024];
+219     \textcolor{keywordtype}{int} n, length;
+220 
+221     n = \hyperlink{net__crypto_8c_ac398e442ae77ace2af0156b9ce7f604c}{copy\_connected\_tcp\_relays}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, nodes, 
+      \hyperlink{friend__connection_8h_aa8e1a5d456629869bec9ec62761f3df3}{MAX\_SHARED\_RELAYS});
+222 
+223     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+224 
+225     \textcolor{keywordflow}{for} (i = 0; i < n; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+226         \textcolor{comment}{/* Associated the relays being sent with this connection.}
+227 \textcolor{comment}{           On receiving the peer will do the same which will establish the connection. */}
+228         \hyperlink{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{friend\_add\_tcp\_relay}(fr\_c, friendcon\_id, nodes[i].ip\_port, nodes[i].
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+229     \}
+230 
+231     length = \hyperlink{_d_h_t_8c_a1d6f2fcb008c989f333ae89e840f94b4}{pack\_nodes}(data + 1, \textcolor{keyword}{sizeof}(data) - 1, nodes, n);
+232 
+233     \textcolor{keywordflow}{if} (length <= 0)
+234         \textcolor{keywordflow}{return} 0;
+235 
+236     data[0] = \hyperlink{friend__connection_8h_a8fd0b06a9d90811816572d8ec96d1b8a}{PACKET\_ID\_SHARE\_RELAYS};
+237     ++length;
+238 
+239     \textcolor{keywordflow}{if} (\hyperlink{net__crypto_8c_ab17ccce6d503f75b7d98be214ebd7621}{write\_cryptpacket}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, friend\_con->
+      \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id}, data, length, 0) != -1) \{
+240         friend\_con->\hyperlink{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{share\_relays\_lastsent} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+241         \textcolor{keywordflow}{return} 1;
+242     \}
+243 
+244     \textcolor{keywordflow}{return} 0;
+245 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a6e0e582317de001468faab8240bd2b5c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a6e0e582317de001468faab8240bd2b5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a04fb221a2ac726ec3ca86be7b1e63238}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!set\+\_\+dht\+\_\+temp\+\_\+pk@{set\+\_\+dht\+\_\+temp\+\_\+pk}}
+\index{set\+\_\+dht\+\_\+temp\+\_\+pk@{set\+\_\+dht\+\_\+temp\+\_\+pk}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{set\+\_\+dht\+\_\+temp\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+dht\+\_\+temp\+\_\+pk (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{dht\+\_\+temp\+\_\+pk}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_a04fb221a2ac726ec3ca86be7b1e63238}
+
+
+Definition at line 594 of file friend\+\_\+connection.\+c.
+
+
+
+References dht\+\_\+pk\+\_\+callback().
+
+
+
+Referenced by connect\+\_\+to\+\_\+closest().
+
+
+\begin{DoxyCode}
+595 \{
+596     \hyperlink{friend__connection_8c_a53d1bd9e6126683e05e0e14cc70d1a8a}{dht\_pk\_callback}(fr\_c, friendcon\_id, dht\_temp\_pk);
+597 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a04fb221a2ac726ec3ca86be7b1e63238_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a04fb221a2ac726ec3ca86be7b1e63238_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_ab3249bbbafb0a8be7d181e3bc6f9563f}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!set\+\_\+friend\+\_\+request\+\_\+callback@{set\+\_\+friend\+\_\+request\+\_\+callback}}
+\index{set\+\_\+friend\+\_\+request\+\_\+callback@{set\+\_\+friend\+\_\+request\+\_\+callback}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{set\+\_\+friend\+\_\+request\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+friend\+\_\+request\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int($\ast$)(void $\ast$, const uint8\+\_\+t $\ast$, const uint8\+\_\+t $\ast$, uint16\+\_\+t)}]{fr\+\_\+request\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{friend__connection_8c_ab3249bbbafb0a8be7d181e3bc6f9563f}
+
+
+Definition at line 717 of file friend\+\_\+connection.\+c.
+
+
+
+References C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+R\+E\+Q, Friend\+\_\+\+Connections\+::fr\+\_\+request\+\_\+callback, Friend\+\_\+\+Connections\+::fr\+\_\+request\+\_\+object, Friend\+\_\+\+Connections\+::onion\+\_\+c, and oniondata\+\_\+registerhandler().
+
+
+
+Referenced by friendreq\+\_\+init().
+
+
+\begin{DoxyCode}
+719 \{
+720     fr\_c->\hyperlink{struct_friend___connections_a36e4f0e3167d9e95df5d7f83cbafa7fc}{fr\_request\_callback} = fr\_request\_callback;
+721     fr\_c->\hyperlink{struct_friend___connections_abd31f2a386ec582b378de4fc3f05ea6c}{fr\_request\_object} = object;
+722     \hyperlink{onion__client_8c_a2dfcba5e4eb429f5f2ae79ae999149c4}{oniondata\_registerhandler}(fr\_c->\hyperlink{struct_friend___connections_ae202b81f9a2c2fa80fd310a0996795fc}{onion\_c}, 
+      \hyperlink{crypto__core_8h_ae5cf60e6c6a34326d0d7ac15df18ba25}{CRYPTO\_PACKET\_FRIEND\_REQ}, fr\_request\_callback, \textcolor{keywordtype}{object});
+723 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d2/db1/friend__connection_8c_ab3249bbbafb0a8be7d181e3bc6f9563f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_ab3249bbbafb0a8be7d181e3bc6f9563f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!tcp\+\_\+relay\+\_\+node\+\_\+callback@{tcp\+\_\+relay\+\_\+node\+\_\+callback}}
+\index{tcp\+\_\+relay\+\_\+node\+\_\+callback@{tcp\+\_\+relay\+\_\+node\+\_\+callback}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{tcp\+\_\+relay\+\_\+node\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}static int tcp\+\_\+relay\+\_\+node\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{object, }
+\item[{uint32\+\_\+t}]{number, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07}
+
+
+Definition at line 248 of file friend\+\_\+connection.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay(), Friend\+\_\+\+Conn\+::crypt\+\_\+connection\+\_\+id, friend\+\_\+add\+\_\+tcp\+\_\+relay(), get\+\_\+conn(), and Friend\+\_\+\+Connections\+::net\+\_\+crypto.
+
+
+
+Referenced by new\+\_\+friend\+\_\+connection(), and recv\+\_\+tcp\+\_\+relay\+\_\+handler().
+
+
+\begin{DoxyCode}
+249 \{
+250     \hyperlink{struct_friend___connections}{Friend\_Connections} *fr\_c = object;
+251     \hyperlink{struct_friend___conn}{Friend\_Conn} *friend\_con = \hyperlink{friend__connection_8c_a0c0c32645b094058a6e6d6bcab4ed718}{get\_conn}(fr\_c, number);
+252 
+253     \textcolor{keywordflow}{if} (!friend\_con)
+254         \textcolor{keywordflow}{return} -1;
+255 
+256     \textcolor{keywordflow}{if} (friend\_con->\hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\_connection\_id} != -1) \{
+257         \textcolor{keywordflow}{return} \hyperlink{friend__connection_8c_ac89688f7660c1cb5fb664ecc09bab460}{friend\_add\_tcp\_relay}(fr\_c, number, ip\_port, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+258     \} \textcolor{keywordflow}{else} \{
+259         \textcolor{keywordflow}{return} \hyperlink{net__crypto_8c_a632021583d7dd2484614071a7080f311}{add\_tcp\_relay}(fr\_c->\hyperlink{struct_friend___connections_ab06a41217a1e9b5985555e19e088ae94}{net\_crypto}, ip\_port, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+260     \}
+261 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_a9360ec098f2b1082b480b4e36b0a5f07_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080}{\index{friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}!wipe\+\_\+friend\+\_\+conn@{wipe\+\_\+friend\+\_\+conn}}
+\index{wipe\+\_\+friend\+\_\+conn@{wipe\+\_\+friend\+\_\+conn}!friend\+\_\+connection.\+c@{friend\+\_\+connection.\+c}}
+\subsubsection[{wipe\+\_\+friend\+\_\+conn}]{\setlength{\rightskip}{0pt plus 5cm}static int wipe\+\_\+friend\+\_\+conn (
+\begin{DoxyParamCaption}
+\item[{{\bf Friend\+\_\+\+Connections} $\ast$}]{fr\+\_\+c, }
+\item[{int}]{friendcon\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080}
+
+
+Definition at line 101 of file friend\+\_\+connection.\+c.
+
+
+
+References Friend\+\_\+\+Connections\+::conns, friendconn\+\_\+id\+\_\+not\+\_\+valid(), F\+R\+I\+E\+N\+D\+C\+O\+N\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+N\+E, i, Friend\+\_\+\+Connections\+::num\+\_\+cons, realloc\+\_\+friendconns(), and Friend\+\_\+\+Conn\+::status.
+
+
+
+Referenced by kill\+\_\+friend\+\_\+connection().
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keywordflow}{if} (\hyperlink{friend__connection_8c_abecf42b27a016431837ee0b8a4ac5a5e}{friendconn\_id\_not\_valid}(fr\_c, friendcon\_id))
+104         \textcolor{keywordflow}{return} -1;
+105 
+106     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+107     memset(&(fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[friendcon\_id]), 0 , \textcolor{keyword}{sizeof}(\hyperlink{struct_friend___conn}{Friend\_Conn}));
+108 
+109     \textcolor{keywordflow}{for} (i = fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons}; i != 0; --i) \{
+110         \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a2690adb6c61682af2e8592f53e9de9a0}{conns}[i - 1].\hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{friend__connection_8h_a99fb83031ce9923c84392b4e92f956b5a93ea4a0b69b92435539e13a44bcc910b}{FRIENDCONN\_STATUS\_NONE})
+111             \textcolor{keywordflow}{break};
+112     \}
+113 
+114     \textcolor{keywordflow}{if} (fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons} != i) \{
+115         fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons} = \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+116         \hyperlink{friend__connection_8c_a7560121d48da253e4b63df88bfc47e55}{realloc\_friendconns}(fr\_c, fr\_c->\hyperlink{struct_friend___connections_a81ac77652d6cc5071baca915581c5dfa}{num\_cons});
+117     \}
+118 
+119     \textcolor{keywordflow}{return} 0;
+120 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d2/db1/friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db1/friend__connection_8c_af2c8594ddd6bfd683ee88fcfef107080_icgraph}
+\end{center}
+\end{figure}
+
+

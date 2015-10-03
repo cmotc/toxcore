@@ -1,0 +1,11 @@
+<map id="add_receipt" name="add_receipt">
+<area shape="rect" id="node2" href="$d4/d30/_messenger_8h.html#a23c8b52187d4ab113cce5497a19ac997" title="m_send_message_generic" alt="" coords="143,81,320,108"/>
+<area shape="rect" id="node3" href="$d8/dda/messenger__test_8c.html#acb2665d4ea00c2da66251120149841f1" title="START_TEST" alt="" coords="402,5,509,32"/>
+<area shape="rect" id="node4" href="$db/de9/_messenger__test_8c.html#a7a4fea32f3eb3f26cf343c951bbfae68" title="print_message" alt="" coords="402,56,509,83"/>
+<area shape="rect" id="node5" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="619,56,669,83"/>
+<area shape="rect" id="node6" href="$da/d8f/tox_8h.html#a89cd6aedba9fca87bd66a9713dc6b503" title="tox_friend_send_message" alt="" coords="368,157,543,184"/>
+<area shape="rect" id="node7" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="591,107,697,133"/>
+<area shape="rect" id="node8" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="607,157,681,184"/>
+<area shape="rect" id="node10" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="619,208,669,235"/>
+<area shape="rect" id="node9" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="745,157,796,184"/>
+</map>

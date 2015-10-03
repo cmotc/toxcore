@@ -1,0 +1,736 @@
+\hypertarget{friends__test_8c}{\section{auto\+\_\+tests/friends\+\_\+test.c File Reference}
+\label{friends__test_8c}\index{auto\+\_\+tests/friends\+\_\+test.\+c@{auto\+\_\+tests/friends\+\_\+test.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/friend\+\_\+requests.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/\+Messenger.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/mman.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\+h$>$}\\*
+Include dependency graph for friends\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dec/friends__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{friends__test_8c_a446e415fc7a5645de4a012cf8a3cdf90}{W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T}~30
+\item 
+\#define \hyperlink{friends__test_8c_ae7676cdfa371dfdcf6fb0687737c29a6}{W\+A\+I\+T\+\_\+\+T\+I\+M\+E}~500
+\item 
+\#define \hyperlink{friends__test_8c_ae4f86bff73414c5fc08c058f957212f0}{M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S}~M\+A\+P\+\_\+\+A\+N\+O\+N
+\item 
+\#define \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G}~0x1
+\item 
+\#define \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G}~0x2
+\item 
+\#define \hyperlink{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{friends__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+R\+T}~33445
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\+\_\+tox} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht)
+\item 
+void \hyperlink{friends__test_8c_a941c14b470941244ac59f3bad9f1ef4b}{parent\+\_\+confirm\+\_\+message} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}, uint8\+\_\+t $\ast$data, uint16\+\_\+t length, void $\ast$userdata)
+\item 
+void \hyperlink{friends__test_8c_a31ef2c5b967c6e523fc8fd2c90afdec2}{parent\+\_\+confirm\+\_\+status} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num}, uint8\+\_\+t $\ast$data, uint16\+\_\+t length, void $\ast$userdata)
+\item 
+int \hyperlink{friends__test_8c_a7266443b3a915168c8c968318182d3d5}{parent\+\_\+friend\+\_\+request} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht)
+\item 
+void \hyperlink{friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24}{child\+\_\+got\+\_\+request} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint8\+\_\+t $\ast$public\+\_\+key, uint8\+\_\+t $\ast$data, uint16\+\_\+t length, void $\ast$userdata)
+\item 
+void \hyperlink{friends__test_8c_a4bae5015e4849711d89259fcff08e746}{child\+\_\+got\+\_\+statuschange} (\hyperlink{struct_messenger}{Messenger} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, int friend\+\_\+num, uint8\+\_\+t $\ast$string, uint16\+\_\+t length, void $\ast$userdata)
+\item 
+int \hyperlink{friends__test_8c_a4e65a94fb68746f22250369cc581148c}{parent\+\_\+wait\+\_\+for\+\_\+message} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht)
+\item 
+void \hyperlink{friends__test_8c_aeb94fbd457627182ceee7e505f432541}{cleanup} (void)
+\item 
+int \hyperlink{friends__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_messenger}{Messenger} $\ast$ \hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{parent\+\_\+id} = N\+U\+L\+L
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\+\_\+id} = N\+U\+L\+L
+\item 
+pid\+\_\+t \hyperlink{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{child\+\_\+pid} = 0
+\item 
+int \hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\+\_\+flags} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 48 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by main(), parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+\hypertarget{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G@{F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G}}
+\index{F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G@{F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G~0x1}}\label{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}
+
+
+Definition at line 41 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by child\+\_\+got\+\_\+request(), main(), parent\+\_\+confirm\+\_\+status(), and parent\+\_\+friend\+\_\+request().
+
+\hypertarget{friends__test_8c_ae4f86bff73414c5fc08c058f957212f0}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S@{M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S}}
+\index{M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S@{M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S~M\+A\+P\+\_\+\+A\+N\+O\+N}}\label{friends__test_8c_ae4f86bff73414c5fc08c058f957212f0}
+
+
+Definition at line 37 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{friends__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!P\+O\+R\+T@{P\+O\+R\+T}}
+\index{P\+O\+R\+T@{P\+O\+R\+T}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T~33445}}\label{friends__test_8c_a614217d263be1fb1a5f76e2ff7be19a2}
+
+
+Definition at line 51 of file friends\+\_\+test.\+c.
+
+\hypertarget{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G@{S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G}}
+\index{S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G@{S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G~0x2}}\label{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}
+
+
+Definition at line 42 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by child\+\_\+got\+\_\+statuschange(), main(), parent\+\_\+confirm\+\_\+message(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+\hypertarget{friends__test_8c_a446e415fc7a5645de4a012cf8a3cdf90}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T@{W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T}}
+\index{W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T@{W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T~30}}\label{friends__test_8c_a446e415fc7a5645de4a012cf8a3cdf90}
+
+
+Definition at line 33 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+\hypertarget{friends__test_8c_ae7676cdfa371dfdcf6fb0687737c29a6}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!W\+A\+I\+T\+\_\+\+T\+I\+M\+E@{W\+A\+I\+T\+\_\+\+T\+I\+M\+E}}
+\index{W\+A\+I\+T\+\_\+\+T\+I\+M\+E@{W\+A\+I\+T\+\_\+\+T\+I\+M\+E}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{W\+A\+I\+T\+\_\+\+T\+I\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+A\+I\+T\+\_\+\+T\+I\+M\+E~500}}\label{friends__test_8c_ae7676cdfa371dfdcf6fb0687737c29a6}
+
+
+Definition at line 34 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!child\+\_\+got\+\_\+request@{child\+\_\+got\+\_\+request}}
+\index{child\+\_\+got\+\_\+request@{child\+\_\+got\+\_\+request}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{child\+\_\+got\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}void child\+\_\+got\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{uint8\+\_\+t $\ast$}]{public\+\_\+key, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24}
+
+
+Definition at line 119 of file friends\+\_\+test.\+c.
+
+
+
+References F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G, m\+\_\+addfriend\+\_\+norequest(), and request\+\_\+flags.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+120 \{
+121     fputs(\textcolor{stringliteral}{"OK\(\backslash\)nsending status to parent"}, stdout);
+122     fflush(stdout);
+123     \hyperlink{_messenger_8c_a2f7aa06733a25e8c0edc8f31a22a78dc}{m\_addfriend\_norequest}(m, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+124     \hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} |= \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{FIRST\_FLAG};
+125 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{d2/dee/friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a4bae5015e4849711d89259fcff08e746}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!child\+\_\+got\+\_\+statuschange@{child\+\_\+got\+\_\+statuschange}}
+\index{child\+\_\+got\+\_\+statuschange@{child\+\_\+got\+\_\+statuschange}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{child\+\_\+got\+\_\+statuschange}]{\setlength{\rightskip}{0pt plus 5cm}void child\+\_\+got\+\_\+statuschange (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{int}]{friend\+\_\+num, }
+\item[{uint8\+\_\+t $\ast$}]{string, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a4bae5015e4849711d89259fcff08e746}
+
+
+Definition at line 127 of file friends\+\_\+test.\+c.
+
+
+
+References request\+\_\+flags, and S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+128 \{
+129     \hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} |= \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{SECOND\_FLAG};
+130 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{d2/dee/friends__test_8c_a4bae5015e4849711d89259fcff08e746_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_aeb94fbd457627182ceee7e505f432541}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void cleanup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_aeb94fbd457627182ceee7e505f432541}
+
+
+Definition at line 160 of file friends\+\_\+test.\+c.
+
+
+
+References child\+\_\+id, and parent\+\_\+id.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+161 \{
+162     munmap(\hyperlink{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{parent\_id}, crypto\_box\_PUBLICKEYBYTES);
+163     munmap(\hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\_id}, crypto\_box\_PUBLICKEYBYTES);
+164     puts(\textcolor{stringliteral}{"============= END TEST ============="});
+165 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{d2/dee/friends__test_8c_aeb94fbd457627182ceee7e505f432541_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a4cefd91a5733f30557835867b0174103}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!do\+\_\+tox@{do\+\_\+tox}}
+\index{do\+\_\+tox@{do\+\_\+tox}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{do\+\_\+tox}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+tox (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a4cefd91a5733f30557835867b0174103}
+
+
+Definition at line 61 of file friends\+\_\+test.\+c.
+
+
+
+References D\+H\+T\+\_\+isconnected().
+
+
+
+Referenced by main(), parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keyword}{static} \textcolor{keywordtype}{int} dht\_on = 0;
+64 
+65     \textcolor{keywordflow}{if} (!dht\_on && \hyperlink{_d_h_t_8c_a93770fe498d41d1c6b420275680967b6}{DHT\_isconnected}(dht)) \{
+66         dht\_on = 1;
+67     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dht\_on && !\hyperlink{_d_h_t_8c_a93770fe498d41d1c6b420275680967b6}{DHT\_isconnected}(dht)) \{
+68         dht\_on = 0;
+69     \}
+70 
+71     doMessenger(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+72 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_a4cefd91a5733f30557835867b0174103_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_a4cefd91a5733f30557835867b0174103_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 167 of file friends\+\_\+test.\+c.
+
+
+
+References c\+\_\+sleep, child\+\_\+got\+\_\+request(), child\+\_\+got\+\_\+statuschange(), child\+\_\+id, child\+\_\+pid, cleanup(), Messenger\+::dht, do\+\_\+tox(), F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G, i, m\+\_\+callback\+\_\+friendmessage(), m\+\_\+callback\+\_\+friendrequest(), m\+\_\+callback\+\_\+statusmessage(), M\+A\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+U\+S, parent\+\_\+confirm\+\_\+message(), parent\+\_\+confirm\+\_\+status(), parent\+\_\+friend\+\_\+request(), parent\+\_\+id, parent\+\_\+wait\+\_\+for\+\_\+message(), request\+\_\+flags, and S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G.
+
+
+\begin{DoxyCode}
+168 \{
+169     puts(\textcolor{stringliteral}{"=========== FRIENDS\_TEST ==========="});
+170 
+171     \textcolor{comment}{/* set up the global memory */}
+172     \hyperlink{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{parent\_id} = mmap(NULL, crypto\_box\_PUBLICKEYBYTES, PROT\_READ | PROT\_WRITE,
+173                      MAP\_SHARED | \hyperlink{friends__test_8c_ae4f86bff73414c5fc08c058f957212f0}{MAP\_ANONYMOUS}, -1, 0);
+174     \hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\_id} = mmap(NULL, crypto\_box\_PUBLICKEYBYTES, PROT\_READ | PROT\_WRITE,
+175                     MAP\_SHARED | \hyperlink{friends__test_8c_ae4f86bff73414c5fc08c058f957212f0}{MAP\_ANONYMOUS}, -1, 0);
+176 
+177     fputs(\textcolor{stringliteral}{"friends\_test: Starting test...\(\backslash\)n"}, stdout);
+178 
+179     \textcolor{keywordflow}{if} ((\hyperlink{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{child\_pid} = fork()) == 0) \{
+180         \textcolor{comment}{/* child */}
+181         \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0;
+182         \textcolor{keywordtype}{char} *message = \textcolor{stringliteral}{"Y-yes Mr. Watson?"};
+183 
+184         \hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = initMessenger();
+185 
+186         Messenger\_save(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\_id});
+187         msync(\hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\_id}, crypto\_box\_PUBLICKEYBYTES, MS\_SYNC);
+188 
+189         \hyperlink{_messenger_8c_ac913636e02281cae396b1b7494cd760a}{m\_callback\_friendrequest}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_ace1a1349a29721b64c0cfcf27e867f24}{child\_got\_request}, NULL);
+190         \hyperlink{_messenger_8c_ac4c378ad47edf48aa2d17c0b78395eb4}{m\_callback\_statusmessage}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, 
+      \hyperlink{friends__test_8c_a4bae5015e4849711d89259fcff08e746}{child\_got\_statuschange}, NULL);
+191 
+192         \textcolor{comment}{/* wait on the friend request */}
+193         \textcolor{keywordflow}{while} (!(\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{FIRST\_FLAG}))
+194             \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\_tox}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+195 
+196         \textcolor{comment}{/* wait for the status change */}
+197         \textcolor{keywordflow}{while} (!(\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{SECOND\_FLAG}))
+198             \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\_tox}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+199 
+200         \textcolor{keywordflow}{for} (i = 0; i < 6; i++) \{
+201             \textcolor{comment}{/* send the message six times, just to be sure */}
+202             m\_sendmessage(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, 0, (uint8\_t *)message, strlen(message));
+203             \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\_tox}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht});
+204         \}
+205 
+206         cleanupMessenger(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m});
+207 
+208         \textcolor{keywordflow}{return} 0;
+209     \}
+210 
+211     \textcolor{comment}{/* parent */}
+212     \textcolor{keywordflow}{if} (atexit(\hyperlink{friends__test_8c_aeb94fbd457627182ceee7e505f432541}{cleanup}) != 0) \{
+213         fputs(\textcolor{stringliteral}{"friends\_test: atexit() failed!\(\backslash\)nFailing build...\(\backslash\)n"}, stderr);
+214         kill(\hyperlink{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{child\_pid}, SIGKILL);
+215         \textcolor{keywordflow}{return} -1;
+216     \}
+217 
+218     \hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = initMessenger();
+219 
+220     msync(\hyperlink{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{parent\_id}, crypto\_box\_PUBLICKEYBYTES, MS\_SYNC);
+221     \hyperlink{_messenger_8c_ac4c378ad47edf48aa2d17c0b78395eb4}{m\_callback\_statusmessage}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_a31ef2c5b967c6e523fc8fd2c90afdec2}{parent\_confirm\_status}, NULL);
+222     \hyperlink{_messenger_8c_a5bf6f3f6a919d32a34dbd8150f26ec1e}{m\_callback\_friendmessage}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_a941c14b470941244ac59f3bad9f1ef4b}{parent\_confirm\_message}, NULL
+      );
+223 
+224     \textcolor{comment}{/* hacky way to give the child time to set up */}
+225     \hyperlink{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(50);
+226 
+227     Messenger\_save(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{parent\_id});
+228 
+229     \textcolor{keywordflow}{if} (\hyperlink{friends__test_8c_a7266443b3a915168c8c968318182d3d5}{parent\_friend\_request}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}) == -1)
+230         \textcolor{keywordflow}{return} -1;
+231 
+232     \textcolor{keywordflow}{if} (\hyperlink{friends__test_8c_a4e65a94fb68746f22250369cc581148c}{parent\_wait\_for\_message}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}->\hyperlink{struct_messenger_a8b3d6ce8745acc52695e252bdb1531b6}{dht}) == -1)
+233         \textcolor{keywordflow}{return} -1;
+234 
+235     wait(NULL);
+236     fputs(\textcolor{stringliteral}{"friends\_test: Build passed!\(\backslash\)n"}, stdout);
+237     \textcolor{keywordflow}{return} 0;
+238 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a941c14b470941244ac59f3bad9f1ef4b}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!parent\+\_\+confirm\+\_\+message@{parent\+\_\+confirm\+\_\+message}}
+\index{parent\+\_\+confirm\+\_\+message@{parent\+\_\+confirm\+\_\+message}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{parent\+\_\+confirm\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void parent\+\_\+confirm\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{int}]{num, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a941c14b470941244ac59f3bad9f1ef4b}
+
+
+Definition at line 74 of file friends\+\_\+test.\+c.
+
+
+
+References request\+\_\+flags, and S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+75 \{
+76     puts(\textcolor{stringliteral}{"OK"});
+77     \hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} |= \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{SECOND\_FLAG};
+78 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{d2/dee/friends__test_8c_a941c14b470941244ac59f3bad9f1ef4b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a31ef2c5b967c6e523fc8fd2c90afdec2}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!parent\+\_\+confirm\+\_\+status@{parent\+\_\+confirm\+\_\+status}}
+\index{parent\+\_\+confirm\+\_\+status@{parent\+\_\+confirm\+\_\+status}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{parent\+\_\+confirm\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}void parent\+\_\+confirm\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{{\bf Messenger} $\ast$}]{m, }
+\item[{int}]{num, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a31ef2c5b967c6e523fc8fd2c90afdec2}
+
+
+Definition at line 80 of file friends\+\_\+test.\+c.
+
+
+
+References F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G, and request\+\_\+flags.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+81 \{
+82     puts(\textcolor{stringliteral}{"OK"});
+83     \hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} |= \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{FIRST\_FLAG};
+84 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{d2/dee/friends__test_8c_a31ef2c5b967c6e523fc8fd2c90afdec2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a7266443b3a915168c8c968318182d3d5}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!parent\+\_\+friend\+\_\+request@{parent\+\_\+friend\+\_\+request}}
+\index{parent\+\_\+friend\+\_\+request@{parent\+\_\+friend\+\_\+request}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{parent\+\_\+friend\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int parent\+\_\+friend\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a7266443b3a915168c8c968318182d3d5}
+
+
+Definition at line 86 of file friends\+\_\+test.\+c.
+
+
+
+References c\+\_\+sleep, child\+\_\+id, child\+\_\+pid, do\+\_\+tox(), F\+I\+R\+S\+T\+\_\+\+F\+L\+A\+G, i, m\+\_\+addfriend(), request\+\_\+flags, W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T, and W\+A\+I\+T\+\_\+\+T\+I\+M\+E.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+87 \{
+88     \textcolor{keywordtype}{char} *message = \textcolor{stringliteral}{"Watson, come here, I need you."};
+89     \textcolor{keywordtype}{int} len = strlen(message);
+90     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0;
+91 
+92     fputs(\textcolor{stringliteral}{"Sending child request."}, stdout);
+93     fflush(stdout);
+94 
+95     \hyperlink{_messenger_8c_ac77431b1ab0b12af003657e11057bd9c}{m\_addfriend}(\hyperlink{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, \hyperlink{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{child\_id}, (uint8\_t *)message, len);
+96 
+97     \textcolor{comment}{/* wait on the status change */}
+98     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friends__test_8c_a446e415fc7a5645de4a012cf8a3cdf90}{WAIT\_COUNT}; i++) \{
+99         \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\_tox}(dht);
+100 
+101         \textcolor{keywordflow}{if} (\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{FIRST\_FLAG})
+102             \textcolor{keywordflow}{break};
+103 
+104         fputs(\textcolor{stringliteral}{"."}, stdout);
+105         fflush(stdout);
+106         \hyperlink{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(\hyperlink{friends__test_8c_ae7676cdfa371dfdcf6fb0687737c29a6}{WAIT\_TIME});
+107     \}
+108 
+109     \textcolor{keywordflow}{if} (!(\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_abe7f111c09b126a87d674cf05e06cfb7}{FIRST\_FLAG})) \{
+110         fputs(\textcolor{stringliteral}{"\(\backslash\)nfriends\_test: The child took to long to respond!\(\backslash\)n"}
+111               \textcolor{stringliteral}{"Friend requests may be broken, failing build!\(\backslash\)n"}, stderr);
+112         kill(\hyperlink{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{child\_pid}, SIGKILL);
+113         \textcolor{keywordflow}{return} -1;
+114     \}
+115 
+116     \textcolor{keywordflow}{return} 0;
+117 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_a7266443b3a915168c8c968318182d3d5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{d2/dee/friends__test_8c_a7266443b3a915168c8c968318182d3d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{friends__test_8c_a4e65a94fb68746f22250369cc581148c}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!parent\+\_\+wait\+\_\+for\+\_\+message@{parent\+\_\+wait\+\_\+for\+\_\+message}}
+\index{parent\+\_\+wait\+\_\+for\+\_\+message@{parent\+\_\+wait\+\_\+for\+\_\+message}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{parent\+\_\+wait\+\_\+for\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}int parent\+\_\+wait\+\_\+for\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht}
+\end{DoxyParamCaption}
+)}}\label{friends__test_8c_a4e65a94fb68746f22250369cc581148c}
+
+
+Definition at line 132 of file friends\+\_\+test.\+c.
+
+
+
+References c\+\_\+sleep, child\+\_\+pid, do\+\_\+tox(), i, request\+\_\+flags, S\+E\+C\+O\+N\+D\+\_\+\+F\+L\+A\+G, W\+A\+I\+T\+\_\+\+C\+O\+U\+N\+T, and W\+A\+I\+T\+\_\+\+T\+I\+M\+E.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+133 \{
+134     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0;
+135 
+136     fputs(\textcolor{stringliteral}{"Parent waiting for message."}, stdout);
+137     fflush(stdout);
+138 
+139     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{friends__test_8c_a446e415fc7a5645de4a012cf8a3cdf90}{WAIT\_COUNT}; i++) \{
+140         \hyperlink{friends__test_8c_a4cefd91a5733f30557835867b0174103}{do\_tox}(dht);
+141 
+142         \textcolor{keywordflow}{if} (\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{SECOND\_FLAG})
+143             \textcolor{keywordflow}{break};
+144 
+145         fputs(\textcolor{stringliteral}{"."}, stdout);
+146         fflush(stdout);
+147         \hyperlink{friends__test_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(\hyperlink{friends__test_8c_ae7676cdfa371dfdcf6fb0687737c29a6}{WAIT\_TIME});
+148     \}
+149 
+150     \textcolor{keywordflow}{if} (!(\hyperlink{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{request\_flags} & \hyperlink{friends__test_8c_aa544aec475f2b71717b00c002f09d9fb}{SECOND\_FLAG})) \{
+151         fputs(\textcolor{stringliteral}{"\(\backslash\)nParent hasn't received the message yet!\(\backslash\)n"}
+152               \textcolor{stringliteral}{"Messaging may be broken, failing the build!\(\backslash\)n"}, stderr);
+153         kill(\hyperlink{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{child\_pid}, SIGKILL);
+154         \textcolor{keywordflow}{return} -1;
+155     \}
+156 
+157     \textcolor{keywordflow}{return} 0;
+158 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dee/friends__test_8c_a4e65a94fb68746f22250369cc581148c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d2/dee/friends__test_8c_a4e65a94fb68746f22250369cc581148c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!child\+\_\+id@{child\+\_\+id}}
+\index{child\+\_\+id@{child\+\_\+id}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{child\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ child\+\_\+id = N\+U\+L\+L}}\label{friends__test_8c_aa81dd0e68a0cee7a980cf5ee2b8cfa08}
+
+
+Definition at line 56 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by cleanup(), main(), and parent\+\_\+friend\+\_\+request().
+
+\hypertarget{friends__test_8c_afef115d1ca4038a95c54388151f24a30}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!child\+\_\+pid@{child\+\_\+pid}}
+\index{child\+\_\+pid@{child\+\_\+pid}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{child\+\_\+pid}]{\setlength{\rightskip}{0pt plus 5cm}pid\+\_\+t child\+\_\+pid = 0}}\label{friends__test_8c_afef115d1ca4038a95c54388151f24a30}
+
+
+Definition at line 58 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by main(), parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+
+\hypertarget{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!m@{m}}
+\index{m@{m}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Messenger}$\ast$ m\hspace{0.3cm}{\ttfamily [static]}}}\label{friends__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}
+
+
+Definition at line 53 of file friends\+\_\+test.\+c.
+
+\hypertarget{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!parent\+\_\+id@{parent\+\_\+id}}
+\index{parent\+\_\+id@{parent\+\_\+id}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{parent\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ parent\+\_\+id = N\+U\+L\+L}}\label{friends__test_8c_ae5d3bebaf1bf5f479e2674cc670535f3}
+
+
+Definition at line 55 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by cleanup(), and main().
+
+\hypertarget{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}{\index{friends\+\_\+test.\+c@{friends\+\_\+test.\+c}!request\+\_\+flags@{request\+\_\+flags}}
+\index{request\+\_\+flags@{request\+\_\+flags}!friends\+\_\+test.\+c@{friends\+\_\+test.\+c}}
+\subsubsection[{request\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}int request\+\_\+flags = 0}}\label{friends__test_8c_a1c264c6867d0c1fafae68f4454b6e8d1}
+
+
+Definition at line 59 of file friends\+\_\+test.\+c.
+
+
+
+Referenced by child\+\_\+got\+\_\+request(), child\+\_\+got\+\_\+statuschange(), main(), parent\+\_\+confirm\+\_\+message(), parent\+\_\+confirm\+\_\+status(), parent\+\_\+friend\+\_\+request(), and parent\+\_\+wait\+\_\+for\+\_\+message().
+

@@ -1,0 +1,5 @@
+<map id="copy_connected_tcp_relays" name="copy_connected_tcp_relays">
+<area shape="rect" id="node2" href="$d5/d26/_t_c_p__connection_8c.html#ac2e62c717ccebd2379e32ca9b330812c" title="tcp_copy_connected\l_relays" alt="" coords="196,5,339,47"/>
+<area shape="rect" id="node3" href="$d5/d26/_t_c_p__connection_8c.html#ab051b2158958b954824dbed361ec588a" title="get_tcp_connection" alt="" coords="387,13,521,39"/>
+<area shape="rect" id="node4" href="$d5/d26/_t_c_p__connection_8c.html#ae8f5b59977d8d4221ff8da3922d257a5" title="tcp_connections_number\l_not_valid" alt="" coords="569,5,736,47"/>
+</map>

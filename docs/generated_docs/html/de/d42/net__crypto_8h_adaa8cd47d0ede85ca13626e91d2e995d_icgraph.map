@@ -1,0 +1,12 @@
+<map id="new_connection_handler" name="new_connection_handler">
+<area shape="rect" id="node2" href="$d0/d08/friend__connection_8h.html#a319bec2419cf5fc5525af4fae03b86ef" title="new_friend_connections" alt="" coords="219,56,381,83"/>
+<area shape="rect" id="node3" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="429,56,547,83"/>
+<area shape="rect" id="node4" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="605,31,655,57"/>
+<area shape="rect" id="node5" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="595,81,665,108"/>
+<area shape="rect" id="node6" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="713,5,820,32"/>
+<area shape="rect" id="node7" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="735,56,799,83"/>
+<area shape="rect" id="node9" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="727,107,806,133"/>
+<area shape="rect" id="node11" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="741,157,792,184"/>
+<area shape="rect" id="node8" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="868,56,919,83"/>
+<area shape="rect" id="node10" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="868,107,919,133"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="bootstrap_set_callbacks" name="bootstrap_set_callbacks">
+<area shape="rect" id="node2" href="$de/d7d/bootstrap__node__packets_8c.html#a0556af728df68fb3a9c4b7cc4b7d9049" title="handle_info_request" alt="" coords="235,5,374,32"/>
+<area shape="rect" id="node4" href="$d6/d6e/network_8c.html#a230a192ca9463ec4985d4f86de439733" title="networking_registerhandler" alt="" coords="216,56,393,83"/>
+<area shape="rect" id="node3" href="$d6/d6e/network_8c.html#a7b90f87f3ba60cc5c66dd6dd77cd5cb1" title="sendpacket" alt="" coords="441,5,531,32"/>
+</map>

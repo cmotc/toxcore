@@ -1,0 +1,34 @@
+<map id="route_tofriend" name="route_tofriend">
+<area shape="rect" id="node2" href="$db/d79/onion__client_8c.html#a35bf565e3fc2b84ba3434d7cb38ba0e4" title="send_dht_dhtpk" alt="" coords="155,63,269,90"/>
+<area shape="rect" id="node16" href="$dc/dc1/_d_h_t_8c.html#a25f7b3704b34bb8745a0a60939e1f49c" title="send_NATping" alt="" coords="339,114,447,140"/>
+<area shape="rect" id="node3" href="$db/d79/onion__client_8c.html#a64e317f7dd22c983c325f62aed9ecfae" title="send_dhtpk_announce" alt="" coords="317,63,469,90"/>
+<area shape="rect" id="node4" href="$db/d79/onion__client_8c.html#a02301d507ab3c11bfee8112560f36f87" title="do_friend" alt="" coords="539,63,614,90"/>
+<area shape="rect" id="node5" href="$d9/d26/onion__client_8h.html#aa1771a7c1ebf446973e8d2bbb7ea8c2d" title="do_onion_client" alt="" coords="684,63,796,90"/>
+<area shape="rect" id="node6" href="$d7/dd9/onion__test_8c.html#ab45bd517e9eb750ba65272a4a8ebc250" title="do_onions" alt="" coords="862,63,943,90"/>
+<area shape="rect" id="node8" href="$d4/d30/_messenger_8h.html#ae0686caa878183a98920aeb7486afcb6" title="do_messenger" alt="" coords="849,12,956,39"/>
+<area shape="rect" id="node7" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="1009,115,1116,142"/>
+<area shape="rect" id="node9" href="$db/de9/_messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1037,64,1088,91"/>
+<area shape="rect" id="node10" href="$da/d8f/tox_8h.html#a649c8740c523fb52272396cb0b70b8dc" title="tox_iterate" alt="" coords="1021,14,1104,40"/>
+<area shape="rect" id="node11" href="$d9/d35/tox__test_8c.html#a4c612d3a3f15c8fbf2e4bde8002bc33b" title="START_TEST" alt="" coords="1164,39,1271,66"/>
+<area shape="rect" id="node12" href="$d6/dc0/toxav__many__test_8c.html#a8fdafe3be7e00ce3d4f0cb50a9a5eb39" title="while" alt="" coords="1191,90,1243,116"/>
+<area shape="rect" id="node13" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1319,155,1369,182"/>
+<area shape="rect" id="node14" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="1181,152,1254,179"/>
+<area shape="rect" id="node15" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1319,207,1369,234"/>
+<area shape="rect" id="node17" href="$dc/dc1/_d_h_t_8c.html#a9684ffd3987f6c79663c1f07eed0c007" title="handle_NATping" alt="" coords="517,215,636,242"/>
+<area shape="rect" id="node31" href="$dc/dc1/_d_h_t_8c.html#a9243f57fde4a9312f11575eb4e7b1275" title="do_NAT" alt="" coords="541,114,612,140"/>
+<area shape="rect" id="node18" href="$df/dad/_d_h_t_8h.html#adad04fa897751b06948a172044bf1c58" title="new_DHT" alt="" coords="699,240,781,267"/>
+<area shape="rect" id="node19" href="$d2/d98/dht__test_8c.html#aa4b7c82b70f87539daa26f6935d06a03" title="test_addto_lists" alt="" coords="845,367,960,394"/>
+<area shape="rect" id="node21" href="$d7/dd9/onion__test_8c.html#ad7475d1539db4bb3bcf8673dd7f7cf68" title="START_TEST" alt="" coords="1009,166,1116,192"/>
+<area shape="rect" id="node22" href="$d7/dd9/onion__test_8c.html#a5945771cafdfe39074adf8ddd47ae81b" title="new_onions" alt="" coords="857,215,948,242"/>
+<area shape="rect" id="node23" href="$d1/d36/tox-bootstrapd_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="877,164,928,191"/>
+<area shape="rect" id="node24" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="844,316,961,343"/>
+<area shape="rect" id="node20" href="$d2/d98/dht__test_8c.html#a1d9c8c274c7bcbb86b2c757ad3d3c0bd" title="START_TEST" alt="" coords="1009,367,1116,394"/>
+<area shape="rect" id="node25" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1037,266,1088,292"/>
+<area shape="rect" id="node26" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1027,316,1098,343"/>
+<area shape="rect" id="node27" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1164,315,1271,342"/>
+<area shape="rect" id="node28" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1185,210,1249,236"/>
+<area shape="rect" id="node29" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1178,263,1257,290"/>
+<area shape="rect" id="node30" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1192,366,1243,392"/>
+<area shape="rect" id="node32" href="$df/dad/_d_h_t_8h.html#a5be9dfb66fbf1fa7c267b016f3357534" title="do_DHT" alt="" coords="705,114,775,140"/>
+<area shape="rect" id="node33" href="$d7/dd9/onion__test_8c.html#a3c2943b251ccd76e2814f77ada04f51e" title="do_onion" alt="" coords="865,114,940,140"/>
+</map>

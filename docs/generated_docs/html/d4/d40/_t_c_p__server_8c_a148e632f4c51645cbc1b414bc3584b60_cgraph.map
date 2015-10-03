@@ -1,0 +1,21 @@
+<map id="new_TCP_server" name="new_TCP_server">
+<area shape="rect" id="node2" href="$d7/d40/list_8c.html#a7b07772cffb6af34e279f424dca08895" title="bs_list_init" alt="" coords="225,31,309,57"/>
+<area shape="rect" id="node4" href="$d4/d40/_t_c_p__server_8c.html#aaee6d8849ed25c44203b345808d79bed" title="handle_onion_recv_1" alt="" coords="195,85,339,112"/>
+<area shape="rect" id="node11" href="$d6/d6e/network_8c.html#ad953dedd6d25d03cf441960dd1e1fed1" title="networking_at_startup" alt="" coords="191,165,342,192"/>
+<area shape="rect" id="node13" href="$d4/d40/_t_c_p__server_8c.html#aa6d558b4e988007697894aff27271927" title="new_listening_TCP_socket" alt="" coords="176,267,357,293"/>
+<area shape="rect" id="node19" href="$d6/d6e/network_8c.html#a84c3240a3325cbdaaa8a206c96980cd1" title="sock_valid" alt="" coords="451,444,535,471"/>
+<area shape="rect" id="node20" href="$d4/d18/onion_8c.html#ae1b8e562e22bd28deca3f98dace1a421" title="set_callback_handle\l_recv_1" alt="" coords="197,369,337,410"/>
+<area shape="rect" id="node3" href="$d7/d40/list_8c.html#a7c246868ee5a3542509cdf90379c5bb2" title="resize" alt="" coords="465,23,522,49"/>
+<area shape="rect" id="node5" href="$d4/d40/_t_c_p__server_8c.html#a1b2fd7984b9d3eb39bf588fc9bc5e21f" title="write_packet_TCP_secure\l_connection" alt="" coords="405,74,581,115"/>
+<area shape="rect" id="node6" href="$d4/d40/_t_c_p__server_8c.html#a80fa82b117432f080f39f481ab5d9fef" title="send_pending_data" alt="" coords="645,5,779,32"/>
+<area shape="rect" id="node8" href="$dc/d85/crypto__core_8c.html#a81efc0a4a6e0efe372651e26e342a6e5" title="encrypt_data_symmetric" alt="" coords="629,56,795,83"/>
+<area shape="rect" id="node9" href="$dc/d85/crypto__core_8c.html#ab953f1e92b8a9a193f69f02323b9c980" title="increment_nonce" alt="" coords="651,107,773,133"/>
+<area shape="rect" id="node10" href="$d4/d40/_t_c_p__server_8c.html#ac9f38bf2eaf3cd2603c380091ae6ebad" title="add_priority" alt="" coords="667,157,757,184"/>
+<area shape="rect" id="node7" href="$d4/d40/_t_c_p__server_8c.html#a127449a3fca8398acf0ba361be8c5c83" title="send_pending_data_nonpriority" alt="" coords="843,5,1044,32"/>
+<area shape="rect" id="node12" href="$d6/d6e/network_8c.html#a9f5cd2a713e4a17d4c6d36650336cab0" title="current_time_actual" alt="" coords="425,140,561,167"/>
+<area shape="rect" id="node14" href="$d4/d40/_t_c_p__server_8c.html#a944f17c26a170be923cc64f9921e001b" title="bind_to_port" alt="" coords="447,191,540,217"/>
+<area shape="rect" id="node15" href="$d6/d6e/network_8c.html#a512d8ea12392ba9ddfadd83bb7c92b2e" title="kill_sock" alt="" coords="457,241,530,268"/>
+<area shape="rect" id="node16" href="$d6/d6e/network_8c.html#ad2f109728a6345e6862686ea4baf5b27" title="set_socket_dualstack" alt="" coords="419,292,568,319"/>
+<area shape="rect" id="node17" href="$d6/d6e/network_8c.html#a6a50bb1345f2d5192fe1ec23ac7a1da9" title="set_socket_nonblock" alt="" coords="421,343,566,369"/>
+<area shape="rect" id="node18" href="$d6/d6e/network_8c.html#ac278c3d25e3807f0b2be9d91c9db328f" title="set_socket_reuseaddr" alt="" coords="418,393,569,420"/>
+</map>

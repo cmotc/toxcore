@@ -1,0 +1,802 @@
+\hypertarget{tox__sync_8c}{\section{testing/tox\+\_\+sync.c File Reference}
+\label{tox__sync_8c}\index{testing/tox\+\_\+sync.\+c@{testing/tox\+\_\+sync.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/tox.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}misc\+\_\+tools.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$dirent.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+Include dependency graph for tox\+\_\+sync.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d5b/tox__sync_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_file__t}{File\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tox__sync_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\+\_\+sleep}(\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~usleep(1000$\ast$\hyperlink{n_tox_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}~256
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tox__sync_8c_a7209b965126c3b606c3f0030a088ed27}{tox\+\_\+file\+\_\+chunk\+\_\+request} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\+\_\+number}, uint32\+\_\+t file\+\_\+number, uint64\+\_\+t position, size\+\_\+t length, void $\ast$user\+\_\+data)
+\item 
+uint32\+\_\+t \hyperlink{tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc}{add\+\_\+filesender} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint16\+\_\+t friendnum, char $\ast$filename)
+\item 
+void \hyperlink{tox__sync_8c_a2038b24d242a7c5f31cbb116f2f30820}{kill\+\_\+filesender} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$\hyperlink{_messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m}, uint32\+\_\+t \hyperlink{tox__test_8c_aed845bec91f99896ce34a65a6f248ea5}{filenum})
+\item 
+int \hyperlink{tox__sync_8c_a7628254e3a34910ea0712e135948be46}{not\+\_\+sending} ()
+\item 
+void \hyperlink{tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353}{file\+\_\+request\+\_\+accept} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\+\_\+number}, uint32\+\_\+t file\+\_\+number, uint32\+\_\+t type, uint64\+\_\+t \hyperlink{tox__test_8c_af564d0d073559935815f33b08f7fbd51}{file\+\_\+size}, const uint8\+\_\+t $\ast$filename, size\+\_\+t filename\+\_\+length, void $\ast$user\+\_\+data)
+\item 
+void \hyperlink{tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e}{file\+\_\+print\+\_\+control} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\+\_\+number}, uint32\+\_\+t file\+\_\+number, \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9}{T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L} control, void $\ast$user\+\_\+data)
+\item 
+void \hyperlink{tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e}{write\+\_\+file} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t friendnumber, uint32\+\_\+t filenumber, uint64\+\_\+t position, const uint8\+\_\+t $\ast$data, size\+\_\+t length, void $\ast$user\+\_\+data)
+\item 
+void \hyperlink{tox__sync_8c_a61256aeab299b47ada9659cb790e8634}{print\+\_\+online} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, uint32\+\_\+t friendnumber, \hyperlink{tox_8h_ab13b9741ea8c99016819171a0b869dbb}{T\+O\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N} status, void $\ast$userdata)
+\item 
+int \hyperlink{tox__sync_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_file__t}{File\+\_\+t} \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\+\_\+senders} \mbox{[}\hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}\mbox{]}
+\item 
+\hyperlink{struct_file__t}{File\+\_\+t} \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\+\_\+recv} \mbox{[}\hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{numfilesenders}
+\item 
+static char \hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path} \mbox{[}1024\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{tox__sync_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!c\+\_\+sleep@{c\+\_\+sleep}}
+\index{c\+\_\+sleep@{c\+\_\+sleep}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{c\+\_\+sleep}]{\setlength{\rightskip}{0pt plus 5cm}\#define c\+\_\+sleep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~usleep(1000$\ast${\bf x})}}\label{tox__sync_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}
+
+
+Definition at line 39 of file tox\+\_\+sync.\+c.
+
+
+
+Referenced by main().
+
+\hypertarget{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S@{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}}
+\index{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S@{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S~256}}\label{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}
+
+
+Definition at line 46 of file tox\+\_\+sync.\+c.
+
+
+
+Referenced by kill\+\_\+filesender(), not\+\_\+sending(), print\+\_\+online(), and tox\+\_\+file\+\_\+chunk\+\_\+request().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!add\+\_\+filesender@{add\+\_\+filesender}}
+\index{add\+\_\+filesender@{add\+\_\+filesender}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{add\+\_\+filesender}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t add\+\_\+filesender (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{friendnum, }
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc}
+
+
+Definition at line 81 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, filenum, File\+\_\+t\+::filenumber, File\+\_\+t\+::friendnum, numfilesenders, T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+K\+I\+N\+D\+\_\+\+D\+A\+T\+A, and tox\+\_\+file\+\_\+send().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+82 \{
+83     FILE *tempfile = fopen(filename, \textcolor{stringliteral}{"rb"});
+84 
+85     \textcolor{keywordflow}{if} (tempfile == 0)
+86         \textcolor{keywordflow}{return} -1;
+87 
+88     fseek(tempfile, 0, SEEK\_END);
+89     uint64\_t filesize = ftell(tempfile);
+90     fseek(tempfile, 0, SEEK\_SET);
+91     uint32\_t \hyperlink{tox__test_8c_aed845bec91f99896ce34a65a6f248ea5}{filenum} = \hyperlink{tox_8c_a57990fd242dca24aa7e1f29f5fa56be7}{tox\_file\_send}(m, friendnum, 
+      \hyperlink{tox_8h_a8fddeeee28ccfa73c93f5c6bb807ff93a70959d02490e1b658c7d7daf262869a0}{TOX\_FILE\_KIND\_DATA}, filesize, 0, (uint8\_t *)filename,
+92                                      strlen(filename), 0);
+93 
+94     \textcolor{keywordflow}{if} (filenum == -1)
+95         \textcolor{keywordflow}{return} -1;
+96 
+97     \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{numfilesenders}].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = tempfile;
+98     \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{numfilesenders}].\hyperlink{struct_file__t_af02b3246ba69ea99fddd081f6e95598f}{friendnum} = friendnum;
+99     \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{numfilesenders}].\hyperlink{struct_file__t_a32e4dffe2d73a1eeddb1bc8ce5511367}{filenumber} = 
+      \hyperlink{tox__test_8c_aed845bec91f99896ce34a65a6f248ea5}{filenum};
+100     ++\hyperlink{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{numfilesenders};
+101     \textcolor{keywordflow}{return} \hyperlink{tox__test_8c_aed845bec91f99896ce34a65a6f248ea5}{filenum};
+102 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d99/tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{dd/d99/tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!file\+\_\+print\+\_\+control@{file\+\_\+print\+\_\+control}}
+\index{file\+\_\+print\+\_\+control@{file\+\_\+print\+\_\+control}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{file\+\_\+print\+\_\+control}]{\setlength{\rightskip}{0pt plus 5cm}void file\+\_\+print\+\_\+control (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friend\+\_\+number, }
+\item[{uint32\+\_\+t}]{file\+\_\+number, }
+\item[{{\bf T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L}}]{control, }
+\item[{void $\ast$}]{user\+\_\+data}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e}
+
+
+Definition at line 172 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, kill\+\_\+filesender(), printf(), and T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+A\+N\+C\+E\+L.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+174 \{
+175     \textcolor{keywordflow}{if} (file\_number < (1 << 15) && (control == \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9a420d1b7e532e540ec7018cd2218a7423}{TOX\_FILE\_CONTROL\_CANCEL})) \{
+176         \hyperlink{tox__sync_8c_a2038b24d242a7c5f31cbb116f2f30820}{kill\_filesender}(tox, file\_number);
+177         \textcolor{keywordflow}{return};
+178     \}
+179 
+180     \textcolor{keywordflow}{if} (file\_number > (1 << 15) && (control == \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9a420d1b7e532e540ec7018cd2218a7423}{TOX\_FILE\_CONTROL\_CANCEL})) \{
+181         uint8\_t file\_index = (file\_number >> 16) - 1;
+182         fclose(\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file);
+183         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"File closed\(\backslash\)n"});
+184         \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+185         \textcolor{keywordflow}{return};
+186     \}
+187 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dd/d99/tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{dd/d99/tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!file\+\_\+request\+\_\+accept@{file\+\_\+request\+\_\+accept}}
+\index{file\+\_\+request\+\_\+accept@{file\+\_\+request\+\_\+accept}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{file\+\_\+request\+\_\+accept}]{\setlength{\rightskip}{0pt plus 5cm}void file\+\_\+request\+\_\+accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friend\+\_\+number, }
+\item[{uint32\+\_\+t}]{file\+\_\+number, }
+\item[{uint32\+\_\+t}]{type, }
+\item[{uint64\+\_\+t}]{file\+\_\+size, }
+\item[{const uint8\+\_\+t $\ast$}]{filename, }
+\item[{size\+\_\+t}]{filename\+\_\+length, }
+\item[{void $\ast$}]{user\+\_\+data}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353}
+
+
+Definition at line 127 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, i, path, printf(), tox\+\_\+file\+\_\+control(), T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+A\+N\+C\+E\+L, T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+S\+U\+M\+E, and T\+O\+X\+\_\+\+F\+I\+L\+E\+\_\+\+K\+I\+N\+D\+\_\+\+D\+A\+T\+A.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+129 \{
+130     \textcolor{keywordflow}{if} (type != \hyperlink{tox_8h_a8fddeeee28ccfa73c93f5c6bb807ff93a70959d02490e1b658c7d7daf262869a0}{TOX\_FILE\_KIND\_DATA}) \{
+131         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Refused invalid file type."});
+132         \hyperlink{tox_8c_ad839087bf9cc7e8594eaaca66b111ba1}{tox\_file\_control}(tox, \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number}, file\_number, 
+      \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9a420d1b7e532e540ec7018cd2218a7423}{TOX\_FILE\_CONTROL\_CANCEL}, 0);
+133         \textcolor{keywordflow}{return};
+134     \}
+135 
+136     \textcolor{keywordtype}{char} fullpath[1024];
+137     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+138     uint16\_t rm = 0;
+139 
+140     \textcolor{keywordflow}{for} (i = 0; i < strlen((\textcolor{keywordtype}{char} *)filename); ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+141         \textcolor{keywordflow}{if} (filename[i] == \textcolor{charliteral}{'/'})
+142             rm = \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+143     \}
+144 
+145     \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}[strlen(\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}) - 1] == \textcolor{charliteral}{'/'})
+146         sprintf(fullpath, \textcolor{stringliteral}{"%s%s"}, \hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}, filename + rm + 1);
+147     \textcolor{keywordflow}{else}
+148         sprintf(fullpath, \textcolor{stringliteral}{"%s/%s"}, \hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}, filename + rm + 1);
+149 
+150     FILE *tempfile = fopen(fullpath, \textcolor{stringliteral}{"rb"});
+151 
+152     \textcolor{keywordflow}{if} (tempfile != 0) \{
+153         fclose(tempfile);
+154         \hyperlink{tox_8c_ad839087bf9cc7e8594eaaca66b111ba1}{tox\_file\_control}(tox, \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number}, file\_number, 
+      \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9a420d1b7e532e540ec7018cd2218a7423}{TOX\_FILE\_CONTROL\_CANCEL}, 0);
+155         \textcolor{keywordflow}{return};
+156     \}
+157 
+158     uint8\_t file\_index = (file\_number >> 16) - 1;
+159     \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = fopen(fullpath, \textcolor{stringliteral}{"wb"});
+160 
+161     \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file == 0) \{
+162         \hyperlink{tox_8c_ad839087bf9cc7e8594eaaca66b111ba1}{tox\_file\_control}(tox, \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number}, file\_number, 
+      \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9a420d1b7e532e540ec7018cd2218a7423}{TOX\_FILE\_CONTROL\_CANCEL}, 0);
+163         \textcolor{keywordflow}{return};
+164     \}
+165 
+166     \textcolor{keywordflow}{if} (\hyperlink{tox_8c_ad839087bf9cc7e8594eaaca66b111ba1}{tox\_file\_control}(tox, \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number}, file\_number, 
+      \hyperlink{tox_8h_a18a7808bc88ad8a040b4ee0c4e1461f9aa5df194635dbb35c0519a811b57c524c}{TOX\_FILE\_CONTROL\_RESUME}, 0)) \{
+167         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Accepted file transfer. (file: %s)\(\backslash\)n"}, fullpath);
+168     \}
+169 
+170 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d99/tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{dd/d99/tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a2038b24d242a7c5f31cbb116f2f30820}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!kill\+\_\+filesender@{kill\+\_\+filesender}}
+\index{kill\+\_\+filesender@{kill\+\_\+filesender}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{kill\+\_\+filesender}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+filesender (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{m, }
+\item[{uint32\+\_\+t}]{filenum}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a2038b24d242a7c5f31cbb116f2f30820}
+
+
+Definition at line 104 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, i, and N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S.
+
+
+
+Referenced by file\+\_\+print\+\_\+control().
+
+
+\begin{DoxyCode}
+105 \{
+106     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+107 
+108     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{NUM\_FILE\_SENDERS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+109         \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file != 0 && \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].filenumber == 
+      \hyperlink{tox__test_8c_aed845bec91f99896ce34a65a6f248ea5}{filenum}) \{
+110             fclose(\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file);
+111             \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+112         \}
+113 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d99/tox__sync_8c_a2038b24d242a7c5f31cbb116f2f30820_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!main@{main}}
+\index{main@{main}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 232 of file tox\+\_\+sync.\+c.
+
+
+
+References add\+\_\+filesender(), c\+\_\+sleep, cmdline\+\_\+parsefor\+\_\+ipv46(), file\+\_\+print\+\_\+control(), file\+\_\+request\+\_\+accept(), hex\+\_\+string\+\_\+to\+\_\+bin(), i, not\+\_\+sending(), num, path, port, print\+\_\+online(), printf(), T\+O\+X\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+S\+I\+Z\+E, tox\+\_\+bootstrap(), tox\+\_\+callback\+\_\+file\+\_\+chunk\+\_\+request(), tox\+\_\+callback\+\_\+file\+\_\+recv(), tox\+\_\+callback\+\_\+file\+\_\+recv\+\_\+chunk(), tox\+\_\+callback\+\_\+file\+\_\+recv\+\_\+control(), tox\+\_\+callback\+\_\+friend\+\_\+connection\+\_\+status(), tox\+\_\+file\+\_\+chunk\+\_\+request(), tox\+\_\+friend\+\_\+add(), tox\+\_\+friend\+\_\+get\+\_\+connection\+\_\+status(), tox\+\_\+iterate(), tox\+\_\+new(), tox\+\_\+self\+\_\+get\+\_\+address(), tox\+\_\+self\+\_\+get\+\_\+connection\+\_\+status(), and write\+\_\+file().
+
+
+\begin{DoxyCode}
+233 \{
+234     uint8\_t ipv6enabled = 1; \textcolor{comment}{/* x */}
+235     \textcolor{keywordtype}{int} argvoffset = \hyperlink{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{cmdline\_parsefor\_ipv46}(argc, argv, &ipv6enabled);
+236 
+237     \textcolor{keywordflow}{if} (argvoffset < 0)
+238         exit(1);
+239 
+240     \textcolor{comment}{/* with optional --ipvx, now it can be 1-4 arguments... */}
+241     \textcolor{keywordflow}{if} ((argc != argvoffset + 3) && (argc != argvoffset + 5)) \{
+242         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Usage: %s [--ipv4|--ipv6] ip port public\_key (of the DHT bootstrap node) folder (to
+       sync)\(\backslash\)n"}, argv[0]);
+243         exit(0);
+244     \}
+245 
+246     \hyperlink{struct_messenger}{Tox} *tox = \hyperlink{tox_8c_aa0e6afccd06a766b84a0633e259f9165}{tox\_new}(0, 0);
+247     \hyperlink{tox_8c_ad828f18b7b4901f258fe7132b1bec4f6}{tox\_callback\_file\_recv\_chunk}(tox, \hyperlink{tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e}{write\_file}, NULL);
+248     \hyperlink{tox_8c_abb0eca9253a594357dfa0da0c9c64a0d}{tox\_callback\_file\_recv\_control}(tox, 
+      \hyperlink{tox__sync_8c_a6d4f5fe76ced673923d8ef17321a227e}{file\_print\_control}, NULL);
+249     \hyperlink{tox_8c_a2838aa05de2c47f58a45645248303b60}{tox\_callback\_file\_recv}(tox, \hyperlink{tox__sync_8c_a6d2460a7b0d3135f757dd8849dd3d353}{file\_request\_accept}, NULL);
+250     \hyperlink{tox_8c_ade12d3a935a20a1e2a87afa1799343a9}{tox\_callback\_file\_chunk\_request}(tox, 
+      \hyperlink{tox__sync_8c_a7209b965126c3b606c3f0030a088ed27}{tox\_file\_chunk\_request}, NULL);
+251     \hyperlink{tox_8c_aa7d891aaf1f15ee03f55b66227744157}{tox\_callback\_friend\_connection\_status}(tox, 
+      \hyperlink{tox__sync_8c_a61256aeab299b47ada9659cb790e8634}{print\_online}, NULL);
+252 
+253     uint16\_t \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = atoi(argv[argvoffset + 2]);
+254     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *binary\_string = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(argv[argvoffset + 3]);
+255     \textcolor{keywordtype}{int} res = \hyperlink{tox_8c_ae7e49c1e9e6c3a0f9e55bfcb78044c1e}{tox\_bootstrap}(tox, argv[argvoffset + 1], port, binary\_string, 0);
+256     free(binary\_string);
+257 
+258     \textcolor{keywordflow}{if} (!res) \{
+259         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Failed to convert \(\backslash\)"%s\(\backslash\)" into an IP address. Exiting...\(\backslash\)n"}, argv[argvoffset + 1]);
+260         exit(1);
+261     \}
+262 
+263     uint8\_t address[\hyperlink{tox_8h_a3a8d42ad8b2803ba6d69e88aac567113}{TOX\_ADDRESS\_SIZE}];
+264     \hyperlink{tox_8c_ab52d4512e58c7ff8f62121beff5c0a49}{tox\_self\_get\_address}(tox, address);
+265     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+266 
+267     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox_8h_a3a8d42ad8b2803ba6d69e88aac567113}{TOX\_ADDRESS\_SIZE}; i++) \{
+268         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%02X"}, address[i]);
+269     \}
+270 
+271     \textcolor{keywordtype}{char} temp\_id[128];
+272     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nEnter the address of the other id you want to sync with (38 bytes HEX format):\(\backslash\)n"});
+273 
+274     \textcolor{keywordflow}{if} (scanf(\textcolor{stringliteral}{"%s"}, temp\_id) != 1) \{
+275         \textcolor{keywordflow}{return} 1;
+276     \}
+277 
+278     uint8\_t *bin\_id = \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\_string\_to\_bin}(temp\_id);
+279     uint32\_t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = \hyperlink{tox_8c_aa921c439baad10c03f8d93fda753b0b8}{tox\_friend\_add}(tox, bin\_id, (uint8\_t *)\textcolor{stringliteral}{"Install Gentoo"}, \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"
+      Install Gentoo"}), 0);
+280     free(bin\_id);
+281 
+282     \textcolor{keywordflow}{if} (num == UINT32\_MAX) \{
+283         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nSomething went wrong when adding friend.\(\backslash\)n"});
+284         \textcolor{keywordflow}{return} 1;
+285     \}
+286 
+287     memcpy(\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}, argv[argvoffset + 4], strlen(argv[argvoffset + 4]));
+288     DIR           *d;
+289     \textcolor{keyword}{struct }dirent *dir;
+290     uint8\_t notconnected = 1;
+291 
+292     \textcolor{keywordflow}{while} (1) \{
+293         \textcolor{keywordflow}{if} (\hyperlink{tox_8c_a737d5d61ce41d26205b7e4a6edd7bc94}{tox\_self\_get\_connection\_status}(tox) && notconnected) \{
+294             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nDHT connected.\(\backslash\)n"});
+295             notconnected = 0;
+296         \}
+297 
+298         \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a7628254e3a34910ea0712e135948be46}{not\_sending}() && \hyperlink{tox_8c_a21c61f8efb52a75bac6cb7858071d00a}{tox\_friend\_get\_connection\_status}(
+      tox, num, 0)) \{
+299             d = opendir(\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path});
+300 
+301             \textcolor{keywordflow}{if} (d) \{
+302                 \textcolor{keywordflow}{while} ((dir = readdir(d)) != NULL) \{
+303                     \textcolor{keywordflow}{if} (dir->d\_type == DT\_REG) \{
+304                         \textcolor{keywordtype}{char} fullpath[1024];
+305 
+306                         \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}[strlen(\hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}) - 1] == \textcolor{charliteral}{'/'})
+307                             sprintf(fullpath, \textcolor{stringliteral}{"%s%s"}, \hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}, dir->d\_name);
+308                         \textcolor{keywordflow}{else}
+309                             sprintf(fullpath, \textcolor{stringliteral}{"%s/%s"}, \hyperlink{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{path}, dir->d\_name);
+310 
+311                         \hyperlink{tox__sync_8c_aa834c164f5a649c381bb5dcca7a5b4fc}{add\_filesender}(tox, num, fullpath);
+312                     \}
+313                 \}
+314 
+315                 closedir(d);
+316 
+317             \} \textcolor{keywordflow}{else} \{
+318                 \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nFailed to open directory.\(\backslash\)n"});
+319                 \textcolor{keywordflow}{return} 1;
+320             \}
+321         \}
+322 
+323         \hyperlink{tox_8c_a649c8740c523fb52272396cb0b70b8dc}{tox\_iterate}(tox);
+324         \hyperlink{tox__sync_8c_a5d21ea3d7da27fbd9f40c59aaa04da62}{c\_sleep}(1);
+325     \}
+326 
+327     \textcolor{keywordflow}{return} 0;
+328 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d99/tox__sync_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a7628254e3a34910ea0712e135948be46}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!not\+\_\+sending@{not\+\_\+sending}}
+\index{not\+\_\+sending@{not\+\_\+sending}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{not\+\_\+sending}]{\setlength{\rightskip}{0pt plus 5cm}int not\+\_\+sending (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a7628254e3a34910ea0712e135948be46}
+
+
+Definition at line 114 of file tox\+\_\+sync.\+c.
+
+
+
+References i, and N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+115 \{
+116     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+117 
+118     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{NUM\_FILE\_SENDERS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i})
+119         \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file != 0)
+120             \textcolor{keywordflow}{return} 0;
+121 
+122     \textcolor{keywordflow}{return} 1;
+123 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{dd/d99/tox__sync_8c_a7628254e3a34910ea0712e135948be46_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a61256aeab299b47ada9659cb790e8634}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!print\+\_\+online@{print\+\_\+online}}
+\index{print\+\_\+online@{print\+\_\+online}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{print\+\_\+online}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+online (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{{\bf T\+O\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}}]{status, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a61256aeab299b47ada9659cb790e8634}
+
+
+Definition at line 210 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, i, N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S, and printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordflow}{if} (status)
+213         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nOther went online.\(\backslash\)n"});
+214     \textcolor{keywordflow}{else} \{
+215         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"\(\backslash\)nOther went offline.\(\backslash\)n"});
+216         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+217 
+218         \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{NUM\_FILE\_SENDERS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+219             \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file != 0) \{
+220                 fclose(\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file);
+221                 \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+222             \}
+223 
+224             \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[i].file != 0) \{
+225                 fclose(\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[i].file);
+226                 \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+227             \}
+228         \}
+229     \}
+230 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{dd/d99/tox__sync_8c_a61256aeab299b47ada9659cb790e8634_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{dd/d99/tox__sync_8c_a61256aeab299b47ada9659cb790e8634_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a7209b965126c3b606c3f0030a088ed27}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!tox\+\_\+file\+\_\+chunk\+\_\+request@{tox\+\_\+file\+\_\+chunk\+\_\+request}}
+\index{tox\+\_\+file\+\_\+chunk\+\_\+request@{tox\+\_\+file\+\_\+chunk\+\_\+request}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{tox\+\_\+file\+\_\+chunk\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+file\+\_\+chunk\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friend\+\_\+number, }
+\item[{uint32\+\_\+t}]{file\+\_\+number, }
+\item[{uint64\+\_\+t}]{position, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{user\+\_\+data}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a7209b965126c3b606c3f0030a088ed27}
+
+
+Definition at line 56 of file tox\+\_\+sync.\+c.
+
+
+
+References make-\/funny-\/savefile\+::data, File\+\_\+t\+::file, i, N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S, printf(), and tox\+\_\+file\+\_\+send\+\_\+chunk().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+60 
+61     \textcolor{keywordflow}{for} (i = 0; i < \hyperlink{tox__sync_8c_a3f5a542a8edd51f567edf1e7b37d272b}{NUM\_FILE\_SENDERS}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+62         \textcolor{comment}{/* This is slow */}
+63         \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file && \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].friendnum == 
+      \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number} && \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].filenumber == file\_number) \{
+64             \textcolor{keywordflow}{if} (length == 0) \{
+65                 fclose(\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file);
+66                 \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+67                 \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"[t] %u file transfer: %u completed\(\backslash\)n"}, 
+      \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].friendnum, \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].filenumber);
+68                 \textcolor{keywordflow}{break};
+69             \}
+70 
+71             fseek(\hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file, position, SEEK\_SET);
+72             uint8\_t \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[length];
+73             \textcolor{keywordtype}{int} len = fread(data, 1, length, \hyperlink{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{file\_senders}[i].file);
+74             \hyperlink{tox_8c_a7653dd0bbf8bda8e18d211277f3e7577}{tox\_file\_send\_chunk}(tox, \hyperlink{_d_h_t_8c_a6cbd0f66d63003cc0def913dc7a4254b}{friend\_number}, file\_number, position, 
+      data, len, 0);
+75             \textcolor{keywordflow}{break};
+76         \}
+77     \}
+78 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d99/tox__sync_8c_a7209b965126c3b606c3f0030a088ed27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{dd/d99/tox__sync_8c_a7209b965126c3b606c3f0030a088ed27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!write\+\_\+file@{write\+\_\+file}}
+\index{write\+\_\+file@{write\+\_\+file}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{write\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}void write\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{uint32\+\_\+t}]{friendnumber, }
+\item[{uint32\+\_\+t}]{filenumber, }
+\item[{uint64\+\_\+t}]{position, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{size\+\_\+t}]{length, }
+\item[{void $\ast$}]{user\+\_\+data}
+\end{DoxyParamCaption}
+)}}\label{tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e}
+
+
+Definition at line 189 of file tox\+\_\+sync.\+c.
+
+
+
+References File\+\_\+t\+::file, and printf().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+191 \{
+192     uint8\_t file\_index = (filenumber >> 16) - 1;
+193 
+194     \textcolor{keywordflow}{if} (length == 0) \{
+195         fclose(\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file);
+196         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"File closed\(\backslash\)n"});
+197         \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].\hyperlink{struct_file__t_a702945180aa732857b380a007a7e2a21}{file} = 0;
+198         \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"%u file transfer: %u completed\(\backslash\)n"}, friendnumber, filenumber);
+199         \textcolor{keywordflow}{return};
+200     \}
+201 
+202     \textcolor{keywordflow}{if} (\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file != 0) \{
+203         fseek(\hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file, position, SEEK\_SET);
+204 
+205         \textcolor{keywordflow}{if} (fwrite(\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length, 1, \hyperlink{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{file\_recv}[file\_index].file) != 1)
+206             \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Error writing data\(\backslash\)n"});
+207     \}
+208 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{dd/d99/tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{dd/d99/tox__sync_8c_a2d81671277a08fc6e90ef2dae0f3ea4e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!file\+\_\+recv@{file\+\_\+recv}}
+\index{file\+\_\+recv@{file\+\_\+recv}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{file\+\_\+recv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+\_\+t} file\+\_\+recv\mbox{[}{\bf N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}\mbox{]}}}\label{tox__sync_8c_a7c15925710b7704e276c230d73f7f4f0}
+
+
+Definition at line 53 of file tox\+\_\+sync.\+c.
+
+\hypertarget{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!file\+\_\+senders@{file\+\_\+senders}}
+\index{file\+\_\+senders@{file\+\_\+senders}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{file\+\_\+senders}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+\_\+t} file\+\_\+senders\mbox{[}{\bf N\+U\+M\+\_\+\+F\+I\+L\+E\+\_\+\+S\+E\+N\+D\+E\+R\+S}\mbox{]}}}\label{tox__sync_8c_a0bf9288cb8c4212721cf843edb8053cc}
+
+
+Definition at line 52 of file tox\+\_\+sync.\+c.
+
+\hypertarget{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!numfilesenders@{numfilesenders}}
+\index{numfilesenders@{numfilesenders}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{numfilesenders}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t numfilesenders}}\label{tox__sync_8c_adba72303546f264686b8b2c05c0e83aa}
+
+
+Definition at line 54 of file tox\+\_\+sync.\+c.
+
+
+
+Referenced by add\+\_\+filesender().
+
+\hypertarget{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}{\index{tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}!path@{path}}
+\index{path@{path}!tox\+\_\+sync.\+c@{tox\+\_\+sync.\+c}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}char path\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{tox__sync_8c_a6f50c85874ef8f3405625e5a26febbcb}
+
+
+Definition at line 125 of file tox\+\_\+sync.\+c.
+
+
+
+Referenced by client\+\_\+send\+\_\+announce\+\_\+request(), file\+\_\+request\+\_\+accept(), main(), save\+\_\+data\+\_\+file(), send\+\_\+onion\+\_\+data(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+

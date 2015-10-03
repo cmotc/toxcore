@@ -1,0 +1,5 @@
+<map id="crypto_num_free_sendqueue_slots" name="crypto_num_free_sendqueue_slots">
+<area shape="rect" id="node2" href="$d8/dc6/net__crypto_8c.html#a909daa4b6d420cbd028f2c956a8642db" title="get_crypto_connection" alt="" coords="243,13,396,39"/>
+<area shape="rect" id="node4" href="$d8/dc6/net__crypto_8c.html#abbe1101e6464100c19aea7cde5c1d3a0" title="num_packets_array" alt="" coords="251,63,387,90"/>
+<area shape="rect" id="node3" href="$d8/dc6/net__crypto_8c.html#a8aae93bf17f0b4a4305b88334e820310" title="crypt_connection_id\l_not_valid" alt="" coords="444,5,583,47"/>
+</map>

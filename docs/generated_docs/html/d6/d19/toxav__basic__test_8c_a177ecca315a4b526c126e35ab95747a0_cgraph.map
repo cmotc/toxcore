@@ -1,0 +1,5 @@
+<map id="callback_peer_cs_change" name="callback_peer_cs_change">
+<area shape="rect" id="node2" href="$d6/dc0/toxav__many__test_8c.html#a1b88a4421cf9eef5af4895904ce2d905" title="printf" alt="" coords="285,5,336,32"/>
+<area shape="rect" id="node3" href="$d8/d0e/toxav_8c.html#aaa65fd5f05a94ed9abf63c42f5e10ed4" title="toxav_get_peer_csettings" alt="" coords="225,56,396,83"/>
+<area shape="rect" id="node4" href="$d8/d0e/toxav_8c.html#a8eb45d94b5ed002925b58f36c66426b1" title="toxavcsettings_cast" alt="" coords="444,56,583,83"/>
+</map>

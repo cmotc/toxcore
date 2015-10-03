@@ -1,0 +1,161 @@
+\hypertarget{misc__tools_8c}{\section{testing/misc\+\_\+tools.c File Reference}
+\label{misc__tools_8c}\index{testing/misc\+\_\+tools.\+c@{testing/misc\+\_\+tools.\+c}}
+}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for misc\+\_\+tools.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d4/dbe/misc__tools_8c__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d24/misc__tools_8c__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{hex\+\_\+string\+\_\+to\+\_\+bin} (char $\ast$hex\+\_\+string)
+\item 
+int \hyperlink{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{cmdline\+\_\+parsefor\+\_\+ipv46} (int argc, char $\ast$$\ast$argv, uint8\+\_\+t $\ast$ipv6enabled)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}{\index{misc\+\_\+tools.\+c@{misc\+\_\+tools.\+c}!cmdline\+\_\+parsefor\+\_\+ipv46@{cmdline\+\_\+parsefor\+\_\+ipv46}}
+\index{cmdline\+\_\+parsefor\+\_\+ipv46@{cmdline\+\_\+parsefor\+\_\+ipv46}!misc\+\_\+tools.\+c@{misc\+\_\+tools.\+c}}
+\subsubsection[{cmdline\+\_\+parsefor\+\_\+ipv46}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parsefor\+\_\+ipv46 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{uint8\+\_\+t $\ast$}]{ipv6enabled}
+\end{DoxyParamCaption}
+)}}\label{misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f}
+
+
+Definition at line 55 of file misc\+\_\+tools.\+c.
+
+
+
+References printf().
+
+
+
+Referenced by init\+\_\+tox(), and main().
+
+
+\begin{DoxyCode}
+56 \{
+57     \textcolor{keywordtype}{int} argvoffset = 0, argi;
+58 
+59     \textcolor{keywordflow}{for} (argi = 1; argi < argc; argi++)
+60         \textcolor{keywordflow}{if} (!strncasecmp(argv[argi], \textcolor{stringliteral}{"--ipv"}, 5)) \{
+61             \textcolor{keywordflow}{if} (argv[argi][5] && !argv[argi][6]) \{
+62                 \textcolor{keywordtype}{char} c = argv[argi][5];
+63 
+64                 \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'4'})
+65                     *ipv6enabled = 0;
+66                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'6'})
+67                     *ipv6enabled = 1;
+68                 \textcolor{keywordflow}{else} \{
+69                     \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Invalid argument: %s. Try --ipv4 or --ipv6!\(\backslash\)n"}, argv[argi]);
+70                     \textcolor{keywordflow}{return} -1;
+71                 \}
+72             \} \textcolor{keywordflow}{else} \{
+73                 \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Invalid argument: %s. Try --ipv4 or --ipv6!\(\backslash\)n"}, argv[argi]);
+74                 \textcolor{keywordflow}{return} -1;
+75             \}
+76 
+77             \textcolor{keywordflow}{if} (argvoffset != argi - 1) \{
+78                 \hyperlink{toxav__many__test_8c_a1b88a4421cf9eef5af4895904ce2d905}{printf}(\textcolor{stringliteral}{"Argument must come first: %s.\(\backslash\)n"}, argv[argi]);
+79                 \textcolor{keywordflow}{return} -1;
+80             \}
+81 
+82             argvoffset++;
+83         \}
+84 
+85     \textcolor{keywordflow}{return} argvoffset;
+86 \};
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{d5/da3/misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da3/misc__tools_8c_a71e9fc36ac2daca56b990437704bd35f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}{\index{misc\+\_\+tools.\+c@{misc\+\_\+tools.\+c}!hex\+\_\+string\+\_\+to\+\_\+bin@{hex\+\_\+string\+\_\+to\+\_\+bin}}
+\index{hex\+\_\+string\+\_\+to\+\_\+bin@{hex\+\_\+string\+\_\+to\+\_\+bin}!misc\+\_\+tools.\+c@{misc\+\_\+tools.\+c}}
+\subsubsection[{hex\+\_\+string\+\_\+to\+\_\+bin}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ hex\+\_\+string\+\_\+to\+\_\+bin (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hex\+\_\+string}
+\end{DoxyParamCaption}
+)}}\label{misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96}
+
+
+Definition at line 38 of file misc\+\_\+tools.\+c.
+
+
+
+References i.
+
+
+
+Referenced by bootstrap\+\_\+from\+\_\+config(), init\+\_\+tox(), line\+\_\+eval(), and main().
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{comment}{// byte is represented by exactly 2 hex digits, so lenth of binary string}
+41     \textcolor{comment}{// is half of that of the hex one. only hex string with even length}
+42     \textcolor{comment}{// valid. the more proper implementation would be to check if strlen(hex\_string)}
+43     \textcolor{comment}{// is odd and return error code if it is. we assume strlen is even. if it's not}
+44     \textcolor{comment}{// then the last byte just won't be written in 'ret'.}
+45     \textcolor{keywordtype}{size\_t} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, len = strlen(hex\_string) / 2;
+46     uint8\_t *ret = malloc(len);
+47     \textcolor{keywordtype}{char} *pos = hex\_string;
+48 
+49     \textcolor{keywordflow}{for} (i = 0; i < len; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, pos += 2)
+50         sscanf(pos, \textcolor{stringliteral}{"%2hhx"}, &ret[i]);
+51 
+52     \textcolor{keywordflow}{return} ret;
+53 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/da3/misc__tools_8c_aff7dee3cea854d8a56b5a29f77910f96_icgraph}
+\end{center}
+\end{figure}
+
+

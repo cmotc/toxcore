@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['cancel',['cancel',['../d2/d9b/msi_8c.html#ae511d1f1e345bb77cd4120b39679f028afa28df73c87d81742155531f0f36dc71',1,'msi.c']]],
+  ['canceled',['Canceled',['../d6/d19/toxav__basic__test_8c.html#a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924',1,'Canceled():&#160;toxav_basic_test.c'],['../d6/dc0/toxav__many__test_8c.html#a2da3ed682e12326d279ce4085f1280f6a29b1ab762ed2db50bedb77ec99994924',1,'Canceled():&#160;toxav_many_test.c']]],
+  ['chat_5fchange_5fpeer_5fadd',['CHAT_CHANGE_PEER_ADD',['../dd/de4/toxcore_2group_8h.html#abed82baf7f470b522273a3e37c24c600afadf167439e54399b2a3d6414d8ccf95',1,'group.h']]],
+  ['chat_5fchange_5fpeer_5fdel',['CHAT_CHANGE_PEER_DEL',['../dd/de4/toxcore_2group_8h.html#abed82baf7f470b522273a3e37c24c600a2ddc5324e4aae3b073254a55e56b57bb',1,'group.h']]],
+  ['chat_5fchange_5fpeer_5fname',['CHAT_CHANGE_PEER_NAME',['../dd/de4/toxcore_2group_8h.html#abed82baf7f470b522273a3e37c24c600a2bbbcf7a2d323bc7e36f0a1ca4b47fe9',1,'group.h']]],
+  ['connection_5fnone',['CONNECTION_NONE',['../d4/d30/_messenger_8h.html#aba01db17f4a2bfbc3db60dc172972a25a8ad3970838c849405136a8d52bec70e1',1,'Messenger.h']]],
+  ['connection_5ftcp',['CONNECTION_TCP',['../d4/d30/_messenger_8h.html#aba01db17f4a2bfbc3db60dc172972a25aa393b364b51a891ecf2ef9292ff5192c',1,'Messenger.h']]],
+  ['connection_5fudp',['CONNECTION_UDP',['../d4/d30/_messenger_8h.html#aba01db17f4a2bfbc3db60dc172972a25aaa6bcb092cadcf56c3637f282fac13c6',1,'Messenger.h']]],
+  ['connection_5funknown',['CONNECTION_UNKNOWN',['../d4/d30/_messenger_8h.html#aba01db17f4a2bfbc3db60dc172972a25aaa98c30b12cac8536b62c99df201f423',1,'Messenger.h']]],
+  ['cs_5faudiodecoding',['cs_AudioDecoding',['../d1/d16/codec_8h.html#a9ad0f479beeeb19d00d4ce7063bed6dea1b08f39af3d00cdd95084db9920f28c4',1,'codec.h']]],
+  ['cs_5faudioencoding',['cs_AudioEncoding',['../d1/d16/codec_8h.html#a9ad0f479beeeb19d00d4ce7063bed6deaa87f50fffc6da5bfe0ebf1109bc3d043',1,'codec.h']]],
+  ['cs_5ferrorsettingvideobitrate',['cs_ErrorSettingVideoBitrate',['../d1/d16/codec_8h.html#a2452160d9e9ade8cd58a01ad61a5b6b2ae78b2b38fe3c75ee43165737192b1dad',1,'codec.h']]],
+  ['cs_5ferrorsettingvideoresolution',['cs_ErrorSettingVideoResolution',['../d1/d16/codec_8h.html#a2452160d9e9ade8cd58a01ad61a5b6b2af1a6bea9022db13fcbb0fa1fa91b4639',1,'codec.h']]],
+  ['cs_5ferrorsplittingvideopayload',['cs_ErrorSplittingVideoPayload',['../d1/d16/codec_8h.html#a2452160d9e9ade8cd58a01ad61a5b6b2a70379b0a1ba1b8a9f513aa4133a09b05',1,'codec.h']]],
+  ['cs_5fvideodecoding',['cs_VideoDecoding',['../d1/d16/codec_8h.html#a9ad0f479beeeb19d00d4ce7063bed6dea7645328bfd892605b61a8548b902e3b8',1,'codec.h']]],
+  ['cs_5fvideoencoding',['cs_VideoEncoding',['../d1/d16/codec_8h.html#a9ad0f479beeeb19d00d4ce7063bed6dea6a5a203bfa4ccde530809a3f11d4bb73',1,'codec.h']]]
+];

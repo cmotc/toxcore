@@ -1,0 +1,9 @@
+<map id="dequeue" name="dequeue">
+<area shape="rect" id="node2" href="$db/d46/toxav_2group_8c.html#a9156785c1b3cbd3de5a526d2ada8dca8" title="decode_audio_packet" alt="" coords="124,31,272,57"/>
+<area shape="rect" id="node3" href="$db/d46/toxav_2group_8c.html#a6b0b3f3f3a9c37f15f4db299b6316e7d" title="handle_group_audio\l_packet" alt="" coords="320,23,457,65"/>
+<area shape="rect" id="node4" href="$db/d46/toxav_2group_8c.html#ab6f2cb7fef697bde984bf67a3036e4d0" title="groupchat_enable_av" alt="" coords="505,31,651,57"/>
+<area shape="rect" id="node5" href="$d8/da5/toxav_2group_8h.html#a0cf061415a40de14b1dca48921a6f687" title="add_av_groupchat" alt="" coords="699,5,827,32"/>
+<area shape="rect" id="node7" href="$d8/da5/toxav_2group_8h.html#a3bb53f02b23ac60cb1e76d3717a4e2e5" title="join_av_groupchat" alt="" coords="699,56,826,83"/>
+<area shape="rect" id="node6" href="$d9/d82/toxav_8h.html#a71c8622e709969f80a862ee56da27184" title="toxav_add_av_groupchat" alt="" coords="875,5,1041,32"/>
+<area shape="rect" id="node8" href="$d9/d82/toxav_8h.html#a02fd1017fbe8e974c2c0a39ee08067d7" title="toxav_join_av_groupchat" alt="" coords="875,56,1041,83"/>
+</map>

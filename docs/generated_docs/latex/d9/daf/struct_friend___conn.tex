@@ -1,0 +1,367 @@
+\hypertarget{struct_friend___conn}{\section{Friend\+\_\+\+Conn Struct Reference}
+\label{struct_friend___conn}\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+}
+
+
+{\ttfamily \#include $<$friend\+\_\+connection.\+h$>$}
+
+
+
+Collaboration diagram for Friend\+\_\+\+Conn\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{d9/d7e/struct_friend___conn__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{real\+\_\+public\+\_\+key} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{dht\+\_\+temp\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{dht\+\_\+lock}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{dht\+\_\+ip\+\_\+port}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{dht\+\_\+pk\+\_\+lastrecv}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{dht\+\_\+ip\+\_\+port\+\_\+lastrecv}
+\item 
+int \hyperlink{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{onion\+\_\+friendnum}
+\item 
+int \hyperlink{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{crypt\+\_\+connection\+\_\+id}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___conn_a5130c3c4a93050475770184608d61918}{ping\+\_\+lastrecv}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}{ping\+\_\+lastsent}
+\item 
+uint64\+\_\+t \hyperlink{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{share\+\_\+relays\+\_\+lastsent}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int($\ast$ \hyperlink{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}{status\_callback} )(void $\ast$object, int id, \\
+\>\>uint8\_t \hyperlink{struct_friend___conn_ade818037fd6c985038ff29656089758d}{status})\\
+\>void $\ast$ \hyperlink{struct_friend___conn_a73f125475af5ebdac27d2c2a9060039b}{status\_callback\_object}\\
+\>int \hyperlink{struct_friend___conn_a374df80da5cf3057d7c3743afadb2596}{status\_callback\_id}\\
+\>int($\ast$ \hyperlink{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}{data\_callback} )(void $\ast$object, int id, \\
+\>\>uint8\_t $\ast$data, uint16\_t length)\\
+\>void $\ast$ \hyperlink{struct_friend___conn_a9135a1782241a1b2d5e9bcedef0c29a5}{data\_callback\_object}\\
+\>int \hyperlink{struct_friend___conn_a51067e0002b1d9ac8e14377917289292}{data\_callback\_id}\\
+\>int($\ast$ \hyperlink{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}{lossy\_data\_callback} )(void $\ast$object, int id, const \\
+\>\>uint8\_t $\ast$data, uint16\_t length)\\
+\>void $\ast$ \hyperlink{struct_friend___conn_a5a1c6eb314a3e3142dd5ae3d3868491b}{lossy\_data\_callback\_object}\\
+\>int \hyperlink{struct_friend___conn_a5c67a04bbd12eda4d5fe29f10d082bec}{lossy\_data\_callback\_id}\\
+\} \hyperlink{struct_friend___conn_a213983130190a8281ab689630f0aee97}{callbacks} \mbox{[}\hyperlink{friend__connection_8h_a28f384352cf0b5c144fdafb826701811}{MAX\_FRIEND\_CONNECTION\_CALLBACKS}\mbox{]}\\
+
+\end{tabbing}\item 
+uint16\+\_\+t \hyperlink{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{lock\+\_\+count}
+\item 
+\hyperlink{struct_node__format}{Node\+\_\+format} \hyperlink{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{tcp\+\_\+relays} \mbox{[}\hyperlink{friend__connection_8h_aac882ca62f0b32b069ace03fa3f106c0}{F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S}\mbox{]}
+\item 
+uint16\+\_\+t \hyperlink{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{tcp\+\_\+relay\+\_\+counter}
+\item 
+\+\_\+\+Bool \hyperlink{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{hosting\+\_\+tcp\+\_\+relay}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 66 of file friend\+\_\+connection.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_friend___conn_a213983130190a8281ab689630f0aee97}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{callbacks}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   callbacks\mbox{[}{\bf M\+A\+X\+\_\+\+F\+R\+I\+E\+N\+D\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S}\mbox{]}}}\label{struct_friend___conn_a213983130190a8281ab689630f0aee97}
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), handle\+\_\+lossy\+\_\+packet(), handle\+\_\+packet(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!crypt\+\_\+connection\+\_\+id@{crypt\+\_\+connection\+\_\+id}}
+\index{crypt\+\_\+connection\+\_\+id@{crypt\+\_\+connection\+\_\+id}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{crypt\+\_\+connection\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int crypt\+\_\+connection\+\_\+id}}\label{struct_friend___conn_a5ca114d88c26607a45883173f86c7c20}
+
+
+Definition at line 76 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), dht\+\_\+ip\+\_\+callback(), dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), friend\+\_\+connection\+\_\+crypt\+\_\+connection\+\_\+id(), friend\+\_\+new\+\_\+connection(), handle\+\_\+new\+\_\+connections(), handle\+\_\+status(), kill\+\_\+friend\+\_\+connection(), new\+\_\+friend\+\_\+connection(), send\+\_\+friend\+\_\+request\+\_\+packet(), send\+\_\+ping(), send\+\_\+relays(), and tcp\+\_\+relay\+\_\+node\+\_\+callback().
+
+\hypertarget{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!data\+\_\+callback@{data\+\_\+callback}}
+\index{data\+\_\+callback@{data\+\_\+callback}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{data\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ data\+\_\+callback)(void $\ast$object, int id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}}\label{struct_friend___conn_aeff54fdc061a263f5d331a9e0572fee7}
+
+
+Definition at line 86 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a51067e0002b1d9ac8e14377917289292}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!data\+\_\+callback\+\_\+id@{data\+\_\+callback\+\_\+id}}
+\index{data\+\_\+callback\+\_\+id@{data\+\_\+callback\+\_\+id}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{data\+\_\+callback\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int data\+\_\+callback\+\_\+id}}\label{struct_friend___conn_a51067e0002b1d9ac8e14377917289292}
+
+
+Definition at line 88 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a9135a1782241a1b2d5e9bcedef0c29a5}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!data\+\_\+callback\+\_\+object@{data\+\_\+callback\+\_\+object}}
+\index{data\+\_\+callback\+\_\+object@{data\+\_\+callback\+\_\+object}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{data\+\_\+callback\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ data\+\_\+callback\+\_\+object}}\label{struct_friend___conn_a9135a1782241a1b2d5e9bcedef0c29a5}
+
+
+Definition at line 87 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+packet().
+
+\hypertarget{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!dht\+\_\+ip\+\_\+port@{dht\+\_\+ip\+\_\+port}}
+\index{dht\+\_\+ip\+\_\+port@{dht\+\_\+ip\+\_\+port}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{dht\+\_\+ip\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} dht\+\_\+ip\+\_\+port}}\label{struct_friend___conn_ace58c2ab8adca0a754bcd2527e88a9d2}
+
+
+Definition at line 72 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), and handle\+\_\+new\+\_\+connections().
+
+\hypertarget{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!dht\+\_\+ip\+\_\+port\+\_\+lastrecv@{dht\+\_\+ip\+\_\+port\+\_\+lastrecv}}
+\index{dht\+\_\+ip\+\_\+port\+\_\+lastrecv@{dht\+\_\+ip\+\_\+port\+\_\+lastrecv}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{dht\+\_\+ip\+\_\+port\+\_\+lastrecv}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t dht\+\_\+ip\+\_\+port\+\_\+lastrecv}}\label{struct_friend___conn_a1b4abfeab3eeeb285cfc69b1ac8d84bb}
+
+
+Definition at line 73 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), do\+\_\+friend\+\_\+connections(), and handle\+\_\+new\+\_\+connections().
+
+\hypertarget{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!dht\+\_\+lock@{dht\+\_\+lock}}
+\index{dht\+\_\+lock@{dht\+\_\+lock}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{dht\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dht\+\_\+lock}}\label{struct_friend___conn_a1da451cf7bce45009c3ae38c003f2ed8}
+
+
+Definition at line 71 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk(), do\+\_\+friend\+\_\+connections(), friend\+\_\+new\+\_\+connection(), and kill\+\_\+friend\+\_\+connection().
+
+\hypertarget{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!dht\+\_\+pk\+\_\+lastrecv@{dht\+\_\+pk\+\_\+lastrecv}}
+\index{dht\+\_\+pk\+\_\+lastrecv@{dht\+\_\+pk\+\_\+lastrecv}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{dht\+\_\+pk\+\_\+lastrecv}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t dht\+\_\+pk\+\_\+lastrecv}}\label{struct_friend___conn_a64eb95337c42cb30956ee42f7c42cf0e}
+
+
+Definition at line 73 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk(), do\+\_\+friend\+\_\+connections(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!dht\+\_\+temp\+\_\+pk@{dht\+\_\+temp\+\_\+pk}}
+\index{dht\+\_\+temp\+\_\+pk@{dht\+\_\+temp\+\_\+pk}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{dht\+\_\+temp\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dht\+\_\+temp\+\_\+pk\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_friend___conn_ab863a4d1023acff25635c1b4a36015a2}
+
+
+Definition at line 70 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by change\+\_\+dht\+\_\+pk(), dht\+\_\+ip\+\_\+callback(), dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), friend\+\_\+new\+\_\+connection(), get\+\_\+friendcon\+\_\+public\+\_\+keys(), handle\+\_\+new\+\_\+connections(), and kill\+\_\+friend\+\_\+connection().
+
+\hypertarget{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!hosting\+\_\+tcp\+\_\+relay@{hosting\+\_\+tcp\+\_\+relay}}
+\index{hosting\+\_\+tcp\+\_\+relay@{hosting\+\_\+tcp\+\_\+relay}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{hosting\+\_\+tcp\+\_\+relay}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+Bool hosting\+\_\+tcp\+\_\+relay}}\label{struct_friend___conn_a4865ba9009fdee84e62a08fb92a59ab5}
+
+
+Definition at line 100 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), friend\+\_\+add\+\_\+tcp\+\_\+relay(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!lock\+\_\+count@{lock\+\_\+count}}
+\index{lock\+\_\+count@{lock\+\_\+count}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{lock\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t lock\+\_\+count}}\label{struct_friend___conn_a712c4c639bfc0f5a8616eead3e24ca4e}
+
+
+Definition at line 95 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+lock(), kill\+\_\+friend\+\_\+connection(), and new\+\_\+friend\+\_\+connection().
+
+\hypertarget{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!lossy\+\_\+data\+\_\+callback@{lossy\+\_\+data\+\_\+callback}}
+\index{lossy\+\_\+data\+\_\+callback@{lossy\+\_\+data\+\_\+callback}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{lossy\+\_\+data\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ lossy\+\_\+data\+\_\+callback)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}}\label{struct_friend___conn_a12463710aaaa4801d03d6fe347d16e3e}
+
+
+Definition at line 90 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+lossy\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a5c67a04bbd12eda4d5fe29f10d082bec}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!lossy\+\_\+data\+\_\+callback\+\_\+id@{lossy\+\_\+data\+\_\+callback\+\_\+id}}
+\index{lossy\+\_\+data\+\_\+callback\+\_\+id@{lossy\+\_\+data\+\_\+callback\+\_\+id}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{lossy\+\_\+data\+\_\+callback\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int lossy\+\_\+data\+\_\+callback\+\_\+id}}\label{struct_friend___conn_a5c67a04bbd12eda4d5fe29f10d082bec}
+
+
+Definition at line 92 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+lossy\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a5a1c6eb314a3e3142dd5ae3d3868491b}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!lossy\+\_\+data\+\_\+callback\+\_\+object@{lossy\+\_\+data\+\_\+callback\+\_\+object}}
+\index{lossy\+\_\+data\+\_\+callback\+\_\+object@{lossy\+\_\+data\+\_\+callback\+\_\+object}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{lossy\+\_\+data\+\_\+callback\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ lossy\+\_\+data\+\_\+callback\+\_\+object}}\label{struct_friend___conn_a5a1c6eb314a3e3142dd5ae3d3868491b}
+
+
+Definition at line 91 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+lossy\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!onion\+\_\+friendnum@{onion\+\_\+friendnum}}
+\index{onion\+\_\+friendnum@{onion\+\_\+friendnum}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{onion\+\_\+friendnum}]{\setlength{\rightskip}{0pt plus 5cm}int onion\+\_\+friendnum}}\label{struct_friend___conn_a009e6d32e21cc7fb0c8caded782e974b}
+
+
+Definition at line 75 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by dht\+\_\+pk\+\_\+callback(), handle\+\_\+status(), kill\+\_\+friend\+\_\+connection(), new\+\_\+friend\+\_\+connection(), and send\+\_\+friend\+\_\+request\+\_\+packet().
+
+\hypertarget{struct_friend___conn_a5130c3c4a93050475770184608d61918}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!ping\+\_\+lastrecv@{ping\+\_\+lastrecv}}
+\index{ping\+\_\+lastrecv@{ping\+\_\+lastrecv}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{ping\+\_\+lastrecv}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t ping\+\_\+lastrecv}}\label{struct_friend___conn_a5130c3c4a93050475770184608d61918}
+
+
+Definition at line 78 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections(), handle\+\_\+packet(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!ping\+\_\+lastsent@{ping\+\_\+lastsent}}
+\index{ping\+\_\+lastsent@{ping\+\_\+lastsent}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{ping\+\_\+lastsent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t ping\+\_\+lastsent}}\label{struct_friend___conn_a1625b76f8f5277e17545953d96b893fb}
+
+
+Definition at line 78 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections(), and send\+\_\+ping().
+
+\hypertarget{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!real\+\_\+public\+\_\+key@{real\+\_\+public\+\_\+key}}
+\index{real\+\_\+public\+\_\+key@{real\+\_\+public\+\_\+key}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{real\+\_\+public\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t real\+\_\+public\+\_\+key\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_friend___conn_a996dcaefa2a5954a199e2beb584c1feb}
+
+
+Definition at line 69 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), get\+\_\+friendcon\+\_\+public\+\_\+keys(), getfriend\+\_\+conn\+\_\+id\+\_\+pk(), handle\+\_\+packet(), and new\+\_\+friend\+\_\+connection().
+
+\hypertarget{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!share\+\_\+relays\+\_\+lastsent@{share\+\_\+relays\+\_\+lastsent}}
+\index{share\+\_\+relays\+\_\+lastsent@{share\+\_\+relays\+\_\+lastsent}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{share\+\_\+relays\+\_\+lastsent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t share\+\_\+relays\+\_\+lastsent}}\label{struct_friend___conn_aa5f9fa72527b8eafd6457864f32d2701}
+
+
+Definition at line 79 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+friend\+\_\+connections(), handle\+\_\+status(), and send\+\_\+relays().
+
+\hypertarget{struct_friend___conn_ade818037fd6c985038ff29656089758d}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!status@{status}}
+\index{status@{status}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_friend___conn_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 67 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by create\+\_\+friend\+\_\+conn(), do\+\_\+friend\+\_\+connections(), friend\+\_\+con\+\_\+connected(), friendconn\+\_\+id\+\_\+not\+\_\+valid(), handle\+\_\+status(), new\+\_\+friend\+\_\+connection(), send\+\_\+friend\+\_\+request\+\_\+packet(), and wipe\+\_\+friend\+\_\+conn().
+
+\hypertarget{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!status\+\_\+callback@{status\+\_\+callback}}
+\index{status\+\_\+callback@{status\+\_\+callback}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{status\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ status\+\_\+callback)(void $\ast$object, int id, uint8\+\_\+t {\bf status})}}\label{struct_friend___conn_a5b3bbefec1bad16d4dbacabf34692bd6}
+
+
+Definition at line 82 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_a374df80da5cf3057d7c3743afadb2596}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!status\+\_\+callback\+\_\+id@{status\+\_\+callback\+\_\+id}}
+\index{status\+\_\+callback\+\_\+id@{status\+\_\+callback\+\_\+id}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{status\+\_\+callback\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int status\+\_\+callback\+\_\+id}}\label{struct_friend___conn_a374df80da5cf3057d7c3743afadb2596}
+
+
+Definition at line 84 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_a73f125475af5ebdac27d2c2a9060039b}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!status\+\_\+callback\+\_\+object@{status\+\_\+callback\+\_\+object}}
+\index{status\+\_\+callback\+\_\+object@{status\+\_\+callback\+\_\+object}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{status\+\_\+callback\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ status\+\_\+callback\+\_\+object}}\label{struct_friend___conn_a73f125475af5ebdac27d2c2a9060039b}
+
+
+Definition at line 83 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by friend\+\_\+connection\+\_\+callbacks(), and handle\+\_\+status().
+
+\hypertarget{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!tcp\+\_\+relay\+\_\+counter@{tcp\+\_\+relay\+\_\+counter}}
+\index{tcp\+\_\+relay\+\_\+counter@{tcp\+\_\+relay\+\_\+counter}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{tcp\+\_\+relay\+\_\+counter}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t tcp\+\_\+relay\+\_\+counter}}\label{struct_friend___conn_aff5cc62447994133f0b5b15e11aa92ed}
+
+
+Definition at line 98 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), and friend\+\_\+add\+\_\+tcp\+\_\+relay().
+
+\hypertarget{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}{\index{Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}!tcp\+\_\+relays@{tcp\+\_\+relays}}
+\index{tcp\+\_\+relays@{tcp\+\_\+relays}!Friend\+\_\+\+Conn@{Friend\+\_\+\+Conn}}
+\subsubsection[{tcp\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+\_\+format} tcp\+\_\+relays\mbox{[}{\bf F\+R\+I\+E\+N\+D\+\_\+\+M\+A\+X\+\_\+\+S\+T\+O\+R\+E\+D\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S}\mbox{]}}}\label{struct_friend___conn_ae6c286282d15bfd5ceea7c2d8b19be5d}
+
+
+Definition at line 97 of file friend\+\_\+connection.\+h.
+
+
+
+Referenced by connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), and friend\+\_\+add\+\_\+tcp\+\_\+relay().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{friend__connection_8h}{friend\+\_\+connection.\+h}\end{DoxyCompactItemize}

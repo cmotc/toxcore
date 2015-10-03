@@ -1,0 +1,312 @@
+\hypertarget{assoc__test_8c}{\section{auto\+\_\+tests/assoc\+\_\+test.c File Reference}
+\label{assoc__test_8c}\index{auto\+\_\+tests/assoc\+\_\+test.\+c@{auto\+\_\+tests/assoc\+\_\+test.\+c}}
+}
+{\ttfamily \#include \char`\"{}../toxcore/\+D\+H\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/assoc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../toxcore/util.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$check.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\\*
+Include dependency graph for assoc\+\_\+test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d09/assoc__test_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{assoc__test_8c_aa9727b477a75f4b632a741039193b166}{A\+U\+T\+O\+\_\+\+T\+E\+S\+T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{assoc__test_8c_a242f6c133a1fef9d5e86336e74b7ddae}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+basics)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T \hyperlink{assoc__test_8c_a623c320f108e233f072ab406642a8c9b}{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T} (test\+\_\+fillup)
+\item 
+E\+N\+D\+\_\+\+T\+E\+S\+T Suite $\ast$ \hyperlink{assoc__test_8c_aa893daa53489a01b310263b828cf18a3}{Assoc\+\_\+suite} (void)
+\item 
+int \hyperlink{assoc__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{assoc__test_8c_aa9727b477a75f4b632a741039193b166}{\index{assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}!A\+U\+T\+O\+\_\+\+T\+E\+S\+T@{A\+U\+T\+O\+\_\+\+T\+E\+S\+T}}
+\index{A\+U\+T\+O\+\_\+\+T\+E\+S\+T@{A\+U\+T\+O\+\_\+\+T\+E\+S\+T}!assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}}
+\subsubsection[{A\+U\+T\+O\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+U\+T\+O\+\_\+\+T\+E\+S\+T}}\label{assoc__test_8c_aa9727b477a75f4b632a741039193b166}
+
+
+Definition at line 5 of file assoc\+\_\+test.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{assoc__test_8c_aa893daa53489a01b310263b828cf18a3}{\index{assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}!Assoc\+\_\+suite@{Assoc\+\_\+suite}}
+\index{Assoc\+\_\+suite@{Assoc\+\_\+suite}!assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}}
+\subsubsection[{Assoc\+\_\+suite}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T Suite$\ast$ Assoc\+\_\+suite (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{assoc__test_8c_aa893daa53489a01b310263b828cf18a3}
+
+
+Definition at line 138 of file assoc\+\_\+test.\+c.
+
+
+
+References D\+E\+F\+T\+E\+S\+T\+C\+A\+S\+E.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+139 \{
+140     Suite *s = suite\_create(\textcolor{stringliteral}{"Assoc"});
+141 
+142     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(basics);
+143     \hyperlink{helpers_8h_a2d421052814a1380df302c411658bffa}{DEFTESTCASE}(fillup);
+144     \textcolor{keywordflow}{return} s;
+145 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{db/d0f/assoc__test_8c_aa893daa53489a01b310263b828cf18a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc__test_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}!main@{main}}
+\index{main@{main}!assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{assoc__test_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 147 of file assoc\+\_\+test.\+c.
+
+
+
+References Assoc\+\_\+suite(), and unix\+\_\+time\+\_\+update().
+
+
+\begin{DoxyCode}
+148 \{
+149     \hyperlink{util_8c_a849af10dd491723cf3abdef599846897}{unix\_time\_update}();
+150     Suite *\hyperlink{struct_assoc}{Assoc} = \hyperlink{assoc__test_8c_aa893daa53489a01b310263b828cf18a3}{Assoc\_suite}();
+151     SRunner *test\_runner = srunner\_create(Assoc);
+152 
+153     srunner\_set\_fork\_status(test\_runner, CK\_NOFORK);
+154 
+155     srunner\_run\_all(test\_runner, CK\_NORMAL);
+156 
+157     \textcolor{keywordtype}{int} number\_failed = srunner\_ntests\_failed(test\_runner);
+158 
+159     srunner\_free(test\_runner);
+160 
+161     \textcolor{keywordflow}{return} number\_failed;
+162 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0f/assoc__test_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc__test_8c_a242f6c133a1fef9d5e86336e74b7ddae}{\index{assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+basics}]{}
+\end{DoxyParamCaption}
+)}}\label{assoc__test_8c_a242f6c133a1fef9d5e86336e74b7ddae}
+
+
+Definition at line 18 of file assoc\+\_\+test.\+c.
+
+
+
+References Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+get\+\_\+close\+\_\+entries(), ck\+\_\+assert\+\_\+msg(), Assoc\+\_\+close\+\_\+entries\+::count, Assoc\+\_\+close\+\_\+entries\+::count\+\_\+good, I\+P\+::family, I\+P\+\_\+\+Port\+::ip, I\+P\+::ip4, I\+P\+P\+Ts\+::ip\+\_\+port, kill\+\_\+\+Assoc(), new\+\_\+\+Assoc(), new\+\_\+\+Assoc\+\_\+default(), I\+P\+\_\+\+Port\+::port, Assoc\+\_\+close\+\_\+entries\+::result, I\+P\+P\+Ts\+::timestamp, I\+P4\+::uint8, unix\+\_\+time(), and Assoc\+\_\+close\+\_\+entries\+::wanted\+\_\+id.
+
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{comment}{/* TODO: real test */}
+21     uint8\_t \textcolor{keywordtype}{id}[crypto\_box\_PUBLICKEYBYTES];
+22     \hyperlink{struct_assoc}{Assoc} *assoc = \hyperlink{assoc_8c_ab7f978008ad6c86ab5063e989fe49d0c}{new\_Assoc\_default}(\textcolor{keywordtype}{id});
+23     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(assoc != NULL, \textcolor{stringliteral}{"failed to create default assoc"});
+24 
+25     \hyperlink{assoc_8c_a26d82e35d047181d0e883a4b91373793}{kill\_Assoc}(assoc);
+26     assoc = \hyperlink{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}{new\_Assoc}(17, 4, \textcolor{keywordtype}{id}); \textcolor{comment}{/* results in an assoc of 16/3 */}
+27     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(assoc != NULL, \textcolor{stringliteral}{"failed to create customized assoc"});
+28 
+29     \hyperlink{struct_i_p___port}{IP\_Port} ipp;
+30     ipp.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET;
+31     ipp.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a73b9a57544f1edd6e2187aca636c75ef}{uint8}[0] = 1;
+32     ipp.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = htons(12345);
+33 
+34     \hyperlink{struct_i_p_p_ts}{IPPTs} ippts\_send;
+35     ippts\_send.\hyperlink{struct_i_p_p_ts_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ipp;
+36     ippts\_send.\hyperlink{struct_i_p_p_ts_a465bef81f6478756e5443025b1f2ddfa}{timestamp} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+37     \hyperlink{struct_i_p___port}{IP\_Port} ipp\_recv = ipp;
+38 
+39     uint8\_t res = \hyperlink{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}{Assoc\_add\_entry}(assoc, \textcolor{keywordtype}{id}, &ippts\_send, &ipp\_recv, 0);
+40     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 0, \textcolor{stringliteral}{"stored self as entry: expected %u, got %u"}, 0, res);
+41 
+42     \textcolor{keywordtype}{id}[0]++;
+43 
+44     res = \hyperlink{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}{Assoc\_add\_entry}(assoc, \textcolor{keywordtype}{id}, &ippts\_send, &ipp\_recv, 0);
+45     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 1, \textcolor{stringliteral}{"failed to store entry: expected %u, got %u"}, 1, res);
+46 
+47     \hyperlink{struct_assoc__close__entries}{Assoc\_close\_entries} close\_entries;
+48     memset(&close\_entries, 0, \textcolor{keyword}{sizeof}(close\_entries));
+49     close\_entries.\hyperlink{struct_assoc__close__entries_a20302e2c99a60d3f612dba57e3f6333b}{count} = 4;
+50     close\_entries.\hyperlink{struct_assoc__close__entries_a086e0ce002c9491e4b99956740bb53d4}{count\_good} = 2;
+51     close\_entries.\hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id} = id;
+52 
+53     \hyperlink{struct_client__data}{Client\_data} *entries[close\_entries.\hyperlink{struct_assoc__close__entries_a20302e2c99a60d3f612dba57e3f6333b}{count}];
+54     close\_entries.\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result} = entries;
+55 
+56     uint8\_t found = \hyperlink{assoc_8c_a256dcbfb2174603496ffa30efef90ad2}{Assoc\_get\_close\_entries}(assoc, &close\_entries);
+57     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(found == 1, \textcolor{stringliteral}{"get\_close\_entries(): expected %u, got %u"}, 1, found);
+58     \hyperlink{assoc_8c_a26d82e35d047181d0e883a4b91373793}{kill\_Assoc}(assoc);
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0f/assoc__test_8c_a242f6c133a1fef9d5e86336e74b7ddae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{assoc__test_8c_a623c320f108e233f072ab406642a8c9b}{\index{assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}!S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T@{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}!assoc\+\_\+test.\+c@{assoc\+\_\+test.\+c}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}E\+N\+D\+\_\+\+T\+E\+S\+T S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{test\+\_\+fillup}]{}
+\end{DoxyParamCaption}
+)}}\label{assoc__test_8c_a623c320f108e233f072ab406642a8c9b}
+
+
+Definition at line 62 of file assoc\+\_\+test.\+c.
+
+
+
+References Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+get\+\_\+close\+\_\+entries(), ck\+\_\+assert\+\_\+msg(), Assoc\+\_\+close\+\_\+entries\+::count, Assoc\+\_\+close\+\_\+entries\+::count\+\_\+good, I\+P\+::family, i, id\+\_\+equal(), I\+P\+\_\+\+Port\+::ip, I\+P\+::ip4, kill\+\_\+\+Assoc(), new\+\_\+\+Assoc(), I\+P\+\_\+\+Port\+::port, make-\/funny-\/savefile\+::public\+\_\+key, Assoc\+\_\+close\+\_\+entries\+::result, I\+P4\+::uint32, unix\+\_\+time(), and Assoc\+\_\+close\+\_\+entries\+::wanted\+\_\+id.
+
+
+\begin{DoxyCode}
+63 \{
+64     \textcolor{comment}{/* TODO: real test */}
+65     \textcolor{keywordtype}{int} \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}, j;
+66     uint8\_t \textcolor{keywordtype}{id}[crypto\_box\_PUBLICKEYBYTES];
+67     \textcolor{comment}{//uint32\_t a = current\_time();}
+68     uint32\_t a = 2710106197;
+69     srand(a);
+70 
+71     \textcolor{keywordflow}{for} (i = 0; i < crypto\_box\_PUBLICKEYBYTES; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+72         \textcolor{keywordtype}{id}[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = rand();
+73     \}
+74 
+75     \hyperlink{struct_assoc}{Assoc} *assoc = \hyperlink{assoc_8c_ae180bc47f7e0f171ed9bbedd7d50e416}{new\_Assoc}(6, 15, \textcolor{keywordtype}{id});
+76     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(assoc != NULL, \textcolor{stringliteral}{"failed to create default assoc"});
+77     \textcolor{keyword}{struct }entry \{
+78         uint8\_t \textcolor{keywordtype}{id}[crypto\_box\_PUBLICKEYBYTES];
+79         \hyperlink{struct_i_p_p_ts}{IPPTs} ippts\_send;
+80         \hyperlink{struct_i_p___port}{IP\_Port} ipp\_recv;
+81     \};
+82     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} fail = 0;
+83     \textcolor{keyword}{struct }entry entries[128];
+84     \textcolor{keyword}{struct }entry closest[8];
+85 
+86     \textcolor{keywordflow}{for} (j = 0; j < 128; ++j) \{
+87 
+88         \textcolor{keywordflow}{for} (i = 0; i < crypto\_box\_PUBLICKEYBYTES; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+89             entries[j].id[\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}] = rand();
+90         \}
+91 
+92         \hyperlink{struct_i_p___port}{IP\_Port} ipp;
+93         ipp.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET;
+94         ipp.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5ad776be1fb768f3399aafcd1b58b3a2}{uint32} = rand();
+95         ipp.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = rand();
+96         entries[j].ippts\_send.ip\_port = ipp;
+97         entries[j].ippts\_send.timestamp = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+98         ipp.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5ad776be1fb768f3399aafcd1b58b3a2}{uint32} = rand();
+99         ipp.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = rand();
+100         entries[j].ipp\_recv = ipp;
+101 
+102         \textcolor{keywordflow}{if} (j % 16 == 0) \{
+103             memcpy(entries[j].\textcolor{keywordtype}{id}, \textcolor{keywordtype}{id}, crypto\_box\_PUBLICKEYBYTES - 30);
+104             memcpy(&closest[j / 16], &entries[j], \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} entry));
+105 
+106         \}
+107 
+108         uint8\_t res = \hyperlink{assoc_8c_aa0230ae0304fd8540a5bce578d242f30}{Assoc\_add\_entry}(assoc, entries[j].\textcolor{keywordtype}{id}, &entries[j].ippts\_send, &entries
+      [j].ipp\_recv, 1);
+109         \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(res == 1, \textcolor{stringliteral}{"failed to store entry: expected %u, got %u, j = %u"}, 1, res, 
+      j);
+110     \}
+111 
+112     \textcolor{keywordtype}{int} good = 0;
+113     \hyperlink{struct_assoc__close__entries}{Assoc\_close\_entries} close\_entries;
+114     memset(&close\_entries, 0, \textcolor{keyword}{sizeof}(close\_entries));
+115     close\_entries.\hyperlink{struct_assoc__close__entries_a20302e2c99a60d3f612dba57e3f6333b}{count} = 8;
+116     close\_entries.\hyperlink{struct_assoc__close__entries_a086e0ce002c9491e4b99956740bb53d4}{count\_good} = 8;
+117     close\_entries.\hyperlink{struct_assoc__close__entries_a037b65164e78b02017bd4751843037b4}{wanted\_id} = id;
+118 
+119     \hyperlink{struct_client__data}{Client\_data} *entri[close\_entries.\hyperlink{struct_assoc__close__entries_a20302e2c99a60d3f612dba57e3f6333b}{count}];
+120     close\_entries.\hyperlink{struct_assoc__close__entries_a40d6704f891338dadfa89f46b696be4c}{result} = entri;
+121 
+122     uint8\_t found = \hyperlink{assoc_8c_a256dcbfb2174603496ffa30efef90ad2}{Assoc\_get\_close\_entries}(assoc, &close\_entries);
+123     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(found == 8, \textcolor{stringliteral}{"get\_close\_entries(): expected %u, got %u"}, 1, found);
+124 
+125     \textcolor{keywordflow}{for} (i = 0; i < 8; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+126         \textcolor{keywordflow}{for} (j = 0; j < 8; ++j) \{
+127             \textcolor{keywordflow}{if} (\hyperlink{util_8c_ada3d44b4f530d3c8c9cb69b732be94b1}{id\_equal}(entri[j]->\hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key}, closest[i].\textcolor{keywordtype}{id}))
+128                 ++good;
+129         \}
+130     \}
+131 
+132     \hyperlink{toxav__many__test_8c_a4bd4b2294bdedc4af8c708ecc5c58516}{ck\_assert\_msg}(good == 8, \textcolor{stringliteral}{"Entries found were not the closest ones. Only %u/8 were."}, good)
+      ;
+133     \textcolor{comment}{//printf("good: %u %u %u\(\backslash\)n", good, a, ((uint32\_t)current\_time() - a));}
+134     \hyperlink{assoc_8c_a26d82e35d047181d0e883a4b91373793}{kill\_Assoc}(assoc);
+135 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d0f/assoc__test_8c_a623c320f108e233f072ab406642a8c9b_cgraph}
+\end{center}
+\end{figure}
+
+

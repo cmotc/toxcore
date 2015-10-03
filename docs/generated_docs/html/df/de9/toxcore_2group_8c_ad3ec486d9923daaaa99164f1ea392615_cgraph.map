@@ -1,0 +1,11 @@
+<map id="addpeer" name="addpeer">
+<area shape="rect" id="node2" href="$df/de9/toxcore_2group_8c.html#ade699d33c1e5ddc42068c02b5be2120c" title="add_to_closest" alt="" coords="121,5,232,32"/>
+<area shape="rect" id="node4" href="$df/de9/toxcore_2group_8c.html#a11d3240a6755f36864ed2b072e826483" title="get_group_c" alt="" coords="309,56,402,83"/>
+<area shape="rect" id="node6" href="$df/de9/toxcore_2group_8c.html#a18b922ce66f2c13f374c3981f369441b" title="get_peer_index" alt="" coords="121,107,232,133"/>
+<area shape="rect" id="node7" href="$de/df1/util_8c.html#aa30049b8c1d82c280d6d872feea3353b" title="id_copy" alt="" coords="143,157,210,184"/>
+<area shape="rect" id="node8" href="$df/de9/toxcore_2group_8c.html#ae26131e8118b841386363fb776dfbdc7" title="peer_in_chat" alt="" coords="129,208,225,235"/>
+<area shape="rect" id="node10" href="$de/df1/util_8c.html#ac958d9f8847cb8039444bfa3d304233a" title="unix_time" alt="" coords="137,259,216,285"/>
+<area shape="rect" id="node3" href="$df/de9/toxcore_2group_8c.html#afb13bc1afd72ceb013653353d9a82ac8" title="calculate_comp_value" alt="" coords="280,5,431,32"/>
+<area shape="rect" id="node5" href="$df/de9/toxcore_2group_8c.html#a4ffc6ae8485f94d9177baf65f777c72e" title="groupnumber_not_valid" alt="" coords="479,56,635,83"/>
+<area shape="rect" id="node9" href="$de/df1/util_8c.html#ada3d44b4f530d3c8c9cb69b732be94b1" title="id_equal" alt="" coords="320,208,391,235"/>
+</map>

@@ -1,0 +1,1072 @@
+\hypertarget{tox__old__code_8h}{\section{toxcore/tox\+\_\+old\+\_\+code.h File Reference}
+\label{tox__old__code_8h}\index{toxcore/tox\+\_\+old\+\_\+code.\+h@{toxcore/tox\+\_\+old\+\_\+code.\+h}}
+}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{d9/dd2/tox__old__code_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tox__old__code_8h_a4f13382cfba3180cfaae0e9cc5106963}{tox\+\_\+callback\+\_\+group\+\_\+invite} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$tox, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{tox__old__code_8h_afdb9154723ce0a6e69de16c8f699d949}{tox\+\_\+callback\+\_\+group\+\_\+message} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{tox__old__code_8h_a8b0edc8d896692a110900cd4ddd42567}{tox\+\_\+callback\+\_\+group\+\_\+action} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{tox__old__code_8h_a9f9c8c421b06c568f11a8896f72a9f5b}{tox\+\_\+callback\+\_\+group\+\_\+title} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, void($\ast$function)(\hyperlink{struct_messenger}{Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+void \hyperlink{tox__old__code_8h_a36300f4d1afb651abcb447a9f7a57171}{tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, void($\ast$function)(\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int, int, uint8\+\_\+t, void $\ast$), void $\ast$userdata)
+\item 
+int \hyperlink{tox__old__code_8h_a68611ed14c243e94cc86274273d19fcc}{tox\+\_\+add\+\_\+groupchat} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox)
+\item 
+int \hyperlink{tox__old__code_8h_a2a5c2f4bc3730d20bc784e512bc116b5}{tox\+\_\+del\+\_\+groupchat} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber)
+\item 
+int \hyperlink{tox__old__code_8h_ac7824c28f01fcdd068fe26c6e8b06413}{tox\+\_\+group\+\_\+peername} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, int peernumber, uint8\+\_\+t $\ast$name)
+\item 
+int \hyperlink{tox__old__code_8h_ad183c384031e336618706deccb4189bf}{tox\+\_\+group\+\_\+peer\+\_\+pubkey} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, int peernumber, uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+int \hyperlink{tox__old__code_8h_a2bd67904ced5532a1f83b8c0edc05756}{tox\+\_\+invite\+\_\+friend} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int32\+\_\+t friendnumber, int groupnumber)
+\item 
+int \hyperlink{tox__old__code_8h_a26cf750df10de88c8e5024db883fff97}{tox\+\_\+join\+\_\+groupchat} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int32\+\_\+t friendnumber, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+int \hyperlink{tox__old__code_8h_ae7c069c3c12656040a1f08bc326c5bd1}{tox\+\_\+group\+\_\+message\+\_\+send} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, const uint8\+\_\+t $\ast$message, uint16\+\_\+t length)
+\item 
+int \hyperlink{tox__old__code_8h_a01a309345788ae5b94b592654e5ef7d6}{tox\+\_\+group\+\_\+action\+\_\+send} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, const uint8\+\_\+t $\ast$action, uint16\+\_\+t length)
+\item 
+int \hyperlink{tox__old__code_8h_a11a37cd102d6709e9954a069d0731cfa}{tox\+\_\+group\+\_\+set\+\_\+title} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, const uint8\+\_\+t $\ast$title, uint8\+\_\+t length)
+\item 
+int \hyperlink{tox__old__code_8h_aaef9fc5176d66e6a1c54f5935e4cb57c}{tox\+\_\+group\+\_\+get\+\_\+title} (\hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, uint8\+\_\+t $\ast$title, uint32\+\_\+t max\+\_\+length)
+\item 
+unsigned int \hyperlink{tox__old__code_8h_a5b1f49a6eab7d8d082c9aa5e493590c7}{tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, int peernumber)
+\item 
+int \hyperlink{tox__old__code_8h_a78202b592bde942960e6984ea8ab072d}{tox\+\_\+group\+\_\+number\+\_\+peers} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber)
+\item 
+int \hyperlink{tox__old__code_8h_a07d599621a38ae8249163bf49dfbbbd5}{tox\+\_\+group\+\_\+get\+\_\+names} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber, uint8\+\_\+t names\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{tox_8h_a09073daf2dcb9e1daf380983ebc4f5b5}{T\+O\+X\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H}\mbox{]}, uint16\+\_\+t lengths\mbox{[}$\,$\mbox{]}, uint16\+\_\+t length)
+\item 
+uint32\+\_\+t \hyperlink{tox__old__code_8h_a6bf95f87f82bd184a6301e6917fce3ce}{tox\+\_\+count\+\_\+chatlist} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox)
+\item 
+uint32\+\_\+t \hyperlink{tox__old__code_8h_a13b630146d0a877f6cdc474f88889132}{tox\+\_\+get\+\_\+chatlist} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int32\+\_\+t $\ast$out\+\_\+list, uint32\+\_\+t list\+\_\+size)
+\item 
+int \hyperlink{tox__old__code_8h_a5a17307f4fec21f48b3090261255721c}{tox\+\_\+group\+\_\+get\+\_\+type} (const \hyperlink{toxav_8c_a9e678c08e286eb1f36ebc7f770354e82}{Tox} $\ast$tox, int groupnumber)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{tox__old__code_8h_a68611ed14c243e94cc86274273d19fcc}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+add\+\_\+groupchat@{tox\+\_\+add\+\_\+groupchat}}
+\index{tox\+\_\+add\+\_\+groupchat@{tox\+\_\+add\+\_\+groupchat}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+add\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+add\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a68611ed14c243e94cc86274273d19fcc}
+
+
+Definition at line 66 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References add\+\_\+groupchat(), Messenger\+::group\+\_\+chat\+\_\+object, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T, and m.
+
+
+
+Referenced by line\+\_\+eval(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+67 \{
+68     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+69     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a4fa9eb1ad43b7b9026a861bd2b894461}{add\_groupchat}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, 
+      \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}{GROUPCHAT\_TYPE\_TEXT});
+70 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a68611ed14c243e94cc86274273d19fcc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a68611ed14c243e94cc86274273d19fcc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a8b0edc8d896692a110900cd4ddd42567}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+callback\+\_\+group\+\_\+action@{tox\+\_\+callback\+\_\+group\+\_\+action}}
+\index{tox\+\_\+callback\+\_\+group\+\_\+action@{tox\+\_\+callback\+\_\+group\+\_\+action}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+callback\+\_\+group\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+callback\+\_\+group\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{void($\ast$)({\bf Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a8b0edc8d896692a110900cd4ddd42567}
+
+
+Definition at line 31 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References g\+\_\+callback\+\_\+group\+\_\+action(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+
+Referenced by init\+\_\+tox().
+
+
+\begin{DoxyCode}
+33 \{
+34     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+35     \hyperlink{toxcore_2group_8c_af5c4cc3003dc13ffec6413264fd302b6}{g\_callback\_group\_action}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, \textcolor{keyword}{function}, 
+      userdata);
+36 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d3/d8f/tox__old__code_8h_a8b0edc8d896692a110900cd4ddd42567_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d3/d8f/tox__old__code_8h_a8b0edc8d896692a110900cd4ddd42567_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a4f13382cfba3180cfaae0e9cc5106963}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+callback\+\_\+group\+\_\+invite@{tox\+\_\+callback\+\_\+group\+\_\+invite}}
+\index{tox\+\_\+callback\+\_\+group\+\_\+invite@{tox\+\_\+callback\+\_\+group\+\_\+invite}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+callback\+\_\+group\+\_\+invite}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+callback\+\_\+group\+\_\+invite (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{void($\ast$)({\bf Messenger} $\ast$tox, int32\+\_\+t, uint8\+\_\+t, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a4f13382cfba3180cfaae0e9cc5106963}
+
+
+Definition at line 9 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References g\+\_\+callback\+\_\+group\+\_\+invite(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+
+Referenced by init\+\_\+tox(), main(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+11 \{
+12     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+13     \hyperlink{toxcore_2group_8c_ac900761f5401134bec49443c866def98}{g\_callback\_group\_invite}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, \textcolor{keyword}{function}, 
+      userdata);
+14 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d3/d8f/tox__old__code_8h_a4f13382cfba3180cfaae0e9cc5106963_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a4f13382cfba3180cfaae0e9cc5106963_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_afdb9154723ce0a6e69de16c8f699d949}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+callback\+\_\+group\+\_\+message@{tox\+\_\+callback\+\_\+group\+\_\+message}}
+\index{tox\+\_\+callback\+\_\+group\+\_\+message@{tox\+\_\+callback\+\_\+group\+\_\+message}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+callback\+\_\+group\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+callback\+\_\+group\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{void($\ast$)({\bf Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint16\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_afdb9154723ce0a6e69de16c8f699d949}
+
+
+Definition at line 20 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References g\+\_\+callback\+\_\+group\+\_\+message(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+
+Referenced by init\+\_\+tox(), main(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+22 \{
+23     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+24     \hyperlink{toxcore_2group_8c_a43c7333276eeb0792b4157dd90789957}{g\_callback\_group\_message}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, \textcolor{keyword}{function}, 
+      userdata);
+25 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_afdb9154723ce0a6e69de16c8f699d949_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_afdb9154723ce0a6e69de16c8f699d949_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a36300f4d1afb651abcb447a9f7a57171}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change@{tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change}}
+\index{tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change@{tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+callback\+\_\+group\+\_\+namelist\+\_\+change (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{void($\ast$)({\bf Tox} $\ast$tox, int, int, uint8\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a36300f4d1afb651abcb447a9f7a57171}
+
+
+Definition at line 55 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References g\+\_\+callback\+\_\+group\+\_\+namelistchange(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+56 \{
+57     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+58     \hyperlink{toxcore_2group_8c_a30b3538c4447bd279b31e423bc96984f}{g\_callback\_group\_namelistchange}(m->
+      \hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, \textcolor{keyword}{function}, userdata);
+59 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a36300f4d1afb651abcb447a9f7a57171_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{d3/d8f/tox__old__code_8h_a36300f4d1afb651abcb447a9f7a57171_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a9f9c8c421b06c568f11a8896f72a9f5b}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+callback\+\_\+group\+\_\+title@{tox\+\_\+callback\+\_\+group\+\_\+title}}
+\index{tox\+\_\+callback\+\_\+group\+\_\+title@{tox\+\_\+callback\+\_\+group\+\_\+title}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+callback\+\_\+group\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}void tox\+\_\+callback\+\_\+group\+\_\+title (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{void($\ast$)({\bf Messenger} $\ast$tox, int, int, const uint8\+\_\+t $\ast$, uint8\+\_\+t, void $\ast$)}]{function, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a9f9c8c421b06c568f11a8896f72a9f5b}
+
+
+Definition at line 43 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References g\+\_\+callback\+\_\+group\+\_\+title(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+\begin{DoxyCode}
+45 \{
+46     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+47     \hyperlink{toxcore_2group_8c_a4819b45e57736979652615714cf9dbfe}{g\_callback\_group\_title}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, \textcolor{keyword}{function}, userdata)
+      ;
+48 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d3/d8f/tox__old__code_8h_a9f9c8c421b06c568f11a8896f72a9f5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a6bf95f87f82bd184a6301e6917fce3ce}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+count\+\_\+chatlist@{tox\+\_\+count\+\_\+chatlist}}
+\index{tox\+\_\+count\+\_\+chatlist@{tox\+\_\+count\+\_\+chatlist}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+count\+\_\+chatlist}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tox\+\_\+count\+\_\+chatlist (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a6bf95f87f82bd184a6301e6917fce3ce}
+
+
+Definition at line 211 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References count\+\_\+chatlist(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+\begin{DoxyCode}
+212 \{
+213     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+214     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_ac8db2e732a8872d2f5f4113eddab07d6}{count\_chatlist}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object});
+215 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{d3/d8f/tox__old__code_8h_a6bf95f87f82bd184a6301e6917fce3ce_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a2a5c2f4bc3730d20bc784e512bc116b5}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+del\+\_\+groupchat@{tox\+\_\+del\+\_\+groupchat}}
+\index{tox\+\_\+del\+\_\+groupchat@{tox\+\_\+del\+\_\+groupchat}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+del\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+del\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a2a5c2f4bc3730d20bc784e512bc116b5}
+
+
+Definition at line 77 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References del\+\_\+groupchat(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+
+Referenced by callback\+\_\+friend\+\_\+message(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+78 \{
+79     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+80     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a526817b20616bdf13250e1020d2a1808}{del\_groupchat}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber);
+81 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a2a5c2f4bc3730d20bc784e512bc116b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a2a5c2f4bc3730d20bc784e512bc116b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a13b630146d0a877f6cdc474f88889132}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+get\+\_\+chatlist@{tox\+\_\+get\+\_\+chatlist}}
+\index{tox\+\_\+get\+\_\+chatlist@{tox\+\_\+get\+\_\+chatlist}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+get\+\_\+chatlist}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tox\+\_\+get\+\_\+chatlist (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int32\+\_\+t $\ast$}]{out\+\_\+list, }
+\item[{uint32\+\_\+t}]{list\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a13b630146d0a877f6cdc474f88889132}
+
+
+Definition at line 222 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References copy\+\_\+chatlist(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+\begin{DoxyCode}
+223 \{
+224     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+225     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a9e7eb2c3af67e4b0964ddb553639a0a4}{copy\_chatlist}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, out\_list, list\_size);
+226 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{d3/d8f/tox__old__code_8h_a13b630146d0a877f6cdc474f88889132_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a01a309345788ae5b94b592654e5ef7d6}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+action\+\_\+send@{tox\+\_\+group\+\_\+action\+\_\+send}}
+\index{tox\+\_\+group\+\_\+action\+\_\+send@{tox\+\_\+group\+\_\+action\+\_\+send}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+action\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+action\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{action, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a01a309345788ae5b94b592654e5ef7d6}
+
+
+Definition at line 143 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References group\+\_\+action\+\_\+send(), Messenger\+::group\+\_\+chat\+\_\+object, and m.
+
+
+\begin{DoxyCode}
+144 \{
+145     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+146     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a0797c0660c3628fd1b62ca99cc860443}{group\_action\_send}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, action, 
+      length);
+147 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a01a309345788ae5b94b592654e5ef7d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a07d599621a38ae8249163bf49dfbbbd5}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+get\+\_\+names@{tox\+\_\+group\+\_\+get\+\_\+names}}
+\index{tox\+\_\+group\+\_\+get\+\_\+names@{tox\+\_\+group\+\_\+get\+\_\+names}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+get\+\_\+names}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+get\+\_\+names (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{uint8\+\_\+t}]{names\mbox{[}$\,$\mbox{]}\mbox{[}\+T\+O\+X\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}, }
+\item[{uint16\+\_\+t}]{lengths\mbox{[}$\,$\mbox{]}, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a07d599621a38ae8249163bf49dfbbbd5}
+
+
+Definition at line 201 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+names(), and m.
+
+
+
+Referenced by print\+\_\+groupchatpeers().
+
+
+\begin{DoxyCode}
+203 \{
+204     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+205     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a2ead81b9067921eff85dbab1f8fdc785}{group\_names}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, names, lengths, 
+      length);
+206 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a07d599621a38ae8249163bf49dfbbbd5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a07d599621a38ae8249163bf49dfbbbd5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_aaef9fc5176d66e6a1c54f5935e4cb57c}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+get\+\_\+title@{tox\+\_\+group\+\_\+get\+\_\+title}}
+\index{tox\+\_\+group\+\_\+get\+\_\+title@{tox\+\_\+group\+\_\+get\+\_\+title}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+get\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+get\+\_\+title (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{uint8\+\_\+t $\ast$}]{title, }
+\item[{uint32\+\_\+t}]{max\+\_\+length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_aaef9fc5176d66e6a1c54f5935e4cb57c}
+
+
+Definition at line 165 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+title\+\_\+get(), and m.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+166 \{
+167     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+168     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a4eb43d155a71bcb9e63954bdd1b6e3e6}{group\_title\_get}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, title, 
+      max\_length);
+169 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_aaef9fc5176d66e6a1c54f5935e4cb57c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{d3/d8f/tox__old__code_8h_aaef9fc5176d66e6a1c54f5935e4cb57c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a5a17307f4fec21f48b3090261255721c}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+get\+\_\+type@{tox\+\_\+group\+\_\+get\+\_\+type}}
+\index{tox\+\_\+group\+\_\+get\+\_\+type@{tox\+\_\+group\+\_\+get\+\_\+type}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+get\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a5a17307f4fec21f48b3090261255721c}
+
+
+Definition at line 233 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+get\+\_\+type(), and m.
+
+
+\begin{DoxyCode}
+234 \{
+235     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+236     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_aefde055f874f23db9e368a71719aefe3}{group\_get\_type}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber);
+237 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a5a17307f4fec21f48b3090261255721c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_ae7c069c3c12656040a1f08bc326c5bd1}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+message\+\_\+send@{tox\+\_\+group\+\_\+message\+\_\+send}}
+\index{tox\+\_\+group\+\_\+message\+\_\+send@{tox\+\_\+group\+\_\+message\+\_\+send}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+message\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+message\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{message, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_ae7c069c3c12656040a1f08bc326c5bd1}
+
+
+Definition at line 133 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+message\+\_\+send(), and m.
+
+
+
+Referenced by line\+\_\+eval(), send\+\_\+irc\+\_\+group(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+134 \{
+135     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+136     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a5089fa31b3523ab355414d9a6aeb653c}{group\_message\_send}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, message
+      , length);
+137 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_ae7c069c3c12656040a1f08bc326c5bd1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_ae7c069c3c12656040a1f08bc326c5bd1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a78202b592bde942960e6984ea8ab072d}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+number\+\_\+peers@{tox\+\_\+group\+\_\+number\+\_\+peers}}
+\index{tox\+\_\+group\+\_\+number\+\_\+peers@{tox\+\_\+group\+\_\+number\+\_\+peers}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+number\+\_\+peers}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+number\+\_\+peers (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a78202b592bde942960e6984ea8ab072d}
+
+
+Definition at line 185 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+number\+\_\+peers(), and m.
+
+
+
+Referenced by line\+\_\+eval(), print\+\_\+groupchatpeers(), print\+\_\+groupnamelistchange(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+186 \{
+187     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+188     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_abd1478afe81f0399627adb7c8f725495}{group\_number\_peers}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber);
+189 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a78202b592bde942960e6984ea8ab072d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a78202b592bde942960e6984ea8ab072d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_ad183c384031e336618706deccb4189bf}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+peer\+\_\+pubkey@{tox\+\_\+group\+\_\+peer\+\_\+pubkey}}
+\index{tox\+\_\+group\+\_\+peer\+\_\+pubkey@{tox\+\_\+group\+\_\+peer\+\_\+pubkey}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+peer\+\_\+pubkey}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+peer\+\_\+pubkey (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber, }
+\item[{uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_ad183c384031e336618706deccb4189bf}
+
+
+Definition at line 101 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+peer\+\_\+pubkey(), and m.
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+104     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a32c6a812970d810c720937f6f5d1998a}{group\_peer\_pubkey}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, 
+      peernumber, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+105 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_ad183c384031e336618706deccb4189bf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_ac7824c28f01fcdd068fe26c6e8b06413}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+peername@{tox\+\_\+group\+\_\+peername}}
+\index{tox\+\_\+group\+\_\+peername@{tox\+\_\+group\+\_\+peername}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+peername}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+peername (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber, }
+\item[{uint8\+\_\+t $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_ac7824c28f01fcdd068fe26c6e8b06413}
+
+
+Definition at line 89 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+peername(), and m.
+
+
+
+Referenced by copy\+\_\+groupmessage(), print\+\_\+groupmessage(), and print\+\_\+groupnamelistchange().
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+92     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_aca385bea140e668374002b11db01d78d}{group\_peername}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, peernumber, 
+      name);
+93 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_ac7824c28f01fcdd068fe26c6e8b06413_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_ac7824c28f01fcdd068fe26c6e8b06413_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a5b1f49a6eab7d8d082c9aa5e493590c7}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours@{tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours}}
+\index{tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours@{tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int tox\+\_\+group\+\_\+peernumber\+\_\+is\+\_\+ours (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{int}]{peernumber}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a5b1f49a6eab7d8d082c9aa5e493590c7}
+
+
+Definition at line 176 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+peernumber\+\_\+is\+\_\+ours(), and m.
+
+
+
+Referenced by copy\+\_\+groupmessage().
+
+
+\begin{DoxyCode}
+177 \{
+178     \textcolor{keyword}{const} \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+179     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a86daba4a594e2677b03851483ed3416c}{group\_peernumber\_is\_ours}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, 
+      groupnumber, peernumber);
+180 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a5b1f49a6eab7d8d082c9aa5e493590c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a5b1f49a6eab7d8d082c9aa5e493590c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a11a37cd102d6709e9954a069d0731cfa}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+group\+\_\+set\+\_\+title@{tox\+\_\+group\+\_\+set\+\_\+title}}
+\index{tox\+\_\+group\+\_\+set\+\_\+title@{tox\+\_\+group\+\_\+set\+\_\+title}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+group\+\_\+set\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+group\+\_\+set\+\_\+title (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int}]{groupnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{title, }
+\item[{uint8\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a11a37cd102d6709e9954a069d0731cfa}
+
+
+Definition at line 153 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, group\+\_\+title\+\_\+send(), and m.
+
+
+
+Referenced by S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+154 \{
+155     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+156     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a262b7bf9d01d09574224f290575de0db}{group\_title\_send}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, groupnumber, title, 
+      length);
+157 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a11a37cd102d6709e9954a069d0731cfa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{d3/d8f/tox__old__code_8h_a11a37cd102d6709e9954a069d0731cfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a2bd67904ced5532a1f83b8c0edc05756}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+invite\+\_\+friend@{tox\+\_\+invite\+\_\+friend}}
+\index{tox\+\_\+invite\+\_\+friend@{tox\+\_\+invite\+\_\+friend}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+invite\+\_\+friend}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+invite\+\_\+friend (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int32\+\_\+t}]{friendnumber, }
+\item[{int}]{groupnumber}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a2bd67904ced5532a1f83b8c0edc05756}
+
+
+Definition at line 111 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, invite\+\_\+friend(), and m.
+
+
+
+Referenced by callback\+\_\+friend\+\_\+message(), line\+\_\+eval(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+112 \{
+113     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+114     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_ab88ec06a4663a75e56afa84ae094df77}{invite\_friend}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, friendnumber, groupnumber);
+115 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a2bd67904ced5532a1f83b8c0edc05756_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a2bd67904ced5532a1f83b8c0edc05756_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{tox__old__code_8h_a26cf750df10de88c8e5024db883fff97}{\index{tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}!tox\+\_\+join\+\_\+groupchat@{tox\+\_\+join\+\_\+groupchat}}
+\index{tox\+\_\+join\+\_\+groupchat@{tox\+\_\+join\+\_\+groupchat}!tox\+\_\+old\+\_\+code.\+h@{tox\+\_\+old\+\_\+code.\+h}}
+\subsubsection[{tox\+\_\+join\+\_\+groupchat}]{\setlength{\rightskip}{0pt plus 5cm}int tox\+\_\+join\+\_\+groupchat (
+\begin{DoxyParamCaption}
+\item[{{\bf Tox} $\ast$}]{tox, }
+\item[{int32\+\_\+t}]{friendnumber, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{tox__old__code_8h_a26cf750df10de88c8e5024db883fff97}
+
+
+Definition at line 123 of file tox\+\_\+old\+\_\+code.\+h.
+
+
+
+References Messenger\+::group\+\_\+chat\+\_\+object, G\+R\+O\+U\+P\+C\+H\+A\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T, join\+\_\+groupchat(), and m.
+
+
+
+Referenced by callback\+\_\+group\+\_\+invite(), print\+\_\+group\+\_\+invite\+\_\+callback(), and print\+\_\+invite().
+
+
+\begin{DoxyCode}
+124 \{
+125     \hyperlink{struct_messenger}{Messenger} *\hyperlink{messenger__test_8c_aea6eb6c7c30a659f1b0dee83eaf03ea2}{m} = tox;
+126     \textcolor{keywordflow}{return} \hyperlink{toxcore_2group_8c_a6f097de58345cf9500d0413198c583fc}{join\_groupchat}(m->\hyperlink{struct_messenger_accf717ba3e14c38e1611b17b78eed25c}{group\_chat\_object}, friendnumber, 
+      \hyperlink{toxcore_2group_8h_a726ca809ffd3d67ab4b8476646f26635aeac39f64e239809fa2775f92b56218f9}{GROUPCHAT\_TYPE\_TEXT}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+127 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a26cf750df10de88c8e5024db883fff97_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d8f/tox__old__code_8h_a26cf750df10de88c8e5024db883fff97_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,44 @@
+This folder contains the input file ({\ttfamily \hyperlink{tox_8in_8h}{tox.\+in.\+h}}) that has to be used to generate the {\ttfamily \hyperlink{tox_8h}{tox.\+h}} api with\+: \href{https://github.com/iphydf/apidsl}{\tt https\+://github.\+com/iphydf/apidsl}
+
+\section*{Minimal requirements}
+
+There are some minimal requirements to contribute to {\ttfamily \hyperlink{tox_8h}{tox.\+h}}\+:
+\begin{DoxyItemize}
+\item unix environment
+\item {\ttfamily astyle} {\ttfamily $>$=2.\+03}
+\item \href{https://github.com/iphydf/apidsl}{\tt ``apidsl``} (you can use provided service with curl instead)
+\end{DoxyItemize}
+
+\subsection*{Quick way}
+
+If you want to do it quickly and you don't have time for anything other than copypasting commands, you should have {\ttfamily curl} installed.
+
+
+\begin{DoxyEnumerate}
+\item Make sure that you have {\ttfamily curl} and {\ttfamily $>$=astyle-\/2.\+03} installed
+\item Modify \href{/other/apidsl/tox.in.h}{\tt ``tox.in.\+h``}
+\item Run command below ↓
+\end{DoxyEnumerate}
+
+Command to run from {\ttfamily toxcore} directory (quick way, involves using curl)\+: ```bash rm \hyperlink{tox_8h}{toxcore/tox.\+h} \&\& \textbackslash{} ( curl -\/\+X P\+O\+S\+T --data-\/binary @-\/ \href{https://criticism.herokuapp.com/apidsl}{\tt https\+://criticism.\+herokuapp.\+com/apidsl} $<$ ./other/apidsl/tox.in.\+h $>$ ./toxcore/tox.h ) \&\& \textbackslash{} astyle --options=./other/astyle/astylerc ./toxcore/tox.h ```
+
+When formatting will be complete, you should see output like\+: ``` Formatted ./toxcore/tox.h ```
+
+You may want to make sure with {\ttfamily git diff} that changes made in {\ttfamily \hyperlink{tox_8h}{tox.\+h}} reflect changes in {\ttfamily \hyperlink{tox_8in_8h}{tox.\+in.\+h}}.
+
+And you're done.
+
+\subsection*{Manually}
+
+If you prefer to have more control over what is happening, there are steps below\+:
+
+
+\begin{DoxyEnumerate}
+\item Install \href{https://github.com/iphydf/apidsl}{\tt ``apidsl``}
+\item Install {\ttfamily astyle}, version 2.\+03 or later.
+\item Modify \href{/other/apidsl/tox.in.h}{\tt ``tox.in.\+h``}
+\item Use {\ttfamily apidsl} {\ttfamily ??}
+\item Parse generated {\ttfamily \hyperlink{tox_8h}{tox.\+h}} with astyle, minimal command for it would be\+: ```bash astyle --options=./other/astyle/astylerc ./toxcore/tox.h ```
+\end{DoxyEnumerate}
+
+{\bfseries Always pass output from {\ttfamily apidsl} through astyle.} 

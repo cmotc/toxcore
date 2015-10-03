@@ -1,0 +1,6 @@
+<map id="friend_connection_callbacks" name="friend_connection_callbacks">
+<area shape="rect" id="node2" href="$d2/d8d/_t_c_p__test_8c.html#a36ed22ce4a6bec3fb113a4eaf29df5e1" title="data_callback" alt="" coords="245,5,348,32"/>
+<area shape="rect" id="node3" href="$d2/db1/friend__connection_8c.html#a0c0c32645b094058a6e6d6bcab4ed718" title="get_conn" alt="" coords="259,56,334,83"/>
+<area shape="rect" id="node5" href="$d2/d8d/_t_c_p__test_8c.html#ae4f12b6805a17277d33e73ac030d7aca" title="status_callback" alt="" coords="240,107,353,133"/>
+<area shape="rect" id="node4" href="$d2/db1/friend__connection_8c.html#abecf42b27a016431837ee0b8a4ac5a5e" title="friendconn_id_not_valid" alt="" coords="401,56,560,83"/>
+</map>

@@ -1,0 +1,152 @@
+\hypertarget{struct_t_c_p__con}{\section{T\+C\+P\+\_\+con Struct Reference}
+\label{struct_t_c_p__con}\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+}
+
+
+{\ttfamily \#include $<$T\+C\+P\+\_\+connection.\+h$>$}
+
+
+
+Collaboration diagram for T\+C\+P\+\_\+con\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dd6/struct_t_c_p__con__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{status}
+\item 
+\hyperlink{struct_t_c_p___client___connection}{T\+C\+P\+\_\+\+Client\+\_\+\+Connection} $\ast$ \hyperlink{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{connection}
+\item 
+uint64\+\_\+t \hyperlink{struct_t_c_p__con_ae8be4bcb970c4f212e92c8f1598a1c41}{connected\+\_\+time}
+\item 
+uint32\+\_\+t \hyperlink{struct_t_c_p__con_af2d7f68891e20ea9070cfc2d412867e1}{lock\+\_\+count}
+\item 
+uint32\+\_\+t \hyperlink{struct_t_c_p__con_aa67ab512ed25830e7b9ea3c7069a9555}{sleep\+\_\+count}
+\item 
+\+\_\+\+Bool \hyperlink{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{onion}
+\item 
+\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} \hyperlink{struct_t_c_p__con_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\+\_\+port}
+\item 
+uint8\+\_\+t \hyperlink{struct_t_c_p__con_afd26506e572bfd335a3e7b498acd2902}{relay\+\_\+pk} \mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}
+\item 
+\+\_\+\+Bool \hyperlink{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}{unsleep}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 67 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_t_c_p__con_ae8be4bcb970c4f212e92c8f1598a1c41}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!connected\+\_\+time@{connected\+\_\+time}}
+\index{connected\+\_\+time@{connected\+\_\+time}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{connected\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t connected\+\_\+time}}\label{struct_t_c_p__con_ae8be4bcb970c4f212e92c8f1598a1c41}
+
+
+Definition at line 70 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), do\+\_\+tcp\+\_\+conns(), kill\+\_\+nonused\+\_\+tcp(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+relay\+\_\+on\+\_\+online(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!connection@{connection}}
+\index{connection@{connection}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+\_\+\+Client\+\_\+\+Connection}$\ast$ connection}}\label{struct_t_c_p__con_a8ef08da0aa71c2a8a8d8bec587521844}
+
+
+Definition at line 69 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+instance(), do\+\_\+tcp\+\_\+conns(), find\+\_\+tcp\+\_\+connection\+\_\+relay(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), kill\+\_\+tcp\+\_\+connections(), kill\+\_\+tcp\+\_\+relay\+\_\+connection(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), send\+\_\+packet\+\_\+tcp\+\_\+connection(), send\+\_\+tcp\+\_\+relay\+\_\+routing\+\_\+request(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+copy\+\_\+connected\+\_\+relays(), tcp\+\_\+relay\+\_\+set\+\_\+callbacks(), tcp\+\_\+response\+\_\+callback(), tcp\+\_\+send\+\_\+onion\+\_\+request(), tcp\+\_\+send\+\_\+oob\+\_\+packet(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!ip\+\_\+port@{ip\+\_\+port}}
+\index{ip\+\_\+port@{ip\+\_\+port}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{ip\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+\_\+\+Port} ip\+\_\+port}}\label{struct_t_c_p__con_a86e2a5a56c0dd22df6e8b8a10e40f9e4}
+
+
+Definition at line 76 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_af2d7f68891e20ea9070cfc2d412867e1}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!lock\+\_\+count@{lock\+\_\+count}}
+\index{lock\+\_\+count@{lock\+\_\+count}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{lock\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t lock\+\_\+count}}\label{struct_t_c_p__con_af2d7f68891e20ea9070cfc2d412867e1}
+
+
+Definition at line 71 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+tcp\+\_\+conns(), kill\+\_\+nonused\+\_\+tcp(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+status\+\_\+callback(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!onion@{onion}}
+\index{onion@{onion}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{onion}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+Bool onion}}\label{struct_t_c_p__con_a4f1449619f7a2b76af07277f10bd0f93}
+
+
+Definition at line 73 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+tcp\+\_\+conns(), get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number(), kill\+\_\+nonused\+\_\+tcp(), kill\+\_\+tcp\+\_\+relay\+\_\+connection(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), set\+\_\+tcp\+\_\+onion\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and tcp\+\_\+relay\+\_\+on\+\_\+online().
+
+\hypertarget{struct_t_c_p__con_afd26506e572bfd335a3e7b498acd2902}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!relay\+\_\+pk@{relay\+\_\+pk}}
+\index{relay\+\_\+pk@{relay\+\_\+pk}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{relay\+\_\+pk}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t relay\+\_\+pk\mbox{[}crypto\+\_\+box\+\_\+\+P\+U\+B\+L\+I\+C\+K\+E\+Y\+B\+Y\+T\+E\+S\mbox{]}}}\label{struct_t_c_p__con_afd26506e572bfd335a3e7b498acd2902}
+
+
+Definition at line 77 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by find\+\_\+tcp\+\_\+connection\+\_\+relay(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_aa67ab512ed25830e7b9ea3c7069a9555}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!sleep\+\_\+count@{sleep\+\_\+count}}
+\index{sleep\+\_\+count@{sleep\+\_\+count}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{sleep\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t sleep\+\_\+count}}\label{struct_t_c_p__con_aa67ab512ed25830e7b9ea3c7069a9555}
+
+
+Definition at line 72 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by do\+\_\+tcp\+\_\+conns(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+status\+\_\+callback(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!status@{status}}
+\index{status@{status}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t status}}\label{struct_t_c_p__con_ade818037fd6c985038ff29656089758d}
+
+
+Definition at line 68 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), add\+\_\+tcp\+\_\+relay\+\_\+instance(), create\+\_\+tcp\+\_\+connection(), do\+\_\+tcp\+\_\+conns(), find\+\_\+tcp\+\_\+connection\+\_\+relay(), get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number(), kill\+\_\+nonused\+\_\+tcp(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), send\+\_\+tcp\+\_\+relay\+\_\+routing\+\_\+request(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), set\+\_\+tcp\+\_\+onion\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), tcp\+\_\+connections\+\_\+number\+\_\+not\+\_\+valid(), tcp\+\_\+copy\+\_\+connected\+\_\+relays(), tcp\+\_\+relay\+\_\+on\+\_\+online(), tcp\+\_\+send\+\_\+onion\+\_\+request(), tcp\+\_\+send\+\_\+oob\+\_\+packet(), unsleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and wipe\+\_\+tcp\+\_\+connection().
+
+\hypertarget{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}{\index{T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}!unsleep@{unsleep}}
+\index{unsleep@{unsleep}!T\+C\+P\+\_\+con@{T\+C\+P\+\_\+con}}
+\subsubsection[{unsleep}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+Bool unsleep}}\label{struct_t_c_p__con_a32a5683291c18bbe710881445071d607}
+
+
+Definition at line 78 of file T\+C\+P\+\_\+connection.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+number\+\_\+relay\+\_\+connection(), do\+\_\+tcp\+\_\+conns(), reconnect\+\_\+tcp\+\_\+relay\+\_\+connection(), set\+\_\+tcp\+\_\+connection\+\_\+to\+\_\+status(), set\+\_\+tcp\+\_\+onion\+\_\+status(), sleep\+\_\+tcp\+\_\+relay\+\_\+connection(), and unsleep\+\_\+tcp\+\_\+relay\+\_\+connection().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+toxcore/\hyperlink{_t_c_p__connection_8h}{T\+C\+P\+\_\+connection.\+h}\end{DoxyCompactItemize}

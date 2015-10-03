@@ -1,0 +1,2242 @@
+\hypertarget{network_8h}{\section{toxcore/network.h File Reference}
+\label{network_8h}\index{toxcore/network.\+h@{toxcore/network.\+h}}
+}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for network.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d02/network_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dcf/network_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union_i_p4}{I\+P4}
+\item 
+union \hyperlink{union_i_p6}{I\+P6}
+\item 
+struct \hyperlink{struct_i_p}{I\+P}
+\item 
+struct \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port}
+\item 
+struct \hyperlink{struct_packet___handles}{Packet\+\_\+\+Handles}
+\item 
+struct \hyperlink{struct_networking___core}{Networking\+\_\+\+Core}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{network_8h_a9fd837ac38736fed27e32d824a824259}{M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}~2048
+\item 
+\#define \hyperlink{network_8h_a0e8a1fd7942a30ebd883c1c25311a323}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~0   /$\ast$ Ping request packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a63c9253af079267e344036d235fcd48d}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}~1   /$\ast$ Ping response packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a861e63c2b32751aa406f11283f5b0925}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S}~2   /$\ast$ Get nodes request packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a868cfc97dcb064ca456278fc89f9b512}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6}~4   /$\ast$ Send nodes response packet I\+D \hyperlink{toxav__many__test_8c_a8799beff27c0e5459ef50f9ca1efe92c}{for} other addresses. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a3ad6d83af0ed67a84b327df50d66229c}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~24  /$\ast$ Cookie request packet $\ast$/
+\item 
+\#define \hyperlink{network_8h_a1162e12ce54e50cb3744e2cf69553565}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}~25  /$\ast$ Cookie response packet $\ast$/
+\item 
+\#define \hyperlink{network_8h_ae4ba32f7f36e935bd3a56b5e90299857}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S}~26  /$\ast$ Crypto handshake packet $\ast$/
+\item 
+\#define \hyperlink{network_8h_abd68cd32dfdf6a1e0407967df0c10a9e}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A}~27  /$\ast$ Crypto data packet $\ast$/
+\item 
+\#define \hyperlink{network_8h_aebd9a38e63bac9807d0c2c1cfed68a15}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O}~32  /$\ast$ Encrypted data packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a16dc7e6f46489ec54301367eeeac6fbd}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y}~33  /$\ast$ L\+A\+N discovery packet I\+D. $\ast$/
+\item 
+\#define \hyperlink{network_8h_a6d89eb02b93f686802f9d3e5e7f7ab2d}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L}~128
+\item 
+\#define \hyperlink{network_8h_af35e3289fe8c4324b7a07655952f5eab}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1}~129
+\item 
+\#define \hyperlink{network_8h_ac537a2a6be093500c4d362012515b565}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2}~130
+\item 
+\#define \hyperlink{network_8h_adf1881bdae281c7054982ee4e635e93e}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~131
+\item 
+\#define \hyperlink{network_8h_af56fecaf9aa0b3c4741474e20d0ec43d}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}~132
+\item 
+\#define \hyperlink{network_8h_a481421a510d0e74f0a14180ac52213fd}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~133
+\item 
+\#define \hyperlink{network_8h_acc89dafa34d1a75935fb4cdef938d424}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}~134
+\item 
+\#define \hyperlink{network_8h_a7ef70febad8b27e23b73db25d78cd666}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3}~140
+\item 
+\#define \hyperlink{network_8h_a27ee7b36bdc6b4fb72e704fee4dc392b}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2}~141
+\item 
+\#define \hyperlink{network_8h_ac2df6c149caae49d80e5217d480ae839}{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1}~142
+\item 
+\#define \hyperlink{network_8h_ad8263fdc6b6f17e282f3d711bf51763c}{B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}~240
+\item 
+\#define \hyperlink{network_8h_abb99b46273eebad6426abc06423c0d9f}{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}~33445
+\item 
+\#define \hyperlink{network_8h_ae22d1a7b52c5fb38a33df754621e407f}{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O}~33545
+\item 
+\#define \hyperlink{network_8h_a8b04a22d2b5effdb46dda741f490951e}{T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}~\hyperlink{network_8h_abb99b46273eebad6426abc06423c0d9f}{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}
+\item 
+\#define \hyperlink{network_8h_ab1781daa396d0fa3533c06ed6f74a2a3}{T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y}~(A\+F\+\_\+\+I\+N\+E\+T6 + 1)
+\item 
+\#define \hyperlink{network_8h_a38cdd2f189180d6790d5b181f55ca047}{T\+C\+P\+\_\+\+I\+N\+E\+T}~(A\+F\+\_\+\+I\+N\+E\+T6 + 2)
+\item 
+\#define \hyperlink{network_8h_a7cd884776d628ca50049592d963c10cc}{T\+C\+P\+\_\+\+I\+N\+E\+T6}~(A\+F\+\_\+\+I\+N\+E\+T6 + 3)
+\item 
+\#define \hyperlink{network_8h_a8b8d4bdf23eea1681ac4126938f587ec}{T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y}~(A\+F\+\_\+\+I\+N\+E\+T6 + 4)
+\item 
+\#define \hyperlink{network_8h_aaaf5ca9c91edc4f8a7529206d7799805}{I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6}(a)~((a.\+uint64\mbox{[}0\mbox{]} == 0) \&\& (a.\+uint32\mbox{[}2\mbox{]} == htonl (0xffff)))
+\item 
+\#define \hyperlink{network_8h_af01e75c1c63a39bcd2aacdf3018b18c9}{S\+I\+Z\+E\+\_\+\+I\+P4}~4
+\item 
+\#define \hyperlink{network_8h_a5d7430ad26f80239b9fe1bbcd51b5ed2}{S\+I\+Z\+E\+\_\+\+I\+P6}~16
+\item 
+\#define \hyperlink{network_8h_a347bab05abec85d23b5207309a5223b8}{S\+I\+Z\+E\+\_\+\+I\+P}~(1 + \hyperlink{network_8h_a5d7430ad26f80239b9fe1bbcd51b5ed2}{S\+I\+Z\+E\+\_\+\+I\+P6})
+\item 
+\#define \hyperlink{network_8h_a7771606fa737c038bcad05c8926b9ddd}{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T}~2
+\item 
+\#define \hyperlink{network_8h_a42c0a5872a869ac0cfd8200935ed49ee}{S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T}~(\hyperlink{network_8h_a347bab05abec85d23b5207309a5223b8}{S\+I\+Z\+E\+\_\+\+I\+P} + \hyperlink{network_8h_a7771606fa737c038bcad05c8926b9ddd}{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T})
+\item 
+\#define \hyperlink{network_8h_a5cba5a89816e720fa45984ad44859726}{T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t}
+\item 
+typedef int($\ast$ \hyperlink{network_8h_a01fb3f0e3fd19ed8eefe335b64934156}{packet\+\_\+handler\+\_\+callback} )(void $\ast$object, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{network_8h_af71f49c78ce7b76ccf08785c6ec08706}{ip\+\_\+ntoa} (const \hyperlink{struct_i_p}{I\+P} $\ast$\hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip})
+\item 
+int \hyperlink{network_8h_ae25cce1bbb77b6a8b441bb940a75783f}{ip\+\_\+parse\+\_\+addr} (const \hyperlink{struct_i_p}{I\+P} $\ast$\hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip}, char $\ast$address, size\+\_\+t length)
+\item 
+int \hyperlink{network_8h_a944255f7a47e106de5faea1bf7387a28}{addr\+\_\+parse\+\_\+ip} (const char $\ast$address, \hyperlink{struct_i_p}{I\+P} $\ast$to)
+\item 
+int \hyperlink{network_8h_af982256c6d8486349bdc13a920884ef6}{ip\+\_\+equal} (const \hyperlink{struct_i_p}{I\+P} $\ast$a, const \hyperlink{struct_i_p}{I\+P} $\ast$b)
+\item 
+int \hyperlink{network_8h_a6913335cf0b2a76303f5f61d18ea2277}{ipport\+\_\+equal} (const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$a, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$b)
+\item 
+void \hyperlink{network_8h_a2bfd1efbce5b035b10c879a7e85c08df}{ip\+\_\+reset} (\hyperlink{struct_i_p}{I\+P} $\ast$\hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip})
+\item 
+void \hyperlink{network_8h_a6aa0dce9c25e370af93bf4a14f79c709}{ip\+\_\+init} (\hyperlink{struct_i_p}{I\+P} $\ast$\hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip}, uint8\+\_\+t ipv6enabled)
+\item 
+int \hyperlink{network_8h_ac56c677f4bc8bf8311370ee105ae7cbb}{ip\+\_\+isset} (const \hyperlink{struct_i_p}{I\+P} $\ast$\hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip})
+\item 
+int \hyperlink{network_8h_a8436367218afb29bcf1b5fecd071648e}{ipport\+\_\+isset} (const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$ipport)
+\item 
+void \hyperlink{network_8h_a66563da83f68de4f5e9d7c5f2f72c8f3}{ip\+\_\+copy} (\hyperlink{struct_i_p}{I\+P} $\ast$target, const \hyperlink{struct_i_p}{I\+P} $\ast$source)
+\item 
+void \hyperlink{network_8h_a98c8d0713b35c97e9861cd7e59c40890}{ipport\+\_\+copy} (\hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$target, const \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} $\ast$source)
+\item 
+int \hyperlink{network_8h_af329b139810a0b31f336bdf416333b24}{addr\+\_\+resolve} (const char $\ast$address, \hyperlink{struct_i_p}{I\+P} $\ast$to, \hyperlink{struct_i_p}{I\+P} $\ast$extra)
+\item 
+int \hyperlink{network_8h_a1c024648679209a12766fedc7e55d5e4}{addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip} (const char $\ast$address, \hyperlink{struct_i_p}{I\+P} $\ast$to, \hyperlink{struct_i_p}{I\+P} $\ast$extra)
+\item 
+int \hyperlink{network_8h_ad953dedd6d25d03cf441960dd1e1fed1}{networking\+\_\+at\+\_\+startup} (void)
+\item 
+int \hyperlink{network_8h_a84c3240a3325cbdaaa8a206c96980cd1}{sock\+\_\+valid} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+void \hyperlink{network_8h_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\+\_\+sock} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+int \hyperlink{network_8h_a6a50bb1345f2d5192fe1ec23ac7a1da9}{set\+\_\+socket\+\_\+nonblock} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+int \hyperlink{network_8h_a379153c027c17d7c71797cb0e3ea41a3}{set\+\_\+socket\+\_\+nosigpipe} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+int \hyperlink{network_8h_ac278c3d25e3807f0b2be9d91c9db328f}{set\+\_\+socket\+\_\+reuseaddr} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+int \hyperlink{network_8h_ad2f109728a6345e6862686ea4baf5b27}{set\+\_\+socket\+\_\+dualstack} (\hyperlink{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{sock\+\_\+t} \hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock})
+\item 
+uint64\+\_\+t \hyperlink{network_8h_ae8ecaef140b786a2720eadbb85918e81}{current\+\_\+time\+\_\+monotonic} (void)
+\item 
+int \hyperlink{network_8h_a7b90f87f3ba60cc5c66dd6dd77cd5cb1}{sendpacket} (\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$net, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+void \hyperlink{network_8h_a230a192ca9463ec4985d4f86de439733}{networking\+\_\+registerhandler} (\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$net, uint8\+\_\+t byte, \hyperlink{network_8h_a01fb3f0e3fd19ed8eefe335b64934156}{packet\+\_\+handler\+\_\+callback} cb, void $\ast$object)
+\item 
+void \hyperlink{network_8h_ab6765fe4b08536210a20ac728f991e13}{networking\+\_\+poll} (\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$net)
+\item 
+\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$ \hyperlink{network_8h_a0c272a560dd4b2c18c6546a91656c1b5}{new\+\_\+networking} (\hyperlink{struct_i_p}{I\+P} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip}, uint16\+\_\+t \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port})
+\item 
+\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$ \hyperlink{network_8h_a899cb8f62b49e71ba9f9f7a50254655c}{new\+\_\+networking\+\_\+ex} (\hyperlink{struct_i_p}{I\+P} \hyperlink{irc__syncbot_8c_ae81515e082f9bc33e8968181945586da}{ip}, uint16\+\_\+t port\+\_\+from, uint16\+\_\+t port\+\_\+to, unsigned int $\ast$\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+\item 
+void \hyperlink{network_8h_a8a36a1ed29a0d5dfe1f0095823039627}{kill\+\_\+networking} (\hyperlink{struct_networking___core}{Networking\+\_\+\+Core} $\ast$net)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{network_8h_ad8263fdc6b6f17e282f3d711bf51763c}{\index{network.\+h@{network.\+h}!B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D@{B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}}
+\index{B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D@{B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}!network.\+h@{network.\+h}}
+\subsubsection[{B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+O\+T\+S\+T\+R\+A\+P\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+D~240}}\label{network_8h_ad8263fdc6b6f17e282f3d711bf51763c}
+
+
+Definition at line 123 of file network.\+h.
+
+
+
+Referenced by bootstrap\+\_\+set\+\_\+callbacks(), and handle\+\_\+info\+\_\+request().
+
+\hypertarget{network_8h_aaaf5ca9c91edc4f8a7529206d7799805}{\index{network.\+h@{network.\+h}!I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6@{I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6}}
+\index{I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6@{I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6}!network.\+h@{network.\+h}}
+\subsubsection[{I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((a.\+uint64\mbox{[}0\mbox{]} == 0) \&\& (a.\+uint32\mbox{[}2\mbox{]} == htonl (0xffff)))}}\label{network_8h_aaaf5ca9c91edc4f8a7529206d7799805}
+
+
+Definition at line 169 of file network.\+h.
+
+
+
+Referenced by addto\+\_\+lists(), ip\+\_\+equal(), L\+A\+N\+\_\+ip(), Local\+\_\+ip(), receivepacket(), and returnedip\+\_\+ports().
+
+\hypertarget{network_8h_a9fd837ac38736fed27e32d824a824259}{\index{network.\+h@{network.\+h}!M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}!network.\+h@{network.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E~2048}}\label{network_8h_a9fd837ac38736fed27e32d824a824259}
+
+
+Definition at line 95 of file network.\+h.
+
+
+
+Referenced by networking\+\_\+poll(), and receivepacket().
+
+\hypertarget{network_8h_adf1881bdae281c7054982ee4e635e93e}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T~131}}\label{network_8h_adf1881bdae281c7054982ee4e635e93e}
+
+
+Definition at line 113 of file network.\+h.
+
+
+
+Referenced by create\+\_\+announce\+\_\+request(), kill\+\_\+onion\+\_\+announce(), and new\+\_\+onion\+\_\+announce().
+
+\hypertarget{network_8h_af56fecaf9aa0b3c4741474e20d0ec43d}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E~132}}\label{network_8h_af56fecaf9aa0b3c4741474e20d0ec43d}
+
+
+Definition at line 114 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+announce\+\_\+request(), handle\+\_\+tcp\+\_\+onion(), kill\+\_\+onion\+\_\+client(), new\+\_\+onion\+\_\+client(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{network_8h_a3ad6d83af0ed67a84b327df50d66229c}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T~24  /$\ast$ Cookie request packet $\ast$/}}\label{network_8h_a3ad6d83af0ed67a84b327df50d66229c}
+
+
+Definition at line 101 of file network.\+h.
+
+
+
+Referenced by create\+\_\+cookie\+\_\+request(), kill\+\_\+net\+\_\+crypto(), new\+\_\+net\+\_\+crypto(), send\+\_\+packet\+\_\+to(), tcp\+\_\+data\+\_\+callback(), and tcp\+\_\+oob\+\_\+callback().
+
+\hypertarget{network_8h_a1162e12ce54e50cb3744e2cf69553565}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E~25  /$\ast$ Cookie response packet $\ast$/}}\label{network_8h_a1162e12ce54e50cb3744e2cf69553565}
+
+
+Definition at line 102 of file network.\+h.
+
+
+
+Referenced by create\+\_\+cookie\+\_\+response(), handle\+\_\+packet\+\_\+connection(), kill\+\_\+net\+\_\+crypto(), and new\+\_\+net\+\_\+crypto().
+
+\hypertarget{network_8h_aebd9a38e63bac9807d0c2c1cfed68a15}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O~32  /$\ast$ Encrypted data packet I\+D. $\ast$/}}\label{network_8h_aebd9a38e63bac9807d0c2c1cfed68a15}
+
+
+Definition at line 105 of file network.\+h.
+
+
+
+Referenced by create\+\_\+request(), cryptopacket\+\_\+handle(), and new\+\_\+\+D\+H\+T().
+
+\hypertarget{network_8h_abd68cd32dfdf6a1e0407967df0c10a9e}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A~27  /$\ast$ Crypto data packet $\ast$/}}\label{network_8h_abd68cd32dfdf6a1e0407967df0c10a9e}
+
+
+Definition at line 104 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+packet\+\_\+connection(), kill\+\_\+net\+\_\+crypto(), new\+\_\+net\+\_\+crypto(), and send\+\_\+data\+\_\+packet().
+
+\hypertarget{network_8h_ae4ba32f7f36e935bd3a56b5e90299857}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S~26  /$\ast$ Crypto handshake packet $\ast$/}}\label{network_8h_ae4ba32f7f36e935bd3a56b5e90299857}
+
+
+Definition at line 103 of file network.\+h.
+
+
+
+Referenced by create\+\_\+crypto\+\_\+handshake(), handle\+\_\+packet\+\_\+connection(), kill\+\_\+net\+\_\+crypto(), new\+\_\+net\+\_\+crypto(), send\+\_\+packet\+\_\+to(), tcp\+\_\+oob\+\_\+callback(), and udp\+\_\+handle\+\_\+packet().
+
+\hypertarget{network_8h_a861e63c2b32751aa406f11283f5b0925}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+G\+E\+T\+\_\+\+N\+O\+D\+E\+S~2   /$\ast$ Get nodes request packet I\+D. $\ast$/}}\label{network_8h_a861e63c2b32751aa406f11283f5b0925}
+
+
+Definition at line 99 of file network.\+h.
+
+
+
+Referenced by getnodes(), kill\+\_\+\+D\+H\+T(), and new\+\_\+\+D\+H\+T().
+
+\hypertarget{network_8h_a16dc7e6f46489ec54301367eeeac6fbd}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+L\+A\+N\+\_\+\+D\+I\+S\+C\+O\+V\+E\+R\+Y~33  /$\ast$ L\+A\+N discovery packet I\+D. $\ast$/}}\label{network_8h_a16dc7e6f46489ec54301367eeeac6fbd}
+
+
+Definition at line 106 of file network.\+h.
+
+
+
+Referenced by L\+A\+Ndiscovery\+\_\+init(), L\+A\+Ndiscovery\+\_\+kill(), and send\+\_\+\+L\+A\+Ndiscovery().
+
+\hypertarget{network_8h_a481421a510d0e74f0a14180ac52213fd}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+Q\+U\+E\+S\+T~133}}\label{network_8h_a481421a510d0e74f0a14180ac52213fd}
+
+
+Definition at line 115 of file network.\+h.
+
+
+
+Referenced by create\+\_\+data\+\_\+request(), kill\+\_\+onion\+\_\+announce(), and new\+\_\+onion\+\_\+announce().
+
+\hypertarget{network_8h_acc89dafa34d1a75935fb4cdef938d424}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E~134}}\label{network_8h_acc89dafa34d1a75935fb4cdef938d424}
+
+
+Definition at line 116 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+request(), handle\+\_\+tcp\+\_\+onion(), kill\+\_\+onion\+\_\+client(), new\+\_\+onion\+\_\+client(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+\hypertarget{network_8h_ac2df6c149caae49d80e5217d480ae839}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+1~142}}\label{network_8h_ac2df6c149caae49d80e5217d480ae839}
+
+
+Definition at line 120 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+2(), kill\+\_\+onion(), and new\+\_\+onion().
+
+\hypertarget{network_8h_a27ee7b36bdc6b4fb72e704fee4dc392b}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+2~141}}\label{network_8h_a27ee7b36bdc6b4fb72e704fee4dc392b}
+
+
+Definition at line 119 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+recv\+\_\+3(), kill\+\_\+onion(), and new\+\_\+onion().
+
+\hypertarget{network_8h_a7ef70febad8b27e23b73db25d78cd666}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+R\+E\+C\+V\+\_\+3~140}}\label{network_8h_a7ef70febad8b27e23b73db25d78cd666}
+
+
+Definition at line 118 of file network.\+h.
+
+
+
+Referenced by kill\+\_\+onion(), new\+\_\+onion(), and send\+\_\+onion\+\_\+response().
+
+\hypertarget{network_8h_af35e3289fe8c4324b7a07655952f5eab}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+1~129}}\label{network_8h_af35e3289fe8c4324b7a07655952f5eab}
+
+
+Definition at line 110 of file network.\+h.
+
+
+
+Referenced by kill\+\_\+onion(), new\+\_\+onion(), and onion\+\_\+send\+\_\+1().
+
+\hypertarget{network_8h_ac537a2a6be093500c4d362012515b565}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+2~130}}\label{network_8h_ac537a2a6be093500c4d362012515b565}
+
+
+Definition at line 111 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+send\+\_\+1(), kill\+\_\+onion(), and new\+\_\+onion().
+
+\hypertarget{network_8h_a6d89eb02b93f686802f9d3e5e7f7ab2d}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+O\+N\+I\+O\+N\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+I\+T\+I\+A\+L~128}}\label{network_8h_a6d89eb02b93f686802f9d3e5e7f7ab2d}
+
+
+Definition at line 109 of file network.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), kill\+\_\+onion(), and new\+\_\+onion().
+
+\hypertarget{network_8h_a0e8a1fd7942a30ebd883c1c25311a323}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+Q\+U\+E\+S\+T~0   /$\ast$ Ping request packet I\+D. $\ast$/}}\label{network_8h_a0e8a1fd7942a30ebd883c1c25311a323}
+
+
+Definition at line 97 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+ping\+\_\+request(), kill\+\_\+ping(), new\+\_\+ping(), and send\+\_\+ping\+\_\+request().
+
+\hypertarget{network_8h_a63c9253af079267e344036d235fcd48d}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E~1   /$\ast$ Ping response packet I\+D. $\ast$/}}\label{network_8h_a63c9253af079267e344036d235fcd48d}
+
+
+Definition at line 98 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+ping\+\_\+response(), kill\+\_\+ping(), new\+\_\+ping(), and send\+\_\+ping\+\_\+response().
+
+\hypertarget{network_8h_a868cfc97dcb064ca456278fc89f9b512}{\index{network.\+h@{network.\+h}!N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6}}
+\index{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6@{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6}!network.\+h@{network.\+h}}
+\subsubsection[{N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+E\+N\+D\+\_\+\+N\+O\+D\+E\+S\+\_\+\+I\+P\+V6~4   /$\ast$ Send nodes response packet I\+D {\bf for} other addresses. $\ast$/}}\label{network_8h_a868cfc97dcb064ca456278fc89f9b512}
+
+
+Definition at line 100 of file network.\+h.
+
+
+
+Referenced by kill\+\_\+\+D\+H\+T(), new\+\_\+\+D\+H\+T(), and sendnodes\+\_\+ipv6().
+
+\hypertarget{network_8h_a347bab05abec85d23b5207309a5223b8}{\index{network.\+h@{network.\+h}!S\+I\+Z\+E\+\_\+\+I\+P@{S\+I\+Z\+E\+\_\+\+I\+P}}
+\index{S\+I\+Z\+E\+\_\+\+I\+P@{S\+I\+Z\+E\+\_\+\+I\+P}!network.\+h@{network.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+I\+P~(1 + {\bf S\+I\+Z\+E\+\_\+\+I\+P6})}}\label{network_8h_a347bab05abec85d23b5207309a5223b8}
+
+
+Definition at line 173 of file network.\+h.
+
+
+
+Referenced by ipport\+\_\+pack(), and ipport\+\_\+unpack().
+
+\hypertarget{network_8h_af01e75c1c63a39bcd2aacdf3018b18c9}{\index{network.\+h@{network.\+h}!S\+I\+Z\+E\+\_\+\+I\+P4@{S\+I\+Z\+E\+\_\+\+I\+P4}}
+\index{S\+I\+Z\+E\+\_\+\+I\+P4@{S\+I\+Z\+E\+\_\+\+I\+P4}!network.\+h@{network.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+I\+P4}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+I\+P4~4}}\label{network_8h_af01e75c1c63a39bcd2aacdf3018b18c9}
+
+
+Definition at line 171 of file network.\+h.
+
+
+
+Referenced by ip\+\_\+pack(), ip\+\_\+unpack(), pack\+\_\+nodes(), and unpack\+\_\+nodes().
+
+\hypertarget{network_8h_a5d7430ad26f80239b9fe1bbcd51b5ed2}{\index{network.\+h@{network.\+h}!S\+I\+Z\+E\+\_\+\+I\+P6@{S\+I\+Z\+E\+\_\+\+I\+P6}}
+\index{S\+I\+Z\+E\+\_\+\+I\+P6@{S\+I\+Z\+E\+\_\+\+I\+P6}!network.\+h@{network.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+I\+P6}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+I\+P6~16}}\label{network_8h_a5d7430ad26f80239b9fe1bbcd51b5ed2}
+
+
+Definition at line 172 of file network.\+h.
+
+
+
+Referenced by ip\+\_\+pack(), ip\+\_\+unpack(), pack\+\_\+nodes(), and unpack\+\_\+nodes().
+
+\hypertarget{network_8h_a42c0a5872a869ac0cfd8200935ed49ee}{\index{network.\+h@{network.\+h}!S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T@{S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T}}
+\index{S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T@{S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T}!network.\+h@{network.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+I\+P\+P\+O\+R\+T~({\bf S\+I\+Z\+E\+\_\+\+I\+P} + {\bf S\+I\+Z\+E\+\_\+\+P\+O\+R\+T})}}\label{network_8h_a42c0a5872a869ac0cfd8200935ed49ee}
+
+
+Definition at line 175 of file network.\+h.
+
+
+
+Referenced by create\+\_\+onion\+\_\+packet(), create\+\_\+onion\+\_\+packet\+\_\+tcp(), handle\+\_\+recv\+\_\+1(), handle\+\_\+recv\+\_\+2(), handle\+\_\+recv\+\_\+3(), handle\+\_\+send\+\_\+1(), handle\+\_\+send\+\_\+2(), and onion\+\_\+send\+\_\+1().
+
+\hypertarget{network_8h_a7771606fa737c038bcad05c8926b9ddd}{\index{network.\+h@{network.\+h}!S\+I\+Z\+E\+\_\+\+P\+O\+R\+T@{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T}}
+\index{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T@{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T}!network.\+h@{network.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+P\+O\+R\+T~2}}\label{network_8h_a7771606fa737c038bcad05c8926b9ddd}
+
+
+Definition at line 174 of file network.\+h.
+
+
+
+Referenced by ipport\+\_\+pack(), and ipport\+\_\+unpack().
+
+\hypertarget{network_8h_a8b8d4bdf23eea1681ac4126938f587ec}{\index{network.\+h@{network.\+h}!T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y@{T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y}}
+\index{T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y@{T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y}!network.\+h@{network.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+F\+A\+M\+I\+L\+Y~(A\+F\+\_\+\+I\+N\+E\+T6 + 4)}}\label{network_8h_a8b8d4bdf23eea1681ac4126938f587ec}
+
+
+Definition at line 134 of file network.\+h.
+
+
+
+Referenced by crypto\+\_\+connection\+\_\+add\+\_\+source(), handle\+\_\+tcp\+\_\+onion(), random\+\_\+nodes\+\_\+path\+\_\+onion(), send\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+udp(), and tcp\+\_\+oob\+\_\+callback().
+
+\hypertarget{network_8h_a38cdd2f189180d6790d5b181f55ca047}{\index{network.\+h@{network.\+h}!T\+C\+P\+\_\+\+I\+N\+E\+T@{T\+C\+P\+\_\+\+I\+N\+E\+T}}
+\index{T\+C\+P\+\_\+\+I\+N\+E\+T@{T\+C\+P\+\_\+\+I\+N\+E\+T}!network.\+h@{network.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+I\+N\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+I\+N\+E\+T~(A\+F\+\_\+\+I\+N\+E\+T6 + 2)}}\label{network_8h_a38cdd2f189180d6790d5b181f55ca047}
+
+
+Definition at line 132 of file network.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+instance(), handle\+\_\+dhtpk\+\_\+announce(), pack\+\_\+nodes(), packed\+\_\+node\+\_\+size(), tcp\+\_\+copy\+\_\+connected\+\_\+relays(), and unpack\+\_\+nodes().
+
+\hypertarget{network_8h_a7cd884776d628ca50049592d963c10cc}{\index{network.\+h@{network.\+h}!T\+C\+P\+\_\+\+I\+N\+E\+T6@{T\+C\+P\+\_\+\+I\+N\+E\+T6}}
+\index{T\+C\+P\+\_\+\+I\+N\+E\+T6@{T\+C\+P\+\_\+\+I\+N\+E\+T6}!network.\+h@{network.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+I\+N\+E\+T6}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+I\+N\+E\+T6~(A\+F\+\_\+\+I\+N\+E\+T6 + 3)}}\label{network_8h_a7cd884776d628ca50049592d963c10cc}
+
+
+Definition at line 133 of file network.\+h.
+
+
+
+Referenced by add\+\_\+tcp\+\_\+relay\+\_\+instance(), handle\+\_\+dhtpk\+\_\+announce(), messenger\+\_\+save(), messenger\+\_\+size(), pack\+\_\+nodes(), packed\+\_\+node\+\_\+size(), tcp\+\_\+copy\+\_\+connected\+\_\+relays(), and unpack\+\_\+nodes().
+
+\hypertarget{network_8h_ab1781daa396d0fa3533c06ed6f74a2a3}{\index{network.\+h@{network.\+h}!T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y@{T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y}}
+\index{T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y@{T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y}!network.\+h@{network.\+h}}
+\subsubsection[{T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+C\+P\+\_\+\+O\+N\+I\+O\+N\+\_\+\+F\+A\+M\+I\+L\+Y~(A\+F\+\_\+\+I\+N\+E\+T6 + 1)}}\label{network_8h_ab1781daa396d0fa3533c06ed6f74a2a3}
+
+
+Definition at line 131 of file network.\+h.
+
+
+
+Referenced by handle\+\_\+\+T\+C\+P\+\_\+packet().
+
+\hypertarget{network_8h_a5cba5a89816e720fa45984ad44859726}{\index{network.\+h@{network.\+h}!T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T@{T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T@{T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T}!network.\+h@{network.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+P\+V6\+\_\+\+D\+E\+F\+A\+U\+L\+T~1}}\label{network_8h_a5cba5a89816e720fa45984ad44859726}
+
+
+Definition at line 177 of file network.\+h.
+
+
+
+Referenced by main(), and tox\+\_\+new().
+
+\hypertarget{network_8h_a8b04a22d2b5effdb46dda741f490951e}{\index{network.\+h@{network.\+h}!T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T@{T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T@{T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}!network.\+h@{network.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+O\+R\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T~{\bf T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}}}\label{network_8h_a8b04a22d2b5effdb46dda741f490951e}
+
+
+Definition at line 128 of file network.\+h.
+
+
+
+Referenced by L\+A\+Ndiscovery(), test\+\_\+addto\+\_\+lists(), and test\+\_\+addto\+\_\+lists\+\_\+update().
+
+\hypertarget{network_8h_abb99b46273eebad6426abc06423c0d9f}{\index{network.\+h@{network.\+h}!T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M@{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}}
+\index{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M@{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}!network.\+h@{network.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M~33445}}\label{network_8h_abb99b46273eebad6426abc06423c0d9f}
+
+
+Definition at line 126 of file network.\+h.
+
+
+
+Referenced by new\+\_\+networking(), and new\+\_\+networking\+\_\+ex().
+
+\hypertarget{network_8h_ae22d1a7b52c5fb38a33df754621e407f}{\index{network.\+h@{network.\+h}!T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O@{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O}}
+\index{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O@{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O}!network.\+h@{network.\+h}}
+\subsubsection[{T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O~33545}}\label{network_8h_ae22d1a7b52c5fb38a33df754621e407f}
+
+
+Definition at line 127 of file network.\+h.
+
+
+
+Referenced by new\+\_\+networking(), and new\+\_\+networking\+\_\+ex().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{network_8h_a01fb3f0e3fd19ed8eefe335b64934156}{\index{network.\+h@{network.\+h}!packet\+\_\+handler\+\_\+callback@{packet\+\_\+handler\+\_\+callback}}
+\index{packet\+\_\+handler\+\_\+callback@{packet\+\_\+handler\+\_\+callback}!network.\+h@{network.\+h}}
+\subsubsection[{packet\+\_\+handler\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ packet\+\_\+handler\+\_\+callback)(void $\ast$object, {\bf I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$data, uint16\+\_\+t len)}}\label{network_8h_a01fb3f0e3fd19ed8eefe335b64934156}
+
+
+Definition at line 289 of file network.\+h.
+
+\hypertarget{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}{\index{network.\+h@{network.\+h}!sock\+\_\+t@{sock\+\_\+t}}
+\index{sock\+\_\+t@{sock\+\_\+t}!network.\+h@{network.\+h}}
+\subsubsection[{sock\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf sock\+\_\+t}}}\label{network_8h_ae5faf8a8d23da59c3e3025a62039d8c1}
+
+
+Definition at line 71 of file network.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{network_8h_a944255f7a47e106de5faea1bf7387a28}{\index{network.\+h@{network.\+h}!addr\+\_\+parse\+\_\+ip@{addr\+\_\+parse\+\_\+ip}}
+\index{addr\+\_\+parse\+\_\+ip@{addr\+\_\+parse\+\_\+ip}!network.\+h@{network.\+h}}
+\subsubsection[{addr\+\_\+parse\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}int addr\+\_\+parse\+\_\+ip (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{address, }
+\item[{{\bf I\+P} $\ast$}]{to}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a944255f7a47e106de5faea1bf7387a28}
+
+
+Definition at line 900 of file network.\+c.
+
+
+
+References I\+P\+::family, I\+P6\+::in6\+\_\+addr, I\+P4\+::in\+\_\+addr, I\+P\+::ip4, and I\+P\+::ip6.
+
+
+
+Referenced by addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip().
+
+
+\begin{DoxyCode}
+901 \{
+902     \textcolor{keywordflow}{if} (!address || !to)
+903         \textcolor{keywordflow}{return} 0;
+904 
+905     \textcolor{keyword}{struct }in\_addr addr4;
+906 
+907     \textcolor{keywordflow}{if} (1 == inet\_pton(AF\_INET, address, &addr4)) \{
+908         to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET;
+909         to->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr} = addr4;
+910         \textcolor{keywordflow}{return} 1;
+911     \}
+912 
+913     \textcolor{keyword}{struct }in6\_addr addr6;
+914 
+915     \textcolor{keywordflow}{if} (1 == inet\_pton(AF\_INET6, address, &addr6)) \{
+916         to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET6;
+917         to->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr} = addr6;
+918         \textcolor{keywordflow}{return} 1;
+919     \}
+920 
+921     \textcolor{keywordflow}{return} 0;
+922 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a944255f7a47e106de5faea1bf7387a28_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_af329b139810a0b31f336bdf416333b24}{\index{network.\+h@{network.\+h}!addr\+\_\+resolve@{addr\+\_\+resolve}}
+\index{addr\+\_\+resolve@{addr\+\_\+resolve}!network.\+h@{network.\+h}}
+\subsubsection[{addr\+\_\+resolve}]{\setlength{\rightskip}{0pt plus 5cm}int addr\+\_\+resolve (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{address, }
+\item[{{\bf I\+P} $\ast$}]{to, }
+\item[{{\bf I\+P} $\ast$}]{extra}
+\end{DoxyParamCaption}
+)}}\label{network_8h_af329b139810a0b31f336bdf416333b24}
+
+
+Definition at line 941 of file network.\+c.
+
+
+
+References I\+P\+::family, I\+P6\+::in6\+\_\+addr, I\+P4\+::in\+\_\+addr, I\+P\+::ip4, I\+P\+::ip6, and networking\+\_\+at\+\_\+startup().
+
+
+
+Referenced by addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+942 \{
+943     \textcolor{keywordflow}{if} (!address || !to)
+944         \textcolor{keywordflow}{return} 0;
+945 
+946     sa\_family\_t family = to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+947 
+948     \textcolor{keyword}{struct }addrinfo *server = NULL;
+949     \textcolor{keyword}{struct }addrinfo *walker = NULL;
+950     \textcolor{keyword}{struct }addrinfo  hints;
+951     \textcolor{keywordtype}{int}              rc;
+952 
+953     memset(&hints, 0, \textcolor{keyword}{sizeof}(hints));
+954     hints.ai\_family   = family;
+955     hints.ai\_socktype = SOCK\_DGRAM; \textcolor{comment}{// type of socket Tox uses.}
+956 
+957     \textcolor{keywordflow}{if} (\hyperlink{network_8c_ad953dedd6d25d03cf441960dd1e1fed1}{networking\_at\_startup}() != 0)
+958         \textcolor{keywordflow}{return} 0;
+959 
+960     rc = getaddrinfo(address, NULL, &hints, &server);
+961 
+962     \textcolor{comment}{// Lookup failed.}
+963     \textcolor{keywordflow}{if} (rc != 0) \{
+964         \textcolor{keywordflow}{return} 0;
+965     \}
+966 
+967     \hyperlink{union_i_p4}{IP4} ip4;
+968     memset(&ip4, 0, \textcolor{keyword}{sizeof}(ip4));
+969     \hyperlink{union_i_p6}{IP6} ip6;
+970     memset(&ip6, 0, \textcolor{keyword}{sizeof}(ip6));
+971 
+972     \textcolor{keywordflow}{for} (walker = server; (walker != NULL) && (rc != 3); walker = walker->ai\_next) \{
+973         \textcolor{keywordflow}{switch} (walker->ai\_family) \{
+974             \textcolor{keywordflow}{case} AF\_INET:
+975                 \textcolor{keywordflow}{if} (walker->ai\_family == family) \{ \textcolor{comment}{/* AF\_INET requested, done */}
+976                     \textcolor{keyword}{struct }sockaddr\_in *addr = (\textcolor{keyword}{struct }sockaddr\_in *)walker->ai\_addr;
+977                     to->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr} = addr->sin\_addr;
+978                     rc = 3;
+979                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!(rc & 1)) \{ \textcolor{comment}{/* AF\_UNSPEC requested, store away */}
+980                     \textcolor{keyword}{struct }sockaddr\_in *addr = (\textcolor{keyword}{struct }sockaddr\_in *)walker->ai\_addr;
+981                     ip4.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr} = addr->sin\_addr;
+982                     rc |= 1;
+983                 \}
+984 
+985                 \textcolor{keywordflow}{break}; \textcolor{comment}{/* switch */}
+986 
+987             \textcolor{keywordflow}{case} AF\_INET6:
+988                 \textcolor{keywordflow}{if} (walker->ai\_family == family) \{ \textcolor{comment}{/* AF\_INET6 requested, done */}
+989                     \textcolor{keywordflow}{if} (walker->ai\_addrlen == \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} sockaddr\_in6)) \{
+990                         \textcolor{keyword}{struct }sockaddr\_in6 *addr = (\textcolor{keyword}{struct }sockaddr\_in6 *)walker->ai\_addr;
+991                         to->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr} = addr->sin6\_addr;
+992                         rc = 3;
+993                     \}
+994                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!(rc & 2)) \{ \textcolor{comment}{/* AF\_UNSPEC requested, store away */}
+995                     \textcolor{keywordflow}{if} (walker->ai\_addrlen == \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} sockaddr\_in6)) \{
+996                         \textcolor{keyword}{struct }sockaddr\_in6 *addr = (\textcolor{keyword}{struct }sockaddr\_in6 *)walker->ai\_addr;
+997                         ip6.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr} = addr->sin6\_addr;
+998                         rc |= 2;
+999                     \}
+1000                 \}
+1001 
+1002                 \textcolor{keywordflow}{break}; \textcolor{comment}{/* switch */}
+1003         \}
+1004     \}
+1005 
+1006     \textcolor{keywordflow}{if} (to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_UNSPEC) \{
+1007         \textcolor{keywordflow}{if} (rc & 2) \{
+1008             to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET6;
+1009             to->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6} = ip6;
+1010 
+1011             \textcolor{keywordflow}{if} ((rc & 1) && (extra != NULL)) \{
+1012                 extra->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET;
+1013                 extra->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4} = ip4;
+1014             \}
+1015         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc & 1) \{
+1016             to->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = AF\_INET;
+1017             to->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4} = ip4;
+1018         \} \textcolor{keywordflow}{else}
+1019             rc = 0;
+1020     \}
+1021 
+1022     freeaddrinfo(server);
+1023     \textcolor{keywordflow}{return} rc;
+1024 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_af329b139810a0b31f336bdf416333b24_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_af329b139810a0b31f336bdf416333b24_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a1c024648679209a12766fedc7e55d5e4}{\index{network.\+h@{network.\+h}!addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip@{addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip}}
+\index{addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip@{addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip}!network.\+h@{network.\+h}}
+\subsubsection[{addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}int addr\+\_\+resolve\+\_\+or\+\_\+parse\+\_\+ip (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{address, }
+\item[{{\bf I\+P} $\ast$}]{to, }
+\item[{{\bf I\+P} $\ast$}]{extra}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a1c024648679209a12766fedc7e55d5e4}
+
+
+Definition at line 1041 of file network.\+c.
+
+
+
+References addr\+\_\+parse\+\_\+ip(), and addr\+\_\+resolve().
+
+
+
+Referenced by D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), main(), and tox\+\_\+new().
+
+
+\begin{DoxyCode}
+1042 \{
+1043     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_af329b139810a0b31f336bdf416333b24}{addr\_resolve}(address, to, extra))
+1044         \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a944255f7a47e106de5faea1bf7387a28}{addr\_parse\_ip}(address, to))
+1045             \textcolor{keywordflow}{return} 0;
+1046 
+1047     \textcolor{keywordflow}{return} 1;
+1048 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a1c024648679209a12766fedc7e55d5e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a1c024648679209a12766fedc7e55d5e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ae8ecaef140b786a2720eadbb85918e81}{\index{network.\+h@{network.\+h}!current\+\_\+time\+\_\+monotonic@{current\+\_\+time\+\_\+monotonic}}
+\index{current\+\_\+time\+\_\+monotonic@{current\+\_\+time\+\_\+monotonic}!network.\+h@{network.\+h}}
+\subsubsection[{current\+\_\+time\+\_\+monotonic}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t current\+\_\+time\+\_\+monotonic (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ae8ecaef140b786a2720eadbb85918e81}
+
+
+Definition at line 233 of file network.\+c.
+
+
+\begin{DoxyCode}
+234 \{
+235     uint64\_t time;
+236 \textcolor{preprocessor}{#if defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined (WIN32)}
+237     time = (uint64\_t)GetTickCount() + add\_monotime;
+238 
+239     \textcolor{keywordflow}{if} (time < last\_monotime) \{ \textcolor{comment}{/* Prevent time from ever decreasing because of 32 bit wrap. */}
+240         uint32\_t add = ~0;
+241         add\_monotime += add;
+242         time += add;
+243     \}
+244 
+245     last\_monotime = time;
+246 \textcolor{preprocessor}{#else}
+247     \textcolor{keyword}{struct }timespec monotime;
+248 \textcolor{preprocessor}{#if defined(\_\_linux\_\_) && defined(CLOCK\_MONOTONIC\_RAW)}
+249     clock\_gettime(CLOCK\_MONOTONIC\_RAW, &monotime);
+250 \textcolor{preprocessor}{#elif defined(\_\_APPLE\_\_)}
+251     clock\_serv\_t muhclock;
+252     mach\_timespec\_t machtime;
+253 
+254     host\_get\_clock\_service(mach\_host\_self(), SYSTEM\_CLOCK, &muhclock);
+255     clock\_get\_time(muhclock, &machtime);
+256     mach\_port\_deallocate(mach\_task\_self(), muhclock);
+257 
+258     monotime.tv\_sec = machtime.tv\_sec;
+259     monotime.tv\_nsec = machtime.tv\_nsec;
+260 \textcolor{preprocessor}{#else}
+261     clock\_gettime(CLOCK\_MONOTONIC, &monotime);
+262 \textcolor{preprocessor}{#endif}
+263     time = 1000ULL * monotime.tv\_sec + (monotime.tv\_nsec / 1000000ULL);
+264 \textcolor{preprocessor}{#endif}
+265     \textcolor{keywordflow}{return} time;
+266 \}
+\end{DoxyCode}
+\hypertarget{network_8h_a66563da83f68de4f5e9d7c5f2f72c8f3}{\index{network.\+h@{network.\+h}!ip\+\_\+copy@{ip\+\_\+copy}}
+\index{ip\+\_\+copy@{ip\+\_\+copy}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+copy}]{\setlength{\rightskip}{0pt plus 5cm}void ip\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P} $\ast$}]{target, }
+\item[{const {\bf I\+P} $\ast$}]{source}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a66563da83f68de4f5e9d7c5f2f72c8f3}
+
+
+Definition at line 801 of file network.\+c.
+
+
+
+Referenced by punch\+\_\+holes().
+
+
+\begin{DoxyCode}
+802 \{
+803     \textcolor{keywordflow}{if} (!source || !target)
+804         \textcolor{keywordflow}{return};
+805 
+806     memcpy(target, source, \textcolor{keyword}{sizeof}(\hyperlink{struct_i_p}{IP}));
+807 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a66563da83f68de4f5e9d7c5f2f72c8f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_af982256c6d8486349bdc13a920884ef6}{\index{network.\+h@{network.\+h}!ip\+\_\+equal@{ip\+\_\+equal}}
+\index{ip\+\_\+equal@{ip\+\_\+equal}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+equal}]{\setlength{\rightskip}{0pt plus 5cm}int ip\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P} $\ast$}]{a, }
+\item[{const {\bf I\+P} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{network_8h_af982256c6d8486349bdc13a920884ef6}
+
+
+Definition at line 716 of file network.\+c.
+
+
+
+References I\+P\+::family, I\+P4\+::in\+\_\+addr, I\+P\+::ip4, I\+P\+::ip6, I\+P\+V6\+\_\+\+I\+P\+V4\+\_\+\+I\+N\+\_\+\+V6, I\+P6\+::uint32, and I\+P6\+::uint64.
+
+
+
+Referenced by ipport\+\_\+equal(), N\+A\+T\+\_\+commonip(), N\+A\+T\+\_\+getports(), network\+\_\+suite(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+717 \{
+718     \textcolor{keywordflow}{if} (!a || !b)
+719         \textcolor{keywordflow}{return} 0;
+720 
+721     \textcolor{comment}{/* same family */}
+722     \textcolor{keywordflow}{if} (a->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == b->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}) \{
+723         \textcolor{keywordflow}{if} (a->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)
+724             \textcolor{keywordflow}{return} (a->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr}.s\_addr == b->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr}.s\_addr);
+725         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)
+726             \textcolor{keywordflow}{return} a->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a36c7a85cc2c5062edd5ebf13d46fa343}{uint64}[0] == b->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a36c7a85cc2c5062edd5ebf13d46fa343}{uint64}[0] && a->
+      \hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a36c7a85cc2c5062edd5ebf13d46fa343}{uint64}[1] == b->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a36c7a85cc2c5062edd5ebf13d46fa343}{uint64}[1];
+727         \textcolor{keywordflow}{else}
+728             \textcolor{keywordflow}{return} 0;
+729     \}
+730 
+731     \textcolor{comment}{/* different family: check on the IPv6 one if it is the IPv4 one embedded */}
+732     \textcolor{keywordflow}{if} ((a->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET) && (b->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)) \{
+733         \textcolor{keywordflow}{if} (\hyperlink{network_8h_aaaf5ca9c91edc4f8a7529206d7799805}{IPV6\_IPV4\_IN\_V6}(b->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}))
+734             \textcolor{keywordflow}{return} (a->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr}.s\_addr == b->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[3]);
+735     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((a->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6)  && (b->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)) \{
+736         \textcolor{keywordflow}{if} (\hyperlink{network_8h_aaaf5ca9c91edc4f8a7529206d7799805}{IPV6\_IPV4\_IN\_V6}(a->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}))
+737             \textcolor{keywordflow}{return} (a->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[3] == b->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr}.s\_addr);
+738     \}
+739 
+740     \textcolor{keywordflow}{return} 0;
+741 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_af982256c6d8486349bdc13a920884ef6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a6aa0dce9c25e370af93bf4a14f79c709}{\index{network.\+h@{network.\+h}!ip\+\_\+init@{ip\+\_\+init}}
+\index{ip\+\_\+init@{ip\+\_\+init}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void ip\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P} $\ast$}]{ip, }
+\item[{uint8\+\_\+t}]{ipv6enabled}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a6aa0dce9c25e370af93bf4a14f79c709}
+
+
+Definition at line 770 of file network.\+c.
+
+
+
+References I\+P\+::family.
+
+
+
+Referenced by D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), main(), new\+\_\+messenger(), new\+\_\+onions(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and tox\+\_\+new().
+
+
+\begin{DoxyCode}
+771 \{
+772     \textcolor{keywordflow}{if} (!ip)
+773         \textcolor{keywordflow}{return};
+774 
+775     memset(ip, 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_i_p}{IP}));
+776     ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} = ipv6enabled ? AF\_INET6 : AF\_INET;
+777 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a6aa0dce9c25e370af93bf4a14f79c709_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ac56c677f4bc8bf8311370ee105ae7cbb}{\index{network.\+h@{network.\+h}!ip\+\_\+isset@{ip\+\_\+isset}}
+\index{ip\+\_\+isset@{ip\+\_\+isset}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+isset}]{\setlength{\rightskip}{0pt plus 5cm}int ip\+\_\+isset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P} $\ast$}]{ip}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ac56c677f4bc8bf8311370ee105ae7cbb}
+
+
+Definition at line 780 of file network.\+c.
+
+
+
+References I\+P\+::family.
+
+
+
+Referenced by add\+\_\+to\+\_\+ping(), D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), do\+\_\+messenger(), do\+\_\+\+N\+A\+T(), do\+\_\+to\+\_\+ping(), friend\+\_\+iplist(), ipport\+\_\+isset(), route\+\_\+packet(), route\+\_\+tofriend(), routeone\+\_\+tofriend(), send\+\_\+hardening\+\_\+getnode\+\_\+res(), and send\+\_\+\+L\+A\+Ndiscovery().
+
+
+\begin{DoxyCode}
+781 \{
+782     \textcolor{keywordflow}{if} (!ip)
+783         \textcolor{keywordflow}{return} 0;
+784 
+785     \textcolor{keywordflow}{return} (ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != 0);
+786 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ac56c677f4bc8bf8311370ee105ae7cbb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_af71f49c78ce7b76ccf08785c6ec08706}{\index{network.\+h@{network.\+h}!ip\+\_\+ntoa@{ip\+\_\+ntoa}}
+\index{ip\+\_\+ntoa@{ip\+\_\+ntoa}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+ntoa}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ip\+\_\+ntoa (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P} $\ast$}]{ip}
+\end{DoxyParamCaption}
+)}}\label{network_8h_af71f49c78ce7b76ccf08785c6ec08706}
+
+
+Definition at line 827 of file network.\+c.
+
+
+
+References addresstext, I\+P\+::family, I\+P\+::ip4, and I\+P\+::ip6.
+
+
+
+Referenced by do\+\_\+\+Assoc(), do\+\_\+messenger(), new\+\_\+networking\+\_\+ex(), print\+\_\+assoc(), print\+\_\+friendlist(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+828 \{
+829     \textcolor{keywordflow}{if} (ip) \{
+830         \textcolor{keywordflow}{if} (ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET) \{
+831             \textcolor{comment}{/* returns standard quad-dotted notation */}
+832             \textcolor{keyword}{struct }in\_addr *addr = (\textcolor{keyword}{struct }in\_addr *)&ip->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4};
+833 
+834             \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[0] = 0;
+835             inet\_ntop(ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}, addr, \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}, \textcolor{keyword}{sizeof}(
+      \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}));
+836         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6) \{
+837             \textcolor{comment}{/* returns hex-groups enclosed into square brackets */}
+838             \textcolor{keyword}{struct }in6\_addr *addr = (\textcolor{keyword}{struct }in6\_addr *)&ip->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6};
+839 
+840             \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[0] = \textcolor{charliteral}{'['};
+841             inet\_ntop(ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}, addr, &\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[1], \textcolor{keyword}{sizeof}(
+      \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}) - 3);
+842             \textcolor{keywordtype}{size\_t} len = strlen(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext});
+843             \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[len] = \textcolor{charliteral}{']'};
+844             \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[len + 1] = 0;
+845         \} \textcolor{keywordflow}{else}
+846             snprintf(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}, \textcolor{keyword}{sizeof}(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}), \textcolor{stringliteral}{"(IP invalid, family %u)"}, ip
+      ->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family});
+847     \} \textcolor{keywordflow}{else}
+848         snprintf(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}, \textcolor{keyword}{sizeof}(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}), \textcolor{stringliteral}{"(IP invalid: NULL)"});
+849 
+850     \textcolor{comment}{/* brute force protection against lacking termination */}
+851     \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}[\textcolor{keyword}{sizeof}(\hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext}) - 1] = 0;
+852     \textcolor{keywordflow}{return} \hyperlink{network_8c_a269d957bd615e26e36b2ed0d2757b7e0}{addresstext};
+853 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_af71f49c78ce7b76ccf08785c6ec08706_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ae25cce1bbb77b6a8b441bb940a75783f}{\index{network.\+h@{network.\+h}!ip\+\_\+parse\+\_\+addr@{ip\+\_\+parse\+\_\+addr}}
+\index{ip\+\_\+parse\+\_\+addr@{ip\+\_\+parse\+\_\+addr}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+parse\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}int ip\+\_\+parse\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P} $\ast$}]{ip, }
+\item[{char $\ast$}]{address, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ae25cce1bbb77b6a8b441bb940a75783f}
+
+
+Definition at line 870 of file network.\+c.
+
+
+
+References I\+P\+::family, I\+P\+::ip4, and I\+P\+::ip6.
+
+
+
+Referenced by proxy\+\_\+http\+\_\+generate\+\_\+connection\+\_\+request().
+
+
+\begin{DoxyCode}
+871 \{
+872     \textcolor{keywordflow}{if} (!address || !ip) \{
+873         \textcolor{keywordflow}{return} 0;
+874     \}
+875 
+876     \textcolor{keywordflow}{if} (ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET) \{
+877         \textcolor{keyword}{struct }in\_addr *addr = (\textcolor{keyword}{struct }in\_addr *)&ip->\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4};
+878         \textcolor{keywordflow}{return} inet\_ntop(ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}, addr, address, length) != NULL;
+879     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6) \{
+880         \textcolor{keyword}{struct }in6\_addr *addr = (\textcolor{keyword}{struct }in6\_addr *)&ip->\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6};
+881         \textcolor{keywordflow}{return} inet\_ntop(ip->\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family}, addr, address, length) != NULL;
+882     \}
+883 
+884     \textcolor{keywordflow}{return} 0;
+885 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ae25cce1bbb77b6a8b441bb940a75783f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a2bfd1efbce5b035b10c879a7e85c08df}{\index{network.\+h@{network.\+h}!ip\+\_\+reset@{ip\+\_\+reset}}
+\index{ip\+\_\+reset@{ip\+\_\+reset}!network.\+h@{network.\+h}}
+\subsubsection[{ip\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}void ip\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P} $\ast$}]{ip}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a2bfd1efbce5b035b10c879a7e85c08df}
+
+
+Definition at line 761 of file network.\+c.
+
+
+
+Referenced by broadcast\+\_\+ip(), D\+H\+T\+\_\+bootstrap\+\_\+from\+\_\+address(), D\+H\+T\+\_\+getfriendip(), do\+\_\+to\+\_\+ping(), N\+A\+T\+\_\+commonip(), replace\+\_\+all(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+762 \{
+763     \textcolor{keywordflow}{if} (!ip)
+764         \textcolor{keywordflow}{return};
+765 
+766     memset(ip, 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_i_p}{IP}));
+767 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a2bfd1efbce5b035b10c879a7e85c08df_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a98c8d0713b35c97e9861cd7e59c40890}{\index{network.\+h@{network.\+h}!ipport\+\_\+copy@{ipport\+\_\+copy}}
+\index{ipport\+\_\+copy@{ipport\+\_\+copy}!network.\+h@{network.\+h}}
+\subsubsection[{ipport\+\_\+copy}]{\setlength{\rightskip}{0pt plus 5cm}void ipport\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+\_\+\+Port} $\ast$}]{target, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{source}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a98c8d0713b35c97e9861cd7e59c40890}
+
+
+Definition at line 810 of file network.\+c.
+
+
+
+Referenced by add\+\_\+to\+\_\+ping(), and test\+\_\+addto\+\_\+lists\+\_\+update().
+
+
+\begin{DoxyCode}
+811 \{
+812     \textcolor{keywordflow}{if} (!source || !target)
+813         \textcolor{keywordflow}{return};
+814 
+815     memcpy(target, source, \textcolor{keyword}{sizeof}(\hyperlink{struct_i_p___port}{IP\_Port}));
+816 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a98c8d0713b35c97e9861cd7e59c40890_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a6913335cf0b2a76303f5f61d18ea2277}{\index{network.\+h@{network.\+h}!ipport\+\_\+equal@{ipport\+\_\+equal}}
+\index{ipport\+\_\+equal@{ipport\+\_\+equal}!network.\+h@{network.\+h}}
+\subsubsection[{ipport\+\_\+equal}]{\setlength{\rightskip}{0pt plus 5cm}int ipport\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{a, }
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a6913335cf0b2a76303f5f61d18ea2277}
+
+
+Definition at line 749 of file network.\+c.
+
+
+
+References I\+P\+\_\+\+Port\+::ip, ip\+\_\+equal(), and I\+P\+\_\+\+Port\+::port.
+
+
+
+Referenced by client\+\_\+or\+\_\+ip\+\_\+port\+\_\+in\+\_\+list(), crypto\+\_\+connection\+\_\+add\+\_\+source(), entry\+\_\+heard\+\_\+store(), handle\+\_\+ping\+\_\+response(), in\+\_\+list(), is\+\_\+path\+\_\+used(), sent\+\_\+getnode\+\_\+to\+\_\+node(), set\+\_\+direct\+\_\+ip\+\_\+port(), and test\+\_\+addto\+\_\+lists\+\_\+update().
+
+
+\begin{DoxyCode}
+750 \{
+751     \textcolor{keywordflow}{if} (!a || !b)
+752         \textcolor{keywordflow}{return} 0;
+753 
+754     \textcolor{keywordflow}{if} (!a->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} || (a->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} != b->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}))
+755         \textcolor{keywordflow}{return} 0;
+756 
+757     \textcolor{keywordflow}{return} \hyperlink{network_8c_af982256c6d8486349bdc13a920884ef6}{ip\_equal}(&a->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}, &b->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip});
+758 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{d9/d94/network_8h_a6913335cf0b2a76303f5f61d18ea2277_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a6913335cf0b2a76303f5f61d18ea2277_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a8436367218afb29bcf1b5fecd071648e}{\index{network.\+h@{network.\+h}!ipport\+\_\+isset@{ipport\+\_\+isset}}
+\index{ipport\+\_\+isset@{ipport\+\_\+isset}!network.\+h@{network.\+h}}
+\subsubsection[{ipport\+\_\+isset}]{\setlength{\rightskip}{0pt plus 5cm}int ipport\+\_\+isset (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P\+\_\+\+Port} $\ast$}]{ipport}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a8436367218afb29bcf1b5fecd071648e}
+
+
+Definition at line 789 of file network.\+c.
+
+
+
+References I\+P\+\_\+\+Port\+::ip, ip\+\_\+isset(), and I\+P\+\_\+\+Port\+::port.
+
+
+
+Referenced by Assoc\+\_\+add\+\_\+entry(), Assoc\+\_\+get\+\_\+close\+\_\+entries(), candidates\+\_\+create\+\_\+new(), D\+H\+T\+\_\+addfriend(), do\+\_\+hardening(), entry\+\_\+heard\+\_\+store(), get\+\_\+close\+\_\+nodes(), and handle\+\_\+sendnodes\+\_\+ipv6().
+
+
+\begin{DoxyCode}
+790 \{
+791     \textcolor{keywordflow}{if} (!ipport)
+792         \textcolor{keywordflow}{return} 0;
+793 
+794     \textcolor{keywordflow}{if} (!ipport->\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port})
+795         \textcolor{keywordflow}{return} 0;
+796 
+797     \textcolor{keywordflow}{return} \hyperlink{network_8c_ac56c677f4bc8bf8311370ee105ae7cbb}{ip\_isset}(&ipport->\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip});
+798 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{d9/d94/network_8h_a8436367218afb29bcf1b5fecd071648e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a8436367218afb29bcf1b5fecd071648e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a8a36a1ed29a0d5dfe1f0095823039627}{\index{network.\+h@{network.\+h}!kill\+\_\+networking@{kill\+\_\+networking}}
+\index{kill\+\_\+networking@{kill\+\_\+networking}!network.\+h@{network.\+h}}
+\subsubsection[{kill\+\_\+networking}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+networking (
+\begin{DoxyParamCaption}
+\item[{{\bf Networking\+\_\+\+Core} $\ast$}]{net}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a8a36a1ed29a0d5dfe1f0095823039627}
+
+
+Definition at line 700 of file network.\+c.
+
+
+
+References Networking\+\_\+\+Core\+::family, kill\+\_\+sock(), and Networking\+\_\+\+Core\+::sock.
+
+
+
+Referenced by kill\+\_\+messenger(), kill\+\_\+onions(), new\+\_\+messenger(), new\+\_\+networking\+\_\+ex(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+701 \{
+702     \textcolor{keywordflow}{if} (net->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} != 0) \textcolor{comment}{/* Socket not initialized */}
+703         \hyperlink{network_8c_a512d8ea12392ba9ddfadd83bb7c92b2e}{kill\_sock}(net->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock});
+704 
+705     free(net);
+706     \textcolor{keywordflow}{return};
+707 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{d9/d94/network_8h_a8a36a1ed29a0d5dfe1f0095823039627_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a8a36a1ed29a0d5dfe1f0095823039627_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a512d8ea12392ba9ddfadd83bb7c92b2e}{\index{network.\+h@{network.\+h}!kill\+\_\+sock@{kill\+\_\+sock}}
+\index{kill\+\_\+sock@{kill\+\_\+sock}!network.\+h@{network.\+h}}
+\subsubsection[{kill\+\_\+sock}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+sock (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a512d8ea12392ba9ddfadd83bb7c92b2e}
+
+
+Definition at line 136 of file network.\+c.
+
+
+
+Referenced by accept\+\_\+connection(), kill\+\_\+accepted(), kill\+\_\+networking(), kill\+\_\+\+T\+C\+P\+\_\+con(), kill\+\_\+\+T\+C\+P\+\_\+connection(), kill\+\_\+\+T\+C\+P\+\_\+server(), new\+\_\+listening\+\_\+\+T\+C\+P\+\_\+socket(), and new\+\_\+\+T\+C\+P\+\_\+connection().
+
+
+\begin{DoxyCode}
+137 \{
+138 \textcolor{preprocessor}{#if defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined (WIN32)}
+139     closesocket(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock});
+140 \textcolor{preprocessor}{#else}
+141     close(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock});
+142 \textcolor{preprocessor}{#endif}
+143 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a512d8ea12392ba9ddfadd83bb7c92b2e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ad953dedd6d25d03cf441960dd1e1fed1}{\index{network.\+h@{network.\+h}!networking\+\_\+at\+\_\+startup@{networking\+\_\+at\+\_\+startup}}
+\index{networking\+\_\+at\+\_\+startup@{networking\+\_\+at\+\_\+startup}!network.\+h@{network.\+h}}
+\subsubsection[{networking\+\_\+at\+\_\+startup}]{\setlength{\rightskip}{0pt plus 5cm}int networking\+\_\+at\+\_\+startup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ad953dedd6d25d03cf441960dd1e1fed1}
+
+
+Definition at line 444 of file network.\+c.
+
+
+
+References current\+\_\+time\+\_\+actual().
+
+
+
+Referenced by addr\+\_\+resolve(), new\+\_\+networking\+\_\+ex(), new\+\_\+\+T\+C\+P\+\_\+connection(), and new\+\_\+\+T\+C\+P\+\_\+server().
+
+
+\begin{DoxyCode}
+445 \{
+446     \textcolor{keywordflow}{if} (\hyperlink{network_8c_a1e407c1eac9f5897472ad66ab31e0b24}{at\_startup\_ran} != 0)
+447         \textcolor{keywordflow}{return} 0;
+448 
+449 \textcolor{preprocessor}{#ifndef VANILLA\_NACL}
+450 
+451 \textcolor{preprocessor}{#ifdef USE\_RANDOMBYTES\_STIR}
+452     randombytes\_stir();
+453 \textcolor{preprocessor}{#else}
+454     sodium\_init();
+455 \textcolor{preprocessor}{#endif }\textcolor{comment}{/*USE\_RANDOMBYTES\_STIR*/}\textcolor{preprocessor}{}
+456 
+457 \textcolor{preprocessor}{#endif}\textcolor{comment}{/*VANILLA\_NACL*/}\textcolor{preprocessor}{}
+458 
+459 \textcolor{preprocessor}{#if defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined (WIN32)}
+460     WSADATA wsaData;
+461 
+462     \textcolor{keywordflow}{if} (WSAStartup(MAKEWORD(2, 2), &wsaData) != NO\_ERROR)
+463         \textcolor{keywordflow}{return} -1;
+464 
+465 \textcolor{preprocessor}{#endif}
+466     srand((uint32\_t)\hyperlink{network_8c_a9f5cd2a713e4a17d4c6d36650336cab0}{current\_time\_actual}());
+467     \hyperlink{network_8c_a1e407c1eac9f5897472ad66ab31e0b24}{at\_startup\_ran} = 1;
+468     \textcolor{keywordflow}{return} 0;
+469 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{d9/d94/network_8h_ad953dedd6d25d03cf441960dd1e1fed1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ad953dedd6d25d03cf441960dd1e1fed1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ab6765fe4b08536210a20ac728f991e13}{\index{network.\+h@{network.\+h}!networking\+\_\+poll@{networking\+\_\+poll}}
+\index{networking\+\_\+poll@{networking\+\_\+poll}!network.\+h@{network.\+h}}
+\subsubsection[{networking\+\_\+poll}]{\setlength{\rightskip}{0pt plus 5cm}void networking\+\_\+poll (
+\begin{DoxyParamCaption}
+\item[{{\bf Networking\+\_\+\+Core} $\ast$}]{net}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ab6765fe4b08536210a20ac728f991e13}
+
+
+Definition at line 415 of file network.\+c.
+
+
+
+References make-\/funny-\/savefile\+::data, Networking\+\_\+\+Core\+::family, Packet\+\_\+\+Handles\+::function, L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+N\+G, M\+A\+X\+\_\+\+U\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E, Packet\+\_\+\+Handles\+::object, Networking\+\_\+\+Core\+::packethandlers, receivepacket(), Networking\+\_\+\+Core\+::sock, and unix\+\_\+time\+\_\+update().
+
+
+
+Referenced by do\+\_\+messenger(), do\+\_\+onion(), do\+\_\+onions(), and main().
+
+
+\begin{DoxyCode}
+416 \{
+417     \textcolor{keywordflow}{if} (net->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == 0) \textcolor{comment}{/* Socket not initialized */}
+418         \textcolor{keywordflow}{return};
+419 
+420     \hyperlink{util_8c_a849af10dd491723cf3abdef599846897}{unix\_time\_update}();
+421 
+422     \hyperlink{struct_i_p___port}{IP\_Port} ip\_port;
+423     uint8\_t \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[\hyperlink{network_8h_a9fd837ac38736fed27e32d824a824259}{MAX\_UDP\_PACKET\_SIZE}];
+424     uint32\_t length;
+425 
+426     \textcolor{keywordflow}{while} (\hyperlink{network_8c_a44dd69c638b9ee342b7d54e65293850d}{receivepacket}(net->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, &ip\_port, data, &length) != -1) \{
+427         \textcolor{keywordflow}{if} (length < 1) \textcolor{keywordflow}{continue};
+428 
+429         \textcolor{keywordflow}{if} (!(net->\hyperlink{struct_networking___core_acf65b41b1fc6f52a40016a2329a8ba30}{packethandlers}[data[0]].\hyperlink{struct_packet___handles_a197979c60c06b39ac717b08f5091dd0e}{function})) \{
+430             \hyperlink{logger_8h_ab3e970f3c1ecb5b71f17eccee4ebb286}{LOGGER\_WARNING}(\textcolor{stringliteral}{"[%02u] -- Packet has no handler"}, data[0]);
+431             \textcolor{keywordflow}{continue};
+432         \}
+433 
+434         net->\hyperlink{struct_networking___core_acf65b41b1fc6f52a40016a2329a8ba30}{packethandlers}[data[0]].\hyperlink{struct_packet___handles_a197979c60c06b39ac717b08f5091dd0e}{function}(net->
+      \hyperlink{struct_networking___core_acf65b41b1fc6f52a40016a2329a8ba30}{packethandlers}[data[0]].\hyperlink{struct_packet___handles_a077376d12464f945e2414d5499c79b3f}{object}, ip\_port, data, length);
+435     \}
+436 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ab6765fe4b08536210a20ac728f991e13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ab6765fe4b08536210a20ac728f991e13_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a230a192ca9463ec4985d4f86de439733}{\index{network.\+h@{network.\+h}!networking\+\_\+registerhandler@{networking\+\_\+registerhandler}}
+\index{networking\+\_\+registerhandler@{networking\+\_\+registerhandler}!network.\+h@{network.\+h}}
+\subsubsection[{networking\+\_\+registerhandler}]{\setlength{\rightskip}{0pt plus 5cm}void networking\+\_\+registerhandler (
+\begin{DoxyParamCaption}
+\item[{{\bf Networking\+\_\+\+Core} $\ast$}]{net, }
+\item[{uint8\+\_\+t}]{byte, }
+\item[{{\bf packet\+\_\+handler\+\_\+callback}}]{cb, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a230a192ca9463ec4985d4f86de439733}
+
+
+Definition at line 409 of file network.\+c.
+
+
+
+References Packet\+\_\+\+Handles\+::function, Packet\+\_\+\+Handles\+::object, and Networking\+\_\+\+Core\+::packethandlers.
+
+
+
+Referenced by bootstrap\+\_\+set\+\_\+callbacks(), kill\+\_\+\+D\+H\+T(), kill\+\_\+net\+\_\+crypto(), kill\+\_\+onion(), kill\+\_\+onion\+\_\+announce(), kill\+\_\+onion\+\_\+client(), kill\+\_\+ping(), L\+A\+Ndiscovery\+\_\+init(), L\+A\+Ndiscovery\+\_\+kill(), new\+\_\+\+D\+H\+T(), new\+\_\+net\+\_\+crypto(), new\+\_\+onion(), new\+\_\+onion\+\_\+announce(), new\+\_\+onion\+\_\+client(), new\+\_\+ping(), and S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+410 \{
+411     net->\hyperlink{struct_networking___core_acf65b41b1fc6f52a40016a2329a8ba30}{packethandlers}[byte].\hyperlink{struct_packet___handles_a197979c60c06b39ac717b08f5091dd0e}{function} = cb;
+412     net->\hyperlink{struct_networking___core_acf65b41b1fc6f52a40016a2329a8ba30}{packethandlers}[byte].\hyperlink{struct_packet___handles_a077376d12464f945e2414d5499c79b3f}{object} = object;
+413 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a230a192ca9463ec4985d4f86de439733_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a0c272a560dd4b2c18c6546a91656c1b5}{\index{network.\+h@{network.\+h}!new\+\_\+networking@{new\+\_\+networking}}
+\index{new\+\_\+networking@{new\+\_\+networking}!network.\+h@{network.\+h}}
+\subsubsection[{new\+\_\+networking}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Networking\+\_\+\+Core}$\ast$ new\+\_\+networking (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P}}]{ip, }
+\item[{uint16\+\_\+t}]{port}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a0c272a560dd4b2c18c6546a91656c1b5}
+
+
+Definition at line 483 of file network.\+c.
+
+
+
+References new\+\_\+networking\+\_\+ex(), T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M, and T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O.
+
+
+
+Referenced by main(), new\+\_\+onions(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), and test\+\_\+addto\+\_\+lists().
+
+
+\begin{DoxyCode}
+484 \{
+485     \textcolor{keywordflow}{return} \hyperlink{network_8c_a899cb8f62b49e71ba9f9f7a50254655c}{new\_networking\_ex}(ip, \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}, \hyperlink{irc__syncbot_8c_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} + (
+      \hyperlink{network_8h_ae22d1a7b52c5fb38a33df754621e407f}{TOX\_PORTRANGE\_TO} - \hyperlink{network_8h_abb99b46273eebad6426abc06423c0d9f}{TOX\_PORTRANGE\_FROM}), 0);
+486 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a0c272a560dd4b2c18c6546a91656c1b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a0c272a560dd4b2c18c6546a91656c1b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a899cb8f62b49e71ba9f9f7a50254655c}{\index{network.\+h@{network.\+h}!new\+\_\+networking\+\_\+ex@{new\+\_\+networking\+\_\+ex}}
+\index{new\+\_\+networking\+\_\+ex@{new\+\_\+networking\+\_\+ex}!network.\+h@{network.\+h}}
+\subsubsection[{new\+\_\+networking\+\_\+ex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Networking\+\_\+\+Core}$\ast$ new\+\_\+networking\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P}}]{ip, }
+\item[{uint16\+\_\+t}]{port\+\_\+from, }
+\item[{uint16\+\_\+t}]{port\+\_\+to, }
+\item[{unsigned int $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a899cb8f62b49e71ba9f9f7a50254655c}
+
+
+Definition at line 498 of file network.\+c.
+
+
+
+References I\+P\+::family, Networking\+\_\+\+Core\+::family, I\+P6\+::in6\+\_\+addr, I\+P4\+::in\+\_\+addr, I\+P\+::ip4, I\+P\+::ip6, ip\+\_\+ntoa(), kill\+\_\+networking(), L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+U\+G, L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+O\+R, networking\+\_\+at\+\_\+startup(), Networking\+\_\+\+Core\+::port, set\+\_\+socket\+\_\+dualstack(), set\+\_\+socket\+\_\+nonblock(), set\+\_\+socket\+\_\+nosigpipe(), Networking\+\_\+\+Core\+::sock, sock\+\_\+valid(), T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+F\+R\+O\+M, and T\+O\+X\+\_\+\+P\+O\+R\+T\+R\+A\+N\+G\+E\+\_\+\+T\+O.
+
+
+
+Referenced by new\+\_\+messenger(), and new\+\_\+networking().
+
+
+\begin{DoxyCode}
+499 \{
+500     \textcolor{comment}{/* If both from and to are 0, use default port range}
+501 \textcolor{comment}{     * If one is 0 and the other is non-0, use the non-0 value as only port}
+502 \textcolor{comment}{     * If from > to, swap}
+503 \textcolor{comment}{     */}
+504     \textcolor{keywordflow}{if} (port\_from == 0 && port\_to == 0) \{
+505         port\_from = \hyperlink{network_8h_abb99b46273eebad6426abc06423c0d9f}{TOX\_PORTRANGE\_FROM};
+506         port\_to = \hyperlink{network_8h_ae22d1a7b52c5fb38a33df754621e407f}{TOX\_PORTRANGE\_TO};
+507     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (port\_from == 0 && port\_to != 0) \{
+508         port\_from = port\_to;
+509     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (port\_from != 0 && port\_to == 0) \{
+510         port\_to = port\_from;
+511     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (port\_from > port\_to) \{
+512         uint16\_t temp = port\_from;
+513         port\_from = port\_to;
+514         port\_to = temp;
+515     \}
+516 
+517     \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+518         *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 2;
+519 
+520     \textcolor{comment}{/* maybe check for invalid IPs like 224+.x.y.z? if there is any IP set ever */}
+521     \textcolor{keywordflow}{if} (ip.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET && ip.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET6) \{
+522 \textcolor{preprocessor}{#ifdef DEBUG}
+523         fprintf(stderr, \textcolor{stringliteral}{"Invalid address family: %u\(\backslash\)n"}, ip.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family});
+524 \textcolor{preprocessor}{#endif}
+525         \textcolor{keywordflow}{return} NULL;
+526     \}
+527 
+528     \textcolor{keywordflow}{if} (\hyperlink{network_8c_ad953dedd6d25d03cf441960dd1e1fed1}{networking\_at\_startup}() != 0)
+529         \textcolor{keywordflow}{return} NULL;
+530 
+531     \hyperlink{struct_networking___core}{Networking\_Core} *temp = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_networking___core}{Networking\_Core}));
+532 
+533     \textcolor{keywordflow}{if} (temp == NULL)
+534         \textcolor{keywordflow}{return} NULL;
+535 
+536     temp->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} = ip.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family};
+537     temp->\hyperlink{struct_networking___core_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = 0;
+538 
+539     \textcolor{comment}{/* Initialize our socket. */}
+540     \textcolor{comment}{/* add log message what we're creating */}
+541     temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock} = \hyperlink{namespacesocket}{socket}(temp->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family}, SOCK\_DGRAM, IPPROTO\_UDP);
+542 
+543     \textcolor{comment}{/* Check for socket error. */}
+544     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a84c3240a3325cbdaaa8a206c96980cd1}{sock\_valid}(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock})) \{
+545 \textcolor{preprocessor}{#ifdef DEBUG}
+546         fprintf(stderr, \textcolor{stringliteral}{"Failed to get a socket?! %u, %s\(\backslash\)n"}, errno, strerror(errno));
+547 \textcolor{preprocessor}{#endif}
+548         free(temp);
+549 
+550         \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+551             *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 1;
+552 
+553         \textcolor{keywordflow}{return} NULL;
+554     \}
+555 
+556     \textcolor{comment}{/* Functions to increase the size of the send and receive UDP buffers.}
+557 \textcolor{comment}{     */}
+558     \textcolor{keywordtype}{int} n = 1024 * 1024 * 2;
+559     setsockopt(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, SOL\_SOCKET, SO\_RCVBUF, (\textcolor{keywordtype}{char} *)&n, \textcolor{keyword}{sizeof}(n));
+560     setsockopt(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, SOL\_SOCKET, SO\_SNDBUF, (\textcolor{keywordtype}{char} *)&n, \textcolor{keyword}{sizeof}(n));
+561 
+562     \textcolor{comment}{/* Enable broadcast on socket */}
+563     \textcolor{keywordtype}{int} broadcast = 1;
+564     setsockopt(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, SOL\_SOCKET, SO\_BROADCAST, (\textcolor{keywordtype}{char} *)&broadcast, \textcolor{keyword}{sizeof}(broadcast));
+565 
+566     \textcolor{comment}{/* iOS UDP sockets are weird and apparently can SIGPIPE */}
+567     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a379153c027c17d7c71797cb0e3ea41a3}{set\_socket\_nosigpipe}(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock})) \{
+568         \hyperlink{network_8c_a8a36a1ed29a0d5dfe1f0095823039627}{kill\_networking}(temp);
+569 
+570         \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+571             *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 1;
+572 
+573         \textcolor{keywordflow}{return} NULL;
+574     \}
+575 
+576     \textcolor{comment}{/* Set socket nonblocking. */}
+577     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a6a50bb1345f2d5192fe1ec23ac7a1da9}{set\_socket\_nonblock}(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock})) \{
+578         \hyperlink{network_8c_a8a36a1ed29a0d5dfe1f0095823039627}{kill\_networking}(temp);
+579 
+580         \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+581             *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 1;
+582 
+583         \textcolor{keywordflow}{return} NULL;
+584     \}
+585 
+586     \textcolor{comment}{/* Bind our socket to port PORT and the given IP address (usually 0.0.0.0 or ::) */}
+587     uint16\_t *portptr = NULL;
+588     \textcolor{keyword}{struct }sockaddr\_storage addr;
+589     \textcolor{keywordtype}{size\_t} addrsize;
+590 
+591     \textcolor{keywordflow}{if} (temp->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == AF\_INET) \{
+592         \textcolor{keyword}{struct }sockaddr\_in *addr4 = (\textcolor{keyword}{struct }sockaddr\_in *)&addr;
+593 
+594         addrsize = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }sockaddr\_in);
+595         addr4->sin\_family = AF\_INET;
+596         addr4->sin\_port = 0;
+597         addr4->sin\_addr = ip.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr};
+598 
+599         portptr = &addr4->sin\_port;
+600     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (temp->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == AF\_INET6) \{
+601         \textcolor{keyword}{struct }sockaddr\_in6 *addr6 = (\textcolor{keyword}{struct }sockaddr\_in6 *)&addr;
+602 
+603         addrsize = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }sockaddr\_in6);
+604         addr6->sin6\_family = AF\_INET6;
+605         addr6->sin6\_port = 0;
+606         addr6->sin6\_addr = ip.\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr};
+607 
+608         addr6->sin6\_flowinfo = 0;
+609         addr6->sin6\_scope\_id = 0;
+610 
+611         portptr = &addr6->sin6\_port;
+612     \} \textcolor{keywordflow}{else} \{
+613         free(temp);
+614         \textcolor{keywordflow}{return} NULL;
+615     \}
+616 
+617     \textcolor{keywordflow}{if} (ip.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6) \{
+618 \textcolor{preprocessor}{#ifdef LOGGING}
+619         \textcolor{keywordtype}{int} is\_dualstack =
+620 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LOGGING */}\textcolor{preprocessor}{}
+621             \hyperlink{network_8c_ad2f109728a6345e6862686ea4baf5b27}{set\_socket\_dualstack}(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock});
+622         \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}( \textcolor{stringliteral}{"Dual-stack socket: %s"},
+623                       is\_dualstack ? \textcolor{stringliteral}{"enabled"} : \textcolor{stringliteral}{"Failed to enable, won't be able to receive from/send to
+       IPv4 addresses"} );
+624         \textcolor{comment}{/* multicast local nodes */}
+625         \textcolor{keyword}{struct }ipv6\_mreq mreq;
+626         memset(&mreq, 0, \textcolor{keyword}{sizeof}(mreq));
+627         mreq.ipv6mr\_multiaddr.s6\_addr[ 0] = 0xFF;
+628         mreq.ipv6mr\_multiaddr.s6\_addr[ 1] = 0x02;
+629         mreq.ipv6mr\_multiaddr.s6\_addr[15] = 0x01;
+630         mreq.ipv6mr\_interface = 0;
+631 \textcolor{preprocessor}{#ifdef LOGGING}
+632         \textcolor{keywordtype}{int} res =
+633 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LOGGING */}\textcolor{preprocessor}{}
+634             setsockopt(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, IPPROTO\_IPV6, IPV6\_ADD\_MEMBERSHIP, (\textcolor{keywordtype}{char} *)&mreq, \textcolor{keyword}{sizeof}(mreq));
+635 
+636         \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(res < 0 ? \textcolor{stringliteral}{"Failed to activate local multicast membership. (%u, %s)"} :
+637                      \textcolor{stringliteral}{"Local multicast group FF02::1 joined successfully"}, errno, strerror(errno) );
+638     \}
+639 
+640     \textcolor{comment}{/* a hanging program or a different user might block the standard port;}
+641 \textcolor{comment}{     * as long as it isn't a parameter coming from the commandline,}
+642 \textcolor{comment}{     * try a few ports after it, to see if we can find a "free" one}
+643 \textcolor{comment}{     *}
+644 \textcolor{comment}{     * if we go on without binding, the first sendto() automatically binds to}
+645 \textcolor{comment}{     * a free port chosen by the system (i.e. anything from 1024 to 65535)}
+646 \textcolor{comment}{     *}
+647 \textcolor{comment}{     * returning NULL after bind fails has both advantages and disadvantages:}
+648 \textcolor{comment}{     * advantage:}
+649 \textcolor{comment}{     *   we can rely on getting the port in the range 33445..33450, which}
+650 \textcolor{comment}{     *   enables us to tell joe user to open their firewall to a small range}
+651 \textcolor{comment}{     *}
+652 \textcolor{comment}{     * disadvantage:}
+653 \textcolor{comment}{     *   some clients might not test return of tox\_new(), blindly assuming that}
+654 \textcolor{comment}{     *   it worked ok (which it did previously without a successful bind)}
+655 \textcolor{comment}{     */}
+656     uint16\_t port\_to\_try = port\_from;
+657     *portptr = htons(port\_to\_try);
+658     \textcolor{keywordtype}{int} tries;
+659 
+660     \textcolor{keywordflow}{for} (tries = port\_from; tries <= port\_to; tries++) \{
+661         \textcolor{keywordtype}{int} res = bind(temp->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, (\textcolor{keyword}{struct} sockaddr *)&addr, addrsize);
+662 
+663         \textcolor{keywordflow}{if} (!res) \{
+664             temp->\hyperlink{struct_networking___core_a8e0798404bf2cf5dabb84c5ba9a4f236}{port} = *portptr;
+665 
+666             \hyperlink{logger_8h_a9885ca09ce5f94d936c91a5b0856a024}{LOGGER\_DEBUG}(\textcolor{stringliteral}{"Bound successfully to %s:%u"}, \hyperlink{network_8c_af71f49c78ce7b76ccf08785c6ec08706}{ip\_ntoa}(&ip), ntohs(temp->
+      \hyperlink{struct_networking___core_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}));
+667 
+668             \textcolor{comment}{/* errno isn't reset on success, only set on failure, the failed}
+669 \textcolor{comment}{             * binds with parallel clients yield a -EPERM to the outside if}
+670 \textcolor{comment}{             * errno isn't cleared here */}
+671             \textcolor{keywordflow}{if} (tries > 0)
+672                 errno = 0;
+673 
+674             \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+675                 *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 0;
+676 
+677             \textcolor{keywordflow}{return} temp;
+678         \}
+679 
+680         port\_to\_try++;
+681 
+682         \textcolor{keywordflow}{if} (port\_to\_try > port\_to)
+683             port\_to\_try = port\_from;
+684 
+685         *portptr = htons(port\_to\_try);
+686     \}
+687 
+688     \hyperlink{logger_8h_aedad6a1e3ffe0d4cd0992b822ec0eeeb}{LOGGER\_ERROR}(\textcolor{stringliteral}{"Failed to bind socket: %u, %s IP: %s port\_from: %u port\_to: %u"}, errno, 
+      strerror(errno),
+689                  \hyperlink{network_8c_af71f49c78ce7b76ccf08785c6ec08706}{ip\_ntoa}(&ip), port\_from, port\_to);
+690 
+691     \hyperlink{network_8c_a8a36a1ed29a0d5dfe1f0095823039627}{kill\_networking}(temp);
+692 
+693     \textcolor{keywordflow}{if} (\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error})
+694         *\hyperlink{msi_8c_a7251f9a01631fc788dd7c8eff23a422ead606e435413ea0944dd00d49e901e4ed}{error} = 1;
+695 
+696     \textcolor{keywordflow}{return} NULL;
+697 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a899cb8f62b49e71ba9f9f7a50254655c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a899cb8f62b49e71ba9f9f7a50254655c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a7b90f87f3ba60cc5c66dd6dd77cd5cb1}{\index{network.\+h@{network.\+h}!sendpacket@{sendpacket}}
+\index{sendpacket@{sendpacket}!network.\+h@{network.\+h}}
+\subsubsection[{sendpacket}]{\setlength{\rightskip}{0pt plus 5cm}int sendpacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Networking\+\_\+\+Core} $\ast$}]{net, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a7b90f87f3ba60cc5c66dd6dd77cd5cb1}
+
+
+Definition at line 295 of file network.\+c.
+
+
+
+References I\+P\+::family, Networking\+\_\+\+Core\+::family, I\+P6\+::in6\+\_\+addr, I\+P4\+::in\+\_\+addr, I\+P\+\_\+\+Port\+::ip, I\+P\+::ip4, I\+P\+::ip6, loglogdata, I\+P\+\_\+\+Port\+::port, Networking\+\_\+\+Core\+::sock, I\+P4\+::uint32, and I\+P6\+::uint32.
+
+
+
+Referenced by getnodes(), handle\+\_\+info\+\_\+request(), handle\+\_\+recv\+\_\+1(), handle\+\_\+recv\+\_\+2(), handle\+\_\+recv\+\_\+3(), handle\+\_\+send\+\_\+1(), handle\+\_\+send\+\_\+2(), onion\+\_\+send\+\_\+1(), route\+\_\+packet(), route\+\_\+tofriend(), routeone\+\_\+tofriend(), send\+\_\+announce\+\_\+request(), send\+\_\+broadcasts(), send\+\_\+data\+\_\+request(), send\+\_\+hardening\+\_\+getnode\+\_\+res(), send\+\_\+hardening\+\_\+req(), send\+\_\+\+L\+A\+Ndiscovery(), send\+\_\+onion\+\_\+packet(), send\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+udp(), send\+\_\+onion\+\_\+response(), send\+\_\+packet\+\_\+to(), send\+\_\+ping\+\_\+request(), send\+\_\+ping\+\_\+response(), sendnodes\+\_\+ipv6(), and udp\+\_\+handle\+\_\+cookie\+\_\+request().
+
+
+\begin{DoxyCode}
+296 \{
+297     \textcolor{keywordflow}{if} (net->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == 0) \textcolor{comment}{/* Socket not initialized */}
+298         \textcolor{keywordflow}{return} -1;
+299 
+300     \textcolor{comment}{/* socket AF\_INET, but target IP NOT: can't send */}
+301     \textcolor{keywordflow}{if} ((net->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == AF\_INET) && (ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET))
+302         \textcolor{keywordflow}{return} -1;
+303 
+304     \textcolor{keyword}{struct }sockaddr\_storage addr;
+305     \textcolor{keywordtype}{size\_t} addrsize = 0;
+306 
+307     \textcolor{keywordflow}{if} (ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET) \{
+308         \textcolor{keywordflow}{if} (net->\hyperlink{struct_networking___core_a59fa33606a579e9080aced9a5d2659de}{family} == AF\_INET6) \{
+309             \textcolor{comment}{/* must convert to IPV4-in-IPV6 address */}
+310             \textcolor{keyword}{struct }sockaddr\_in6 *addr6 = (\textcolor{keyword}{struct }sockaddr\_in6 *)&addr;
+311 
+312             addrsize = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }sockaddr\_in6);
+313             addr6->sin6\_family = AF\_INET6;
+314             addr6->sin6\_port = ip\_port.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port};
+315 
+316             \textcolor{comment}{/* there should be a macro for this in a standards compliant}
+317 \textcolor{comment}{             * environment, not found */}
+318             \hyperlink{union_i_p6}{IP6} ip6;
+319 
+320             ip6.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[0] = 0;
+321             ip6.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[1] = 0;
+322             ip6.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[2] = htonl(0xFFFF);
+323             ip6.\hyperlink{union_i_p6_a1d8ab1f6c1da5565bed41e7095610dea}{uint32}[3] = ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5ad776be1fb768f3399aafcd1b58b3a2}{uint32};
+324             addr6->sin6\_addr = ip6.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr};
+325 
+326             addr6->sin6\_flowinfo = 0;
+327             addr6->sin6\_scope\_id = 0;
+328         \} \textcolor{keywordflow}{else} \{
+329             \textcolor{keyword}{struct }sockaddr\_in *addr4 = (\textcolor{keyword}{struct }sockaddr\_in *)&addr;
+330 
+331             addrsize = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }sockaddr\_in);
+332             addr4->sin\_family = AF\_INET;
+333             addr4->sin\_addr = ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_aca19646000f55aa927406e68fc41ecf9}{ip4}.\hyperlink{union_i_p4_a5a47f63dce37e6eb6be40f022434b1c5}{in\_addr};
+334             addr4->sin\_port = ip\_port.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port};
+335         \}
+336     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6) \{
+337         \textcolor{keyword}{struct }sockaddr\_in6 *addr6 = (\textcolor{keyword}{struct }sockaddr\_in6 *)&addr;
+338 
+339         addrsize = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }sockaddr\_in6);
+340         addr6->sin6\_family = AF\_INET6;
+341         addr6->sin6\_port = ip\_port.\hyperlink{struct_i_p___port_a8e0798404bf2cf5dabb84c5ba9a4f236}{port};
+342         addr6->sin6\_addr = ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_a14c606eb5ffb078c38ad854dc4e79507}{ip6}.\hyperlink{union_i_p6_ac312c20ade57f180c50585e9ea42314c}{in6\_addr};
+343 
+344         addr6->sin6\_flowinfo = 0;
+345         addr6->sin6\_scope\_id = 0;
+346     \} \textcolor{keywordflow}{else} \{
+347         \textcolor{comment}{/* unknown address type*/}
+348         \textcolor{keywordflow}{return} -1;
+349     \}
+350 
+351     \textcolor{keywordtype}{int} res = sendto(net->\hyperlink{struct_networking___core_a35b19d84fb632ca8ce5cab237f7089a5}{sock}, (\textcolor{keywordtype}{char} *) \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length, 0, (\textcolor{keyword}{struct} sockaddr *)&addr, addrsize);
+352 
+353     \hyperlink{network_8c_a0e448a6a4aa57962204518fd380d7ade}{loglogdata}(\textcolor{stringliteral}{"O=>"}, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length, ip\_port, res);
+354 
+355     \textcolor{keywordflow}{return} res;
+356 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a7b90f87f3ba60cc5c66dd6dd77cd5cb1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ad2f109728a6345e6862686ea4baf5b27}{\index{network.\+h@{network.\+h}!set\+\_\+socket\+\_\+dualstack@{set\+\_\+socket\+\_\+dualstack}}
+\index{set\+\_\+socket\+\_\+dualstack@{set\+\_\+socket\+\_\+dualstack}!network.\+h@{network.\+h}}
+\subsubsection[{set\+\_\+socket\+\_\+dualstack}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+socket\+\_\+dualstack (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ad2f109728a6345e6862686ea4baf5b27}
+
+
+Definition at line 191 of file network.\+c.
+
+
+
+Referenced by new\+\_\+listening\+\_\+\+T\+C\+P\+\_\+socket(), and new\+\_\+networking\+\_\+ex().
+
+
+\begin{DoxyCode}
+192 \{
+193     \textcolor{keywordtype}{int} ipv6only = 0;
+194     socklen\_t optsize = \textcolor{keyword}{sizeof}(ipv6only);
+195     \textcolor{keywordtype}{int} res = getsockopt(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, IPPROTO\_IPV6, IPV6\_V6ONLY, (\textcolor{keywordtype}{void} *)&ipv6only, &optsize);
+196 
+197     \textcolor{keywordflow}{if} ((res == 0) && (ipv6only == 0))
+198         \textcolor{keywordflow}{return} 1;
+199 
+200     ipv6only = 0;
+201     \textcolor{keywordflow}{return} (setsockopt(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, IPPROTO\_IPV6, IPV6\_V6ONLY, (\textcolor{keywordtype}{void} *)&ipv6only, \textcolor{keyword}{sizeof}(ipv6only)) == 0);
+202 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ad2f109728a6345e6862686ea4baf5b27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a6a50bb1345f2d5192fe1ec23ac7a1da9}{\index{network.\+h@{network.\+h}!set\+\_\+socket\+\_\+nonblock@{set\+\_\+socket\+\_\+nonblock}}
+\index{set\+\_\+socket\+\_\+nonblock@{set\+\_\+socket\+\_\+nonblock}!network.\+h@{network.\+h}}
+\subsubsection[{set\+\_\+socket\+\_\+nonblock}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+socket\+\_\+nonblock (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a6a50bb1345f2d5192fe1ec23ac7a1da9}
+
+
+Definition at line 150 of file network.\+c.
+
+
+
+Referenced by accept\+\_\+connection(), new\+\_\+listening\+\_\+\+T\+C\+P\+\_\+socket(), new\+\_\+networking\+\_\+ex(), and new\+\_\+\+T\+C\+P\+\_\+connection().
+
+
+\begin{DoxyCode}
+151 \{
+152 \textcolor{preprocessor}{#if defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined (WIN32)}
+153     u\_long mode = 1;
+154     \textcolor{keywordflow}{return} (ioctlsocket(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, FIONBIO, &mode) == 0);
+155 \textcolor{preprocessor}{#else}
+156     \textcolor{keywordflow}{return} (fcntl(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, F\_SETFL, O\_NONBLOCK, 1) == 0);
+157 \textcolor{preprocessor}{#endif}
+158 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a6a50bb1345f2d5192fe1ec23ac7a1da9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a379153c027c17d7c71797cb0e3ea41a3}{\index{network.\+h@{network.\+h}!set\+\_\+socket\+\_\+nosigpipe@{set\+\_\+socket\+\_\+nosigpipe}}
+\index{set\+\_\+socket\+\_\+nosigpipe@{set\+\_\+socket\+\_\+nosigpipe}!network.\+h@{network.\+h}}
+\subsubsection[{set\+\_\+socket\+\_\+nosigpipe}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+socket\+\_\+nosigpipe (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a379153c027c17d7c71797cb0e3ea41a3}
+
+
+Definition at line 165 of file network.\+c.
+
+
+
+Referenced by accept\+\_\+connection(), new\+\_\+networking\+\_\+ex(), and new\+\_\+\+T\+C\+P\+\_\+connection().
+
+
+\begin{DoxyCode}
+166 \{
+167 \textcolor{preprocessor}{#if defined(\_\_MACH\_\_)}
+168     \textcolor{keywordtype}{int} set = 1;
+169     \textcolor{keywordflow}{return} (setsockopt(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, SOL\_SOCKET, SO\_NOSIGPIPE, (\textcolor{keywordtype}{void} *)&set, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})) == 0);
+170 \textcolor{preprocessor}{#else}
+171     \textcolor{keywordflow}{return} 1;
+172 \textcolor{preprocessor}{#endif}
+173 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a379153c027c17d7c71797cb0e3ea41a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_ac278c3d25e3807f0b2be9d91c9db328f}{\index{network.\+h@{network.\+h}!set\+\_\+socket\+\_\+reuseaddr@{set\+\_\+socket\+\_\+reuseaddr}}
+\index{set\+\_\+socket\+\_\+reuseaddr@{set\+\_\+socket\+\_\+reuseaddr}!network.\+h@{network.\+h}}
+\subsubsection[{set\+\_\+socket\+\_\+reuseaddr}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+socket\+\_\+reuseaddr (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_ac278c3d25e3807f0b2be9d91c9db328f}
+
+
+Definition at line 180 of file network.\+c.
+
+
+
+Referenced by new\+\_\+listening\+\_\+\+T\+C\+P\+\_\+socket().
+
+
+\begin{DoxyCode}
+181 \{
+182     \textcolor{keywordtype}{int} set = 1;
+183     \textcolor{keywordflow}{return} (setsockopt(\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock}, SOL\_SOCKET, SO\_REUSEADDR, (\textcolor{keywordtype}{void} *)&set, \textcolor{keyword}{sizeof}(set)) == 0);
+184 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_ac278c3d25e3807f0b2be9d91c9db328f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{network_8h_a84c3240a3325cbdaaa8a206c96980cd1}{\index{network.\+h@{network.\+h}!sock\+\_\+valid@{sock\+\_\+valid}}
+\index{sock\+\_\+valid@{sock\+\_\+valid}!network.\+h@{network.\+h}}
+\subsubsection[{sock\+\_\+valid}]{\setlength{\rightskip}{0pt plus 5cm}int sock\+\_\+valid (
+\begin{DoxyParamCaption}
+\item[{{\bf sock\+\_\+t}}]{sock}
+\end{DoxyParamCaption}
+)}}\label{network_8h_a84c3240a3325cbdaaa8a206c96980cd1}
+
+
+Definition at line 119 of file network.\+c.
+
+
+
+Referenced by accept\+\_\+connection(), main(), new\+\_\+listening\+\_\+\+T\+C\+P\+\_\+socket(), new\+\_\+networking\+\_\+ex(), new\+\_\+\+T\+C\+P\+\_\+connection(), and new\+\_\+\+T\+C\+P\+\_\+server().
+
+
+\begin{DoxyCode}
+120 \{
+121 \textcolor{preprocessor}{#if defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined (WIN32)}
+122 
+123     \textcolor{keywordflow}{if} (\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock} == INVALID\_SOCKET) \{
+124 \textcolor{preprocessor}{#else}
+125 
+126     \textcolor{keywordflow}{if} (\hyperlink{irc__syncbot_8c_a5903d0b282fc5eae503de618f896b5e1}{sock} < 0) \{
+127 \textcolor{preprocessor}{#endif}
+128         \textcolor{keywordflow}{return} 0;
+129     \}
+130 
+131     \textcolor{keywordflow}{return} 1;
+132 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d94/network_8h_a84c3240a3325cbdaaa8a206c96980cd1_icgraph}
+\end{center}
+\end{figure}
+
+

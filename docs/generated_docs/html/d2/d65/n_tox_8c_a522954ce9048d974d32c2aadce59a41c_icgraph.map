@@ -1,0 +1,9 @@
+<map id="getfriendname_terminated" name="getfriendname_terminated">
+<area shape="rect" id="node2" href="$d2/d65/n_tox_8c.html#a1e3c1630c0ca8b687a6a878aa27dd69c" title="line_eval" alt="" coords="466,27,539,54"/>
+<area shape="rect" id="node4" href="$d2/d65/n_tox_8c.html#a25727e8f5042a70c3b4f6349c88f81ba" title="print_formatted_message" alt="" coords="225,78,395,105"/>
+<area shape="rect" id="node6" href="$d2/d65/n_tox_8c.html#a04df44b183472d79e926e88d3428e6d4" title="print_friendlist" alt="" coords="259,27,361,54"/>
+<area shape="rect" id="node7" href="$d2/d65/n_tox_8c.html#a89c9c8906f86908f757554904956c646" title="print_nickchange" alt="" coords="443,129,563,155"/>
+<area shape="rect" id="node8" href="$d2/d65/n_tox_8c.html#af7e7e6447808fb322ad10e91394bdd07" title="print_statuschange" alt="" coords="244,179,376,206"/>
+<area shape="rect" id="node3" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="611,103,661,130"/>
+<area shape="rect" id="node5" href="$d2/d65/n_tox_8c.html#ae2328c9f40aa212fc7e83381fc8f664f" title="print_message" alt="" coords="449,78,556,105"/>
+</map>

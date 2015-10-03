@@ -1,0 +1,2163 @@
+\hypertarget{net__crypto_8h}{\section{toxcore/net\+\_\+crypto.h File Reference}
+\label{net__crypto_8h}\index{toxcore/net\+\_\+crypto.\+h@{toxcore/net\+\_\+crypto.\+h}}
+}
+{\ttfamily \#include \char`\"{}D\+H\+T.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}L\+A\+N\+\_\+discovery.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+C\+P\+\_\+connection.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+Include dependency graph for net\+\_\+crypto.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d9d/net__crypto_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d75/net__crypto_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_packet___data}{Packet\+\_\+\+Data}
+\item 
+struct \hyperlink{struct_packets___array}{Packets\+\_\+\+Array}
+\item 
+struct \hyperlink{struct_crypto___connection}{Crypto\+\_\+\+Connection}
+\item 
+struct \hyperlink{struct_new___connection}{New\+\_\+\+Connection}
+\item 
+struct \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}~0
+\item 
+\#define \hyperlink{net__crypto_8h_a3982349ee55b611d39ef3014e739e403}{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G}~1
+\item 
+\#define \hyperlink{net__crypto_8h_a83145faeb8957481e615549e05e03d78}{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T}~2
+\item 
+\#define \hyperlink{net__crypto_8h_ac188171760299bf65ba620fe348b9b40}{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}~3
+\item 
+\#define \hyperlink{net__crypto_8h_ae15ad1cc9a29a669e0df83d610c188b0}{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D}~4
+\item 
+\#define \hyperlink{net__crypto_8h_ac73cf1eb0a938f0962ddc607945636f4}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~16384 /$\ast$ Must be a power of 2 $\ast$/
+\item 
+\#define \hyperlink{net__crypto_8h_ab329443d2f5643d95e6034542fcb82f3}{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E}~8.\+0
+\item 
+\#define \hyperlink{net__crypto_8h_ab0d2e7f3b3f18b516bb0a512c91b2914}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H}~64
+\item 
+\#define \hyperlink{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}~1400
+\item 
+\#define \hyperlink{net__crypto_8h_a5f9efcfe577f9eadd24094a8abd6bb7e}{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E}~(1 + sizeof(uint16\+\_\+t) + (sizeof(uint32\+\_\+t) + sizeof(uint32\+\_\+t)) + crypto\+\_\+box\+\_\+\+M\+A\+C\+B\+Y\+T\+E\+S)
+\item 
+\#define \hyperlink{net__crypto_8h_a1b6e5122f9fdc5ef548ccf920f0c246e}{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}~(\hyperlink{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E} -\/ \hyperlink{net__crypto_8h_a5f9efcfe577f9eadd24094a8abd6bb7e}{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E})
+\item 
+\#define \hyperlink{net__crypto_8h_a22cf528ff4b695034a0f38e6ea1cc40e}{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~1000
+\item 
+\#define \hyperlink{net__crypto_8h_adea7d88fb77084002add50dddb519cc9}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S}~8
+\item 
+\#define \hyperlink{net__crypto_8h_a0c533e2029f9b1bdb8a368a7308253c0}{U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T}~((\hyperlink{net__crypto_8h_adea7d88fb77084002add50dddb519cc9}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S} $\ast$ \hyperlink{net__crypto_8h_a22cf528ff4b695034a0f38e6ea1cc40e}{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}) / 1000)
+\item 
+\#define \hyperlink{net__crypto_8h_aacaea3de09437a784d2b510a47ae15d6}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G}~0 /$\ast$ Denotes padding $\ast$/
+\item 
+\#define \hyperlink{net__crypto_8h_af1de9decbe4790923c53235d3b04a00a}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T}~1 /$\ast$ Used to request unreceived packets $\ast$/
+\item 
+\#define \hyperlink{net__crypto_8h_ac3fca17f739e473ffb4f16ec9b2f4cde}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L}~2 /$\ast$ Used to kill connection $\ast$/
+\item 
+\#define \hyperlink{net__crypto_8h_a98aaeb516244f1581d65e3dbb008979e}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S}~16
+\item 
+\#define \hyperlink{net__crypto_8h_a8e0985f4d6f18b8835ec23373252ef1e}{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}~64
+\item 
+\#define \hyperlink{net__crypto_8h_a6815b993824b223ab5fb6e1cf0e32fd7}{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R}~4
+\item 
+\#define \hyperlink{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T}~192
+\item 
+\#define \hyperlink{net__crypto_8h_a97668dde651012b4dffe599cd0df333b}{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E}~63
+\item 
+\#define \hyperlink{net__crypto_8h_a3e42bab1226f7962c22372f29012a0d6}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G}~8 /$\ast$ All packets will be padded a number of bytes based on this number. $\ast$/
+\item 
+\#define \hyperlink{net__crypto_8h_a0f273efcbb427d7ab96d56de4de63137}{C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E}~24
+\item 
+\#define \hyperlink{net__crypto_8h_aa737ddb8e565b8959c9d30398907026e}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}~200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{net__crypto_8h_adaa8cd47d0ede85ca13626e91d2e995d}{new\+\_\+connection\+\_\+handler} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int($\ast$new\+\_\+connection\+\_\+callback)(void $\ast$object, \hyperlink{struct_new___connection}{New\+\_\+\+Connection} $\ast$n\+\_\+c), void $\ast$object)
+\item 
+int \hyperlink{net__crypto_8h_ab11f6e96035c3717a21b809d5373f96f}{accept\+\_\+crypto\+\_\+connection} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, \hyperlink{struct_new___connection}{New\+\_\+\+Connection} $\ast$n\+\_\+c)
+\item 
+int \hyperlink{net__crypto_8h_ae09413aa94644bc88bf73b88f48ef814}{new\+\_\+crypto\+\_\+connection} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, const uint8\+\_\+t $\ast$real\+\_\+public\+\_\+key, const uint8\+\_\+t $\ast$dht\+\_\+public\+\_\+key)
+\item 
+int \hyperlink{net__crypto_8h_a8ced4e168a95db5708bf4b3095cb4df6}{set\+\_\+direct\+\_\+ip\+\_\+port} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, \+\_\+\+Bool connected)
+\item 
+int \hyperlink{net__crypto_8h_af159dc9120b9cd0675a865eabec03a73}{connection\+\_\+status\+\_\+handler} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, int($\ast$connection\+\_\+status\+\_\+callback)(void $\ast$object, int id, uint8\+\_\+t status), void $\ast$object, int id)
+\item 
+int \hyperlink{net__crypto_8h_afdc8cda0f8580be3a59a4f315c042fb0}{connection\+\_\+data\+\_\+handler} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, int($\ast$connection\+\_\+data\+\_\+callback)(void $\ast$object, int id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object, int id)
+\item 
+int \hyperlink{net__crypto_8h_a8a587a287b13cce4271a272c71c2b788}{connection\+\_\+lossy\+\_\+data\+\_\+handler} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, int($\ast$connection\+\_\+lossy\+\_\+data\+\_\+callback)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length), void $\ast$object, int id)
+\item 
+int \hyperlink{net__crypto_8h_a92ed6dc36b6e6996387b7542fc2580fa}{nc\+\_\+dht\+\_\+pk\+\_\+callback} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, void($\ast$function)(void $\ast$data, int32\+\_\+t number, const uint8\+\_\+t $\ast$dht\+\_\+public\+\_\+key), void $\ast$object, uint32\+\_\+t number)
+\item 
+uint32\+\_\+t \hyperlink{net__crypto_8h_a4680603c9714e8742ad580b74ff1d891}{crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id)
+\item 
+\+\_\+\+Bool \hyperlink{net__crypto_8h_ac2a5448ebee4fd4f8fd32cc7e3ac69c0}{max\+\_\+speed\+\_\+reached} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id)
+\item 
+int64\+\_\+t \hyperlink{net__crypto_8h_ab17ccce6d503f75b7d98be214ebd7621}{write\+\_\+cryptpacket} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length, uint8\+\_\+t congestion\+\_\+control)
+\item 
+int \hyperlink{net__crypto_8h_a8ced352d973b7f835224854ef97f4407}{cryptpacket\+\_\+received} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, uint32\+\_\+t packet\+\_\+number)
+\item 
+int \hyperlink{net__crypto_8h_a7fcdf763c4a1b4b71e0de620b12f074c}{send\+\_\+lossy\+\_\+cryptpacket} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+int \hyperlink{net__crypto_8h_a4b9f3aef7b0d4c461294e24a21e64e71}{add\+\_\+tcp\+\_\+relay\+\_\+peer} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+int \hyperlink{net__crypto_8h_a632021583d7dd2484614071a7080f311}{add\+\_\+tcp\+\_\+relay} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, \hyperlink{struct_i_p___port}{I\+P\+\_\+\+Port} ip\+\_\+port, const uint8\+\_\+t $\ast$public\+\_\+key)
+\item 
+int \hyperlink{net__crypto_8h_ad1a4103f75eb81ae93a0f1701b259db0}{get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c)
+\item 
+int \hyperlink{net__crypto_8h_a4c1d29e0d6cd3c6d9dd8b613f2cc3afb}{send\+\_\+tcp\+\_\+onion\+\_\+request} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, unsigned int T\+C\+P\+\_\+conn\+\_\+number, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)
+\item 
+unsigned int \hyperlink{net__crypto_8h_ac398e442ae77ace2af0156b9ce7f604c}{copy\+\_\+connected\+\_\+tcp\+\_\+relays} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, \hyperlink{struct_node__format}{Node\+\_\+format} $\ast$tcp\+\_\+relays, uint16\+\_\+t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num})
+\item 
+int \hyperlink{net__crypto_8h_a16c3a0008512675dad8eb00ff1822763}{crypto\+\_\+kill} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id)
+\item 
+unsigned int \hyperlink{net__crypto_8h_afb5c59e6df7f38fe0bdf9e0f6c459869}{crypto\+\_\+connection\+\_\+status} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, int crypt\+\_\+connection\+\_\+id, \+\_\+\+Bool $\ast$direct\+\_\+connected, unsigned int $\ast$online\+\_\+tcp\+\_\+relays)
+\item 
+void \hyperlink{net__crypto_8h_abcede595fdf06772b76f60792c82ed2b}{new\+\_\+keys} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c)
+\item 
+void \hyperlink{net__crypto_8h_ae2f39ed236b85952fa913fdac1785671}{save\+\_\+keys} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, uint8\+\_\+t $\ast$keys)
+\item 
+void \hyperlink{net__crypto_8h_ac8131842eafef1819a6e6da5404e3234}{load\+\_\+secret\+\_\+key} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c, const uint8\+\_\+t $\ast$sk)
+\item 
+\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$ \hyperlink{net__crypto_8h_a5e46c6f42e93e2aa968f8f63de90a53c}{new\+\_\+net\+\_\+crypto} (\hyperlink{struct_d_h_t}{D\+H\+T} $\ast$dht, \hyperlink{struct_t_c_p___proxy___info}{T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$proxy\+\_\+info)
+\item 
+uint32\+\_\+t \hyperlink{net__crypto_8h_af0fcda7ce07347179ae4f327489c7643}{crypto\+\_\+run\+\_\+interval} (const \hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c)
+\item 
+void \hyperlink{net__crypto_8h_a6fa028eb320bf09ecd619c5053580436}{do\+\_\+net\+\_\+crypto} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c)
+\item 
+void \hyperlink{net__crypto_8h_abb3546495adde3f08c0474f31c5d3a37}{kill\+\_\+net\+\_\+crypto} (\hyperlink{struct_net___crypto}{Net\+\_\+\+Crypto} $\ast$c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{net__crypto_8h_a0f273efcbb427d7ab96d56de4de63137}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E@{C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E}}
+\index{C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E@{C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+N\+G\+E\+S\+T\+I\+O\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E~24}}\label{net__crypto_8h_a0f273efcbb427d7ab96d56de4de63137}
+
+
+Definition at line 83 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by send\+\_\+crypto\+\_\+packets().
+
+\hypertarget{net__crypto_8h_a3982349ee55b611d39ef3014e739e403}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G~1}}\label{net__crypto_8h_a3982349ee55b611d39ef3014e739e403}
+
+
+Definition at line 33 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+new\+\_\+connection\+\_\+handshake(), handle\+\_\+packet\+\_\+connection(), kill\+\_\+timedout(), and new\+\_\+crypto\+\_\+connection().
+
+\hypertarget{net__crypto_8h_ae15ad1cc9a29a669e0df83d610c188b0}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D~4}}\label{net__crypto_8h_ae15ad1cc9a29a669e0df83d610c188b0}
+
+
+Definition at line 36 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by crypto\+\_\+kill(), do\+\_\+tcp(), handle\+\_\+data\+\_\+packet\+\_\+helper(), handle\+\_\+packet\+\_\+connection(), kill\+\_\+timedout(), send\+\_\+crypto\+\_\+packets(), and write\+\_\+cryptpacket().
+
+\hypertarget{net__crypto_8h_a83145faeb8957481e615549e05e03d78}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+E\+N\+T~2}}\label{net__crypto_8h_a83145faeb8957481e615549e05e03d78}
+
+
+Definition at line 34 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+new\+\_\+connection\+\_\+handshake(), handle\+\_\+packet\+\_\+connection(), and kill\+\_\+timedout().
+
+\hypertarget{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N~0}}\label{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}
+
+
+Definition at line 32 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), create\+\_\+crypto\+\_\+connection(), crypt\+\_\+connection\+\_\+id\+\_\+not\+\_\+valid(), crypto\+\_\+connection\+\_\+status(), getcryptconnection\+\_\+id(), kill\+\_\+timedout(), new\+\_\+crypto\+\_\+connection(), and wipe\+\_\+crypto\+\_\+connection().
+
+\hypertarget{net__crypto_8h_ac188171760299bf65ba620fe348b9b40}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D@{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D~3}}\label{net__crypto_8h_ac188171760299bf65ba620fe348b9b40}
+
+
+Definition at line 35 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), handle\+\_\+data\+\_\+packet\+\_\+helper(), handle\+\_\+new\+\_\+connection\+\_\+handshake(), handle\+\_\+packet\+\_\+connection(), kill\+\_\+timedout(), and send\+\_\+crypto\+\_\+packets().
+
+\hypertarget{net__crypto_8h_a5f9efcfe577f9eadd24094a8abd6bb7e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E~(1 + sizeof(uint16\+\_\+t) + (sizeof(uint32\+\_\+t) + sizeof(uint32\+\_\+t)) + crypto\+\_\+box\+\_\+\+M\+A\+C\+B\+Y\+T\+E\+S)}}\label{net__crypto_8h_a5f9efcfe577f9eadd24094a8abd6bb7e}
+
+
+Definition at line 50 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet\+\_\+helper().
+
+\hypertarget{net__crypto_8h_a3e42bab1226f7962c22372f29012a0d6}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+A\+X\+\_\+\+P\+A\+D\+D\+I\+N\+G~8 /$\ast$ All packets will be padded a number of bytes based on this number. $\ast$/}}\label{net__crypto_8h_a3e42bab1226f7962c22372f29012a0d6}
+
+
+Definition at line 79 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by send\+\_\+data\+\_\+packet\+\_\+helper().
+
+\hypertarget{net__crypto_8h_ab0d2e7f3b3f18b516bb0a512c91b2914}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H~64}}\label{net__crypto_8h_ab0d2e7f3b3f18b516bb0a512c91b2914}
+
+
+Definition at line 45 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), new\+\_\+crypto\+\_\+connection(), and send\+\_\+crypto\+\_\+packets().
+
+\hypertarget{net__crypto_8h_ac73cf1eb0a938f0962ddc607945636f4}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~16384 /$\ast$ Must be a power of 2 $\ast$/}}\label{net__crypto_8h_ac73cf1eb0a938f0962ddc607945636f4}
+
+
+Definition at line 39 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by add\+\_\+data\+\_\+end\+\_\+of\+\_\+buffer(), add\+\_\+data\+\_\+to\+\_\+buffer(), clear\+\_\+buffer(), clear\+\_\+buffer\+\_\+until(), crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots(), generate\+\_\+request\+\_\+packet(), get\+\_\+data\+\_\+pointer(), handle\+\_\+request\+\_\+packet(), read\+\_\+data\+\_\+beg\+\_\+buffer(), and set\+\_\+buffer\+\_\+end().
+
+\hypertarget{net__crypto_8h_ab329443d2f5643d95e6034542fcb82f3}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E@{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E~8.\+0}}\label{net__crypto_8h_ab329443d2f5643d95e6034542fcb82f3}
+
+
+Definition at line 42 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), new\+\_\+crypto\+\_\+connection(), and send\+\_\+crypto\+\_\+packets().
+
+\hypertarget{net__crypto_8h_a98aaeb516244f1581d65e3dbb008979e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S~16}}\label{net__crypto_8h_a98aaeb516244f1581d65e3dbb008979e}
+
+
+Definition at line 70 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet\+\_\+helper(), and write\+\_\+cryptpacket().
+
+\hypertarget{net__crypto_8h_a22cf528ff4b695034a0f38e6ea1cc40e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~1000}}\label{net__crypto_8h_a22cf528ff4b695034a0f38e6ea1cc40e}
+
+
+Definition at line 56 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto(), and send\+\_\+crypto\+\_\+packets().
+
+\hypertarget{net__crypto_8h_aa737ddb8e565b8959c9d30398907026e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N@{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N~200}}\label{net__crypto_8h_aa737ddb8e565b8959c9d30398907026e}
+
+
+Definition at line 86 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by accept\+\_\+crypto\+\_\+connection(), and new\+\_\+crypto\+\_\+connection().
+
+\hypertarget{net__crypto_8h_a1b6e5122f9fdc5ef548ccf920f0c246e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E~({\bf M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E} -\/ {\bf C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+S\+I\+Z\+E})}}\label{net__crypto_8h_a1b6e5122f9fdc5ef548ccf920f0c246e}
+
+
+Definition at line 53 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by m\+\_\+send\+\_\+message\+\_\+generic(), send\+\_\+custom\+\_\+lossless\+\_\+packet(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), send\+\_\+data\+\_\+packet\+\_\+helper(), send\+\_\+file\+\_\+control\+\_\+packet(), send\+\_\+lossless\+\_\+packet(), send\+\_\+lossy\+\_\+cryptpacket(), send\+\_\+lossy\+\_\+group\+\_\+peer(), send\+\_\+packet\+\_\+group\+\_\+peer(), send\+\_\+peers(), send\+\_\+request\+\_\+packet(), and write\+\_\+cryptpacket\+\_\+id().
+
+\hypertarget{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E~1400}}\label{net__crypto_8h_a4358ff1fe0068c79f791ac88674aea04}
+
+
+Definition at line 48 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet(), handle\+\_\+data\+\_\+packet\+\_\+helper(), handle\+\_\+packet\+\_\+connection(), new\+\_\+temp\+\_\+packet(), send\+\_\+data\+\_\+packet(), S\+T\+A\+R\+T\+\_\+\+T\+E\+S\+T(), tcp\+\_\+data\+\_\+callback(), tcp\+\_\+oob\+\_\+callback(), and udp\+\_\+handle\+\_\+packet().
+
+\hypertarget{net__crypto_8h_adea7d88fb77084002add50dddb519cc9}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S@{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S}}
+\index{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S@{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S~8}}\label{net__crypto_8h_adea7d88fb77084002add50dddb519cc9}
+
+
+Definition at line 60 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by kill\+\_\+timedout().
+
+\hypertarget{net__crypto_8h_a8e0985f4d6f18b8835ec23373252ef1e}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}}
+\index{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S@{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+S~64}}\label{net__crypto_8h_a8e0985f4d6f18b8835ec23373252ef1e}
+
+
+Definition at line 72 of file net\+\_\+crypto.\+h.
+
+\hypertarget{net__crypto_8h_a6815b993824b223ab5fb6e1cf0e32fd7}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R@{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R}}
+\index{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R@{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+T\+C\+P\+\_\+\+R\+E\+L\+A\+Y\+S\+\_\+\+P\+E\+E\+R~4}}\label{net__crypto_8h_a6815b993824b223ab5fb6e1cf0e32fd7}
+
+
+Definition at line 73 of file net\+\_\+crypto.\+h.
+
+\hypertarget{net__crypto_8h_ac3fca17f739e473ffb4f16ec9b2f4cde}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+K\+I\+L\+L~2 /$\ast$ Used to kill connection $\ast$/}}\label{net__crypto_8h_ac3fca17f739e473ffb4f16ec9b2f4cde}
+
+
+Definition at line 67 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet\+\_\+helper(), and send\+\_\+kill\+\_\+packet().
+
+\hypertarget{net__crypto_8h_a97668dde651012b4dffe599cd0df333b}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E~63}}\label{net__crypto_8h_a97668dde651012b4dffe599cd0df333b}
+
+
+Definition at line 77 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet\+\_\+helper(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), and send\+\_\+lossy\+\_\+cryptpacket().
+
+\hypertarget{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T~192}}\label{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}
+
+
+Definition at line 76 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+custom\+\_\+lossy\+\_\+packet(), handle\+\_\+data\+\_\+packet\+\_\+helper(), m\+\_\+callback\+\_\+rtp\+\_\+packet(), send\+\_\+custom\+\_\+lossy\+\_\+packet(), send\+\_\+lossy\+\_\+cryptpacket(), tox\+\_\+friend\+\_\+send\+\_\+lossy\+\_\+packet(), and write\+\_\+cryptpacket().
+
+\hypertarget{net__crypto_8h_aacaea3de09437a784d2b510a47ae15d6}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+P\+A\+D\+D\+I\+N\+G~0 /$\ast$ Denotes padding $\ast$/}}\label{net__crypto_8h_aacaea3de09437a784d2b510a47ae15d6}
+
+
+Definition at line 65 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by handle\+\_\+data\+\_\+packet\+\_\+helper(), and send\+\_\+data\+\_\+packet\+\_\+helper().
+
+\hypertarget{net__crypto_8h_af1de9decbe4790923c53235d3b04a00a}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T@{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+R\+E\+Q\+U\+E\+S\+T~1 /$\ast$ Used to request unreceived packets $\ast$/}}\label{net__crypto_8h_af1de9decbe4790923c53235d3b04a00a}
+
+
+Definition at line 66 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by generate\+\_\+request\+\_\+packet(), handle\+\_\+data\+\_\+packet\+\_\+helper(), and handle\+\_\+request\+\_\+packet().
+
+\hypertarget{net__crypto_8h_a0c533e2029f9b1bdb8a368a7308253c0}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T@{U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T}}
+\index{U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T@{U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T~(({\bf M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+E\+N\+D\+P\+A\+C\+K\+E\+T\+\_\+\+T\+R\+I\+E\+S} $\ast$ {\bf C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}) / 1000)}}\label{net__crypto_8h_a0c533e2029f9b1bdb8a368a7308253c0}
+
+
+Definition at line 63 of file net\+\_\+crypto.\+h.
+
+
+
+Referenced by crypto\+\_\+connection\+\_\+status(), and set\+\_\+direct\+\_\+ip\+\_\+port().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{net__crypto_8h_ab11f6e96035c3717a21b809d5373f96f}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!accept\+\_\+crypto\+\_\+connection@{accept\+\_\+crypto\+\_\+connection}}
+\index{accept\+\_\+crypto\+\_\+connection@{accept\+\_\+crypto\+\_\+connection}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{accept\+\_\+crypto\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int accept\+\_\+crypto\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{{\bf New\+\_\+\+Connection} $\ast$}]{n\+\_\+c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ab11f6e96035c3717a21b809d5373f96f}
+
+
+Definition at line 1570 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+number\+\_\+tcp, New\+\_\+\+Connection\+::cookie, C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+T\+H, New\+\_\+\+Connection\+::cookie\+\_\+length, create\+\_\+crypto\+\_\+connection(), create\+\_\+send\+\_\+handshake(), C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N, C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D, crypto\+\_\+connection\+\_\+add\+\_\+source(), Net\+\_\+\+Crypto\+::crypto\+\_\+connections, C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H, C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N, Crypto\+\_\+\+Connection\+::dht\+\_\+public\+\_\+key, New\+\_\+\+Connection\+::dht\+\_\+public\+\_\+key, encrypt\+\_\+precompute(), getcryptconnection\+\_\+id(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), new\+\_\+tcp\+\_\+connection\+\_\+to(), Crypto\+\_\+\+Connection\+::packet\+\_\+send\+\_\+rate, Crypto\+\_\+\+Connection\+::packets\+\_\+left, Crypto\+\_\+\+Connection\+::peersessionpublic\+\_\+key, New\+\_\+\+Connection\+::peersessionpublic\+\_\+key, Crypto\+\_\+\+Connection\+::public\+\_\+key, New\+\_\+\+Connection\+::public\+\_\+key, random\+\_\+nonce(), Crypto\+\_\+\+Connection\+::recv\+\_\+nonce, New\+\_\+\+Connection\+::recv\+\_\+nonce, Crypto\+\_\+\+Connection\+::rtt\+\_\+time, Crypto\+\_\+\+Connection\+::sent\+\_\+nonce, Crypto\+\_\+\+Connection\+::sessionpublic\+\_\+key, Crypto\+\_\+\+Connection\+::sessionsecret\+\_\+key, Crypto\+\_\+\+Connection\+::shared\+\_\+key, New\+\_\+\+Connection\+::source, Crypto\+\_\+\+Connection\+::status, Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1571 \{
+1572     \textcolor{keywordflow}{if} (\hyperlink{net__crypto_8c_a2a46344fe22f21eea9d777b12918e257}{getcryptconnection\_id}(c, n\_c->\hyperlink{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}) != -1)
+1573         \textcolor{keywordflow}{return} -1;
+1574 
+1575     \textcolor{keywordtype}{int} crypt\_connection\_id = \hyperlink{net__crypto_8c_aed34560fc11f32d1b280d00152655b9b}{create\_crypto\_connection}(c);
+1576 
+1577     \textcolor{keywordflow}{if} (crypt\_connection\_id == -1)
+1578         \textcolor{keywordflow}{return} -1;
+1579 
+1580     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = &c->\hyperlink{struct_net___crypto_a13fdc865b8a114466ba136f5390ec1b2}{crypto\_connections}[crypt\_connection\_id
+      ];
+1581 
+1582     \textcolor{keywordflow}{if} (n\_c->\hyperlink{struct_new___connection_a801672aeddedd60f76a667a2275a95ce}{cookie\_length} != \hyperlink{net__crypto_8c_a905c0a7642c878ca482e2d7aff7d670c}{COOKIE\_LENGTH})
+1583         \textcolor{keywordflow}{return} -1;
+1584 
+1585     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1586     \textcolor{keywordtype}{int} connection\_number\_tcp = \hyperlink{_t_c_p__connection_8c_a22c797c7e0ef3ad66e171f05b1cb52bd}{new\_tcp\_connection\_to}(c->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, n\_c->\hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, crypt\_connection\_id);
+1587     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1588 
+1589     \textcolor{keywordflow}{if} (connection\_number\_tcp == -1)
+1590         \textcolor{keywordflow}{return} -1;
+1591 
+1592     conn->\hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp} = connection\_number\_tcp;
+1593     memcpy(conn->\hyperlink{struct_crypto___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, n\_c->\hyperlink{struct_new___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, crypto\_box\_PUBLICKEYBYTES);
+1594     memcpy(conn->\hyperlink{struct_crypto___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{recv\_nonce}, n\_c->\hyperlink{struct_new___connection_aae0467706f97aa3ef23e5dc9c3c199d7}{recv\_nonce}, crypto\_box\_NONCEBYTES);
+1595     memcpy(conn->\hyperlink{struct_crypto___connection_ac040d4ba2a22ee327952009e7396bb2f}{peersessionpublic\_key}, n\_c->
+      \hyperlink{struct_new___connection_ac040d4ba2a22ee327952009e7396bb2f}{peersessionpublic\_key}, crypto\_box\_PUBLICKEYBYTES);
+1596     \hyperlink{crypto__core_8c_a15ef255ab026d4881a16b99148b05dd7}{random\_nonce}(conn->\hyperlink{struct_crypto___connection_a9df0e00e8f493ed6cd1ff45e7da33c0d}{sent\_nonce});
+1597     crypto\_box\_keypair(conn->\hyperlink{struct_crypto___connection_a6e74fbae398c7966800ee80f7b93dbfa}{sessionpublic\_key}, conn->
+      \hyperlink{struct_crypto___connection_a5f38fc9ff1b20b61ffbb56d9e7f5c892}{sessionsecret\_key});
+1598     \hyperlink{crypto__core_8c_a0d8eaef49981c5dc3ada078866b42f6d}{encrypt\_precompute}(conn->\hyperlink{struct_crypto___connection_ac040d4ba2a22ee327952009e7396bb2f}{peersessionpublic\_key}, conn->
+      \hyperlink{struct_crypto___connection_a5f38fc9ff1b20b61ffbb56d9e7f5c892}{sessionsecret\_key}, conn->\hyperlink{struct_crypto___connection_a81ead9fac55a0cedc30a96253a2c5119}{shared\_key});
+1599     conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{net__crypto_8h_ac188171760299bf65ba620fe348b9b40}{CRYPTO\_CONN\_NOT\_CONFIRMED};
+1600 
+1601     \textcolor{keywordflow}{if} (\hyperlink{net__crypto_8c_ad2ca4aad15dc0607252aa21cd525b5ba}{create\_send\_handshake}(c, crypt\_connection\_id, n\_c->
+      \hyperlink{struct_new___connection_a78fb2cbe7af4d12847f2f044c35e7823}{cookie}, n\_c->\hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}) != 0) \{
+1602         pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1603         \hyperlink{_t_c_p__connection_8c_a2369688a49bef46cb2029b3bb680e11d}{kill\_tcp\_connection\_to}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, conn->
+      \hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp});
+1604         pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1605         conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}{CRYPTO\_CONN\_NO\_CONNECTION};
+1606         \textcolor{keywordflow}{return} -1;
+1607     \}
+1608 
+1609     memcpy(conn->\hyperlink{struct_crypto___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, n\_c->\hyperlink{struct_new___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, crypto\_box\_PUBLICKEYBYTES
+      );
+1610     conn->\hyperlink{struct_crypto___connection_a8358768a02871910ed059b1b2646438e}{packet\_send\_rate} = \hyperlink{net__crypto_8h_ab329443d2f5643d95e6034542fcb82f3}{CRYPTO\_PACKET\_MIN\_RATE};
+1611     conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left} = \hyperlink{net__crypto_8h_ab0d2e7f3b3f18b516bb0a512c91b2914}{CRYPTO\_MIN\_QUEUE\_LENGTH};
+1612     conn->\hyperlink{struct_crypto___connection_ae88ec876060fbc648a4c75ac596137f9}{rtt\_time} = \hyperlink{net__crypto_8h_aa737ddb8e565b8959c9d30398907026e}{DEFAULT\_PING\_CONNECTION};
+1613     \hyperlink{net__crypto_8c_a9e779393ece10111b0ac7fe2bbc3beeb}{crypto\_connection\_add\_source}(c, crypt\_connection\_id, n\_c->
+      \hyperlink{struct_new___connection_afffde330c649378add9a507c9c151586}{source});
+1614     \textcolor{keywordflow}{return} crypt\_connection\_id;
+1615 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ab11f6e96035c3717a21b809d5373f96f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ab11f6e96035c3717a21b809d5373f96f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a632021583d7dd2484614071a7080f311}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!add\+\_\+tcp\+\_\+relay@{add\+\_\+tcp\+\_\+relay}}
+\index{add\+\_\+tcp\+\_\+relay@{add\+\_\+tcp\+\_\+relay}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{add\+\_\+tcp\+\_\+relay}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+tcp\+\_\+relay (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a632021583d7dd2484614071a7080f311}
+
+
+Definition at line 1794 of file net\+\_\+crypto.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay\+\_\+global(), Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by do\+\_\+messenger(), tcp\+\_\+relay\+\_\+node\+\_\+callback(), and tox\+\_\+add\+\_\+tcp\+\_\+relay().
+
+
+\begin{DoxyCode}
+1795 \{
+1796     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1797     \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__connection_8c_a5ee1dbaa28ff59e0f452eda3c97418e3}{add\_tcp\_relay\_global}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, ip\_port, 
+      \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+1798     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1799     \textcolor{keywordflow}{return} ret;
+1800 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a632021583d7dd2484614071a7080f311_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a632021583d7dd2484614071a7080f311_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a4b9f3aef7b0d4c461294e24a21e64e71}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!add\+\_\+tcp\+\_\+relay\+\_\+peer@{add\+\_\+tcp\+\_\+relay\+\_\+peer}}
+\index{add\+\_\+tcp\+\_\+relay\+\_\+peer@{add\+\_\+tcp\+\_\+relay\+\_\+peer}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{add\+\_\+tcp\+\_\+relay\+\_\+peer}]{\setlength{\rightskip}{0pt plus 5cm}int add\+\_\+tcp\+\_\+relay\+\_\+peer (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{const uint8\+\_\+t $\ast$}]{public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a4b9f3aef7b0d4c461294e24a21e64e71}
+
+
+Definition at line 1776 of file net\+\_\+crypto.\+c.
+
+
+
+References add\+\_\+tcp\+\_\+relay\+\_\+connection(), Crypto\+\_\+\+Connection\+::connection\+\_\+number\+\_\+tcp, get\+\_\+crypto\+\_\+connection(), Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by connect\+\_\+to\+\_\+saved\+\_\+tcp\+\_\+relays(), and friend\+\_\+add\+\_\+tcp\+\_\+relay().
+
+
+\begin{DoxyCode}
+1777 \{
+1778     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1779 
+1780     \textcolor{keywordflow}{if} (conn == 0)
+1781         \textcolor{keywordflow}{return} -1;
+1782 
+1783     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1784     \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__connection_8c_a26901882c0b134822660515493683132}{add\_tcp\_relay\_connection}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, conn->
+      \hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp}, ip\_port, \hyperlink{namespacemake-funny-savefile_a6734667aeff5c30ad9e5624ccb556a87}{public\_key});
+1785     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1786     \textcolor{keywordflow}{return} ret;
+1787 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4b9f3aef7b0d4c461294e24a21e64e71_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4b9f3aef7b0d4c461294e24a21e64e71_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_afdc8cda0f8580be3a59a4f315c042fb0}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!connection\+\_\+data\+\_\+handler@{connection\+\_\+data\+\_\+handler}}
+\index{connection\+\_\+data\+\_\+handler@{connection\+\_\+data\+\_\+handler}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{connection\+\_\+data\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}int connection\+\_\+data\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{int($\ast$)(void $\ast$object, int id, uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{connection\+\_\+data\+\_\+callback, }
+\item[{void $\ast$}]{object, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_afdc8cda0f8580be3a59a4f315c042fb0}
+
+
+Definition at line 1914 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+data\+\_\+callback, Crypto\+\_\+\+Connection\+::connection\+\_\+data\+\_\+callback\+\_\+id, Crypto\+\_\+\+Connection\+::connection\+\_\+data\+\_\+callback\+\_\+object, and get\+\_\+crypto\+\_\+connection().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1916 \{
+1917     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1918 
+1919     \textcolor{keywordflow}{if} (conn == 0)
+1920         \textcolor{keywordflow}{return} -1;
+1921 
+1922     conn->\hyperlink{struct_crypto___connection_adc6ee264e4a5758049c6299beb81ce6d}{connection\_data\_callback} = connection\_data\_callback;
+1923     conn->\hyperlink{struct_crypto___connection_a3c44dfac7528ae10a6d09bf812f36486}{connection\_data\_callback\_object} = object;
+1924     conn->\hyperlink{struct_crypto___connection_a7d50567cce6cb1b8ef983e64060d414e}{connection\_data\_callback\_id} = \hyperlink{struct_file___transfers_aa32dbb3439461c6ccc1a52ff15bcb22e}{id};
+1925     \textcolor{keywordflow}{return} 0;
+1926 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_afdc8cda0f8580be3a59a4f315c042fb0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_afdc8cda0f8580be3a59a4f315c042fb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a8a587a287b13cce4271a272c71c2b788}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!connection\+\_\+lossy\+\_\+data\+\_\+handler@{connection\+\_\+lossy\+\_\+data\+\_\+handler}}
+\index{connection\+\_\+lossy\+\_\+data\+\_\+handler@{connection\+\_\+lossy\+\_\+data\+\_\+handler}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{connection\+\_\+lossy\+\_\+data\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}int connection\+\_\+lossy\+\_\+data\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{int($\ast$)(void $\ast$object, int id, const uint8\+\_\+t $\ast$data, uint16\+\_\+t length)}]{connection\+\_\+lossy\+\_\+data\+\_\+callback, }
+\item[{void $\ast$}]{object, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a8a587a287b13cce4271a272c71c2b788}
+
+
+Definition at line 1936 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+lossy\+\_\+data\+\_\+callback, Crypto\+\_\+\+Connection\+::connection\+\_\+lossy\+\_\+data\+\_\+callback\+\_\+id, Crypto\+\_\+\+Connection\+::connection\+\_\+lossy\+\_\+data\+\_\+callback\+\_\+object, and get\+\_\+crypto\+\_\+connection().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1938 \{
+1939     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1940 
+1941     \textcolor{keywordflow}{if} (conn == 0)
+1942         \textcolor{keywordflow}{return} -1;
+1943 
+1944     conn->\hyperlink{struct_crypto___connection_ab5af8aad05ddc085e69ead928cc26313}{connection\_lossy\_data\_callback} = connection\_lossy\_data\_callback;
+1945     conn->\hyperlink{struct_crypto___connection_a70a99b7d0c9dd2f913ca9ea42bafc942}{connection\_lossy\_data\_callback\_object} = object;
+1946     conn->\hyperlink{struct_crypto___connection_acdd49847729119bc5d6cc7269cde876a}{connection\_lossy\_data\_callback\_id} = 
+      \hyperlink{struct_file___transfers_aa32dbb3439461c6ccc1a52ff15bcb22e}{id};
+1947     \textcolor{keywordflow}{return} 0;
+1948 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8a587a287b13cce4271a272c71c2b788_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8a587a287b13cce4271a272c71c2b788_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_af159dc9120b9cd0675a865eabec03a73}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!connection\+\_\+status\+\_\+handler@{connection\+\_\+status\+\_\+handler}}
+\index{connection\+\_\+status\+\_\+handler@{connection\+\_\+status\+\_\+handler}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{connection\+\_\+status\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}int connection\+\_\+status\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{int($\ast$)(void $\ast$object, int id, uint8\+\_\+t status)}]{connection\+\_\+status\+\_\+callback, }
+\item[{void $\ast$}]{object, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_af159dc9120b9cd0675a865eabec03a73}
+
+
+Definition at line 1892 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+status\+\_\+callback, Crypto\+\_\+\+Connection\+::connection\+\_\+status\+\_\+callback\+\_\+id, Crypto\+\_\+\+Connection\+::connection\+\_\+status\+\_\+callback\+\_\+object, and get\+\_\+crypto\+\_\+connection().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1894 \{
+1895     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1896 
+1897     \textcolor{keywordflow}{if} (conn == 0)
+1898         \textcolor{keywordflow}{return} -1;
+1899 
+1900     conn->\hyperlink{struct_crypto___connection_ad3c663c15ca97b75951ea711b522c049}{connection\_status\_callback} = connection\_status\_callback;
+1901     conn->\hyperlink{struct_crypto___connection_afe03d43c62ac2aa575a39e4308353244}{connection\_status\_callback\_object} = object;
+1902     conn->\hyperlink{struct_crypto___connection_a3cd6f7015115dc493f86be91526eb9f8}{connection\_status\_callback\_id} = \hyperlink{struct_file___transfers_aa32dbb3439461c6ccc1a52ff15bcb22e}{id};
+1903     \textcolor{keywordflow}{return} 0;
+1904 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_af159dc9120b9cd0675a865eabec03a73_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_af159dc9120b9cd0675a865eabec03a73_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ac398e442ae77ace2af0156b9ce7f604c}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!copy\+\_\+connected\+\_\+tcp\+\_\+relays@{copy\+\_\+connected\+\_\+tcp\+\_\+relays}}
+\index{copy\+\_\+connected\+\_\+tcp\+\_\+relays@{copy\+\_\+connected\+\_\+tcp\+\_\+relays}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{copy\+\_\+connected\+\_\+tcp\+\_\+relays}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int copy\+\_\+connected\+\_\+tcp\+\_\+relays (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{{\bf Node\+\_\+format} $\ast$}]{tcp\+\_\+relays, }
+\item[{uint16\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ac398e442ae77ace2af0156b9ce7f604c}
+
+
+Definition at line 1839 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::tcp\+\_\+c, tcp\+\_\+copy\+\_\+connected\+\_\+relays(), and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by messenger\+\_\+save(), populate\+\_\+path\+\_\+nodes\+\_\+tcp(), send\+\_\+dhtpk\+\_\+announce(), and send\+\_\+relays().
+
+
+\begin{DoxyCode}
+1840 \{
+1841     \textcolor{keywordflow}{if} (\hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} == 0)
+1842         \textcolor{keywordflow}{return} 0;
+1843 
+1844     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1845     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__connection_8c_ac2e62c717ccebd2379e32ca9b330812c}{tcp\_copy\_connected\_relays}(c->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, tcp\_relays, \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num});
+1846     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1847 
+1848     \textcolor{keywordflow}{return} ret;
+1849 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ac398e442ae77ace2af0156b9ce7f604c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ac398e442ae77ace2af0156b9ce7f604c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_afb5c59e6df7f38fe0bdf9e0f6c459869}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!crypto\+\_\+connection\+\_\+status@{crypto\+\_\+connection\+\_\+status}}
+\index{crypto\+\_\+connection\+\_\+status@{crypto\+\_\+connection\+\_\+status}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{crypto\+\_\+connection\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int crypto\+\_\+connection\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{\+\_\+\+Bool $\ast$}]{direct\+\_\+connected, }
+\item[{unsigned int $\ast$}]{online\+\_\+tcp\+\_\+relays}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_afb5c59e6df7f38fe0bdf9e0f6c459869}
+
+
+Definition at line 2364 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+number\+\_\+tcp, C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N, Crypto\+\_\+\+Connection\+::direct\+\_\+lastrecv\+\_\+time, get\+\_\+crypto\+\_\+connection(), Crypto\+\_\+\+Connection\+::status, Net\+\_\+\+Crypto\+::tcp\+\_\+c, tcp\+\_\+connection\+\_\+to\+\_\+online\+\_\+tcp\+\_\+relays(), U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T, and unix\+\_\+time().
+
+
+
+Referenced by do\+\_\+tcp(), m\+\_\+get\+\_\+friend\+\_\+connectionstatus(), and send\+\_\+packet\+\_\+to().
+
+
+\begin{DoxyCode}
+2366 \{
+2367     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2368 
+2369     \textcolor{keywordflow}{if} (conn == 0)
+2370         \textcolor{keywordflow}{return} \hyperlink{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}{CRYPTO\_CONN\_NO\_CONNECTION};
+2371 
+2372     \textcolor{keywordflow}{if} (direct\_connected) \{
+2373         *direct\_connected = 0;
+2374 
+2375         \textcolor{keywordflow}{if} ((\hyperlink{net__crypto_8h_a0c533e2029f9b1bdb8a368a7308253c0}{UDP\_DIRECT\_TIMEOUT} + conn->\hyperlink{struct_crypto___connection_ac6eb8a274b0dedea83359f2d9269cbc2}{direct\_lastrecv\_time}) > 
+      \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}())
+2376             *direct\_connected = 1;
+2377     \}
+2378 
+2379     \textcolor{keywordflow}{if} (online\_tcp\_relays) \{
+2380         *online\_tcp\_relays = \hyperlink{_t_c_p__connection_8c_ae843b0b4c8041f08bf9c18f68cae8a61}{tcp\_connection\_to\_online\_tcp\_relays}(c->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, conn->\hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp});
+2381     \}
+2382 
+2383     \textcolor{keywordflow}{return} conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status};
+2384 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_afb5c59e6df7f38fe0bdf9e0f6c459869_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_afb5c59e6df7f38fe0bdf9e0f6c459869_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a16c3a0008512675dad8eb00ff1822763}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!crypto\+\_\+kill@{crypto\+\_\+kill}}
+\index{crypto\+\_\+kill@{crypto\+\_\+kill}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{crypto\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}int crypto\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a16c3a0008512675dad8eb00ff1822763}
+
+
+Definition at line 2323 of file net\+\_\+crypto.\+c.
+
+
+
+References bs\+\_\+list\+\_\+remove(), clear\+\_\+buffer(), clear\+\_\+temp\+\_\+packet(), Crypto\+\_\+\+Connection\+::connection\+\_\+number\+\_\+tcp, Net\+\_\+\+Crypto\+::connection\+\_\+use\+\_\+counter, Net\+\_\+\+Crypto\+::connections\+\_\+mutex, C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D, get\+\_\+crypto\+\_\+connection(), Crypto\+\_\+\+Connection\+::ip\+\_\+port, Net\+\_\+\+Crypto\+::ip\+\_\+port\+\_\+list, kill\+\_\+tcp\+\_\+connection\+\_\+to(), Crypto\+\_\+\+Connection\+::recv\+\_\+array, Crypto\+\_\+\+Connection\+::send\+\_\+array, send\+\_\+kill\+\_\+packet(), Crypto\+\_\+\+Connection\+::status, Net\+\_\+\+Crypto\+::tcp\+\_\+c, Net\+\_\+\+Crypto\+::tcp\+\_\+mutex, and wipe\+\_\+crypto\+\_\+connection().
+
+
+
+Referenced by connection\+\_\+kill(), dht\+\_\+pk\+\_\+callback(), do\+\_\+friend\+\_\+connections(), kill\+\_\+friend\+\_\+connection(), and kill\+\_\+net\+\_\+crypto().
+
+
+\begin{DoxyCode}
+2324 \{
+2325     \textcolor{keywordflow}{while} (1) \{ \textcolor{comment}{/* TODO: is this really the best way to do this? */}
+2326         pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2327 
+2328         \textcolor{keywordflow}{if} (!c->\hyperlink{struct_net___crypto_ab5be057850e1cee67902276a69900326}{connection\_use\_counter}) \{
+2329             \textcolor{keywordflow}{break};
+2330         \}
+2331 
+2332         pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2333     \}
+2334 
+2335     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2336 
+2337     \textcolor{keywordtype}{int} ret = -1;
+2338 
+2339     \textcolor{keywordflow}{if} (conn) \{
+2340         \textcolor{keywordflow}{if} (conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} == \hyperlink{net__crypto_8h_ae15ad1cc9a29a669e0df83d610c188b0}{CRYPTO\_CONN\_ESTABLISHED})
+2341             \hyperlink{net__crypto_8c_aef6ea83ebc4f62428b09ee74441f6f4b}{send\_kill\_packet}(c, crypt\_connection\_id);
+2342 
+2343         pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+2344         \hyperlink{_t_c_p__connection_8c_a2369688a49bef46cb2029b3bb680e11d}{kill\_tcp\_connection\_to}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, conn->
+      \hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp});
+2345         pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+2346 
+2347         \hyperlink{list_8c_a365995457101cc16f8c6b25ead07fb6f}{bs\_list\_remove}(&c->\hyperlink{struct_net___crypto_ae8cfe94df9c9030bbc525010603450ac}{ip\_port\_list}, (uint8\_t *)&conn->
+      \hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}, crypt\_connection\_id);
+2348         \hyperlink{net__crypto_8c_a6e6c3107cf48ec1c5087d3780a03ad0c}{clear\_temp\_packet}(c, crypt\_connection\_id);
+2349         \hyperlink{net__crypto_8c_ae690bbce7d008eda1142ceaf0673e672}{clear\_buffer}(&conn->\hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array});
+2350         \hyperlink{net__crypto_8c_ae690bbce7d008eda1142ceaf0673e672}{clear\_buffer}(&conn->\hyperlink{struct_crypto___connection_a1a62bc0c4bb9e349735c65f9948020d5}{recv\_array});
+2351         ret = \hyperlink{net__crypto_8c_a7be52b4dc75558fc64e9e017ea67f1d0}{wipe\_crypto\_connection}(c, crypt\_connection\_id);
+2352     \}
+2353 
+2354     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2355 
+2356     \textcolor{keywordflow}{return} ret;
+2357 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a16c3a0008512675dad8eb00ff1822763_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a16c3a0008512675dad8eb00ff1822763_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a4680603c9714e8742ad580b74ff1d891}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots@{crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots}}
+\index{crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots@{crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crypto\+\_\+num\+\_\+free\+\_\+sendqueue\+\_\+slots (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a4680603c9714e8742ad580b74ff1d891}
+
+
+Definition at line 2196 of file net\+\_\+crypto.\+c.
+
+
+
+References C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E, get\+\_\+crypto\+\_\+connection(), num\+\_\+packets\+\_\+array(), Crypto\+\_\+\+Connection\+::packets\+\_\+left, and Crypto\+\_\+\+Connection\+::send\+\_\+array.
+
+
+
+Referenced by do\+\_\+reqchunk\+\_\+filecb(), and file\+\_\+data().
+
+
+\begin{DoxyCode}
+2197 \{
+2198     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2199 
+2200     \textcolor{keywordflow}{if} (conn == 0)
+2201         \textcolor{keywordflow}{return} 0;
+2202 
+2203     uint32\_t max\_packets = \hyperlink{net__crypto_8h_ac73cf1eb0a938f0962ddc607945636f4}{CRYPTO\_PACKET\_BUFFER\_SIZE} - 
+      \hyperlink{net__crypto_8c_abbe1101e6464100c19aea7cde5c1d3a0}{num\_packets\_array}(&conn->\hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array});
+2204 
+2205     \textcolor{keywordflow}{if} (conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left} < max\_packets) \{
+2206         \textcolor{keywordflow}{return} conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left};
+2207     \} \textcolor{keywordflow}{else} \{
+2208         \textcolor{keywordflow}{return} max\_packets;
+2209     \}
+2210 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4680603c9714e8742ad580b74ff1d891_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4680603c9714e8742ad580b74ff1d891_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_af0fcda7ce07347179ae4f327489c7643}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!crypto\+\_\+run\+\_\+interval@{crypto\+\_\+run\+\_\+interval}}
+\index{crypto\+\_\+run\+\_\+interval@{crypto\+\_\+run\+\_\+interval}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{crypto\+\_\+run\+\_\+interval}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t crypto\+\_\+run\+\_\+interval (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_af0fcda7ce07347179ae4f327489c7643}
+
+
+Definition at line 2491 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::current\+\_\+sleep\+\_\+time.
+
+
+
+Referenced by messenger\+\_\+run\+\_\+interval().
+
+
+\begin{DoxyCode}
+2492 \{
+2493     \textcolor{keywordflow}{return} c->\hyperlink{struct_net___crypto_a86823a02e323235811eada4755e3f81e}{current\_sleep\_time};
+2494 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_af0fcda7ce07347179ae4f327489c7643_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a8ced352d973b7f835224854ef97f4407}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!cryptpacket\+\_\+received@{cryptpacket\+\_\+received}}
+\index{cryptpacket\+\_\+received@{cryptpacket\+\_\+received}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{cryptpacket\+\_\+received}]{\setlength{\rightskip}{0pt plus 5cm}int cryptpacket\+\_\+received (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{uint32\+\_\+t}]{packet\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a8ced352d973b7f835224854ef97f4407}
+
+
+Definition at line 2262 of file net\+\_\+crypto.\+c.
+
+
+
+References Packets\+\_\+\+Array\+::buffer\+\_\+end, Packets\+\_\+\+Array\+::buffer\+\_\+start, get\+\_\+crypto\+\_\+connection(), num, and Crypto\+\_\+\+Connection\+::send\+\_\+array.
+
+
+
+Referenced by friend\+\_\+received\+\_\+packet().
+
+
+\begin{DoxyCode}
+2263 \{
+2264     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2265 
+2266     \textcolor{keywordflow}{if} (conn == 0)
+2267         \textcolor{keywordflow}{return} -1;
+2268 
+2269     uint32\_t \hyperlink{tox__test_8c_abea371f9030e15a5d2a4c181576833d8}{num} = conn->\hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array}.\hyperlink{struct_packets___array_a66d710e0093872b26ee80118c1a85d99}{buffer\_end} - conn->
+      \hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array}.\hyperlink{struct_packets___array_a85973b335814248c05f63543876b348e}{buffer\_start};
+2270     uint32\_t num1 = packet\_number - conn->\hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array}.\hyperlink{struct_packets___array_a85973b335814248c05f63543876b348e}{buffer\_start};
+2271 
+2272     \textcolor{keywordflow}{if} (num < num1) \{
+2273         \textcolor{keywordflow}{return} 0;
+2274     \} \textcolor{keywordflow}{else} \{
+2275         \textcolor{keywordflow}{return} -1;
+2276     \}
+2277 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8ced352d973b7f835224854ef97f4407_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8ced352d973b7f835224854ef97f4407_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a6fa028eb320bf09ecd619c5053580436}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!do\+\_\+net\+\_\+crypto@{do\+\_\+net\+\_\+crypto}}
+\index{do\+\_\+net\+\_\+crypto@{do\+\_\+net\+\_\+crypto}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{do\+\_\+net\+\_\+crypto}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+net\+\_\+crypto (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a6fa028eb320bf09ecd619c5053580436}
+
+
+Definition at line 2497 of file net\+\_\+crypto.\+c.
+
+
+
+References do\+\_\+tcp(), kill\+\_\+timedout(), send\+\_\+crypto\+\_\+packets(), and unix\+\_\+time\+\_\+update().
+
+
+
+Referenced by do\+\_\+messenger().
+
+
+\begin{DoxyCode}
+2498 \{
+2499     \hyperlink{util_8c_a849af10dd491723cf3abdef599846897}{unix\_time\_update}();
+2500     \hyperlink{net__crypto_8c_acb48e059ed89d52de983ac4c59fcde06}{kill\_timedout}(c);
+2501     \hyperlink{net__crypto_8c_adf499e22f45244e3660f9da6de77d2a3}{do\_tcp}(c);
+2502     \hyperlink{net__crypto_8c_ad0fc252748fecbb499c4b01706476a77}{send\_crypto\_packets}(c);
+2503 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a6fa028eb320bf09ecd619c5053580436_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a6fa028eb320bf09ecd619c5053580436_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ad1a4103f75eb81ae93a0f1701b259db0}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number@{get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number}}
+\index{get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number@{get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+random\+\_\+tcp\+\_\+con\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ad1a4103f75eb81ae93a0f1701b259db0}
+
+
+Definition at line 1810 of file net\+\_\+crypto.\+c.
+
+
+
+References get\+\_\+random\+\_\+tcp\+\_\+onion\+\_\+conn\+\_\+number(), Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by random\+\_\+nodes\+\_\+path\+\_\+onion().
+
+
+\begin{DoxyCode}
+1811 \{
+1812     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1813     \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__connection_8c_a84992bb55c148bb9f7a1b442d255865f}{get\_random\_tcp\_onion\_conn\_number}(c->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c});
+1814     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1815 
+1816     \textcolor{keywordflow}{return} ret;
+1817 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{de/d42/net__crypto_8h_ad1a4103f75eb81ae93a0f1701b259db0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ad1a4103f75eb81ae93a0f1701b259db0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_abb3546495adde3f08c0474f31c5d3a37}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!kill\+\_\+net\+\_\+crypto@{kill\+\_\+net\+\_\+crypto}}
+\index{kill\+\_\+net\+\_\+crypto@{kill\+\_\+net\+\_\+crypto}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{kill\+\_\+net\+\_\+crypto}]{\setlength{\rightskip}{0pt plus 5cm}void kill\+\_\+net\+\_\+crypto (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_abb3546495adde3f08c0474f31c5d3a37}
+
+
+Definition at line 2505 of file net\+\_\+crypto.\+c.
+
+
+
+References bs\+\_\+list\+\_\+free(), Net\+\_\+\+Crypto\+::connections\+\_\+mutex, Net\+\_\+\+Crypto\+::crypto\+\_\+connections\+\_\+length, crypto\+\_\+kill(), Net\+\_\+\+Crypto\+::dht, i, Net\+\_\+\+Crypto\+::ip\+\_\+port\+\_\+list, kill\+\_\+tcp\+\_\+connections(), D\+H\+T\+::net, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S, networking\+\_\+registerhandler(), Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by kill\+\_\+messenger(), kill\+\_\+onions(), and new\+\_\+messenger().
+
+
+\begin{DoxyCode}
+2506 \{
+2507     uint32\_t \hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i};
+2508 
+2509     \textcolor{keywordflow}{for} (i = 0; i < c->\hyperlink{struct_net___crypto_a9c91c3c65885a2bd39d0f864b9a5ddb9}{crypto\_connections\_length}; ++\hyperlink{toxav__many__test_8c_acb559820d9ca11295b4500f179ef6392}{i}) \{
+2510         \hyperlink{net__crypto_8c_a16c3a0008512675dad8eb00ff1822763}{crypto\_kill}(c, i);
+2511     \}
+2512 
+2513     pthread\_mutex\_destroy(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+2514     pthread\_mutex\_destroy(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2515 
+2516     \hyperlink{_t_c_p__connection_8c_a6938788005ebe33a896755ac2b9f501a}{kill\_tcp\_connections}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c});
+2517     \hyperlink{list_8c_a20f4503183113923cd946fc04bf8f2b4}{bs\_list\_free}(&c->\hyperlink{struct_net___crypto_ae8cfe94df9c9030bbc525010603450ac}{ip\_port\_list});
+2518     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(c->\hyperlink{struct_net___crypto_a8b3d6ce8745acc52695e252bdb1531b6}{dht}->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_a3ad6d83af0ed67a84b327df50d66229c}{NET\_PACKET\_COOKIE\_REQUEST}, NULL, NULL);
+2519     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(c->\hyperlink{struct_net___crypto_a8b3d6ce8745acc52695e252bdb1531b6}{dht}->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_a1162e12ce54e50cb3744e2cf69553565}{NET\_PACKET\_COOKIE\_RESPONSE}, NULL, NULL);
+2520     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(c->\hyperlink{struct_net___crypto_a8b3d6ce8745acc52695e252bdb1531b6}{dht}->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_ae4ba32f7f36e935bd3a56b5e90299857}{NET\_PACKET\_CRYPTO\_HS}, NULL, NULL);
+2521     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(c->\hyperlink{struct_net___crypto_a8b3d6ce8745acc52695e252bdb1531b6}{dht}->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_abd68cd32dfdf6a1e0407967df0c10a9e}{NET\_PACKET\_CRYPTO\_DATA}, NULL, NULL);
+2522     memset(c, 0, \textcolor{keyword}{sizeof}(\hyperlink{struct_net___crypto}{Net\_Crypto}));
+2523     free(c);
+2524 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_abb3546495adde3f08c0474f31c5d3a37_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_abb3546495adde3f08c0474f31c5d3a37_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ac8131842eafef1819a6e6da5404e3234}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!load\+\_\+secret\+\_\+key@{load\+\_\+secret\+\_\+key}}
+\index{load\+\_\+secret\+\_\+key@{load\+\_\+secret\+\_\+key}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{load\+\_\+secret\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}void load\+\_\+secret\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{const uint8\+\_\+t $\ast$}]{sk}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ac8131842eafef1819a6e6da5404e3234}
+
+
+Definition at line 2405 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::self\+\_\+public\+\_\+key, and Net\+\_\+\+Crypto\+::self\+\_\+secret\+\_\+key.
+
+
+
+Referenced by messenger\+\_\+load\+\_\+state\+\_\+callback(), and tox\+\_\+new().
+
+
+\begin{DoxyCode}
+2406 \{
+2407     memcpy(c->\hyperlink{struct_net___crypto_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, sk, crypto\_box\_SECRETKEYBYTES);
+2408     crypto\_scalarmult\_curve25519\_base(c->\hyperlink{struct_net___crypto_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, c->
+      \hyperlink{struct_net___crypto_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key});
+2409 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ac8131842eafef1819a6e6da5404e3234_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ac2a5448ebee4fd4f8fd32cc7e3ac69c0}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!max\+\_\+speed\+\_\+reached@{max\+\_\+speed\+\_\+reached}}
+\index{max\+\_\+speed\+\_\+reached@{max\+\_\+speed\+\_\+reached}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{max\+\_\+speed\+\_\+reached}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+Bool max\+\_\+speed\+\_\+reached (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ac2a5448ebee4fd4f8fd32cc7e3ac69c0}
+
+
+Definition at line 2188 of file net\+\_\+crypto.\+c.
+
+
+
+References reset\+\_\+max\+\_\+speed\+\_\+reached().
+
+
+
+Referenced by do\+\_\+reqchunk\+\_\+filecb().
+
+
+\begin{DoxyCode}
+2189 \{
+2190     \textcolor{keywordflow}{return} \hyperlink{net__crypto_8c_abb8a6ea2bdfb75eb366cc0a026649e2c}{reset\_max\_speed\_reached}(c, crypt\_connection\_id) != 0;
+2191 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ac2a5448ebee4fd4f8fd32cc7e3ac69c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ac2a5448ebee4fd4f8fd32cc7e3ac69c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a92ed6dc36b6e6996387b7542fc2580fa}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!nc\+\_\+dht\+\_\+pk\+\_\+callback@{nc\+\_\+dht\+\_\+pk\+\_\+callback}}
+\index{nc\+\_\+dht\+\_\+pk\+\_\+callback@{nc\+\_\+dht\+\_\+pk\+\_\+callback}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{nc\+\_\+dht\+\_\+pk\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}int nc\+\_\+dht\+\_\+pk\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{void($\ast$)(void $\ast$data, int32\+\_\+t number, const uint8\+\_\+t $\ast$dht\+\_\+public\+\_\+key)}]{function, }
+\item[{void $\ast$}]{object, }
+\item[{uint32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a92ed6dc36b6e6996387b7542fc2580fa}
+
+
+Definition at line 1961 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::dht\+\_\+pk\+\_\+callback, Crypto\+\_\+\+Connection\+::dht\+\_\+pk\+\_\+callback\+\_\+number, Crypto\+\_\+\+Connection\+::dht\+\_\+pk\+\_\+callback\+\_\+object, and get\+\_\+crypto\+\_\+connection().
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1963 \{
+1964     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1965 
+1966     \textcolor{keywordflow}{if} (conn == 0)
+1967         \textcolor{keywordflow}{return} -1;
+1968 
+1969     conn->\hyperlink{struct_crypto___connection_ab0f780a41ece58bf84d8460e71cbdbb3}{dht\_pk\_callback} = \textcolor{keyword}{function};
+1970     conn->\hyperlink{struct_crypto___connection_ab5d618d73b8d83fb07209433e7b448ee}{dht\_pk\_callback\_object} = object;
+1971     conn->\hyperlink{struct_crypto___connection_ab0413da421baacf312141b8ae3ec7762}{dht\_pk\_callback\_number} = number;
+1972     \textcolor{keywordflow}{return} 0;
+1973 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a92ed6dc36b6e6996387b7542fc2580fa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a92ed6dc36b6e6996387b7542fc2580fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_adaa8cd47d0ede85ca13626e91d2e995d}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!new\+\_\+connection\+\_\+handler@{new\+\_\+connection\+\_\+handler}}
+\index{new\+\_\+connection\+\_\+handler@{new\+\_\+connection\+\_\+handler}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{new\+\_\+connection\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}void new\+\_\+connection\+\_\+handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int($\ast$)(void $\ast$object, {\bf New\+\_\+\+Connection} $\ast$n\+\_\+c)}]{new\+\_\+connection\+\_\+callback, }
+\item[{void $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_adaa8cd47d0ede85ca13626e91d2e995d}
+
+
+Definition at line 1502 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::new\+\_\+connection\+\_\+callback, and Net\+\_\+\+Crypto\+::new\+\_\+connection\+\_\+callback\+\_\+object.
+
+
+
+Referenced by new\+\_\+friend\+\_\+connections().
+
+
+\begin{DoxyCode}
+1504 \{
+1505     c->\hyperlink{struct_net___crypto_a4e2c131b4a4b4ccb2acc140c29c628be}{new\_connection\_callback} = new\_connection\_callback;
+1506     c->\hyperlink{struct_net___crypto_af28bac95ede5cab8426b07e02dd1a1b0}{new\_connection\_callback\_object} = object;
+1507 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_adaa8cd47d0ede85ca13626e91d2e995d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ae09413aa94644bc88bf73b88f48ef814}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!new\+\_\+crypto\+\_\+connection@{new\+\_\+crypto\+\_\+connection}}
+\index{new\+\_\+crypto\+\_\+connection@{new\+\_\+crypto\+\_\+connection}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{new\+\_\+crypto\+\_\+connection}]{\setlength{\rightskip}{0pt plus 5cm}int new\+\_\+crypto\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{const uint8\+\_\+t $\ast$}]{real\+\_\+public\+\_\+key, }
+\item[{const uint8\+\_\+t $\ast$}]{dht\+\_\+public\+\_\+key}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ae09413aa94644bc88bf73b88f48ef814}
+
+
+Definition at line 1623 of file net\+\_\+crypto.\+c.
+
+
+
+References Crypto\+\_\+\+Connection\+::connection\+\_\+number\+\_\+tcp, C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+E\+N\+G\+T\+H, Crypto\+\_\+\+Connection\+::cookie\+\_\+request\+\_\+number, create\+\_\+cookie\+\_\+request(), create\+\_\+crypto\+\_\+connection(), C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+I\+N\+G, C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+N\+O\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N, Net\+\_\+\+Crypto\+::crypto\+\_\+connections, C\+R\+Y\+P\+T\+O\+\_\+\+M\+I\+N\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+T\+H, C\+R\+Y\+P\+T\+O\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+M\+I\+N\+\_\+\+R\+A\+T\+E, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+I\+N\+G\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N, Crypto\+\_\+\+Connection\+::dht\+\_\+public\+\_\+key, getcryptconnection\+\_\+id(), kill\+\_\+tcp\+\_\+connection\+\_\+to(), new\+\_\+tcp\+\_\+connection\+\_\+to(), new\+\_\+temp\+\_\+packet(), Crypto\+\_\+\+Connection\+::packet\+\_\+send\+\_\+rate, Crypto\+\_\+\+Connection\+::packets\+\_\+left, Crypto\+\_\+\+Connection\+::public\+\_\+key, random\+\_\+64b(), random\+\_\+nonce(), Crypto\+\_\+\+Connection\+::rtt\+\_\+time, Crypto\+\_\+\+Connection\+::sent\+\_\+nonce, Crypto\+\_\+\+Connection\+::sessionpublic\+\_\+key, Crypto\+\_\+\+Connection\+::sessionsecret\+\_\+key, Crypto\+\_\+\+Connection\+::shared\+\_\+key, Crypto\+\_\+\+Connection\+::status, Net\+\_\+\+Crypto\+::tcp\+\_\+c, and Net\+\_\+\+Crypto\+::tcp\+\_\+mutex.
+
+
+
+Referenced by friend\+\_\+new\+\_\+connection().
+
+
+\begin{DoxyCode}
+1624 \{
+1625     \textcolor{keywordtype}{int} crypt\_connection\_id = \hyperlink{net__crypto_8c_a2a46344fe22f21eea9d777b12918e257}{getcryptconnection\_id}(c, real\_public\_key);
+1626 
+1627     \textcolor{keywordflow}{if} (crypt\_connection\_id != -1)
+1628         \textcolor{keywordflow}{return} crypt\_connection\_id;
+1629 
+1630     crypt\_connection\_id = \hyperlink{net__crypto_8c_aed34560fc11f32d1b280d00152655b9b}{create\_crypto\_connection}(c);
+1631 
+1632     \textcolor{keywordflow}{if} (crypt\_connection\_id == -1)
+1633         \textcolor{keywordflow}{return} -1;
+1634 
+1635     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = &c->\hyperlink{struct_net___crypto_a13fdc865b8a114466ba136f5390ec1b2}{crypto\_connections}[crypt\_connection\_id
+      ];
+1636 
+1637     \textcolor{keywordflow}{if} (conn == 0)
+1638         \textcolor{keywordflow}{return} -1;
+1639 
+1640     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1641     \textcolor{keywordtype}{int} connection\_number\_tcp = \hyperlink{_t_c_p__connection_8c_a22c797c7e0ef3ad66e171f05b1cb52bd}{new\_tcp\_connection\_to}(c->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, dht\_public\_key, crypt\_connection\_id);
+1642     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1643 
+1644     \textcolor{keywordflow}{if} (connection\_number\_tcp == -1)
+1645         \textcolor{keywordflow}{return} -1;
+1646 
+1647     conn->\hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp} = connection\_number\_tcp;
+1648     memcpy(conn->\hyperlink{struct_crypto___connection_aaa806bb1136fb3d4b5d8d8970b596ff7}{public\_key}, real\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+1649     \hyperlink{crypto__core_8c_a15ef255ab026d4881a16b99148b05dd7}{random\_nonce}(conn->\hyperlink{struct_crypto___connection_a9df0e00e8f493ed6cd1ff45e7da33c0d}{sent\_nonce});
+1650     crypto\_box\_keypair(conn->\hyperlink{struct_crypto___connection_a6e74fbae398c7966800ee80f7b93dbfa}{sessionpublic\_key}, conn->
+      \hyperlink{struct_crypto___connection_a5f38fc9ff1b20b61ffbb56d9e7f5c892}{sessionsecret\_key});
+1651     conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{net__crypto_8h_a3982349ee55b611d39ef3014e739e403}{CRYPTO\_CONN\_COOKIE\_REQUESTING};
+1652     conn->\hyperlink{struct_crypto___connection_a8358768a02871910ed059b1b2646438e}{packet\_send\_rate} = \hyperlink{net__crypto_8h_ab329443d2f5643d95e6034542fcb82f3}{CRYPTO\_PACKET\_MIN\_RATE};
+1653     conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left} = \hyperlink{net__crypto_8h_ab0d2e7f3b3f18b516bb0a512c91b2914}{CRYPTO\_MIN\_QUEUE\_LENGTH};
+1654     conn->\hyperlink{struct_crypto___connection_ae88ec876060fbc648a4c75ac596137f9}{rtt\_time} = \hyperlink{net__crypto_8h_aa737ddb8e565b8959c9d30398907026e}{DEFAULT\_PING\_CONNECTION};
+1655     memcpy(conn->\hyperlink{struct_crypto___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, dht\_public\_key, crypto\_box\_PUBLICKEYBYTES);
+1656 
+1657     conn->\hyperlink{struct_crypto___connection_acb77d5443961bf245b63c17347b1b030}{cookie\_request\_number} = \hyperlink{crypto__core_8c_a1ce51b34ab2247e750b9c2a25121eb9e}{random\_64b}();
+1658     uint8\_t cookie\_request[\hyperlink{net__crypto_8c_a25d19522f8fdd8da8932746bcf11e8aa}{COOKIE\_REQUEST\_LENGTH}];
+1659 
+1660     \textcolor{keywordflow}{if} (\hyperlink{net__crypto_8c_a5b67a38d23f1bbe5ff0ba96ea57520a4}{create\_cookie\_request}(c, cookie\_request, conn->
+      \hyperlink{struct_crypto___connection_ab2ecaa07625ad0ed5e07d3a1f0dcc939}{dht\_public\_key}, conn->\hyperlink{struct_crypto___connection_acb77d5443961bf245b63c17347b1b030}{cookie\_request\_number},
+1661                               conn->\hyperlink{struct_crypto___connection_a81ead9fac55a0cedc30a96253a2c5119}{shared\_key}) != \textcolor{keyword}{sizeof}(cookie\_request)
+1662             || \hyperlink{net__crypto_8c_aa762d8aa84aa2c0a9cd48fa3d93856b1}{new\_temp\_packet}(c, crypt\_connection\_id, cookie\_request, \textcolor{keyword}{sizeof}(cookie\_request
+      )) != 0) \{
+1663         pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1664         \hyperlink{_t_c_p__connection_8c_a2369688a49bef46cb2029b3bb680e11d}{kill\_tcp\_connection\_to}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, conn->
+      \hyperlink{struct_crypto___connection_a51666aaba0fc5680040fe5bd6778bc50}{connection\_number\_tcp});
+1665         pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1666         conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} = \hyperlink{net__crypto_8h_ab974dcadabde124fab5287024341f7a1}{CRYPTO\_CONN\_NO\_CONNECTION};
+1667         \textcolor{keywordflow}{return} -1;
+1668     \}
+1669 
+1670     \textcolor{keywordflow}{return} crypt\_connection\_id;
+1671 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ae09413aa94644bc88bf73b88f48ef814_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ae09413aa94644bc88bf73b88f48ef814_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_abcede595fdf06772b76f60792c82ed2b}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!new\+\_\+keys@{new\+\_\+keys}}
+\index{new\+\_\+keys@{new\+\_\+keys}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{new\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}void new\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_abcede595fdf06772b76f60792c82ed2b}
+
+
+Definition at line 2386 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::self\+\_\+public\+\_\+key, and Net\+\_\+\+Crypto\+::self\+\_\+secret\+\_\+key.
+
+
+
+Referenced by new\+\_\+net\+\_\+crypto().
+
+
+\begin{DoxyCode}
+2387 \{
+2388     crypto\_box\_keypair(c->\hyperlink{struct_net___crypto_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, c->\hyperlink{struct_net___crypto_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key});
+2389 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_abcede595fdf06772b76f60792c82ed2b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a5e46c6f42e93e2aa968f8f63de90a53c}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!new\+\_\+net\+\_\+crypto@{new\+\_\+net\+\_\+crypto}}
+\index{new\+\_\+net\+\_\+crypto@{new\+\_\+net\+\_\+crypto}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{new\+\_\+net\+\_\+crypto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+\_\+\+Crypto}$\ast$ new\+\_\+net\+\_\+crypto (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+H\+T} $\ast$}]{dht, }
+\item[{{\bf T\+C\+P\+\_\+\+Proxy\+\_\+\+Info} $\ast$}]{proxy\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a5e46c6f42e93e2aa968f8f63de90a53c}
+
+
+Definition at line 2414 of file net\+\_\+crypto.\+c.
+
+
+
+References bs\+\_\+list\+\_\+init(), Net\+\_\+\+Crypto\+::connections\+\_\+mutex, create\+\_\+recursive\+\_\+mutex(), C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+N\+D\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L, Net\+\_\+\+Crypto\+::current\+\_\+sleep\+\_\+time, Net\+\_\+\+Crypto\+::dht, Messenger\+::dht, Net\+\_\+\+Crypto\+::ip\+\_\+port\+\_\+list, kill\+\_\+tcp\+\_\+connections(), D\+H\+T\+::net, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A, N\+E\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+H\+S, networking\+\_\+registerhandler(), new\+\_\+keys(), new\+\_\+symmetric\+\_\+key(), new\+\_\+tcp\+\_\+connections(), Net\+\_\+\+Crypto\+::secret\+\_\+symmetric\+\_\+key, D\+H\+T\+::self\+\_\+secret\+\_\+key, set\+\_\+oob\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback(), set\+\_\+packet\+\_\+tcp\+\_\+connection\+\_\+callback(), Net\+\_\+\+Crypto\+::tcp\+\_\+c, tcp\+\_\+data\+\_\+callback(), Net\+\_\+\+Crypto\+::tcp\+\_\+mutex, tcp\+\_\+oob\+\_\+callback(), udp\+\_\+handle\+\_\+cookie\+\_\+request(), udp\+\_\+handle\+\_\+packet(), and unix\+\_\+time\+\_\+update().
+
+
+
+Referenced by new\+\_\+messenger(), and new\+\_\+onions().
+
+
+\begin{DoxyCode}
+2415 \{
+2416     \hyperlink{util_8c_a849af10dd491723cf3abdef599846897}{unix\_time\_update}();
+2417 
+2418     \textcolor{keywordflow}{if} (dht == NULL)
+2419         \textcolor{keywordflow}{return} NULL;
+2420 
+2421     \hyperlink{struct_net___crypto}{Net\_Crypto} *temp = calloc(1, \textcolor{keyword}{sizeof}(\hyperlink{struct_net___crypto}{Net\_Crypto}));
+2422 
+2423     \textcolor{keywordflow}{if} (temp == NULL)
+2424         \textcolor{keywordflow}{return} NULL;
+2425 
+2426     temp->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c} = \hyperlink{_t_c_p__connection_8c_a3526d187a2a8f91d672f0bde2dff4633}{new\_tcp\_connections}(dht->
+      \hyperlink{struct_d_h_t_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, proxy\_info);
+2427 
+2428     \textcolor{keywordflow}{if} (temp->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c} == NULL) \{
+2429         free(temp);
+2430         \textcolor{keywordflow}{return} NULL;
+2431     \}
+2432 
+2433     \hyperlink{_t_c_p__connection_8c_afdea860d77b12c79ee24c3ade58d4ac6}{set\_packet\_tcp\_connection\_callback}(temp->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, &\hyperlink{net__crypto_8c_ab2eaad4448a5deca58a00316b522e380}{tcp\_data\_callback}, temp);
+2434     \hyperlink{_t_c_p__connection_8c_a13df5ebd6110288f192070b8c1c28328}{set\_oob\_packet\_tcp\_connection\_callback}(temp->
+      \hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, &\hyperlink{net__crypto_8c_a86a3ff661a8b9b10fd7c0daee3901091}{tcp\_oob\_callback}, temp);
+2435 
+2436     \textcolor{keywordflow}{if} (\hyperlink{util_8c_a2f0ae269c015342e2d29a251237ccce2}{create\_recursive\_mutex}(&temp->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex}) != 0 ||
+2437             pthread\_mutex\_init(&temp->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex}, NULL) != 0) \{
+2438         \hyperlink{_t_c_p__connection_8c_a6938788005ebe33a896755ac2b9f501a}{kill\_tcp\_connections}(temp->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c});
+2439         free(temp);
+2440         \textcolor{keywordflow}{return} NULL;
+2441     \}
+2442 
+2443     temp->\hyperlink{struct_net___crypto_a8b3d6ce8745acc52695e252bdb1531b6}{dht} = dht;
+2444 
+2445     \hyperlink{net__crypto_8c_abcede595fdf06772b76f60792c82ed2b}{new\_keys}(temp);
+2446     \hyperlink{crypto__core_8c_a89b4a1a4a7d8bfabdf0e1b60f074e531}{new\_symmetric\_key}(temp->\hyperlink{struct_net___crypto_ab9f2ff47bc0b1e5110202a6e4be86390}{secret\_symmetric\_key});
+2447 
+2448     temp->\hyperlink{struct_net___crypto_a86823a02e323235811eada4755e3f81e}{current\_sleep\_time} = \hyperlink{net__crypto_8h_a22cf528ff4b695034a0f38e6ea1cc40e}{CRYPTO\_SEND\_PACKET\_INTERVAL};
+2449 
+2450     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_a3ad6d83af0ed67a84b327df50d66229c}{NET\_PACKET\_COOKIE\_REQUEST}, &\hyperlink{net__crypto_8c_a04fc41a4cb0d904536626006f3b7d7dd}{udp\_handle\_cookie\_request}, 
+      temp);
+2451     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_a1162e12ce54e50cb3744e2cf69553565}{NET\_PACKET\_COOKIE\_RESPONSE}, &\hyperlink{net__crypto_8c_a812ca8a7291e22ce343669c9835c7c12}{udp\_handle\_packet}, temp);
+2452     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_ae4ba32f7f36e935bd3a56b5e90299857}{NET\_PACKET\_CRYPTO\_HS}, &\hyperlink{net__crypto_8c_a812ca8a7291e22ce343669c9835c7c12}{udp\_handle\_packet}, temp);
+2453     \hyperlink{network_8c_a230a192ca9463ec4985d4f86de439733}{networking\_registerhandler}(dht->\hyperlink{struct_d_h_t_aa14ea2f67950f57fe4235d7375a2216c}{net}, 
+      \hyperlink{network_8h_abd68cd32dfdf6a1e0407967df0c10a9e}{NET\_PACKET\_CRYPTO\_DATA}, &\hyperlink{net__crypto_8c_a812ca8a7291e22ce343669c9835c7c12}{udp\_handle\_packet}, temp);
+2454 
+2455     \hyperlink{list_8c_a7b07772cffb6af34e279f424dca08895}{bs\_list\_init}(&temp->\hyperlink{struct_net___crypto_ae8cfe94df9c9030bbc525010603450ac}{ip\_port\_list}, \textcolor{keyword}{sizeof}(\hyperlink{struct_i_p___port}{IP\_Port}), 8);
+2456 
+2457     \textcolor{keywordflow}{return} temp;
+2458 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a5e46c6f42e93e2aa968f8f63de90a53c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a5e46c6f42e93e2aa968f8f63de90a53c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ae2f39ed236b85952fa913fdac1785671}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!save\+\_\+keys@{save\+\_\+keys}}
+\index{save\+\_\+keys@{save\+\_\+keys}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{save\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}void save\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{const {\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{uint8\+\_\+t $\ast$}]{keys}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ae2f39ed236b85952fa913fdac1785671}
+
+
+Definition at line 2396 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::self\+\_\+public\+\_\+key, and Net\+\_\+\+Crypto\+::self\+\_\+secret\+\_\+key.
+
+
+
+Referenced by messenger\+\_\+save().
+
+
+\begin{DoxyCode}
+2397 \{
+2398     memcpy(keys, c->\hyperlink{struct_net___crypto_ae726df8bdc26380e5a6c3187a00d6881}{self\_public\_key}, crypto\_box\_PUBLICKEYBYTES);
+2399     memcpy(keys + crypto\_box\_PUBLICKEYBYTES, c->\hyperlink{struct_net___crypto_aa05050f86513ff53fe9da81f73c72267}{self\_secret\_key}, crypto\_box\_SECRETKEYBYTES);
+2400 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ae2f39ed236b85952fa913fdac1785671_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a7fcdf763c4a1b4b71e0de620b12f074c}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!send\+\_\+lossy\+\_\+cryptpacket@{send\+\_\+lossy\+\_\+cryptpacket}}
+\index{send\+\_\+lossy\+\_\+cryptpacket@{send\+\_\+lossy\+\_\+cryptpacket}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{send\+\_\+lossy\+\_\+cryptpacket}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+lossy\+\_\+cryptpacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a7fcdf763c4a1b4b71e0de620b12f074c}
+
+
+Definition at line 2284 of file net\+\_\+crypto.\+c.
+
+
+
+References Packets\+\_\+\+Array\+::buffer\+\_\+end, Packets\+\_\+\+Array\+::buffer\+\_\+start, Net\+\_\+\+Crypto\+::connection\+\_\+use\+\_\+counter, Net\+\_\+\+Crypto\+::connections\+\_\+mutex, get\+\_\+crypto\+\_\+connection(), M\+A\+X\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+Z\+E, Crypto\+\_\+\+Connection\+::mutex, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+I\+Z\+E, P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T, Crypto\+\_\+\+Connection\+::recv\+\_\+array, Crypto\+\_\+\+Connection\+::send\+\_\+array, and send\+\_\+data\+\_\+packet\+\_\+helper().
+
+
+
+Referenced by send\+\_\+custom\+\_\+lossy\+\_\+packet(), and send\+\_\+lossy\+\_\+group\+\_\+peer().
+
+
+\begin{DoxyCode}
+2285 \{
+2286     \textcolor{keywordflow}{if} (length == 0 || length > \hyperlink{net__crypto_8h_a1b6e5122f9fdc5ef548ccf920f0c246e}{MAX\_CRYPTO\_DATA\_SIZE})
+2287         \textcolor{keywordflow}{return} -1;
+2288 
+2289     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] < \hyperlink{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}{PACKET\_ID\_LOSSY\_RANGE\_START})
+2290         \textcolor{keywordflow}{return} -1;
+2291 
+2292     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] >= (\hyperlink{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}{PACKET\_ID\_LOSSY\_RANGE\_START} + 
+      \hyperlink{net__crypto_8h_a97668dde651012b4dffe599cd0df333b}{PACKET\_ID\_LOSSY\_RANGE\_SIZE}))
+2293         \textcolor{keywordflow}{return} -1;
+2294 
+2295     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2296     ++c->\hyperlink{struct_net___crypto_ab5be057850e1cee67902276a69900326}{connection\_use\_counter};
+2297     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2298 
+2299     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2300 
+2301     \textcolor{keywordtype}{int} ret = -1;
+2302 
+2303     \textcolor{keywordflow}{if} (conn) \{
+2304         pthread\_mutex\_lock(&conn->\hyperlink{struct_crypto___connection_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex});
+2305         uint32\_t buffer\_start = conn->\hyperlink{struct_crypto___connection_a1a62bc0c4bb9e349735c65f9948020d5}{recv\_array}.\hyperlink{struct_packets___array_a85973b335814248c05f63543876b348e}{buffer\_start};
+2306         uint32\_t buffer\_end = conn->\hyperlink{struct_crypto___connection_aa9112ee7e76eb3e870491f7c5c272197}{send\_array}.\hyperlink{struct_packets___array_a66d710e0093872b26ee80118c1a85d99}{buffer\_end};
+2307         pthread\_mutex\_unlock(&conn->\hyperlink{struct_crypto___connection_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex});
+2308         ret = \hyperlink{net__crypto_8c_a572e703b36ffafdc4cf9dafd31a279d7}{send\_data\_packet\_helper}(c, crypt\_connection\_id, buffer\_start, 
+      buffer\_end, \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+2309     \}
+2310 
+2311     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2312     --c->\hyperlink{struct_net___crypto_ab5be057850e1cee67902276a69900326}{connection\_use\_counter};
+2313     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a213135bf3b5b80b1cfe99b27dc42815e}{connections\_mutex});
+2314 
+2315     \textcolor{keywordflow}{return} ret;
+2316 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a7fcdf763c4a1b4b71e0de620b12f074c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a7fcdf763c4a1b4b71e0de620b12f074c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a4c1d29e0d6cd3c6d9dd8b613f2cc3afb}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!send\+\_\+tcp\+\_\+onion\+\_\+request@{send\+\_\+tcp\+\_\+onion\+\_\+request}}
+\index{send\+\_\+tcp\+\_\+onion\+\_\+request@{send\+\_\+tcp\+\_\+onion\+\_\+request}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{send\+\_\+tcp\+\_\+onion\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int send\+\_\+tcp\+\_\+onion\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{unsigned int}]{T\+C\+P\+\_\+conn\+\_\+number, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a4c1d29e0d6cd3c6d9dd8b613f2cc3afb}
+
+
+Definition at line 1824 of file net\+\_\+crypto.\+c.
+
+
+
+References Net\+\_\+\+Crypto\+::tcp\+\_\+c, Net\+\_\+\+Crypto\+::tcp\+\_\+mutex, and tcp\+\_\+send\+\_\+onion\+\_\+request().
+
+
+
+Referenced by send\+\_\+onion\+\_\+packet\+\_\+tcp\+\_\+udp().
+
+
+\begin{DoxyCode}
+1825 \{
+1826     pthread\_mutex\_lock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1827     \textcolor{keywordtype}{int} ret = \hyperlink{_t_c_p__connection_8c_afb1a507e5f1af925b01666f1b9b4960a}{tcp\_send\_onion\_request}(c->\hyperlink{struct_net___crypto_a179982a02be89eaf6617ed81bd3c0961}{tcp\_c}, tcp\_connections\_number, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length);
+1828     pthread\_mutex\_unlock(&c->\hyperlink{struct_net___crypto_a2e8f7f4dff2f2fc4ac2cc32b0c886974}{tcp\_mutex});
+1829 
+1830     \textcolor{keywordflow}{return} ret;
+1831 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4c1d29e0d6cd3c6d9dd8b613f2cc3afb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a4c1d29e0d6cd3c6d9dd8b613f2cc3afb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_a8ced4e168a95db5708bf4b3095cb4df6}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!set\+\_\+direct\+\_\+ip\+\_\+port@{set\+\_\+direct\+\_\+ip\+\_\+port}}
+\index{set\+\_\+direct\+\_\+ip\+\_\+port@{set\+\_\+direct\+\_\+ip\+\_\+port}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{set\+\_\+direct\+\_\+ip\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+direct\+\_\+ip\+\_\+port (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{{\bf I\+P\+\_\+\+Port}}]{ip\+\_\+port, }
+\item[{\+\_\+\+Bool}]{connected}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_a8ced4e168a95db5708bf4b3095cb4df6}
+
+
+Definition at line 1680 of file net\+\_\+crypto.\+c.
+
+
+
+References bs\+\_\+list\+\_\+add(), bs\+\_\+list\+\_\+remove(), Crypto\+\_\+\+Connection\+::direct\+\_\+lastrecv\+\_\+time, I\+P\+::family, get\+\_\+crypto\+\_\+connection(), I\+P\+\_\+\+Port\+::ip, Crypto\+\_\+\+Connection\+::ip\+\_\+port, Net\+\_\+\+Crypto\+::ip\+\_\+port\+\_\+list, ipport\+\_\+equal(), L\+A\+N\+\_\+ip(), U\+D\+P\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T, and unix\+\_\+time().
+
+
+
+Referenced by dht\+\_\+ip\+\_\+callback(), do\+\_\+friend\+\_\+connections(), and handle\+\_\+new\+\_\+connections().
+
+
+\begin{DoxyCode}
+1681 \{
+1682     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+1683 
+1684     \textcolor{keywordflow}{if} (conn == 0)
+1685         \textcolor{keywordflow}{return} -1;
+1686 
+1687     \textcolor{keywordflow}{if} (ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET && ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} != AF\_INET6)
+1688         \textcolor{keywordflow}{return} -1;
+1689 
+1690     \textcolor{keywordflow}{if} (!\hyperlink{network_8c_a6913335cf0b2a76303f5f61d18ea2277}{ipport\_equal}(&ip\_port, &conn->\hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port})) \{
+1691         \textcolor{keywordflow}{if} ((\hyperlink{net__crypto_8h_a0c533e2029f9b1bdb8a368a7308253c0}{UDP\_DIRECT\_TIMEOUT} + conn->\hyperlink{struct_crypto___connection_ac6eb8a274b0dedea83359f2d9269cbc2}{direct\_lastrecv\_time}) > 
+      \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}()) \{
+1692             \textcolor{comment}{/* We already know a LAN ip, no need to switch. */}
+1693             \textcolor{keywordflow}{if} (\hyperlink{_l_a_n__discovery_8c_a2d80a53390598eb8ededbc63f4e9c152}{LAN\_ip}(conn->\hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}) == 0)
+1694                 \textcolor{keywordflow}{return} -1;
+1695 
+1696             \textcolor{comment}{/* Prefer ipv6. */}
+1697             \textcolor{keywordflow}{if} (conn->\hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.\hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET6 && ip\_port.\hyperlink{struct_i_p___port_a0c6193a337a223c63411b2fe722d79ec}{ip}.
+      \hyperlink{struct_i_p_adad4493a852deb413bb8c515368deaac}{family} == AF\_INET)
+1698                 \textcolor{keywordflow}{return} -1;
+1699         \}
+1700 
+1701         \textcolor{keywordflow}{if} (\hyperlink{list_8c_ace05755dd126bff18700a17d6f8edd28}{bs\_list\_add}(&c->\hyperlink{struct_net___crypto_ae8cfe94df9c9030bbc525010603450ac}{ip\_port\_list}, (uint8\_t *)&ip\_port, crypt\_connection\_id))
+       \{
+1702             \hyperlink{list_8c_a365995457101cc16f8c6b25ead07fb6f}{bs\_list\_remove}(&c->\hyperlink{struct_net___crypto_ae8cfe94df9c9030bbc525010603450ac}{ip\_port\_list}, (uint8\_t *)&conn->
+      \hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port}, crypt\_connection\_id);
+1703             conn->\hyperlink{struct_crypto___connection_a86e2a5a56c0dd22df6e8b8a10e40f9e4}{ip\_port} = ip\_port;
+1704 
+1705             \textcolor{keywordflow}{if} (connected) \{
+1706                 conn->\hyperlink{struct_crypto___connection_ac6eb8a274b0dedea83359f2d9269cbc2}{direct\_lastrecv\_time} = \hyperlink{util_8c_ac958d9f8847cb8039444bfa3d304233a}{unix\_time}();
+1707             \} \textcolor{keywordflow}{else} \{
+1708                 conn->\hyperlink{struct_crypto___connection_ac6eb8a274b0dedea83359f2d9269cbc2}{direct\_lastrecv\_time} = 0;
+1709             \}
+1710 
+1711             \textcolor{keywordflow}{return} 0;
+1712         \}
+1713     \}
+1714 
+1715     \textcolor{keywordflow}{return} -1;
+1716 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8ced4e168a95db5708bf4b3095cb4df6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_a8ced4e168a95db5708bf4b3095cb4df6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{net__crypto_8h_ab17ccce6d503f75b7d98be214ebd7621}{\index{net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}!write\+\_\+cryptpacket@{write\+\_\+cryptpacket}}
+\index{write\+\_\+cryptpacket@{write\+\_\+cryptpacket}!net\+\_\+crypto.\+h@{net\+\_\+crypto.\+h}}
+\subsubsection[{write\+\_\+cryptpacket}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t write\+\_\+cryptpacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+\_\+\+Crypto} $\ast$}]{c, }
+\item[{int}]{crypt\+\_\+connection\+\_\+id, }
+\item[{const uint8\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{length, }
+\item[{uint8\+\_\+t}]{congestion\+\_\+control}
+\end{DoxyParamCaption}
+)}}\label{net__crypto_8h_ab17ccce6d503f75b7d98be214ebd7621}
+
+
+Definition at line 2219 of file net\+\_\+crypto.\+c.
+
+
+
+References C\+R\+Y\+P\+T\+O\+\_\+\+C\+O\+N\+N\+\_\+\+E\+S\+T\+A\+B\+L\+I\+S\+H\+E\+D, C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+P\+A\+C\+K\+E\+T\+S, get\+\_\+crypto\+\_\+connection(), P\+A\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+L\+O\+S\+S\+Y\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+R\+T, Crypto\+\_\+\+Connection\+::packets\+\_\+left, Crypto\+\_\+\+Connection\+::packets\+\_\+sent, send\+\_\+lossless\+\_\+packet(), and Crypto\+\_\+\+Connection\+::status.
+
+
+
+Referenced by m\+\_\+send\+\_\+message\+\_\+generic(), send\+\_\+custom\+\_\+lossless\+\_\+packet(), send\+\_\+file\+\_\+data\+\_\+packet(), send\+\_\+friend\+\_\+request\+\_\+packet(), send\+\_\+offline\+\_\+packet(), send\+\_\+online\+\_\+packet(), send\+\_\+packet\+\_\+group\+\_\+peer(), send\+\_\+packet\+\_\+online(), send\+\_\+ping(), send\+\_\+relays(), and write\+\_\+cryptpacket\+\_\+id().
+
+
+\begin{DoxyCode}
+2221 \{
+2222     \textcolor{keywordflow}{if} (length == 0)
+2223         \textcolor{keywordflow}{return} -1;
+2224 
+2225     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] < \hyperlink{net__crypto_8h_a98aaeb516244f1581d65e3dbb008979e}{CRYPTO\_RESERVED\_PACKETS})
+2226         \textcolor{keywordflow}{return} -1;
+2227 
+2228     \textcolor{keywordflow}{if} (\hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}[0] >= \hyperlink{net__crypto_8h_a02481d2cc931289c2d5ee21d2a633316}{PACKET\_ID\_LOSSY\_RANGE\_START})
+2229         \textcolor{keywordflow}{return} -1;
+2230 
+2231     \hyperlink{struct_crypto___connection}{Crypto\_Connection} *conn = \hyperlink{net__crypto_8c_a909daa4b6d420cbd028f2c956a8642db}{get\_crypto\_connection}(c, 
+      crypt\_connection\_id);
+2232 
+2233     \textcolor{keywordflow}{if} (conn == 0)
+2234         \textcolor{keywordflow}{return} -1;
+2235 
+2236     \textcolor{keywordflow}{if} (conn->\hyperlink{struct_crypto___connection_ade818037fd6c985038ff29656089758d}{status} != \hyperlink{net__crypto_8h_ae15ad1cc9a29a669e0df83d610c188b0}{CRYPTO\_CONN\_ESTABLISHED})
+2237         \textcolor{keywordflow}{return} -1;
+2238 
+2239     \textcolor{keywordflow}{if} (congestion\_control && conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left} == 0)
+2240         \textcolor{keywordflow}{return} -1;
+2241 
+2242     int64\_t ret = \hyperlink{net__crypto_8c_a06c8bdc27b9865d1b7d775b654f44d1a}{send\_lossless\_packet}(c, crypt\_connection\_id, 
+      \hyperlink{namespacemake-funny-savefile_aa7a0efb8690a34f61a95b00cc723ca27}{data}, length, congestion\_control);
+2243 
+2244     \textcolor{keywordflow}{if} (ret == -1)
+2245         \textcolor{keywordflow}{return} -1;
+2246 
+2247     \textcolor{keywordflow}{if} (congestion\_control) \{
+2248         --conn->\hyperlink{struct_crypto___connection_adfabcbe80305cc6b4e1c0dfef5c48653}{packets\_left};
+2249         conn->\hyperlink{struct_crypto___connection_ad51d37ac38989c1d089da8aa0d1bc1d7}{packets\_sent}++;
+2250     \}
+2251 
+2252     \textcolor{keywordflow}{return} ret;
+2253 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ab17ccce6d503f75b7d98be214ebd7621_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d42/net__crypto_8h_ab17ccce6d503f75b7d98be214ebd7621_icgraph}
+\end{center}
+\end{figure}
+
+

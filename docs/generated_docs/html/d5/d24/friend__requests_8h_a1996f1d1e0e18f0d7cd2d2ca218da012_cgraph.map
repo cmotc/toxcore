@@ -1,0 +1,9 @@
+<map id="friendreq_init" name="friendreq_init">
+<area shape="rect" id="node2" href="$d6/da4/friend__requests_8c.html#acbe8d19ee4979fe6e8015bf21e9dcdbe" title="friendreq_handlepacket" alt="" coords="149,52,305,79"/>
+<area shape="rect" id="node7" href="$d2/db1/friend__connection_8c.html#ab3249bbbafb0a8be7d181e3bc6f9563f" title="set_friend_request\l_callback" alt="" coords="163,103,292,145"/>
+<area shape="rect" id="node3" href="$d6/da4/friend__requests_8c.html#aa3074d71b7cb84b3f3e214374a1bfc42" title="addto_receivedlist" alt="" coords="375,5,502,32"/>
+<area shape="rect" id="node5" href="$d6/da4/friend__requests_8c.html#a616ddcbef4512b528c4231d9108c8738" title="request_received" alt="" coords="378,56,499,83"/>
+<area shape="rect" id="node4" href="$de/df1/util_8c.html#aa30049b8c1d82c280d6d872feea3353b" title="id_copy" alt="" coords="574,5,641,32"/>
+<area shape="rect" id="node6" href="$de/df1/util_8c.html#ada3d44b4f530d3c8c9cb69b732be94b1" title="id_equal" alt="" coords="572,56,643,83"/>
+<area shape="rect" id="node8" href="$db/d79/onion__client_8c.html#a2dfcba5e4eb429f5f2ae79ae999149c4" title="oniondata_registerhandler" alt="" coords="353,111,524,137"/>
+</map>

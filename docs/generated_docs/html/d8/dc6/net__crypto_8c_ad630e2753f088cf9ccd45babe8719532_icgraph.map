@@ -1,0 +1,28 @@
+<map id="create_cookie" name="create_cookie">
+<area shape="rect" id="node2" href="$d8/dc6/net__crypto_8c.html#ab88b2226740cacde1112ee7fd13048d3" title="create_cookie_response" alt="" coords="375,67,537,93"/>
+<area shape="rect" id="node20" href="$d8/dc6/net__crypto_8c.html#a152a683d32712d0d91bfe1f4497c9485" title="create_crypto_handshake" alt="" coords="156,167,327,193"/>
+<area shape="rect" id="node3" href="$d8/dc6/net__crypto_8c.html#a04fc41a4cb0d904536626006f3b7d7dd" title="udp_handle_cookie_request" alt="" coords="813,5,996,32"/>
+<area shape="rect" id="node16" href="$d8/dc6/net__crypto_8c.html#a9308f183e47e29869d5562d03a01f88a" title="tcp_handle_cookie_request" alt="" coords="585,37,765,64"/>
+<area shape="rect" id="node18" href="$d8/dc6/net__crypto_8c.html#ae88369484d37b525d33c5c87c846606b" title="tcp_oob_handle_cookie\l_request" alt="" coords="596,89,755,130"/>
+<area shape="rect" id="node4" href="$de/d42/net__crypto_8h.html#a5e46c6f42e93e2aa968f8f63de90a53c" title="new_net_crypto" alt="" coords="1068,144,1183,171"/>
+<area shape="rect" id="node5" href="$d7/dd9/onion__test_8c.html#a5945771cafdfe39074adf8ddd47ae81b" title="new_onions" alt="" coords="1268,144,1359,171"/>
+<area shape="rect" id="node7" href="$d4/d30/_messenger_8h.html#af015ea2e74c58196e0564719a6c6a112" title="new_messenger" alt="" coords="1255,235,1372,261"/>
+<area shape="rect" id="node6" href="$d7/dd9/onion__test_8c.html#a1bd0e98b361db6749c50308a7555a192" title="START_TEST" alt="" coords="1420,144,1527,171"/>
+<area shape="rect" id="node8" href="$d8/dda/messenger__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1448,260,1499,287"/>
+<area shape="rect" id="node9" href="$da/d8f/tox_8h.html#aa0e6afccd06a766b84a0633e259f9165" title="Creates and initialises a new Tox instance with the options passed. " alt="" coords="1438,209,1509,236"/>
+<area shape="rect" id="node10" href="$d0/de9/encryptsave__test_8c.html#abfc6ca1e662bc2b41efecb0b9e35cc9d" title="START_TEST" alt="" coords="1575,133,1681,160"/>
+<area shape="rect" id="node11" href="$db/d11/irc__syncbot_8c.html#a7a3ec256dab5cbac9fc01ff328980da7" title="init_tox" alt="" coords="1596,184,1660,211"/>
+<area shape="rect" id="node13" href="$d2/d65/n_tox_8c.html#ac47fc78dd12365ddfd46c70003627250" title="load_data" alt="" coords="1589,235,1667,261"/>
+<area shape="rect" id="node15" href="$d7/db1/tox__shell_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1603,285,1653,312"/>
+<area shape="rect" id="node12" href="$db/d11/irc__syncbot_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1729,184,1780,211"/>
+<area shape="rect" id="node14" href="$d2/d65/n_tox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1729,235,1780,261"/>
+<area shape="rect" id="node17" href="$d8/dc6/net__crypto_8c.html#ab2eaad4448a5deca58a00316b522e380" title="tcp_data_callback" alt="" coords="841,93,968,120"/>
+<area shape="rect" id="node19" href="$d8/dc6/net__crypto_8c.html#a86a3ff661a8b9b10fd7c0daee3901091" title="tcp_oob_callback" alt="" coords="843,144,966,171"/>
+<area shape="rect" id="node21" href="$d8/dc6/net__crypto_8c.html#ad2ca4aad15dc0607252aa21cd525b5ba" title="create_send_handshake" alt="" coords="375,205,537,232"/>
+<area shape="rect" id="node22" href="$d8/dc6/net__crypto_8c.html#a04717fefa34f146623e7c95d5eef8caa" title="handle_packet_connection" alt="" coords="587,155,763,181"/>
+<area shape="rect" id="node24" href="$d8/dc6/net__crypto_8c.html#ae8139c35468806f25d5aed185edcc5a1" title="handle_new_connection\l_handshake" alt="" coords="595,206,756,247"/>
+<area shape="rect" id="node25" href="$de/d42/net__crypto_8h.html#ab11f6e96035c3717a21b809d5373f96f" title="accept_crypto_connection" alt="" coords="588,272,763,299"/>
+<area shape="rect" id="node23" href="$d8/dc6/net__crypto_8c.html#a812ca8a7291e22ce343669c9835c7c12" title="udp_handle_packet" alt="" coords="837,195,972,221"/>
+<area shape="rect" id="node26" href="$d2/db1/friend__connection_8c.html#ad12421e11a4e0a8ca7223e0d715d2b0c" title="handle_new_connections" alt="" coords="821,249,989,276"/>
+<area shape="rect" id="node27" href="$d0/d08/friend__connection_8h.html#a319bec2419cf5fc5525af4fae03b86ef" title="new_friend_connections" alt="" coords="1044,243,1207,269"/>
+</map>

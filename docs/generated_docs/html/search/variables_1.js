@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['end_5fport',['end_port',['../struct_tox___options.html#a72adaef23252363613b9ace5351ce521',1,'Tox_Options']]]
+  ['bad_5fid',['bad_id',['../d8/dda/messenger__test_8c.html#af7cae21e4c94b90da8e36e572f40a944',1,'messenger_test.c']]],
+  ['bad_5fid_5fstr',['bad_id_str',['../d8/dda/messenger__test_8c.html#a84ed8f499dba364289c8cc472cae3baa',1,'messenger_test.c']]],
+  ['base32',['base32',['../da/d84/toxdns_8c.html#a3ce3456af76f05091933ec5db5dd1eec',1,'toxdns.c']]],
+  ['bob',['Bob',['../d3/d25/struct___status.html#a78cf423939bd332fd6e5ddae67134e01',1,'_Status']]],
+  ['bobpk',['bobpk',['../d5/d29/crypto__test_8c.html#a5475b8ead75f8c68d2c51643d753f976',1,'crypto_test.c']]],
+  ['bootstrap_5fmotd',['bootstrap_motd',['../de/d7d/bootstrap__node__packets_8c.html#af60b86b4f91758beb61776c0cb6c11cf',1,'bootstrap_node_packets.c']]],
+  ['bootstrap_5fmotd_5flength',['bootstrap_motd_length',['../de/d7d/bootstrap__node__packets_8c.html#a29600cdb7fcde9c9866b3ff5781b37df',1,'bootstrap_node_packets.c']]],
+  ['bootstrap_5fnode',['bootstrap_node',['../d6/dc0/toxav__many__test_8c.html#a7ff1f76195b55c73f549975552ba17ce',1,'toxav_many_test.c']]],
+  ['bootstrap_5ftimes',['bootstrap_times',['../d0/d55/struct_d_h_t___friend.html#aae62716bf77c5ba5fca784702d47a5ff',1,'DHT_Friend']]],
+  ['bootstrap_5fversion',['bootstrap_version',['../de/d7d/bootstrap__node__packets_8c.html#a36b9f965f9f405182aed520fb822adb3',1,'bootstrap_node_packets.c']]],
+  ['bottom',['bottom',['../db/dea/struct___jitter_buffer.html#a12c8099ac87952580dd090215e02728c',1,'_JitterBuffer::bottom()'],['../d1/d92/struct_group___jitter_buffer.html#a12c8099ac87952580dd090215e02728c',1,'Group_JitterBuffer::bottom()']]],
+  ['bottom_5flossy_5fnumber',['bottom_lossy_number',['../d1/dcd/struct_group___peer.html#ae3d9bdf641a1085fcb1bde6ec076b37d',1,'Group_Peer']]],
+  ['broadcast_5fcount',['broadcast_count',['../d1/de5/_l_a_n__discovery_8c.html#aea1a218dd0a10d7769dd2cb6e5f3bd6e',1,'LAN_discovery.c']]],
+  ['broadcast_5fip_5fport',['broadcast_ip_port',['../d1/de5/_l_a_n__discovery_8c.html#aa6a32d3f8b5409a706f2a3e17a54fe8d',1,'LAN_discovery.c']]],
+  ['buffer',['buffer',['../d5/d48/struct_group___peer___a_v.html#a6552b703c2e3958d1e030416f2893b27',1,'Group_Peer_AV::buffer()'],['../d2/d40/struct_packets___array.html#ae9d4e6271fdb80e86ebb3e846fcd709c',1,'Packets_Array::buffer()']]],
+  ['buffer_5fend',['buffer_end',['../d2/d40/struct_packets___array.html#a66d710e0093872b26ee80118c1a85d99',1,'Packets_Array']]],
+  ['buffer_5fstart',['buffer_start',['../d2/d40/struct_packets___array.html#a85973b335814248c05f63543876b348e',1,'Packets_Array']]]
 ];

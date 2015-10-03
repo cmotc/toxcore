@@ -1,0 +1,23 @@
+This directory can house various tools and utilities.
+
+\section*{How to use astyle}
+
+\subsection*{Manually}
+
+\subsubsection*{For all files}
+
+Run from {\ttfamily toxcore} directory\+: ```bash astyle --options=./other/astyle/astylerc ./toxcore/$\ast$.c ./toxcore/$\ast$.h ./toxdns/$\ast$.c ./toxdns/$\ast$.h ./testing/$\ast$.c ./toxav/$\ast$.c ./toxav/$\ast$.h ./other/$\ast$.c ./other/bootstrap\+\_\+daemon/$\ast$.c ./toxencryptsave/$\ast$.c ./toxencryptsave/$\ast$.h ./auto\+\_\+tests/$\ast$.c ```
+
+\subsubsection*{For selected file}
+
+Run from {\ttfamily toxcore} directory, e.\+g. for \href{/toxcore/tox.h}{\tt ``tox.h``} file\+: ```bash astyle --options=./other/astyle/astylerc ./toxcore/tox.h ```
+
+\subsection*{Automatically, as pre-\/commit hook ($\ast$\+N\+I\+X only)}
+
+Copy \href{/other/astyle/astylerc}{\tt ``astylerc``} to {\ttfamily toxcore/.git/hooks}
+
+\section*{Why}
+
+{\ttfamily astylerc} -\/ this file can be used in the pre-\/commit hook to try its best at making the code conform to the coding style of toxcore.
+
+Furthermore, it is being used to format {\ttfamily \hyperlink{tox_8h}{tox.\+h}} after using \href{/other/apidsl}{\tt ``apidsl``} to generate it. 
