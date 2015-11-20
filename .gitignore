@@ -74,3 +74,6 @@ cscope.files
 
 # rpm
 tox.spec
+
+gitrepos.sh
+.upstream
