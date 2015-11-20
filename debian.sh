@@ -1,5 +1,6 @@
 #! /bin/sh
-DEBFOLDERNAME="toxcore_0.0.0+20150630.r3444"
+#DEBFOLDERNAME="toxcore_0.0.0+20150630.r3444"
+DEBFOLDERNAME="toxcore_0.0.0+20150323.r3271"
 cd toxcore
 make clean
 git pull kytvi2p master
