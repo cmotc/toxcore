@@ -6,10 +6,21 @@ make clean
 git pull kytvi2p master
 git pull upstream master
 git push origin master
-rm "../$DEBFOLDERNAME.orig.tar.xz"
+rm "../$DEBFOLDERNAMEa.orig.tar.xz"
+rm "../$DEBFOLDERNAMEb.orig.tar.xz"
 tar cf - ./ | xz -zf - > "../$DEBFOLDERNAMEa.orig.tar.xz"
 tar cf - ./ | xz -zf - > "../$DEBFOLDERNAMEb.orig.tar.xz"
-cp -R ./ "../$DEBFOLDERNAME"
-cd "../$DEBFOLDERNAME"
+cp -R ./ "../$DEBFOLDERNAMEa"
+cd "../$DEBFOLDERNAMEa"
 dpkg-source --commit
 debuild -us -uc >> ../log
+cd ..
+
+cp -R ./ "../$DEBFOLDERNAMEb"
+cd "../$DEBFOLDERNAMEb"
+dpkg-source --commit
+debuild -us -uc >> ../log
+cd ..
+
+rm "../$DEBFOLDERNAMEa" -rf
+rm "../$DEBFOLDERNAMEb" -rf
