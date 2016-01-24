@@ -1,0 +1,1 @@
+export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
