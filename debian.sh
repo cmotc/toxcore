@@ -1,7 +1,8 @@
 #! /bin/sh
 #DEBFOLDERNAME="toxcore_0.0.0+20150630.r3444"
 DEBFOLDERNAME="toxcore$(date +%Y%m%d)"
-cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $TOME
 make clean
 git pull kytvi2p master
 git pull upstream master
