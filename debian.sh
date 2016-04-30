@@ -1,4 +1,9 @@
 #! /bin/sh
+if [ -n "$BASH_VERSION" ]; then
+	TOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+else
+	TOME=$( cd "$( dirname "$0" )" && pwd )
+fi
 #DEBFOLDERNAME="toxcore_0.0.0+20150630.r3444"
 DEBFOLDERNAME="toxcore$(date +%Y%m%d)"
 DEBFOLDERNAME="$TOME/../$DEBFOLDER-$DEBVERSION"
