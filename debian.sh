@@ -16,7 +16,7 @@ rm "../$DEBFOLDERNAME.orig.tar.xz"
 tar cf - ./ | xz -zf - > "../$DEBFOLDERNAME.orig.tar.xz"
 cp -R ./ "../$DEBFOLDERNAME"
 cd "../$DEBFOLDERNAME"
-dpkg-source --commit
+#dpkg-source --commit
 debuild -us -uc >> ../log
 cd ..
 rm "../$DEBFOLDERNAME" -rf
